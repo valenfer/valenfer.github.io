@@ -1,0 +1,14 @@
+.parrafo {
+	text-align : justify;
+	color: blue;
+	width: 700px;
+}
+.neg {
+	font-weight: bold;
+}
+#cuadro{
+    border-radius: 17px;
+    -webkit-box-shadow: 10px 20px 26px 1px rgba(32,179,54,1);
+    -moz-box-shadow: 10px 20px 26px 1px rgba(32,179,54,1);
+    box-shadow: 10px 20px 26px 1px rgba(32,179,54,1);
+}
