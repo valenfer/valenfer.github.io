@@ -1,2 +1,2 @@
 # valenfer.github.io
-Repositorio creado para practica final de MOOC de miriadaX
+Repositorio creado para practicas de grado superior de FP de DAW
