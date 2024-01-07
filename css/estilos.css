@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0;
+}
+
+#logo {
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px 10px rgba(255, 255, 255, 0.2), 5px 5px 5px 5px rgba(255, 255, 255, 0.19);
+}
+
+#titulo {
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.2), 10px 10px 10px 10px rgba(255, 255, 255, 0.19);
+}
+
+.nav a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 30px;
+}
+
+.nav li {
+    display: inline-block;
+    width: 10%;
+    height: 10%;
+    padding: 5px 10px;
+    background-color: #000;
+    border: 1px solid #000;
+    text-align: center;
+    color: #fff;
+}
+
+.nav li:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.header,
+.nav,
+.left,
+.main,
+.right,
+.footer {
+    border: 2px solid black;
+}
+
+li a:hover {
+    background-color: aqua;
+    color: black;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav nav nav"
+        "left main right"
+        "footer footer footer";
+    grid-template-rows: 1fr 1fr 1fr auto;
+    grid-template-columns: 10% 1fr 10%;
+    height: 100vh;
+    margin: 0;
+}
+
+#banner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    grid-area: header;
+    background-color: #f1f1f1;
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+    background-image: url('../imagenes/fondobanner.jpg');
+    background-repeat: repeat;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #181111;
+    width: 100%;
+    height: 100%;
+    ;
+}
+
+
+
+.left {
+    grid-area: left;
+    background-color: #3c0fdf;
+    color: yellow;
+}
+
+.main {
+    grid-area: main;
+    background-color: #000000;
+}
+
+.right {
+    grid-area: right;
+    background-color: #777;
+}
+
+/*Estilos iframe*/
+iframe {
+    width: 100%;
+    height: 100vh;
+}
+
+/*Estilos footer*/
+.footer {
+    grid-area: footer;
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    height: 100px;
+}
+
+/*ESTILOS DEL MENU LATERAL*/
+#menulateral {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+
+#menulateral li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+#menulateral li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#menulateral li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+#menulateral li ul {
+    display: none;
+}
+
+#menulateral li ul li a {
+    padding: 8px 32px;
+}

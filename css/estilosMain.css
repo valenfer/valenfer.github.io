@@ -1,0 +1,46 @@
+body {
+    margin: 10px;
+    padding: 20px;
+}
+
+h3 {
+    /*estilo titulos ejercicios*/
+    text-align: center;
+    color: red;
+    font-size: 50px;
+    text-shadow: 2px 2px white;
+    letter-spacing: 7px;
+}
+
+h3 .D {
+    color: yellow;
+}
+
+h3 .A {
+    color: blue;
+}
+
+h3 .W {
+    color: green;
+}
+
+h5 {
+    color: red;
+    font-size: 35px;
+    letter-spacing: 5px;
+}
+
+.subrayado {
+    text-decoration: underline;
+}
+
+.texto {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    font-size: 27px;
+    text-align: justify;
+    letter-spacing: 3px;
+    text-indent: 50px;
+}
