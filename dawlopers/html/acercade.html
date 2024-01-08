@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #typedtext {
+            border-right: solid 3px;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            color: white;
+            font-size: 30px;
+            background-color: black;
+            width: 100%;
+            height: 100vh;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .texto {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            font-size: 27px;
+            text-align: justify;
+            letter-spacing: 3px;
+            text-indent: 50px;
+        }
+    </style>
+</head>
+
+<div id="typedtext" class="texto"></div>
+
+<script>
+    var text =
+        "¡Hola a todos! 🙌 Bienvenidos a mi página web, este proyecto lo he creado como parte de la asignatura de Horas de Libre Configuración del Grado Superior de FP de Diseño de Aplicaciones Web. Aquí encontrarás una gran cantidad de recursos, artículos, enlaces y otras utilidades para el desarrollo de aplicaciones web. ¡Espero que te sea de gran ayuda! 😊";
+    var i = 0;
+    var speed = 50;
+
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("typedtext").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+    typeWriter();
+</script>
+
+</html>
