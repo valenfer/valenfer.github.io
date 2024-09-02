@@ -1,38 +1,224 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentín Fernández Guijarro</title>
-    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" , user-scalable="no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/estilo.css">
+    <title>Portfolio Valentín Fernández</title>
 </head>
 
 <body>
-    <header>
-        <h1>Bienvenido a mi página web</h1>
-        <p>Valentín Fernández Guijarro, estudiante de diseño de aplicaciones web.</p>
-    </header>
+    <!-- Sección de Inicio-->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <img src="./img/logo.png" alt="">
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">Inicio</a></li>
+                            <li><a href="#sobremi" onclick="seleccionar(this)">Sobre mí</a></li>
+                            <li><a href="#servicios" onclick="seleccionar(this)">Servicios</a></li>
+                            <li><a href="#portfolio" onclick="seleccionar(this)">Portfolio</a></li>
+                            <li><a href="#contacto" onclick="seleccionar(this)">Contacto</a></li>
+                        </ul>
+                    </nav>
+                    <!--Incocnos del menú rersponsivo-->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <!--icocnos de las redes sociales-->
+                    <div class="redes">
+                        <a href="https://valenfer.github.io/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.behance.net/" target="_blank"><i class="fa-brands fa-behance"></i></a>
+                    </div>
+                </div>
+            </header>
+            <div class="presentacion">
+                <p class="bienvenida">Bienvenidos</p>
+                <h2>Hola, soy <span>Valentín Fernández</span></h2>
+                <p class="descripcion">Desarrollador de aplicaciones web y diseñador UI/UX Junior</p>
+                <a href="#portfolio">Ir a portafolio</a>
+            </div>
+        </div>
+    </section><!--Fin seccion inicio-->
 
-    <nav>
-        <ul>
-            <li><a href="./dawlopers/index.html">Dawlopers</a></li>
-            <li><a href="soycurioso.html">Soy curioso</a></li>
-            <li><a href="disonancia-cognitiva.html">Disonancia Cognitiva</a></li>
-        </ul>
-    </nav>
+    <!--Sección sobre mi-->
+    <section id="sobremi">
+        <div class="contenedor-foto">
+            <img src="./img/foto.jpg" alt="">
+        </div>
+        <div class="sobremi">
+            <p class="titulo-seccion">Sobre mi</p>
+            <h2><span>Valentín Fernández Guijarro</span></h2>
+            <h3>Desarrollador de aplicaciones web y diseñador UI/UX Junior</h3>
+            <p>Estoy a punto de finalizar el grado superior en Diseño de Aplicaciones Web. </p>
+            <p>Estoy buscando de una empresa donde realizar mis prácticas y dar el salto al mundo profesional. Deseando
+                participar en proyectos reales que me permitan crecer y aportar valor.</p>
+            <p>Aunque aún no cuento con experiencia laboral, en mi portafolio podrás ver algunos de los trabajos que he
+                realizado durante mi formación y en iniciativas personales.</p>
+            <p>Te invito a explorar mis trabajos y descubrir cómo puedo contribuir a tu equipo. </p>
+            <a herf="CV_Valentinfernandez.pdf" target="_blank">Descarga CV</a>
+        </div><!--fin div sobremi-->
 
-    <main>
-        <p>En estos momentos estoy trabajando en ello, ire ampliando contenido</p>
-        <p>Por el momento solo esta disponible la página de <a href="./dawlopers/index.html">Dawlopers</a>, realizada
-            para la tarea de la asignatura de Horas de libre configuración, donde ofrezco contenido sobre temas
-            realcionados con el Diseño de Aplicaciones WEb y recursos útiles para el mismo</p>
-        <!-- Aquí puedes agregar más contenido sobre ti y tus proyectos -->
-    </main>
+    </section><!--Fin sección #sobremi-->
 
+    <!--Sección sevicios-->
+    <section id="servicios">
+        <h3 class="titulo-seccion">MIS CONOCIMIENTOS</h3>
+        <DIV class="fila">
+            <div class="servicio">
+                <span class="icono"><img src="./img/html.png"></span>
+                <h4>HTML</h4>
+                <hr>
+                <p>Conocimientos adquiridos principalmente de forma autodidacta y reforzados durante el grado de DAW</p>
+            </div><!--Fin div .sercicio-->
+            <div class="servicio">
+                <span class="icono"><img src="./img/css.png"></span>
+                <h4>CSS</h4>
+                <hr>
+                <p>Conocimientos adquiridos principalmente de forma autodidacta y reforzados durante el grado de DAW</p>
+            </div><!--Fin div .sercicio-->
+            <div class="servicio">
+                <span class="icono"><img src="./img/js.png"></span>
+                <h4>Javascript</h4>
+                <hr>
+                <p>Conocimientos adquiridos principalmente de forma autodidacta y reforzados durante el grado de DAW</p>
+            </div><!--Fin div .sercicio-->
+        </DIV><!--Fin div .fila-->
+        <DIV class="fila">
+            <div class="servicio">
+                <span class="icono"><img src="./img/figma.png"></span>
+                <h4>Figma</h4>
+                <hr>
+                <p>Durante el curso de Diseño y experiencia de usuario (UX) de Google</p>
+            </div><!--Fin div .sercicio-->
+            <div class="servicio">
+                <span class="icono"><img src="./img/vscode.png"></span>
+                <h4>Visual Studio Code</h4>
+                <hr>
+                <p>De forma autodidacta. Es el que más utilizo en la actualidad a nivel personal</p>
+            </div><!--Fin div .sercicio-->
+            <div class="servicio">
+                <span class="icono"><img src="./img/netbeans.png"></span>
+                <h4>NetBeans</h4>
+                <hr>
+                <p>Es el que mas utilicé durante elñ grado de DAW</p>
+            </div><!--Fin div .sercicio-->
+        </DIV><!--Fin div .fila-->
+        <DIV class="fila">
+            <div class="servicio">
+                <span class="icono"><img src="./img/java.png"></span>
+                <h4>Java</h4>
+                <hr>
+                <p>Durante el grado de DAW</p>
+            </div><!--Fin div .sercicio-->
+            <div class="servicio">
+                <span class="icono"><img src="./img/php.png"></span>
+                <h4>PHP</h4>
+                <hr>
+                <p>Durante el grado de DAW</p>
+            </div><!--Fin div .sercicio-->
+            <div class="servicio">
+                <span class="icono"><img src="./img/sql.png"></span>
+                <h4>SQL</h4>
+                <hr>
+                <p>Durante curso ADMINISTRACIÓN DE BASES DE DATOS correspondiente al certificado de profesionalidad IFCT0310 (650
+                    horas), con nivel de cualificación profesional 3 y reforzado durante grado de DAW</p>
+            </div><!--Fin div .sercicio-->
+        </DIV><!--Fin div .fila-->
+    </section><!--Fin div #servicio-->
+
+    
+    <!--Sección portafolio-->
+    <section id="portfolio">
+        <h3 class="titulo-seccion">MIS PROYECTOS</h3>
+        <p class="subtitulos">Proyectos de diseño y experiencia de usuario (UX) </p>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"><img src="./img/proyectos/campo1.png" alt=""></div>
+                
+                <div class="info">
+                    <h4>Proyecto UX/UI APP de contacto con productores agricolas locales</h4>
+                    <div class="enlaces-proyectos">
+                        <a href="./docs/delcampoalamesa.pdf" target="_blank">
+                            <h3>PDF</h3>
+                        </a>
+                        <a href="https://www.figma.com/proto/8wdSvoAvpaQzMMJqx6lHCQ/delcampoalamesa?node-id=30-632&t=qs6oub2rRC5K3ra7-1&scaling=min-zoom&content-scaling=fixed&page-id=30%3A631&starting-point-node-id=30%3A632" target="_blank">
+                            <h3>Prototipo Figma</h3>
+                        </a>
+                    </div>
+                </div><!--Fin div .info-->
+            </div><!--Fin div .proyecto-->
+
+            <div class="proyecto">
+                <div class="overlay"><img src="./img/proyectos/cine1.png" alt=""></div>
+                
+                <div class="info">
+                    <h4>Proyecto UX/UI: APP de información personalizada sobre peliculas de cine y estrenos</h4>
+                    <div class="enlaces-proyectos">
+                        <a href="./docs/casodeestudiousabilidad.pdf" target="_blank">
+                            <h3>PDF</h3>
+                        </a>
+                        <a
+                            href="https://www.figma.com/proto/5PXD5kgSXYvQlMy7Ymu9ft/GoogleUXLast?node-id=118-843&node-type=CANVAS&t=WAyrFLfpCUh8rptT-1&scaling=min-zoom&content-scaling=fixed&page-id=118%3A676" target="_blank">
+                            <h3>Prototipo Figma</h3>
+                        </a>
+                    </div>
+                </div><!--Fin div .info-->
+            </div><!--Fin div .proyecto-->
+
+            <div class="proyecto">
+                <div class="overlay"><img src="./img/proyectos/cocina1.png" alt=""></div>
+                
+                <div class="info">
+                    <h4>Proyecto UX/UI: APP de recetas caseras</h4>
+                    <div class="enlaces-proyectos">
+                        <a href="./docs/casodeestudiousabilidad.pdf" target="_blank">
+                            <h3>PDF</h3>
+                        </a>
+                        <a
+                            href="https://www.figma.com/proto/sz6C2OiZirleK0RfJU9wWA/AdobeXD?node-id=63-96&node-type=CANVAS&t=SN1yKbxqwXZAlmuy-1&scaling=min-zoom&content-scaling=fixed&page-id=63%3A82" target="_blank">
+                            <h3>Prototipo Figma</h3>
+                        </a>
+                    </div>
+                </div><!--Fin div .info-->
+            </div><!--Fin div .proyecto-->
+
+            
+        </div><!--Fin div .fila-->
+
+
+    </section><!--Fin sección portafolio-->
+
+    <!--Secición contacto-->
+    <section id="contacto">
+        <h3 class="titulo-seccion">Contacta conmigo</h3>
+        <div class="info-contacto">
+            <p><strong>Nombre:</strong> Valentín Fernández Guijarro</p>
+            <p><strong>Población:</strong> Sevilla</p>
+            <p><strong>Teléfono:</strong> +34 617 00 13 43</p>
+            <p><strong>Correo electrónico:</strong> valenfer71@gmail.com</p>
+            <p><strong>Web:</strong> <a href="https://valenfer.github.io/">valenfer.github.io</a></p>
+        </div>
+    </section>
+
+    <!--Seción footer-->
     <footer>
-        <p>© 2024 Valentín Fernández Guijarro</p>
+        <p>Valentín Fedrnández Guijarro</p>
+        <p>Todos los derechos reservados - 2024</p>
+        <div class="redes">
+            <a href="https://valenfer.github.io/" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.behance.net/" target="_blank"><i class="fa-brands fa-behance"></i></a>
+        </div>
     </footer>
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
