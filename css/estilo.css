@@ -3,7 +3,7 @@
 
 :root {
     --azul-oscuro: #0033CC; /*   var(--azul-oscuro)*/
-    --azul-claro: #3399FF; /*   var(--azul-claro*/
+    --azul-claro: #96bfe9; /*   var(--azul-claro*/
     --texto-parrafo:#565656; /*  var(--texto-parrafo)   */
 }
 * {
@@ -228,7 +228,7 @@ html {
 #servicios {
     padding: 100px 15px;
     text-align: center;
-    background-color: #f3fef3;
+    background-color: var(--azul-claro);
 }
 
 #servicios .titulo-seccion {
@@ -236,7 +236,7 @@ html {
     text-transform: uppercase;
     color: #111135;
     text-decoration: underline;
-    text-decoration-color: #d3d3d3;
+    text-decoration-color: var(--azul-oscuro);
     text-decoration-thickness: 5px;
 }
 
@@ -258,7 +258,7 @@ html {
 }
 
 #servicios .fila .servicio:hover {
-    box-shadow: 5px 5px 10px var(--texto-parrafo), -5px -5px 10px #8a8a8a;
+    box-shadow: 5px 5px 10px, -5px -5px 10px #8a8a8a;
 }
 
 #servicios .fila .servicio h4 {
@@ -396,8 +396,8 @@ html {
     width: 90%;
     margin: 10px auto;
     padding: 20px;
-    background-color: #f3fef3;
-    box-shadow: 5px 5px 10pxvar(--texto-parrafo), -5px -5px 10px #8a8a8a;
+    background-color: var(--azul-claro);
+    box-shadow: 5px 5px 10px, -5px -5px 10px #8a8a8a;
 }
 
 .info-contacto {
@@ -409,7 +409,7 @@ html {
 }
 
 .info-contacto a {
-    color: #007bff;
+    color: black;
     text-decoration: none;
 }
 
