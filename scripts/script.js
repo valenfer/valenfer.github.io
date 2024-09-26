@@ -1,10 +1,10 @@
 /*Función para mostrar el menú responsivo*/
 function responsiveMenu(){
-    var x=document.getElementById("nav");
-    if(x.className===""){
-        x.className="responsive";
+    var menu=document.getElementById("nav");
+    if(menu.className===""){
+        menu.className="responsive";
     }else{
-        x.className="";
+        menu.className="";
     } 
 }
 
@@ -19,7 +19,7 @@ function seleccionar(link){
 
     link.className="seleccionado";
     //Hacemos desaparecer el menu una vez seleccionada una opción en el menú responsivo
-    var x=document.getElementById("nav");
-    x.className="";
+    var menu=document.getElementById("nav");
+    menu.className="";
 }
 
