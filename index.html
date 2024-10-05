@@ -23,7 +23,7 @@
                             <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">Inicio</a></li>
                             <li><a href="#sobremi" onclick="seleccionar(this)">Sobre mí</a></li>
                             <li><a href="#servicios" onclick="seleccionar(this)">Conocimientos</a></li>
-                            <li><a href="https://valenfer.github.io/curriculumweb" taregt="_blanck" onclick="seleccionar(this)">Curriculum Web</a></li>
+                            <li><a href="./proyectos/curriculumweb/index.html" taregt="_blanck" onclick="seleccionar(this)">Curriculum Web</a></li>
                             <li><a href="#portfolio" onclick="seleccionar(this)">Portfolio</a></li>
                             <li><a href="#contacto" onclick="seleccionar(this)">Contacto</a></li>
                         </ul>
@@ -66,7 +66,7 @@
             <p>Te invito a explorar mis trabajos y descubrir cómo puedo contribuir a tu equipo. </p>
             <a href="./docs/CV_Valentin_Fernandez.pdf" target="_blanck">Descargar CV</a>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://valenfer.github.io/curriculumweb" target="_blanck">Ver curriculum Web</a>
+            <a href="./proyectos/curriculumweb" target="_blanck">Ver curriculum Web</a>
         </div><!--fin div sobremi-->
 
     </section><!--Fin sección #sobremi-->
@@ -204,10 +204,10 @@
                 <div class="info">
                     <h4>Consulta de películas de cine usando API de TMDB</h4>
                     <div class="enlaces-proyectos">
-                        <a href="https://valenfer.github.io/cineweb" target="_blank">
+                        <a href="./proyectos/cineweb" target="_blank">
                             <h3>Ver sitio</h3>
                         </a>
-                        <a href="https://github.com/valenfer/valenfer.github.io/tree/master/cineweb" target="_blank">
+                        <a href="https://github.com/valenfer/valenfer.github.io/proyectos/cineweb" target="_blank">
                             <h3>Código</h3>
                         </a>
                     </div>
@@ -220,11 +220,11 @@
                 <div class="info">
                     <h4>Aplicación metereológicfa usando API de VisualCroissing Y Open Street Map</h4>
                     <div class="enlaces-proyectos">
-                        <a href="https://valenfer.github.io/appmetereologica" target="_blank">
+                        <a href="./proyectos/appmetereologica" target="_blank">
                             <h3>Ver sitio</h3>
                         </a>
                         <a
-                            href="https://github.com/valenfer/valenfer.github.io/tree/bc148855f0ce2db68c64fb27a17cafa79fb9cee0/appmetereologica" target="_blank">
+                            href="https://github.com/valenfer/valenfer.github.io/proyectos/appmetereologica" target="_blank">
                             <h3>Código</h3>
                         </a>
                     </div>
@@ -237,7 +237,7 @@
                 <div class="info">
                     <h4>Sitio de astronomía usando la API de la NASA</h4>
                     <div class="enlaces-proyectos">
-                        <a href="https://valenfer.github.io/astroweb" target="_blank">
+                        <a href="./proyectos/astroweb" target="_blank">
                             <h3>Ver sitio</h3>
                         </a>
                         <a href="https://github.com/valenfer/valenfer.github.io/tree/bc148855f0ce2db68c64fb27a17cafa79fb9cee0/astroweb" target="_blank">
@@ -265,16 +265,23 @@
     </section>
 
     <!--Seción footer-->
+    <script src="./scripts/script.js"></script>
     <footer>
         <p>Valentín Fernández Guijarro</p>
-        <p>Todos los derechos reservados - 2024</p>
-        <div class="redes">
-            <a href="https://valenfer.github.io/" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://www.behance.net/" target="_blank"><i class="fa-brands fa-behance"></i></a>
-        </div>
+    <p>valenfer71@gmail.com</p>  
+    <div class="redes">
+        <a class="icon" href="https://valenfer.github.io/" target="_blank"><img src="./img/github.svg"/></a>
+        <a class="icon" href="https://www.linkedin.com/" target="_blank"><img src="./img/linkedin.svg"/></a>
+        <a class="icon" href="https://www.behance.net/" target="_blank"><img src="./img/behance.svg"/></a>
+    </div>
+    <p>Última actualización:
+        <span id="lastUpdated">
+            <script>document.getElementById('lastUpdated').textContent = ultimaActualizacion();</script>
+        </span>
+    </p>
+
     </footer>
-    <script src="./scripts/script.js"></script>
+    
 </body>
 
 </html>
