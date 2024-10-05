@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta author="Valentín Fernández Guijarro">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="estilos.css">
+	<title>Sitio de peliculas</title>
+</head>
+<body>
+	<header class="cabecera"><span>CINEWEB</span></header>
+	<nav id="menu">
+        <ul>
+            <li><a href="#" onclick="opcionSeleccionada('enPantalla')">En Pantalla</a></li>
+            <li><a href="#" onclick="opcionSeleccionada('masPopulares')">Populares</a></li>
+            <li><a href="#" onclick="opcionSeleccionada('mejorValoradas')">Mejor valoradas</a></li>
+            <li><a href="#" onclick="opcionSeleccionada('proximosEstrenos')">Próximos estrenos</a></li>
+
+        </ul>
+    </nav>
+	<h1 id="apartado"></h1>
+	<div class="contenedor" id="contenedor"></div>
+
+	<div class="paginacion">
+		<button class="boton" id="btnAnterior">Anterior</button>
+		<button class="boton" id="btnSiguiente">Siguiente</button>
+	</div>
+
+	<script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url('fonts/PlaywriteDEGrund-VariableFont_wght.ttf') format('truetype');
+}
+
+.ocultar{
+	display: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'MiFuente', sans-serif;
+	background: black;
+	color:white;
+	padding: 20px;
+}
+/*Estilos para la cabecera*/
+.cabecera {
+	background-image: url(img/film.jpg); /* Ruta a tu imagen */
+	background-size: cover; /* La imagen se ajustará para cubrir todo el div */
+	background-position: center; /* Centra la imagen horizontal y verticalmente */
+	background-repeat: no-repeat; /* Evita que la imagen se   
+   repita */
+	height: auto; /* Ajusta esta altura según tus necesidades */
+	display: flex;
+	justify-content: center; /* Centra el contenido horizontalmente */
+	align-items: center; /* Centra el contenido verticalmente   
+   */
+	text-align: center; /* Centra el texto horizontalmente */
+	opacity: 0.5; /* Transparencia del 50% */
+	font-size: 60PX;
+	padding: 20px;
+  text-shadow: 2px 2px 4px #000;
+ 
+color: #fff;
+font-size: 5em;
+font-weight: bold;
+font-family: Helvetica;
+text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+
+  text-align: center;
+}
+
+.cabecera span{
+	opacity: 1;
+}
+
+/*Estilos para el menú de navegación*/
+nav {
+    background-color: #333; /* Color de fondo del menú */
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Hace que los elementos se dispongan en línea */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #111; 
+ /* Cambia el color de fondo al pasar el ratón */
+}
+  
+#apartado{
+	padding: 10px;
+	text-align: center;
+}
+/*Estilos para el contendor principal*/
+.contenedor {
+	width: 90%;
+	max-width: 1000px;
+	margin: 30px auto 100px auto;
+	background-color: black;
+	color:white;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+}
+
+.contenedor .pelicula {
+	text-align: center;
+	padding: 10px;
+	background-color: whitesmoke;
+	border-radius: 15px;
+	box-shadow: 10px 10px 5px 0px rgba(140,132,140,1);
+
+}
+
+.contenedor .pelicula .titulo {
+	font-size: 16px;
+	font-weight: 600;
+	color: black;
+}
+
+.contenedor .pelicula .poster {
+	width: 100%;
+	margin-bottom: 10px;
+	border-radius: 15px;
+}
+
+.paginacion {
+	position: fixed;
+	bottom: 0;
+	background: #100a1f;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	padding: 10px;
+}
+
+.boton {
+	cursor: pointer;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 50px;
+	width: 200px;
+	background: transparent;
+	color:greenyellow;
+	border: solid 2px greenyellow;
+	border-radius: 100px;
+	font-family: 'MiFuente', sans-serif;
+	font-weight: 600;
+	transition: .3s ease all;
+}
+.botonApagado {
+    background-color: grey;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.botonEncendido{
+	background: var(--colorBotones);
+}
+
+.paginacion button:hover {
+	filter: brightness(1.60);
+}
+
+.detallePelicula {
+	width: 100%;
+	text-align: center;
+	margin: 10px;
+	padding: 10px;
+  }
+  
+  .info {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px;
+	padding: 10px;
+  }
+  
+  .info img {
+	width: 25%;
+	margin: 10px;
+	padding: 10px;
+	background-color: whitesmoke;
+	border-radius: 15px;
+	box-shadow: 10px 10px 5px 0px rgba(140,132,140,1);
+  }
+  
+  .info p {
+	text-align: left;
+	margin: 10px;
+	padding: 10px;
+  }
+  
+  .btnVolver {
+	display: inline-block; 
+	text-align: center;
+	text-decoration: none; 
+	margin-top: auto;
+  }
+  .btnVolver:hover{
+	filter: brightness(1.60);
+  }

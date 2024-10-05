@@ -1,0 +1,238 @@
+:root{
+  --gris-oscuro: #666666;
+  --gris-claro: #999999;
+  --azul-oscuro: #0D2238;
+  --azul-menos-ocuro: #1C3F95;
+  --azul-claro:#6FC3DF;
+  --azul-menos-claro: #4F86EC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+p {
+  font-size: 20px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/*Estilos del manu superior*/
+.contenido-header {
+  background-color: var(--azul-oscuro);
+  color: var(--azul-claro);
+  display: flex; /* Hace que los elementos sean bloques en línea */
+  justify-content: space-around; /* Alinea los elementos a los extremos */
+  align-items: center; /* Centra los elementos verticalmente */
+  position: fixed; /* Fija el elemento en la posición actual */
+  top: 0; /* Posiciona el elemento en la parte superior */
+  width: 100%; /* Ocupa todo el ancho */
+  z-index: 999; /* Asegura que el elemento esté encima de otros elementos */
+  padding: 10px; /* Añade un poco de espacio interno */
+}
+
+.contenido-header nav ul {
+  list-style: none; /* Elimina los marcadores de lista */
+  display: flex;
+  gap: 20px; /* Espacio entre los elementos de la lista */
+}
+
+.contenido-header nav ul li {
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+nav a:hover {
+  font-weight: bold; /* Pone el texto en negrita al pasar el ratón */
+}
+/* Fin de estilos del menui suporior*/
+
+
+
+/* Estiolos para la presntación*/
+#presentacion {
+  padding-left: 20px;
+  height: 100vh; /* Ocupa todo el alto de la viewport */
+  background: var(--azul-menos-ocuro);
+  display: flex; /* Hace que los hijos sean bloques en línea */
+  justify-content: space-between; /* Alinea los hijos a los extremos */
+  align-items: center; /* Centra los hijos verticalmente */
+}
+
+#foto {
+  width: 25%; /* Ocupa el 25% del ancho */
+  text-align: center; /* Centra el contenido verticalmente */
+}
+
+#foto img {
+  border-radius: 15%; /* Redondea la imagen */
+  box-shadow: 5px 5px 10px rgba(146, 144, 144, 0.2); /* Añade una sombra */
+}
+
+#foto p{
+  color: var(--gris-claro);
+}
+#datos-contacto {
+  width: 75%; /* Ocupa el 75% del ancho */
+  padding: 20px; /* Añade espacio interno */
+  margin: 20px;
+}
+
+#datos-contacto h3 {
+  color:var(--gris-claro);
+  text-decoration: underline;
+}
+#datos-contacto h2 {
+  color: var(--gris-claro);
+  margin-bottom: 20px;
+}
+
+#datos-contacto p {
+  font-size: 20px;
+  color: var(--gris-claro);
+  margin-bottom: 30px;
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+#botones {
+  text-align: center; /* Centra los botones */
+}
+/* Fin de estilos para la presntación*/
+
+/* Estilos para botones de la presntacion*/
+#botones a {
+    display: inline-block;
+    background-color: var(--azul-oscuro);
+    color: white;
+    border: 2px solid var(--azul-menos-ocuro);
+    text-decoration: none;
+    padding: 10px 20px; /* Ajusta el padding para el tamaño del botón */
+    border-radius: 15%;
+    margin: 0 10px; /* Ajusta el margen para el espaciado */
+  }
+  
+  #botones a:hover {
+    background-color: var(--azul-claro);
+    border: none;
+    color: black;
+    box-shadow: 7px 6px 25px -2px rgba(150,142,150,1);
+    cursor: pointer;
+  }
+  /* Fin estilos botonbes presntación*/
+
+
+/* Estilos para apartados del curriculum*/
+#apartados{
+  margin:auto;
+  margin-top:60px;
+  width: 80%;
+  text-align: center;
+}
+#apartados #cv-titulo{
+  text-align: center;
+  font-size: 35px;
+  margin: 20px;
+  padding: 20px;
+  font-size: 25px;
+  text-decoration: underline;
+  letter-spacing: 4px;
+  color: var(--gris-oscuro);
+}
+
+
+.titulo h3{
+  font-size: 25px;
+  color: var(--gris-oscuro);
+}
+
+
+/* Estilos se las secciones ocultables*/
+.retractil{
+  border: 1px black solid;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px 100px;
+  text-align: left;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: none;
+  color: var(--gris-oscuro);
+  transition: max-height 2s ease-in-out;
+}
+
+/* Estilos para titulos de las seciones*/
+.titulo {
+  border: 1px black solid;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin: 10px;
+  padding: 10px 50px;
+  color: var(--gris-oscuro);
+}
+
+.titulo img {
+  height: 50px; 
+  margin: 0 10px; 
+}
+
+.flecha {
+  width: 20px; 
+  height: auto !important;
+}
+
+.flecha:hover{
+  cursor: pointer;
+}
+
+.flecha:active{
+  transform: rotate(180deg);
+}
+
+/* Fin estilos para tituos de las seciones*/
+
+
+.dato{
+  display:flex;
+  align-items: center;
+}
+
+.dato img{
+  width: 20px;
+  height: auto;
+}
+
+.dato p span{
+  font-weight: bold;
+}
+
+  /* Estilos footer*/
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+  margin: 10px auto;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  margin: 5px;
+  font-size: 26px;
+}
+
+.redes a img{
+  width: 30px;
+  height: auto  ;
+}
+/* Fin estilos footer*/

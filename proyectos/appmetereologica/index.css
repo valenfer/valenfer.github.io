@@ -1,0 +1,147 @@
+header {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding:15px;
+}
+
+h1 {
+    font-size: 35px;
+    text-shadow: 2px 2px 4px gray;
+}
+
+#nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+#nav input {
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    border: 3px solid green;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    color: black;
+    font-size: 20px;
+}
+
+#nav button {
+    width: 200px;
+    height: 100px;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 15%; 
+    box-shadow: 0 5px 10px rgba(0, 128, 0, 0.5);
+    transition: background-color 0.3s; 
+}
+
+#nav button:hover {
+    background-color: #45a049;
+}
+
+#nav button:active { /* Añadimos estilo para el estado "active" */
+    background-color: #303F9F; /* Cambiamos el color de fondo al presionar */
+}
+#contenido{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 97%;
+    height: auto;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    color: black;
+}
+
+#inferior{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 97%;
+    height: auto;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    color: black;
+}
+#mapa{
+    width: 400px;
+    height: 400px;
+    border: solid 2px black;
+}
+
+#datos {
+    border: solid 2px black;
+    width: 400px;
+    height: auto;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
+    background-color: aqua;
+}
+
+.enunciado{
+    font-weight: bold;
+}
+
+
+#superior{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 97%;
+    margin:5px;
+    padding: 5px;
+}
+
+#superior div{
+    margin-top: 10px;
+    width:200px;
+    height: 75px;
+    padding:5px;
+    text-align: center;
+    border:solid 2px black;
+    border-radius: 5%;
+    box-shadow: 0 5px 10px rgba(97, 95, 95, 0.5);
+    font-size: 25px;
+    background-color: chartreuse;
+}
+img{
+    width:100px;
+    height: auto;
+}
+.dia{
+    width: 150px;
+    height: auto;
+    text-align: center;
+    border: solid black 2px;
+    margin:10px;
+    padding:10px;
+    border-radius: 5%;
+    box-shadow: 0 5px 10px rgba(97, 95, 95, 0.5);
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding:10px;
+}
+
+.error{
+    color:red;
+}
+
+
+

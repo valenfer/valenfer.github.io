@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-N5VVSNGH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GTM-N5VVSNGH');
+    </script>
+    <title>DAWLOPERS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <script src="./js/script.js"></script>
+
+</head>
+
+<body onload="cargarContenido('./html/inicio.html')">
+    <header>
+        <a href="#" onclick="cargarContenido('./html/inicio.html')"><img src="imagenes/logo.png" id="logo"></a>
+        <img src="imagenes/titulo.png" id="titulo">
+    </header>
+    <nav class="navbar" id="myNavbar">
+        <a href="#" onclick="cargarContenido('./html/inicio.html')">Inicio</a>
+        <a href="#" onclick="cargarContenido('./html/uxui.html')">UI/UX</a>
+        <a href="#" onclick="cargarContenido('./html/servidor.html')">Servidor</a>
+        <a href="#" onclick="cargarContenido('./html/cliente.html')">Cliente</a>
+        <a href="#" onclick="cargarContenido('./html/recursos.html')">Recursos</a>
+        <a href="#" onclick="cargarContenido('./html/acercade.html')">Acerca de</a>
+    </nav>
+    <main id="contenido">
+
+    </main>
+    <footer>
+        <p>Valentín Fernández Guijarro</p>
+        <p>Última actualización:
+            <span id="lastUpdated">
+                <script>document.getElementById('lastUpdated').textContent = ultimaActualizacion();</script>
+            </span>
+        </p>
+    </footer>
+
+</body>
+
+</html>
