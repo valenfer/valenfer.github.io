@@ -193,7 +193,7 @@ nav a:hover {
 }
 
 .flecha:active{
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 }
 
 /* Fin estilos para tituos de las seciones*/
