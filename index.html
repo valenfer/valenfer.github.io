@@ -286,6 +286,7 @@
     <!--Seción footer-->
     <script src="./scripts/script.js"></script>
     <footer>
+        <p>Copyright: <span id="year"></span>
         <p>Valentín Fernández Guijarro</p>
     <p>valenfer71@gmail.com</p>  
     <div class="redes">
@@ -299,6 +300,10 @@
     </p>
 
     </footer>
+    <script>
+        const year=document.querySelector(·year);
+        year.innerHTML = new Date().getFullYear();
+    </script>
     
 </body>
 
