@@ -113,7 +113,7 @@ html {
 
 #inicio .contenido .presentacion h2 span {
     font-size: 30px;
-    color: #ff5000;
+    color: #d1f11a;
 }
 
 #inicio .contenido .presentacion .descripcion {
@@ -177,9 +177,6 @@ html {
     font-size: 22px;
     text-transform: uppercase;
     color: #111135;
-    text-decoration: underline;
-    text-decoration-color: #d3d3d3;
-    text-decoration-thickness: 5px;
 }
 
 #sobremi .sobremi h2 {
@@ -235,9 +232,6 @@ html {
     font-size: 22px;
     text-transform: uppercase;
     color: #111135;
-    text-decoration: underline;
-    text-decoration-color: var(--azul-oscuro);
-    text-decoration-thickness: 5px;
 }
 
 #servicios .fila {
@@ -298,9 +292,6 @@ html {
     font-size: 22px;
     text-transform: uppercase;
     color: #111135;
-    text-decoration: underline;
-    text-decoration-color: #d3d3d3;
-    text-decoration-thickness: 5px;
 }
 
 #portfolio .fila {
@@ -314,8 +305,6 @@ html {
     text-align: center;
     font-size: 18px;
     color: #111135;
-    text-decoration: underline;
-    text-decoration-color: #d3d3d3;
 }
 
 #portfolio .fila .proyecto {
@@ -387,8 +376,6 @@ html {
     font-size: 22px;
     text-transform: uppercase;
     color: #111135;
-    text-decoration: underline;
-    text-decoration-color: #d3d3d3;
 }
 
 #contacto {
@@ -431,7 +418,6 @@ footer a {
     color: #fff;
     display: inline-block;
     margin: 5px;
-    font-size: 26px;
   }
   
   .redes a img{
