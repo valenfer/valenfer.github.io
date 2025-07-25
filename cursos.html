@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reiniciando a Valentín...</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: #00ff9f;
+      font-family: monospace;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #111;
+      color: #0ff;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+      border-bottom: 1px solid #0ff;
+    }
+
+    .intro-text {
+      padding: 2rem;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .intro-text a {
+      color: inherit;
+      text-decoration: none;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      transition: color 0.2s;
+    }
+    .intro-text a:hover {
+      color: #0ff;
+      text-decoration: underline;
+    }
+
+    .terminal-window {
+      background: #000;
+      border: 1px solid #0ff;
+      margin: 2rem auto;
+      padding: 2rem;
+      width: 80%;
+      min-height: 300px;
+      box-shadow: 0 0 10px #0ff3;
+      position: relative;
+    }
+
+    .glitch:hover {
+      animation: glitchText 0.3s infinite;
+      color: #f0f;
+      text-shadow: 0 0 5px #0ff, 0 0 10px #f0f;
+    }
+
+    @keyframes glitchText {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-2px); }
+      40% { transform: translateX(2px); }
+      60% { transform: translateX(-1px); }
+      80% { transform: translateX(1px); }
+      100% { transform: translateX(0); }
+    }
+
+    #fakeCmds {
+      color: #0f0;
+      font-size: 0.9rem;
+      padding: 1rem;
+    }
+
+    .blue-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: #0000aa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      z-index: 1000;
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    #dontClick {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: none;
+      color: #0088ff;
+      border: 1px dashed #0088ff;
+      padding: 5px 10px;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    #matrixCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      display: none;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="matrixCanvas"></canvas>
+
+<header>🚧 CURSOS ENM ACTIVO 🚧</header>
+
+<div class="intro-text">
+  <a href="https://lms.santanderopenacademy.com/courses/1986/modules">Cursor Santander</a><br>
+  <a href="https://www.coursera.org/learn/troubleshooting-debugging-techniques/lecture/NYjwt/intro-to-module-2-slowness">Automatización Python Coursera</a>
+</div>
+
+<div class="terminal-window">
+  <span id="typed" class="glitch"></span>
+  <div id="fakeCmds"></div>
+</div>
+
+<button id="dontClick">No pulses aquí</button>
+
+<div class="blue-screen" id="blueScreen">
+  💥 ERROR 404: Portfolio demasiado cool para cargar.<br>
+  Reiniciando el carisma...<br><br>
+  <em>CTRL+ALT+CAFE para continuar ☕</em>
+</div>
+
+<audio id="typeSound" src="type.mp3" preload="auto"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  // Sonido
+  const typeSound = document.getElementById("typeSound");
+  new Typed('#typed', {
+    strings: [
+      "> boot sequence initiated...",
+      "> Analizando prácticas completadas ✅",
+      "> Descargando módulos: Python, GitHub, IA 🤖",
+      "> Refactorizando el sistema neuronal 💾",
+      "> Ejecutando script: ./reinicio_valentin.sh 🚀",
+      "> Cargando carisma.js y creatividad.css 🔥",
+      "> Tasa de café actual: 98% ☕",
+      "> Sistema en modo zen. Portfolio en reconstrucción...",
+      "> Versión 2.0 loading... prepárate 😎"
+    ],
+    typeSpeed: 40,
+    loop: false,
+    onStringTyped: () => {
+      typeSound.currentTime = 0;
+      typeSound.play();
+    }
+  });
+
+  // Comandos aleatorios
+  const fakeLines = [
+    "🧠 neural_net.training(epoch=42)",
+    "📦 installing: motivación.js",
+    "💡 ideaFactory.generate() => success",
+    "☕ Cargando café… hecho.",
+    "🕶️ Activando modo hacker oculto…",
+    "📁 creando directorio: /valentin/2.0/",
+    "🔐 ejecutando sudo apt install pasión"
+  ];
+
+  setInterval(() => {
+    const div = document.getElementById("fakeCmds");
+    const p = document.createElement("p");
+    p.textContent = fakeLines[Math.floor(Math.random() * fakeLines.length)];
+    div.appendChild(p);
+    if (div.childNodes.length > 10) div.removeChild(div.firstChild);
+  }, 6000);
+
+  // Matrix
+  const canvas = document.getElementById("matrixCanvas");
+  const ctx = canvas.getContext("2d");
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  const letters = "アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  const fontSize = 14;
+  let columns, drops;
+
+  function initMatrix() {
+    columns = Math.floor(canvas.width / fontSize);
+    drops = Array(columns).fill(1);
+  }
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0,0,0,0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#0F0";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  let matrixInterval = null;
+
+  function startMatrix() {
+    canvas.style.display = "block";
+    initMatrix();
+    if (matrixInterval) clearInterval(matrixInterval);
+    matrixInterval = setInterval(drawMatrix, 33);
+    setTimeout(() => {
+      clearInterval(matrixInterval);
+      canvas.style.display = "none";
+    }, 4000);
+  }
+
+  // Easter egg: pantalla azul + matrix
+  document.getElementById("dontClick").addEventListener("click", function () {
+    document.getElementById("blueScreen").style.display = "flex";
+    startMatrix();
+    setTimeout(() => {
+      document.getElementById("blueScreen").style.display = "none";
+    }, 4000);
+  });
+</script>
+</body>
+</html>
