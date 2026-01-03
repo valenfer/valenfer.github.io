@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cursos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .card .platform {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .card .description {
+            color: #666;
+            margin: 10px 0;
+        }
+        .card button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .card button:hover {
+            background-color: #218838;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .section {
+            padding: 20px 0;
+        }
+        .section-curriculums {
+            background-color: #e7f3ff;
+        }
+        .section-ciberseguridad {
+            background-color: #e8f5e8;
+        }
+        .section-ingles {
+            background-color: #fffde7;
+        }
+        .section-ia {
+            background-color: #ffebee;
+        }
+        .section-datos {
+            background-color: #f5f5f5;
+        }
+        .section-hosting {
+            background-color: #fce4ec;
+        }
+        .section-programacion {
+            background-color: #e0f7fa;
+        }
+        .section-libros {
+            background-color: #ffcdd2;
+        }
+        .section-herramientas {
+            background-color: #c8e6c9;
+        }
+        .section-bases-datos {
+            background-color: #d1c4e9;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: #333;">Gestión de Cursos y Recursos</h1>
+    
+    <div class="section section-curriculums">
+        <h2>Curriculums</h2>
+        <div class="container">
+            <div class="card">
+                <h3>Optimizar Curriculum con IA</h3>
+                <p class="platform">ResumeMatcher</p>
+                <p class="description">Optimiza tu CV usando inteligencia artificial.</p>
+                <a href="https://resumematcher.fyi/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>CV Harvard Style</h3>
+                <p class="platform">Enhancv</p>
+                <p class="description">Plantilla de CV en estilo Harvard.</p>
+                <a href="https://enhancv.com/es/plantillas-de-cv/harvard/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section section-ciberseguridad">
+        <h2>Cursos Ciberseguridad</h2>
+        <div class="container">
+            <div class="card">
+                <h3>Hacking Ético con Python</h3>
+                <p class="platform">Mega.nz</p>
+                <p class="description">Curso de hacking ético utilizando Python.</p>
+                <a href="https://mega.nz/folder/iGpSTDBL#u62EYZXb7KUy9w3HX1qMaw/folder/bSZGBLwT" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Awesome OSINT</h3>
+                <p class="platform">GitHub</p>
+                <p class="description">Lista de herramientas OSINT para pentesting, búsqueda inversa, red team, información, bug bounty.</p>
+                <a href="https://github.com/Astrosp/Awesome-OSINT-For-Everything/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section section-ingles">
+        <h2>Inglés</h2>
+        <div class="container">
+            <div class="card">
+                <h3>Practicar Pronunciación</h3>
+                <p class="platform">Elsa Speak</p>
+                <p class="description">Mejora tu pronunciación en inglés.</p>
+                <a href="https://elsaspeak.com/en/experience/#/exercise" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Curso B1 B2</h3>
+                <p class="platform">Google Drive</p>
+                <p class="description">Materiales para curso de inglés niveles B1-B2.</p>
+                <a href="https://drive.google.com/drive/u/0/folders/1-01_4gn3aLDX-1IYxcVi3bJ5NuMFTpWM" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Certificados de Inglés para Programadores</h3>
+                <p class="platform">FreeCodeCamp</p>
+                <p class="description">Certificados gratuitos de inglés para desarrolladores: Principiante (A2) e Intermedio (B1), con ejercicios y examen.</p>
+                <a href="https://www.freecodecamp.org/news/freecodecamps-b1-english-for-developers-certification-is-now-live/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section section-ia">
+        <h2>IA</h2>
+        <div class="container">
+            <div class="card">
+                <h3>Presentación Curso IA beJobs</h3>
+                <p class="platform">Canva</p>
+                <p class="description">Presentación para curso de IA en beJobs.</p>
+                <a href="https://www.canva.com/design/DAGkvR6jB6k/jMcrQLkzpbgFuYelTShkRg/edit" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>App Móviles IA India</h3>
+                <p class="platform">Rocket.new</p>
+                <p class="description">Aplicación para crear apps móviles con IA.</p>
+                <a href="https://www.rocket.new/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Imágenes Gratis Ilimitadas</h3>
+                <p class="platform">GenTube</p>
+                <p class="description">Genera imágenes gratis e ilimitadas.</p>
+                <a href="https://www.gentube.app/home" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Genérica con Texto y Documentos Gratuita</h3>
+                <p class="platform">AI-Kimi</p>
+                <p class="description">Herramienta IA genérica para texto y documentos, gratuita.</p>
+                <a href="https://ai-kimi.net/es/inicio/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Generación de Video Gratis como Veo 3</h3>
+                <p class="platform">HailuoAI</p>
+                <p class="description">Genera videos gratis similares a Veo 3.</p>
+                <a href="https://hailuoai.video/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>IA Generativa para Educadores</h3>
+                <p class="platform">Google</p>
+                <p class="description">Curso sobre inteligencia artificial generativa para educadores.</p>
+                <a href="https://edu.exceedlms.com/student/path/1722666-ia-generativa-para-educadores" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Construir un Cerebro en 10 Minutos</h3>
+                <p class="platform">Nvidia</p>
+                <p class="description">Curso para construir una IA en 10 minutos.</p>
+                <a href="https://www.infobae.com/tecno/2024/10/26/cinco-cursos-de-nvidia-gratuitos-para-aprender-inteligencia-artificial-en-menos-de-un-dia/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Creación de Diseños con IA</h3>
+                <p class="platform">Adobe</p>
+                <p class="description">Curso de creación de diseños utilizando IA.</p>
+                <a href="https://ed.team/cursos/firefly" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Crear Shorts de YouTube con IA</h3>
+                <p class="platform">SendShort</p>
+                <p class="description">Herramienta para crear Shorts de YouTube con IA.</p>
+                <a href="https://sendshort.ai/es/tools/short-video/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Certificación IA IBM</h3>
+                <p class="platform">IBM</p>
+                <p class="description">Curso de certificación en inteligencia artificial por IBM.</p>
+                <a href="https://aprendergratis.es/cursos-online/curso-sobre-certificacion-sobre-inteligencia-artificial-ibm/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>ChatGPT para Enseñanza</h3>
+                <p class="platform">Red de Universidades Anáhuac</p>
+                <p class="description">Curso de ChatGPT orientado a la enseñanza y docentes.</p>
+                <a href="https://aprendergratis.es/cursos-online/curso-de-chatgpt-orientado-a-la-ensenanza-y-a-docentes/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Ingeniería de Prompts en ChatGPT para Derecho</h3>
+                <p class="platform">Vanderbilt University</p>
+                <p class="description">Curso de ingeniería de prompts en ChatGPT para el área del derecho.</p>
+                <a href="https://aprendergratis.es/cursos-online/curso-de-ingenieria-de-prompts-en-chatgpt-para-derecho/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Implementar Soluciones IA en Empresa</h3>
+                <p class="platform">Datacamp</p>
+                <p class="description">Curso para implementar soluciones de IA en una empresa.</p>
+                <a href="https://www.datacamp.com/es/courses/implementing-ai-solutions-in-business" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>IA para Planificación Financiera</h3>
+                <p class="platform">U. Illinois</p>
+                <p class="description">Curso de IA para planificación financiera.</p>
+                <a href="https://online.professional.uchicago.edu/es/curso/inteligencia-artificial-y-data-science/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Crear tu Propia IA</h3>
+                <p class="platform">Duke</p>
+                <p class="description">Curso para crear tu propia inteligencia artificial.</p>
+                <a href="https://aprendergratis.es/cursos-online/curso-crear-propia-inteligencia-artificial/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Galería de Proyectos IA</h3>
+                <p class="platform">GitHub</p>
+                <p class="description">Galería de 28+ aplicaciones reales de IA para clonar, ejecutar y adaptar.</p>
+                <a href="https://github.com/KalyanM45/AI-Project-Gallery" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Groq API</h3>
+                <p class="platform">Groq</p>
+                <p class="description">API gratuita con modelos de IA: 1000 peticiones/día, Qwen 3, Kimi K2, Llama, audio, voz.</p>
+                <a href="https://groq.com/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>VibeVoice</h3>
+                <p class="platform">Microsoft</p>
+                <p class="description">Modelo Open Source para generar voz en tiempo real, baja latencia, 9 idiomas incluyendo español.</p>
+                <a href="https://github.com/microsoft/VibeVoice" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section section-datos">
+        <h2>Datos</h2>
+        <div class="container">
+            <div class="card">
+                <h3>JSON Crack</h3>
+                <p class="platform">JSON Crack</p>
+                <p class="description">Muestra JSON de forma visual.</p>
+                <a href="https://jsoncrack.com/editor" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Data Squirrel</h3>
+                <p class="platform">Data Squirrel</p>
+                <p class="description">Análisis de datos.</p>
+                <a href="https://app.datasquirrel.ai" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Opal</h3>
+                <p class="platform">Google</p>
+                <p class="description">Crear app (solo en EEUU).</p>
+                <a href="https://opal.withgoogle" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section section-hosting">
+        <h2>Hosting</h2>
+        <div class="container">
+            <div class="card">
+                <h3>Vercel</h3>
+                <p class="platform">Vercel</p>
+                <p class="description">Webs de JavaScript, Next, Vue, etc. Proyectos ilimitados (100GB de transferencia).</p>
+                <a href="https://vercel.com" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Northflank</h3>
+                <p class="platform">Northflank</p>
+                <p class="description">Proyectos de Go, Rust, Java... (Compatible Dockerfile). Sin coste para 2 servicios y 2 cronjobs.</p>
+                <a href="https://northflank.com" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Zeabur</h3>
+                <p class="platform">Zeabur</p>
+                <p class="description">Compatible con cualquier lenguaje y framework. 1 proyecto gratis (no requiere tarjeta de crédito).</p>
+                <a href="https://zeabur.com" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Render</h3>
+                <p class="platform">Render</p>
+                <p class="description">Bases de datos PostgreSQL, sitios estáticos y Dockerfiles. 100GB de ancho de banda.</p>
+                <a href="https://render.com" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Netlify</h3>
+                <p class="platform">Netlify</p>
+                <p class="description">Webs de JavaScript, Next, Vue, etc. Proyectos ilimitados (100GB de transferencia).</p>
+                <a href="https://netlify.com" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section section-bases-datos">
+        <h2>Bases de Datos</h2>
+        <div class="container">
+            <div class="card">
+                <h3>Certificación de Bases de Datos</h3>
+                <p class="platform">FreeCodeCamp</p>
+                <p class="description">Certificación gratuita de SQL y PostgreSQL con 5 proyectos prácticos y examen final.</p>
+                <a href="https://www.freecodecamp.org/learn/relational-databases-v9/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section section-programacion">
+        <h2>Programación</h2>
+        <div class="container">
+            <div class="card">
+                <h3>Certificado Profesional de Python Microsoft</h3>
+                <p class="platform">Coursera</p>
+                <p class="description">6 cursos completos: fundamentos a profesional, data analysis, automatización, web, IA generativa, despliegue en nube, proyectos reales.</p>
+                <a href="https://www.coursera.org/professional-certificates/microsoft-python-developer?irclickid=03rUa6XrhxycWVU1Ilw2pzP6UkpV9L2RSymDXc0&irgwc=1&afsrc=1&utm_medium=partners&utm_source=impact&utm_campaign=2662387&utm_content=b2c&utm_campaignid=midudev&utm_term=14726_TS_1164545_" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>20 Cursos Certificados Python Microsoft</h3>
+                <p class="platform">Coursera</p>
+                <p class="description">Certificados de programación en Python por Microsoft.</p>
+                <a href="https://www.coursera.org/professional-certificates/microsoft-python-developer?irclickid=03rUa6XrhxycWVU1Ilw2pzP6UkpV9LQpSymDXc0&irgwc=1&afsrc=1&utm_medium=partners&utm_source=impact&utm_campaign=2550109&utm_content=b2c&utm_campaignid=Brais%20Moure%20Morais&utm_term=14726_SI_1164545_" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section section-libros">
+        <h2>Libros</h2>
+        <div class="container">
+            <div class="card">
+                <h3>Libros Censurados</h3>
+                <p class="platform">Google Drive</p>
+                <p class="description">Colección de libros censurados.</p>
+                <a href="https://drive.google.com/drive/folders/1hHsXEd_SDRK5_K82toWwRdxGwfUB_WmE?fbclid=IwAR069CFNiK18PtI4TZfTM3euyWaJ8VxNHTfjfs98yr1lXzQ6SR0WBNkFijI" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+            <div class="card">
+                <h3>Pack Audiolibros Gratis</h3>
+                <p class="platform">Google Drive</p>
+                <p class="description">Más de 2000 audiolibros gratis: clásicos, contemporáneos, temas variados.</p>
+                <a href="https://drive.google.com/drive/folders/1eNIi91KWHTQur90rhSM5vevtIsgC_jsq" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section section-herramientas">
+        <h2>Herramientas</h2>
+        <div class="container">
+            <div class="card">
+                <h3>Fake Name Generator</h3>
+                <p class="platform">Fake Name Generator</p>
+                <p class="description">Genera nombres, direcciones, números de seguridad social, tarjetas de crédito, ocupaciones, números de seguimiento UPS, etc., gratis.</p>
+                <a href="https://www.fakenamegenerator.com/" target="_blank"><button>Ir al Enlace</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
