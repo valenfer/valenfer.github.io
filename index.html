@@ -1,370 +1,370 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
- 
-<title>Reiniciando a Valentín...</title>
-  <style>
-    body {
-      margin: 0;
-     
-background: black;
-      color: #00ff9f;
-      font-family: monospace;
-      overflow-x:
-hidden;
-    }
+     <meta charset="UTF-8">
 
-    header {
-      background: #111;
-      color: #0ff;
-     
-padding: 1.5rem;
-      text-align: center;
-      font-size: 1.8rem;
-     
-border-bottom: 1px solid #0ff;
-    }
+     <title>Reiniciando a Valentín...</title>
+     <style>
+          body {
+               margin: 0;
 
-    .intro-text {
-      padding: 2rem;
-     
-font-size: 1.2rem;
-      max-width: 800px;
-      margin: auto;
-      line-height:
-1.6;
-    }
+               background: black;
+               color: #00ff9f;
+               font-family: monospace;
+               overflow-x:
+                    hidden;
+          }
 
-    .intro-text a {
-      color: inherit;
-      text-decoration: none;
+          header {
+               background: #111;
+               color: #0ff;
 
-     font-family: inherit;
-      font-size: inherit;
-      line-height:
-inherit;
-      transition: color 0.2s;
-    }
-    .intro-text a:hover {
-      color:
-#0ff;
-      text-decoration: underline;
-    }
+               padding: 1.5rem;
+               text-align: center;
+               font-size: 1.8rem;
 
-    .terminal-window {
-     
-background: #000;
-      border: 1px solid #0ff;
-      margin: 2rem auto;
-      padding:
-2rem;
-      width: 80%;
-      min-height: 300px;
-      box-shadow: 0 0 10px
-#0ff3;
-      position: relative;
-    }
+               border-bottom: 1px solid #0ff;
+          }
 
-    .glitch:hover {
-      animation:
-glitchText 0.3s infinite;
-      color: #f0f;
-      text-shadow: 0 0 5px #0ff, 0 0 10px
-#f0f;
-    }
+          .intro-text {
+               padding: 2rem;
 
-    @keyframes glitchText {
-      0% { transform: translateX(0);
-}
-      20% { transform: translateX(-2px); }
-      40% { transform:
-translateX(2px); }
-      60% { transform: translateX(-1px); }
-      80% { transform:
-translateX(1px); }
-      100% { transform: translateX(0); }
-    }
+               font-size: 1.2rem;
+               max-width: 800px;
+               margin: auto;
+               line-height:
+                    1.6;
+          }
 
-    #fakeCmds {
-     
-color: #0f0;
-      font-size: 0.9rem;
-      padding: 1rem;
-    }
+          .intro-text a {
+               color: inherit;
+               text-decoration: none;
 
-   
-.blue-screen {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height:
-100vh;
-      background-color: #0000aa;
-      color: white;
-      display:
-flex;
-      align-items: center;
-      justify-content: center;
-      font-size:
-1.5rem;
-      z-index: 1000;
-      display: none;
-      text-align: center;
-     
-padding: 2rem;
-    }
+               font-family: inherit;
+               font-size: inherit;
+               line-height:
+                    inherit;
+               transition: color 0.2s;
+          }
 
-    #dontClick {
-      position: fixed;
-      bottom: 10px;
+          .intro-text a:hover {
+               color:
+                    #0ff;
+               text-decoration: underline;
+          }
 
-     right: 10px;
-      background: none;
-      color: #0088ff;
-      border:
-1px dashed #0088ff;
-      padding: 5px 10px;
-      cursor: pointer;
-     
-z-index: 1100;
-    }
+          .terminal-window {
 
-    #matrixCanvas {
-      position: fixed;
-      top: 0;
-     
-left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 999;
-      display: none;
-      pointer-events: none;
-   
-}
+               background: #000;
+               border: 1px solid #0ff;
+               margin: 2rem auto;
+               padding:
+                    2rem;
+               width: 80%;
+               min-height: 300px;
+               box-shadow: 0 0 10px #0ff3;
+               position: relative;
+          }
 
-    .recursos-button {
-      text-align: center;
-      margin: 2rem 0;
-    }
+          .glitch:hover {
+               animation:
+                    glitchText 0.3s infinite;
+               color: #f0f;
+               text-shadow: 0 0 5px #0ff, 0 0 10px #f0f;
+          }
 
-    .recursos-button a {
-      display: inline-block;
-      background: #0ff;
-      color: #000;
-      padding: 15px 30px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1.2rem;
-      border: 2px solid #0ff;
-      transition: all 0.3s;
-      box-shadow: 0 0 10px #0ff3;
-    }
+          @keyframes glitchText {
+               0% {
+                    transform: translateX(0);
+               }
 
-    .recursos-button a:hover {
-      background: #000;
-      color: #0ff;
-      box-shadow: 0 0 20px #0ff;
-      transform: scale(1.05);
-    }
-  </style>
+               20% {
+                    transform: translateX(-2px);
+               }
+
+               40% {
+                    transform:
+                         translateX(2px);
+               }
+
+               60% {
+                    transform: translateX(-1px);
+               }
+
+               80% {
+                    transform:
+                         translateX(1px);
+               }
+
+               100% {
+                    transform: translateX(0);
+               }
+          }
+
+          #fakeCmds {
+
+               color: #0f0;
+               font-size: 0.9rem;
+               padding: 1rem;
+          }
+
+
+          .blue-screen {
+               position: fixed;
+               top: 0;
+               left: 0;
+               width: 100vw;
+               height:
+                    100vh;
+               background-color: #0000aa;
+               color: white;
+               display:
+                    flex;
+               align-items: center;
+               justify-content: center;
+               font-size:
+                    1.5rem;
+               z-index: 1000;
+               display: none;
+               text-align: center;
+
+               padding: 2rem;
+          }
+
+          #dontClick {
+               position: fixed;
+               bottom: 10px;
+
+               right: 10px;
+               background: none;
+               color: #0088ff;
+               border:
+                    1px dashed #0088ff;
+               padding: 5px 10px;
+               cursor: pointer;
+
+               z-index: 1100;
+          }
+
+          #matrixCanvas {
+               position: fixed;
+               top: 0;
+
+               left: 0;
+               width: 100vw;
+               height: 100vh;
+               z-index: 999;
+               display: none;
+               pointer-events: none;
+
+          }
+
+          .recursos-button {
+               text-align: center;
+               margin: 2rem 0;
+          }
+
+          .recursos-button a {
+               display: inline-block;
+               background: #0ff;
+               color: #000;
+               padding: 15px 30px;
+               text-decoration: none;
+               border-radius: 8px;
+               font-weight: bold;
+               font-size: 1.2rem;
+               border: 2px solid #0ff;
+               transition: all 0.3s;
+               box-shadow: 0 0 10px #0ff3;
+          }
+
+          .recursos-button a:hover {
+               background: #000;
+               color: #0ff;
+               box-shadow: 0 0 20px #0ff;
+               transform: scale(1.05);
+          }
+     </style>
 </head>
+
 <body>
 
-<canvas id="matrixCanvas"></canvas>
+     <canvas id="matrixCanvas"></canvas>
 
-<header>🚧
-CURSOS EN ACTIVO 🚧</header>
+     <header>🚧CURSOS EN ACTIVO 🚧</header>
 
-<div class="intro-text">
-  <a
-href="https://campus.e4you.org/course/view.php?id=165">CIBERWORLD</a><br>
-  <a
-href="https://www.efundae.es/course/view.php?id=906">Desarrollo web. Frameworks: Frameworks</a><br>
-  <a
-href="https://cursos.raiola.link/cursos/masterclass-de-automatizaciones-con-ia/">Masterclass de
-automatizaciones con IA</a><br>
-  <a
-href="https://cursos.raiola.link/cursos/curso-de-automatizaciones-con-n8n-e-inteligencia-artificial//">Curso de automatizaciones
-con N8N e Inteligencia Artificial</a><br>
-  <a
-href="https://www.coursera.org/learn/troubleshooting-debugging-techniques/lecture/NYjwt/intro-to-module-2-slowness">Automatización Python Coursera</a><br>
-  <a
-href="https://educacionadistancia.juntadeandalucia.es/formacionprofesional/my/courses.php">Ciberseguridad</a><br>
+     <div class="intro-text">
+          <a href="https://campus.e4you.org/course/view.php?id=165">CIBERWORLD</a><br>
+          <a href="https://www.efundae.es/course/view.php?id=906">Desarrollo web. Frameworks: Frameworks</a><br>
+          <a href="https://cursos.raiola.link/cursos/masterclass-de-automatizaciones-con-ia/">Masterclass de
+               automatizaciones con IA</a><br>
+          <a href="https://cursos.raiola.link/cursos/curso-de-automatizaciones-con-n8n-e-inteligencia-artificial//">Curso
+               de automatizaciones
+               con N8N e Inteligencia Artificial</a><br>
+          <a href="https://www.coursera.org/learn/troubleshooting-debugging-techniques/lecture/NYjwt/intro-to-module-2-slowness">Automatización
+               Python Coursera</a><br>
+          <a href="https://educacionadistancia.juntadeandalucia.es/formacionprofesional/my/courses.php">Ciberseguridad</a><br>
 
- <a href="https://cursos.raiola.link/">Raiola automatizaciones</a><br>
-  <a
-href="https://developer.microsoft.com/en-us/reactor/events/26545/">Python + MCP:
-Construyendo servidores MCP con FastMCP</a><br>
-  <a
-href="https://developer.microsoft.com/en-us/reactor/events/26546/">[Python + MCP: De local a producción]
-Depliegue a la nube</a><br>
-  <a
-href="https://developer.microsoft.com/en-us/reactor/events/26547/">Python + MCP: De local a producción] Autenticación para
-servidores MCP</a><br>
-  
-<a href="https://skills.yourlearning.ibm.com/activity/PLAN-9380EC6615C4?ngo-id=0258">Certificado de analítica de datos de IBM SkillsBuild</a><br>
-</div>
+          <a href="https://cursos.raiola.link/">Raiola automatizaciones</a><br>
+          <a href="https://developer.microsoft.com/en-us/reactor/events/26545/">Python + MCP:
+               Construyendo servidores MCP con FastMCP</a><br>
+          <a href="https://developer.microsoft.com/en-us/reactor/events/26546/">[Python + MCP: De local a producción]
+               Depliegue a la nube</a><br>
+          <a href="https://developer.microsoft.com/en-us/reactor/events/26547/">Python + MCP: De local a producción]
+               Autenticación para
+               servidores MCP</a><br>
+          <a href="https://skills.yourlearning.ibm.com/activity/PLAN-9380EC6615C4?ngo-id=0258">Certificado de analítica
+               de datos de IBM SkillsBuild</a><br>
+     </div>
 
 
 
-<div class="recursos-button">
-  <a href="enlaces.html">Recursos</a>
-</div>
+     <div class="recursos-button">
+          <a href="enlaces.html">Recursos</a>
+     </div>
 
-<div class="terminal-window">
-  <span id="typed"
-class="glitch"></span>
-  <div id="fakeCmds"></div>
-</div>
+     <div class="terminal-window">
+          <span id="typed" class="glitch"></span>
+          <div id="fakeCmds"></div>
+     </div>
 
-<button id="dontClick">No
-pulses aquí</button>
+     <button id="dontClick">No
+          pulses aquí</button>
 
-<div class="blue-screen" id="blueScreen">
-  💥 ERROR 404:
-Portfolio demasiado cool para cargar.<br>
-  Reiniciando el carisma...<br><br>
- 
-<em>CTRL+ALT+CAFE para continuar ☕</em>
-</div>
+     <div class="blue-screen" id="blueScreen">
+          💥 ERROR 404:
+          Portfolio demasiado cool para cargar.<br>
+          Reiniciando el carisma...<br><br>
 
-<audio id="typeSound"
-src="type.mp3" preload="auto"></audio>
+          <em>CTRL+ALT+CAFE para continuar ☕</em>
+     </div>
 
-<script
-src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  // Sonido
-  const typeSound =
-document.getElementById("typeSound");
-  new Typed('#typed', {
-    strings: [
-      "> boot sequence initiated...",
-      "> Analizando prácticas completadas ✅",
-      "> Descargando módulos: Python, GitHub, IA 🤖",
-      "> Refactorizando el sistema neuronal 💾",
-      "> Ejecutando script: ./reinicio_valentin.sh 🚀",
-      "> Cargando carisma.js y creatividad.css 🔥",
-      "> Tasa de café actual: 98% ☕",       ">Sistema en modo zen. Portfolio en reconstrucción...",       "> Versión 2.0 loading... prepárate 😎"
-    ],
-    typeSpeed: 40,
-    loop: false,
-    onStringTyped:
-() => {
-      typeSound.currentTime = 0;
-      typeSound.play();
-    }
-  });
+     <audio id="typeSound" src="type.mp3" preload="auto"></audio>
 
- 
-// Comandos aleatorios
-  const fakeLines = [  "🧠neural_net.training(epoch=42)", "📦 installing: motivación.js",     "💡 ideaFactory.generate() => success",
-    "☕ Cargando café… hecho.",
-    "🕶️ Activando modo hacker oculto…",
-    "📁 creando directorio: /valentin/2.0/",
-    "🔐 ejecutando sudo apt install pasión"
-  ];
+     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+     <script>
+          // Sonido
+          const typeSound =
+               document.getElementById("typeSound");
+          new Typed('#typed', {
+               strings: [
+                    "> boot sequence initiated...",
+                    "> Analizando prácticas completadas ✅",
+                    "> Descargando módulos: Python, GitHub, IA 🤖",
+                    "> Refactorizando el sistema neuronal 💾",
+                    "> Ejecutando script: ./reinicio_valentin.sh 🚀",
+                    "> Cargando carisma.js y creatividad.css 🔥",
+                    "> Tasa de café actual: 98% ☕", ">Sistema en modo zen. Portfolio en reconstrucción...", "> Versión 2.0 loading... prepárate 😎"
+               ],
+               typeSpeed: 40,
+               loop: false,
+               onStringTyped:
+                    () => {
+                         typeSound.currentTime = 0;
+                         typeSound.play();
+                    }
+          });
 
-  setInterval(() => {
-    const div =
-document.getElementById("fakeCmds");
-    const p = document.createElement("p");
-    p.textContent =
-fakeLines[Math.floor(Math.random() * fakeLines.length)];
-    div.appendChild(p);
-    if
-(div.childNodes.length > 10) div.removeChild(div.firstChild);
-  }, 6000);
 
-  //
-Matrix
-  const canvas = document.getElementById("matrixCanvas");
-  const ctx =
-canvas.getContext("2d");
+          // Comandos aleatorios
+          const fakeLines = ["🧠neural_net.training(epoch=42)", "📦 installing: motivación.js", "💡 ideaFactory.generate() => success",
+               "☕ Cargando café… hecho.",
+               "🕶️ Activando modo hacker oculto…",
+               "📁 creando directorio: /valentin/2.0/",
+               "🔐 ejecutando sudo apt install pasión"
+          ];
 
-  function resizeCanvas() {
-    canvas.width =
-window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
+          setInterval(() => {
+               const div =
+                    document.getElementById("fakeCmds");
+               const p = document.createElement("p");
+               p.textContent =
+                    fakeLines[Math.floor(Math.random() * fakeLines.length)];
+               div.appendChild(p);
+               if
+                    (div.childNodes.length > 10) div.removeChild(div.firstChild);
+          }, 6000);
 
- 
-window.addEventListener("resize", resizeCanvas);
-  resizeCanvas();
+          //
+          Matrix
+          const canvas = document.getElementById("matrixCanvas");
+          const ctx =
+               canvas.getContext("2d");
 
-  const letters =
-"アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-  const fontSize = 14;
-  let columns,
-drops;
+          function resizeCanvas() {
+               canvas.width =
+                    window.innerWidth;
+               canvas.height = window.innerHeight;
+          }
 
-  function initMatrix() {
-    columns = Math.floor(canvas.width /
-fontSize);
-    drops = Array(columns).fill(1);
-  }
 
-  function drawMatrix() {
-   
-ctx.fillStyle = "rgba(0,0,0,0.05)";
-    ctx.fillRect(0, 0, canvas.width,
-canvas.height);
-    ctx.fillStyle = "#0F0";
-    ctx.font = fontSize + "px monospace";
-for (let i = 0; i < drops.length; i++) {
-      const text =
-letters[Math.floor(Math.random() * letters.length)];
-      ctx.fillText(text, i * fontSize, drops[i]
-* fontSize);
-      if (drops[i] * fontSize > canvas.height || Math.random() >
-0.975) {
-        drops[i] = 0;
-      }
-      drops[i]++;
-    }
-  }
+          window.addEventListener("resize", resizeCanvas);
+          resizeCanvas();
 
-  let
-matrixInterval = null;
+          const letters =
+               "アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+          const fontSize = 14;
+          let columns,
+               drops;
 
-  function startMatrix() {
-    canvas.style.display = "block";
- 
-  initMatrix();
-    if (matrixInterval) clearInterval(matrixInterval);
-   
-matrixInterval = setInterval(drawMatrix, 33);
-    setTimeout(() => {
-     
-clearInterval(matrixInterval);
-      canvas.style.display = "none";
-    }, 4000);
-  }
+          function initMatrix() {
+               columns = Math.floor(canvas.width /
+                    fontSize);
+               drops = Array(columns).fill(1);
+          }
 
- 
-// Easter egg: pantalla azul + matrix
- 
-document.getElementById("dontClick").addEventListener("click", function () {
-   
-document.getElementById("blueScreen").style.display = "flex";
-    startMatrix();
-    setTimeout(() => {
-     
-document.getElementById("blueScreen").style.display = "none";
-    }, 4000);
- 
-});
-</script>
+          function drawMatrix() {
+
+               ctx.fillStyle = "rgba(0,0,0,0.05)";
+               ctx.fillRect(0, 0, canvas.width,
+                    canvas.height);
+               ctx.fillStyle = "#0F0";
+               ctx.font = fontSize + "px monospace";
+               for (let i = 0; i < drops.length; i++) {
+                    const text =
+                         letters[Math.floor(Math.random() * letters.length)];
+                    ctx.fillText(text, i * fontSize, drops[i]
+                         * fontSize);
+                    if (drops[i] * fontSize > canvas.height || Math.random() >
+                         0.975) {
+                         drops[i] = 0;
+                    }
+                    drops[i]++;
+               }
+          }
+
+          let
+               matrixInterval = null;
+
+          function startMatrix() {
+               canvas.style.display = "block";
+
+               initMatrix();
+               if (matrixInterval) clearInterval(matrixInterval);
+
+               matrixInterval = setInterval(drawMatrix, 33);
+               setTimeout(() => {
+
+                    clearInterval(matrixInterval);
+                    canvas.style.display = "none";
+               }, 4000);
+          }
+
+
+          // Easter egg: pantalla azul + matrix
+
+          document.getElementById("dontClick").addEventListener("click", function () {
+
+               document.getElementById("blueScreen").style.display = "flex";
+               startMatrix();
+               setTimeout(() => {
+
+                    document.getElementById("blueScreen").style.display = "none";
+               }, 4000);
+
+          });
+     </script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
