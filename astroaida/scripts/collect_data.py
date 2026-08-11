@@ -391,6 +391,13 @@ def fetch_astronomy_moon(app_id: str, app_secret: str, timeout: int = 10,
     today = astronomy_now().strftime('%Y-%m-%d')
     payload = {
         'format': 'png',
+        'style': {
+            'moonStyle': 'default',
+            'backgroundStyle': 'stars',
+            'backgroundColor': 'black',
+            'headingColor': 'white',
+            'textColor': 'white',
+        },
         'observer': {
             'latitude': OBSERVER_LATITUDE,
             'longitude': OBSERVER_LONGITUDE,

@@ -687,7 +687,13 @@ class TestFetchFunctions(unittest.TestCase):
         self.assertEqual(payload['observer']['longitude'], -5.97317)
         self.assertEqual(payload['observer']['date'], '2026-08-11')
         self.assertEqual(payload['view']['type'], 'portrait-simple')
-        self.assertNotIn('style', payload)
+        self.assertEqual(payload['style'], {
+            'moonStyle': 'default',
+            'backgroundStyle': 'stars',
+            'backgroundColor': 'black',
+            'headingColor': 'white',
+            'textColor': 'white',
+        })
         self.assertNotIn('elevation', payload['observer'])
         self.assertEqual(mock_fetch.call_args[1]['label'], 'AstronomyAPI moon')
 
