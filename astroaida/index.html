@@ -24,6 +24,16 @@
     <p class="site-header__subtitle">Observación astronómica para <span data-role="observer-label">Sevilla</span> · 37.38283, -5.97317 · 0 m</p>
   </header>
 
+  <nav class="site-nav" aria-label="Secciones de la página">
+    <ul class="site-nav__list">
+      <li class="site-nav__item"><a class="site-nav__link" href="#apod">Astronomía del día</a></li>
+      <li class="site-nav__item"><a class="site-nav__link" href="#sky-today">Cielo hoy</a></li>
+      <li class="site-nav__item"><a class="site-nav__link" href="#moon">Luna</a></li>
+      <li class="site-nav__item"><a class="site-nav__link" href="#star-chart">Carta celeste</a></li>
+      <li class="site-nav__item"><a class="site-nav__link" href="#near-earth">Asteroides</a></li>
+    </ul>
+  </nav>
+
   <aside class="data-status" id="data-status" role="status" aria-live="polite" aria-atomic="true">
     <h2 class="visually-hidden">Estado de los datos</h2>
     <p class="data-status__summary">Cargando datos…</p>
@@ -38,7 +48,7 @@
       </div>
     </noscript>
 
-    <section class="module module--apod" aria-labelledby="apod-title">
+    <section class="module module--apod" id="apod" aria-labelledby="apod-title">
       <header class="module__header">
         <p class="module__eyebrow">Astronomía del día</p>
         <h2 class="module__title" id="apod-title">Imagen astronómica del día</h2>
@@ -48,7 +58,7 @@
       </div>
     </section>
 
-    <section class="module" aria-labelledby="sky-today-title">
+    <section class="module" id="sky-today" aria-labelledby="sky-today-title">
       <header class="module__header">
         <p class="module__eyebrow">Cielo hoy</p>
         <h2 class="module__title" id="sky-today-title">Posiciones actuales</h2>
@@ -58,7 +68,7 @@
       </div>
     </section>
 
-    <section class="module" aria-labelledby="moon-title">
+    <section class="module" id="moon" aria-labelledby="moon-title">
       <header class="module__header">
         <p class="module__eyebrow">Luna</p>
         <h2 class="module__title" id="moon-title">Fase lunar</h2>
@@ -68,7 +78,7 @@
       </div>
     </section>
 
-    <section class="module" aria-labelledby="star-chart-title">
+    <section class="module" id="star-chart" aria-labelledby="star-chart-title">
       <header class="module__header">
         <p class="module__eyebrow">Carta celeste</p>
         <h2 class="module__title" id="star-chart-title">Mapa del cielo</h2>
@@ -78,7 +88,7 @@
       </div>
     </section>
 
-    <section class="module" aria-labelledby="near-earth-title">
+    <section class="module" id="near-earth" aria-labelledby="near-earth-title">
       <header class="module__header">
         <p class="module__eyebrow">Objetos cercanos</p>
         <h2 class="module__title" id="near-earth-title">Asteroides próximos</h2>
@@ -101,6 +111,7 @@
     </ul>
   </footer>
 
+  <script src="moon-renderer.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>

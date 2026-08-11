@@ -26,9 +26,11 @@ Desde la raíz del repositorio:
 
 ```bash
 python -m unittest discover -s astroaida/tests -v
+node --test astroaida/tests/test_moon_renderer.js
 python astroaida/scripts/validate_site.py
 python -m py_compile astroaida/scripts/collect_data.py astroaida/scripts/validate_site.py
 node --check astroaida/main.js
+node --check astroaida/moon-renderer.js
 ```
 
 El validador comprueba: archivos requeridos, JSON bien formado, metadatos
@@ -97,6 +99,7 @@ JSON normalizado local, producido por el recopilador en el servidor/CI.
 astroaida/
 ├── index.html
 ├── styles.css
+├── moon-renderer.js        # renderer UMD del disco lunar (canvas, sin dependencias)
 ├── main.js
 ├── assets/favicon.svg
 ├── data/                  # cinco JSON normalizados (muestra o en vivo)

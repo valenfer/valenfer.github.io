@@ -26,7 +26,8 @@ def valid_data(name):
         },
         'moon.json': {
             'source': 'AstronomyAPI', 'fetched_at': '2026-08-11T12:00:00+00:00', 'status': 'preview',
-            'phase': 'Gibosa creciente', 'illumination': 0.78,
+            'phase': 'Gibosa creciente', 'illumination': 0.78, 'distance_km': 378500.0,
+            'image_url': 'https://widgets.astronomyapi.com/moon-phase/generated/20260811.png',
             'observer': {'latitude': 37.38283, 'longitude': -5.97317, 'elevation': 0, 'label': 'Sevilla'},
         },
         'star-chart.json': {
@@ -61,6 +62,7 @@ VALID_HTML = """<!doctype html>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <main id="contenido"><h1>AstroAIDA</h1></main>
+<script src="moon-renderer.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
@@ -86,6 +88,7 @@ class TestValidateSite(unittest.TestCase):
     def build_valid_site(self):
         self.write('index.html', VALID_HTML)
         self.write('styles.css', 'body { color: #e8e6df; }')
+        self.write('moon-renderer.js', "'use strict';\nconst MOON = {};\n")
         self.write('main.js', "'use strict';\nconst DATA = 'data/';\n")
         self.write('assets/favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg"></svg>')
         for name in ('apod.json', 'sky-today.json', 'moon.json', 'star-chart.json', 'near-earth.json'):
@@ -95,6 +98,7 @@ class TestValidateSite(unittest.TestCase):
         errors = validate_site(self.root)
         self.assertTrue(any('index.html' in e for e in errors))
         self.assertTrue(any('styles.css' in e for e in errors))
+        self.assertTrue(any('moon-renderer.js' in e for e in errors))
         self.assertTrue(any('assets/favicon.svg' in e for e in errors))
         self.assertTrue(any('data/apod.json' in e for e in errors))
 
@@ -178,6 +182,30 @@ class TestValidateSite(unittest.TestCase):
         self.write('index.html', VALID_HTML.replace('href="styles.css"', 'href="missing.css"'))
         errors = validate_site(self.root)
         self.assertTrue(any('missing.css' in e for e in errors))
+
+    def test_moon_json_requires_image_url_for_compatibility(self):
+        self.build_valid_site()
+        data = valid_data('moon.json')
+        del data['image_url']
+        self.write_json(os.path.join('data', 'moon.json'), data)
+        errors = validate_site(self.root)
+        self.assertTrue(any('moon.json' in e and 'image_url' in e for e in errors))
+
+    def test_missing_moon_renderer_script(self):
+        self.build_valid_site()
+        html = VALID_HTML.replace('<script src="moon-renderer.js"></script>\n', '')
+        self.write('index.html', html)
+        errors = validate_site(self.root)
+        self.assertTrue(any('moon-renderer.js' in e for e in errors))
+
+    def test_moon_renderer_must_load_before_main(self):
+        self.build_valid_site()
+        html = VALID_HTML.replace(
+            '<script src="moon-renderer.js"></script>\n<script src="main.js"></script>',
+            '<script src="main.js"></script>\n<script src="moon-renderer.js"></script>')
+        self.write('index.html', html)
+        errors = validate_site(self.root)
+        self.assertTrue(any('before main.js' in e for e in errors))
 
     def test_valid_site_passes(self):
         self.build_valid_site()

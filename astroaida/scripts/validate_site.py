@@ -12,12 +12,16 @@ CANONICAL_URL = 'https://valenfer.github.io/astroaida/'
 REQUIRED_FILES = [
     'index.html',
     'styles.css',
+    'moon-renderer.js',
     'main.js',
     'assets/favicon.svg',
 ]
 
 DATA_FILES = ['apod.json', 'sky-today.json', 'moon.json', 'star-chart.json', 'near-earth.json']
 DATA_META_FIELDS = ('source', 'fetched_at', 'status')
+DATA_REQUIRED_FIELDS = {
+    'moon.json': ('image_url', 'phase', 'illumination', 'distance_km'),
+}
 ALLOWED_STATUSES = ('preview', 'live')
 
 UNSAFE_SCHEMES = ('javascript:', 'file:', 'data:')
@@ -108,6 +112,11 @@ def validate_data_file(root: str, relpath: str) -> List[str]:
         errors.append('{}: invalid status {!r} (allowed: {})'.format(
             relpath, status, ', '.join(ALLOWED_STATUSES)))
 
+    required_fields = DATA_REQUIRED_FIELDS.get(relpath.split('/')[-1], ())
+    for field in required_fields:
+        if field not in data or data.get(field) in (None, ''):
+            errors.append('{}: missing required field {}'.format(relpath, field))
+
     for url in find_urls(data):
         errors.extend(check_url(relpath, url))
 
@@ -119,6 +128,7 @@ class SiteParser(html.parser.HTMLParser):
         super().__init__(convert_charrefs=True)
         self.links: List[Tuple[str, str, str]] = []
         self.assets: List[str] = []
+        self.scripts: List[str] = []
         self.canonical: Optional[str] = None
         self.meta_description: Optional[str] = None
 
@@ -135,7 +145,12 @@ class SiteParser(html.parser.HTMLParser):
                     self.canonical = href
                 else:
                     self.assets.append(href)
-        elif tag in ('script', 'img', 'video', 'iframe', 'audio', 'source'):
+        elif tag == 'script':
+            src = values.get('src')
+            if src:
+                self.scripts.append(src)
+                self.assets.append(src)
+        elif tag in ('img', 'video', 'iframe', 'audio', 'source'):
             src = values.get('src')
             if src:
                 self.assets.append(src)
@@ -215,6 +230,13 @@ def validate_html(root: str) -> List[str]:
         if local and not os.path.exists(os.path.join(root, local)):
             errors.append('index.html: missing asset {!r}'.format(asset))
 
+    if 'moon-renderer.js' not in parser.scripts:
+        errors.append('index.html: missing moon-renderer.js script')
+    elif 'main.js' not in parser.scripts:
+        errors.append('index.html: missing main.js script')
+    elif parser.scripts.index('moon-renderer.js') >= parser.scripts.index('main.js'):
+        errors.append('index.html: moon-renderer.js must load before main.js')
+
     return errors
 
 
@@ -229,7 +251,7 @@ def validate_site(root: str) -> List[str]:
 
     errors.extend(validate_html(root))
 
-    for rel in ('styles.css', 'main.js'):
+    for rel in ('styles.css', 'moon-renderer.js', 'main.js'):
         path = os.path.join(root, rel)
         if os.path.exists(path):
             try:

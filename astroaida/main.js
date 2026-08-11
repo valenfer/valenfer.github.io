@@ -179,20 +179,32 @@
     var container = moduleContainer('moon');
     container.textContent = '';
 
-    if (data.image_url) {
-      var figure = el('figure', 'moon__figure');
-      var img = moduleImage(data.image_url, 'Fase lunar');
-      figure.appendChild(img);
-      figure.appendChild(el('figcaption', null, data.phase || 'Fase lunar'));
-      container.appendChild(figure);
+    if (!window.MoonRenderer) {
+      container.appendChild(el('p', 'module__notice', 'La fase lunar no está disponible en este momento.'));
+      return;
     }
 
+    var params = window.MoonRenderer.phaseParams(data);
+    var phaseEs = window.MoonRenderer.translatePhase(data.phase);
+    var phaseLabel = phaseEs || 'Fase lunar';
+    var illuminationPct = Math.round(params.illumination * 100);
+
+    var figure = el('figure', 'moon__figure');
+    var canvas = el('canvas', 'moon__canvas');
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', 'Fase lunar: ' + phaseLabel + ', iluminación al ' + illuminationPct + ' %.');
+    window.MoonRenderer.renderMoon(canvas, {
+      illumination: data.illumination,
+      phase: data.phase,
+      size: 280
+    });
+    figure.appendChild(canvas);
+    figure.appendChild(el('figcaption', null, phaseLabel));
+    container.appendChild(figure);
+
     var stats = el('dl', 'moon__stats');
-    addStat(stats, 'Fase', data.phase || '—');
-    var illumination = (data.illumination === undefined || data.illumination === null || isNaN(data.illumination))
-      ? '—'
-      : Math.round(data.illumination * 100) + ' %';
-    addStat(stats, 'Iluminación', illumination);
+    addStat(stats, 'Fase', phaseLabel);
+    addStat(stats, 'Iluminación', illuminationPct + ' %');
     var distance = (data.distance_km === undefined || data.distance_km === null || isNaN(data.distance_km))
       ? '—'
       : formatNumber(data.distance_km) + ' km';
