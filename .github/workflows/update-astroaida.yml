@@ -1,0 +1,69 @@
+name: Actualizar datos de AstroAIDA
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5,17 * * *"
+
+concurrency:
+  group: astroaida-data-update
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  collect:
+    name: Recopilar y validar datos astronómicos
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+      ASTRONOMY_APP_ID: ${{ secrets.ASTRONOMY_APP_ID }}
+      ASTRONOMY_APP_SECRET: ${{ secrets.ASTRONOMY_APP_SECRET }}
+
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Recopilar datos
+        id: collect
+        continue-on-error: true
+        run: python astroaida/scripts/collect_data.py
+
+      - name: Validar el sitio y los datos
+        run: |
+          python astroaida/scripts/validate_site.py
+          python -m unittest discover -s astroaida/tests
+          python -m py_compile astroaida/scripts/collect_data.py astroaida/scripts/validate_site.py
+
+      - name: Publicar solo los datos modificados
+        shell: bash
+        run: |
+          if git diff --quiet -- astroaida/data/; then
+            echo "No hay datos nuevos que publicar."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add astroaida/data/
+          git commit -m "chore(astroaida): update astronomy data"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Avisar si alguna fuente no se actualizó
+        if: steps.collect.outcome == 'failure'
+        run: |
+          echo "Una o más fuentes conservaron su último dato válido."
+          exit 1

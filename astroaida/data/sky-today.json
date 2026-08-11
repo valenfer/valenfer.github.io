@@ -1,0 +1,95 @@
+{
+  "source": "AstronomyAPI",
+  "fetched_at": "2026-08-11T12:56:30.695023+00:00",
+  "status": "live",
+  "bodies": [
+    {
+      "name": "Sun",
+      "altitude": 66.97,
+      "azimuth": 197.07,
+      "constellation": "Leo",
+      "distance_km": 151611086.18071,
+      "magnitude": -26.71302
+    },
+    {
+      "name": "Moon",
+      "altitude": 64.67,
+      "azimuth": 238.0,
+      "constellation": "Cancer",
+      "distance_km": 358316.64903,
+      "magnitude": -5.70127,
+      "phase": "Waning Crescent",
+      "illumination": 0.065
+    },
+    {
+      "name": "Mercury",
+      "altitude": 63.58,
+      "azimuth": 234.74,
+      "constellation": "Cancer",
+      "distance_km": 166731789.4335,
+      "magnitude": -0.94608
+    },
+    {
+      "name": "Venus",
+      "altitude": 37.91,
+      "azimuth": 132.27,
+      "constellation": "Virgo",
+      "distance_km": 107075578.72046,
+      "magnitude": -4.42263
+    },
+    {
+      "name": "Mars",
+      "altitude": 39.02,
+      "azimuth": 271.81,
+      "constellation": "Taurus",
+      "distance_km": 292050944.64525,
+      "magnitude": 1.29434
+    },
+    {
+      "name": "Jupiter",
+      "altitude": 66.27,
+      "azimuth": 221.38,
+      "constellation": "Cancer",
+      "distance_km": 940523538.56683,
+      "magnitude": -1.7812
+    },
+    {
+      "name": "Saturn",
+      "altitude": -30.44,
+      "azimuth": 302.87,
+      "constellation": "Pisces",
+      "distance_km": 1322790866.57335,
+      "magnitude": 0.45609
+    },
+    {
+      "name": "Uranus",
+      "altitude": 16.68,
+      "azimuth": 284.08,
+      "constellation": "Taurus",
+      "distance_km": 2949218925.36843,
+      "magnitude": 5.73549
+    },
+    {
+      "name": "Neptune",
+      "altitude": -39.26,
+      "azimuth": 309.98,
+      "constellation": "Pisces",
+      "distance_km": 4362184581.04772,
+      "magnitude": 7.83063
+    },
+    {
+      "name": "Pluto",
+      "altitude": -67.21,
+      "azimuth": 57.85,
+      "constellation": "Capricornus",
+      "distance_km": 5175743114.83891,
+      "magnitude": 14.4686
+    }
+  ],
+  "observer": {
+    "latitude": 37.38283,
+    "longitude": -5.97317,
+    "elevation": 0,
+    "label": "Sevilla"
+  }
+}
