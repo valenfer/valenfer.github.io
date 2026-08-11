@@ -18,13 +18,13 @@ jobs:
 
     steps:
       - name: Descargar la rama candidata
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: feature/astroaida
           persist-credentials: false
 
       - name: Configurar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
@@ -34,6 +34,8 @@ jobs:
           python -m py_compile astroaida/scripts/collect_data.py astroaida/scripts/validate_site.py
 
       - name: Recopilar datos reales
+        id: collect
+        continue-on-error: true
         run: python astroaida/scripts/collect_data.py
 
       - name: Validar datos reales
@@ -46,3 +48,9 @@ jobs:
           path: astroaida/data/*.json
           if-no-files-found: error
           retention-days: 1
+
+      - name: Avisar si alguna fuente no se actualizó
+        if: steps.collect.outcome == 'failure'
+        run: |
+          echo "Una o más fuentes conservaron su último dato válido."
+          exit 1
