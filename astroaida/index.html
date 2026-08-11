@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AstroAIDA · El cielo de Sevilla</title>
+  <meta name="description" content="AstroAIDA: observación astronómica desde Sevilla. Astronomía del día, planetas visibles, fase lunar, carta celeste y objetos cercanos a la Tierra.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://valenfer.github.io/astroaida/">
+  <meta property="og:title" content="AstroAIDA · El cielo de Sevilla">
+  <meta property="og:description" content="Astronomía del día, planetas visibles, fase lunar, carta celeste y objetos cercanos a la Tierra desde Sevilla.">
+  <meta property="og:image" content="https://valenfer.github.io/astroaida/assets/favicon.svg">
+  <link rel="canonical" href="https://valenfer.github.io/astroaida/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://apod.nasa.gov https://*.nasa.gov https://astronomyapi.com https://*.astronomyapi.com https://i.ytimg.com; media-src 'self' https://www.youtube.com https://youtu.be; frame-src https://www.youtube.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <p class="site-header__kicker">AstroAIDA</p>
+    <h1 class="site-header__title">El cielo de <span>Sevilla</span></h1>
+    <p class="site-header__subtitle">Observación astronómica para <span data-role="observer-label">Sevilla</span> · 37.38283, -5.97317 · 0 m</p>
+  </header>
+
+  <aside class="data-status" id="data-status" role="status" aria-live="polite" aria-atomic="true">
+    <h2 class="visually-hidden">Estado de los datos</h2>
+    <p class="data-status__summary">Cargando datos…</p>
+    <ul class="data-status__list"></ul>
+  </aside>
+
+  <main id="contenido">
+    <noscript>
+      <div class="module module__notice" role="alert">
+        Esta página necesita JavaScript para cargar los datos astronómicos locales.
+        Habilítalo para ver el contenido o consulta las fuentes en el pie de página.
+      </div>
+    </noscript>
+
+    <section class="module module--apod" aria-labelledby="apod-title">
+      <header class="module__header">
+        <p class="module__eyebrow">Astronomía del día</p>
+        <h2 class="module__title" id="apod-title">Imagen astronómica del día</h2>
+      </header>
+      <div class="apod" data-module="apod">
+        <p class="module__notice">Cargando…</p>
+      </div>
+    </section>
+
+    <section class="module" aria-labelledby="sky-today-title">
+      <header class="module__header">
+        <p class="module__eyebrow">Cielo hoy</p>
+        <h2 class="module__title" id="sky-today-title">Posiciones actuales</h2>
+      </header>
+      <div class="sky-today" data-module="sky-today">
+        <p class="module__notice">Cargando…</p>
+      </div>
+    </section>
+
+    <section class="module" aria-labelledby="moon-title">
+      <header class="module__header">
+        <p class="module__eyebrow">Luna</p>
+        <h2 class="module__title" id="moon-title">Fase lunar</h2>
+      </header>
+      <div class="moon" data-module="moon">
+        <p class="module__notice">Cargando…</p>
+      </div>
+    </section>
+
+    <section class="module" aria-labelledby="star-chart-title">
+      <header class="module__header">
+        <p class="module__eyebrow">Carta celeste</p>
+        <h2 class="module__title" id="star-chart-title">Mapa del cielo</h2>
+      </header>
+      <div class="star-chart" data-module="star-chart">
+        <p class="module__notice">Cargando…</p>
+      </div>
+    </section>
+
+    <section class="module" aria-labelledby="near-earth-title">
+      <header class="module__header">
+        <p class="module__eyebrow">Objetos cercanos</p>
+        <h2 class="module__title" id="near-earth-title">Asteroides próximos</h2>
+      </header>
+      <div class="near-earth" data-module="near-earth">
+        <p class="module__notice">Cargando…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__note">
+      AstroAIDA muestra datos recopilados por scripts automatizados a partir de
+      NASA y AstronomyAPI. En esta fase pueden ser datos de muestra.
+    </p>
+    <ul class="site-footer__sources">
+      <li><a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener noreferrer">NASA APOD</a></li>
+      <li><a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA NeoWs</a></li>
+      <li><a href="https://astronomyapi.com" target="_blank" rel="noopener noreferrer">AstronomyAPI</a></li>
+    </ul>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

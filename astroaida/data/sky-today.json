@@ -1,0 +1,63 @@
+{
+  "source": "AstronomyAPI",
+  "fetched_at": "2026-08-11T12:20:34.533955+00:00",
+  "status": "preview",
+  "bodies": [
+    {
+      "name": "Mercury",
+      "altitude": 15.2,
+      "azimuth": 245.3,
+      "constellation": "Sagittarius",
+      "distance_km": 109675000.18504,
+      "magnitude": -0.5
+    },
+    {
+      "name": "Venus",
+      "altitude": 42.8,
+      "azimuth": 180.5,
+      "constellation": "Capricornus",
+      "distance_km": 165010000.4211,
+      "magnitude": -4.2
+    },
+    {
+      "name": "Mars",
+      "altitude": 65.3,
+      "azimuth": 95.2,
+      "constellation": "Taurus",
+      "distance_km": 225000000.9201,
+      "magnitude": -1.8
+    },
+    {
+      "name": "Jupiter",
+      "altitude": 35.7,
+      "azimuth": 72.1,
+      "constellation": "Aries",
+      "distance_km": 600000000.31,
+      "magnitude": -2.5
+    },
+    {
+      "name": "Saturn",
+      "altitude": 28.4,
+      "azimuth": 110.6,
+      "constellation": "Aquarius",
+      "distance_km": 1300000000.44,
+      "magnitude": 0.8
+    },
+    {
+      "name": "Moon",
+      "altitude": 38.6,
+      "azimuth": 182.4,
+      "constellation": "Ophiuchus",
+      "distance_km": 378500.0,
+      "magnitude": -12.4,
+      "phase": "Waxing Gibbous",
+      "illumination": 0.78
+    }
+  ],
+  "observer": {
+    "latitude": 37.38283,
+    "longitude": -5.97317,
+    "elevation": 0,
+    "label": "Sevilla"
+  }
+}

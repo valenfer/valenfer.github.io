@@ -1,0 +1,524 @@
+/* AstroAIDA — restrained astronomical editorial style */
+
+:root {
+  --ink: #0a0f14;
+  --ink-soft: #0e151d;
+  --ink-raise: #131c26;
+  --ink-border: #23303d;
+  --text: #e8e6df;
+  --text-muted: #a9b4bd;
+  --accent-cyan: #7fb2c9;
+  --accent-solar: #e8b46a;
+  --accent-danger: #e0907a;
+  --accent-ok: #8fbf9f;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --max-width: 1000px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+main,
+header,
+footer,
+section,
+aside {
+  overflow-wrap: break-word;
+}
+
+img,
+iframe,
+video {
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent-cyan);
+}
+
+a:hover {
+  color: var(--accent-solar);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-solar);
+  outline-offset: 2px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10;
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  background: var(--accent-solar);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.skip:focus {
+  left: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 2.5rem;
+  text-align: center;
+}
+
+.site-header__kicker {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+.site-header__title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+.site-header__title span {
+  color: var(--accent-solar);
+  font-style: italic;
+}
+
+.site-header__subtitle {
+  margin: 1rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.data-status {
+  max-width: var(--max-width);
+  margin: 0 auto 2.5rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--ink-border);
+  border-bottom: 1px solid var(--ink-border);
+  background: var(--ink-soft);
+}
+
+.data-status__summary {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.data-status__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.data-status__item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.data-status__name {
+  min-width: 8.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.data-status__source {
+  font-style: italic;
+}
+
+.data-status__state {
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.data-status__state--live {
+  background: rgba(143, 191, 159, 0.16);
+  color: var(--accent-ok);
+}
+
+.data-status__state--preview {
+  background: rgba(232, 180, 106, 0.16);
+  color: var(--accent-solar);
+}
+
+.data-status__state--stale {
+  background: rgba(224, 144, 122, 0.16);
+  color: var(--accent-danger);
+}
+
+.data-status__state--error {
+  background: rgba(224, 144, 122, 0.22);
+  color: var(--accent-danger);
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+.module {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--ink-border);
+}
+
+.module:first-of-type {
+  border-top: 0;
+}
+
+.module__header {
+  margin-bottom: 1.5rem;
+}
+
+.module__eyebrow {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+.module__title {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.module__notice {
+  margin: 0;
+  padding: 1.25rem;
+  border: 1px dashed var(--ink-border);
+  color: var(--text-muted);
+}
+
+.is-unavailable {
+  opacity: 0.85;
+}
+
+/* APOD */
+
+.apod__media {
+  display: block;
+  width: 100%;
+  max-height: 72vh;
+  object-fit: cover;
+  background: var(--ink-raise);
+  border: 1px solid var(--ink-border);
+}
+
+.apod__media--video {
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--ink-border);
+}
+
+.apod__body {
+  margin-top: 1.5rem;
+}
+
+.apod__title {
+  margin: 0 0 0.4rem;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.apod__meta {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.apod__date {
+  margin-right: 1rem;
+}
+
+.apod__explanation {
+  margin: 0;
+  max-width: 70ch;
+  color: var(--text);
+}
+
+/* Sky table */
+
+.sky-table-region {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sky-table-region__hint {
+  display: none;
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.sky-table {
+  width: 100%;
+  min-width: 30rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.sky-table th,
+.sky-table td {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--ink-border);
+}
+
+.sky-table thead th {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  border-bottom: 2px solid var(--ink-border);
+}
+
+.sky-table tbody th {
+  font-weight: 600;
+  color: var(--accent-solar);
+}
+
+/* Moon */
+
+.moon__figure {
+  margin: 0 0 1.5rem;
+}
+
+.moon__figure img {
+  display: block;
+  width: min(280px, 100%);
+  border: 1px solid var(--ink-border);
+  background: var(--ink-raise);
+}
+
+.moon__figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.moon__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.15rem 1.5rem;
+  margin: 0;
+}
+
+.moon__stat-label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.moon__stat-value {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+/* Star chart */
+
+.chart__figure {
+  margin: 0;
+}
+
+.chart__figure img {
+  display: block;
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border: 1px solid var(--ink-border);
+  background: var(--ink-raise);
+}
+
+.chart__figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Asteroids */
+
+.asteroid-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.asteroid {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--ink-border);
+}
+
+.asteroid:first-child {
+  border-top: 0;
+}
+
+.asteroid__heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.asteroid__name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-solar);
+}
+
+.badge {
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.badge--danger {
+  background: rgba(224, 144, 122, 0.16);
+  color: var(--accent-danger);
+}
+
+.badge--ok {
+  background: rgba(143, 191, 159, 0.16);
+  color: var(--accent-ok);
+}
+
+.asteroid__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.15rem 1.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.asteroid__stats .moon__stat-label,
+.asteroid__stats .moon__stat-value {
+  display: inline;
+  font-size: 0.85rem;
+}
+
+.asteroid__stats .moon__stat-label::after {
+  content: ": ";
+}
+
+.asteroid__stats .moon__stat-value {
+  margin-right: 1.25rem;
+}
+
+.asteroid__link {
+  display: inline-block;
+  min-height: 44px;
+  line-height: 44px;
+}
+
+/* Footer */
+
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3.5rem;
+  border-top: 1px solid var(--ink-border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.site-footer__note {
+  margin: 0 0 1rem;
+}
+
+.site-footer__sources {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.site-footer__sources a {
+  display: inline-block;
+  min-height: 44px;
+  line-height: 44px;
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .site-header {
+    padding-top: 2.5rem;
+  }
+
+  .sky-table-region__hint {
+    display: block;
+  }
+
+  .sky-table th,
+  .sky-table td {
+    padding: 0.6rem 0.35rem;
+    font-size: 0.85rem;
+  }
+
+  .moon__stats,
+  .asteroid__stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

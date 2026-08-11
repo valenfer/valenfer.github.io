@@ -1,0 +1,11 @@
+{
+  "media_type": "image",
+  "url": "https://apod.nasa.gov/apod/image/2401/sample_image.jpg",
+  "title": "Sample APOD Image",
+  "explanation": "This is a sample APOD explanation for testing purposes. It describes an astronomical phenomenon.",
+  "date": "2024-01-15",
+  "source": "NASA APOD",
+  "fetched_at": "2026-08-11T12:20:34.533955+00:00",
+  "status": "preview",
+  "copyright": "Sample Copyright Holder"
+}
