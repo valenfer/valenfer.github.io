@@ -1,0 +1,48 @@
+name: Verificar APIs de AstroAIDA
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Probar APIs sin publicar
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+      ASTRONOMY_APP_ID: ${{ secrets.ASTRONOMY_APP_ID }}
+      ASTRONOMY_APP_SECRET: ${{ secrets.ASTRONOMY_APP_SECRET }}
+
+    steps:
+      - name: Descargar la rama candidata
+        uses: actions/checkout@v4
+        with:
+          ref: feature/astroaida
+          persist-credentials: false
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Ejecutar pruebas locales
+        run: |
+          python -m unittest discover -s astroaida/tests
+          python -m py_compile astroaida/scripts/collect_data.py astroaida/scripts/validate_site.py
+
+      - name: Recopilar datos reales
+        run: python astroaida/scripts/collect_data.py
+
+      - name: Validar datos reales
+        run: python astroaida/scripts/validate_site.py
+
+      - name: Guardar JSON validados sin publicarlos
+        uses: actions/upload-artifact@v4
+        with:
+          name: astroaida-live-data
+          path: astroaida/data/*.json
+          if-no-files-found: error
+          retention-days: 1
