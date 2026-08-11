@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AIDA · Nodo 20">
+  <rect width="64" height="64" rx="12" fill="#080B0D"/>
+  <path d="M12 24h30" stroke="#65E6A5" stroke-width="2"/>
+  <circle cx="42" cy="24" r="5" fill="#65E6A5"/>
+  <circle cx="42" cy="24" r="9" fill="none" stroke="#65E6A5" stroke-width="1.5" opacity="0.4"/>
+  <path d="M12 40h12" stroke="#8D9A96" stroke-width="2"/>
+  <circle cx="24" cy="40" r="3" fill="#8D9A96"/>
+</svg>
