@@ -1,10 +1,11 @@
 import unittest
 import json
+import io
 import os
 import sys
 import tempfile
 import urllib.parse
-from contextlib import ExitStack
+from contextlib import ExitStack, redirect_stdout
 from datetime import datetime
 from unittest.mock import patch, Mock
 from urllib.error import HTTPError, URLError
@@ -160,6 +161,38 @@ class TestAstronomyPositionsNormalization(unittest.TestCase):
         normalized = normalize_astronomy_positions(raw)
         self.assertNotIn('magnitude', normalized['bodies'][0])
 
+    def test_normalize_astronomy_positions_null_optional_fields(self):
+        raw = self.load_fixture('astronomy-positions-null.json')
+        normalized = normalize_astronomy_positions(raw)
+
+        sun = normalized['bodies'][0]
+        self.assertEqual(sun['name'], 'Sun')
+        self.assertNotIn('magnitude', sun)
+        self.assertNotIn('phase', sun)
+        self.assertNotIn('illumination', sun)
+        self.assertEqual(sun['altitude'], 10.5)
+        self.assertEqual(sun['azimuth'], 265.1)
+        self.assertAlmostEqual(sun['distance_km'], 151000000.0)
+        self.assertEqual(sun['constellation'], 'Leo')
+
+        mercury = normalized['bodies'][1]
+        self.assertEqual(mercury['name'], 'Mercury')
+        self.assertEqual(mercury['magnitude'], -0.5)
+
+    def test_normalize_astronomy_positions_missing_required_field_fails(self):
+        for field in ('altitude', 'azimuth', 'distance'):
+            with self.subTest(field=field):
+                raw = self.load_fixture('astronomy-positions.json')
+                position = raw['data']['rows'][0]['positions'][0]
+                if field == 'altitude':
+                    del position['position']['horizontal']['altitude']
+                elif field == 'azimuth':
+                    del position['position']['horizontal']['azimuth']
+                else:
+                    del position['distance']['fromEarth']['km']
+                with self.assertRaises(ValueError):
+                    normalize_astronomy_positions(raw)
+
     def test_normalize_astronomy_positions_requires_rows_structure(self):
         with self.assertRaises(ValueError):
             normalize_astronomy_positions({'data': {}})
@@ -276,6 +309,114 @@ class TestFetchWithRetry(unittest.TestCase):
         with patch('urllib.request.urlopen', return_value=mock_response):
             result = fetch_with_retry('https://api.example.com/data', timeout=5, max_retries=3)
             self.assertIsNone(result)
+
+    def test_fetch_http_400_logs_sanitized_message(self):
+        fake_key = 'FAKEKEY12345'
+        error_400 = HTTPError('https://api.example.com/data?api_key=' + fake_key, 400, 'Bad Request', {}, None)
+        buf = io.StringIO()
+        with patch('urllib.request.urlopen', side_effect=error_400), redirect_stdout(buf):
+            result = fetch_with_retry(
+                'https://api.example.com/data?api_key=' + fake_key, timeout=5, max_retries=2,
+                label='NASA APOD')
+        self.assertIsNone(result)
+        out = buf.getvalue()
+        self.assertIn('NASA APOD: HTTP 400', out)
+        self.assertNotIn(fake_key, out)
+
+    def test_fetch_http_429_exhausted_logs_sanitized_message(self):
+        fake_key = 'FAKEKEY12345'
+        error_429 = HTTPError('https://api.example.com/data?api_key=' + fake_key, 429, 'Too Many Requests', {}, None)
+        buf = io.StringIO()
+        with patch('urllib.request.urlopen', side_effect=error_429), redirect_stdout(buf):
+            result = fetch_with_retry(
+                'https://api.example.com/data?api_key=' + fake_key, timeout=5, max_retries=1,
+                label='NASA NeoWs')
+        self.assertIsNone(result)
+        out = buf.getvalue()
+        self.assertIn('NASA NeoWs: HTTP 429', out)
+        self.assertNotIn(fake_key, out)
+
+    def test_fetch_urlerror_logs_network_error_sanitized(self):
+        fake_key = 'FAKEKEY12345'
+        err = URLError('timeout')
+        buf = io.StringIO()
+        with patch('urllib.request.urlopen', side_effect=err), redirect_stdout(buf):
+            result = fetch_with_retry(
+                'https://api.example.com/data?api_key=' + fake_key, timeout=5, max_retries=1,
+                label='AstronomyAPI positions')
+        self.assertIsNone(result)
+        out = buf.getvalue()
+        self.assertIn('AstronomyAPI positions: network error', out)
+        self.assertNotIn(fake_key, out)
+
+    def test_fetch_malformed_json_logs_sanitized_message(self):
+        fake_key = 'FAKEKEY12345'
+        mock_response = self._make_mock_response('not valid json')
+        buf = io.StringIO()
+        with patch('urllib.request.urlopen', return_value=mock_response), redirect_stdout(buf):
+            result = fetch_with_retry(
+                'https://api.example.com/data?api_key=' + fake_key, timeout=5, max_retries=2,
+                label='AstronomyAPI moon')
+        self.assertIsNone(result)
+        out = buf.getvalue()
+        self.assertIn('AstronomyAPI moon: invalid JSON', out)
+        self.assertNotIn(fake_key, out)
+
+    def test_fetch_unexpected_error_logs_sanitized_message(self):
+        fake_key = 'FAKEKEY12345'
+        buf = io.StringIO()
+        with patch('urllib.request.urlopen', side_effect=RuntimeError('boom')), redirect_stdout(buf):
+            result = fetch_with_retry(
+                'https://api.example.com/data?api_key=' + fake_key, timeout=5, max_retries=2,
+                label='AstronomyAPI star-chart')
+        self.assertIsNone(result)
+        out = buf.getvalue()
+        self.assertIn('AstronomyAPI star-chart: unexpected client error', out)
+        self.assertNotIn(fake_key, out)
+
+    def test_fetch_header_fake_key_not_logged(self):
+        fake_key = 'FAKEKEY12345'
+        error_400 = HTTPError('https://api.example.com/data', 400, 'Bad Request', {}, None)
+        buf = io.StringIO()
+        with patch('urllib.request.urlopen', side_effect=error_400), redirect_stdout(buf):
+            result = fetch_with_retry(
+                'https://api.example.com/data', timeout=5, max_retries=2, label='NASA APOD',
+                headers={'Authorization': 'Basic ' + fake_key})
+        self.assertIsNone(result)
+        self.assertIn('NASA APOD: HTTP 400', buf.getvalue())
+        self.assertNotIn(fake_key, buf.getvalue())
+
+    def test_fetch_no_output_on_successful_retry(self):
+        error_429 = HTTPError('https://api.example.com/data', 429, 'Too Many Requests', {}, None)
+        mock_response = self._make_mock_response('{"key": "value"}')
+        buf = io.StringIO()
+        with patch('urllib.request.urlopen', side_effect=[error_429, mock_response]), redirect_stdout(buf):
+            result = fetch_with_retry('https://api.example.com/data', timeout=5, max_retries=3, label='NASA APOD')
+        self.assertEqual(result, {'key': 'value'})
+        self.assertEqual(buf.getvalue(), '')
+
+    def test_fetch_sanitizes_unsafe_label(self):
+        error_400 = HTTPError('https://api.example.com/data', 400, 'Bad Request', {}, None)
+        buf = io.StringIO()
+        with patch('urllib.request.urlopen', side_effect=error_400), redirect_stdout(buf):
+            fetch_with_retry('https://api.example.com/data', timeout=5, max_retries=2,
+                             label='source "quoted"\n<tag>')
+        out = buf.getvalue()
+        self.assertNotIn('"', out)
+        self.assertNotIn('<', out)
+        self.assertNotIn('\n', out.strip())
+        self.assertIn('source quotedtag: HTTP 400', out)
+
+    def test_fetch_no_credentials_in_success_log(self):
+        fake_key = 'FAKEKEY12345'
+        mock_response = self._make_mock_response('{"key": "value"}')
+        buf = io.StringIO()
+        with patch('urllib.request.urlopen', return_value=mock_response), redirect_stdout(buf):
+            result = fetch_with_retry(
+                'https://api.example.com/data?api_key=' + fake_key, timeout=5, max_retries=2,
+                label='NASA APOD', headers={'Authorization': 'Basic ' + fake_key})
+        self.assertEqual(result, {'key': 'value'})
+        self.assertNotIn(fake_key, buf.getvalue())
 
     def test_fetch_max_retries_exceeded(self):
         error_504 = HTTPError('https://api.example.com/data', 504, 'Gateway Timeout', {}, None)
@@ -500,6 +641,7 @@ class TestFetchFunctions(unittest.TestCase):
         url = mock_fetch.call_args[0][0]
         self.assertIn('https://api.nasa.gov/planetary/apod', url)
         self.assertIn('api_key=KEY', url)
+        self.assertEqual(mock_fetch.call_args[1]['label'], 'NASA APOD')
 
     def test_fetch_neo(self):
         with patch('collect_data.fetch_with_retry') as mock_fetch:
@@ -508,6 +650,7 @@ class TestFetchFunctions(unittest.TestCase):
         self.assertEqual(result, {'ok': True})
         url = mock_fetch.call_args[0][0]
         self.assertIn('https://api.nasa.gov/neo/rest/v1/feed', url)
+        self.assertEqual(mock_fetch.call_args[1]['label'], 'NASA NeoWs')
 
     def test_fetch_astronomy_positions_sends_observer_and_auth(self):
         with patch('collect_data.astronomy_now', return_value=FIXED_NOW), \
@@ -527,6 +670,7 @@ class TestFetchFunctions(unittest.TestCase):
         headers = mock_fetch.call_args[1]['headers']
         self.assertIn('Authorization', headers)
         self.assertTrue(headers['Authorization'].startswith('Basic '))
+        self.assertEqual(mock_fetch.call_args[1]['label'], 'AstronomyAPI positions')
 
     def test_fetch_astronomy_moon_posts_minimal_documented_payload_with_date(self):
         with patch('collect_data.astronomy_now', return_value=FIXED_NOW), \
@@ -545,6 +689,7 @@ class TestFetchFunctions(unittest.TestCase):
         self.assertEqual(payload['view']['type'], 'portrait-simple')
         self.assertNotIn('style', payload)
         self.assertNotIn('elevation', payload['observer'])
+        self.assertEqual(mock_fetch.call_args[1]['label'], 'AstronomyAPI moon')
 
     def test_fetch_astronomy_star_chart_posts_payload_with_date_and_string_style(self):
         with patch('collect_data.astronomy_now', return_value=FIXED_NOW), \
@@ -561,6 +706,7 @@ class TestFetchFunctions(unittest.TestCase):
         self.assertIn(payload['style'], ('navy', 'inverted'))
         self.assertIsInstance(payload['view'], dict)
         self.assertNotIn('elevation', payload['observer'])
+        self.assertEqual(mock_fetch.call_args[1]['label'], 'AstronomyAPI star-chart')
 
 
 class TestCollectReal(unittest.TestCase):

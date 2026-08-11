@@ -2,6 +2,7 @@ import argparse
 import base64
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -33,6 +34,16 @@ def _now_iso() -> str:
 
 def astronomy_now() -> datetime:
     return datetime.now(OBSERVER_TIMEZONE)
+
+
+LABEL_FALLBACK = 'fetch'
+
+
+def _safe_label(label: Optional[str]) -> str:
+    if not label:
+        return LABEL_FALLBACK
+    safe = re.sub(r'[^A-Za-z0-9 _-]', '', label).strip()
+    return safe or LABEL_FALLBACK
 
 
 def _build_observer(meta_observer: Optional[Dict[str, Any]]) -> Dict[str, Any]:
@@ -129,12 +140,12 @@ def normalize_astronomy_positions(raw: Dict[str, Any]) -> Dict[str, Any]:
             'distance_km': float(distance_km),
         }
         extra_info = position.get('extraInfo', {})
-        if 'magnitude' in extra_info:
+        if extra_info.get('magnitude') is not None:
             body['magnitude'] = float(extra_info['magnitude'])
         phase = extra_info.get('phase') or {}
-        if 'string' in phase:
+        if phase.get('string') is not None:
             body['phase'] = phase['string']
-        if 'fraction' in phase:
+        if phase.get('fraction') is not None:
             body['illumination'] = float(phase['fraction'])
         bodies.append(body)
 
@@ -300,8 +311,10 @@ def astronomy_headers(app_id: str, app_secret: str) -> Dict[str, str]:
 
 def fetch_with_retry(url: str, timeout: int = 10, max_retries: int = 3,
                      method: str = 'GET', headers: Optional[Dict[str, str]] = None,
-                     payload: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
+                     payload: Optional[Dict[str, Any]] = None,
+                     label: Optional[str] = None) -> Optional[Dict[str, Any]]:
     transient_codes = {429, 502, 503, 504}
+    source = _safe_label(label)
 
     for attempt in range(max_retries + 1):
         try:
@@ -314,39 +327,45 @@ def fetch_with_retry(url: str, timeout: int = 10, max_retries: int = 3,
                 request_headers.setdefault('Content-Type', 'application/json')
             req = urllib.request.Request(url, data=body, headers=request_headers, method=method)
             with urllib.request.urlopen(req, timeout=timeout) as response:
-                if response.getcode() == 200:
+                code = response.getcode()
+                if code == 200:
                     data = response.read()
                     return json.loads(data.decode('utf-8'))
-                elif response.getcode() in transient_codes:
-                    if attempt < max_retries:
-                        time.sleep(2 ** attempt)
-                        continue
-                    return None
-                else:
-                    return None
+                if code in transient_codes and attempt < max_retries:
+                    time.sleep(2 ** attempt)
+                    continue
+                print('[astroaida] {}: HTTP {}'.format(source, code))
+                return None
         except urllib.error.HTTPError as e:
             if e.code in transient_codes and attempt < max_retries:
                 time.sleep(2 ** attempt)
                 continue
+            print('[astroaida] {}: HTTP {}'.format(source, e.code))
             return None
         except urllib.error.URLError:
             if attempt < max_retries:
                 time.sleep(2 ** attempt)
                 continue
+            print('[astroaida] {}: network error'.format(source))
             return None
         except json.JSONDecodeError:
+            print('[astroaida] {}: invalid JSON'.format(source))
             return None
         except Exception:
+            print('[astroaida] {}: unexpected client error'.format(source))
             return None
+    print('[astroaida] {}: unexpected client error'.format(source))
     return None
 
 
 def fetch_apod(api_key: str, timeout: int = 10, max_retries: int = 3) -> Optional[Dict[str, Any]]:
-    return fetch_with_retry(build_apod_url(api_key), timeout=timeout, max_retries=max_retries)
+    return fetch_with_retry(build_apod_url(api_key), timeout=timeout, max_retries=max_retries,
+                            label='NASA APOD')
 
 
 def fetch_neo(api_key: str, timeout: int = 10, max_retries: int = 3) -> Optional[Dict[str, Any]]:
-    return fetch_with_retry(build_neo_url(api_key), timeout=timeout, max_retries=max_retries)
+    return fetch_with_retry(build_neo_url(api_key), timeout=timeout, max_retries=max_retries,
+                            label='NASA NeoWs')
 
 
 def fetch_astronomy_positions(app_id: str, app_secret: str, timeout: int = 10,
@@ -363,7 +382,8 @@ def fetch_astronomy_positions(app_id: str, app_secret: str, timeout: int = 10,
     }
     url = ASTRONOMY_API_URL + '/bodies/positions?' + urllib.parse.urlencode(params)
     return fetch_with_retry(url, timeout=timeout, max_retries=max_retries,
-                            headers=astronomy_headers(app_id, app_secret))
+                            headers=astronomy_headers(app_id, app_secret),
+                            label='AstronomyAPI positions')
 
 
 def fetch_astronomy_moon(app_id: str, app_secret: str, timeout: int = 10,
@@ -380,7 +400,8 @@ def fetch_astronomy_moon(app_id: str, app_secret: str, timeout: int = 10,
     }
     url = ASTRONOMY_API_URL + '/studio/moon-phase'
     return fetch_with_retry(url, timeout=timeout, max_retries=max_retries, method='POST',
-                            headers=astronomy_headers(app_id, app_secret), payload=payload)
+                            headers=astronomy_headers(app_id, app_secret), payload=payload,
+                            label='AstronomyAPI moon')
 
 
 def fetch_astronomy_star_chart(app_id: str, app_secret: str, timeout: int = 10,
@@ -402,7 +423,8 @@ def fetch_astronomy_star_chart(app_id: str, app_secret: str, timeout: int = 10,
     }
     url = ASTRONOMY_API_URL + '/studio/star-chart'
     return fetch_with_retry(url, timeout=timeout, max_retries=max_retries, method='POST',
-                            headers=astronomy_headers(app_id, app_secret), payload=payload)
+                            headers=astronomy_headers(app_id, app_secret), payload=payload,
+                            label='AstronomyAPI star-chart')
 
 
 def write_json_atomically(path: str, data: Dict[str, Any]) -> None:

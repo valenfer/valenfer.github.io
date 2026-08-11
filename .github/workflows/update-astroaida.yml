@@ -27,16 +27,18 @@ jobs:
 
     steps:
       - name: Descargar el repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Configurar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
       - name: Recopilar datos
+        id: collect
+        continue-on-error: true
         run: python astroaida/scripts/collect_data.py
 
       - name: Validar el sitio y los datos
@@ -59,3 +61,9 @@ jobs:
           git commit -m "chore(astroaida): update astronomy data"
           git pull --rebase origin main
           git push origin HEAD:main
+
+      - name: Avisar si alguna fuente no se actualizó
+        if: steps.collect.outcome == 'failure'
+        run: |
+          echo "Una o más fuentes conservaron su último dato válido."
+          exit 1
