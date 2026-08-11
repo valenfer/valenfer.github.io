@@ -44,6 +44,23 @@ def valid_data(name):
                 'nasa_url': 'https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#obj=1',
             }],
         },
+        'ephemerides.json': {
+            'source': 'In-The-Sky / Open-Meteo', 'fetched_at': '2026-08-12T00:00:00+00:00',
+            'status': 'preview', 'target_date': '2026-08-12', 'timezone': 'Europe/Madrid',
+            'observer': {'latitude': 37.38283, 'longitude': -5.97317, 'label': 'Sevilla'},
+            'observation_window': {'start_local': '2026-08-12T00:00+02:00',
+                                   'end_local': '2026-08-13T06:00+02:00'},
+            'events': [{
+                'id': 'eclipse-2026-08-12', 'type': 'solar_eclipse',
+                'title_es': 'Eclipse solar parcial',
+                'summary_es': 'Eclipse visible desde Sevilla.',
+                'start_local': '2026-08-12T19:00+02:00',
+                'visibility': {'status': 'visible', 'label': 'Visible', 'reason': 'Buen tiempo'},
+                'source': {'name': 'IGN', 'url': 'https://visualizadores.ign.es/eclipses/2026'},
+            }],
+            'weather': {'cloud_cover': 20, 'visibility': 10000},
+            'sources': [{'name': 'In-The-Sky', 'url': 'https://in-the-sky.org/'}],
+        },
     }
     return datasets[name]
 
@@ -91,7 +108,8 @@ class TestValidateSite(unittest.TestCase):
         self.write('moon-renderer.js', "'use strict';\nconst MOON = {};\n")
         self.write('main.js', "'use strict';\nconst DATA = 'data/';\n")
         self.write('assets/favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg"></svg>')
-        for name in ('apod.json', 'sky-today.json', 'moon.json', 'star-chart.json', 'near-earth.json'):
+        for name in ('apod.json', 'sky-today.json', 'moon.json', 'star-chart.json', 'near-earth.json',
+                     'ephemerides.json'):
             self.write_json(os.path.join('data', name), valid_data(name))
 
     def test_missing_required_files(self):
@@ -211,6 +229,44 @@ class TestValidateSite(unittest.TestCase):
         self.build_valid_site()
         errors = validate_site(self.root)
         self.assertEqual(errors, [])
+
+    def test_ephemerides_json_valid(self):
+        self.build_valid_site()
+        errors = validate_site(self.root)
+        self.assertFalse(any('ephemerides.json' in e for e in errors),
+                         'ephemerides.json should be valid')
+
+    def test_ephemerides_json_missing_required_fields(self):
+        self.build_valid_site()
+        data = valid_data('ephemerides.json')
+        del data['target_date']
+        self.write_json(os.path.join('data', 'ephemerides.json'), data)
+        errors = validate_site(self.root)
+        self.assertTrue(any('ephemerides.json' in e and 'target_date' in e for e in errors))
+
+    def test_ephemerides_json_invalid_status(self):
+        self.build_valid_site()
+        data = valid_data('ephemerides.json')
+        data['status'] = 'invalid'
+        self.write_json(os.path.join('data', 'ephemerides.json'), data)
+        errors = validate_site(self.root)
+        self.assertTrue(any('ephemerides.json' in e and 'status' in e for e in errors))
+
+    def test_ephemerides_json_missing_timezone(self):
+        self.build_valid_site()
+        data = valid_data('ephemerides.json')
+        del data['timezone']
+        self.write_json(os.path.join('data', 'ephemerides.json'), data)
+        errors = validate_site(self.root)
+        self.assertTrue(any('ephemerides.json' in e and 'timezone' in e for e in errors))
+
+    def test_ephemerides_json_http_url_in_event_source(self):
+        self.build_valid_site()
+        data = valid_data('ephemerides.json')
+        data['events'][0]['source']['url'] = 'http://example.com'
+        self.write_json(os.path.join('data', 'ephemerides.json'), data)
+        errors = validate_site(self.root)
+        self.assertTrue(any('ephemerides.json' in e for e in errors))
 
 
 class TestValidateDataFile(unittest.TestCase):

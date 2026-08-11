@@ -4,7 +4,7 @@ import json
 import os
 import re
 import sys
-from typing import Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 
 CANONICAL_URL = 'https://valenfer.github.io/astroaida/'
@@ -17,10 +17,11 @@ REQUIRED_FILES = [
     'assets/favicon.svg',
 ]
 
-DATA_FILES = ['apod.json', 'sky-today.json', 'moon.json', 'star-chart.json', 'near-earth.json']
+DATA_FILES = ['apod.json', 'sky-today.json', 'moon.json', 'star-chart.json', 'near-earth.json', 'ephemerides.json']
 DATA_META_FIELDS = ('source', 'fetched_at', 'status')
 DATA_REQUIRED_FIELDS = {
     'moon.json': ('image_url', 'phase', 'illumination', 'distance_km'),
+    'ephemerides.json': ('target_date', 'timezone', 'events'),
 }
 ALLOWED_STATUSES = ('preview', 'live')
 
@@ -120,6 +121,53 @@ def validate_data_file(root: str, relpath: str) -> List[str]:
     for url in find_urls(data):
         errors.extend(check_url(relpath, url))
 
+    filename = relpath.split('/')[-1]
+    if filename == 'ephemerides.json':
+        errors.extend(_validate_ephemerides_json(relpath, data))
+
+    return errors
+
+
+def _validate_ephemerides_json(relpath: str, data: Dict[str, Any]) -> List[str]:
+    errors = []
+    for field in ('target_date', 'timezone', 'observation_window'):
+        if field not in data or data.get(field) in (None, ''):
+            errors.append('{}: missing required field {}'.format(relpath, field))
+    if 'timezone' in data and data['timezone'] != 'Europe/Madrid':
+        errors.append('{}: wrong timezone {!r}'.format(relpath, data['timezone']))
+    window = data.get('observation_window')
+    if isinstance(window, dict):
+        start = window.get('start_local', '')
+        end = window.get('end_local', '')
+        if start and end and start >= end:
+            errors.append('{}: observation_window out of order'.format(relpath))
+    events = data.get('events')
+    if not isinstance(events, list):
+        return errors
+    valid_event_types = (
+        'solar_eclipse', 'lunar_eclipse', 'meteor_shower', 'conjunction', 'opposition',
+        'lunar_phase', 'planet_visible', 'comet', 'asteroid_close', 'iss_pass', 'other',
+    )
+    valid_vis = ('visible', 'contextual', 'uncertain', 'not_visible')
+    for idx, event in enumerate(events):
+        for field in ('id', 'type', 'title_es', 'summary_es', 'start_local', 'visibility', 'source'):
+            if field not in event:
+                errors.append('{}: event[{}] missing {}'.format(relpath, idx, field))
+        etype = event.get('type', '')
+        if etype and etype not in valid_event_types:
+            errors.append('{}: event[{}] invalid type {!r}'.format(relpath, idx, etype))
+        src = event.get('source', {})
+        url = src.get('url', '')
+        if url and not url.startswith('https://'):
+            errors.append('{}: event[{}] source URL must be HTTPS: {}'.format(relpath, idx, url))
+        vis = event.get('visibility', {})
+        vis_status = vis.get('status', '')
+        if vis_status and vis_status not in valid_vis:
+            errors.append('{}: event[{}] invalid visibility status {!r}'.format(relpath, idx, vis_status))
+        if 'label' not in vis:
+            errors.append('{}: event[{}] missing visibility.label'.format(relpath, idx))
+        if 'reason' not in vis:
+            errors.append('{}: event[{}] missing visibility.reason'.format(relpath, idx))
     return errors
 
 

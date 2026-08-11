@@ -1,0 +1,123 @@
+{
+  "source": "In-The-Sky / Open-Meteo",
+  "fetched_at": "2026-08-11T16:34:52.873217+00:00",
+  "status": "live",
+  "target_date": "2026-08-12",
+  "timezone": "Europe/Madrid",
+  "observer": {
+    "latitude": 37.38283,
+    "longitude": -5.97317,
+    "label": "Sevilla"
+  },
+  "observation_window": {
+    "start_local": "2026-08-12T00:00:00+02:00",
+    "end_local": "2026-08-13T12:00:00+02:00"
+  },
+  "events": [
+    {
+      "id": "new-moon-2026-08-12",
+      "type": "lunar_phase",
+      "title_es": "Luna nueva",
+      "summary_es": "La Luna desaparece en el resplandor del Sol durante unos días",
+      "start_local": "2026-08-12T19:37:49+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "No observable directamente",
+        "reason": "La Luna nueva no se ve, pero favorece un cielo nocturno más oscuro."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260812_08_100"
+      }
+    },
+    {
+      "id": "solar-eclipse-partial-2026-08-12",
+      "type": "solar_eclipse",
+      "title_es": "Eclipse solar parcial",
+      "summary_es": "Eclipse solar parcial, con una ocultación del 94.6% desde Sevilla. Inicio parcial 19:41 hora local y máximo 20:37. El final geométrico es a las 21:29, cuando el Sol ya está bajo el horizonte; solo puede observarse mientras permanezca visible. Protección ocular homologada obligatoria durante toda la observación.",
+      "start_local": "2026-08-12T19:41:51.117619+02:00",
+      "end_local": "2026-08-12T21:29:33.796877+02:00",
+      "peak_local": "2026-08-12T20:37:32.182277+02:00",
+      "peak_altitude_deg": 7.36,
+      "obscuration": 0.946,
+      "is_total_from_location": false,
+      "visibility": {
+        "status": "visible",
+        "label": "Visible con protección",
+        "reason": "Eclipse parcial desde Sevilla. Usar gafas de eclipse homologadas (norma ISO 12312-2). No observar sin protección.",
+        "type": "solar_eclipse",
+        "magnitude": "parcial, con una ocultación del 94.6%",
+        "protection_required": true,
+        "official_links": [
+          "https://visualizadores.ign.es/eclipses/2026",
+          "https://eclipse.gsfc.nasa.gov/SEcat5/SE2026Aug12P.html"
+        ]
+      },
+      "source": {
+        "name": "Astronomy Engine + IGN",
+        "url": "https://visualizadores.ign.es/eclipses/2026"
+      }
+    },
+    {
+      "id": "venus-at-dichotomy-2026-08-12",
+      "type": "other",
+      "title_es": "Venus en la dicotomía",
+      "summary_es": "Venus alcanza la mitad de la fase en el cielo nocturno",
+      "start_local": "2026-08-12T21:44:25+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Venus no observable: altitud 16.4°, Sol a -4.8°.",
+        "altitude_deg": 16.4,
+        "azimuth_deg": 252.4,
+        "sun_altitude_deg": -4.8
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260812_11_100"
+      }
+    },
+    {
+      "id": "perseids-2026-08-12",
+      "type": "meteor_shower",
+      "title_es": "Perseidas 2026",
+      "summary_es": "Lluvia de meteoros Perseidas. Máximo aproximado madrugada del 13 de agosto, entre las 04:00 y las 06:00 hora local (según IGN). Luna nueva favorable (poca interferencia lunar). Sujeto a condiciones meteorológicas.",
+      "start_local": "2026-08-13T04:00:00+02:00",
+      "visibility": {
+        "status": "uncertain",
+        "label": "Dependiente del tiempo",
+        "reason": "Máximo nocturno; verifique nubosidad y contaminación lumínica. Luna nueva favorable.",
+        "radiant": "Perseus",
+        "moon_phase": "Luna nueva (favorable)"
+      },
+      "source": {
+        "name": "IGN",
+        "url": "https://www.ign.es/web/ign/portal/last-catalog-articles/-/article/lloveras-de-meteoros"
+      }
+    }
+  ],
+  "weather": {
+    "cloud_cover": 0.0,
+    "visibility": 43220.0,
+    "precipitation_probability": 0,
+    "temperature": 25.5
+  },
+  "sources": [
+    {
+      "name": "In-The-Sky",
+      "url": "https://in-the-sky.org/"
+    },
+    {
+      "name": "Open-Meteo",
+      "url": "https://open-meteo.com/"
+    },
+    {
+      "name": "IGN",
+      "url": "https://www.ign.es/"
+    },
+    {
+      "name": "MyMemory",
+      "url": "https://www.translated.net/MyMemory/"
+    }
+  ]
+}

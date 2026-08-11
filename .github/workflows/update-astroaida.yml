@@ -36,6 +36,9 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Instalar dependencias Python
+        run: pip install -r astroaida/requirements.txt
+
       - name: Recopilar datos
         id: collect
         continue-on-error: true

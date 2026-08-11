@@ -772,6 +772,7 @@ class TestCollectReal(unittest.TestCase):
             patch('collect_data.fetch_astronomy_positions', return_value=self._raw('astronomy-positions.json')),
             patch('collect_data.fetch_astronomy_moon', return_value=self._raw('astronomy-moon.json')),
             patch('collect_data.fetch_astronomy_star_chart', return_value=self._raw('astronomy-star-chart.json')),
+            patch('collect_data.collect_ephemerides', return_value=0),
         )
 
     def _enter(self, patches):
@@ -812,7 +813,9 @@ class TestCollectReal(unittest.TestCase):
         with open(path, 'w') as f:
             json.dump(existing, f)
 
-        with self._enter([patch('collect_data.fetch_apod', return_value=None)] + list(self._all_ok_patches()[1:])):
+        patches = list(self._all_ok_patches())
+        patches[0] = patch('collect_data.fetch_apod', return_value=None)
+        with self._enter(patches):
             code = collect_real(self.data_dir, 'KEY', 'ID', 'SECRET')
 
         self.assertEqual(code, 1)
@@ -846,7 +849,9 @@ class TestCollectReal(unittest.TestCase):
         self.assertTrue(os.path.exists(os.path.join(self.data_dir, 'apod.json')))
 
     def test_collect_real_no_write_on_validation_failure(self):
-        with self._enter([patch('collect_data.fetch_apod', return_value={'junk': True})] + list(self._all_ok_patches()[1:])):
+        patches = list(self._all_ok_patches())
+        patches[0] = patch('collect_data.fetch_apod', return_value={'junk': True})
+        with self._enter(patches):
             code = collect_real(self.data_dir, 'KEY', 'ID', 'SECRET')
         self.assertEqual(code, 1)
         self.assertFalse(os.path.exists(os.path.join(self.data_dir, 'apod.json')))

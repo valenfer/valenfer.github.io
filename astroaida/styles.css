@@ -514,6 +514,132 @@ main {
   line-height: 44px;
 }
 
+/* Ephemerides */
+
+.ephem {
+  max-width: 100%;
+}
+
+.ephem__date {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--accent-solar);
+}
+
+.ephem__window {
+  margin: 0 0 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.ephem__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ephem__card {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--ink-border);
+}
+
+.ephem__card:first-child {
+  border-top: 0;
+}
+
+.ephem__card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.ephem__card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-solar);
+}
+
+.ephem__card-time {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.ephem__card-summary {
+  margin: 0 0 0.75rem;
+  color: var(--text);
+  max-width: 70ch;
+}
+
+.ephem__visibility {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.ephem__visibility--visible {
+  background: rgba(143, 191, 159, 0.16);
+  color: var(--accent-ok);
+}
+
+.ephem__visibility--contextual {
+  background: rgba(127, 178, 201, 0.16);
+  color: var(--accent-cyan);
+}
+
+.ephem__visibility--uncertain {
+  background: rgba(232, 180, 106, 0.16);
+  color: var(--accent-solar);
+}
+
+.ephem__visibility--not-visible {
+  background: rgba(224, 144, 122, 0.16);
+  color: var(--accent-danger);
+}
+
+.ephem__weather {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--ink-soft);
+  border: 1px solid var(--ink-border);
+  border-radius: 4px;
+}
+
+.ephem__weather-title {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.ephem__weather-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.15rem 1.5rem;
+  margin: 0;
+}
+
+.ephem__sources {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.ephem__sources li {
+  display: inline;
+}
+
+.ephem__sources li + li::before {
+  content: " · ";
+}
+
 /* Footer */
 
 .site-footer {
@@ -567,6 +693,10 @@ main {
 
   .moon__stats,
   .asteroid__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .ephem__weather-stats {
     grid-template-columns: 1fr;
   }
 }

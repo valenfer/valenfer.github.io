@@ -10,9 +10,10 @@ EXPECTED_LINKS = [
     ('#moon', 'Luna'),
     ('#star-chart', 'Carta celeste'),
     ('#near-earth', 'Asteroides'),
+    ('#ephemerides', 'Efemérides'),
 ]
 
-EXPECTED_SECTIONS = ['apod', 'sky-today', 'moon', 'star-chart', 'near-earth']
+EXPECTED_SECTIONS = ['apod', 'sky-today', 'moon', 'star-chart', 'near-earth', 'ephemerides']
 
 
 def css_block(css, selector):
