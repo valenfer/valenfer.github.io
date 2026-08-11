@@ -8,8 +8,8 @@ publicable bajo `/astroaida/` en GitHub Pages.
   NASA (APOD, NeoWs) y AstronomyAPI antes de escribirlos de forma atómica.
 - **Idioma de la interfaz:** español. El texto de origen de APOD se mantiene en inglés y se etiqueta.
 
-> En esta fase el sitio funciona con **datos de muestra** (marcados como `status: "preview"`).
-> Los recopiladores están listos, pero la recopilación en vivo requiere credenciales nuevas.
+Los JSON publicados usan `status: "live"` cuando proceden de las APIs. El frontend también
+admite `status: "preview"` para mostrar de forma honesta un fallback de muestra.
 
 ## Servidor local
 
@@ -66,12 +66,17 @@ Comportamiento de fallo: si una fuente no puede refrescarse, el script conserva 
 archivo tras superar la validación de esquema (escritura atómica vía `os.replace`).
 No se registran cabeceras de autorización ni claves en los logs.
 
+El workflow `.github/workflows/update-astroaida.yml` se ejecuta dos veces al día y también
+admite lanzamiento manual. Valida todo el sitio antes de hacer commit y limita la escritura
+a `astroaida/data/`. Si una fuente falla, puede publicar las demás actualizaciones válidas,
+conserva el fallback anterior de la fuente fallida y termina en rojo para generar una alerta.
+
 ## Credenciales seguras
 
 - Nunca incluyas claves en el código ni en el repositorio.
 - En GitHub, usa **Settings → Secrets and variables → Actions** y define
   `NASA_API_KEY`, `ASTRONOMY_APP_ID` y `ASTRONOMY_APP_SECRET`.
-- El workflow futuro las inyectará como variables de entorno del runner;
+- El workflow de actualización las inyecta como variables de entorno del runner;
   nunca llegan al navegador.
 
 ## ¿Por qué el navegador no usa las API directamente?
@@ -80,13 +85,11 @@ Las llamadas a NASA/AstronomyAPI requieren credenciales. Cualquier clave embebid
 HTML/JS sería pública, revocable y un riesgo de abuso. Por eso el navegador solo lee
 JSON normalizado local, producido por el recopilador en el servidor/CI.
 
-## Futuro
+## Evolución posible
 
-1. **Workflow de GitHub Actions** (`update-astroaida.yml`): recopilación programada con
-   credenciales nuevas como Secrets, commit de los datos validados y publicación.
-2. **Selector de coordenadas/observatorio**: la configuración del observador está
+1. **Selector de coordenadas/observatorio**: la configuración del observador está
    centralizada (`OBSERVER_*` en `scripts/collect_data.py`) para ampliarla después.
-3. Prueba de humo real contra AstronomyAPI y generación del conjunto en vivo.
+2. Traducción opcional del texto editorial de APOD, conservando siempre el original.
 
 ## Estructura
 

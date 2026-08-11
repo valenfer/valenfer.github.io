@@ -1,5 +1,6 @@
 import argparse
 import base64
+import http.client
 import json
 import os
 import re
@@ -119,6 +120,8 @@ def normalize_astronomy_positions(raw: Dict[str, Any]) -> Dict[str, Any]:
     bodies = []
     for row in raw['data']['rows']:
         body_meta = row.get('body', {})
+        if str(body_meta.get('id', '')).lower() == 'earth':
+            continue
         positions = row.get('positions')
         if not positions:
             continue
@@ -342,7 +345,8 @@ def fetch_with_retry(url: str, timeout: int = 10, max_retries: int = 3,
                 continue
             print('[astroaida] {}: HTTP {}'.format(source, e.code))
             return None
-        except urllib.error.URLError:
+        except (urllib.error.URLError, TimeoutError, ConnectionError,
+                http.client.IncompleteRead, http.client.RemoteDisconnected):
             if attempt < max_retries:
                 time.sleep(2 ** attempt)
                 continue

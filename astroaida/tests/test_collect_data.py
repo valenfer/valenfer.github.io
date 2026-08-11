@@ -1,4 +1,5 @@
 import unittest
+import http.client
 import json
 import io
 import os
@@ -179,6 +180,19 @@ class TestAstronomyPositionsNormalization(unittest.TestCase):
         self.assertEqual(mercury['name'], 'Mercury')
         self.assertEqual(mercury['magnitude'], -0.5)
 
+    def test_normalize_astronomy_positions_excludes_earth(self):
+        raw = self.load_fixture('astronomy-positions.json')
+        earth = json.loads(json.dumps(raw['data']['rows'][0]))
+        earth['body'] = {'id': 'earth', 'name': 'Earth'}
+        earth['positions'][0]['id'] = 'earth'
+        earth['positions'][0]['name'] = 'Earth'
+        raw['data']['rows'].insert(0, earth)
+
+        normalized = normalize_astronomy_positions(raw)
+
+        self.assertNotIn('Earth', [body['name'] for body in normalized['bodies']])
+        self.assertEqual(len(normalized['bodies']), 6)
+
     def test_normalize_astronomy_positions_missing_required_field_fails(self):
         for field in ('altitude', 'azimuth', 'distance'):
             with self.subTest(field=field):
@@ -302,6 +316,29 @@ class TestFetchWithRetry(unittest.TestCase):
             result = fetch_with_retry('https://api.example.com/data', timeout=5, max_retries=3)
             self.assertEqual(result, {'key': 'value'})
             self.assertEqual(mock_urlopen.call_count, 2)
+
+    def test_fetch_incomplete_read_retries_and_succeeds(self):
+        response = self._make_mock_response('{"ok": true}')
+        with patch('urllib.request.urlopen', side_effect=[
+                http.client.IncompleteRead(b'partial'), response]) as mock_urlopen, \
+                patch('time.sleep'):
+            result = fetch_with_retry('https://api.example.com/data', max_retries=1,
+                                      label='NASA APOD')
+
+        self.assertEqual(result, {'ok': True})
+        self.assertEqual(mock_urlopen.call_count, 2)
+
+    def test_fetch_incomplete_read_exhausted_logs_network_error(self):
+        output = io.StringIO()
+        with patch('urllib.request.urlopen', side_effect=[
+                http.client.IncompleteRead(b'partial'),
+                http.client.IncompleteRead(b'partial')]), \
+                patch('time.sleep'), redirect_stdout(output):
+            result = fetch_with_retry('https://api.example.com/data', max_retries=1,
+                                      label='NASA APOD')
+
+        self.assertIsNone(result)
+        self.assertIn('NASA APOD: network error', output.getvalue())
 
     def test_fetch_malformed_json(self):
         mock_response = self._make_mock_response('not valid json')
