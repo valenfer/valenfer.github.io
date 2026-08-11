@@ -38,6 +38,32 @@ jobs:
         continue-on-error: true
         run: python astroaida/scripts/collect_data.py
 
+      - name: Sondear variantes documentadas de Luna
+        if: steps.collect.outcome == 'failure'
+        shell: bash
+        run: |
+          today=$(TZ=Europe/Madrid date +%F)
+          endpoint="https://api.astronomyapi.com/api/v2/studio/moon-phase"
+
+          probe() {
+            label="$1"
+            payload="$2"
+            status=$(curl --silent --show-error --max-time 30 \
+              --output /dev/null --write-out '%{http_code}' \
+              --user "$ASTRONOMY_APP_ID:$ASTRONOMY_APP_SECRET" \
+              --header 'Content-Type: application/json' \
+              --data "$payload" "$endpoint") || status="transport-error"
+            echo "$label: HTTP $status"
+          }
+
+          with_orientation=$(printf '{"format":"png","observer":{"latitude":37.38283,"longitude":-5.97317,"date":"%s"},"view":{"type":"portrait-simple","orientation":"north-up"}}' "$today")
+          with_style=$(printf '{"format":"png","style":{"moonStyle":"default","backgroundStyle":"stars","backgroundColor":"black","headingColor":"white","textColor":"white"},"observer":{"latitude":37.38283,"longitude":-5.97317,"date":"%s"},"view":{"type":"portrait-simple"}}' "$today")
+          with_both=$(printf '{"format":"png","style":{"moonStyle":"default","backgroundStyle":"stars","backgroundColor":"black","headingColor":"white","textColor":"white"},"observer":{"latitude":37.38283,"longitude":-5.97317,"date":"%s"},"view":{"type":"portrait-simple","orientation":"north-up"}}' "$today")
+
+          probe "orientation" "$with_orientation"
+          probe "style" "$with_style"
+          probe "orientation+style" "$with_both"
+
       - name: Validar datos reales
         run: python astroaida/scripts/validate_site.py
 
