@@ -1,6 +1,6 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-08-12T06:41:20.343506+00:00",
+  "fetched_at": "2026-08-12T18:05:25.310192+00:00",
   "status": "live",
   "target_date": "2026-08-13",
   "timezone": "Europe/Madrid",
@@ -33,9 +33,10 @@
       }
     },
     {
-      "id": "the-moon-at-perihelion-2026-08-13",
+      "id": "20260814_08_100-in-the-sky-org-72fba3d7a044-2026-08-13",
       "type": "other",
       "title_es": "Perihelio",
+      "title_translation_status": "deterministic",
       "summary_es": "La Luna pasa por su punto más cercano al Sol, una ocurrencia mensual en la época de la luna nueva",
       "start_local": "2026-08-14T11:01:43+02:00",
       "visibility": {
@@ -52,9 +53,10 @@
       }
     },
     {
-      "id": "mercury-at-perihelion-2026-08-13",
+      "id": "20260814_11_100-in-the-sky-org-47b85a2eccef-2026-08-13",
       "type": "other",
       "title_es": "Perihelio",
+      "title_translation_status": "deterministic",
       "summary_es": "Mercurio pasa su punto más cercano al Sol",
       "start_local": "2026-08-14T11:31:18+02:00",
       "visibility": {
@@ -72,10 +74,10 @@
     }
   ],
   "weather": {
-    "cloud_cover": 0.15,
-    "visibility": 43180.0,
+    "cloud_cover": 0.5,
+    "visibility": 42180.0,
     "precipitation_probability": 0,
-    "temperature": 26.8
+    "temperature": 26.5
   },
   "sources": [
     {
