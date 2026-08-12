@@ -502,21 +502,46 @@ class TestIcsParsing(unittest.TestCase):
         self.assertIn('This is a very long', lines[0])
 
     def test_ics_utc_dtstart_parsing(self):
-        ics_raw = "BEGIN:VEVENT\nDTSTART:20260812T180000Z\nSUMMARY:Eclipse\nEND:VEVENT"
+        ics_raw = "BEGIN:VCALENDAR\nBEGIN:VEVENT\nDTSTART:20260812T180000Z\nSUMMARY:Eclipse\nEND:VEVENT\nEND:VCALENDAR"
         events = collect_data.parse_ics_events(ics_raw, 2026)
         self.assertEqual(len(events), 1)
         self.assertEqual(events[0]['dtstart'], '20260812T180000Z')
 
     def test_ics_local_dtstart_parsing(self):
-        ics_raw = "BEGIN:VEVENT\nDTSTART:20260812T200000\nSUMMARY:Conjunction\nEND:VEVENT"
+        ics_raw = "BEGIN:VCALENDAR\nBEGIN:VEVENT\nDTSTART:20260812T200000\nSUMMARY:Conjunction\nEND:VEVENT\nEND:VCALENDAR"
         events = collect_data.parse_ics_events(ics_raw, 2026)
         self.assertEqual(len(events), 1)
 
     def test_ics_url_in_event(self):
-        ics_raw = "BEGIN:VEVENT\nDTSTART:20260812T180000Z\nURL:https://in-the-sky.org/news.php\nEND:VEVENT"
+        ics_raw = "BEGIN:VCALENDAR\nBEGIN:VEVENT\nDTSTART:20260812T180000Z\nURL:https://in-the-sky.org/news.php\nEND:VEVENT\nEND:VCALENDAR"
         events = collect_data.parse_ics_events(ics_raw, 2026)
         self.assertEqual(len(events), 1)
         self.assertTrue(events[0]['url'].startswith('https://'))
+
+    def test_truncated_calendar_with_complete_event_is_rejected(self):
+        ics_raw = (
+            "BEGIN:VCALENDAR\nBEGIN:VEVENT\nDTSTART:20260812T180000Z\n"
+            "SUMMARY:Eclipse\nEND:VEVENT"
+        )
+        events = collect_data.parse_ics_events(ics_raw, 2026)
+        self.assertEqual(events, [])
+
+    def test_concatenated_calendars_are_rejected(self):
+        calendar = (
+            "BEGIN:VCALENDAR\nBEGIN:VEVENT\nDTSTART:20260812T180000Z\n"
+            "SUMMARY:Eclipse\nEND:VEVENT\nEND:VCALENDAR"
+        )
+        events = collect_data.parse_ics_events(calendar + "\n" + calendar, 2026)
+        self.assertEqual(events, [])
+
+    def test_event_nested_inside_vtodo_is_rejected(self):
+        ics_raw = (
+            "BEGIN:VCALENDAR\nBEGIN:VTODO\nBEGIN:VEVENT\n"
+            "DTSTART:20260812T180000Z\nSUMMARY:Eclipse\n"
+            "END:VEVENT\nEND:VTODO\nEND:VCALENDAR"
+        )
+        events = collect_data.parse_ics_events(ics_raw, 2026)
+        self.assertEqual(events, [])
 
     def test_ics_filtering_by_observation_window(self):
         tz = ZoneInfo('Europe/Madrid')
@@ -534,6 +559,193 @@ class TestIcsParsing(unittest.TestCase):
             'summary': 'Something else',
         }
         self.assertFalse(collect_data._ics_event_in_window(ics_event_out, window_start, window_end, tz))
+
+    def test_invalid_numeric_dtstart_is_discarded_without_exception(self):
+        tz = ZoneInfo('Europe/Madrid')
+        target = datetime(2026, 8, 12).date()
+        window_start, window_end = collect_data.observation_window(target, tz)
+        malformed = {'dtstart': '20261345T999999', 'summary': 'Broken event'}
+        self.assertFalse(
+            collect_data._ics_event_in_window(malformed, window_start, window_end, tz)
+        )
+
+    def test_parse_ics_events_preserves_uid(self):
+        """parse_ics_events should preserve UID from VEVENT."""
+        ics_raw = (
+            "BEGIN:VCALENDAR\n"
+            "BEGIN:VEVENT\n"
+            "UID:test-uid-123@example.com\n"
+            "DTSTART:20260812T180000Z\n"
+            "SUMMARY:Test Event\n"
+            "END:VEVENT\n"
+            "END:VCALENDAR"
+        )
+        events = collect_data.parse_ics_events(ics_raw, 2026)
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0].get('uid'), 'test-uid-123@example.com')
+
+    def test_parse_ics_events_preserves_uid_with_folded_lines(self):
+        """parse_ics_events should preserve UID even with folded lines (RFC 5545)."""
+        ics_raw = (
+            "BEGIN:VCALENDAR\n"
+            "BEGIN:VEVENT\n"
+            "UID:very-long-uid-that-gets-folded\n"
+            " across-multiple-lines@example.com\n"
+            "DTSTART:20260812T180000Z\n"
+            "SUMMARY:Test Event\n"
+            "END:VEVENT\n"
+            "END:VCALENDAR"
+        )
+        events = collect_data.parse_ics_events(ics_raw, 2026)
+        self.assertEqual(len(events), 1)
+        # unfold_ics_lines removes the folding space per RFC 5545
+        self.assertEqual(events[0].get('uid'), 'very-long-uid-that-gets-foldedacross-multiple-lines@example.com')
+
+    def test_parse_ics_events_multiple_events_preserve_unique_uids(self):
+        """Multiple VEVENTs should each preserve their unique UID."""
+        ics_raw = (
+            "BEGIN:VCALENDAR\n"
+            "BEGIN:VEVENT\n"
+            "UID:event-1@example.com\n"
+            "DTSTART:20260812T180000Z\n"
+            "SUMMARY:Event One\n"
+            "END:VEVENT\n"
+            "BEGIN:VEVENT\n"
+            "UID:event-2@example.com\n"
+            "DTSTART:20260812T200000Z\n"
+            "SUMMARY:Event Two\n"
+            "END:VEVENT\n"
+            "END:VCALENDAR"
+        )
+        events = collect_data.parse_ics_events(ics_raw, 2026)
+        self.assertEqual(len(events), 2)
+        self.assertEqual(events[0].get('uid'), 'event-1@example.com')
+        self.assertEqual(events[1].get('uid'), 'event-2@example.com')
+
+
+class TestEventIdGeneration(unittest.TestCase):
+    """Tests for build_ephemerides_event ID generation to prevent collisions."""
+
+    def setUp(self):
+        self.tz = ZoneInfo('Europe/Madrid')
+        self.target_date = datetime(2026, 8, 12).date()
+
+    def test_build_ephemerides_event_uses_uid_for_id_when_present(self):
+        """build_ephemerides_event should generate stable ID from UID when available."""
+        event_with_uid = {
+            'dtstart': '20260812T200000Z',
+            'summary': 'Test Event with UID',
+            'uid': 'stable-uid-123@example.com',
+            'url': 'https://in-the-sky.org/',
+        }
+        built = collect_data.build_ephemerides_event(event_with_uid, self.target_date, self.tz)
+        self.assertIn('id', built)
+        self.assertIn('stable-uid-123', built['id'])
+
+    def test_build_ephemerides_event_deterministic_hash_without_uid(self):
+        """build_ephemerides_event should use deterministic hash of full DTSTART + summary when UID missing."""
+        event_no_uid = {
+            'dtstart': '20260812T200000Z',
+            'summary': 'Unique Event Summary',
+            'url': 'https://in-the-sky.org/',
+        }
+        built1 = collect_data.build_ephemerides_event(event_no_uid, self.target_date, self.tz)
+        built2 = collect_data.build_ephemerides_event(event_no_uid, self.target_date, self.tz)
+        self.assertEqual(built1['id'], built2['id'])
+        self.assertTrue(len(built1['id']) > 10)
+
+    def test_distinct_uids_that_sanitize_equally_do_not_collide(self):
+        first = {
+            'dtstart': '20260812T200000Z',
+            'summary': 'First event',
+            'uid': 'event@example.com',
+        }
+        second = {
+            'dtstart': '20260812T210000Z',
+            'summary': 'Second event',
+            'uid': 'event-example.com',
+        }
+        first_id = collect_data._generate_event_id(first, self.target_date)
+        second_id = collect_data._generate_event_id(second, self.target_date)
+        self.assertNotEqual(first_id, second_id)
+
+    def test_distinct_events_same_prefix_different_times_no_collision(self):
+        """Two distinct events with same 40-char prefix but different times must both be preserved."""
+        event1 = {
+            'dtstart': '20260812T200000Z',
+            'summary': 'Very long event summary that starts the same way but has different content',
+            'url': 'https://in-the-sky.org/',
+        }
+        event2 = {
+            'dtstart': '20260812T220000Z',
+            'summary': 'Very long event summary that starts the same way but has other details here',
+            'url': 'https://in-the-sky.org/',
+        }
+        built1 = collect_data.build_ephemerides_event(event1, self.target_date, self.tz)
+        built2 = collect_data.build_ephemerides_event(event2, self.target_date, self.tz)
+        self.assertNotEqual(built1['id'], built2['id'], 'Events with different times should have different IDs')
+
+    def test_same_uid_events_are_deduplicated(self):
+        """Copies of the same event (same UID) should be deduplicated in normalize_ephemerides."""
+        ics_events = [
+            {
+                'dtstart': '20260812T200000Z',
+                'summary': 'Duplicate Event',
+                'uid': 'same-uid@example.com',
+                'url': 'https://in-the-sky.org/',
+            },
+            {
+                'dtstart': '20260812T200000Z',
+                'summary': 'Duplicate Event',
+                'uid': 'same-uid@example.com',
+                'url': 'https://in-the-sky.org/',
+            },
+        ]
+        weather = {}
+        special_events = []
+        result = collect_data.normalize_ephemerides(ics_events, self.target_date, self.tz, weather, special_events)
+        self.assertEqual(len(result['events']), 1, 'Duplicate UID events should be deduplicated to 1')
+
+    def test_event_ids_valid_for_json_dom(self):
+        """Generated event IDs must be valid for JSON/DOM (no spaces, special chars)."""
+        event = {
+            'dtstart': '20260812T200000Z',
+            'summary': 'Test Event with special chars: áéíóú & symbols!',
+            'url': 'https://in-the-sky.org/',
+        }
+        built = collect_data.build_ephemerides_event(event, self.target_date, self.tz)
+        event_id = built['id']
+        self.assertNotIn(' ', event_id)
+        self.assertRegex(event_id, r'^[a-zA-Z0-9_-]+$', 'ID should only contain alphanumeric, hyphen, underscore')
+
+
+class TestEphemeridesTitleTranslation(unittest.TestCase):
+    def test_unknown_title_uses_complete_server_side_translation(self):
+        event = {
+            'dtstart': '20260812T200000Z',
+            'summary': 'The Moon at perigee',
+            'url': 'https://in-the-sky.org/',
+        }
+        with patch.object(collect_data, 'translate_text_mymemory',
+                          return_value=('La Luna en el perigeo', 'translated')):
+            built = collect_data.build_ephemerides_event(
+                event, datetime(2026, 8, 12).date(), ZoneInfo('Europe/Madrid'))
+        self.assertEqual(built['title_es'], 'La Luna en el perigeo')
+        self.assertEqual(built['title_translation_status'], 'translated')
+
+    def test_failed_title_translation_keeps_intact_original_and_marks_it(self):
+        original = 'Uranus ends retrograde motion'
+        event = {
+            'dtstart': '20260812T200000Z',
+            'summary': original,
+            'url': 'https://in-the-sky.org/',
+        }
+        with patch.object(collect_data, 'translate_text_mymemory',
+                          return_value=(original, 'unavailable')):
+            built = collect_data.build_ephemerides_event(
+                event, datetime(2026, 8, 12).date(), ZoneInfo('Europe/Madrid'))
+        self.assertEqual(built['title_es'], original)
+        self.assertEqual(built['title_translation_status'], 'unavailable')
 
 
 class TestEclipseSpecialEvent(unittest.TestCase):
@@ -661,6 +873,21 @@ class TestAssessVisibility(unittest.TestCase):
     def test_sun_above_horizon_night(self):
         vis = collect_data.assess_visibility('Sun', 18.0, -10.0)
         self.assertEqual(vis['status'], 'visible')
+
+    def test_sun_above_horizon_realistic(self):
+        """For solar events, altitude_deg == sun_altitude_deg. Visibility should be based on Sun altitude."""
+        # Sun at 18° (above horizon) - should be visible with protection
+        vis = collect_data.assess_visibility('Sun', 18.0, 18.0)
+        self.assertEqual(vis['status'], 'visible')
+        self.assertIn('protección', vis['label'].lower())
+
+        # Sun at 5° (above horizon but low) - should be visible with protection
+        vis = collect_data.assess_visibility('Sun', 5.0, 5.0)
+        self.assertEqual(vis['status'], 'visible')
+
+        # Sun at -5° (below horizon) - should be not_visible
+        vis = collect_data.assess_visibility('Sun', -5.0, -5.0)
+        self.assertEqual(vis['status'], 'not_visible')
 
     def test_sun_below_horizon(self):
         vis = collect_data.assess_visibility('Sun', -5.0, -10.0)
@@ -833,10 +1060,84 @@ class TestCollectEphemeridesICSFailure(unittest.TestCase):
                     mock_now.return_value = datetime(2026, 8, 11, 14, 0, 0,
                                                       tzinfo=ZoneInfo('Europe/Madrid'))
                     result = collect_data.collect_ephemerides(tmpdir, timeout=5, write=True)
-            self.assertEqual(result, 0)
+            self.assertEqual(result, 2)  # Degraded preservation
             with open(os.path.join(tmpdir, 'ephemerides.json')) as f:
                 data = json.load(f)
             self.assertEqual(data['status'], 'live')
+
+    def test_returns_2_for_degraded_preservation(self):
+        """ICS failure with previous data should return 2 (degraded preservation)."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            prev = {'status': 'live', 'events': []}
+            with open(os.path.join(tmpdir, 'ephemerides.json'), 'w') as f:
+                json.dump(prev, f)
+            with patch.object(collect_data, 'fetch_ics_events', return_value=None):
+                with patch.object(collect_data, 'astronomy_now') as mock_now:
+                    mock_now.return_value = datetime(2026, 8, 11, 14, 0, 0,
+                                                      tzinfo=ZoneInfo('Europe/Madrid'))
+                    result = collect_data.collect_ephemerides(tmpdir, timeout=5, write=True)
+            self.assertEqual(result, 2)  # Degraded preservation code
+            # Previous data should be preserved
+            with open(os.path.join(tmpdir, 'ephemerides.json')) as f:
+                data = json.load(f)
+            self.assertEqual(data['status'], 'live')
+
+    def test_returns_0_on_complete_success(self):
+        """Complete success (ICS fetched, validated, written) should return 0."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            ics_raw = '''BEGIN:VCALENDAR
+BEGIN:VEVENT
+DTSTART:20260812T200000Z
+SUMMARY:Test Event
+END:VEVENT
+END:VCALENDAR'''
+            with patch.object(collect_data, 'fetch_ics_events', return_value=ics_raw):
+                with patch.object(collect_data, 'fetch_weather_open_meteo', return_value={}):
+                    with patch.object(collect_data, 'astronomy_now') as mock_now:
+                        mock_now.return_value = datetime(2026, 8, 11, 14, 0, 0,
+                                                          tzinfo=ZoneInfo('Europe/Madrid'))
+                        result = collect_data.collect_ephemerides(tmpdir, timeout=5, write=True)
+            self.assertEqual(result, 0)
+            # New data should be written
+            with open(os.path.join(tmpdir, 'ephemerides.json')) as f:
+                data = json.load(f)
+            self.assertEqual(data['status'], 'live')
+            self.assertGreater(len(data['events']), 0)
+
+    def test_returns_2_when_ics_content_but_zero_parsed_events(self):
+        """ICS returns non-empty content but parse_ics_events produces zero events -> treat as invalid."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            # HTML error page (200 OK but not ICS)
+            html_content = '<html><body>Error 500 Internal Server Error</body></html>'
+            prev = {'status': 'live', 'events': [{'id': 'old-event', 'type': 'other', 'title_es': 'Old', 'summary_es': '', 'start_local': '2026-08-11T20:00+02:00', 'visibility': {'status': 'visible', 'label': 'V', 'reason': 'R'}, 'source': {'name': 'X', 'url': 'https://example.com'}}]}
+            with open(os.path.join(tmpdir, 'ephemerides.json'), 'w') as f:
+                json.dump(prev, f)
+            with patch.object(collect_data, 'fetch_ics_events', return_value=html_content):
+                with patch.object(collect_data, 'astronomy_now') as mock_now:
+                    mock_now.return_value = datetime(2026, 8, 11, 14, 0, 0,
+                                                      tzinfo=ZoneInfo('Europe/Madrid'))
+                    result = collect_data.collect_ephemerides(tmpdir, timeout=5, write=True)
+            self.assertEqual(result, 2)  # Degraded preservation
+            # Previous data should be preserved, NOT overwritten with empty events
+            with open(os.path.join(tmpdir, 'ephemerides.json')) as f:
+                data = json.load(f)
+            self.assertEqual(data['status'], 'live')
+            self.assertEqual(len(data['events']), 1)
+            self.assertEqual(data['events'][0]['id'], 'old-event')
+
+    def test_returns_1_when_ics_content_but_zero_parsed_events_and_no_previous(self):
+        """ICS returns non-empty content but parse_ics_events produces zero events, no previous data -> return 1."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            # VCALENDAR without VEVENT
+            ics_no_events = 'BEGIN:VCALENDAR\nVERSION:2.0\nEND:VCALENDAR'
+            with patch.object(collect_data, 'fetch_ics_events', return_value=ics_no_events):
+                with patch.object(collect_data, 'astronomy_now') as mock_now:
+                    mock_now.return_value = datetime(2026, 8, 11, 14, 0, 0,
+                                                      tzinfo=ZoneInfo('Europe/Madrid'))
+                    result = collect_data.collect_ephemerides(tmpdir, timeout=5, write=True)
+            self.assertEqual(result, 1)  # Hard failure, no previous data
+            # No file should be created
+            self.assertFalse(os.path.exists(os.path.join(tmpdir, 'ephemerides.json')))
 
 
 class TestEphemeridesContractIntegration(unittest.TestCase):

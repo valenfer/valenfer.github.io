@@ -209,7 +209,7 @@ def assess_visibility(body_name: str, altitude_deg: float,
     """Assess visibility for a celestial body based on altitude and Sun position.
 
     Rules:
-    - Solar events: visible if altitude >= 10° and Sun <= -6°
+    - Solar events: visible if altitude >= 0° (Sun above horizon), with protection required
     - Non-solar identifiable bodies: visible if altitude >= 10° and Sun <= -6°
     - Below horizon (altitude < 0): not_visible
     - Daylight (Sun altitude >= -6°): not_visible/contextual
@@ -225,8 +225,11 @@ def assess_visibility(body_name: str, altitude_deg: float,
                       f'(altitud {altitude_deg:.1f}°).',
         }
 
-    if is_solar and altitude_deg >= 10:
-        if sun_altitude_deg <= -6:
+    if is_solar:
+        # For solar events (eclipses), the body IS the Sun.
+        # Use altitude_deg (which equals sun_altitude_deg for the Sun).
+        # Eclipse is visible when Sun is above horizon.
+        if altitude_deg >= 0:
             return {
                 'status': 'visible',
                 'label': 'Visible con protección',
@@ -234,9 +237,9 @@ def assess_visibility(body_name: str, altitude_deg: float,
             }
         else:
             return {
-                'status': 'contextual',
-                'label': 'Requiere protección ocular',
-                'reason': 'El Sol está sobre el horizonte; protección obligatoria.',
+                'status': 'not_visible',
+                'label': 'Bajo el horizonte',
+                'reason': f'El Sol está bajo el horizonte (altitud {altitude_deg:.1f}°).',
             }
 
     if not is_solar and body_name in BODY_NAMES:
@@ -552,6 +555,7 @@ def validate_ephemerides(dataset: Dict[str, Any]) -> List[str]:
             'lunar_phase', 'planet_visible', 'comet',
             'asteroid_close', 'iss_pass', 'other',
         )
+        seen_ids = set()
         for idx, event in enumerate(events):
             for field in ('id', 'type', 'title_es', 'summary_es', 'start_local',
                            'visibility', 'source'):
@@ -572,6 +576,13 @@ def validate_ephemerides(dataset: Dict[str, Any]) -> List[str]:
             url = src.get('url', '')
             if url and not url.startswith('https://'):
                 errors.append('events[{}].source.url'.format(idx))
+            # Check for duplicate event IDs
+            event_id = event.get('id')
+            if event_id:
+                if event_id in seen_ids:
+                    errors.append('events[{}].id.duplicate'.format(idx))
+                else:
+                    seen_ids.add(event_id)
     status = dataset.get('status')
     sources = dataset.get('sources')
     if status == 'live' and isinstance(sources, list) and len(sources) == 0:
@@ -753,8 +764,47 @@ def unfold_ics_lines(raw_text: str) -> List[str]:
 
 
 def parse_ics_events(raw_text: str, target_year: int) -> List[Dict[str, Any]]:
-    """Parse an ICS calendar and return event dicts for the target year."""
+    """Parse an ICS calendar and return event dicts for the target year.
+
+    Validates that the response is a plausible VCALENDAR with at least one VEVENT.
+    Returns empty list for non-VCALENDAR content (e.g., HTML error pages).
+    """
     lines = unfold_ics_lines(raw_text)
+
+    # Validate the calendar envelope and VEVENT nesting before parsing fields.
+    content_lines = [line for line in lines if line.strip()]
+    markers = [line.strip() for line in content_lines]
+    if (not content_lines or markers[0] != 'BEGIN:VCALENDAR'
+            or markers[-1] != 'END:VCALENDAR'
+            or markers.count('BEGIN:VCALENDAR') != 1
+            or markers.count('END:VCALENDAR') != 1):
+        return []
+
+    component_stack = []
+    saw_event = False
+    for line in content_lines:
+        marker = line.strip()
+        if marker.startswith('BEGIN:'):
+            component = marker[6:]
+            if component == 'VCALENDAR':
+                if component_stack:
+                    return []
+            elif not component_stack:
+                return []
+            if component == 'VEVENT':
+                if component_stack != ['VCALENDAR']:
+                    return []
+                saw_event = True
+            component_stack.append(component)
+        elif marker.startswith('END:'):
+            component = marker[4:]
+            if not component_stack or component_stack[-1] != component:
+                return []
+            component_stack.pop()
+
+    if component_stack or not saw_event:
+        return []
+
     events = []
     in_event = False
     current: Dict[str, Any] = {}
@@ -780,6 +830,8 @@ def parse_ics_events(raw_text: str, target_year: int) -> List[Dict[str, Any]]:
                     current['description'] = value.strip()
                 elif key_lower == 'URL':
                     current['url'] = value.strip()
+                elif key_lower == 'UID':
+                    current['uid'] = value.strip()
 
     filtered = []
     for ev in events:
@@ -886,7 +938,8 @@ def fetch_weather_open_meteo(target_date: str, lat: float = OBSERVER_LATITUDE,
                               timeout: int = 10) -> Optional[Dict[str, Any]]:
     """Fetch weather forecast from Open-Meteo for target_date and next day using hourly data.
 
-    Returns summary of nighttime hours only (cloud_cover, visibility, precipitation_probability, temperature).
+    Returns summary of nighttime hours only (cloud_cover, visibility, precipitation_probability, temperature),
+    strictly filtered to the observation window: target_date 00:00 Europe/Madrid to next day 12:00.
     """
     from datetime import date as _date_type
     parts = target_date.split('-')
@@ -914,12 +967,20 @@ def fetch_weather_open_meteo(target_date: str, lat: float = OBSERVER_LATITUDE,
     temp = hourly.get('temperature_2m', [])
 
     tz_madrid = ZoneInfo('Europe/Madrid')
+    window_start = datetime.combine(td, datetime.min.time()).replace(tzinfo=tz_madrid)
+    window_end = datetime.combine(td + timedelta(days=1), datetime.min.time()).replace(hour=12, tzinfo=tz_madrid)
+
     night_hours = []
     for i, t_str in enumerate(times):
         try:
             dt = datetime.fromisoformat(t_str)
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=tz_madrid)
+
+            # Strictly filter to observation window
+            if not (window_start <= dt <= window_end):
+                continue
+
             try:
                 is_dark = horizontal_coordinates('Sun', dt)['sun_altitude_deg'] <= -6.0
             except (ImportError, ValueError):
@@ -1016,7 +1077,11 @@ def translate_text_mymemory(text: str, langpair: str = 'en|es',
 
 
 def title_es_from_ics(summary: str) -> str:
-    """Generate a short Spanish title from an ICS event summary."""
+    """Generate a short Spanish title from an ICS event summary.
+
+    Returns deterministic Spanish for known event types.
+    For unknown events, returns the original summary as fallback (no hybrid translations).
+    """
     mapping = {
         'solar eclipse': 'Eclipse solar',
         'lunar eclipse': 'Eclipse lunar',
@@ -1037,23 +1102,10 @@ def title_es_from_ics(summary: str) -> str:
     for eng, esp in mapping.items():
         if eng in lower:
             return esp
-    body_names = {
-        'mercury': 'Mercurio', 'venus': 'Venus', 'mars': 'Marte',
-        'jupiter': 'Júpiter', 'saturn': 'Saturno', 'uranus': 'Urano',
-        'neptune': 'Neptuno', 'moon': 'Luna', 'sun': 'Sol',
-    }
-    translated = summary[:80]
-    for english, spanish in body_names.items():
-        translated = re.sub(r'\b{}\b'.format(english), spanish, translated,
-                            flags=re.IGNORECASE)
-    for english, spanish in {
-        'at dichotomy': 'en la dicotomía',
-        'at greatest elongation': 'en máxima elongación',
-        'close approach': 'aproximación',
-        'passes into': 'entra en',
-    }.items():
-        translated = re.sub(english, spanish, translated, flags=re.IGNORECASE)
-    return translated
+
+    # For unknown events, return original summary as fallback (no hybrid translations)
+    # The caller can mark translation_status as 'unavailable' if needed
+    return summary[:80]
 
 
 def _body_from_summary(summary: str) -> Optional[str]:
@@ -1072,6 +1124,33 @@ def _body_from_summary(summary: str) -> Optional[str]:
     return None
 
 
+def _generate_event_id(ics_event: Dict[str, Any], target_date: 'datetime.date') -> str:
+    """Generate a stable, collision-resistant event ID.
+
+    Priority:
+    1. If UID exists: use a sanitized version of it
+    2. Otherwise: deterministic hash of full DTSTART + full SUMMARY
+    """
+    import hashlib
+
+    uid = ics_event.get('uid')
+    if uid:
+        # Keep a readable DOM-safe prefix, but hash the original UID so distinct
+        # values cannot collide merely because sanitization removes punctuation.
+        safe_uid = re.sub(r'[^a-zA-Z0-9_-]+', '-', uid).strip('-')[:40]
+        uid_hash = hashlib.sha256(uid.encode('utf-8')).hexdigest()[:12]
+        return '{}-{}-{}'.format(safe_uid or 'uid', uid_hash, target_date.isoformat())
+
+    # No UID: deterministic hash of full DTSTART + full SUMMARY
+    dtstart = ics_event.get('dtstart', '')
+    summary = ics_event.get('summary', '')
+    combined = '{}|{}'.format(dtstart, summary)
+    hash_suffix = hashlib.sha256(combined.encode('utf-8')).hexdigest()[:12]
+    # Also include a readable prefix from summary for debugging
+    readable_prefix = re.sub(r'[^a-z0-9]+', '-', summary[:30].lower()).strip('-')
+    return '{}-{}-{}'.format(readable_prefix or 'event', hash_suffix, target_date.isoformat())
+
+
 def build_ephemerides_event(ics_event: Dict[str, Any], target_date: 'datetime.date',
                              tz: ZoneInfo) -> Dict[str, Any]:
     """Build a localized event and verify identifiable bodies from Sevilla."""
@@ -1079,6 +1158,15 @@ def build_ephemerides_event(ics_event: Dict[str, Any], target_date: 'datetime.da
     start_local = _parse_ics_dtstart(ics_event.get('dtstart', ''), tz)
     event_type = _classify_ics_event(raw_summary)
     title_es = title_es_from_ics(raw_summary)
+    title_translation_status = 'deterministic'
+    if title_es == raw_summary[:80]:
+        translated_title, translated_status = translate_text_mymemory(raw_summary[:80])
+        if translated_status == 'translated':
+            title_es = translated_title
+            title_translation_status = 'translated'
+        else:
+            # Preserve the intact source title instead of publishing a hybrid translation.
+            title_translation_status = 'unavailable'
 
     summary_es = ''
     desc = ics_event.get('description', '')
@@ -1087,8 +1175,7 @@ def build_ephemerides_event(ics_event: Dict[str, Any], target_date: 'datetime.da
         if clean_desc:
             summary_es, _ = translate_text_mymemory(clean_desc)
 
-    event_id = re.sub(r'[^a-z0-9]+', '-', raw_summary[:40].lower()).strip('-')
-    event_id = '{}-{}'.format(event_id or 'event', target_date.isoformat())
+    event_id = _generate_event_id(ics_event, target_date)
     source_url = ics_event.get('url', 'https://in-the-sky.org/')
     if not source_url.startswith('https://'):
         source_url = 'https://in-the-sky.org/'
@@ -1128,6 +1215,7 @@ def build_ephemerides_event(ics_event: Dict[str, Any], target_date: 'datetime.da
         'id': event_id,
         'type': event_type,
         'title_es': title_es,
+        'title_translation_status': title_translation_status,
         'summary_es': summary_es,
         'start_local': start_local,
         'visibility': visibility,
@@ -1292,7 +1380,7 @@ def _build_eclipse_event_2026(target_date: 'datetime.date', tz: ZoneInfo) -> Opt
             'protection_required': True,
             'official_links': [
                 'https://visualizadores.ign.es/eclipses/2026',
-                'https://eclipse.gsfc.nasa.gov/SEcat5/SE2026Aug12P.html',
+                'https://eclipse.gsfc.nasa.gov/SEsearch/SEsearchmap.php?Ecl=20260812',
             ],
         },
         'source': {
@@ -1316,7 +1404,7 @@ def _eclipse_event_fallback(target_date: 'datetime.date', tz: ZoneInfo,
             'La Luna cubrirá parte del disco solar. '
             'Protección ocular homologada obligatoria durante toda la observación. '
             'Más información: https://visualizadores.ign.es/eclipses/2026 y '
-            'https://eclipse.gsfc.nasa.gov/SEcat5/SE2026Aug12P.html'
+            'https://eclipse.gsfc.nasa.gov/SEsearch/SEsearchmap.php?Ecl=20260812'
         ),
         'start_local': '2026-08-12T19:41:00+02:00',
         'visibility': {
@@ -1332,7 +1420,7 @@ def _eclipse_event_fallback(target_date: 'datetime.date', tz: ZoneInfo,
             'protection_required': True,
             'official_links': [
                 'https://visualizadores.ign.es/eclipses/2026',
-                'https://eclipse.gsfc.nasa.gov/SEcat5/SE2026Aug12P.html',
+                'https://eclipse.gsfc.nasa.gov/SEsearch/SEsearchmap.php?Ecl=20260812',
             ],
         },
         'source': {
@@ -1348,12 +1436,12 @@ def _ics_event_in_window(ics_event: Dict[str, Any],
                           tz: ZoneInfo) -> bool:
     """Check if an ICS event's DTSTART falls within the observation window."""
     dtstart = ics_event.get('dtstart', '')
-    local_iso = _parse_ics_dtstart(dtstart, tz)
     try:
+        local_iso = _parse_ics_dtstart(dtstart, tz)
         event_dt = datetime.fromisoformat(local_iso)
         return window_start <= event_dt <= window_end
     except (ValueError, TypeError):
-        return True
+        return False
 
 
 def normalize_ephemerides(ics_events: List[Dict[str, Any]],
@@ -1382,6 +1470,19 @@ def normalize_ephemerides(ics_events: List[Dict[str, Any]],
 
     events.sort(key=lambda e: e.get('start_local', ''))
 
+    # Deterministic deduplication by event ID: keep first occurrence
+    seen_ids = set()
+    deduped_events = []
+    for event in events:
+        event_id = event.get('id')
+        if event_id and event_id not in seen_ids:
+            seen_ids.add(event_id)
+            deduped_events.append(event)
+        elif not event_id:
+            # Events without ID are kept (should not happen in practice)
+            deduped_events.append(event)
+    events = deduped_events
+
     return {
         'source': 'In-The-Sky / Open-Meteo',
         'fetched_at': _now_iso(),
@@ -1409,12 +1510,13 @@ def normalize_ephemerides(ics_events: List[Dict[str, Any]],
 
 
 def collect_ephemerides(data_dir: str, timeout: int = 10, write: bool = True,
-                         target_date_override: Optional['datetime.date'] = None) -> int:
+                          target_date_override: Optional['datetime.date'] = None) -> int:
     """Collect ephemerides from ICS + Open-Meteo + special events.
 
-    Returns 0 on success, 1 on failure. If ICS is unavailable and no previous
-    ephemerides.json exists, returns 1 without writing. If ICS is unavailable
-    but previous data exists, preserves it.
+    Returns:
+        0: Complete success (ICS fetched, validated, written)
+        1: Hard failure (no ICS and no previous data, or validation failed, or write failed)
+        2: Degraded preservation (ICS unavailable but previous data preserved)
     """
     tz = OBSERVER_TIMEZONE
     now = astronomy_now()
@@ -1427,14 +1529,23 @@ def collect_ephemerides(data_dir: str, timeout: int = 10, write: bool = True,
     ics_events = []
     if ics_raw:
         ics_events = parse_ics_events(ics_raw, target_date.year)
+        if not ics_events:
+            print('[astroaida] ephemerides: ICS returned content but parsed zero events (invalid/unavailable)')
+            eph_path = os.path.join(data_dir, 'ephemerides.json')
+            if os.path.exists(eph_path):
+                print('[astroaida] ephemerides: preserving previous ephemerides.json (degraded)')
+                return 2
+            else:
+                print('[astroaida] ephemerides: no previous data and ICS invalid; cannot generate')
+                return 1
         print('[astroaida] ephemerides: parsed {} ICS events for {}'.format(
             len(ics_events), target_date.year))
     else:
         print('[astroaida] ephemerides: ICS unavailable')
         eph_path = os.path.join(data_dir, 'ephemerides.json')
         if os.path.exists(eph_path):
-            print('[astroaida] ephemerides: preserving previous ephemerides.json')
-            return 0
+            print('[astroaida] ephemerides: preserving previous ephemerides.json (degraded)')
+            return 2
         else:
             print('[astroaida] ephemerides: no previous data and ICS unavailable; cannot generate')
             return 1
@@ -1543,8 +1654,11 @@ def collect_real(data_dir: str, nasa_key: str, astronomy_id: str, astronomy_secr
             failures += 1
 
     eph_code = collect_ephemerides(data_dir, timeout=timeout, write=write,
-                                    target_date_override=target_date_override)
-    if eph_code != 0:
+                                     target_date_override=target_date_override)
+    if eph_code == 1:
+        failures += 1
+    elif eph_code == 2:
+        print('[astroaida] WARNING: ephemerides degraded preservation (ICS unavailable, using cached data)')
         failures += 1
 
     return 1 if failures else 0

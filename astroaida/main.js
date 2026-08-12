@@ -97,7 +97,7 @@
     if (isNaN(date.getTime())) {
       return 'desconocida';
     }
-    return date.toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' });
+    return date.toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Madrid' });
   }
 
   function isStale(iso) {
@@ -339,7 +339,7 @@
     }
 
     if (data.observation_window && data.observation_window.start_local && data.observation_window.end_local) {
-      var windowText = 'Ventana de observación: ' +
+      var windowText = 'Ventana de observación (hora de Sevilla): ' +
         formatTimestamp(data.observation_window.start_local) + ' — ' +
         formatTimestamp(data.observation_window.end_local);
       container.appendChild(el('p', 'ephem__window', windowText));
@@ -350,7 +350,11 @@
       var card = el('li', 'ephem__card');
 
       var header = el('div', 'ephem__card-header');
-      header.appendChild(el('span', 'ephem__card-title', event.title_es || event.title || ''));
+      var eventTitle = event.title_es || event.title || '';
+      if (event.title_translation_status === 'unavailable') {
+        eventTitle += ' (título original en inglés)';
+      }
+      header.appendChild(el('span', 'ephem__card-title', eventTitle));
       if (event.start_local) {
         header.appendChild(el('span', 'ephem__card-time', formatTimestamp(event.start_local)));
       }
