@@ -1,6 +1,6 @@
 {
   "source": "NASA NeoWs",
-  "fetched_at": "2026-08-11T18:05:35.697345+00:00",
+  "fetched_at": "2026-08-12T06:41:16.752404+00:00",
   "status": "live",
   "asteroids": [
     {
@@ -376,28 +376,64 @@
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3986773"
     },
     {
-      "date": "2026-08-05",
-      "name": "(2014 OL339)",
+      "date": "2026-08-12",
+      "name": "1620 Geographos (1951 RA)",
       "estimated_diameter_km": {
-        "min": 0.0738847787,
-        "max": 0.1652113876
+        "min": 2.3472263753,
+        "max": 5.2485577338
       },
-      "miss_distance_km": 53777826,
-      "velocity_km_s": 8.9348835287,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3678630"
+      "miss_distance_km": 25497054,
+      "velocity_km_s": 8.3615352873,
+      "hazardous": true,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2001620"
     },
     {
-      "date": "2026-08-05",
-      "name": "(2016 CM246)",
+      "date": "2026-08-12",
+      "name": "(2008 CO)",
       "estimated_diameter_km": {
-        "min": 0.2063264836,
-        "max": 0.4613600429
+        "min": 0.0802703167,
+        "max": 0.1794898848
       },
-      "miss_distance_km": 68092261,
-      "velocity_km_s": 19.7833654458,
+      "miss_distance_km": 23952431,
+      "velocity_km_s": 4.4237801103,
       "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3743896"
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3401388"
+    },
+    {
+      "date": "2026-08-12",
+      "name": "(2014 QL433)",
+      "estimated_diameter_km": {
+        "min": 0.2783267681,
+        "max": 0.6223575734
+      },
+      "miss_distance_km": 19855378,
+      "velocity_km_s": 25.343705552,
+      "hazardous": true,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3686083"
+    },
+    {
+      "date": "2026-08-12",
+      "name": "(2018 KC)",
+      "estimated_diameter_km": {
+        "min": 0.008405334,
+        "max": 0.0187948982
+      },
+      "miss_distance_km": 66504035,
+      "velocity_km_s": 8.5997409211,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3824114"
+    },
+    {
+      "date": "2026-08-12",
+      "name": "620082 (2014 QL433)",
+      "estimated_diameter_km": {
+        "min": 0.2809020939,
+        "max": 0.6281161771
+      },
+      "miss_distance_km": 19855486,
+      "velocity_km_s": 25.3437288189,
+      "hazardous": true,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2620082"
     }
   ]
 }
