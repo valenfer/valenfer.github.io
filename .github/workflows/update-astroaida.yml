@@ -3,7 +3,11 @@ name: Actualizar datos de AstroAIDA
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 5,17 * * *"
+    # GitHub Actions cron runs in UTC. Run at both possible UTC times for
+    # 23:59 Europe/Madrid; the guard step below lets only the matching one
+    # continue, so DST changes do not publish the wrong target date.
+    - cron: "59 21 * * *"
+    - cron: "59 22 * * *"
 
 concurrency:
   group: astroaida-data-update
@@ -26,31 +30,59 @@ jobs:
       ASTRONOMY_APP_SECRET: ${{ secrets.ASTRONOMY_APP_SECRET }}
 
     steps:
+      - name: Comprobar ventana horaria de Sevilla
+        id: schedule_window
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            echo "target_date=$(TZ=Europe/Madrid date -d 'tomorrow' +%F)" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          local_time=$(TZ=Europe/Madrid date +%H:%M)
+          target_date=$(TZ=Europe/Madrid date -d 'tomorrow' +%F)
+          echo "Hora local Europe/Madrid: ${local_time}; fecha objetivo: ${target_date}"
+
+          if [ "$local_time" = "23:59" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            echo "Fuera de la ventana 23:59 Europe/Madrid; se omite esta ejecución UTC."
+          fi
+          echo "target_date=${target_date}" >> "$GITHUB_OUTPUT"
+
       - name: Descargar el repositorio
+        if: steps.schedule_window.outputs.should_run == 'true'
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Configurar Python
+        if: steps.schedule_window.outputs.should_run == 'true'
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
       - name: Instalar dependencias Python
+        if: steps.schedule_window.outputs.should_run == 'true'
         run: pip install -r astroaida/requirements.txt
 
       - name: Recopilar datos
+        if: steps.schedule_window.outputs.should_run == 'true'
         id: collect
         continue-on-error: true
         run: python astroaida/scripts/collect_data.py
 
       - name: Validar el sitio y los datos
+        if: steps.schedule_window.outputs.should_run == 'true'
         run: |
           python astroaida/scripts/validate_site.py
           python -m unittest discover -s astroaida/tests
           python -m py_compile astroaida/scripts/collect_data.py astroaida/scripts/validate_site.py
 
       - name: Publicar solo los datos modificados
+        if: steps.schedule_window.outputs.should_run == 'true'
         shell: bash
         run: |
           if git diff --quiet -- astroaida/data/; then
@@ -66,7 +98,7 @@ jobs:
           git push origin HEAD:main
 
       - name: Avisar si alguna fuente no se actualizó
-        if: steps.collect.outcome == 'failure'
+        if: steps.schedule_window.outputs.should_run == 'true' && steps.collect.outcome == 'failure'
         run: |
           echo "Una o más fuentes conservaron su último dato válido."
           exit 1

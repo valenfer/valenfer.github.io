@@ -71,6 +71,19 @@ Comportamiento de fallo: si una fuente no puede refrescarse, el script conserva 
 archivo tras superar la validación de esquema (escritura atómica vía `os.replace`).
 No se registran cabeceras de autorización ni claves en los logs.
 
+### Programación diaria
+
+El workflow `Actualizar datos de AstroAIDA` está pensado para construir los JSON
+del **día siguiente** justo antes de medianoche en Sevilla:
+
+- Hora funcional: **23:59 Europe/Madrid**.
+- Regla de fecha: si hoy es día 15 en Sevilla, esa ejecución genera y publica
+  `target_date = 16` para que durante el día 16 la página muestre los datos de ese día.
+- GitHub Actions solo admite cron en UTC, así que el workflow se dispara a las
+  dos equivalencias posibles (`21:59 UTC` y `22:59 UTC`) y una guarda interna
+  permite continuar únicamente cuando la hora local real de Sevilla es `23:59`.
+  Esto evita publicar la fecha equivocada durante cambios CET/CEST.
+
 ### Fuentes de datos
 
 | Fuente | Uso | Datos |
