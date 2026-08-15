@@ -833,16 +833,20 @@ class TestEclipseSpecialEvent(unittest.TestCase):
 
 class TestPerseidsEvent(unittest.TestCase):
     def test_perseids_date_range(self):
-        data = None
-        eph_path = os.path.join(SITE_ROOT, 'data', 'ephemerides.json')
-        with open(eph_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        self.assertIsNotNone(data)
-        perseids = [e for e in data['events'] if 'perseid' in e['id'].lower()
+        tz = ZoneInfo('Europe/Madrid')
+        special = collect_data.build_special_events(datetime(2026, 8, 12).date(), tz, None)
+        perseids = [e for e in special if 'perseid' in e['id'].lower()
                     or 'perseid' in e.get('title_es', '').lower()]
-        self.assertGreater(len(perseids), 0, 'Perseids event must exist')
+        self.assertGreater(len(perseids), 0, 'Perseids event must exist for peak dates')
         start = perseids[0]['start_local'][:10]
         self.assertIn(start, ('2026-08-12', '2026-08-13'))
+
+    def test_perseids_not_required_outside_peak_dates(self):
+        tz = ZoneInfo('Europe/Madrid')
+        special = collect_data.build_special_events(datetime(2026, 8, 16).date(), tz, None)
+        perseids = [e for e in special if 'perseid' in e['id'].lower()
+                    or 'perseid' in e.get('title_es', '').lower()]
+        self.assertEqual(perseids, [])
 
 
 class TestHorizontalCoordinates(unittest.TestCase):
