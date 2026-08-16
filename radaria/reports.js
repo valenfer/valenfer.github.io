@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-16",
+    "title": "RadarIA diario — 2026-08-16",
+    "summary": "8 piezas sobre GPT-5.6 Ultrafast, Daybreak Cyber, AMIE, Sheets canvas, reproducibilidad ICML, LFM2.5-VL y ecosistema open models.",
+    "url": "./informes/2026-08-16.html"
+  },
+  {
     "date": "2026-08-15",
     "title": "RadarIA diario — 2026-08-15",
     "summary": "8 piezas sobre OpenAI en bio-labs y benchmarks, sistemas multiagente, Sheets canvas, papers de razonamiento e integridad, y MindTopo.",
