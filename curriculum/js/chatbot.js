@@ -173,11 +173,40 @@ OTROS DATOS:
     });
   }
 
+  function parseMarkdown(text) {
+    let html = text
+      // Negrita: **texto** → <strong>texto</strong>
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      // Cursiva: *texto* → <em>texto</em>
+      .replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, '<em>$1</em>')
+      // Código inline: `codigo` → <code>codigo</code>
+      .replace(/`(.+?)`/g, '<code>$1</code>')
+      // Listas con guión: - item → <li>item</li> (agrupadas en <ul>)
+      .replace(/(^|\n)- (.+)/g, '$1\n<li>$2</li>')
+      // Enlaces: [texto](url) → <a href="url">texto</a>
+      .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+      // Saltos de línea dobles → párrafos
+      .replace(/\n\n/g, '</p><p>')
+      // Saltos de línea simples → <br>
+      .replace(/\n/g, '<br>');
+
+    // Envolver listas consecutivas en <ul>
+    html = html.replace(/(<li>.*?<\/li>(<br>)?)+/g, (match) => {
+      return '<ul>' + match.replace(/<br>/g, '') + '</ul>';
+    });
+
+    return '<p>' + html + '</p>';
+  }
+
   function agregarMensaje(texto, tipo) {
     const contenedor = document.getElementById('chatbot-mensajes');
     const msg = document.createElement('div');
     msg.className = `chatbot-msg ${tipo}`;
-    msg.textContent = texto;
+    if (tipo === 'bot') {
+      msg.innerHTML = parseMarkdown(texto);
+    } else {
+      msg.textContent = texto;
+    }
     contenedor.appendChild(msg);
     contenedor.scrollTop = contenedor.scrollHeight;
   }
