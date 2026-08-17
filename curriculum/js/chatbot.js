@@ -1,7 +1,6 @@
 (function() {
   const PROXY_URL = 'https://script.google.com/macros/s/AKfycbwGPd77eZTR_vqsNgEYmGyD3mUio-TwW3q4GEE0mcYtSE4tXaG73p6--siCrD0rTNoP/exec';
   const MODELS = [
-    'gemini-2.0-flash',
     'gemini-2.5-flash',
     'gemini-1.5-flash'
   ];
