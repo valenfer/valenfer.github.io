@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-17",
+    "title": "RadarIA diario — 2026-08-17",
+    "summary": "4 piezas sobre evaluación de agentes, benchmarks de código, serving de LLMs y runtimes gobernados para agentes locales.",
+    "url": "./informes/2026-08-17.html"
+  },
+  {
     "date": "2026-08-16",
     "title": "RadarIA diario — 2026-08-16",
     "summary": "8 piezas sobre GPT-5.6 Ultrafast, Daybreak Cyber, AMIE, Sheets canvas, reproducibilidad ICML, LFM2.5-VL y ecosistema open models.",

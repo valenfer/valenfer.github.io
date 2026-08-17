@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-08-17</title>
+  <meta name="description" content="RadarIA diario de novedades relevantes de inteligencia artificial para el 2026-08-17.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body{margin:0;background:#eef4fb;color:#172033;font-family:Arial,Helvetica,sans-serif;line-height:1.58}.report-body{padding:28px 12px}article{max-width:920px;margin:0 auto;background:#ffffff;border:1px solid #d9e3f0;border-radius:22px;padding:30px;box-shadow:0 18px 55px rgba(15,35,70,.12)}h1{margin:10px 0 14px;font-size:34px;color:#0f2747;letter-spacing:-.03em}h2{margin-top:28px;color:#143b63}.lead{font-size:17px;color:#38506e}.kicker{display:inline-block;border-radius:999px;padding:7px 12px;background:#e7f7ff;color:#18607c;font-weight:bold}.badge{display:inline-block;border-radius:999px;padding:3px 9px;background:#e9f2ff;border:1px solid #bfd7ff;color:#174f9a;font-size:12px;font-weight:bold}section{margin-top:20px;padding-top:6px;border-top:1px solid #edf1f7}a{color:#0b68c7}.source-list{font-size:13px;color:#50627c}pre{white-space:pre-wrap;background:#f6f8fb;border:1px solid #e1e7f0;border-radius:14px;padding:14px;overflow:auto}code{background:#f1f5f9;border-radius:5px;padding:1px 5px}ul{padding-left:21px}
+  </style>
+</head>
+<body>
+  <main class="report-body">
+    <article>
+      <p class="kicker"><span class="dot"></span> RadarIA · 2026-08-17</p>
+      <h1>RadarIA diario — 2026-08-17</h1>
+      <p class="lead"><strong>Rango investigado:</strong> desde el informe publicado el 2026-08-16 hasta el 2026-08-17 08:01 CEST. La batida revisó fuentes oficiales de OpenAI, Google/Google DeepMind, Anthropic, Mistral y Hugging Face, más feeds recientes de arXiv; no he usado rumores ni titulares sin abrir.</p>
+      <p><strong>Resumen ejecutivo:</strong> no hay grandes anuncios oficiales nuevos de los proveedores principales desde la última entrega, así que hoy el radar se centra en cuatro papers aparecidos en los feeds recientes de arXiv el 17 de agosto, con especial peso en evaluación de agentes, benchmarks de código, operación de LLMs y gobernanza de agentes locales.[12][13]</p>
+
+      <section>
+        <h2>1. RubricForge: jueces de agentes con rúbricas inducidas</h2>
+        <p><span class="badge">Paper</span> <strong>Fuente:</strong> arXiv · <strong>Fecha:</strong> listado en el feed el 17 de agosto de 2026; la página del paper indica envío el 25 de junio de 2026.</p>
+        <p><strong>Por qué importa:</strong> el paper ataca un problema muy práctico: cuando un LLM actúa como juez automático de agentes, tiende a premiar trayectorias fluidas aunque no hayan resuelto la tarea.[1]</p>
+        <p><strong>Resumen:</strong> los autores proponen RubricForge, un método que evoluciona el texto de una rúbrica a partir de trayectorias etiquetadas con recompensa real, congela esa rúbrica y la aplica después a trayectorias no vistas en una sola llamada al modelo.[1]</p>
+        <p><strong>Impacto práctico:</strong> si se confirma, puede hacer más auditables las evaluaciones de agentes porque el veredicto se vincula a criterios humanos legibles, no solo a una puntuación opaca de otro modelo.[1]</p>
+        <p><a href="https://arxiv.org/abs/2608.13564">Abrir paper</a></p>
+      </section>
+
+      <section>
+        <h2>2. Cuidado con vender “mejor código” por optimizar dos benchmarks</h2>
+        <p><span class="badge">Benchmark</span> <strong>Fuente:</strong> arXiv · <strong>Fecha:</strong> listado en el feed el 17 de agosto de 2026; la página indica envío el 26 de junio de 2026.</p>
+        <p><strong>Por qué importa:</strong> el trabajo cuestiona una costumbre ya demasiado cómoda: usar unos pocos benchmarks de programación, como SWE-bench o LiveCodeBench, como prueba de capacidad general de coding.[2]</p>
+        <p><strong>Resumen:</strong> el estudio crea una suite basada en Django y observa que los rankings de benchmarks no generalizan bien; los checkpoints post-entrenados sobre trayectorias de SWE-bench muestran poca transferencia cruzada y mejoras limitadas o nulas en otras tareas.[2]</p>
+        <p><strong>Impacto práctico:</strong> para elegir modelos de programación conviene pedir evaluación diversa, tareas cercanas al producto real y, cuando el riesgo sea alto, revisión humana; el numerito único queda bonito en la diapositiva, pero a veces muerde.[2]</p>
+        <p><a href="https://arxiv.org/abs/2608.13566">Abrir paper</a></p>
+      </section>
+
+      <section>
+        <h2>3. Un año de serving de LLMs: trazas reales, caché y balanceo</h2>
+        <p><span class="badge">Informe</span> <strong>Fuente:</strong> arXiv · <strong>Fecha:</strong> listado en el feed el 17 de agosto de 2026; la página indica envío el 3 de julio de 2026.</p>
+        <p><strong>Por qué importa:</strong> el paper estudia una traza de producción de un año de Chutes, con múltiples modelos y usuarios, para entender cómo evoluciona el tráfico real de inferencia de LLMs.[3]</p>
+        <p><strong>Resumen:</strong> los autores analizan el workload desde perspectivas agregadas, temporales, por modelo y por usuario, con foco en estructura de uso, caché y balanceo de carga; también anuncian la liberación de la traza completa junto al paper.[3]</p>
+        <p><strong>Impacto práctico:</strong> esto interesa a cualquiera que pague GPUs: mejores trazas significan simuladores y decisiones de infraestructura menos basadas en magia negra con Excel, que es una religión peligrosa.[3]</p>
+        <p><a href="https://arxiv.org/abs/2608.13573">Abrir paper</a></p>
+      </section>
+
+      <section>
+        <h2>4. Agentao: runtime local-first para agentes con herramientas</h2>
+        <p><span class="badge">Herramienta</span> <strong>Fuente:</strong> arXiv · <strong>Fecha:</strong> listado en el feed el 17 de agosto de 2026; la página indica envío el 4 de julio de 2026.</p>
+        <p><strong>Por qué importa:</strong> Agentao se centra en separar las propuestas de acción generadas por el modelo de la ejecución autorizada por el host, justo donde se juegan permisos, auditoría y efectos secundarios.[4]</p>
+        <p><strong>Resumen:</strong> la arquitectura descrita incluye superficies hacia el host, contrato de host, núcleo de runtime, herramientas mediadas por permisos y subsistemas para memoria, replay, plugins, skills, subagentes e integración de protocolos.[4]</p>
+        <p><strong>Impacto práctico:</strong> no promete seguridad formal, pero sí hace explícitas abstracciones de permisos, estado, límites de protocolo y trazas de ejecución, una dirección muy sana para agentes que tocan ficheros, APIs o sistemas locales.[4]</p>
+        <p><a href="https://arxiv.org/abs/2608.13574">Abrir paper</a></p>
+      </section>
+
+      <section>
+        <h2>Lo que vigilar</h2>
+        <ul>
+          <li><strong>Evaluación de agentes:</strong> crece el interés por jueces más fieles y legibles, no solo por subir agreement bruto contra otro modelo.[1]</li>
+          <li><strong>Benchmarks bajo presión:</strong> la optimización directa sobre suites populares puede separar el marcador de la utilidad real, especialmente en coding.[2]</li>
+          <li><strong>Inferencia como disciplina de datos:</strong> las trazas largas de producción pueden cambiar cómo se diseñan cachés, colas y balanceadores para LLMs.[3]</li>
+          <li><strong>Gobernanza local de agentes:</strong> permisos, replay y auditoría van camino de ser piezas básicas, no adornos enterprise para quedar serios en la demo.[4]</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Fuentes revisadas sin novedad destacable</h2>
+        <p>OpenAI no mostraba en su RSS de noticias entradas posteriores al 13 de agosto de 2026 en el momento de la revisión.[5]</p>
+        <p>Google Research no mostraba en su RSS entradas posteriores al 12 de agosto de 2026 en el momento de la revisión.[6]</p>
+        <p>Anthropic News mostraba como entrada reciente visible una publicación del 14 de agosto de 2026, y su página de Research no mostraba una novedad posterior al 10 de agosto de 2026 en el momento de la revisión.[7][8]</p>
+        <p>También revisé Google DeepMind, Mistral y Hugging Face Blog; no apareció una novedad oficial posterior al informe del 16 de agosto que justificase desplazar los papers seleccionados.[9][10][11]</p>
+      </section>
+
+      <section>
+        <h2>Metodología</h2>
+        <p>He partido de la última fecha fiable en <code>radaria/reports.js</code> —2026-08-16—, he revisado fuentes primarias y feeds técnicos, he descartado duplicados y anuncios sin novedad dentro de la ventana, y he priorizado piezas con consecuencias prácticas para evaluación, infraestructura y agentes.</p>
+      </section>
+
+      <section class="source-list">
+        <h2>Fuentes</h2>
+        <pre>## Sources
+
+[1] https://arxiv.org/abs/2608.13564
+[2] https://arxiv.org/abs/2608.13566
+[3] https://arxiv.org/abs/2608.13573
+[4] https://arxiv.org/abs/2608.13574
+[5] https://openai.com/news/rss.xml
+[6] https://research.google/blog/rss
+[7] https://www.anthropic.com/news
+[8] https://www.anthropic.com/research
+[9] https://deepmind.google/discover/blog
+[10] https://mistral.ai/news
+[11] https://huggingface.co/blog
+[12] https://export.arxiv.org/rss/cs.AI
+[13] https://export.arxiv.org/rss/cs.LG</pre>
+      </section>
+
+      <p><strong>Cierre AIDA:</strong> día sin fuegos artificiales de los gigantes, pero con señales útiles para quien construye agentes de verdad. Menos humo, más permisos, rúbricas y trazas. Qué cosa tan sospechosamente razonable.</p>
+    </article>
+  </main>
+## Sources
+
+[1] https://arxiv.org/abs/2608.13564
+[2] https://arxiv.org/abs/2608.13566
+[3] https://arxiv.org/abs/2608.13573
+[4] https://arxiv.org/abs/2608.13574
+[5] https://openai.com/news/rss.xml
+[6] https://research.google/blog/rss
+[7] https://www.anthropic.com/news
+[8] https://www.anthropic.com/research
+[9] https://deepmind.google/discover/blog
+[10] https://mistral.ai/news
+[11] https://huggingface.co/blog
+[12] https://export.arxiv.org/rss/cs.AI
+[13] https://export.arxiv.org/rss/cs.LG
+</body>
+</html>
