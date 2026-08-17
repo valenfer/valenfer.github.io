@@ -1,13 +1,11 @@
 (function() {
-  // No pongas claves privadas en frontend público. Usa un backend/proxy si quieres activar la IA.
-  const API_KEY = '';
+  const PROXY_URL = 'https://script.google.com/macros/s/AKfycbwGPd77eZTR_vqsNgEYmGyD3mUio-TwW3q4GEE0mcYtSE4tXaG73p6--siCrD0rTNoP/exec';
   const MODELS = [
-    'gemini-2.5-flash-lite',
-    'gemini-3.1-flash-lite',
-    'gemini-3.5-flash-lite'
+    'gemini-3.6-flash',
+    'gemini-2.0-flash',
+    'gemini-1.5-flash'
   ];
   let modeloActual = 0;
-  const LOG_URL = 'https://script.google.com/macros/s/AKfycbyL1XOVc4ElT1Oho-D0zuZUzZe6nGIq_N3Km36hcoVf-nBu7G0W9fDYNKRAUAo9fz9DZg/exec';
 
   const SYSTEM_PROMPT = `Eres AIDA, el asistente personal con Inteligencia Artificial de Valentín Fernández Guijarro.
 
@@ -200,13 +198,14 @@ OTROS DATOS:
   }
 
   function logPregunta(pregunta, respuesta) {
-    if (!LOG_URL) return;
+    if (!PROXY_URL) return;
     try {
-      fetch(LOG_URL, {
+      fetch(PROXY_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          action: 'log',
           pregunta: pregunta,
           respuesta: respuesta,
           modelo: MODELS[modeloActual],
@@ -217,17 +216,7 @@ OTROS DATOS:
   }
 
   async function llamarAPI() {
-    if (!API_KEY) {
-      return {
-        error: {
-          message: 'La IA del chat no está configurada en la versión pública. Usa el formulario de contacto para escribir a Valentín.'
-        }
-      };
-    }
-
     const modelo = MODELS[modeloActual];
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent?key=${API_KEY}`;
-
     const contexto = SYSTEM_PROMPT + '\n\n=== INFORMACIÓN DEL CURRICULUM ===\n\n' + KNOWLEDGE + '\n\n=== FIN INFORMACIÓN ===\n\nBasándote EXCLUSIVAMENTE en la información anterior, responde a la pregunta del usuario.';
 
     const contents = mensajes.map(m => ({
@@ -235,25 +224,33 @@ OTROS DATOS:
       parts: [{ text: m.content }]
     }));
 
-    const response = await fetch(url, {
+    const response = await fetch(PROXY_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      redirect: 'follow',
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({
-        contents: contents,
+        action: 'chat',
+        model: modelo,
+        messages: contents,
         systemInstruction: { parts: [{ text: contexto }] },
         generationConfig: { temperature: 0.7, maxOutputTokens: 1024 }
       })
     });
 
-    const data = await response.json();
+    const text = await response.text();
+    console.log('AIDA proxy response:', text);
+    const result = JSON.parse(text);
 
-    if (data.error && modeloActual < MODELS.length - 1) {
-      modeloActual++;
-      console.log(`AIDA: Probando ${MODELS[modeloActual]}...`);
-      return llamarAPI();
+    if (!result.ok) {
+      if (modeloActual < MODELS.length - 1) {
+        modeloActual++;
+        console.log(`AIDA: Probando ${MODELS[modeloActual]}...`);
+        return llamarAPI();
+      }
+      return { error: { message: result.error || 'Error al conectar con la IA' } };
     }
 
-    return data;
+    return result.data;
   }
 
   async function enviarMensaje() {
