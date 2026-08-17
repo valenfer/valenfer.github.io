@@ -271,12 +271,14 @@ OTROS DATOS:
     const result = JSON.parse(text);
 
     if (!result.ok) {
-      if (modeloActual < MODELS.length - 1) {
+      const msg = result.error || '';
+      const esLimite = /quota|rate.?limit|RESOURCE_EXHAUSTED|429|exceeded|limit/i.test(msg);
+      if (esLimite && modeloActual < MODELS.length - 1) {
         modeloActual++;
         console.log(`AIDA: Probando ${MODELS[modeloActual]}...`);
         return llamarAPI();
       }
-      return { error: { message: result.error || 'Error al conectar con la IA' } };
+      return { error: { message: msg || 'Error al conectar con la IA' } };
     }
 
     return result.data;
@@ -302,7 +304,13 @@ OTROS DATOS:
       ocultarTyping();
 
       if (data.error) {
-        agregarMensaje(`Error: ${data.error.message || 'Error al conectar con la IA'}`, 'error');
+        const msg = data.error.message || '';
+        const esLimite = /quota|rate.?limit|RESOURCE_EXHAUSTED|429|exceeded|limit/i.test(msg);
+        if (esLimite) {
+          agregarMensaje('Lo siento, pero Valentín tiene el chat limitado a un número de respuestas al día. Se ve que hoy he recibido muchas peticiones, lo cual me agrada porque significa que Valentín y yo despertamos interés. Pero me temo que tendrás que volver mañana o intentarlo en unas horas. Mientras tanto, puedes contactar con Valentín directamente a través del formulario de contacto.', 'bot');
+        } else {
+          agregarMensaje(`Error: ${msg || 'Error al conectar con la IA'}`, 'error');
+        }
       } else {
         const respuesta = data.candidates?.[0]?.content?.parts?.[0]?.text;
         if (respuesta) {
