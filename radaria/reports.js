@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-18",
+    "title": "RadarIA diario — 2026-08-18",
+    "summary": "6 piezas sobre infraestructura de OpenAI, política pública, Gemini en deporte, salud digital con PhotoScan y papers de optimización/procedencia.",
+    "url": "./informes/2026-08-18.html"
+  },
+  {
     "date": "2026-08-17",
     "title": "RadarIA diario — 2026-08-17",
     "summary": "4 piezas sobre evaluación de agentes, benchmarks de código, serving de LLMs y runtimes gobernados para agentes locales.",
