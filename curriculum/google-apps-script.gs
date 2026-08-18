@@ -6,7 +6,7 @@ function doPost(e) {
       return proxyGemini(data);
     }
 
-    return logPregunta(data, e.remoteAddress);
+    return logPregunta(data);
   } catch (err) {
     return ContentService
       .createTextOutput(JSON.stringify({ ok: false, error: err.message }))
@@ -45,7 +45,7 @@ function proxyGemini(data) {
     .setMimeType(ContentService.MimeType.JSON);
 }
 
-function logPregunta(data, ip) {
+function logPregunta(data) {
   try {
     const props = PropertiesService.getScriptProperties();
     const spreadsheetId = props.getProperty('SPREADSHEET_ID');
@@ -58,7 +58,7 @@ function logPregunta(data, ip) {
         data.respuesta || '',
         data.modelo || '',
         data.url || '',
-        ip || ''
+        data.ip || ''
       ]);
     }
 

@@ -113,6 +113,17 @@ OTROS DATOS:
 
   let mensajes = [];
   let esperando = false;
+  let userIP = '';
+
+  async function obtenerIP() {
+    if (userIP) return userIP;
+    try {
+      const res = await fetch('https://api.ipify.org?format=json');
+      const data = await res.json();
+      userIP = data.ip || '';
+    } catch (e) {}
+    return userIP;
+  }
 
   function crearWidget() {
     const root = document.getElementById('chatbot-root');
@@ -226,9 +237,10 @@ OTROS DATOS:
     if (typing) typing.remove();
   }
 
-  function logPregunta(pregunta, respuesta) {
+  async function logPregunta(pregunta, respuesta) {
     if (!PROXY_URL) return;
     try {
+      const ip = await obtenerIP();
       fetch(PROXY_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -238,7 +250,8 @@ OTROS DATOS:
           pregunta: pregunta,
           respuesta: respuesta,
           modelo: MODELS[modeloActual],
-          url: window.location.href
+          url: window.location.href,
+          ip: ip
         })
       });
     } catch (err) {}
