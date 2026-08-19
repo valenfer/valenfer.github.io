@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-19",
+    "title": "RadarIA diario — 2026-08-19",
+    "summary": "7 piezas sobre ChatGPT Ads en Europa, controles cyber-critical de OpenAI, Codex en Asana, alianza educativa y papers sobre agentes, tokenizadores y workspaces versionados.",
+    "url": "./informes/2026-08-19.html"
+  },
+  {
     "date": "2026-08-18",
     "title": "RadarIA diario — 2026-08-18",
     "summary": "6 piezas sobre infraestructura de OpenAI, política pública, Gemini en deporte, salud digital con PhotoScan y papers de optimización/procedencia.",
