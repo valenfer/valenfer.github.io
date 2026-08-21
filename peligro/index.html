@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Peligro Legal: ocho laboratorios éticos sobre huella digital, propaganda, IA, crisis y pensamiento crítico." />
+  <title>Peligro Legal · Laboratorio de ideas incómodas</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="hero">
+    <nav class="topbar" aria-label="Navegación principal">
+      <div class="brand"><span class="brand-mark">PL</span><span>Peligro Legal</span></div>
+      <button class="menu-toggle" type="button" aria-controls="tabs" aria-expanded="false">Ideas</button>
+    </nav>
+    <section class="hero-grid">
+      <div>
+        <p class="eyebrow">Experimentos con filo, sin delitos y sin pedir perdón por pensar</p>
+        <h1>Ocho laboratorios para tocar cables rojos con guantes legales.</h1>
+        <p class="lead">Una web experimental para explorar privacidad, propaganda, IA, crisis y vigilancia cotidiana. Todo funciona en tu navegador, sin servidores, sin recolectar datos y sin hacer el cabra más de lo estrictamente estético.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#contenido">Abrir laboratorios</a>
+          <a class="button ghost" href="README.md">Leer tutorial</a>
+        </div>
+      </div>
+      <aside class="manifesto" aria-label="Manifiesto del proyecto">
+        <strong>Regla de oro</strong>
+        <p>Si una idea parece peligrosa, la convertimos en simulación, educación o ficción operativa. Nada de ataques reales, datos ajenos ni heroicidades de teclado.</p>
+        <ul>
+          <li>100% estática</li>
+          <li>Responsive móvil</li>
+          <li>Sin dependencias</li>
+          <li>Modo travieso: activado</li>
+        </ul>
+      </aside>
+    </section>
+  </header>
+
+  <main id="contenido" class="shell">
+    <section class="tabs-wrap" aria-label="Laboratorios disponibles">
+      <div id="tabs" class="tabs" role="tablist" aria-label="Ideas peligrosas pero legales">
+        <button role="tab" aria-selected="true" aria-controls="panel-huella" id="tab-huella" data-tab="huella">Huella digital</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-manipulacion" id="tab-manipulacion" data-tab="manipulacion">Anti-manipulación</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-debate" id="tab-debate" data-tab="debate">Debate histórico</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-crisis" id="tab-crisis" data-tab="crisis">Simulador de crisis</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-phishing" id="tab-phishing" data-tab="phishing">Phishing ético</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-noticias" id="tab-noticias" data-tab="noticias">Noticias sesgadas</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-vigilancia" id="tab-vigilancia" data-tab="vigilancia">Vigilancia cotidiana</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-escape" id="tab-escape" data-tab="escape">Escape IA</button>
+      </div>
+    </section>
+
+    <section class="panel active" id="panel-huella" role="tabpanel" aria-labelledby="tab-huella">
+      <div class="panel-head"><span class="number">01</span><div><h2>Auditoría de huella digital personal</h2><p>Mapa de exposición para revisar lo que tú mismo podrías encontrar sobre ti sin entrar en ningún sitio raro.</p></div></div>
+      <div class="grid two">
+        <article class="card"><h3>Qué investiga</h3><p>Perfiles antiguos, alias repetidos, emails publicados, metadatos, repositorios, menciones en buscadores y pistas cruzadas. El objetivo no es desaparecer: es saber dónde haces ruido.</p><ul class="check-list"><li>Inventario de identidades públicas.</li><li>Separación entre datos voluntarios, heredados y filtrados.</li><li>Plan de limpieza por prioridad.</li></ul></article>
+        <article class="card interactive"><h3>Medidor de exposición</h3><p>Marca lo que te aplica. No se envía nada: este chivato trabaja solo en local.</p><div id="footprint-checks" class="stack"></div><div class="meter"><span id="footprint-bar"></span></div><p id="footprint-result" class="result"></p></article>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-manipulacion" role="tabpanel" aria-labelledby="tab-manipulacion" hidden>
+      <div class="panel-head"><span class="number">02</span><div><h2>Web anti-manipulación</h2><p>Un detector pedagógico de trucos retóricos: miedo, autoridad, enemigo común, urgencia falsa y humo tecnocrático.</p></div></div>
+      <div class="grid two"><article class="card"><h3>Kit de defensa mental</h3><div class="chips"><span>Miedo</span><span>Autoridad</span><span>Urgencia</span><span>Nosotros/Ellos</span><span>Falsa neutralidad</span></div><p>La herramienta no decide la verdad. Te obliga a mirar el mecanismo. Muy molesto para los vendedores de certezas empaquetadas.</p></article><article class="card interactive"><h3>Analizador de discurso</h3><textarea id="bias-input" placeholder="Pega un titular, discurso o frase sospechosamente dramática..."></textarea><button class="button primary" data-action="analyze-bias">Analizar sesgo</button><div id="bias-output" class="output"></div></article></div>
+    </section>
+
+    <section class="panel" id="panel-debate" role="tabpanel" aria-labelledby="tab-debate" hidden>
+      <div class="panel-head"><span class="number">03</span><div><h2>Bot de debate histórico</h2><p>Simulador ficticio de argumentos inspirados en pensadores públicos. No invoca muertos, solo los cita con estilo.</p></div></div>
+      <div class="grid two"><article class="card"><h3>Cómo se usaría</h3><p>Elige un personaje intelectual, propone un tema y recibe una postura argumentada con fortalezas, objeciones y una pregunta incómoda final.</p><p class="note">Aviso: son síntesis creativas, no sustituyen leer al autor. Qué fastidio, tener que pensar.</p></article><article class="card interactive"><h3>Generador de postura</h3><label>Figura<select id="thinker"><option>Orwell</option><option>Hannah Arendt</option><option>Maquiavelo</option><option>Mary Wollstonecraft</option><option>Nietzsche</option><option>Simone Weil</option></select></label><label>Tema<input id="debate-topic" value="control social mediante tecnología" /></label><button class="button primary" data-action="debate">Generar debate</button><div id="debate-output" class="output"></div></article></div>
+    </section>
+
+    <section class="panel" id="panel-crisis" role="tabpanel" aria-labelledby="tab-crisis" hidden>
+      <div class="panel-head"><span class="number">04</span><div><h2>Simulador de crisis</h2><p>Juego de decisiones para practicar calma: apagón, desinformación, ciberincidente o colapso logístico de barrio.</p></div></div>
+      <div class="grid two"><article class="card"><h3>Dinámica</h3><p>Cada escenario valora tres ejes: información, comunidad y autonomía. El ganador no es quien grita más fuerte, sino quien evita convertirse en parte del problema.</p></article><article class="card interactive"><h3>Escenario rápido</h3><label>Crisis<select id="crisis-kind"><option>apagón de 48 horas</option><option>oleada de bulos locales</option><option>caída bancaria temporal</option><option>ciberataque municipal</option></select></label><label>Prioridad<select id="crisis-priority"><option>verificar información</option><option>coordinar vecinos</option><option>proteger suministros</option><option>reducir exposición digital</option></select></label><button class="button primary" data-action="crisis">Simular</button><div id="crisis-output" class="output"></div></article></div>
+    </section>
+
+    <section class="panel" id="panel-phishing" role="tabpanel" aria-labelledby="tab-phishing" hidden>
+      <div class="panel-head"><span class="number">05</span><div><h2>Laboratorio de phishing ético local</h2><p>Aprende a reconocer trampas sin mandar correos, sin capturar credenciales y sin convertirte en el villano barato de una charla de ciberseguridad.</p></div></div>
+      <div class="grid two"><article class="card"><h3>Permitido</h3><ul class="check-list"><li>Analizar ejemplos inventados.</li><li>Entrenar detección de urgencia, enlaces y dominios.</li><li>Usarlo solo en local o con consentimiento explícito.</li></ul><h3>Prohibido en este laboratorio</h3><p>Recolectar datos reales, suplantar servicios reales o enviar campañas a terceros. Aquí se aprende, no se pesca.</p></article><article class="card interactive"><h3>Detector de señales</h3><textarea id="phish-input" placeholder="Pega un mensaje sospechoso o una URL de ejemplo..."></textarea><button class="button primary" data-action="phish">Revisar señales</button><div id="phish-output" class="output"></div></article></div>
+    </section>
+
+    <section class="panel" id="panel-noticias" role="tabpanel" aria-labelledby="tab-noticias" hidden>
+      <div class="panel-head"><span class="number">06</span><div><h2>Generador de noticias manipuladas</h2><p>Convierte una noticia neutra en varios marcos para aprender cómo cambia la percepción. La verdad no cambia; el envoltorio sí. Y vaya si muerde.</p></div></div>
+      <div class="grid two"><article class="card"><h3>Modos de sesgo</h3><p>Alarmista, institucional, populista, tecnocrático o conspirativo teatral. El objetivo es vacunarte contra el tono, no fabricar propaganda real.</p></article><article class="card interactive"><h3>Reescritor de marcos</h3><textarea id="news-input">El ayuntamiento anuncia una nueva normativa sobre cámaras de tráfico y publicación de datos agregados de movilidad.</textarea><label>Tono<select id="news-tone"><option>alarmista</option><option>institucional</option><option>populista</option><option>tecnocrático</option><option>conspirativo teatral</option></select></label><button class="button primary" data-action="news">Reescribir</button><div id="news-output" class="output"></div></article></div>
+    </section>
+
+    <section class="panel" id="panel-vigilancia" role="tabpanel" aria-labelledby="tab-vigilancia" hidden>
+      <div class="panel-head"><span class="number">07</span><div><h2>Mapa de vigilancia cotidiana</h2><p>Inventario visual de rastros normales: cámaras, apps, matrículas, pagos, cookies, tarjetas de fidelización y sensores urbanos.</p></div></div>
+      <div class="grid two"><article class="card"><h3>Lectura crítica</h3><p>No todo seguimiento es maligno. El problema aparece cuando no entiendes quién recoge qué, durante cuánto tiempo y con qué incentivos.</p><div class="mini-map" aria-hidden="true"><span>CCTV</span><span>WiFi</span><span>TPV</span><span>APP</span><span>Bus</span><span>QR</span></div></article><article class="card interactive"><h3>Registrar punto ficticio</h3><label>Lugar<input id="watch-place" placeholder="Ej. estación, supermercado, portal..." /></label><label>Tipo<select id="watch-type"><option>Cámara visible</option><option>WiFi público</option><option>Pago con tarjeta</option><option>App con ubicación</option><option>Control de acceso</option></select></label><button class="button primary" data-action="watch">Añadir al mapa</button><div id="watch-output" class="output"></div></article></div>
+    </section>
+
+    <section class="panel" id="panel-escape" role="tabpanel" aria-labelledby="tab-escape" hidden>
+      <div class="panel-head"><span class="number">08</span><div><h2>Escape room web sobre IA</h2><p>Mini juego para distinguir humanos, bots, deepfakes textuales y propaganda automatizada. Salir requiere criterio, no fuerza bruta.</p></div></div>
+      <div class="grid two"><article class="card"><h3>Objetivo</h3><p>Resolver cinco pruebas rápidas. Cada acierto desbloquea una pista. Si fallas, la máquina gana autoestima, que es justo lo que no necesitábamos.</p></article><article class="card interactive"><h3>Prueba activa</h3><div id="escape-card" class="output"></div><div class="escape-actions"><button class="button ghost" data-answer="humano">Humano</button><button class="button ghost" data-answer="bot">Bot</button><button class="button ghost" data-answer="propaganda">Propaganda</button></div><p id="escape-score" class="result"></p></article></div>
+    </section>
+  </main>
+
+  <footer class="footer"><p>Peligro Legal es un prototipo educativo. Ninguna herramienta envía datos fuera del navegador.</p><p>Hecho para experimentar, pensar y tocar las narices con elegancia.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
