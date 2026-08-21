@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-21",
+    "title": "RadarIA diario — 2026-08-21",
+    "summary": "6 piezas sobre agentes en juegos, Claude aplicado a proteínas y química analítica, IA educativa en Search, benchmarks de mejora algorítmica, trazas de computer-use y unlearning contextual.",
+    "url": "./informes/2026-08-21.html"
+  },
+  {
     "date": "2026-08-19",
     "title": "RadarIA diario — 2026-08-19",
     "summary": "7 piezas sobre ChatGPT Ads en Europa, controles cyber-critical de OpenAI, Codex en Asana, alianza educativa y papers sobre agentes, tokenizadores y workspaces versionados.",

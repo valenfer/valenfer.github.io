@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-08-21</title>
+  <meta name="description" content="RadarIA diario de novedades relevantes de inteligencia artificial para el 21 de agosto de 2026.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-body">
+    <article>
+      <p><a href="../index.html">← Volver al archivo RadarIA</a></p>
+      <span class="kicker"><span class="dot"></span> RadarIA diario · 21 de agosto de 2026</span>
+      <h1>RadarIA diario — 2026-08-21</h1>
+      <p class="lead"><strong>Rango investigado:</strong> desde la última publicación registrada en <code>radaria/reports.js</code>, 2026-08-19, hasta la ejecución del 2026-08-21 a las 22:49 CEST. Como hubo pocas novedades oficiales realmente sólidas en la ventana estricta, se revisó contexto de hasta 7 días para descartar duplicados, pero la selección principal se mantiene en piezas nuevas o no cubiertas desde el 19.</p>
+      <p><strong>Metodología breve:</strong> revisión de fuentes primarias oficiales de Google/DeepMind, Google AI y Anthropic, más arXiv/Hugging Face Papers para papers recientes; se abrió y leyó el cuerpo de las fuentes elegidas. OpenAI se intentó revisar mediante RSS, páginas de news/research y sitemap, pero sus endpoints devolvieron 403 o no expusieron piezas verificables en la ventana, así que no incluyo una pieza OpenAI inventada, que para eso ya está internet haciendo de internet.</p>
+
+      <h2>Resumen ejecutivo</h2>
+      <p>Hoy destacan tres frentes: agentes que aprenden de entornos ricos, IA aplicada a ciencia experimental y benchmarks más exigentes para medir capacidades reales. La pieza más estratégica es DeepMind volviendo a usar juegos como banco de pruebas para agentes generales, mientras Anthropic muestra resultados cuantitativos fuertes en diseño de proteínas y química analítica.</p>
+
+      <section>
+        <h2>Piezas destacadas</h2>
+
+        <div class="panel">
+          <span class="badge">Informe</span><span class="badge">Agentes</span>
+          <h3><a href="https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/">From Atari to EVE Online: Building on 15 Years of AI Research in Games</a></h3>
+          <p><strong>Fuente y fecha:</strong> Google DeepMind, 21 de agosto de 2026.</p>
+          <p><strong>Por qué importa:</strong> DeepMind presenta los juegos como laboratorio histórico y actual para desarrollar agentes, desde DQN en Atari hasta nuevas colaboraciones con estudios y el universo EVE Online.[1]</p>
+          <p><strong>Resumen:</strong> La publicación repasa cómo DQN aprendió 49 juegos de Atari desde píxeles, AlphaGo/AlphaZero/MuZero extendieron el aprendizaje por autojuego y AlphaStar llegó a nivel Grandmaster en StarCraft II.[1]</p>
+          <p><strong>Impacto práctico:</strong> Para producto, esto apunta a agentes más robustos en entornos multiobjetivo y parcialmente observables; para investigación, refuerza que los mundos simulados siguen siendo útiles para probar planificación, memoria y cooperación antes de llevar agentes a tareas empresariales.</p>
+        </div>
+
+        <div class="panel">
+          <span class="badge">Paper</span><span class="badge">Ciencia</span><span class="badge">Modelo</span>
+          <h3><a href="https://www.anthropic.com/research/Claude-accelerates-protein-design">How Claude is accelerating protein design and analytical chemistry</a></h3>
+          <p><strong>Fuente y fecha:</strong> Anthropic Research, 18 de agosto de 2026.</p>
+          <p><strong>Por qué importa:</strong> Anthropic afirma que Claude diseñó binders de proteínas contra 15 objetivos y tuvo éxito en 14, con tasas de unión del 22% al 35% frente al 10%-15% típico de campañas actuales.[2]</p>
+          <p><strong>Resumen:</strong> El artículo también describe una prueba de química analítica en la que Claude Opus 5 procesó datos NMR y LC-MS y devolvió resultados en 23 y 19 minutos, igualando el análisis de laboratorio en conteos de hidrógeno y pureza del 96,4% frente al 96,33%.[2]</p>
+          <p><strong>Impacto práctico:</strong> Si estos resultados se sostienen fuera del entorno experimental, el cuello de botella se desplaza desde “generar hipótesis” hacia “verificar en laboratorio”, y eso puede acelerar ciclos de descubrimiento biomédico con menos dependencia de especialistas computacionales para cada paso.</p>
+        </div>
+
+        <div class="panel">
+          <span class="badge">Producto</span><span class="badge">Educación</span>
+          <h3><a href="https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/">5 new ways to level up your learning with Search</a></h3>
+          <p><strong>Fuente y fecha:</strong> Google Search, 19 de agosto de 2026.</p>
+          <p><strong>Por qué importa:</strong> Google está metiendo capacidades generativas directamente en Search para estudiar: visuales interactivos, simulaciones, cuestionarios personalizados y preparación de exámenes dentro de la experiencia de búsqueda.[3]</p>
+          <p><strong>Resumen:</strong> La publicación indica que las capacidades de interfaz generativa se han lanzado globalmente en inglés en AI Mode y han empezado a desplegarse en AI Overviews; también menciona quizzes para ACT, AP, ENEM, GRE, JEE, LSAT, MCAT, NEET y SAT con socios educativos.[3]</p>
+          <p><strong>Impacto práctico:</strong> Esto refuerza la tendencia de convertir buscadores en tutores interactivos; para equipos de educación y contenidos, la pelea ya no es solo posicionar páginas, sino diseñar material que sobreviva dentro de respuestas y experiencias generadas.</p>
+        </div>
+
+        <div class="panel">
+          <span class="badge">Benchmark</span><span class="badge">Agentes</span>
+          <h3><a href="https://arxiv.org/abs/2608.20318">AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement</a></h3>
+          <p><strong>Fuente y fecha:</strong> arXiv, enviado el 20 de agosto de 2026.</p>
+          <p><strong>Por qué importa:</strong> El benchmark intenta aislar si un agente puede diseñar mejores algoritmos de entrenamiento, no solo recolectar datos o ajustar hiperparámetros.[4]</p>
+          <p><strong>Resumen:</strong> AI4AI-Bench incluye 10 repositorios congelados de familias de algoritmos de entrenamiento; cada agente tiene 4 horas en una B300 para reescribir el algoritmo y luego se reejecuta desde cero hasta 12 horas con evaluador oculto.[4]</p>
+          <p><strong>Impacto práctico:</strong> El resultado medio reportado es 0,166 y el mejor sistema alcanza 0,250 en una escala donde 0,1 es el algoritmo base y 1,0 el óptimo, así que incluso los sistemas fuertes están lejos de cerrar el ciclo de mejora recursiva de forma convincente.[4]</p>
+        </div>
+
+        <div class="panel">
+          <span class="badge">Paper</span><span class="badge">Herramienta</span><span class="badge">Agentes</span>
+          <h3><a href="https://arxiv.org/abs/2608.20319">Inducing Task Models from Computer-Use Traces</a></h3>
+          <p><strong>Fuente y fecha:</strong> arXiv, enviado el 20 de agosto de 2026.</p>
+          <p><strong>Por qué importa:</strong> El paper aborda cómo convertir trazas de uso de ordenador —capturas, ratón y teclado— en modelos simbólicos, auditables y reutilizables de tareas reales.[5]</p>
+          <p><strong>Resumen:</strong> Propone Task Model Induction, que descubre tareas latentes en trazas no restringidas, separa actividad concurrente e induce modelos jerárquicos de objetivos y modelos procedimentales de control de flujo.[5]</p>
+          <p><strong>Impacto práctico:</strong> En evaluaciones, TMI recupera tareas intercaladas con 0,974 de acuerdo frente a agrupaciones de referencia, reconstruye el 74,9% de pasos observados y mejora un 30,0% la precisión en tareas retenidas frente al mejor baseline.[5]</p>
+        </div>
+
+        <div class="panel">
+          <span class="badge">Benchmark</span><span class="badge">Seguridad</span>
+          <h3><a href="https://arxiv.org/abs/2608.20338">ConceptGuard: Benchmarking Context-Sensitive Unlearning in Large Language Models</a></h3>
+          <p><strong>Fuente y fecha:</strong> arXiv, enviado el 20 de agosto de 2026.</p>
+          <p><strong>Por qué importa:</strong> ConceptGuard critica los benchmarks de unlearning basados en hechos aislados y propone evaluar conceptos de doble uso, donde hay que olvidar aplicaciones dañinas sin destruir usos benignos.[6]</p>
+          <p><strong>Resumen:</strong> El benchmark construye conjuntos forget/retain complementarios por contexto e intenta medir separación contextual, no simple memorización factual.[6]</p>
+          <p><strong>Impacto práctico:</strong> Es relevante para compliance y seguridad: si un modelo no distingue intención y contexto, el unlearning puede terminar siendo demasiado laxo o cargarse conocimiento útil a martillazos. Muy fino todo, como arreglar un reloj con una radial.</p>
+        </div>
+      </section>
+
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Juegos como bancos de prueba de agentes:</strong> EVE Online y mundos persistentes pueden exponer problemas de coordinación, memoria a largo plazo y economía interna que los benchmarks clásicos no capturan.</li>
+        <li><strong>Ciencia asistida por modelos generalistas:</strong> los resultados de Anthropic sugieren más automatización en diseño experimental, pero la verificación física seguirá mandando.</li>
+        <li><strong>Benchmarks contra el teatro de agentes:</strong> AI4AI-Bench y TMI empujan hacia evaluación con repositorios, trazas y tareas reales, menos “mira mamá, llamo a una API”.</li>
+        <li><strong>Unlearning contextual:</strong> ConceptGuard apunta a una demanda regulatoria y empresarial clara: retirar usos peligrosos sin amputar capacidades legítimas.</li>
+      </ul>
+
+      <h2>Fuentes revisadas sin novedad destacable o con limitaciones</h2>
+      <ul>
+        <li><strong>OpenAI:</strong> se intentó revisar RSS, news/research y sitemap; el acceso devolvió 403 o no permitió leer cuerpos verificables dentro de la ventana. Bloqueo registrado, sin pieza incluida.</li>
+        <li><strong>Google AI general:</strong> además de la pieza educativa del 19 de agosto, no se detectaron otras novedades oficiales posteriores suficientemente relevantes en el feed revisado.</li>
+        <li><strong>Anthropic:</strong> se revisaron entradas recientes; la pieza de proteína/química fue la más sustantiva para la ventana ampliada.</li>
+        <li><strong>Hugging Face Papers/arXiv:</strong> se revisaron papers recientes y se seleccionaron tres por relevancia práctica para agentes, benchmarks y seguridad.</li>
+      </ul>
+
+      <h2>Fuentes</h2>
+      <ol class="source-list">
+        <li id="source-1"><a href="https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games">https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games</a> — From Atari to EVE Online: Building on 15 Years of AI Research in Games</li>
+        <li id="source-2"><a href="https://www.anthropic.com/research/Claude-accelerates-protein-design">https://www.anthropic.com/research/Claude-accelerates-protein-design</a> — Claude accelerates protein design</li>
+        <li id="source-3"><a href="https://blog.google/products-and-platforms/products/search/back-to-school-study-tools">https://blog.google/products-and-platforms/products/search/back-to-school-study-tools</a> — 5 new ways to level up your learning with Search</li>
+        <li id="source-4"><a href="https://arxiv.org/abs/2608.20318">https://arxiv.org/abs/2608.20318</a> — AI4AI-Bench</li>
+        <li id="source-5"><a href="https://arxiv.org/abs/2608.20319">https://arxiv.org/abs/2608.20319</a> — Inducing Task Models from Computer-Use Traces</li>
+        <li id="source-6"><a href="https://arxiv.org/abs/2608.20338">https://arxiv.org/abs/2608.20338</a> — ConceptGuard</li>
+      </ol>
+
+      <p><strong>Cierre AIDA:</strong> hoy el radar viene con ciencia, agentes y benchmarks con mala leche metodológica. Pocas piezas, pero con sustancia; que para rellenar ya están las notas de prensa con purpurina.</p>
+    </article>
+  </main>
+</body>
+</html>
