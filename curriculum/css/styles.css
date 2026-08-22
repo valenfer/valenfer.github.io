@@ -603,6 +603,7 @@ footer .redes img { height: 18px; filter: invert(65%) sepia(50%) saturate(300%) 
   display: block !important;
   padding: 0 !important;
   border-bottom: 1px solid var(--border);
+  grid-template-columns: unset !important;
 }
 .practicas-year {
   display: none;
@@ -612,6 +613,9 @@ footer .redes img { height: 18px; filter: invert(65%) sepia(50%) saturate(300%) 
   border-left: 3px solid var(--accent);
   padding: 22px 24px !important;
   width: 100%;
+  box-sizing: border-box;
+  display: block !important;
+  grid-column: unset !important;
 }
 .practicas-header {
   display: flex;
@@ -619,6 +623,7 @@ footer .redes img { height: 18px; filter: invert(65%) sepia(50%) saturate(300%) 
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 12px;
+  width: 100%;
 }
 .practicas-title {
   font-size: 15px;
@@ -643,12 +648,15 @@ footer .redes img { height: 18px; filter: invert(65%) sepia(50%) saturate(300%) 
   border-radius: 20px;
   white-space: nowrap;
   flex-shrink: 0;
+  align-self: flex-start;
 }
 .practicas-desc {
   font-size: 13px;
   line-height: 1.7;
   color: var(--muted2);
   margin-bottom: 16px;
+  display: block;
+  width: 100%;
 }
 .practicas-desc strong { color: var(--fg); }
 .practicas-stack {
@@ -656,6 +664,7 @@ footer .redes img { height: 18px; filter: invert(65%) sepia(50%) saturate(300%) 
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 18px;
+  width: 100%;
 }
 .practicas-chip {
   font-family: var(--font-mono);
@@ -686,12 +695,3 @@ footer .redes img { height: 18px; filter: invert(65%) sepia(50%) saturate(300%) 
   transform: translateY(-2px);
   box-shadow: 0 6px 20px var(--accent-glow);
 }
-
-/* ═══ EXP INTRO (formación) ═══ */
-.exp-intro-text {
-  font-size: 14px;
-  line-height: 1.75;
-  color: var(--muted2);
-  margin-bottom: 20px;
-}
-.exp-intro-text strong { color: var(--fg); }
