@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentín Fernández Guijarro — Dev Web & IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/chatbot.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <a href="#top" class="header-logo">
+      <img src="./img/logo.png" alt="Logo">
+    </a>
+    <nav id="nav">
+      <ul id="links">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#cv">Formación</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="./docs/CV_Valentin_Fernandez.pdf" target="_blank">PDF <span class="badge-new">↓</span></a></li>
+        <li><a href="https://valentinfernandez.io" target="_blank">Portfolio ↗</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <div class="redes">
+        <a class="icon" href="https://github.com/valenfer" target="_blank" aria-label="GitHub"><img src="./img/github.svg" alt="GitHub"></a>
+        <a class="icon" href="https://www.linkedin.com/in/valent%C3%ADnfern%C3%A1ndezguijarro-243235287/" target="_blank" aria-label="LinkedIn"><img src="./img/linkedin.svg" alt="LinkedIn"></a>
+      </div>
+      <button class="boton-menu" aria-label="Menú de navegación">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="sobre-mi">
+    <div class="hero-inner">
+      <div class="hero-foto">
+        <img src="./img/foto.jpg" alt="Valentín Fernández Guijarro">
+        <div class="hero-foto-ring"></div>
+      </div>
+      <div class="hero-text">
+        <p class="hero-eyebrow"><span class="dot"></span> Disponible para nuevas oportunidades</p>
+        <h1>Valentín<br>Fernández<br><span class="accent">Guijarro</span></h1>
+        <p class="hero-role">Desarrollador Web · IA &amp; Automatización · Python</p>
+        <p class="hero-bio">
+          Recién graduado en <strong>FP Superior Desarrollo de Aplicaciones Web</strong> con un extenso background en 
+          tecnología, datos y ciberseguridad. Apasionado por la IA generativa y la automatización de procesos.
+          Aporto más de 1.500h de formación certificada en programación, Big Data, UX y herramientas de IA.
+        </p>
+        <div class="hero-datos">
+          <span>📍 Mairena del Alcor, Sevilla</span>
+          <span>📞 617 00 13 43</span>
+          <span>✉ valenfer71@gmail.com</span>
+        </div>
+        <div class="hero-ctas">
+          <a href="./docs/CV_Valentin_Fernandez.pdf" target="_blank" class="cta-primary">Descargar CV PDF</a>
+          <a href="#cv" class="cta-secondary">Ver formación</a>
+          <a href="https://valentinfernandez.io" target="_blank" class="cta-secondary">Portfolio ↗</a>
+        </div>
+        <p class="hero-aida">💬 O pregúntale a <strong>AIDA</strong>, mi asistente con IA →</p>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SKILLS RÁPIDOS -->
+  <section class="skills-section" id="skills">
+    <div class="section-container">
+      <div class="section-label">STACK &amp; COMPETENCIAS</div>
+      <h2 class="section-title">Tecnologías &amp; Herramientas</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <div class="chips">
+            <span class="chip chip-blue">HTML5</span>
+            <span class="chip chip-blue">CSS3</span>
+            <span class="chip chip-blue">JavaScript</span>
+            <span class="chip chip-blue">React</span>
+            <span class="chip chip-blue">Angular</span>
+            <span class="chip chip-blue">jQuery</span>
+            <span class="chip chip-blue">Figma</span>
+            <span class="chip chip-blue">UX/UI</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Backend &amp; Datos</h4>
+          <div class="chips">
+            <span class="chip chip-green">Python</span>
+            <span class="chip chip-green">Django</span>
+            <span class="chip chip-green">SQL</span>
+            <span class="chip chip-green">NoSQL</span>
+            <span class="chip chip-green">Big Data</span>
+            <span class="chip chip-green">Git / GitHub</span>
+            <span class="chip chip-green">Linux</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>IA &amp; Automatización</h4>
+          <div class="chips">
+            <span class="chip chip-purple">ChatGPT / GPT-4</span>
+            <span class="chip chip-purple">Prompt Engineering</span>
+            <span class="chip chip-purple">Midjourney</span>
+            <span class="chip chip-purple">IBM SkillsBuild IA</span>
+            <span class="chip chip-purple">Cursor AI</span>
+            <span class="chip chip-purple">Automatizaciones</span>
+            <span class="chip chip-purple">IA Generativa</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Metodologías</h4>
+          <div class="chips">
+            <span class="chip chip-orange">Scrum / Agile</span>
+            <span class="chip chip-orange">UX Research</span>
+            <span class="chip chip-orange">Design Thinking</span>
+            <span class="chip chip-orange">Machine Learning</span>
+            <span class="chip chip-orange">Ciberseguridad</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV PRINCIPAL -->
+  <hr id="cv" class="section-divider">
+  <main id="apartados">
+    <div class="section-container">
+      <div class="cv-header">
+        <div class="section-label">HISTORIAL COMPLETO</div>
+        <h2 class="section-title">Curriculum Vitae</h2>
+        <p class="cv-subtitle">Haz clic en cada sección para expandirla</p>
+      </div>
+    </div>
+
+    <!-- FORMACIÓN REGLADA -->
+    <div class="section-container">
+      <section class="apartado" id="ensenanza-reglada">
+        <div class="titulo">
+          <div class="titulo-left">
+            <img src="./img/formacionReglada.png" alt="">
+            <div>
+              <h3>ENSEÑANZA REGLADA</h3>
+              <span class="titulo-meta">Títulos oficiales · Ministerio de Educación</span>
+            </div>
+          </div>
+          <img class="flecha" src="./img/flechasAbajo.png" alt="Expandir">
+        </div>
+        <div class="retractil">
+          <div class="timeline">
+            <div class="timeline-item destacado">
+              <span class="tl-year">2025</span>
+              <div class="tl-content">
+                <strong>FP Grado Superior — Desarrollo de Aplicaciones Web (DAW)</strong>
+                <span class="tl-place">IES Aguadulce, Almería</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">1991</span>
+              <div class="tl-content">
+                <strong>Bachillerato (BUP/COU)</strong>
+                <span class="tl-place">IES Luis Cernuda, Sevilla — Prueba de acceso superada</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">1986</span>
+              <div class="tl-content">
+                <strong>Graduado Escolar</strong>
+                <span class="tl-place">C.P. Emilio Prados, Sevilla</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- EXPERIENCIA LABORAL -->
+    <div class="section-container" id="experiencia">
+      <section class="apartado" id="experiencia-laboral">
+        <div class="titulo">
+          <div class="titulo-left">
+            <img src="./img/experienciaLaboral.png" alt="">
+            <div>
+              <h3>EXPERIENCIA LABORAL</h3>
+              <span class="titulo-meta">Trayectoria profesional</span>
+            </div>
+          </div>
+          <img class="flecha" src="./img/flechasAbajo.png" alt="Expandir">
+        </div>
+        <div class="retractil">
+          <div class="timeline">
+            <div class="timeline-item destacado">
+              <span class="tl-year">2025</span>
+              <div class="tl-content">
+                <strong>Prácticas — Desarrollador Web</strong>
+                <span class="tl-place">Agencia Creativa Marujalimon · Feb–May 2025 · 350h</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2022→</span>
+              <div class="tl-content">
+                <strong>Vigilante de Seguridad</strong>
+                <span class="tl-place">ILUNION Seguridad (Certificaciones AESA C3A, C3B vigentes)</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2020–21</span>
+              <div class="tl-content">
+                <strong>Vigilante de Seguridad</strong>
+                <span class="tl-place">PROSEGUR</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2015–19</span>
+              <div class="tl-content">
+                <strong>Auxiliar de Servicios / Vigilante de Seguridad</strong>
+                <span class="tl-place">SCP Servicios Complementarios Polivalentes &amp; GSI</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2009–15</span>
+              <div class="tl-content">
+                <strong>Encuestador e Investigador de Mercados</strong>
+                <span class="tl-place">Forum &amp; Market</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2004–08</span>
+              <div class="tl-content">
+                <strong>Operario de Mantenimiento y Producción</strong>
+                <span class="tl-place">Henkel Ibérica</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2002–03</span>
+              <div class="tl-content">
+                <strong>Comercial y Coordinador de Equipo</strong>
+                <span class="tl-place">Supercable AUNA</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">1995–02</span>
+              <div class="tl-content">
+                <strong>Dependiente y Encargado</strong>
+                <span class="tl-place">Copysevilla (reprografía)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CERTIFICACIONES OFICIALES -->
+    <div class="section-container">
+      <section class="apartado" id="otros-certicicacion-oficial">
+        <div class="titulo">
+          <div class="titulo-left">
+            <img src="./img/otraCertificacionOficial.png" alt="">
+            <div>
+              <h3>CERTIFICACIONES OFICIALES</h3>
+              <span class="titulo-meta">Acreditaciones con validez oficial</span>
+            </div>
+          </div>
+          <img class="flecha" src="./img/flechasAbajo.png" alt="Expandir">
+        </div>
+        <div class="retractil">
+          <div class="timeline">
+            <div class="timeline-item destacado">
+              <span class="tl-year">2026</span>
+              <div class="tl-content">
+                <strong>Certificación AESA — Seguridad Aviación Civil C3B</strong>
+                <span class="tl-place">Agencia Estatal de Seguridad Aérea (AESA) · Válida hasta Feb 2029 · Inspección carga con rayos X</span>
+              </div>
+            </div>
+            <div class="timeline-item destacado">
+              <span class="tl-year">2022</span>
+              <div class="tl-content">
+                <strong>Certificación AESA — Seguridad Aviación Civil C3A</strong>
+                <span class="tl-place">Agencia Estatal de Seguridad Aérea (AESA) · Válida hasta Sep 2027 · Seguridad de carga y correo</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2019</span>
+              <div class="tl-content">
+                <strong>Básico de Gestión de Prevención de Riesgos Laborales</strong>
+                <span class="tl-place">Times Square College (SEPE) · 50h · Teleformación</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="tl-year">2016</span>
+              <div class="tl-content">
+                <strong>Vigilante de Seguridad (TIP)</strong>
+                <span class="tl-place">Instituto Andaluz de Enseñanza · 180h + Prueba oficial superada</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FORMACIÓN ONLINE -->
+    <div class="section-container">
+      <section class="apartado" id="formacion-online">
+        <div class="titulo">
+          <div class="titulo-left">
+            <img src="./img/formacionOnline.png" alt="">
+            <div>
+              <h3>FORMACIÓN ON-LINE</h3>
+              <span class="titulo-meta">+35 certificados · +1.500h · 2019–2026</span>
+            </div>
+          </div>
+          <img class="flecha" src="./img/flechasAbajo.png" alt="Expandir">
+        </div>
+        <div class="retractil">
+
+          <!-- BLOQUE: GOOGLE / COURSERA -->
+          <div class="cert-bloque">
+            <div class="cert-bloque-header">
+              <span class="cert-emisor cert-emisor-google">Google / Coursera</span>
+            </div>
+            <div class="cert-lista">
+              <div class="cert-item cert-destacado">
+                <div class="cert-info">
+                  <strong>Google IT Automation with Python</strong>
+                  <span class="cert-det">Certificado Profesional · 7 cursos (Python, Git/GitHub, Troubleshooting, Cloud Automation)</span>
+                </div>
+                <span class="cert-year">Sep 2025</span>
+              </div>
+              <div class="cert-item cert-destacado">
+                <div class="cert-info">
+                  <strong>Diseño de Experiencia del Usuario (UX) de Google</strong>
+                  <span class="cert-det">Certificado Profesional · 7 cursos (Wireframes, Figma, Investigación UX, Prototipos)</span>
+                </div>
+                <span class="cert-year">Sep 2024</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Automating Real-World Tasks with Python</strong>
+                </div>
+                <span class="cert-year">Sep 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Configuration Management and the Cloud</strong>
+                </div>
+                <span class="cert-year">Ago 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Troubleshooting and Debugging Techniques</strong>
+                </div>
+                <span class="cert-year">Ago 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Introduction to Git and GitHub</strong>
+                </div>
+                <span class="cert-year">Jul 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Using Python to Interact with the Operating System</strong>
+                </div>
+                <span class="cert-year">Abr 2025</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOQUE: IBM SkillsBuild / BeJob / datahack -->
+          <div class="cert-bloque">
+            <div class="cert-bloque-header">
+              <span class="cert-emisor cert-emisor-ibm">IBM SkillsBuild · BeJob · datahack</span>
+            </div>
+            <div class="cert-lista">
+              <div class="cert-item cert-destacado">
+                <div class="cert-info">
+                  <strong>Usos Profesionales de la IA Generativa</strong>
+                  <span class="cert-det">BeJob + IBM SkillsBuild · 70h · Prompt Engineering, herramientas IAGen, aplicaciones de negocio</span>
+                </div>
+                <span class="cert-year">Jul 2025</span>
+              </div>
+              <div class="cert-item cert-destacado">
+                <div class="cert-info">
+                  <strong>Curso de Inteligencia Artificial SkillsBuild</strong>
+                  <span class="cert-det">datahack + IBM SkillsBuild · 60h · IA aplicada, algoritmos, ML</span>
+                </div>
+                <span class="cert-year">Dic 2025</span>
+              </div>
+              <div class="cert-item cert-destacado">
+                <div class="cert-info">
+                  <strong>Iniciación a la Programación: Python</strong>
+                  <span class="cert-det">BeJob + IBM SkillsBuild · 60h · Python, Django, POO, Git/GitHub</span>
+                </div>
+                <span class="cert-year">Nov 2024</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Artificial Intelligence Fundamentals</strong>
+                  <span class="cert-det">IBM SkillsBuild</span>
+                </div>
+                <span class="cert-year">May 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Web Development with Python</strong>
+                  <span class="cert-det">IBM SkillsBuild</span>
+                </div>
+                <span class="cert-year">Nov 2024</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOQUE: Fundae / eFundae / SEPE -->
+          <div class="cert-bloque">
+            <div class="cert-bloque-header">
+              <span class="cert-emisor cert-emisor-sepe">Fundae / SEPE · Laprendea / Hedima</span>
+            </div>
+            <div class="cert-lista">
+              <div class="cert-item cert-destacado">
+                <div class="cert-info">
+                  <strong>Experto en Data &amp; Analytics</strong>
+                  <span class="cert-det">Laprendea · 565h · Big Data, IA aplicada, Agile/SCRUM</span>
+                </div>
+                <span class="cert-year">Feb 2023</span>
+              </div>
+              <div class="cert-item cert-destacado">
+                <div class="cert-info">
+                  <strong>Nivel 3: Frameworks Frontend (DigComp 2.2)</strong>
+                  <span class="cert-det">Fundae/eFundae (NextGenEU) · 36h · Angular, React, jQuery, AJAX</span>
+                </div>
+                <span class="cert-year">Mar 2026</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Arquitectura Big Data (IFCT127PO)</strong>
+                  <span class="cert-det">Laprendea/Hedima · 165h · Batch, Streaming, NoSQL, Cloud, Visualización</span>
+                </div>
+                <span class="cert-year">Dic 2022</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Programa Avanzado en Agile Project Management: SCRUM</strong>
+                  <span class="cert-det">Laprendea/Hedima (SEPE) · 150h · Scrum, Kanban, Design Thinking, Business Intelligence</span>
+                </div>
+                <span class="cert-year">Oct 2022</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Gestión de la Seguridad Informática en la Empresa (IFCT050PO)</strong>
+                  <span class="cert-det">Cesur/SEPE · 100h · Criptografía, ataques, redes, auditoría</span>
+                </div>
+                <span class="cert-year">Jun 2020</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Administración de Bases de Datos (IFCT0310)</strong>
+                  <span class="cert-det">CORE NETWORKS / Junta de Andalucía · 200h · Apto</span>
+                </div>
+                <span class="cert-year">Dic 2021</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Protección de Equipos en la Red (IFCT106PO)</strong>
+                  <span class="cert-det">Levelcom/SEPE · 10h · Antivirus, malware, backups</span>
+                </div>
+                <span class="cert-year">Jul 2020</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOQUE: Udemy -->
+          <div class="cert-bloque">
+            <div class="cert-bloque-header">
+              <span class="cert-emisor cert-emisor-udemy">Udemy</span>
+            </div>
+            <div class="cert-lista">
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Curso Completo de IA Generativa: ChatGPT, Midjourney y más!</strong>
+                  <span class="cert-det">20,5h</span>
+                </div>
+                <span class="cert-year">Jun 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>ChatGPT TOTAL: Genera Texto, Audio e Imágenes con IA</strong>
+                  <span class="cert-det">6,5h</span>
+                </div>
+                <span class="cert-year">Jun 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>ChatGPT | Marketing Digital con IA</strong>
+                  <span class="cert-det">10h</span>
+                </div>
+                <span class="cert-year">Jun 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Curso IA Generativa + Prompt Engineering con ChatGPT-4</strong>
+                  <span class="cert-det">7h</span>
+                </div>
+                <span class="cert-year">Nov 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Machine Learning: Curso básico de ML y Python</strong>
+                  <span class="cert-det">8h</span>
+                </div>
+                <span class="cert-year">Nov 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Python Asistido con ChatGPT: Cómo Crear Apps en Minutos</strong>
+                  <span class="cert-det">4h</span>
+                </div>
+                <span class="cert-year">Dic 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>ChatGPT: Transforma tu Productividad en Microsoft Office</strong>
+                  <span class="cert-det">3h</span>
+                </div>
+                <span class="cert-year">Oct 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>ChatGPT para el Trabajo: La Guía Definitiva para Innovar con IA</strong>
+                  <span class="cert-det">3,5h</span>
+                </div>
+                <span class="cert-year">Oct 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>SQL TOTAL — Domina Bases de Datos de 0 a Avanzado</strong>
+                  <span class="cert-det">7,5h</span>
+                </div>
+                <span class="cert-year">Jun 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOQUE: Otros -->
+          <div class="cert-bloque">
+            <div class="cert-bloque-header">
+              <span class="cert-emisor cert-emisor-otros">Otros centros</span>
+            </div>
+            <div class="cert-lista">
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Cursor con Python: Desarrollo Inteligente con IA</strong>
+                  <span class="cert-det">OpenWebinars · 8h · 2 módulos</span>
+                </div>
+                <span class="cert-year">Jul 2025</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Masterclass de Automatizaciones con IA</strong>
+                  <span class="cert-det">Raiola Networks</span>
+                </div>
+                <span class="cert-year">Ene 2026</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>Curso de IA 2026: Vibe Coding y Automatizaciones</strong>
+                  <span class="cert-det">BIG school · 6h</span>
+                </div>
+                <span class="cert-year">Ene 2026</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>NDG Linux Unhatched</strong>
+                  <span class="cert-det">NDG / Cisco Networking Academy · Línea de comandos Linux</span>
+                </div>
+                <span class="cert-year">Jul 2021</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>C1b3rWall Academy — Módulo 0</strong>
+                  <span class="cert-det">BISITE / Univ. Salamanca + Policía Nacional · Blockchain, Criptomonedas, Ciberseguridad</span>
+                </div>
+                <span class="cert-year">Jul 2021</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>IntelCon 2021</strong>
+                  <span class="cert-det">GINSEG Ciberinteligencia · Congreso de Ciberinteligencia</span>
+                </div>
+                <span class="cert-year">Oct 2021</span>
+              </div>
+              <div class="cert-item">
+                <div class="cert-info">
+                  <strong>PRL — Exposición a Sílice Cristalina Respirable</strong>
+                  <span class="cert-det">Ilunion / Grupo Social ONCE · 2h</span>
+                </div>
+                <span class="cert-year">Jun 2024</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- FORMACIÓN PRESENCIAL HISTÓRICA -->
+    <div class="section-container">
+      <section class="apartado" id="otra-formacion-presencial">
+        <div class="titulo">
+          <div class="titulo-left">
+            <img src="./img/otraFormacionPresencial.png" alt="">
+            <div>
+              <h3>FORMACIÓN PRESENCIAL HISTÓRICA</h3>
+              <span class="titulo-meta">Cursos 1993–2002</span>
+            </div>
+          </div>
+          <img class="flecha" src="./img/flechasAbajo.png" alt="Expandir">
+        </div>
+        <div class="retractil">
+          <div class="timeline">
+            <div class="timeline-item"><span class="tl-year">2002</span><div class="tl-content"><strong>Diseño de páginas web</strong><span class="tl-place">Neteman</span></div></div>
+            <div class="timeline-item"><span class="tl-year">2000</span><div class="tl-content"><strong>Experto en Autoedición</strong><span class="tl-place">IFES · 60h</span></div></div>
+            <div class="timeline-item"><span class="tl-year">1999</span><div class="tl-content"><strong>Diseño y Maquetación por Ordenador</strong><span class="tl-place">Al Ándalus · 30h</span></div></div>
+            <div class="timeline-item"><span class="tl-year">1997</span><div class="tl-content"><strong>Administración de Empresas</strong><span class="tl-place">CEF · 30h</span></div></div>
+            <div class="timeline-item"><span class="tl-year">1995</span><div class="tl-content"><strong>Comercio Exterior</strong><span class="tl-place">Academia de Estudios Profesionales · 300h</span></div></div>
+            <div class="timeline-item"><span class="tl-year">1995</span><div class="tl-content"><strong>Comunicación de Ordenadores y Redes Locales</strong><span class="tl-place">IFES · 350h</span></div></div>
+            <div class="timeline-item"><span class="tl-year">1994</span><div class="tl-content"><strong>Especialista en Diseño Asistido por Ordenador</strong><span class="tl-place">Centro Edison · 200h</span></div></div>
+            <div class="timeline-item"><span class="tl-year">1993</span><div class="tl-content"><strong>Técnico Comercial con Informática</strong><span class="tl-place">IFES · 350h</span></div></div>
+            <div class="timeline-item"><span class="tl-year">1993</span><div class="tl-content"><strong>Contabilidad Informatizada</strong><span class="tl-place">Albert Legiho Consultores · 30h</span></div></div>
+            <div class="timeline-item"><span class="tl-year">1993</span><div class="tl-content"><strong>Programador de Ordenadores</strong><span class="tl-place">ASEMFOR · 300h</span></div></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- OTROS DATOS -->
+    <div class="section-container">
+      <section class="apartado" id="otros-datos">
+        <div class="titulo">
+          <div class="titulo-left">
+            <img src="./img/otrosDatosdeInteres.png" alt="">
+            <div>
+              <h3>OTROS DATOS DE INTERÉS</h3>
+              <span class="titulo-meta">Información adicional</span>
+            </div>
+          </div>
+          <img class="flecha" src="./img/flechasAbajo.png" alt="Expandir">
+        </div>
+        <div class="retractil">
+          <div class="datos-grid">
+            <div class="dato-card">
+              <img src="./img/localizacion.png" alt="Localización">
+              <div>
+                <span class="dato-label">Localidad</span>
+                <span class="dato-valor">Mairena del Alcor, Sevilla</span>
+              </div>
+            </div>
+            <div class="dato-card">
+              <img src="./img/coche.png" alt="Movilidad">
+              <div>
+                <span class="dato-label">Movilidad</span>
+                <span class="dato-valor">Carnet B · Vehículo propio</span>
+              </div>
+            </div>
+            <div class="dato-card">
+              <img src="./img/idiomas.png" alt="Idiomas">
+              <div>
+                <span class="dato-label">Idiomas</span>
+                <span class="dato-valor">Español (nativo) · Inglés (intermedio)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="section-container">
+      <div class="section-label">HABLEMOS</div>
+      <h2 class="section-title">Contacto</h2>
+      <p class="contacto-sub">¿Interesado en contar con Valentín? Déjame tus datos y me pondré en contacto contigo a la brevedad.</p>
+      <form id="form-contacto" class="form-contacto">
+        <div class="form-fila">
+          <div class="form-campo">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+          </div>
+          <div class="form-campo">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
+          </div>
+        </div>
+        <div class="form-fila">
+          <div class="form-campo">
+            <label for="cargo">Cargo</label>
+            <input type="text" id="cargo" name="cargo" placeholder="Tu cargo">
+          </div>
+          <div class="form-campo">
+            <label for="telefono">Teléfono *</label>
+            <input type="tel" id="telefono" name="telefono" required placeholder="Tu teléfono">
+          </div>
+        </div>
+        <div class="form-fila">
+          <div class="form-campo form-campo-full">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+          </div>
+        </div>
+        <div class="form-fila">
+          <div class="form-campo form-campo-full">
+            <label for="comentario">Comentario</label>
+            <textarea id="comentario" name="comentario" rows="4" placeholder="Cuéntame en qué puedo ayudarte..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="form-enviar" id="form-enviar">
+          <span>Enviar mensaje</span>
+          <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+        <p class="form-exito" id="form-exito">Mensaje enviado correctamente. Me pondré en contacto contigo pronto.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>Valentín Fernández Guijarro</p>
+    <p>valenfer71@gmail.com</p>
+    <div class="redes">
+      <a class="icon" href="https://github.com/valenfer" target="_blank" aria-label="GitHub"><img src="./img/github.svg" alt="GitHub"></a>
+      <a class="icon" href="https://www.linkedin.com/in/valent%C3%ADnfern%C3%A1ndezguijarro-243235287/" target="_blank" aria-label="LinkedIn"><img src="./img/linkedin.svg" alt="LinkedIn"></a>
+    </div>
+    <script src="./js/scripts.js"></script>
+    <p class="ultima-actualizacion">Última actualización:
+      <span id="lastUpdated">
+        <script>document.getElementById('lastUpdated').textContent = ultimaActualizacion();</script>
+      </span>
+    </p>
+  </footer>
+
+  <div id="chatbot-root"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="./js/form.js" defer></script>
+  <script src="./js/chatbot.js" defer></script>
+
+</body>
+</html>
