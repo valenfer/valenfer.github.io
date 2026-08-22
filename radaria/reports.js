@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-22",
+    "title": "RadarIA diario — 2026-08-22",
+    "summary": "5 piezas sobre biomarcadores con agentes, movilidad para modelos de lugar, gobernanza AI Futures de OpenAI, EnvHarness y SWE-bench Science.",
+    "url": "./informes/2026-08-22.html"
+  },
+  {
     "date": "2026-08-21",
     "title": "RadarIA diario — 2026-08-21",
     "summary": "6 piezas sobre agentes en juegos, Claude aplicado a proteínas y química analítica, IA educativa en Search, benchmarks de mejora algorítmica, trazas de computer-use y unlearning contextual.",
