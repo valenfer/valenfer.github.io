@@ -597,3 +597,46 @@ footer .redes img { height: 18px; filter: invert(65%) sepia(50%) saturate(300%) 
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation: none !important; }
 }
+
+/* ═══ EXP INTRO CARD ═══ */
+.exp-intro-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  margin-bottom: 16px;
+}
+.exp-intro-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.exp-intro-text {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted2);
+  margin-bottom: 20px;
+}
+.exp-intro-text strong { color: var(--fg); }
+.exp-portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  transition: all 0.25s;
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+.exp-portfolio-link:hover {
+  background: #00f5c4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--accent-glow);
+}
