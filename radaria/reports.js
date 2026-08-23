@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-23",
+    "title": "RadarIA diario — 2026-08-23",
+    "summary": "7 piezas: gobernanza y privacidad en OpenAI, estudio con Google Search, watermarking de Claude y benchmarks/papers sobre agentes, trazas de uso y unlearning contextual.",
+    "url": "./informes/2026-08-23.html"
+  },
+  {
     "date": "2026-08-22",
     "title": "RadarIA diario — 2026-08-22",
     "summary": "5 piezas sobre biomarcadores con agentes, movilidad para modelos de lugar, gobernanza AI Futures de OpenAI, EnvHarness y SWE-bench Science.",
