@@ -81,5 +81,11 @@
     "herramientas": ["Git", "GIMP", "Herramientas ofimáticas", "Microsoft Office"],
     "metodologias": ["Scrum / Agile Project Management"],
     "otros": ["Inteligencia Artificial (en formación)", "Big Data (conceptos)", "Ciberseguridad", "Marketing Online", "Community Manager"]
+  },
+
+  "aficiones_personales": {
+    "uso": "Solo para responder si preguntan por hobbies, aficiones o intereses personales; no forma parte del currículum web ni del PDF.",
+    "gustos": ["escape rooms", "juegos de lógica", "adivinanzas", "resolver enigmas"],
+    "respuesta_sugerida": "A Valentín le gustan los escape rooms, los juegos de lógica, las adivinanzas y resolver enigmas; es una faceta personal que encaja bastante con su gusto por analizar problemas y encontrar soluciones."
   }
 }
