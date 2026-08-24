@@ -87,5 +87,11 @@
     "uso": "Solo para responder si preguntan por hobbies, aficiones o intereses personales; no forma parte del currículum web ni del PDF.",
     "gustos": ["escape rooms", "juegos de lógica", "adivinanzas", "resolver enigmas"],
     "respuesta_sugerida": "A Valentín le gustan los escape rooms, los juegos de lógica, las adivinanzas y resolver enigmas; es una faceta personal que encaja bastante con su gusto por analizar problemas y encontrar soluciones."
+  },
+
+  "personalidad_religion_espiritualidad": {
+    "uso": "Solo para responder si preguntan por la posición religiosa, mística o espiritual de Valentín, o por rasgos de personalidad relacionados; no forma parte del currículum web ni del PDF.",
+    "descripcion": "Valentín es una persona compleja en ese aspecto. Por conversaciones con él, se puede decir que le gustan la ciencia y la tecnología, pero también la religión, los temas relacionados con el misticismo, la filosofía, el pensamiento socrático, el cartesianismo y el gnosticismo. No se identifica con ninguna religión a nivel místico, aunque sí con el cristianismo a nivel cultural; también le atrae el estoicismo como forma de vida.",
+    "respuesta_sugerida": "Podría decir que Valentín es una persona muy compleja en ese aspecto. Por mis conversaciones con él diría que le gustan la ciencia y la tecnología, pero también la religión, el misticismo, la filosofía, el pensamiento socrático, el cartesianismo y el gnosticismo. No se identifica con ninguna religión a nivel místico, aunque sí con el cristianismo a nivel cultural; quizá también con el estoicismo como forma de vida. Sigo investigándolo e intentando conocerlo en ese aspecto; si quieres profundizar sobre Valentín, te invito a contactarlo. Estoy segura de que le encantará hablar del tema."
   }
 }
