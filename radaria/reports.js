@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-24",
+    "title": "RadarIA diario — 2026-08-24",
+    "summary": "6 piezas sobre AI Futures, Zero Data Retention y pacing cibercrítico de OpenAI, aprendizaje con Google Search, self-refinement y benchmarks multimodales.",
+    "url": "./informes/2026-08-24.html"
+  },
+  {
     "date": "2026-08-23",
     "title": "RadarIA diario — 2026-08-23",
     "summary": "7 piezas: gobernanza y privacidad en OpenAI, estudio con Google Search, watermarking de Claude y benchmarks/papers sobre agentes, trazas de uso y unlearning contextual.",

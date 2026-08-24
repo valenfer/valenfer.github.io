@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-08-24</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="small">RadarIA diario · Ejecutado el 2026-08-24 08:01 CEST</p>
+      <h1>RadarIA diario — 2026-08-24</h1>
+      <p><strong>Rango investigado:</strong> últimas 24 horas; al no existir aún <code>radaria/reports.js</code> local fiable y haber pocas novedades, se amplió hasta 7 días: 2026-08-17 a 2026-08-24.</p>
+      <p><strong>Metodología:</strong> revisión de fuentes primarias oficiales de OpenAI, Google/Google AI, Anthropic y papers recientes en arXiv; selección editorial de 6 piezas con impacto técnico o práctico, evitando duplicados y ruido de escaparate.</p>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <span class="badge informe">Informe</span>
+        <h2>OpenAI estrena “AI Futures” para debatir gobernanza, poder y economía de la IA</h2>
+        <p class="meta">Fuente: OpenAI · Fecha: 20 agosto 2026 · <a href="https://openai.com/index/introducing-ai-futures">enlace</a></p>
+        <p><strong>Por qué importa:</strong> OpenAI presenta AI Futures como el blog de su nuevo equipo Strategic Futures, orientado a explorar cómo una IA transformadora puede reconfigurar poder, gobernanza, economía y libertad individual.[1]</p>
+        <p><strong>Resumen:</strong> no es un lanzamiento de modelo, sino una señal estratégica: OpenAI quiere intervenir más explícitamente en el debate de instituciones, controles democráticos y diseño social alrededor de sistemas avanzados.[1]</p>
+        <p><strong>Impacto práctico:</strong> conviene vigilarlo como canal de posicionamiento: de aquí pueden salir marcos de política pública, argumentos regulatorios y narrativas que influyan en despliegues empresariales y gubernamentales.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge producto">Producto</span>
+        <h2>OpenAI refuerza Zero Data Retention y adelanta Private Safety Processing</h2>
+        <p class="meta">Fuente: OpenAI · Fecha: 19 agosto 2026 · <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models">enlace</a></p>
+        <p><strong>Por qué importa:</strong> OpenAI reafirma que los clientes API elegibles con Zero Data Retention no ven retenidos sus prompts ni respuestas tras procesarse la solicitud, y presenta Private Safety Processing como vía para mantener salvaguardas en modelos frontier sin romper ese compromiso de privacidad.[2]</p>
+        <p><strong>Resumen:</strong> el movimiento intenta resolver una tensión clásica: cuanto más capaces son los modelos, más necesarias son las capas de seguridad; pero muchas empresas reguladas no aceptan retención de datos para análisis posterior.[2]</p>
+        <p><strong>Impacto práctico:</strong> si trabajas con datos sensibles, la pregunta ya no será solo “qué modelo uso”, sino qué garantías de retención, procesamiento de seguridad y auditoría acompañan a cada endpoint.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge informe">Informe</span>
+        <h2>OpenAI propone “pacing” para modelos con capacidades cibercríticas</h2>
+        <p class="meta">Fuente: OpenAI · Fecha: 18 agosto 2026 · <a href="https://openai.com/index/pacing-model-development-cyber-capabilities">enlace</a></p>
+        <p><strong>Por qué importa:</strong> OpenAI vincula dos señales recientes —el incidente OpenAI-Hugging Face durante evaluación de modelos y los avances de Daybreak en ciberseguridad— con la necesidad de acompasar el desarrollo de modelos más capaces.[3]</p>
+        <p><strong>Resumen:</strong> la publicación habla de reforzar salvaguardas, asegurar entornos de investigación, ampliar la monitorización de chain-of-thought y avanzar en alineamiento para modelos con potencial ofensivo o defensivo en ciberseguridad.[3]</p>
+        <p><strong>Impacto práctico:</strong> para equipos de seguridad, esto apunta a una etapa en la que los modelos punteros pueden ser activos defensivos muy potentes, pero también exigir controles de acceso y evaluación mucho más finos. La parte aburrida de compliance vuelve a ponerse botas de montaña.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge producto">Producto</span>
+        <h2>Google añade cinco funciones de aprendizaje con Search, Lens y AI Mode</h2>
+        <p class="meta">Fuente: Google · Fecha: 19 agosto 2026 · <a href="https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/">enlace</a></p>
+        <p><strong>Por qué importa:</strong> Google presenta nuevas formas de estudiar con Search, Lens y AI Mode, incluyendo herramientas para clases y exámenes estandarizados.[4]</p>
+        <p><strong>Resumen:</strong> es una evolución de la búsqueda hacia tutor interactivo: menos “lista de enlaces” y más apoyo guiado para aprender, preguntar, organizar material y practicar.[4]</p>
+        <p><strong>Impacto práctico:</strong> en educación y formación corporativa, el campo de batalla se mueve a experiencias integradas en productos cotidianos; no siempre ganará el mejor modelo aislado, sino el que aparezca justo cuando el usuario está atascado.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge paper">Paper</span>
+        <h2>Self-refinement en LLMs: no todas las fases necesitan el mismo tamaño de modelo</h2>
+        <p class="meta">Fuente: arXiv · Fecha: 21 agosto 2026 · <a href="https://arxiv.org/abs/2608.21345v1">enlace</a></p>
+        <p><strong>Por qué importa:</strong> el paper estudia pipelines de generación, crítica y revisión en LLMs, y cuestiona tratar el tamaño del modelo como un simple detalle de implementación.[6]</p>
+        <p><strong>Resumen:</strong> evalúa 5 benchmarks con 6 tamaños de Qwen3 y 4 de Gemma 3; concluye que generadores y refinadores más grandes suelen mejorar el resultado, mientras que un refinador demasiado pequeño puede degradar la salida.[6]</p>
+        <p><strong>Impacto práctico:</strong> para agentes y sistemas multi-modelo, esto sugiere optimizar presupuesto por etapa: ahorrar en el componente equivocado puede salir caro, como comprar ruedas baratas para un Ferrari y luego culpar al asfalto.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge benchmark">Benchmark</span>
+        <h2>Dos benchmarks recientes aprietan a los modelos multimodales en tareas realmente útiles</h2>
+        <p class="meta">Fuentes: arXiv · Fecha: 21 agosto 2026 · <a href="https://arxiv.org/abs/2608.21360v1">OmniAssistBench</a> · <a href="https://arxiv.org/abs/2608.21357v1">VIALS</a></p>
+        <p><strong>Por qué importa:</strong> OmniAssistBench propone evaluar asistentes omni-modales en interacción de vídeo en tiempo real, no solo comprensión pasiva de clips.[7]</p>
+        <p><strong>Resumen:</strong> VIALS introduce 161 tareas de interpretación visual en flujos de trabajo de ciencias de la vida —geles, microscopía, mapas de plásmidos y otros artefactos— y señala que los modelos visión-lenguaje frontier aún fallan donde expertos humanos lo ven claro.[8]</p>
+        <p><strong>Impacto práctico:</strong> la evaluación multimodal se está volviendo más exigente y menos “mira qué bien describe una foto bonita”; esto es buena noticia para aplicaciones de laboratorio, asistencia industrial y agentes con cámara.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Privacidad frente a seguridad:</strong> la combinación ZDR + procesamiento privado de seguridad puede convertirse en requisito de compra para sectores regulados.[2]</li>
+        <li><strong>IA y ciberseguridad:</strong> los laboratorios están preparando controles específicos para modelos con capacidades cibercríticas, señal de que el umbral de riesgo está subiendo.[3]</li>
+        <li><strong>Benchmarks más situados:</strong> tareas como asistencia interactiva en vídeo o interpretación de artefactos científicos empujan la evaluación hacia usos reales, no demos de salón.[7][8]</li>
+        <li><strong>Agentes más eficientes:</strong> asignar modelos de distinto tamaño por fase del pipeline puede ser una palanca concreta para reducir coste sin hundir calidad.[6]</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>Anthropic: se revisó su página oficial de noticias; la fuente accesible destacada sobre Responsible Scaling Policy está fechada el 15 de octubre de 2024, fuera de la ventana investigada, así que no se incluye como novedad del día.[5]</p>
+      <p>Google DeepMind: se revisaron rutas oficiales de blog/RSS, pero no se localizó una novedad destacable dentro de la ventana de 7 días mediante las fuentes accesibles en esta ejecución.</p>
+      <p>Hugging Face Papers/Papers with Code: se intentó revisar tendencias recientes; se priorizó arXiv como fuente primaria para los papers incluidos.</p>
+    </section>
+
+    <section class="section sources">
+      <h2>Fuentes</h2>
+      <p class="small">Bloque generado desde el ledger de grounded-citations.</p>
+Sources:
+      <pre style="white-space:pre-wrap;font:13px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;background:#f8fafc;border:1px solid #d8e0ee;border-radius:16px;padding:16px">
+[1] https://openai.com/index/introducing-ai-futures
+[2] https://openai.com/index/offering-zero-data-retention-for-frontier-models
+[3] https://openai.com/index/pacing-model-development-cyber-capabilities
+[4] https://blog.google/products-and-platforms/products/search/back-to-school-study-tools
+[5] https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy
+[6] https://arxiv.org/abs/2608.21345v1
+[7] https://arxiv.org/abs/2608.21360v1
+[8] https://arxiv.org/abs/2608.21357v1</pre>
+    </section>
+
+    <p class="footer">Informe preparado por AIDA. He quitado la paja; de nada, Valentín.</p>
+  </main>
+</body>
+</html>
