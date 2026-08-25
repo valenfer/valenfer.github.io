@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-08-15T07:44:30.975950+00:00",
+  "fetched_at": "2026-08-25T17:55:14.322874+00:00",
   "status": "live",
-  "target_date": "2026-08-16",
+  "target_date": "2026-08-26",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,73 +10,15 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-08-16T00:00:00+02:00",
-    "end_local": "2026-08-17T12:00:00+02:00"
+    "start_local": "2026-08-26T00:00:00+02:00",
+    "end_local": "2026-08-27T12:00:00+02:00"
   },
-  "events": [
-    {
-      "id": "20260815_17_100-in-the-sky-org-d2ee57e6744d-2026-08-16",
-      "type": "other",
-      "title_es": "Messier 2 está bien colocado",
-      "title_translation_status": "translated",
-      "summary_es": "El cúmulo globular M2 (NGC 7089; mag 6.6) en Acuario culmina alrededor de la medianoche hora local",
-      "start_local": "2026-08-16T01:57:05+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260815_17_100"
-      }
-    },
-    {
-      "id": "20260816_15_100-in-the-sky-org-de859568da2f-2026-08-16",
-      "type": "other",
-      "title_es": "Aproximación cercana a la Luna y Venus",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna y Venus pasan cerca el uno del otro",
-      "start_local": "2026-08-16T08:56:10+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -31.5°).",
-        "altitude_deg": -31.5,
-        "azimuth_deg": 73.2,
-        "sun_altitude_deg": 13.8
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260816_15_100"
-      }
-    },
-    {
-      "id": "20260816_20_100-in-the-sky-org-16035ce8a16d-2026-08-16",
-      "type": "conjunction",
-      "title_es": "Conjunción",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna y Venus comparten la misma ascensión recta, con una separación de 2°04'",
-      "start_local": "2026-08-16T10:47:37+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -10.5°).",
-        "altitude_deg": -10.5,
-        "azimuth_deg": 91.3,
-        "sun_altitude_deg": 35.8
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260816_20_100"
-      }
-    }
-  ],
+  "events": [],
   "weather": {
-    "cloud_cover": 34.27777777777778,
-    "visibility": 39580.0,
-    "precipitation_probability": 2,
-    "temperature": 25.7
+    "cloud_cover": 71.88888888888889,
+    "visibility": 38860.0,
+    "precipitation_probability": 25,
+    "temperature": 20.7
   },
   "sources": [
     {
