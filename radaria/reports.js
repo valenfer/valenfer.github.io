@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-25",
+    "title": "RadarIA diario — 2026-08-25",
+    "summary": "5 piezas: GPT-5.6 en Kiro, ganadores Gemma 4 Good y papers sobre agentes verificables, agentes móviles y estabilidad de RAG.",
+    "url": "./informes/2026-08-25.html"
+  },
+  {
     "date": "2026-08-24",
     "title": "RadarIA diario — 2026-08-24",
     "summary": "6 piezas sobre AI Futures, Zero Data Retention y pacing cibercrítico de OpenAI, aprendizaje con Google Search, self-refinement y benchmarks multimodales.",
