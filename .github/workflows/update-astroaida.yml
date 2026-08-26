@@ -33,24 +33,68 @@ jobs:
       - name: Comprobar ventana horaria de Sevilla
         id: schedule_window
         shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SCHEDULED_CRON: ${{ github.event.schedule }}
         run: |
-          if [ "${{ github.event_name }}" != "schedule" ]; then
-            echo "should_run=true" >> "$GITHUB_OUTPUT"
-            echo "target_date=$(TZ=Europe/Madrid date -d 'tomorrow' +%F)" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
+          python3 <<'PY'
+          import os
+          from datetime import datetime, timedelta, timezone
+          from zoneinfo import ZoneInfo
 
-          local_time=$(TZ=Europe/Madrid date +%H:%M)
-          target_date=$(TZ=Europe/Madrid date -d 'tomorrow' +%F)
-          echo "Hora local Europe/Madrid: ${local_time}; fecha objetivo: ${target_date}"
+          madrid = ZoneInfo('Europe/Madrid')
+          event_name = os.environ.get('EVENT_NAME', '')
+          scheduled_cron = os.environ.get('SCHEDULED_CRON', '')
+          output_path = os.environ['GITHUB_OUTPUT']
 
-          if [ "$local_time" = "23:59" ]; then
-            echo "should_run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "should_run=false" >> "$GITHUB_OUTPUT"
-            echo "Fuera de la ventana 23:59 Europe/Madrid; se omite esta ejecución UTC."
-          fi
-          echo "target_date=${target_date}" >> "$GITHUB_OUTPUT"
+          def emit(name, value):
+              with open(output_path, 'a', encoding='utf-8') as fh:
+                  fh.write(f'{name}={value}\n')
+
+          if event_name != 'schedule':
+              target_date = (datetime.now(madrid).date() + timedelta(days=1)).isoformat()
+              emit('should_run', 'true')
+              emit('target_date', target_date)
+              print(f'Ejecución manual; fecha objetivo Europe/Madrid: {target_date}')
+              raise SystemExit(0)
+
+          cron_to_hour = {
+              '59 21 * * *': 21,  # 23:59 Europe/Madrid during CEST
+              '59 22 * * *': 22,  # 23:59 Europe/Madrid during CET
+          }
+          scheduled_hour_utc = cron_to_hour.get(scheduled_cron)
+          if scheduled_hour_utc is None:
+              emit('should_run', 'false')
+              print(f'Cron no reconocido: {scheduled_cron}')
+              raise SystemExit(0)
+
+          # GitHub Actions may start scheduled runs late. Use the cron that
+          # triggered this run as the intended UTC time instead of the actual
+          # runner clock, otherwise a delayed 23:59 Europe/Madrid run after
+          # midnight would generate the wrong target date.
+          now_utc = datetime.now(timezone.utc)
+          scheduled_utc = datetime(
+              now_utc.year, now_utc.month, now_utc.day,
+              scheduled_hour_utc, 59, tzinfo=timezone.utc,
+          )
+          scheduled_local = scheduled_utc.astimezone(madrid)
+          actual_local = datetime.now(madrid)
+          target_date = (scheduled_local.date() + timedelta(days=1)).isoformat()
+          should_run = scheduled_local.strftime('%H:%M') == '23:59'
+
+          emit('should_run', 'true' if should_run else 'false')
+          emit('target_date', target_date)
+          print(
+              'Cron UTC: {}; hora prevista Europe/Madrid: {}; hora real: {}; fecha objetivo: {}'.format(
+                  scheduled_cron,
+                  scheduled_local.strftime('%H:%M'),
+                  actual_local.strftime('%H:%M'),
+                  target_date,
+              )
+          )
+          if not should_run:
+              print('Este cron no corresponde a las 23:59 Europe/Madrid en esta fecha; se omite para evitar doble publicación.')
+          PY
 
       - name: Descargar el repositorio
         if: steps.schedule_window.outputs.should_run == 'true'
@@ -72,7 +116,7 @@ jobs:
         if: steps.schedule_window.outputs.should_run == 'true'
         id: collect
         continue-on-error: true
-        run: python astroaida/scripts/collect_data.py
+        run: python astroaida/scripts/collect_data.py --target-date "${{ steps.schedule_window.outputs.target_date }}"
 
       - name: Validar el sitio y los datos
         if: steps.schedule_window.outputs.should_run == 'true'

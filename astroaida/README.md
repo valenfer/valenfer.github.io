@@ -81,8 +81,10 @@ del **día siguiente** justo antes de medianoche en Sevilla:
   `target_date = 16` para que durante el día 16 la página muestre los datos de ese día.
 - GitHub Actions solo admite cron en UTC, así que el workflow se dispara a las
   dos equivalencias posibles (`21:59 UTC` y `22:59 UTC`) y una guarda interna
-  permite continuar únicamente cuando la hora local real de Sevilla es `23:59`.
-  Esto evita publicar la fecha equivocada durante cambios CET/CEST.
+  interpreta el cron que disparó la ejecución como la hora prevista. Así no
+  depende del minuto exacto real del runner: si GitHub Actions empieza tarde,
+  sigue generando la fecha objetivo correcta y evita doble publicación durante
+  cambios CET/CEST.
 
 ### Fuentes de datos
 
