@@ -1,6 +1,12 @@
 window.RADARIA_REPORTS = [
   {
     "date": "2026-08-26",
+    "title": "RadarIA extra — Noticias del vídeo de John Hernández",
+    "summary": "Extra basado en vídeo: modelos open source sin guardarraíles, OX Alpha, salud, OpenAI, ChatGPT, agentes, Apple, centros de datos y robots.",
+    "url": "./informes/2026-08-26-video-h1hLTMRRH6g.html"
+  },
+  {
+    "date": "2026-08-26",
     "title": "RadarIA diario — 2026-08-26",
     "summary": "8 piezas: OpenAI full-stack/Jalapeño/Admin plugin, Gemini dictation, bienestar en Anthropic y papers OraRL, SPO++ y LAION-BVD.",
     "url": "./informes/2026-08-26.html"
