@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-08-25T17:55:14.322874+00:00",
+  "fetched_at": "2026-08-26T18:18:36.235179+00:00",
   "status": "live",
-  "target_date": "2026-08-26",
+  "target_date": "2026-08-27",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,15 +10,73 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-08-26T00:00:00+02:00",
-    "end_local": "2026-08-27T12:00:00+02:00"
+    "start_local": "2026-08-27T00:00:00+02:00",
+    "end_local": "2026-08-28T12:00:00+02:00"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "20260827_11_100-in-the-sky-org-798d265109d8-2026-08-27",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "Mercurio pasa alrededor del otro lado del Sol",
+      "start_local": "2026-08-27T19:11:59+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Mercurio no observable: altitud 22.0°, Sol a 20.6°.",
+        "altitude_deg": 22.0,
+        "azimuth_deg": 267.8,
+        "sun_altitude_deg": 20.6
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260827_11_100"
+      }
+    },
+    {
+      "id": "20260828_09_100-in-the-sky-org-71b4ab6d7e85-2026-08-27",
+      "type": "lunar_eclipse",
+      "title_es": "Eclipse lunar",
+      "title_translation_status": "deterministic",
+      "summary_es": "Habrá un eclipse de Luna, visible desde América, la Antártida, África y Europa",
+      "start_local": "2026-08-28T06:14:00+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260828_09_100"
+      }
+    },
+    {
+      "id": "20260828_08_100-in-the-sky-org-f371ec7b34de-2026-08-27",
+      "type": "lunar_phase",
+      "title_es": "Luna llena",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna alcanza la fase completa y es visible durante gran parte de la noche",
+      "start_local": "2026-08-28T06:18:24+02:00",
+      "visibility": {
+        "status": "visible",
+        "label": "Visible",
+        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
+        "altitude_deg": 17.4,
+        "azimuth_deg": 242.3,
+        "sun_altitude_deg": -17.5
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260828_08_100"
+      }
+    }
+  ],
   "weather": {
-    "cloud_cover": 71.88888888888889,
-    "visibility": 38860.0,
-    "precipitation_probability": 25,
-    "temperature": 20.7
+    "cloud_cover": 63.5,
+    "visibility": 40840.0,
+    "precipitation_probability": 20,
+    "temperature": 20.1
   },
   "sources": [
     {
