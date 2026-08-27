@@ -45,6 +45,26 @@ body::before {
 
 a { color: inherit; }
 
+.portal-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem clamp(1rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-strong);
+  font-size: 0.95rem;
+}
+
+.portal-nav a {
+  color: var(--green);
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.portal-nav a:hover {
+  color: var(--text);
+}
+
 .site-header {
   position: sticky;
   top: 0;
