@@ -1,7 +1,7 @@
 # El miedo como herramienta de obediencia
 
 **Proyecto:** Disonancia Cognitiva  
-**Publicado:** 26 agosto 2026  
+**Publicado:** 27 agosto 2026  
 **Lectura estimada:** 10 min
 
 ## Nota editorial
