@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-08-26T18:18:36.235179+00:00",
+  "fetched_at": "2026-08-27T02:56:37.303781+00:00",
   "status": "live",
-  "target_date": "2026-08-27",
+  "target_date": "2026-08-28",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,32 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-08-27T00:00:00+02:00",
-    "end_local": "2026-08-28T12:00:00+02:00"
+    "start_local": "2026-08-28T00:00:00+02:00",
+    "end_local": "2026-08-29T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260827_11_100-in-the-sky-org-798d265109d8-2026-08-27",
-      "type": "conjunction",
-      "title_es": "Conjunción",
-      "title_translation_status": "deterministic",
-      "summary_es": "Mercurio pasa alrededor del otro lado del Sol",
-      "start_local": "2026-08-27T19:11:59+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Mercurio no observable: altitud 22.0°, Sol a 20.6°.",
-        "altitude_deg": 22.0,
-        "azimuth_deg": 267.8,
-        "sun_altitude_deg": 20.6
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260827_11_100"
-      }
-    },
-    {
-      "id": "20260828_09_100-in-the-sky-org-71b4ab6d7e85-2026-08-27",
+      "id": "20260828_09_100-in-the-sky-org-71b4ab6d7e85-2026-08-28",
       "type": "lunar_eclipse",
       "title_es": "Eclipse lunar",
       "title_translation_status": "deterministic",
@@ -52,7 +32,7 @@
       }
     },
     {
-      "id": "20260828_08_100-in-the-sky-org-f371ec7b34de-2026-08-27",
+      "id": "20260828_08_100-in-the-sky-org-f371ec7b34de-2026-08-28",
       "type": "lunar_phase",
       "title_es": "Luna llena",
       "title_translation_status": "deterministic",
@@ -70,13 +50,30 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20260828_08_100"
       }
+    },
+    {
+      "id": "2026_14_A9_100-in-the-sky-org-c7dc8183d8a1-2026-08-28",
+      "type": "opposition",
+      "title_es": "Oposición",
+      "title_translation_status": "deterministic",
+      "summary_es": "El asteroide 9 Metis hace su aproximación más cercana a la Tierra",
+      "start_local": "2026-08-28T16:22:44+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=2026_14_A9_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 63.5,
-    "visibility": 40840.0,
-    "precipitation_probability": 20,
-    "temperature": 20.1
+    "cloud_cover": 5.833333333333333,
+    "visibility": 44860.0,
+    "precipitation_probability": 0,
+    "temperature": 20.5
   },
   "sources": [
     {

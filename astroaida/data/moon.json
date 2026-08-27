@@ -1,11 +1,11 @@
 {
   "source": "AstronomyAPI",
-  "fetched_at": "2026-08-26T18:18:31.531462+00:00",
+  "fetched_at": "2026-08-27T02:56:33.071004+00:00",
   "status": "live",
   "phase": "Waxing Gibbous",
   "illumination": 0.001,
-  "distance_km": 395478.24939,
-  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/3809c38db6dfa15a335d607dce9961fef55aff1ae3ce9d879aff24a2cef22118.png",
+  "distance_km": 392045.44152,
+  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/ab832fbd9b85d87e08cbbb342e7e00b5ba934e0e323f82d05dff0e6cbda9d01f.png",
   "observer": {
     "latitude": 37.38283,
     "longitude": -5.97317,

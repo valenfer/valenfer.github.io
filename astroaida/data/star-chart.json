@@ -1,8 +1,8 @@
 {
   "source": "AstronomyAPI",
-  "fetched_at": "2026-08-26T18:18:31.531660+00:00",
+  "fetched_at": "2026-08-27T02:56:33.071165+00:00",
   "status": "live",
-  "image_url": "https://widgets.astronomyapi.com/star-chart/generated/de3b0b76bc04a3823a4110848277002323c0ac552b2275a87b14bd3ee5962c35.png",
+  "image_url": "https://widgets.astronomyapi.com/star-chart/generated/897479b1908a631a2124eea6321dc8ecaff8e38715907b1f80ff951439ad9674.png",
   "observer": {
     "latitude": 37.38283,
     "longitude": -5.97317,
