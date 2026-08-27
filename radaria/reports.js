@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-27",
+    "title": "RadarIA diario — 2026-08-27",
+    "summary": "7 piezas: seguridad de agentes, Jalapeño de OpenAI, administración conversacional, Google Research en salud/XR y papers sobre agentes concurrentes y serving MoE.",
+    "url": "./informes/2026-08-27.html"
+  },
+{
     "date": "2026-08-26",
     "title": "RadarIA extra — Noticias del vídeo de John Hernández",
     "summary": "Extra basado en vídeo: modelos open source sin guardarraíles, OX Alpha, salud, OpenAI, ChatGPT, agentes, Apple, centros de datos y robots.",
