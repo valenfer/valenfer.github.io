@@ -1059,3 +1059,7 @@ main {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+
+
+/* 2026 editorial refresh: stronger display type, floating modular panels, motion-as-information */
+.site-header__title{font-size:clamp(3.8rem,12vw,9.2rem);letter-spacing:-.085em;line-height:.8;text-wrap:balance}.site-nav{top:1rem;border-radius:999px;background:rgba(4,9,21,.72)}.module{border-radius:26px;transition:transform 180ms ease,border-color 180ms ease,background 180ms ease}.module:hover{transform:translateY(-3px);border-color:rgba(128,231,255,.32)}.module__title{font-size:clamp(1.8rem,4.5vw,3.4rem);line-height:.9;letter-spacing:-.065em}.data-status__list,.moon__stats,.asteroid__stats,.ephem__weather-stats{gap:1rem}.data-status__item,.asteroid,.ephem__card,.apod__body{background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border-color:rgba(153,202,255,.18)}@media(max-width:760px){.site-header{border-radius:26px;min-height:clamp(380px,68vh,620px)}.site-nav{border-radius:24px}.site-header__title{font-size:clamp(3.2rem,17vw,5.4rem)}}@media(prefers-reduced-motion:reduce){.module,.site-nav__link{transition:none!important}.module:hover{transform:none}}
