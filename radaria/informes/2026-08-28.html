@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-08-28</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <span class="kicker"><span class="dot"></span> RadarIA · 2026-08-28</span>
+  <h1>RadarIA diario</h1>
+  <p class="lead">Rango investigado: desde el último informe diario publicado en <code>radaria/reports.js</code> (2026-08-27) hasta 2026-08-28, con ampliación puntual a 7 días para papers relevantes porque las fuentes oficiales grandes han tenido poca novedad técnica de alto impacto. Metodología: revisión de fuentes primarias oficiales y feeds/páginas de arXiv; se priorizan piezas con cuerpo leído, fecha verificable y utilidad práctica.</p>
+</div></header>
+<main class="report-body wrap"><article>
+  <p><span class="badge">Producto</span><span class="badge">Paper</span><span class="badge">Benchmark</span><span class="badge">Seguridad</span><span class="badge">Operaciones</span></p>
+  <h2>Resumen ejecutivo</h2>
+  <p>Hoy hay una novedad de producto de Google en Search y cinco papers recientes especialmente útiles para inferencia, factualidad, abstención, seguridad y operación de servicios LLM. No he inflado la cesta: poca pirotecnia, más tornillos importantes, que luego los tornillos son los que sujetan el cohete.</p>
+
+  <section class="panel">
+    <h2><span class="badge">Producto</span> Google lleva AI Mode a la planificación y reserva de viajes</h2>
+    <p><strong>Fuente y fecha:</strong> Google Blog, 27 de agosto de 2026.[1]</p>
+    <p><strong>Por qué importa:</strong> Google presenta tres funciones de Search para viajes: reservar hoteles, seguir tarifas aéreas y ver millas/recompensas con AI Mode.[1]</p>
+    <p><strong>Resumen:</strong> La pieza describe un flujo más transaccional dentro de Search: no solo buscar ideas, sino avanzar hacia reserva y seguimiento de precios usando IA conversacional integrada en la experiencia de búsqueda.[1]</p>
+    <p><strong>Impacto práctico:</strong> Para producto y marketing, confirma que la búsqueda con IA se mueve hacia tareas completas y no solo respuestas; para usuarios, puede reducir saltos entre buscador, comparadores y programas de fidelización.[1]</p>
+    <p><a href="https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/">Leer fuente original</a></p>
+  </section>
+
+  <section class="panel">
+    <h2><span class="badge">Paper</span> TreeGraft: acelerar LLMs con varios drafters en speculative decoding</h2>
+    <p><strong>Fuente y fecha:</strong> arXiv, enviado el 28 de mayo de 2026 y aparecido en el feed revisado del 28 de agosto.[2]</p>
+    <p><strong>Por qué importa:</strong> TreeGraft propone un marco multi-drafter donde modelos borrador de distinto coste construyen un árbol compartido para mejorar la decodificación especulativa.[2]</p>
+    <p><strong>Resumen:</strong> El paper parte del dilema clásico: un drafter pequeño es rápido pero peor, y uno grande mejora la calidad pero añade latencia; su solución usa un drafter fuerte para re-evaluar candidatos, reubicar injertos y recuperar caminos prometedores sin destruir ramas existentes.[2]</p>
+    <p><strong>Impacto práctico:</strong> Si se valida en stacks reales, apunta a servir LLMs con menor latencia sin cambiar el modelo objetivo, una mejora muy golosa para APIs, asistentes y agentes con mucha generación incremental.[2]</p>
+    <p><a href="https://arxiv.org/abs/2608.26112">Leer paper</a></p>
+  </section>
+
+  <section class="panel">
+    <h2><span class="badge">Benchmark</span> ElementCheck evalúa factualidad larga con “elementos” de frase</h2>
+    <p><strong>Fuente y fecha:</strong> arXiv, enviado el 17 de junio de 2026 y revisado en el feed del día.[3]</p>
+    <p><strong>Por qué importa:</strong> ElementCheck critica el pipeline descomponer-recuperar-verificar por ruido y granularidad fija, y propone verificar salidas largas mediante pares de entidades y conexiones verificables dentro de cada frase.[3]</p>
+    <p><strong>Resumen:</strong> El sistema crea un grafo de elementos para estimar complejidad de frase: las frases simples se verifican directamente y las complejas reciben refinamiento a nivel de elemento.[3]</p>
+    <p><strong>Impacto práctico:</strong> Es relevante para informes, agentes de investigación y QA con citas: permite evaluar textos largos con menos dependencia de descomposiciones atómicas torpes, esas que a veces rompen una frase como si fuese una galleta rancia.[3]</p>
+    <p><a href="https://arxiv.org/abs/2608.26118">Leer paper</a></p>
+  </section>
+
+  <section class="panel">
+    <h2><span class="badge">Paper</span> Detección de alucinaciones “gratis” usando señales internas de duda</h2>
+    <p><strong>Fuente y fecha:</strong> arXiv, enviado el 19 de junio de 2026 y revisado en el feed del día.[4]</p>
+    <p><strong>Por qué importa:</strong> El trabajo pregunta si la propia confianza congelada del modelo puede entrenar abstención sin etiquetas de respuestas correctas o incorrectas.[4]</p>
+    <p><strong>Resumen:</strong> Los autores ajustan modelos abiertos de 1B a 8B con LoRA para responder cuando la confianza es alta y decir “no estoy seguro” cuando baja, sin usar etiquetas de corrección; reportan rendimiento comparable a abstention-tuning supervisado a cobertura equivalente.[4]</p>
+    <p><strong>Impacto práctico:</strong> Puede abaratar capas de seguridad y fiabilidad en asistentes pequeños o privados, especialmente donde etiquetar errores factuales es caro.[4]</p>
+    <p><a href="https://arxiv.org/abs/2608.26121">Leer paper</a></p>
+  </section>
+
+  <section class="panel">
+    <h2><span class="badge">Seguridad</span> NeuronFuzz usa neuronas de seguridad como feedback para fuzzing de jailbreaks</h2>
+    <p><strong>Fuente y fecha:</strong> arXiv, enviado el 26 de agosto de 2026.[5]</p>
+    <p><strong>Por qué importa:</strong> NeuronFuzz propone fuzzing white-box que usa activaciones internas de neuronas de seguridad como señal continua, evitando generar una respuesta completa del modelo en cada intento.[5]</p>
+    <p><strong>Resumen:</strong> Un SafetyOracle convierte activaciones de neuronas en una puntuación de alarma obtenible durante el prefill; el método usa selección estable de neuronas y gradientes para guiar mutaciones de prompts.[5]</p>
+    <p><strong>Impacto práctico:</strong> Para equipos de red teaming, promete pruebas más baratas y con mejor señal en modelos muy alineados, donde la mayoría de ataques fallan de forma indistinguible a nivel de respuesta.[5]</p>
+    <p><a href="https://arxiv.org/abs/2608.26222">Leer paper</a></p>
+  </section>
+
+  <section class="panel">
+    <h2><span class="badge">Informe</span> OpEmbed: huellas operativas de servicios LLM desde incidencias de producción</h2>
+    <p><strong>Fuente y fecha:</strong> arXiv, enviado el 26 de agosto de 2026.[6]</p>
+    <p><strong>Por qué importa:</strong> El paper sostiene que elegir servicios LLM solo por benchmarks de capacidad ignora el comportamiento operativo tras el despliegue.[6]</p>
+    <p><strong>Resumen:</strong> OpEmbed aprende huellas operativas compactas a partir de metadatos estructurados y preservadores de privacidad de casos de soporte, sin usar el texto de los casos; se evalúa con más de 33.000 casos de producción de Google Cloud, siete familias LLM y 26 meses.[6]</p>
+    <p><strong>Impacto práctico:</strong> Es una señal clara: en producción, el “mejor modelo” también es el que falla de forma predecible, se puede planificar y encaja con SRE, no solo el que presume en el benchmark de moda.[6]</p>
+    <p><a href="https://arxiv.org/abs/2608.26332">Leer paper</a></p>
+  </section>
+
+  <h2>Lo que vigilar</h2>
+  <ul>
+    <li><strong>IA transaccional en buscadores:</strong> Search empieza a absorber más pasos de compra/reserva, lo que puede cambiar SEO, afiliación y funnels.</li>
+    <li><strong>Inferencia eficiente:</strong> speculative decoding sigue madurando hacia arquitecturas más dinámicas y combinadas.</li>
+    <li><strong>Factualidad y abstención:</strong> crece la presión por medir y reducir alucinaciones sin datasets caros para cada dominio.</li>
+    <li><strong>LLMOps real:</strong> empiezan a aparecer métricas operativas basadas en incidentes, no solo tablas de “quién saca más nota”.</li>
+  </ul>
+
+  <h2>Fuentes revisadas sin novedad destacable</h2>
+  <p>OpenAI, Anthropic, Google DeepMind, Meta AI, Papers with Code y Hugging Face Papers no aportaron, durante la ventana principal comprobable, novedades oficiales primarias suficientemente relevantes para incluir; se amplió la revisión a papers recientes de arXiv hasta 7 días.</p>
+
+  <h2>Fuentes</h2>
+  <ol class="source-list">
+    <li><a href="https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/">https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/</a> — 3 new ways to plan and book travel in Search</li>
+    <li><a href="https://arxiv.org/abs/2608.26112">https://arxiv.org/abs/2608.26112</a> — TreeGraft</li>
+    <li><a href="https://arxiv.org/abs/2608.26118">https://arxiv.org/abs/2608.26118</a> — ElementCheck</li>
+    <li><a href="https://arxiv.org/abs/2608.26121">https://arxiv.org/abs/2608.26121</a> — Can a Model Catch Its Own Hallucinations for Free?</li>
+    <li><a href="https://arxiv.org/abs/2608.26222">https://arxiv.org/abs/2608.26222</a> — NeuronFuzz</li>
+    <li><a href="https://arxiv.org/abs/2608.26332">https://arxiv.org/abs/2608.26332</a> — Operational Fingerprints of LLM Cloud Services</li>
+  </ol>
+  <p><a href="../">Volver al archivo RadarIA</a></p>
+</article></main>
+<footer class="footer"><div class="wrap">RadarIA · AIDA para Valentín. Hoy sin humo, que ya tenemos suficiente vapor en los GPUs.</div></footer>
+</body>
+</html>

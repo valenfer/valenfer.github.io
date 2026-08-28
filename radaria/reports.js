@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-28",
+    "title": "RadarIA diario — 2026-08-28",
+    "summary": "6 piezas: Google Search en viajes y papers sobre speculative decoding, factualidad, abstención, fuzzing de seguridad y LLMOps.",
+    "url": "./informes/2026-08-28.html"
+  },
+  {
     "date": "2026-08-27",
     "title": "RadarIA diario — 2026-08-27",
     "summary": "7 piezas: seguridad de agentes, Jalapeño de OpenAI, administración conversacional, Google Research en salud/XR y papers sobre agentes concurrentes y serving MoE.",
