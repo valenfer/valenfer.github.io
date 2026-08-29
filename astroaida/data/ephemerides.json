@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-08-28T05:58:14.186725+00:00",
+  "fetched_at": "2026-08-29T03:31:20.938717+00:00",
   "status": "live",
-  "target_date": "2026-08-29",
+  "target_date": "2026-08-30",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,15 +10,56 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-08-29T00:00:00+02:00",
-    "end_local": "2026-08-30T12:00:00+02:00"
+    "start_local": "2026-08-30T00:00:00+02:00",
+    "end_local": "2026-08-31T12:00:00+02:00"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "20260831_15_100-in-the-sky-org-7989bd0ece9f-2026-08-30",
+      "type": "other",
+      "title_es": "Aproximación cercana a la Luna y Saturno",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna y Saturno pasan cerca uno del otro",
+      "start_local": "2026-08-31T04:32:48+02:00",
+      "visibility": {
+        "status": "visible",
+        "label": "Visible",
+        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
+        "altitude_deg": 60.8,
+        "azimuth_deg": 181.5,
+        "sun_altitude_deg": -34.6
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260831_15_100"
+      }
+    },
+    {
+      "id": "20260831_20_100-in-the-sky-org-429859f0dee2-2026-08-30",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna y Saturno comparten la misma ascensión recta, a una separación de 7°02'",
+      "start_local": "2026-08-31T10:07:16+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 11.7°, Sol a 25.6°.",
+        "altitude_deg": 11.7,
+        "azimuth_deg": 273.1,
+        "sun_altitude_deg": 25.6
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260831_20_100"
+      }
+    }
+  ],
   "weather": {
-    "cloud_cover": 7.055555555555555,
-    "visibility": 44300.0,
+    "cloud_cover": 0.0,
+    "visibility": 41920.0,
     "precipitation_probability": 0,
-    "temperature": 21.5
+    "temperature": 22.3
   },
   "sources": [
     {
