@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-29",
+    "title": "RadarIA diario — 2026-08-29",
+    "summary": "7 piezas: Anthropic sobre estándar hardware y ciencia, Google Search en viajes, y papers sobre agentes, test-time optimization, modelos de mundo y UCI.",
+    "url": "./informes/2026-08-29.html"
+  },
+  {
     "date": "2026-08-28",
     "title": "RadarIA diario — 2026-08-28",
     "summary": "6 piezas: Google Search en viajes y papers sobre speculative decoding, factualidad, abstención, fuzzing de seguridad y LLMOps.",
@@ -11,7 +17,7 @@ window.RADARIA_REPORTS = [
     "summary": "7 piezas: seguridad de agentes, Jalapeño de OpenAI, administración conversacional, Google Research en salud/XR y papers sobre agentes concurrentes y serving MoE.",
     "url": "./informes/2026-08-27.html"
   },
-{
+  {
     "date": "2026-08-26",
     "title": "RadarIA extra — Noticias del vídeo de John Hernández",
     "summary": "Extra basado en vídeo: modelos open source sin guardarraíles, OX Alpha, salud, OpenAI, ChatGPT, agentes, Apple, centros de datos y robots.",
