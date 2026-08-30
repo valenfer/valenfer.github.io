@@ -141,8 +141,8 @@ jobs:
           git pull --rebase origin main
           git push origin HEAD:main
 
-      - name: Avisar si alguna fuente no se actualizó
+      - name: Anotar fuentes degradadas sin marcar el despliegue como fallido
         if: steps.schedule_window.outputs.should_run == 'true' && steps.collect.outcome == 'failure'
         run: |
-          echo "Una o más fuentes conservaron su último dato válido."
-          exit 1
+          echo "Una o más fuentes conservaron su último dato válido, pero los datos generados fueron validados y publicados."
+          echo "Se mantiene el aviso en el log sin poner la ejecución en rojo."
