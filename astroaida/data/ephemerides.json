@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-08-29T03:31:20.938717+00:00",
+  "fetched_at": "2026-08-30T08:42:58.710675+00:00",
   "status": "live",
-  "target_date": "2026-08-30",
+  "target_date": "2026-08-31",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,12 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-08-30T00:00:00+02:00",
-    "end_local": "2026-08-31T12:00:00+02:00"
+    "start_local": "2026-08-31T00:00:00+02:00",
+    "end_local": "2026-09-01T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260831_15_100-in-the-sky-org-7989bd0ece9f-2026-08-30",
+      "id": "20260831_15_100-in-the-sky-org-7989bd0ece9f-2026-08-31",
       "type": "other",
       "title_es": "Aproximación cercana a la Luna y Saturno",
       "title_translation_status": "translated",
@@ -35,7 +35,7 @@
       }
     },
     {
-      "id": "20260831_20_100-in-the-sky-org-429859f0dee2-2026-08-30",
+      "id": "20260831_20_100-in-the-sky-org-429859f0dee2-2026-08-31",
       "type": "conjunction",
       "title_es": "Conjunción",
       "title_translation_status": "deterministic",
@@ -53,13 +53,30 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20260831_20_100"
       }
+    },
+    {
+      "id": "20260901_10_100-in-the-sky-org-606dc6bd5787-2026-08-31",
+      "type": "meteor_shower",
+      "title_es": "Lluvia de meteoros",
+      "title_translation_status": "deterministic",
+      "summary_es": "La lluvia de meteoros aurígidos alcanza su punto máximo",
+      "start_local": "2026-09-01T11:29:29+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260901_10_100"
+      }
     }
   ],
   "weather": {
     "cloud_cover": 0.0,
-    "visibility": 41920.0,
+    "visibility": 43160.0,
     "precipitation_probability": 0,
-    "temperature": 22.3
+    "temperature": 22.5
   },
   "sources": [
     {
