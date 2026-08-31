@@ -3,7 +3,11 @@ name: Actualizar datos de AstroAIDA
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 5,17 * * *"
+    # GitHub Actions cron runs in UTC. Run at both possible UTC times for
+    # 23:59 Europe/Madrid; the guard step below lets only the matching one
+    # continue, so DST changes do not publish the wrong target date.
+    - cron: "59 21 * * *"
+    - cron: "59 22 * * *"
 
 concurrency:
   group: astroaida-data-update
@@ -26,28 +30,103 @@ jobs:
       ASTRONOMY_APP_SECRET: ${{ secrets.ASTRONOMY_APP_SECRET }}
 
     steps:
+      - name: Comprobar ventana horaria de Sevilla
+        id: schedule_window
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SCHEDULED_CRON: ${{ github.event.schedule }}
+        run: |
+          python3 <<'PY'
+          import os
+          from datetime import datetime, timedelta, timezone
+          from zoneinfo import ZoneInfo
+
+          madrid = ZoneInfo('Europe/Madrid')
+          event_name = os.environ.get('EVENT_NAME', '')
+          scheduled_cron = os.environ.get('SCHEDULED_CRON', '')
+          output_path = os.environ['GITHUB_OUTPUT']
+
+          def emit(name, value):
+              with open(output_path, 'a', encoding='utf-8') as fh:
+                  fh.write(f'{name}={value}\n')
+
+          if event_name != 'schedule':
+              target_date = (datetime.now(madrid).date() + timedelta(days=1)).isoformat()
+              emit('should_run', 'true')
+              emit('target_date', target_date)
+              print(f'Ejecución manual; fecha objetivo Europe/Madrid: {target_date}')
+              raise SystemExit(0)
+
+          cron_to_hour = {
+              '59 21 * * *': 21,  # 23:59 Europe/Madrid during CEST
+              '59 22 * * *': 22,  # 23:59 Europe/Madrid during CET
+          }
+          scheduled_hour_utc = cron_to_hour.get(scheduled_cron)
+          if scheduled_hour_utc is None:
+              emit('should_run', 'false')
+              print(f'Cron no reconocido: {scheduled_cron}')
+              raise SystemExit(0)
+
+          # GitHub Actions may start scheduled runs late. Use the cron that
+          # triggered this run as the intended UTC time instead of the actual
+          # runner clock, otherwise a delayed 23:59 Europe/Madrid run after
+          # midnight would generate the wrong target date.
+          now_utc = datetime.now(timezone.utc)
+          scheduled_utc = datetime(
+              now_utc.year, now_utc.month, now_utc.day,
+              scheduled_hour_utc, 59, tzinfo=timezone.utc,
+          )
+          scheduled_local = scheduled_utc.astimezone(madrid)
+          actual_local = datetime.now(madrid)
+          target_date = (scheduled_local.date() + timedelta(days=1)).isoformat()
+          should_run = scheduled_local.strftime('%H:%M') == '23:59'
+
+          emit('should_run', 'true' if should_run else 'false')
+          emit('target_date', target_date)
+          print(
+              'Cron UTC: {}; hora prevista Europe/Madrid: {}; hora real: {}; fecha objetivo: {}'.format(
+                  scheduled_cron,
+                  scheduled_local.strftime('%H:%M'),
+                  actual_local.strftime('%H:%M'),
+                  target_date,
+              )
+          )
+          if not should_run:
+              print('Este cron no corresponde a las 23:59 Europe/Madrid en esta fecha; se omite para evitar doble publicación.')
+          PY
+
       - name: Descargar el repositorio
+        if: steps.schedule_window.outputs.should_run == 'true'
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Configurar Python
+        if: steps.schedule_window.outputs.should_run == 'true'
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
+      - name: Instalar dependencias Python
+        if: steps.schedule_window.outputs.should_run == 'true'
+        run: pip install -r astroaida/requirements.txt
+
       - name: Recopilar datos
+        if: steps.schedule_window.outputs.should_run == 'true'
         id: collect
         continue-on-error: true
-        run: python astroaida/scripts/collect_data.py
+        run: python astroaida/scripts/collect_data.py --target-date "${{ steps.schedule_window.outputs.target_date }}"
 
       - name: Validar el sitio y los datos
+        if: steps.schedule_window.outputs.should_run == 'true'
         run: |
           python astroaida/scripts/validate_site.py
           python -m unittest discover -s astroaida/tests
           python -m py_compile astroaida/scripts/collect_data.py astroaida/scripts/validate_site.py
 
       - name: Publicar solo los datos modificados
+        if: steps.schedule_window.outputs.should_run == 'true'
         shell: bash
         run: |
           if git diff --quiet -- astroaida/data/; then
@@ -62,8 +141,8 @@ jobs:
           git pull --rebase origin main
           git push origin HEAD:main
 
-      - name: Avisar si alguna fuente no se actualizó
-        if: steps.collect.outcome == 'failure'
+      - name: Anotar fuentes degradadas sin marcar el despliegue como fallido
+        if: steps.schedule_window.outputs.should_run == 'true' && steps.collect.outcome == 'failure'
         run: |
-          echo "Una o más fuentes conservaron su último dato válido."
-          exit 1
+          echo "Una o más fuentes conservaron su último dato válido, pero los datos generados fueron validados y publicados."
+          echo "Se mantiene el aviso en el log sin poner la ejecución en rojo."

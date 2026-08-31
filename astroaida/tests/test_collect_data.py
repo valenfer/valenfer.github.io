@@ -10,6 +10,7 @@ from contextlib import ExitStack, redirect_stdout
 from datetime import datetime
 from unittest.mock import patch, Mock
 from urllib.error import HTTPError, URLError
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 
@@ -19,7 +20,7 @@ from collect_data import (
     normalize_star_chart, validate_dataset, fetch_with_retry, write_json_atomically,
     build_apod_url, build_neo_url, fetch_apod, fetch_neo, fetch_astronomy_positions,
     fetch_astronomy_moon, fetch_astronomy_star_chart, collect_real, write_preview_datasets,
-    main
+    fetch_weather_open_meteo, main
 )
 
 FIXED_NOW = datetime.fromisoformat('2026-08-11T21:30:45+02:00')
@@ -477,6 +478,342 @@ class TestFetchWithRetry(unittest.TestCase):
                 self.assertIn('SECRET_KEY', str(called_url))
 
 
+class TestFetchWeatherOpenMeteo(unittest.TestCase):
+    def _make_weather_response(self, hours_data):
+        """Create a mock Open-Meteo response with hourly data."""
+        hourly = {
+            'time': [h['time'] for h in hours_data],
+            'cloud_cover': [h.get('cloud_cover') for h in hours_data],
+            'visibility': [h.get('visibility') for h in hours_data],
+            'precipitation_probability': [h.get('precipitation_probability') for h in hours_data],
+            'temperature_2m': [h.get('temperature_2m') for h in hours_data],
+        }
+        return {'hourly': hourly}
+
+    @patch('collect_data.fetch_with_retry')
+    @patch('collect_data.horizontal_coordinates')
+    def test_fetch_weather_filters_to_observation_window(self, mock_horiz, mock_fetch):
+        """Weather should only include hours within observation_window (target_date 00:00 to next_day 12:00)."""
+        target_date = '2026-08-12'
+        tz = ZoneInfo('Europe/Madrid')
+
+        hours_data = [
+            # Night before target_date (should be excluded)
+            {'time': '2026-08-11T22:00:00+02:00', 'cloud_cover': 10, 'visibility': 10000, 'precipitation_probability': 0, 'temperature_2m': 22.0},
+            {'time': '2026-08-11T23:00:00+02:00', 'cloud_cover': 10, 'visibility': 10000, 'precipitation_probability': 0, 'temperature_2m': 21.0},
+            # Target date day hours (not dark, excluded by darkness check)
+            {'time': '2026-08-12T10:00:00+02:00', 'cloud_cover': 50, 'visibility': 8000, 'precipitation_probability': 10, 'temperature_2m': 30.0},
+            # Target date night hours (should be included - within observation_window)
+            {'time': '2026-08-12T22:00:00+02:00', 'cloud_cover': 20, 'visibility': 12000, 'precipitation_probability': 5, 'temperature_2m': 24.0},
+            {'time': '2026-08-12T23:00:00+02:00', 'cloud_cover': 30, 'visibility': 11000, 'precipitation_probability': 10, 'temperature_2m': 23.0},
+            {'time': '2026-08-13T00:00:00+02:00', 'cloud_cover': 40, 'visibility': 10000, 'precipitation_probability': 15, 'temperature_2m': 22.0},
+            {'time': '2026-08-13T01:00:00+02:00', 'cloud_cover': 50, 'visibility': 9000, 'precipitation_probability': 20, 'temperature_2m': 21.0},
+            {'time': '2026-08-13T02:00:00+02:00', 'cloud_cover': 60, 'visibility': 8000, 'precipitation_probability': 25, 'temperature_2m': 20.0},
+            {'time': '2026-08-13T03:00:00+02:00', 'cloud_cover': 70, 'visibility': 7000, 'precipitation_probability': 30, 'temperature_2m': 19.0},
+            {'time': '2026-08-13T04:00:00+02:00', 'cloud_cover': 80, 'visibility': 6000, 'precipitation_probability': 35, 'temperature_2m': 18.0},
+            {'time': '2026-08-13T05:00:00+02:00', 'cloud_cover': 90, 'visibility': 5000, 'precipitation_probability': 40, 'temperature_2m': 17.0},
+            # Next day morning hours (should be included - within observation_window until 12:00)
+            {'time': '2026-08-13T06:00:00+02:00', 'cloud_cover': 95, 'visibility': 4000, 'precipitation_probability': 45, 'temperature_2m': 16.5},
+            {'time': '2026-08-13T07:00:00+02:00', 'cloud_cover': 90, 'visibility': 4500, 'precipitation_probability': 40, 'temperature_2m': 16.0},
+            {'time': '2026-08-13T08:00:00+02:00', 'cloud_cover': 80, 'visibility': 5000, 'precipitation_probability': 35, 'temperature_2m': 17.0},
+            {'time': '2026-08-13T09:00:00+02:00', 'cloud_cover': 70, 'visibility': 6000, 'precipitation_probability': 30, 'temperature_2m': 19.0},
+            {'time': '2026-08-13T10:00:00+02:00', 'cloud_cover': 60, 'visibility': 7000, 'precipitation_probability': 25, 'temperature_2m': 21.0},
+            {'time': '2026-08-13T11:00:00+02:00', 'cloud_cover': 50, 'visibility': 8000, 'precipitation_probability': 20, 'temperature_2m': 23.0},
+            {'time': '2026-08-13T12:00:00+02:00', 'cloud_cover': 40, 'visibility': 9000, 'precipitation_probability': 15, 'temperature_2m': 25.0},
+            # Next day afternoon (should be excluded - after observation_window ends at 12:00)
+            {'time': '2026-08-13T13:00:00+02:00', 'cloud_cover': 30, 'visibility': 10000, 'precipitation_probability': 10, 'temperature_2m': 27.0},
+            # Next night (should be excluded - after observation_window)
+            {'time': '2026-08-13T22:00:00+02:00', 'cloud_cover': 10, 'visibility': 10000, 'precipitation_probability': 0, 'temperature_2m': 22.0},
+        ]
+
+        # Mock all hours as dark (sun altitude <= -6) except day hours
+        def mock_horiz_func(body, dt):
+            hour = dt.hour
+            if 7 <= hour < 21:
+                return {'sun_altitude_deg': 30.0, 'altitude_deg': 0, 'azimuth_deg': 0}
+            return {'sun_altitude_deg': -20.0, 'altitude_deg': 0, 'azimuth_deg': 0}
+
+        mock_horiz.side_effect = mock_horiz_func
+        mock_fetch.return_value = self._make_weather_response(hours_data)
+
+        result = fetch_weather_open_meteo(target_date)
+
+        self.assertIsNotNone(result)
+        # Should only include hours from 2026-08-12T22:00 to 2026-08-13T12:00 (dark hours only)
+        # Dark hours in that window: 22:00, 23:00, 00:00, 01:00, 02:00, 03:00, 04:00, 05:00, 06:00
+        # That's 9 hours
+        # Note: 07:00+ are not dark (sun altitude > -6 in our mock)
+
+        # Cloud cover average of included hours
+        included_hours = [
+            20, 30, 40, 50, 60, 70, 80, 90, 95  # 22:00 to 06:00
+        ]
+        expected_cloud = sum(included_hours) / len(included_hours)
+        self.assertAlmostEqual(result['cloud_cover'], expected_cloud, places=1)
+
+        # Max visibility of included hours
+        included_vis = [12000, 11000, 10000, 9000, 8000, 7000, 6000, 5000, 4000]
+        self.assertEqual(result['visibility'], max(included_vis))
+
+        # Max precipitation of included hours
+        included_precip = [5, 10, 15, 20, 25, 30, 35, 40, 45]
+        self.assertEqual(result['precipitation_probability'], max(included_precip))
+
+        # Average temperature of included hours
+        included_temp = [24.0, 23.0, 22.0, 21.0, 20.0, 19.0, 18.0, 17.0, 16.5]
+        expected_temp = round(sum(included_temp) / len(included_temp), 1)
+        self.assertEqual(result['temperature'], expected_temp)
+
+    @patch('collect_data.fetch_with_retry')
+    @patch('collect_data.horizontal_coordinates')
+    def test_fetch_weather_excludes_hours_before_target_date(self, mock_horiz, mock_fetch):
+        """Hours before target_date 00:00 should be excluded even if dark."""
+        target_date = '2026-08-12'
+
+        hours_data = [
+            # Night before target_date (dark but before observation_window)
+            {'time': '2026-08-11T22:00:00+02:00', 'cloud_cover': 10, 'visibility': 10000, 'precipitation_probability': 0, 'temperature_2m': 22.0},
+            {'time': '2026-08-11T23:00:00+02:00', 'cloud_cover': 10, 'visibility': 10000, 'precipitation_probability': 0, 'temperature_2m': 21.0},
+            # Target date night (should be included)
+            {'time': '2026-08-12T22:00:00+02:00', 'cloud_cover': 50, 'visibility': 5000, 'precipitation_probability': 50, 'temperature_2m': 20.0},
+        ]
+
+        def mock_horiz_func(body, dt):
+            return {'sun_altitude_deg': -20.0, 'altitude_deg': 0, 'azimuth_deg': 0}
+
+        mock_horiz.side_effect = mock_horiz_func
+        mock_fetch.return_value = self._make_weather_response(hours_data)
+
+        result = fetch_weather_open_meteo(target_date)
+
+        self.assertIsNotNone(result)
+        # Should only include 2026-08-12T22:00 (cloud=50, vis=5000, precip=50, temp=20)
+        self.assertEqual(result['cloud_cover'], 50.0)
+        self.assertEqual(result['visibility'], 5000)
+        self.assertEqual(result['precipitation_probability'], 50)
+        self.assertEqual(result['temperature'], 20.0)
+
+    @patch('collect_data.fetch_with_retry')
+    @patch('collect_data.horizontal_coordinates')
+    def test_fetch_weather_excludes_hours_after_observation_window(self, mock_horiz, mock_fetch):
+        """Hours after next_day 12:00 should be excluded even if dark."""
+        target_date = '2026-08-12'
+
+        hours_data = [
+            # Target date night (should be included)
+            {'time': '2026-08-12T22:00:00+02:00', 'cloud_cover': 50, 'visibility': 5000, 'precipitation_probability': 50, 'temperature_2m': 20.0},
+            # Next night (dark but after observation_window)
+            {'time': '2026-08-13T22:00:00+02:00', 'cloud_cover': 10, 'visibility': 10000, 'precipitation_probability': 0, 'temperature_2m': 22.0},
+            {'time': '2026-08-13T23:00:00+02:00', 'cloud_cover': 10, 'visibility': 10000, 'precipitation_probability': 0, 'temperature_2m': 21.0},
+        ]
+
+        def mock_horiz_func(body, dt):
+            return {'sun_altitude_deg': -20.0, 'altitude_deg': 0, 'azimuth_deg': 0}
+
+        mock_horiz.side_effect = mock_horiz_func
+        mock_fetch.return_value = self._make_weather_response(hours_data)
+
+        result = fetch_weather_open_meteo(target_date)
+
+        self.assertIsNotNone(result)
+        # Should only include 2026-08-12T22:00
+        self.assertEqual(result['cloud_cover'], 50.0)
+        self.assertEqual(result['visibility'], 5000)
+        self.assertEqual(result['precipitation_probability'], 50)
+        self.assertEqual(result['temperature'], 20.0)
+
+
+class TestIcsEventInWindow(unittest.TestCase):
+    def test_ics_event_in_window_returns_false_on_invalid_date(self):
+        """_ics_event_in_window should return False for events with invalid/unparseable dates."""
+        tz = ZoneInfo('Europe/Madrid')
+        window_start = datetime(2026, 8, 12, 0, 0, tzinfo=tz)
+        window_end = datetime(2026, 8, 13, 12, 0, tzinfo=tz)
+
+        # Invalid dtstart
+        ics_event_invalid = {'dtstart': 'not-a-date', 'summary': 'Test'}
+        self.assertFalse(collect_data._ics_event_in_window(ics_event_invalid, window_start, window_end, tz))
+
+        # Empty dtstart
+        ics_event_empty = {'dtstart': '', 'summary': 'Test'}
+        self.assertFalse(collect_data._ics_event_in_window(ics_event_empty, window_start, window_end, tz))
+
+        # Malformed dtstart
+        ics_event_malformed = {'dtstart': '2026-13-45T99:99:99', 'summary': 'Test'}
+        self.assertFalse(collect_data._ics_event_in_window(ics_event_malformed, window_start, window_end, tz))
+
+    def test_ics_event_in_window_returns_true_for_valid_in_window(self):
+        """_ics_event_in_window should return True for valid dates within window."""
+        tz = ZoneInfo('Europe/Madrid')
+        window_start = datetime(2026, 8, 12, 0, 0, tzinfo=tz)
+        window_end = datetime(2026, 8, 13, 12, 0, tzinfo=tz)
+
+        ics_event = {'dtstart': '20260812T200000Z', 'summary': 'Test'}
+        self.assertTrue(collect_data._ics_event_in_window(ics_event, window_start, window_end, tz))
+
+    def test_ics_event_in_window_returns_false_for_valid_out_of_window(self):
+        """_ics_event_in_window should return False for valid dates outside window."""
+        tz = ZoneInfo('Europe/Madrid')
+        window_start = datetime(2026, 8, 12, 0, 0, tzinfo=tz)
+        window_end = datetime(2026, 8, 13, 12, 0, tzinfo=tz)
+
+        ics_event = {'dtstart': '20260815T200000Z', 'summary': 'Test'}
+        self.assertFalse(collect_data._ics_event_in_window(ics_event, window_start, window_end, tz))
+
+
+class TestParseIcsValidation(unittest.TestCase):
+    def test_parse_ics_rejects_non_vcalendar(self):
+        """parse_ics_events should return empty list for non-VCALENDAR content (e.g., HTML error pages)."""
+        html_error = '<html><body>Error 500</body></html>'
+        events = collect_data.parse_ics_events(html_error, 2026)
+        self.assertEqual(events, [])
+
+    def test_parse_ics_rejects_empty_content(self):
+        """parse_ics_events should return empty list for empty content."""
+        events = collect_data.parse_ics_events('', 2026)
+        self.assertEqual(events, [])
+
+    def test_parse_ics_rejects_vcalendar_without_vevent(self):
+        """parse_ics_events should return empty list for VCALENDAR without VEVENT."""
+        ics_no_events = 'BEGIN:VCALENDAR\nVERSION:2.0\nEND:VCALENDAR'
+        events = collect_data.parse_ics_events(ics_no_events, 2026)
+        self.assertEqual(events, [])
+
+    def test_parse_ics_accepts_valid_vcalendar_with_vevent(self):
+        """parse_ics_events should parse valid VCALENDAR with VEVENT."""
+        ics_valid = '''BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:20260812T200000Z
+SUMMARY:Test Event
+END:VEVENT
+END:VCALENDAR'''
+        events = collect_data.parse_ics_events(ics_valid, 2026)
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0]['summary'], 'Test Event')
+
+
+class TestEventDeduplication(unittest.TestCase):
+    def test_normalize_ephemerides_deduplicates_events_by_id(self):
+        """normalize_ephemerides should deduplicate events deterministically by ID."""
+        from datetime import date
+        tz = ZoneInfo('Europe/Madrid')
+        target_date = date(2026, 8, 12)
+
+        # Create duplicate events with same ID
+        events = [
+            {'id': 'eclipse-2026-08-12', 'type': 'solar_eclipse', 'title_es': 'Eclipse 1', 'summary_es': 'S1',
+             'start_local': '2026-08-12T19:00+02:00', 'visibility': {'status': 'visible', 'label': 'V', 'reason': 'R'},
+             'source': {'name': 'X', 'url': 'https://example.com'}},
+            {'id': 'eclipse-2026-08-12', 'type': 'solar_eclipse', 'title_es': 'Eclipse 2', 'summary_es': 'S2',
+             'start_local': '2026-08-12T20:00+02:00', 'visibility': {'status': 'visible', 'label': 'V', 'reason': 'R'},
+             'source': {'name': 'X', 'url': 'https://example.com'}},
+            {'id': 'other-event', 'type': 'conjunction', 'title_es': 'Conjunction', 'summary_es': 'S3',
+             'start_local': '2026-08-12T21:00+02:00', 'visibility': {'status': 'visible', 'label': 'V', 'reason': 'R'},
+             'source': {'name': 'X', 'url': 'https://example.com'}},
+        ]
+
+        normalized = collect_data.normalize_ephemerides(
+            [], target_date, tz, None, events
+        )
+        ids = [event['id'] for event in normalized['events']]
+        self.assertEqual(ids.count('eclipse-2026-08-12'), 1)
+        self.assertEqual(ids.count('other-event'), 1)
+        kept = next(event for event in normalized['events']
+                    if event['id'] == 'eclipse-2026-08-12')
+        self.assertEqual(kept['title_es'], 'Eclipse 1')
+
+    def test_validate_ephemerides_rejects_duplicate_event_ids(self):
+        """validate_ephemerides should reject events with duplicate IDs."""
+        dataset = {
+            'status': 'preview',
+            'fetched_at': '2026-08-12T00:00:00+00:00',
+            'target_date': '2026-08-12',
+            'timezone': 'Europe/Madrid',
+            'observer': {'latitude': 37.38283, 'longitude': -5.97317, 'label': 'Sevilla'},
+            'observation_window': {'start_local': '2026-08-12T00:00+02:00', 'end_local': '2026-08-13T12:00+02:00'},
+            'events': [
+                {'id': 'event-1', 'type': 'solar_eclipse', 'title_es': 'E1', 'summary_es': 'S1',
+                 'start_local': '2026-08-12T19:00+02:00', 'visibility': {'status': 'visible', 'label': 'V', 'reason': 'R'},
+                 'source': {'name': 'X', 'url': 'https://example.com'}},
+                {'id': 'event-1', 'type': 'conjunction', 'title_es': 'E2', 'summary_es': 'S2',
+                 'start_local': '2026-08-12T20:00+02:00', 'visibility': {'status': 'visible', 'label': 'V', 'reason': 'R'},
+                 'source': {'name': 'X', 'url': 'https://example.com'}},
+            ],
+            'weather': {},
+            'sources': [{'name': 'X', 'url': 'https://example.com'}],
+        }
+        errors = collect_data.validate_ephemerides(dataset)
+        self.assertTrue(any('duplicate' in e.lower() or 'id' in e.lower() for e in errors),
+                        f'Expected duplicate ID error, got: {errors}')
+
+    def test_validate_ephemerides_accepts_unique_event_ids(self):
+        """validate_ephemerides should accept events with unique IDs."""
+        dataset = {
+            'status': 'preview',
+            'fetched_at': '2026-08-12T00:00:00+00:00',
+            'target_date': '2026-08-12',
+            'timezone': 'Europe/Madrid',
+            'observer': {'latitude': 37.38283, 'longitude': -5.97317, 'label': 'Sevilla'},
+            'observation_window': {'start_local': '2026-08-12T00:00+02:00', 'end_local': '2026-08-13T12:00+02:00'},
+            'events': [
+                {'id': 'event-1', 'type': 'solar_eclipse', 'title_es': 'E1', 'summary_es': 'S1',
+                 'start_local': '2026-08-12T19:00+02:00', 'visibility': {'status': 'visible', 'label': 'V', 'reason': 'R'},
+                 'source': {'name': 'X', 'url': 'https://example.com'}},
+                {'id': 'event-2', 'type': 'conjunction', 'title_es': 'E2', 'summary_es': 'S2',
+                 'start_local': '2026-08-12T20:00+02:00', 'visibility': {'status': 'visible', 'label': 'V', 'reason': 'R'},
+                 'source': {'name': 'X', 'url': 'https://example.com'}},
+            ],
+            'weather': {},
+            'sources': [{'name': 'X', 'url': 'https://example.com'}],
+        }
+        errors = collect_data.validate_ephemerides(dataset)
+        self.assertEqual(errors, [])
+
+
+class TestTitleEsFromIcs(unittest.TestCase):
+    def test_title_es_from_ics_known_events(self):
+        """Known event types should return deterministic Spanish translations."""
+        self.assertEqual(collect_data.title_es_from_ics('Solar Eclipse'), 'Eclipse solar')
+        self.assertEqual(collect_data.title_es_from_ics('Lunar Eclipse'), 'Eclipse lunar')
+        self.assertEqual(collect_data.title_es_from_ics('Meteor Shower'), 'Lluvia de meteoros')
+        self.assertEqual(collect_data.title_es_from_ics('Conjunction'), 'Conjunción')
+        self.assertEqual(collect_data.title_es_from_ics('Opposition'), 'Oposición')
+        self.assertEqual(collect_data.title_es_from_ics('Full Moon'), 'Luna llena')
+        self.assertEqual(collect_data.title_es_from_ics('New Moon'), 'Luna nueva')
+        self.assertEqual(collect_data.title_es_from_ics('First Quarter'), 'Cuarto creciente')
+        self.assertEqual(collect_data.title_es_from_ics('Last Quarter'), 'Cuarto menguante')
+
+    def test_title_es_from_ics_unknown_event_returns_original(self):
+        """Unknown events should return the original title (fallback)."""
+        # These don't match any known pattern
+        result = collect_data.title_es_from_ics('Unknown Event Type XYZ')
+        self.assertEqual(result, 'Unknown Event Type XYZ')
+
+        result = collect_data.title_es_from_ics('Random Astronomy Thing')
+        self.assertEqual(result, 'Random Astronomy Thing')
+
+        # Body names in unknown events are NOT partially translated
+        result = collect_data.title_es_from_ics('Mercury at greatest elongation')
+        self.assertEqual(result, 'Mercury at greatest elongation')
+
+        result = collect_data.title_es_from_ics('Venus at dichotomy')
+        self.assertEqual(result, 'Venus at dichotomy')
+
+        result = collect_data.title_es_from_ics('Mars close approach')
+        self.assertEqual(result, 'Mars close approach')
+
+    def test_title_es_from_ics_no_hybrid_translations(self):
+        """Result should not contain mixed English/Spanish - either known pattern or original."""
+        # Known pattern fully translated
+        result = collect_data.title_es_from_ics('Solar Eclipse on August 12')
+        self.assertEqual(result, 'Eclipse solar')
+
+        # Unknown event returned as-is (no partial translation)
+        result = collect_data.title_es_from_ics('Comet C/2023 A3 passes into view')
+        self.assertEqual(result, 'Comet C/2023 A3 passes into view')
+
+
 class TestWriteJsonAtomically(unittest.TestCase):
     def test_write_json_atomically(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -772,6 +1109,7 @@ class TestCollectReal(unittest.TestCase):
             patch('collect_data.fetch_astronomy_positions', return_value=self._raw('astronomy-positions.json')),
             patch('collect_data.fetch_astronomy_moon', return_value=self._raw('astronomy-moon.json')),
             patch('collect_data.fetch_astronomy_star_chart', return_value=self._raw('astronomy-star-chart.json')),
+            patch('collect_data.collect_ephemerides', return_value=0),
         )
 
     def _enter(self, patches):
@@ -812,7 +1150,9 @@ class TestCollectReal(unittest.TestCase):
         with open(path, 'w') as f:
             json.dump(existing, f)
 
-        with self._enter([patch('collect_data.fetch_apod', return_value=None)] + list(self._all_ok_patches()[1:])):
+        patches = list(self._all_ok_patches())
+        patches[0] = patch('collect_data.fetch_apod', return_value=None)
+        with self._enter(patches):
             code = collect_real(self.data_dir, 'KEY', 'ID', 'SECRET')
 
         self.assertEqual(code, 1)
@@ -846,7 +1186,9 @@ class TestCollectReal(unittest.TestCase):
         self.assertTrue(os.path.exists(os.path.join(self.data_dir, 'apod.json')))
 
     def test_collect_real_no_write_on_validation_failure(self):
-        with self._enter([patch('collect_data.fetch_apod', return_value={'junk': True})] + list(self._all_ok_patches()[1:])):
+        patches = list(self._all_ok_patches())
+        patches[0] = patch('collect_data.fetch_apod', return_value={'junk': True})
+        with self._enter(patches):
             code = collect_real(self.data_dir, 'KEY', 'ID', 'SECRET')
         self.assertEqual(code, 1)
         self.assertFalse(os.path.exists(os.path.join(self.data_dir, 'apod.json')))
@@ -857,6 +1199,42 @@ class TestCollectReal(unittest.TestCase):
             code = collect_real(self.data_dir, 'KEY', 'ID', 'SECRET', write=False)
         self.assertEqual(code, 0)
         self.assertEqual(os.listdir(self.data_dir), [])
+
+    def test_collect_real_nonzero_on_ephemerides_degraded(self):
+        """collect_real should return non-zero when collect_ephemerides returns 2 (degraded),
+        but should still preserve previous ephemerides.json."""
+        existing = {
+            'status': 'live',
+            'fetched_at': '2026-01-01T00:00:00+00:00',
+            'target_date': '2026-01-01',
+            'timezone': 'Europe/Madrid',
+            'observer': {'latitude': 37.38283, 'longitude': -5.97317, 'label': 'Sevilla'},
+            'observation_window': {'start_local': '2026-01-01T00:00+01:00', 'end_local': '2026-01-02T12:00+01:00'},
+            'events': [{'id': 'old-event', 'type': 'other', 'title_es': 'Old', 'summary_es': '',
+                        'start_local': '2026-01-01T20:00+01:00',
+                        'visibility': {'status': 'visible', 'label': 'V', 'reason': 'R'},
+                        'source': {'name': 'X', 'url': 'https://example.com'}}],
+            'weather': {},
+            'sources': [{'name': 'In-The-Sky', 'url': 'https://in-the-sky.org/'}],
+        }
+        eph_path = os.path.join(self.data_dir, 'ephemerides.json')
+        with open(eph_path, 'w') as f:
+            json.dump(existing, f)
+
+        # Mock collect_ephemerides to return 2 (degraded preservation)
+        patches = list(self._all_ok_patches())
+        patches[-1] = patch('collect_data.collect_ephemerides', return_value=2)
+        with self._enter(patches):
+            code = collect_real(self.data_dir, 'KEY', 'ID', 'SECRET')
+
+        self.assertEqual(code, 1)  # Non-zero overall result
+        # Previous ephemerides.json should be preserved
+        with open(eph_path, 'r') as f:
+            data = json.load(f)
+        self.assertEqual(data, existing)
+        # Other datasets should still be written
+        self.assertTrue(os.path.exists(os.path.join(self.data_dir, 'apod.json')))
+        self.assertTrue(os.path.exists(os.path.join(self.data_dir, 'near-earth.json')))
 
 
 class TestWritePreviewDatasets(unittest.TestCase):

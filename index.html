@@ -1,372 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-     <meta charset="UTF-8">
-
-     <title>Reiniciando a Valentín...</title>
-     <style>
-          body {
-               margin: 0;
-
-               background: black;
-               color: #00ff9f;
-               font-family: monospace;
-               overflow-x:
-                    hidden;
-          }
-
-          header {
-               background: #111;
-               color: #0ff;
-
-               padding: 1.5rem;
-               text-align: center;
-               font-size: 1.8rem;
-
-               border-bottom: 1px solid #0ff;
-          }
-
-          .intro-text {
-               padding: 2rem;
-
-               font-size: 1.2rem;
-               max-width: 800px;
-               margin: auto;
-               line-height:
-                    1.6;
-          }
-
-          .intro-text a {
-               color: inherit;
-               text-decoration: none;
-
-               font-family: inherit;
-               font-size: inherit;
-               line-height:
-                    inherit;
-               transition: color 0.2s;
-          }
-
-          .intro-text a:hover {
-               color:
-                    #0ff;
-               text-decoration: underline;
-          }
-
-          .terminal-window {
-
-               background: #000;
-               border: 1px solid #0ff;
-               margin: 2rem auto;
-               padding:
-                    2rem;
-               width: 80%;
-               min-height: 300px;
-               box-shadow: 0 0 10px #0ff3;
-               position: relative;
-          }
-
-          .glitch:hover {
-               animation:
-                    glitchText 0.3s infinite;
-               color: #f0f;
-               text-shadow: 0 0 5px #0ff, 0 0 10px #f0f;
-          }
-
-          @keyframes glitchText {
-               0% {
-                    transform: translateX(0);
-               }
-
-               20% {
-                    transform: translateX(-2px);
-               }
-
-               40% {
-                    transform:
-                         translateX(2px);
-               }
-
-               60% {
-                    transform: translateX(-1px);
-               }
-
-               80% {
-                    transform:
-                         translateX(1px);
-               }
-
-               100% {
-                    transform: translateX(0);
-               }
-          }
-
-          #fakeCmds {
-
-               color: #0f0;
-               font-size: 0.9rem;
-               padding: 1rem;
-          }
-
-
-          .blue-screen {
-               position: fixed;
-               top: 0;
-               left: 0;
-               width: 100vw;
-               height:
-                    100vh;
-               background-color: #0000aa;
-               color: white;
-               display:
-                    flex;
-               align-items: center;
-               justify-content: center;
-               font-size:
-                    1.5rem;
-               z-index: 1000;
-               display: none;
-               text-align: center;
-
-               padding: 2rem;
-          }
-
-          #dontClick {
-               position: fixed;
-               bottom: 10px;
-
-               right: 10px;
-               background: none;
-               color: #0088ff;
-               border:
-                    1px dashed #0088ff;
-               padding: 5px 10px;
-               cursor: pointer;
-
-               z-index: 1100;
-          }
-
-          #matrixCanvas {
-               position: fixed;
-               top: 0;
-
-               left: 0;
-               width: 100vw;
-               height: 100vh;
-               z-index: 999;
-               display: none;
-               pointer-events: none;
-
-          }
-
-          .recursos-button {
-               text-align: center;
-               margin: 2rem 0;
-          }
-
-          .recursos-button a {
-               display: inline-block;
-               background: #0ff;
-               color: #000;
-               padding: 15px 30px;
-               text-decoration: none;
-               border-radius: 8px;
-               font-weight: bold;
-               font-size: 1.2rem;
-               border: 2px solid #0ff;
-               transition: all 0.3s;
-               box-shadow: 0 0 10px #0ff3;
-          }
-
-          .recursos-button a:hover {
-               background: #000;
-               color: #0ff;
-               box-shadow: 0 0 20px #0ff;
-               transform: scale(1.05);
-          }
-     </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal de Valentín Fernández: IA, pensamiento crítico, automatización, astronomía y proyectos web.">
+  <title>Valentín Fernández · IA, pensamiento crítico y proyectos web</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Inicio de valenfer.github.io">
+      <span class="brand-mark">VF</span>
+      <span>
+        <strong>valenfer.github.io</strong>
+        <small>laboratorio personal</small>
+      </span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#publicaciones">Publicaciones</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#laboratorio">Laboratorio</a>
+      <a href="#recursos">Recursos</a>
+    </nav>
+  </header>
 
-     <canvas id="matrixCanvas"></canvas>
+  <main>
+    <section class="hero section-shell">
+      <p class="eyebrow">IA · pensamiento crítico · automatización · web</p>
+      <h1>Un portal para ordenar ideas, proyectos y publicaciones sin que el dominio parezca un cajón de cables.</h1>
+      <p class="hero-copy">
+        Soy Valentín Fernández. Este sitio reúne proyectos editoriales, herramientas con IA, observatorios de datos,
+        demos web y recursos de aprendizaje. Algunas piezas son publicaciones estables; otras son laboratorio vivo.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="disonanciacognitiva/">Leer Disonancia Cognitiva</a>
+        <a class="button" href="proyectos/">Explorar proyectos</a>
+        <a class="button ghost" href="aida/">Conocer AIDA</a>
+      </div>
+    </section>
 
-     <header>🚧CURSOS EN ACTIVO 🚧</header>
+    <section class="section-shell" id="publicaciones">
+      <div class="section-heading">
+        <p class="eyebrow">Publicaciones</p>
+        <h2>Lecturas y archivos activos</h2>
+        <p>Contenido que ya tiene una línea editorial o informativa clara.</p>
+      </div>
+      <div class="card-grid featured-grid">
+        <article class="card accent-red">
+          <p class="card-kicker">Pensamiento crítico</p>
+          <h3>Disonancia Cognitiva</h3>
+          <p>Ensayos sobre psicología social, poder, miedo, autoengaño y vigilancia ciudadana.</p>
+          <a href="disonanciacognitiva/">Abrir proyecto</a>
+        </article>
+        <article class="card accent-blue">
+          <p class="card-kicker">Actualidad IA</p>
+          <h3>RadarIA</h3>
+          <p>Informes diarios y especiales sobre inteligencia artificial, investigación y herramientas emergentes.</p>
+          <a href="radaria/">Ver informes</a>
+        </article>
+        <article class="card accent-purple">
+          <p class="card-kicker">Astronomía</p>
+          <h3>AstroAIDA</h3>
+          <p>Observatorio astronómico con efemérides, luna, cielo del día y eventos visibles.</p>
+          <a href="astroaida/">Mirar el cielo</a>
+        </article>
+      </div>
+    </section>
 
-     <div class="intro-text">
-          <a href="https://skills.yourlearning.ibm.com/activity/PLAN-B69C0C1030C4?ngo-id=0284">ciberseguridad skillbuild</a><br>
-          <a href="https://campus.e4you.org/course/view.php?id=165">CIBERWORLD</a><br>
-          <a href="https://www.efundae.es/course/view.php?id=906">Desarrollo web. Frameworks: Frameworks</a><br>
-          <a href="https://cursos.raiola.link/cursos/masterclass-de-automatizaciones-con-ia/">Masterclass de
-               automatizaciones con IA</a><br>
-          <a href="https://cursos.raiola.link/cursos/curso-de-automatizaciones-con-n8n-e-inteligencia-artificial//">Curso
-               de automatizaciones
-               con N8N e Inteligencia Artificial</a><br>
-          <a href="https://www.coursera.org/learn/troubleshooting-debugging-techniques/lecture/NYjwt/intro-to-module-2-slowness">Automatización
-               Python Coursera</a><br>
-          <a href="https://educacionadistancia.juntadeandalucia.es/formacionprofesional/my/courses.php">Ciberseguridad</a><br>
+    <section class="section-shell" id="proyectos">
+      <div class="section-heading">
+        <p class="eyebrow">Proyectos</p>
+        <h2>Ecosistema del dominio</h2>
+        <p>Las piezas principales del sitio, separadas por función para que cada una respire.</p>
+      </div>
+      <div class="project-list">
+        <a class="project-row" href="aida/">
+          <span>AIDA</span>
+          <strong>Asistente personal, automatización e IA local.</strong>
+          <em>activo</em>
+        </a>
+        <a class="project-row" href="curriculum/">
+          <span>Curriculum</span>
+          <strong>Perfil profesional y CV web de Valentín.</strong>
+          <em>estable</em>
+        </a>
+        <a class="project-row" href="peligro/">
+          <span>Peligro Legal</span>
+          <strong>Laboratorio de ideas incómodas y textos críticos.</strong>
+          <em>laboratorio</em>
+        </a>
+        <a class="project-row" href="proyectos/">
+          <span>Proyectos web</span>
+          <strong>Demos, prácticas y desarrollos históricos agrupados.</strong>
+          <em>índice</em>
+        </a>
+      </div>
+    </section>
 
-          <a href="https://cursos.raiola.link/">Raiola automatizaciones</a><br>
-          <a href="https://developer.microsoft.com/en-us/reactor/events/26545/">Python + MCP:
-               Construyendo servidores MCP con FastMCP</a><br>
-          <a href="https://developer.microsoft.com/en-us/reactor/events/26546/">[Python + MCP: De local a producción]
-               Depliegue a la nube</a><br>
-          <a href="https://developer.microsoft.com/en-us/reactor/events/26547/">Python + MCP: De local a producción]
-               Autenticación para
-               servidores MCP</a><br>
-          <a href="https://skills.yourlearning.ibm.com/activity/PLAN-9380EC6615C4?ngo-id=0258">Certificado de analítica
-               de datos de IBM SkillsBuild</a><br>
-     </div>
+    <section class="section-shell split" id="laboratorio">
+      <div>
+        <p class="eyebrow">Laboratorio</p>
+        <h2>Zona de pruebas con etiqueta, que ya es más de lo que suele tener un laboratorio casero.</h2>
+      </div>
+      <div class="card-grid compact-grid">
+        <article class="mini-card">
+          <h3>Automatización e IA</h3>
+          <p>Experimentos con asistentes, flujos, agentes y herramientas locales.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Demos web</h3>
+          <p>Proyectos antiguos o formativos conservados como referencia.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Archivo vivo</h3>
+          <p>Material útil que todavía no necesita una web propia, pero tampoco merece perderse.</p>
+        </article>
+      </div>
+    </section>
 
+    <section class="section-shell" id="recursos">
+      <div class="section-heading">
+        <p class="eyebrow">Recursos</p>
+        <h2>Enlaces, cursos y herramientas</h2>
+        <p>La parte práctica: aprendizaje, APIs, CSS, hosting y referencias técnicas.</p>
+      </div>
+      <div class="resource-grid">
+        <a href="recursos.html">Recursos generales</a>
+        <a href="enlaces.html">Enlaces guardados</a>
+        <a href="cursos.html">Cursos</a>
+        <a href="apis.html">APIs</a>
+        <a href="css.html">CSS y diseño</a>
+        <a href="hosting.html">Hosting</a>
+      </div>
+    </section>
 
+    <section class="section-shell about" id="sobre-mi">
+      <p class="eyebrow">Sobre este dominio</p>
+      <h2>Una entrada común para proyectos independientes.</h2>
+      <p>
+        La raíz del dominio funciona como mapa y punto de partida. Los proyectos mantienen sus rutas propias para no romper enlaces publicados,
+        pero ahora quedan agrupados con intención: publicaciones, herramientas, laboratorio y archivo.
+      </p>
+    </section>
+  </main>
 
-     <div class="recursos-button">
-          <a href="enlaces.html">Recursos</a>
-     </div>
-
-     <div class="terminal-window">
-          <span id="typed" class="glitch"></span>
-          <div id="fakeCmds"></div>
-     </div>
-
-     <button id="dontClick">No
-          pulses aquí</button>
-
-     <div class="blue-screen" id="blueScreen">
-          💥 ERROR 404:
-          Portfolio demasiado cool para cargar.<br>
-          Reiniciando el carisma...<br><br>
-
-          <em>CTRL+ALT+CAFE para continuar ☕</em>
-     </div>
-
-     <audio id="typeSound" src="type.mp3" preload="auto"></audio>
-
-     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-     <script>
-          // Sonido
-          const typeSound =
-               document.getElementById("typeSound");
-          new Typed('#typed', {
-               strings: [
-                    "> boot sequence initiated...",
-                    "> Analizando prácticas completadas ✅",
-                    "> Descargando módulos: Python, GitHub, IA 🤖",
-                    "> Refactorizando el sistema neuronal 💾",
-                    "> Ejecutando script: ./reinicio_valentin.sh 🚀",
-                    "> Cargando carisma.js y creatividad.css 🔥",
-                    "> Tasa de café actual: 98% ☕", ">Sistema en modo zen. Portfolio en reconstrucción...", "> Versión 2.0 loading... prepárate 😎"
-               ],
-               typeSpeed: 40,
-               loop: false,
-               onStringTyped:
-                    () => {
-                         typeSound.currentTime = 0;
-                         typeSound.play();
-                    }
-          });
-
-
-          // Comandos aleatorios
-          const fakeLines = ["🧠neural_net.training(epoch=42)", "📦 installing: motivación.js", "💡 ideaFactory.generate() => success",
-               "☕ Cargando café… hecho.",
-               "🕶️ Activando modo hacker oculto…",
-               "📁 creando directorio: /valentin/2.0/",
-               "🔐 ejecutando sudo apt install pasión"
-          ];
-
-          setInterval(() => {
-               const div =
-                    document.getElementById("fakeCmds");
-               const p = document.createElement("p");
-               p.textContent =
-                    fakeLines[Math.floor(Math.random() * fakeLines.length)];
-               div.appendChild(p);
-               if
-                    (div.childNodes.length > 10) div.removeChild(div.firstChild);
-          }, 6000);
-
-          //
-          Matrix
-          const canvas = document.getElementById("matrixCanvas");
-          const ctx =
-               canvas.getContext("2d");
-
-          function resizeCanvas() {
-               canvas.width =
-                    window.innerWidth;
-               canvas.height = window.innerHeight;
-          }
-
-
-          window.addEventListener("resize", resizeCanvas);
-          resizeCanvas();
-
-          const letters =
-               "アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-          const fontSize = 14;
-          let columns,
-               drops;
-
-          function initMatrix() {
-               columns = Math.floor(canvas.width /
-                    fontSize);
-               drops = Array(columns).fill(1);
-          }
-
-          function drawMatrix() {
-
-               ctx.fillStyle = "rgba(0,0,0,0.05)";
-               ctx.fillRect(0, 0, canvas.width,
-                    canvas.height);
-               ctx.fillStyle = "#0F0";
-               ctx.font = fontSize + "px monospace";
-               for (let i = 0; i < drops.length; i++) {
-                    const text =
-                         letters[Math.floor(Math.random() * letters.length)];
-                    ctx.fillText(text, i * fontSize, drops[i]
-                         * fontSize);
-                    if (drops[i] * fontSize > canvas.height || Math.random() >
-                         0.975) {
-                         drops[i] = 0;
-                    }
-                    drops[i]++;
-               }
-          }
-
-          let
-               matrixInterval = null;
-
-          function startMatrix() {
-               canvas.style.display = "block";
-
-               initMatrix();
-               if (matrixInterval) clearInterval(matrixInterval);
-
-               matrixInterval = setInterval(drawMatrix, 33);
-               setTimeout(() => {
-
-                    clearInterval(matrixInterval);
-                    canvas.style.display = "none";
-               }, 4000);
-          }
-
-
-          // Easter egg: pantalla azul + matrix
-
-          document.getElementById("dontClick").addEventListener("click", function () {
-
-               document.getElementById("blueScreen").style.display = "flex";
-               startMatrix();
-               setTimeout(() => {
-
-                    document.getElementById("blueScreen").style.display = "none";
-               }, 4000);
-
-          });
-     </script>
+  <footer class="site-footer">
+    <p>© Valentín Fernández · GitHub Pages</p>
+    <a href="https://github.com/valenfer/valenfer.github.io">Repositorio</a>
+  </footer>
 </body>
-
 </html>
-

@@ -1,6 +1,6 @@
 {
   "source": "The Space Devs Launch Library 2",
-  "fetched_at": "2026-08-31T19:44:40.209696+00:00",
+  "fetched_at": "2026-08-31T20:24:24.232648+00:00",
   "status": "live",
   "count": 358,
   "launches": [
@@ -18,7 +18,7 @@
       "mission_description": "First test launch of Galactic Energy’s Pallas-1 rocket.",
       "pad": "Pallas-1 Launch Pad",
       "location": "Jiuquan Satellite Launch Center, People's Republic of China",
-      "image_url": "",
+      "image_url": null,
       "webcast_url": "",
       "url": "https://ll.thespacedevs.com/2.3.0/launches/a927b2f9-f9a5-4196-9abb-2e275e4a6b96/?format=json"
     },

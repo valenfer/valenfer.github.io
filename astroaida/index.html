@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AstroAIDA · El cielo de Sevilla</title>
-  <meta name="description" content="AstroAIDA: observación astronómica desde Sevilla. Astronomía del día, planetas visibles, fase lunar, carta celeste y objetos cercanos a la Tierra.">
+  <title>AstroAIDA · Observatorio nocturno de Sevilla</title>
+  <meta name="description" content="AstroAIDA: observatorio astronómico de Sevilla con cielo del día, Luna, carta celeste, asteroides próximos y efemérides visibles.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://valenfer.github.io/astroaida/">
-  <meta property="og:title" content="AstroAIDA · El cielo de Sevilla">
-  <meta property="og:description" content="Astronomía del día, planetas visibles, fase lunar, carta celeste y objetos cercanos a la Tierra desde Sevilla.">
+  <meta property="og:title" content="AstroAIDA · Observatorio nocturno de Sevilla">
+  <meta property="og:description" content="Bitácora celeste de Sevilla: cielo del día, Luna, carta estelar, objetos cercanos y efemérides astronómicas.">
   <meta property="og:image" content="https://valenfer.github.io/astroaida/assets/favicon.svg">
   <link rel="canonical" href="https://valenfer.github.io/astroaida/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -19,10 +19,22 @@
   <a class="skip" href="#contenido">Saltar al contenido</a>
 
   <header class="site-header">
-    <p class="site-header__kicker">AstroAIDA</p>
+    <p class="site-header__kicker">Observatorio AstroAIDA</p>
     <h1 class="site-header__title">El cielo de <span>Sevilla</span></h1>
-    <p class="site-header__subtitle">Observación astronómica para <span data-role="observer-label">Sevilla</span><span class="site-header__coords">37.38283, -5.97317 · 0 m</span></p>
+    <p class="site-header__subtitle">Bitácora celeste · coordenadas reales · datos en vivo para mirar arriba sin tragarte humo espacial</p>
   </header>
+
+  <nav class="site-nav" aria-label="Secciones de la página">
+    <ul class="site-nav__list">
+      <li class="site-nav__item"><a class="site-nav__link" href="#launches">Lanzamientos</a></li>
+      <li class="site-nav__item"><a class="site-nav__link" href="#apod">Astronomía del día</a></li>
+      <li class="site-nav__item"><a class="site-nav__link" href="#sky-today">Cielo hoy</a></li>
+      <li class="site-nav__item"><a class="site-nav__link" href="#moon">Luna</a></li>
+      <li class="site-nav__item"><a class="site-nav__link" href="#star-chart">Carta celeste</a></li>
+      <li class="site-nav__item"><a class="site-nav__link" href="#near-earth">Asteroides</a></li>
+      <li class="site-nav__item"><a class="site-nav__link" href="#ephemerides">Efemérides</a></li>
+    </ul>
+  </nav>
 
   <aside class="data-status" id="data-status" role="status" aria-live="polite" aria-atomic="true">
     <h2 class="visually-hidden">Estado de los datos</h2>
@@ -39,7 +51,7 @@
     </noscript>
 
 
-    <section class="module module--launches" aria-labelledby="launches-title">
+    <section class="module module--launches" id="launches" aria-labelledby="launches-title">
       <header class="module__header">
         <p class="module__eyebrow">Eventos espaciales</p>
         <h2 class="module__title" id="launches-title">Próximos lanzamientos</h2>
@@ -49,7 +61,7 @@
       </div>
     </section>
 
-    <section class="module module--apod" aria-labelledby="apod-title">
+    <section class="module module--apod" id="apod" aria-labelledby="apod-title">
       <header class="module__header">
         <p class="module__eyebrow">Astronomía del día</p>
         <h2 class="module__title" id="apod-title">Imagen astronómica del día</h2>
@@ -59,7 +71,7 @@
       </div>
     </section>
 
-    <section class="module" aria-labelledby="sky-today-title">
+    <section class="module" id="sky-today" aria-labelledby="sky-today-title">
       <header class="module__header">
         <p class="module__eyebrow">Cielo hoy</p>
         <h2 class="module__title" id="sky-today-title">Posiciones actuales</h2>
@@ -69,7 +81,7 @@
       </div>
     </section>
 
-    <section class="module" aria-labelledby="moon-title">
+    <section class="module" id="moon" aria-labelledby="moon-title">
       <header class="module__header">
         <p class="module__eyebrow">Luna</p>
         <h2 class="module__title" id="moon-title">Fase lunar</h2>
@@ -79,7 +91,7 @@
       </div>
     </section>
 
-    <section class="module" aria-labelledby="star-chart-title">
+    <section class="module" id="star-chart" aria-labelledby="star-chart-title">
       <header class="module__header">
         <p class="module__eyebrow">Carta celeste</p>
         <h2 class="module__title" id="star-chart-title">Mapa del cielo</h2>
@@ -89,7 +101,7 @@
       </div>
     </section>
 
-    <section class="module" aria-labelledby="near-earth-title">
+    <section class="module" id="near-earth" aria-labelledby="near-earth-title">
       <header class="module__header">
         <p class="module__eyebrow">Objetos cercanos</p>
         <h2 class="module__title" id="near-earth-title">Asteroides próximos</h2>
@@ -98,21 +110,35 @@
         <p class="module__notice">Cargando…</p>
       </div>
     </section>
+
+    <section class="module" id="ephemerides" aria-labelledby="ephemerides-title">
+      <header class="module__header">
+        <p class="module__eyebrow">Efemérides</p>
+        <h2 class="module__title" id="ephemerides-title">Eventos astronómicos</h2>
+      </header>
+      <div class="ephem" data-module="ephemerides">
+        <p class="module__notice">Cargando…</p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <p class="site-footer__note">
       AstroAIDA muestra datos recopilados por scripts automatizados a partir de
-      NASA y AstronomyAPI. En esta fase pueden ser datos de muestra.
+      NASA, AstronomyAPI y The Space Devs / Launch Library 2. En esta fase pueden ser datos de muestra.
     </p>
     <ul class="site-footer__sources">
       <li><a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener noreferrer">NASA APOD</a></li>
       <li><a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA NeoWs</a></li>
       <li><a href="https://astronomyapi.com" target="_blank" rel="noopener noreferrer">AstronomyAPI</a></li>
       <li><a href="https://ll.thespacedevs.com/docs" target="_blank" rel="noopener noreferrer">The Space Devs / Launch Library 2</a></li>
+      <li><a href="https://in-the-sky.org/" target="_blank" rel="noopener noreferrer">In-The-Sky</a></li>
+      <li><a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></li>
+      <li><a href="https://www.translated.net/MyMemory/" target="_blank" rel="noopener noreferrer">MyMemory</a></li>
     </ul>
   </footer>
 
+  <script src="moon-renderer.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>

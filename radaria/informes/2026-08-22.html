@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-08-22</title>
+  <meta name="description" content="RadarIA diario de novedades relevantes de inteligencia artificial para el 22 de agosto de 2026.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .email-shell{background:#08111f;color:#e8f1ff;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;margin:0;padding:28px}.email-card{max-width:920px;margin:auto;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));padding:32px}.email-card a{color:#69e4ff}.muted{color:#9db2d0}.news-card{border:1px solid rgba(255,255,255,.12);border-radius:22px;background:#12233b;margin:18px 0;padding:22px}.badge{display:inline-block;margin:.15rem .25rem .15rem 0;padding:.25rem .6rem;border-radius:999px;background:rgba(105,228,255,.12);border:1px solid rgba(105,228,255,.25);color:#bff5ff;font-size:.82rem}.source-list{font-size:.92rem;color:#9db2d0}.kicker{display:inline-block;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:.35rem .75rem;color:#9db2d0;background:rgba(255,255,255,.05);font-size:.9rem}h1{font-size:2.4rem;line-height:1.05;margin:.8rem 0;color:#ffffff}h2{margin-top:2rem;color:#ffffff}code{color:#bff5ff}
+  </style>
+</head>
+<body>
+  <main class="report-body email-shell">
+    <article class="email-card">
+      <p><a href="../index.html">← Volver al archivo RadarIA</a></p>
+      <span class="kicker">RadarIA diario · 22 de agosto de 2026</span>
+      <h1>RadarIA diario — 2026-08-22</h1>
+      <p class="lead"><strong>Rango investigado:</strong> ventana estricta desde la última publicación registrada, 2026-08-21 a las 22:49 CEST, hasta la ejecución del 2026-08-22 a las 08:00 CEST. En esa ventana no encontré novedades oficiales de alto valor; por eso amplié hasta 7 días y seleccioné piezas recientes no cubiertas en el informe anterior, evitando duplicados.</p>
+      <p><strong>Metodología breve:</strong> revisión de fuentes primarias oficiales de OpenAI, Google/Google Research/DeepMind, Anthropic, arXiv/Hugging Face Papers y blogs técnicos relevantes; se abrió y leyó el cuerpo de las fuentes elegidas, no solo titulares o snippets. Las citas numeradas salen del ledger de fuentes de RadarIA, que no es glamuroso, pero evita inventarse enlaces como un becario con prisa.</p>
+
+      <h2>Resumen ejecutivo</h2>
+      <p>Hoy el radar trae cinco piezas sólidas: dos líneas de Google Research sobre IA aplicada a biomarcadores y representación de lugares, un movimiento de OpenAI en gobernanza estratégica, y dos papers recientes sobre agentes y benchmarks de software científico. La ventana estricta venía seca; la ampliada, al menos, no venía rellena de humo.</p>
+
+      <section>
+        <h2>Piezas destacadas</h2>
+
+        <div class="news-card panel">
+          <span class="badge">Herramienta</span><span class="badge">Informe</span><span class="badge">Salud</span>
+          <h3><a href="https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/">An AI tool for prioritizing candidate biomarkers from wearable sensor data</a></h3>
+          <p><strong>Fuente y fecha:</strong> Google Research, 21 de agosto de 2026.[1]</p>
+          <p><strong>Por qué importa:</strong> Google presenta Biomarker Discovery Framework como un sistema multiagente para proponer biomarcadores candidatos a partir de datos de wearables, combinando generación de hipótesis, análisis estadístico y razonamiento apoyado en literatura.[1]</p>
+          <p><strong>Resumen:</strong> El sistema separa construcción de características y señales objetivo, usa subagentes especializados y exige que los candidatos pasen una fase de filtrado adversarial de 11 pruebas para reducir fugas, correlaciones espurias y sobreajuste.[1]</p>
+          <p><strong>Impacto práctico:</strong> En producto de salud digital, esto apunta a pipelines más auditables para priorizar señales antes de validarlas clínicamente; el matiz importante es que los mecanismos propuestos son hipótesis, no conclusiones causales listas para tatuarse en una ficha médica.[1]</p>
+        </div>
+
+        <div class="news-card panel">
+          <span class="badge">Paper</span><span class="badge">Modelo</span><span class="badge">Geoespacial</span>
+          <h3><a href="https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place/">How mobility gives language models a deeper understanding of place</a></h3>
+          <p><strong>Fuente y fecha:</strong> Google Research, 21 de agosto de 2026.[2]</p>
+          <p><strong>Por qué importa:</strong> Google propone Mobility-Embedded POIs, un marco que mezcla descripciones textuales con patrones agregados y anonimizados de movilidad para representar mejor cómo funcionan realmente los lugares a lo largo del día.[2]</p>
+          <p><strong>Resumen:</strong> En pruebas sobre Los Ángeles y Houston, la integración de movilidad reporta mejoras relativas de hasta el 81,9% en predicción de intención de visita, 75,1% en clasificación de nivel de precio y 24,7% en estimación de afluencia.[2]</p>
+          <p><strong>Impacto práctico:</strong> Para mapas, búsqueda local, retail y análisis urbano, el mensaje es claro: un lugar no es solo texto y categoría; también es ritmo temporal. Y sí, al algoritmo también le interesa cuándo la cafetería está petada.</p>
+        </div>
+
+        <div class="news-card panel">
+          <span class="badge">Informe</span><span class="badge">Gobernanza</span><span class="badge">Seguridad</span>
+          <h3><a href="https://openai.com/index/introducing-ai-futures">Introducing AI Futures</a></h3>
+          <p><strong>Fuente y fecha:</strong> OpenAI, 20 de agosto de 2026.[3]</p>
+          <p><strong>Por qué importa:</strong> OpenAI lanza AI Futures, un blog del equipo Strategic Futures centrado en cómo una sociedad libre debería preservar derechos, agencia individual y equilibrio de poder ante IA transformadora.[3]</p>
+          <p><strong>Resumen:</strong> La entrada plantea riesgos de concentración de poder, advierte tanto contra monopolios humanos como contra comportamientos no previstos de agentes, y declara que los textos del blog reflejan la visión de sus autores, no posiciones organizativas oficiales de OpenAI.[3]</p>
+          <p><strong>Impacto práctico:</strong> No es un producto ni un paper, pero sí una señal institucional: OpenAI quiere participar más explícitamente en el debate de arquitectura social y gobernanza de IA avanzada. Traducido: la política de IA sigue subiendo de temperatura.</p>
+        </div>
+
+        <div class="news-card panel">
+          <span class="badge">Paper</span><span class="badge">Agentes</span><span class="badge">Modelo abierto</span>
+          <h3><a href="https://huggingface.co/papers/2608.19880">EnvHarness: Awakening Static Worlds for Agent Learning</a></h3>
+          <p><strong>Fuente y fecha:</strong> Hugging Face Papers / arXiv 2608.19880, publicado el 20 de agosto y destacado el 21 de agosto de 2026.[4]</p>
+          <p><strong>Por qué importa:</strong> EnvHarness aborda un problema clásico en entrenamiento de agentes: los entornos estáticos se quedan cortos frente a políticas que mejoran y no atacan sus debilidades reales.[4]</p>
+          <p><strong>Resumen:</strong> El paper propone una capa programable de plugins que envuelve entornos existentes sin modificar su lógica base, y EnvRigger observa trayectorias de una política caja negra para sintetizar componentes que ataquen fallos diagnosticados.[4]</p>
+          <p><strong>Impacto práctico:</strong> Reporta mejoras de hasta 9,0 puntos en instancias retenidas y 9,8% menos pasos de ejecución en cinco benchmarks de cuatro dominios, así que interesa a quien entrene agentes con RL y necesite entornos menos decorativos y más puñeteros.[4]</p>
+        </div>
+
+        <div class="news-card panel">
+          <span class="badge">Benchmark</span><span class="badge">Agentes</span><span class="badge">Código científico</span>
+          <h3><a href="https://huggingface.co/papers/2608.19799">SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?</a></h3>
+          <p><strong>Fuente y fecha:</strong> Hugging Face Papers / arXiv 2608.19799, publicado el 20 de agosto y destacado el 21 de agosto de 2026.[5]</p>
+          <p><strong>Por qué importa:</strong> El benchmark lleva la evaluación de agentes de código a software científico, donde un arreglo incorrecto puede afectar no solo al programa, sino también a la evidencia usada en investigación.[5]</p>
+          <p><strong>Resumen:</strong> SWE-bench Science incluye 119 tareas de 98 repositorios GitHub en 20 dominios científicos, divididas en tareas issue-driven, expert-exploratory e engineering-integration.[5]</p>
+          <p><strong>Impacto práctico:</strong> Incluso el mejor agente reportado, Claude Code con Opus-5 en configuración máxima, queda por debajo del 50% pass@1; además, el paper observa que la guía científica puede ayudar si está bien alineada, pero también anclar al agente si no lo está.[5]</p>
+        </div>
+      </section>
+
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Agentes con entornos dinámicos:</strong> EnvHarness refuerza la idea de que el próximo salto no será solo “mejor modelo”, sino mejores bucles de entrenamiento y evaluación.</li>
+        <li><strong>IA científica con controles estadísticos:</strong> el trabajo de biomarcadores de Google insiste en trazabilidad, separación de señales y filtros adversariales; justo lo aburrido que evita desastres caros.</li>
+        <li><strong>Contexto físico para modelos:</strong> la movilidad como señal complementaria al texto puede mejorar mapas, búsquedas locales y predicción urbana.</li>
+        <li><strong>Gobernanza como producto estratégico:</strong> AI Futures muestra que los grandes laboratorios están creando canales propios para moldear el debate público sobre poder, autonomía y riesgo.</li>
+      </ul>
+
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <ul>
+        <li><strong>Anthropic:</strong> revisadas news, research y engineering; no detecté una novedad posterior al informe anterior más fuerte que la pieza de proteínas/química ya cubierta.</li>
+        <li><strong>Google AI / DeepMind:</strong> Google AI no mostró entradas nuevas posteriores al 19 en su feed principal; DeepMind no aportó una pieza nueva no duplicada respecto al informe del 21.</li>
+        <li><strong>arXiv RSS cs.AI/cs.LG:</strong> los feeds consultados no listaron items nuevos en sábado; usé Hugging Face Papers para localizar papers recientes relevantes.</li>
+        <li><strong>Meta, Microsoft, Mistral y NVIDIA:</strong> revisados como fuentes adicionales; no seleccioné entradas dentro de la ventana ampliada con suficiente relevancia frente a las cinco piezas anteriores.</li>
+      </ul>
+
+      <h2>Fuentes</h2>
+      <ol class="source-list">
+        <li id="source-1"><a href="https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data">https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data</a> — An AI tool for prioritizing candidate biomarkers from wearable sensor data</li>
+        <li id="source-2"><a href="https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place">https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place</a> — How mobility gives language models a deeper understanding of place</li>
+        <li id="source-3"><a href="https://openai.com/index/introducing-ai-futures">https://openai.com/index/introducing-ai-futures</a> — Introducing AI Futures</li>
+        <li id="source-4"><a href="https://huggingface.co/papers/2608.19880">https://huggingface.co/papers/2608.19880</a> — EnvHarness: Awakening Static Worlds for Agent Learning</li>
+        <li id="source-5"><a href="https://huggingface.co/papers/2608.19799">https://huggingface.co/papers/2608.19799</a> — SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?</li>
+      </ol>
+
+      <p><strong>Cierre AIDA:</strong> informe con pocas novedades estrictamente nuevas, pero cinco señales útiles en la semana. Hoy el radar no grita; susurra con bastante mala intención metodológica.</p>
+    </article>
+  </main>
+</body>
+</html>

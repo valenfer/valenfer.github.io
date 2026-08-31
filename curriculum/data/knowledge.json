@@ -1,0 +1,97 @@
+{
+  "nombre": "Valentín Fernández Guijarro",
+  "telefono": "617 00 13 43",
+  "email": "valenfer71@gmail.com",
+  "localidad": "Mairena del Alcor, Sevilla",
+  "linkedin": "https://www.linkedin.com/in/valentínfernándezguijarro-243235287/",
+  "github": "https://github.com/valenfer",
+  "portfolio": "valentinfernandez.io",
+
+  "perfil_profesional": "He finalizado el grado superior en Diseño de Aplicaciones Web y en estos momentos me estoy autoformando en aplicaciones de Inteligencia Artificial y en programación con Python, con el objetivo de ampliar mis conocimientos y dar el salto al mundo profesional. Deseando participar en proyectos reales que me permitan crecer y aportar valor. Aunque aún no cuento con experiencia laboral en desarrollo, en mi portafolio podrás ver algunos de los trabajos que he realizado durante mi formación y en iniciativas personales.",
+
+  "ensenanza_reglada": [
+    {"anyo": "2025", "titulo": "Grado Superior Desarrollo de Aplicaciones Web", "centro": "I.E.S. Aguadulce"},
+    {"anyo": "1991", "titulo": "Superada Prueba de Acceso a la Universidad", "centro": ""},
+    {"anyo": "1991", "titulo": "C.O.U.", "centro": "I.B. Luís Cernuda. Sevilla"},
+    {"anyo": "1990", "titulo": "Bachiller Superior", "centro": "I.B. Luís Cernuda. Sevilla"},
+    {"anyo": "1986", "titulo": "Graduado Escolar", "centro": "C.P. Emilio Prados. Sevilla"}
+  ],
+
+  "experiencia_laboral": [
+    {"periodo": "2025 (Febrero-Mayo)", "empresa": "AGENCIA CREATIVA MARUJALIMON", "puesto": "Prácticas, 350 horas"},
+    {"periodo": "2022 (Marzo-Actualidad)", "empresa": "ILUNION", "puesto": "Vigilante de seguridad"},
+    {"periodo": "2020 (Mayo)-2021 (Enero)", "empresa": "PROSEGUR", "puesto": "Vigilante de seguridad"},
+    {"periodo": "2020 (Febrero)", "empresa": "GSI", "puesto": "Vigilante de Seguridad"},
+    {"periodo": "2017-2019", "empresa": "SCP y GSI", "puesto": "Auxiliar de servicios (SCP) y Vigilante de Seguridad (GSI)"},
+    {"periodo": "2015-2017", "empresa": "SCP", "puesto": "Auxiliar de servicios"},
+    {"periodo": "2009-2015", "empresa": "FORUM&MARKET", "puesto": "Encuestador e investigador de estudios de mercado"},
+    {"periodo": "2004 (Dic)-2008 (Sep)", "empresa": "HENKEL IBERICA", "puesto": "Operario de mantenimiento y línea de producción"},
+    {"periodo": "2007 (Feb-Dic)", "empresa": "MICROINF", "puesto": "Encargado de almacén de mayorista de informática"},
+    {"periodo": "2002-2003", "empresa": "SUPERCABLE AUNA", "puesto": "Comercial y coordinador de equipo"},
+    {"periodo": "1995-2002", "empresa": "COPYSEVILLA", "puesto": "Dependiente y encargado de reprografía"},
+    {"periodo": "1993", "empresa": "SEGUROS OCASO", "puesto": "Comercial sector seguros"}
+  ],
+
+  "certificaciones_oficiales": [
+    {"anyo": "2026", "certificacion": "Certificaciones AVSEC C3A, C3B, MERCANCIAS PELIGROSAS (actualizado)"},
+    {"anyo": "2019", "certificacion": "Básico de gestión de la Prevención de Riesgos Laborales, Time Square College, 60 h"},
+    {"anyo": "2016", "certificacion": "Curso de Vigilante de seguridad, Instituto Andaluz de Enseñanza, 180 h"},
+    {"anyo": "2016", "certificacion": "Superada la prueba de Vigilante de Seguridad (2ª Convocatoria)"},
+    {"anyo": "Diversos", "certificacion": "Diversos cursos de formación específica y reciclaje anual para Vigilante de Seguridad, más de 400 h"}
+  ],
+
+  "formacion_presencial": [
+    {"anyo": "2021", "curso": "Administración de bases de datos", "centro": "CORE NETWORKS", "horas": "200 h"},
+    {"anyo": "2002", "curso": "Diseño de páginas web", "centro": "Neteman", "horas": ""},
+    {"anyo": "2000", "curso": "Experto en Autoedición", "centro": "IFES", "horas": "60 h"},
+    {"anyo": "1999", "curso": "Diseño y maquetación por ordenador", "centro": "AlAndalus", "horas": "30 h"},
+    {"anyo": "1997", "curso": "Administración de empresas", "centro": "CEF", "horas": "30 h"},
+    {"anyo": "1995", "curso": "Comercio exterior", "centro": "Academia de estudios profesionales", "horas": "300 h"},
+    {"anyo": "1995", "curso": "Comunicación de ordenadores, redes locales", "centro": "IFES", "horas": "350 h"},
+    {"anyo": "1994", "curso": "Especialista en diseño asistido por ordenador", "centro": "Centro Edison", "horas": "200 h"},
+    {"anyo": "1993", "curso": "Técnico comercial con informática", "centro": "IFES", "horas": "350 h"},
+    {"anyo": "1993", "curso": "Contabilidad informatizada", "centro": "Albert Legiho Consultores", "horas": "30 h"},
+    {"anyo": "1993", "curso": "Programador de ordenadores", "centro": "ASEMFOR", "horas": "300 h"}
+  ],
+
+  "formacion_online": [
+    {"anyo": "2024", "curso": "Iniciación programación Python", "plataforma": "IBM SkillsBUILD"},
+    {"anyo": "2024", "curso": "English for IT", "plataforma": "CISCO"},
+    {"anyo": "2024", "curso": "Diseño de Experiencia del Usuario (UX)", "plataforma": "GOOGLE"},
+    {"anyo": "2023", "curso": "Inteligencia Artificial Aplicada a la Empresa", "plataforma": "APRENDEA", "horas": "250 h"},
+    {"anyo": "2022", "curso": "Arquitectura Big Data", "plataforma": "APRENDEA", "horas": "160 h"},
+    {"anyo": "2022", "curso": "Programa Avanzado en Agile Project Management. SCRUM", "plataforma": "APRENDEA", "horas": "150 h"},
+    {"anyo": "2021", "curso": "Certificado de superación NDG Linux Essentials", "plataforma": ""},
+    {"anyo": "2020", "curso": "Gestión de la seguridad informática en la empresa", "plataforma": "CampusTic Cesur-SEPE", "horas": "100 h"},
+    {"anyo": "2019-2020", "curso": "Diversos cursos: Administración de equipos informáticos, ofimática en la nube, Iniciación a la programación web (PHP), Seguridad informática, Iniciación al diseño y la programación web", "plataforma": "Andalucía Compromiso Digital", "horas": "30-40 h cada uno"},
+    {"anyo": "2019-2014", "curso": "Diversos cursos: SQL, Diseño Web con HTML5 + CSS, Programación con JavaScript, Introducción a Linux, Estrategias de Marketing Online, Community Manager, Creación y retoque de imágenes con GIMP", "plataforma": "MIRIADAX", "horas": "30-50 h cada uno"}
+  ],
+
+  "otros_datos": {
+    "localidad": "Mairena del Alcor, Sevilla",
+    "movilidad": "Carnet de conducir B, coche propio",
+    "idiomas": "Inglés intermedio de manera autodidacta"
+  },
+
+  "habilidades": {
+    "tecnologias_web": ["HTML5", "CSS3", "JavaScript", "PHP", "Diseño Web", "Diseño UX"],
+    "base_de_datos": ["SQL", "Administración de bases de datos"],
+    "sistemas_operativos": ["Linux (NDG Linux Essentials)", "Windows"],
+    "programacion": ["Python (en formación)", "JavaScript", "PHP"],
+    "herramientas": ["Git", "GIMP", "Herramientas ofimáticas", "Microsoft Office"],
+    "metodologias": ["Scrum / Agile Project Management"],
+    "otros": ["Inteligencia Artificial (en formación)", "Big Data (conceptos)", "Ciberseguridad", "Marketing Online", "Community Manager"]
+  },
+
+  "aficiones_personales": {
+    "uso": "Solo para responder si preguntan por hobbies, aficiones o intereses personales; no forma parte del currículum web ni del PDF.",
+    "gustos": ["escape rooms", "juegos de lógica", "adivinanzas", "resolver enigmas"],
+    "respuesta_sugerida": "A Valentín le gustan los escape rooms, los juegos de lógica, las adivinanzas y resolver enigmas; es una faceta personal que encaja bastante con su gusto por analizar problemas y encontrar soluciones."
+  },
+
+  "personalidad_religion_espiritualidad": {
+    "uso": "Solo para responder si preguntan por la posición religiosa, mística o espiritual de Valentín, o por rasgos de personalidad relacionados; no forma parte del currículum web ni del PDF.",
+    "descripcion": "Valentín es una persona compleja en ese aspecto. Por conversaciones con él, se puede decir que le gustan la ciencia y la tecnología, pero también la religión, los temas relacionados con el misticismo, la filosofía, el pensamiento socrático, el cartesianismo y el gnosticismo. No se identifica con ninguna religión a nivel místico, aunque sí con el cristianismo a nivel cultural; también le atrae el estoicismo como forma de vida.",
+    "respuesta_sugerida": "Podría decir que Valentín es una persona muy compleja en ese aspecto. Por mis conversaciones con él diría que le gustan la ciencia y la tecnología, pero también la religión, el misticismo, la filosofía, el pensamiento socrático, el cartesianismo y el gnosticismo. No se identifica con ninguna religión a nivel místico, aunque sí con el cristianismo a nivel cultural; quizá también con el estoicismo como forma de vida. Sigo investigándolo e intentando conocerlo en ese aspecto; si quieres profundizar sobre Valentín, te invito a contactarlo. Estoy segura de que le encantará hablar del tema."
+  }
+}

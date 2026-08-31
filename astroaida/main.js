@@ -4,7 +4,7 @@
   var DATA_PREFIX = 'data/';
   var MAX_AGE_HOURS = 48;
 
-  var MODULES = ['launches', 'apod', 'sky-today', 'moon', 'star-chart', 'near-earth'];
+  var MODULES = ['launches', 'apod', 'sky-today', 'moon', 'star-chart', 'near-earth', 'ephemerides'];
 
   var LABELS = {
     launches: 'Lanzamientos',
@@ -12,7 +12,8 @@
     'sky-today': 'Cielo hoy',
     moon: 'Luna',
     'star-chart': 'Carta celeste',
-    'near-earth': 'Objetos cercanos'
+    'near-earth': 'Objetos cercanos',
+    ephemerides: 'Efemérides'
   };
 
   function el(tag, className, text) {
@@ -40,6 +41,44 @@
     container.classList.add('is-unavailable');
   }
 
+  var BODY_NAMES_ES = {
+    Sun: 'Sol', Moon: 'Luna', Mercury: 'Mercurio', Venus: 'Venus',
+    Mars: 'Marte', Jupiter: 'Júpiter', Saturn: 'Saturno',
+    Uranus: 'Urano', Neptune: 'Neptuno'
+  };
+
+  var CONSTELLATION_NAMES_ES = {
+    Aries: 'Aries', Taurus: 'Tauro', Gemini: 'Géminis', Cancer: 'Cáncer',
+    Leo: 'León', Virgo: 'Virgo', Libra: 'Libra', Scorpius: 'Escorpio',
+    Sagittarius: 'Sagitario', Capricornus: 'Capricornio', Aquarius: 'Acuario',
+    Pisces: 'Piscis', Orion: 'Orión', Ophiuchus: 'Ofiuco',
+    'Ursa Mayor': 'Osa Mayor', 'Ursa Minor': 'Osa Menor',
+    Cygnus: 'Cisne', Cassiopeia: 'Casiopea', Hercules: 'Hércules',
+    Lyra: 'Lira', Andromeda: 'Andrómeda', Pegasus: 'Pegaso',
+    Perseus: 'Perseo', Auriga: 'Auriga', Boötes: 'Boyeros',
+    'Corona Borealis': 'Corona Boreal', Serpens: 'Serpiente',
+    Delphinus: 'Delfín', 'Piscis Austrinus': 'Piscis Austral',
+    Grus: 'Grulla', Phoenix: 'Fénix', Tucana: 'Tucán',
+    Indus: 'Indio', Musca: 'Mosca', Carina: 'Quilla',
+    Vela: 'Vela', Puppis: 'Popa', Lupus: 'Lobo', Ara: 'Ara',
+    Triangulum: 'Triángulo', Cetus: 'Cetus', Eridanus: 'Eridano',
+    Hydra: 'Hidra', Corvus: 'Cuervo', Crux: 'Cruz',
+    'Canis Minor': 'Can Menor', 'Canis Major': 'Can Mayor',
+    Monoceros: 'Monoceros', Columba: 'Paloma', Lepus: 'Liebre',
+    Scutum: 'Escudo', Sagitta: 'Flecha', Equuleus: 'Equuleo',
+    Horologium: 'Reloj', Reticulum: 'Reticulante', Octans: 'Octante',
+    Chamaeleon: 'Camaleón', Volans: 'Volante', Sculptor: 'Escultor',
+    Fornax: 'Horno', Caelum: 'Cincel', Pavo: 'Pavo'
+  };
+
+  function translateBodyName(name) {
+    return BODY_NAMES_ES[name] || name;
+  }
+
+  function translateConstellation(name) {
+    return CONSTELLATION_NAMES_ES[name] || name;
+  }
+
   function formatNumber(value) {
     return value.toLocaleString('es-ES', { maximumFractionDigits: 0 });
   }
@@ -59,7 +98,7 @@
     if (isNaN(date.getTime())) {
       return 'desconocida';
     }
-    return date.toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' });
+    return date.toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Madrid' });
   }
 
   function isStale(iso) {
@@ -99,7 +138,7 @@
     if (!iso) { return 'Fecha pendiente'; }
     var date = new Date(iso);
     if (isNaN(date.getTime())) { return 'Fecha pendiente'; }
-    return date.toLocaleString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+    return date.toLocaleString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
   }
 
   function formatCountdown(iso) {
@@ -173,20 +212,22 @@
     container.appendChild(media);
 
     var body = el('div', 'apod__body');
-    var title = el('h3', 'apod__title', data.title || 'Imagen astronómica del día');
+    var titleText = data.title_es || data.title || 'Imagen astronómica del día';
+    var title = el('h3', 'apod__title', titleText);
     body.appendChild(title);
 
     var meta = el('p', 'apod__meta');
     if (data.date) {
-      meta.appendChild(el('span', 'apod__date', data.date));
+      meta.appendChild(el('span', 'apod__date', formatTimestamp(data.date + 'T12:00:00')));
     }
     if (data.copyright) {
       meta.appendChild(el('span', 'apod__credit', '© ' + data.copyright));
     }
     body.appendChild(meta);
 
-    if (data.explanation) {
-      body.appendChild(el('p', 'apod__explanation', data.explanation));
+    var explanationText = data.explanation_es || data.explanation;
+    if (explanationText) {
+      body.appendChild(el('p', 'apod__explanation', explanationText));
     }
     container.appendChild(body);
   }
@@ -214,7 +255,8 @@
     var tbody = el('tbody');
     data.bodies.forEach(function (body) {
       var row = el('tr');
-      var nameCell = el('th', null, body.name || '—');
+      var bodyName = body.name_es || translateBodyName(body.name) || '—';
+      var nameCell = el('th', null, bodyName);
       nameCell.setAttribute('scope', 'row');
       row.appendChild(nameCell);
       row.appendChild(el('td', null, formatAngle(body.altitude)));
@@ -223,7 +265,8 @@
         ? '—'
         : body.magnitude.toFixed(1);
       row.appendChild(el('td', null, magnitude));
-      row.appendChild(el('td', null, body.constellation || '—'));
+      var constellation = body.constellation_es || translateConstellation(body.constellation) || '—';
+      row.appendChild(el('td', null, constellation));
       tbody.appendChild(row);
     });
     table.appendChild(tbody);
@@ -241,20 +284,32 @@
     var container = moduleContainer('moon');
     container.textContent = '';
 
-    if (data.image_url) {
-      var figure = el('figure', 'moon__figure');
-      var img = moduleImage(data.image_url, 'Fase lunar');
-      figure.appendChild(img);
-      figure.appendChild(el('figcaption', null, data.phase || 'Fase lunar'));
-      container.appendChild(figure);
+    if (!window.MoonRenderer) {
+      container.appendChild(el('p', 'module__notice', 'La fase lunar no está disponible en este momento.'));
+      return;
     }
 
+    var params = window.MoonRenderer.phaseParams(data);
+    var phaseEs = window.MoonRenderer.translatePhase(data.phase);
+    var phaseLabel = phaseEs || 'Fase lunar';
+    var illuminationPct = Math.round(params.illumination * 100);
+
+    var figure = el('figure', 'moon__figure');
+    var canvas = el('canvas', 'moon__canvas');
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', 'Fase lunar: ' + phaseLabel + ', iluminación al ' + illuminationPct + ' %.');
+    window.MoonRenderer.renderMoon(canvas, {
+      illumination: data.illumination,
+      phase: data.phase,
+      size: 280
+    });
+    figure.appendChild(canvas);
+    figure.appendChild(el('figcaption', null, phaseLabel));
+    container.appendChild(figure);
+
     var stats = el('dl', 'moon__stats');
-    addStat(stats, 'Fase', data.phase || '—');
-    var illumination = (data.illumination === undefined || data.illumination === null || isNaN(data.illumination))
-      ? '—'
-      : Math.round(data.illumination * 100) + ' %';
-    addStat(stats, 'Iluminación', illumination);
+    addStat(stats, 'Fase', phaseLabel);
+    addStat(stats, 'Iluminación', illuminationPct + ' %');
     var distance = (data.distance_km === undefined || data.distance_km === null || isNaN(data.distance_km))
       ? '—'
       : formatNumber(data.distance_km) + ' km';
@@ -329,13 +384,116 @@
     container.appendChild(list);
   }
 
+  function renderEphemerides(data) {
+    var container = moduleContainer('ephemerides');
+    container.textContent = '';
+
+    if (!data.events || !data.events.length) {
+      container.appendChild(el('p', 'module__notice', 'No hay efemérides registradas para esta fecha.'));
+      return;
+    }
+
+    if (data.target_date) {
+      var targetDate = new Date(data.target_date + 'T12:00:00');
+      var formattedDate = isNaN(targetDate.getTime()) ? data.target_date :
+        targetDate.toLocaleDateString('es-ES', { dateStyle: 'long' });
+      container.appendChild(el('p', 'ephem__date', 'Fecha: ' + formattedDate));
+    }
+
+    if (data.observation_window && data.observation_window.start_local && data.observation_window.end_local) {
+      var windowText = 'Ventana de observación (hora de Sevilla): ' +
+        formatTimestamp(data.observation_window.start_local) + ' — ' +
+        formatTimestamp(data.observation_window.end_local);
+      container.appendChild(el('p', 'ephem__window', windowText));
+    }
+
+    var list = el('ul', 'ephem__list');
+    data.events.forEach(function (event) {
+      var card = el('li', 'ephem__card');
+
+      var header = el('div', 'ephem__card-header');
+      var eventTitle = event.title_es || event.title || '';
+      if (event.title_translation_status === 'unavailable') {
+        eventTitle += ' (título original en inglés)';
+      }
+      header.appendChild(el('span', 'ephem__card-title', eventTitle));
+      if (event.start_local) {
+        header.appendChild(el('span', 'ephem__card-time', formatTimestamp(event.start_local)));
+      }
+      card.appendChild(header);
+
+      if (event.summary_es) {
+        card.appendChild(el('p', 'ephem__card-summary', event.summary_es));
+      }
+
+      if (event.visibility) {
+        var visClass = 'ephem__visibility ephem__visibility--' + (event.visibility.status || 'uncertain');
+        card.appendChild(el('span', visClass, event.visibility.label || event.visibility.status || ''));
+        if (event.visibility.reason) {
+          card.appendChild(el('p', 'ephem__card-summary', event.visibility.reason));
+        }
+      }
+
+      if (event.source && event.source.url && event.source.name) {
+        var link = el('a', 'ephem__link', 'Fuente: ' + event.source.name);
+        link.href = event.source.url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        card.appendChild(link);
+      }
+
+      list.appendChild(card);
+    });
+    container.appendChild(list);
+
+    if (data.weather) {
+      var weatherDiv = el('div', 'ephem__weather');
+      weatherDiv.appendChild(el('h3', 'ephem__weather-title', 'Condiciones meteorológicas'));
+      var wstats = el('dl', 'ephem__weather-stats');
+      if (data.weather.cloud_cover !== undefined && data.weather.cloud_cover !== null) {
+        addStat(wstats, 'Nubosidad', data.weather.cloud_cover + ' %');
+      }
+      if (data.weather.visibility !== undefined && data.weather.visibility !== null) {
+        addStat(wstats, 'Visibilidad', formatNumber(data.weather.visibility) + ' m');
+      }
+      if (data.weather.precipitation_probability !== undefined && data.weather.precipitation_probability !== null) {
+        addStat(wstats, 'Prob. precipitación', data.weather.precipitation_probability + ' %');
+      }
+      if (data.weather.temperature !== undefined && data.weather.temperature !== null) {
+        addStat(wstats, 'Temperatura', data.weather.temperature + ' °C');
+      }
+      weatherDiv.appendChild(wstats);
+      container.appendChild(weatherDiv);
+    }
+
+    if (data.sources && data.sources.length) {
+      var sourcesList = el('ul', 'ephem__sources');
+      data.sources.forEach(function (src) {
+        var li = el('li');
+        if (src.url) {
+          var a = el('a');
+          a.href = src.url;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.textContent = src.name || src.url;
+          li.appendChild(a);
+        } else {
+          li.textContent = src.name || '';
+        }
+        sourcesList.appendChild(li);
+      });
+      container.appendChild(sourcesList);
+    }
+  }
+
   var RENDERERS = {
     launches: renderLaunches,
     apod: renderApod,
     'sky-today': renderSkyToday,
     moon: renderMoon,
     'star-chart': renderStarChart,
-    'near-earth': renderNearEarth
+    'near-earth': renderNearEarth,
+    ephemerides: renderEphemerides
   };
 
   function updateStatus(results) {
