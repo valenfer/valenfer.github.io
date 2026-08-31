@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-08-30T08:42:58.710675+00:00",
+  "fetched_at": "2026-08-31T00:13:20.963891+00:00",
   "status": "live",
-  "target_date": "2026-08-31",
+  "target_date": "2026-09-01",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,52 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-08-31T00:00:00+02:00",
-    "end_local": "2026-09-01T12:00:00+02:00"
+    "start_local": "2026-09-01T00:00:00+02:00",
+    "end_local": "2026-09-02T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260831_15_100-in-the-sky-org-7989bd0ece9f-2026-08-31",
-      "type": "other",
-      "title_es": "Aproximación cercana a la Luna y Saturno",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna y Saturno pasan cerca uno del otro",
-      "start_local": "2026-08-31T04:32:48+02:00",
-      "visibility": {
-        "status": "visible",
-        "label": "Visible",
-        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
-        "altitude_deg": 60.8,
-        "azimuth_deg": 181.5,
-        "sun_altitude_deg": -34.6
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260831_15_100"
-      }
-    },
-    {
-      "id": "20260831_20_100-in-the-sky-org-429859f0dee2-2026-08-31",
-      "type": "conjunction",
-      "title_es": "Conjunción",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna y Saturno comparten la misma ascensión recta, a una separación de 7°02'",
-      "start_local": "2026-08-31T10:07:16+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Luna no observable: altitud 11.7°, Sol a 25.6°.",
-        "altitude_deg": 11.7,
-        "azimuth_deg": 273.1,
-        "sun_altitude_deg": 25.6
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260831_20_100"
-      }
-    },
-    {
-      "id": "20260901_10_100-in-the-sky-org-606dc6bd5787-2026-08-31",
+      "id": "20260901_10_100-in-the-sky-org-606dc6bd5787-2026-09-01",
       "type": "meteor_shower",
       "title_es": "Lluvia de meteoros",
       "title_translation_status": "deterministic",
@@ -73,10 +33,10 @@
     }
   ],
   "weather": {
-    "cloud_cover": 0.0,
-    "visibility": 43160.0,
+    "cloud_cover": 5.666666666666667,
+    "visibility": 44900.0,
     "precipitation_probability": 0,
-    "temperature": 22.5
+    "temperature": 23.6
   },
   "sources": [
     {
