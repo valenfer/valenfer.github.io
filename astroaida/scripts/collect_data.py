@@ -28,8 +28,9 @@ OBSERVER_TIMEZONE = ZoneInfo("Europe/Madrid")
 NASA_APOD_URL = "https://api.nasa.gov/planetary/apod"
 NASA_NEO_URL = "https://api.nasa.gov/neo/rest/v1/feed"
 ASTRONOMY_API_URL = "https://api.astronomyapi.com/api/v2"
+LAUNCH_LIBRARY_UPCOMING_URL = "https://ll.thespacedevs.com/2.3.0/launches/upcoming/"
 
-DATA_FILE_NAMES = ("apod.json", "sky-today.json", "moon.json", "star-chart.json", "near-earth.json", "ephemerides.json")
+DATA_FILE_NAMES = ("apod.json", "sky-today.json", "moon.json", "star-chart.json", "near-earth.json", "ephemerides.json", "launches.json")
 
 EPHEMERIDES_ICS_URL = "https://in-the-sky.org/newscalyear_ical.php?year={year}&maxdiff=7"
 OPEN_METEO_URL = "https://api.open-meteo.com/v1/forecast"
@@ -467,6 +468,50 @@ def normalize_star_chart(raw: Dict[str, Any]) -> Dict[str, Any]:
     return normalized
 
 
+
+def normalize_launches(raw: Dict[str, Any], max_items: int = 8) -> Dict[str, Any]:
+    if 'results' not in raw or not isinstance(raw['results'], list):
+        raise ValueError("Launch Library payload missing required results list")
+    launches = []
+    for item in raw['results'][:max_items]:
+        if not isinstance(item, dict):
+            continue
+        mission = item.get('mission') or {}
+        rocket = item.get('rocket') or {}
+        configuration = rocket.get('configuration') or {}
+        pad = item.get('pad') or {}
+        location = pad.get('location') or {}
+        status = item.get('status') or {}
+        agency = item.get('launch_service_provider') or {}
+        image = item.get('image') or {}
+        launch = {
+            'id': item.get('id') or '',
+            'name': item.get('name') or '',
+            'net': item.get('net') or '',
+            'window_start': item.get('window_start') or '',
+            'window_end': item.get('window_end') or '',
+            'status': status.get('name') or '',
+            'status_abbrev': status.get('abbrev') or '',
+            'agency': agency.get('name') or '',
+            'rocket': configuration.get('full_name') or configuration.get('name') or '',
+            'mission': mission.get('name') or '',
+            'mission_description': mission.get('description') or '',
+            'pad': pad.get('name') or '',
+            'location': location.get('name') or '',
+            'image_url': image.get('image_url') if isinstance(image, dict) else '',
+            'webcast_url': item.get('webcast_live') or '',
+            'url': item.get('url') or '',
+        }
+        if launch['name'] and launch['net']:
+            launches.append(launch)
+    return {
+        'source': 'The Space Devs Launch Library 2',
+        'fetched_at': _now_iso(),
+        'status': 'live',
+        'count': raw.get('count', len(launches)),
+        'launches': launches,
+    }
+
 def _missing_meta(dataset: Dict[str, Any]) -> List[str]:
     return [field for field in ('source', 'fetched_at', 'status')
             if not dataset.get(field)]
@@ -590,6 +635,18 @@ def validate_ephemerides(dataset: Dict[str, Any]) -> List[str]:
     return errors
 
 
+def validate_launches(dataset: Dict[str, Any]) -> List[str]:
+    errors = _missing_meta(dataset)
+    launches = dataset.get('launches')
+    if not isinstance(launches, list):
+        return errors + ['launches']
+    for index, launch in enumerate(launches):
+        for field in ('name', 'net'):
+            if not launch.get(field):
+                errors.append('launches[{}].{}'.format(index, field))
+    return errors
+
+
 VALIDATORS: Dict[str, Callable[[Dict[str, Any]], List[str]]] = {
     'apod.json': validate_apod,
     'near-earth.json': validate_neo,
@@ -597,6 +654,7 @@ VALIDATORS: Dict[str, Callable[[Dict[str, Any]], List[str]]] = {
     'moon.json': validate_moon,
     'star-chart.json': validate_star_chart,
     'ephemerides.json': validate_ephemerides,
+    'launches.json': validate_launches,
 }
 
 
@@ -683,6 +741,16 @@ def fetch_apod(api_key: str, timeout: int = 10, max_retries: int = 3) -> Optiona
 def fetch_neo(api_key: str, timeout: int = 10, max_retries: int = 3) -> Optional[Dict[str, Any]]:
     return fetch_with_retry(build_neo_url(api_key), timeout=timeout, max_retries=max_retries,
                             label='NASA NeoWs')
+
+
+def build_launches_url(limit: int = 8) -> str:
+    params = {'format': 'json', 'limit': limit, 'mode': 'normal', 'ordering': 'net'}
+    return LAUNCH_LIBRARY_UPCOMING_URL + '?' + urllib.parse.urlencode(params)
+
+
+def fetch_launches(timeout: int = 10, max_retries: int = 3) -> Optional[Dict[str, Any]]:
+    return fetch_with_retry(build_launches_url(), timeout=timeout, max_retries=max_retries,
+                            label='Launch Library 2')
 
 
 def fetch_astronomy_positions(app_id: str, app_secret: str, timeout: int = 10,
@@ -1689,7 +1757,31 @@ def write_preview_datasets(data_dir: str, fixtures_dir: Optional[str] = None) ->
         'star-chart.json': ('astronomy-star-chart.json', normalize_star_chart),
     }
 
+    preview_launches = {
+        'source': 'The Space Devs Launch Library 2',
+        'fetched_at': _now_iso(),
+        'status': 'preview',
+        'count': 1,
+        'launches': [{
+            'id': 'preview-starlink',
+            'name': 'Falcon 9 Block 5 | Starlink Group de muestra',
+            'net': (datetime.now(timezone.utc) + timedelta(days=2)).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
+            'window_start': '', 'window_end': '', 'status': 'To Be Confirmed', 'status_abbrev': 'TBC',
+            'agency': 'SpaceX', 'rocket': 'Falcon 9 Block 5', 'mission': 'Starlink',
+            'mission_description': 'Lanzamiento de muestra para validar la sección de eventos espaciales.',
+            'pad': 'Complejo de lanzamiento de muestra', 'location': 'Florida, Estados Unidos',
+            'image_url': '', 'webcast_url': '', 'url': 'https://ll.thespacedevs.com/2.3.0/launches/upcoming/'
+        }]
+    }
     failures = 0
+    if not validate_dataset('launches.json', preview_launches):
+        try:
+            write_json_atomically(os.path.join(data_dir, 'launches.json'), preview_launches)
+            print('[astroaida] wrote preview launches.json')
+        except Exception as exc:
+            print('[astroaida] launches.json: write failed ({})'.format(exc))
+            failures += 1
+
     for filename, (fixture_name, normalizer) in fixture_sources.items():
         path = os.path.join(fixtures_dir, fixture_name)
         try:

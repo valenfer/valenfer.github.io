@@ -5,6 +5,7 @@ import unittest
 SITE_ROOT = os.path.join(os.path.dirname(__file__), '..')
 
 EXPECTED_LINKS = [
+    ('#launches', 'Lanzamientos'),
     ('#apod', 'Astronomía del día'),
     ('#sky-today', 'Cielo hoy'),
     ('#moon', 'Luna'),
@@ -13,7 +14,7 @@ EXPECTED_LINKS = [
     ('#ephemerides', 'Efemérides'),
 ]
 
-EXPECTED_SECTIONS = ['apod', 'sky-today', 'moon', 'star-chart', 'near-earth', 'ephemerides']
+EXPECTED_SECTIONS = ['launches', 'apod', 'sky-today', 'moon', 'star-chart', 'near-earth', 'ephemerides']
 
 
 def css_block(css, selector):

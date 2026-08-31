@@ -26,6 +26,7 @@
 
   <nav class="site-nav" aria-label="Secciones de la página">
     <ul class="site-nav__list">
+      <li class="site-nav__item"><a class="site-nav__link" href="#launches">Lanzamientos</a></li>
       <li class="site-nav__item"><a class="site-nav__link" href="#apod">Astronomía del día</a></li>
       <li class="site-nav__item"><a class="site-nav__link" href="#sky-today">Cielo hoy</a></li>
       <li class="site-nav__item"><a class="site-nav__link" href="#moon">Luna</a></li>
@@ -48,6 +49,17 @@
         Habilítalo para ver el contenido o consulta las fuentes en el pie de página.
       </div>
     </noscript>
+
+
+    <section class="module module--launches" id="launches" aria-labelledby="launches-title">
+      <header class="module__header">
+        <p class="module__eyebrow">Eventos espaciales</p>
+        <h2 class="module__title" id="launches-title">Próximos lanzamientos</h2>
+      </header>
+      <div class="launches" data-module="launches">
+        <p class="module__notice">Cargando…</p>
+      </div>
+    </section>
 
     <section class="module module--apod" id="apod" aria-labelledby="apod-title">
       <header class="module__header">
@@ -113,12 +125,13 @@
   <footer class="site-footer">
     <p class="site-footer__note">
       AstroAIDA muestra datos recopilados por scripts automatizados a partir de
-      NASA y AstronomyAPI. En esta fase pueden ser datos de muestra.
+      NASA, AstronomyAPI y The Space Devs / Launch Library 2. En esta fase pueden ser datos de muestra.
     </p>
     <ul class="site-footer__sources">
       <li><a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener noreferrer">NASA APOD</a></li>
       <li><a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA NeoWs</a></li>
       <li><a href="https://astronomyapi.com" target="_blank" rel="noopener noreferrer">AstronomyAPI</a></li>
+      <li><a href="https://ll.thespacedevs.com/docs" target="_blank" rel="noopener noreferrer">The Space Devs / Launch Library 2</a></li>
       <li><a href="https://in-the-sky.org/" target="_blank" rel="noopener noreferrer">In-The-Sky</a></li>
       <li><a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></li>
       <li><a href="https://www.translated.net/MyMemory/" target="_blank" rel="noopener noreferrer">MyMemory</a></li>

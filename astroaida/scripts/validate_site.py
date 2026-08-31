@@ -17,7 +17,7 @@ REQUIRED_FILES = [
     'assets/favicon.svg',
 ]
 
-DATA_FILES = ['apod.json', 'sky-today.json', 'moon.json', 'star-chart.json', 'near-earth.json', 'ephemerides.json']
+DATA_FILES = ['apod.json', 'sky-today.json', 'moon.json', 'star-chart.json', 'near-earth.json', 'ephemerides.json', 'launches.json']
 DATA_META_FIELDS = ('source', 'fetched_at', 'status')
 DATA_REQUIRED_FIELDS = {
     'moon.json': ('image_url', 'phase', 'illumination', 'distance_km'),

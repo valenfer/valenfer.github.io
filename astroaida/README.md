@@ -10,6 +10,8 @@ publicable bajo `/astroaida/` en GitHub Pages.
   server-side con MyMemory y se conserva el original. Las efemérides usan
   traducción astronómica controlada por reglas/glosario.
 
+La sección **Próximos lanzamientos** se alimenta de `data/launches.json`, generado desde Launch Library 2 sin exponer claves en el navegador.
+
 Los JSON publicados usan `status: "live"` cuando proceden de las APIs. El frontend también
 admite `status: "preview"` para mostrar de forma honesta un fallback de muestra.
 
@@ -161,7 +163,8 @@ astroaida/
 │   ├── moon.json
 │   ├── star-chart.json
 │   ├── near-earth.json
-│   └── ephemerides.json
+│   ├── ephemerides.json
+│   └── launches.json
 ├── scripts/
 │   ├── collect_data.py    # recopilador + normalización + validación
 │   └── validate_site.py   # validador estático del sitio

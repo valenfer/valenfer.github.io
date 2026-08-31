@@ -16,6 +16,7 @@ sys.path.insert(0, SCRIPTS_ROOT)
 import collect_data
 
 EXPECTED_LINKS_WITH_EPH = [
+    ('#launches', 'Lanzamientos'),
     ('#apod', 'Astronomía del día'),
     ('#sky-today', 'Cielo hoy'),
     ('#moon', 'Luna'),
@@ -25,6 +26,7 @@ EXPECTED_LINKS_WITH_EPH = [
 ]
 
 EXPECTED_SECTIONS_WITH_EPH = [
+    'launches',
     'apod', 'sky-today', 'moon', 'star-chart', 'near-earth', 'ephemerides'
 ]
 
@@ -121,11 +123,11 @@ class TestEphemeridesNavMenu(unittest.TestCase):
         cls.parser = EphemeridesHtmlParser()
         cls.parser.feed(cls.index_html)
 
-    def test_sixth_nav_link_exists(self):
-        self.assertEqual(len(self.parser.nav_links), 6)
+    def test_seventh_nav_link_exists(self):
+        self.assertEqual(len(self.parser.nav_links), 7)
 
-    def test_sixth_nav_link_is_ephemerides(self):
-        self.assertEqual(self.parser.nav_links[5], ('#ephemerides', 'Efemérides'))
+    def test_seventh_nav_link_is_ephemerides(self):
+        self.assertEqual(self.parser.nav_links[6], ('#ephemerides', 'Efemérides'))
 
     def test_expected_links_with_ephemerides(self):
         self.assertEqual(self.parser.nav_links, EXPECTED_LINKS_WITH_EPH)
