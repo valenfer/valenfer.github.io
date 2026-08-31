@@ -3,6 +3,8 @@
 (function () {
   var DATA_PREFIX = 'data/';
   var MAX_AGE_HOURS = 48;
+  var LOCATION_STORAGE_KEY = 'astroaida.location.v1';
+  var DEFAULT_LOCATION = { label: 'Sevilla', latitude: 37.38283, longitude: -5.97317, elevation: 0, source: 'default' };
 
   var MODULES = ['launches', 'apod', 'sky-today', 'moon', 'star-chart', 'near-earth', 'ephemerides'];
 
@@ -128,6 +130,135 @@
   function addStat(list, label, value) {
     list.appendChild(el('dt', 'moon__stat-label', label));
     list.appendChild(el('dd', 'moon__stat-value', value === null || value === undefined ? '—' : value));
+  }
+
+  function parseCoordinate(value, min, max) {
+    var text = String(value === null || value === undefined ? '' : value).replace(',', '.').trim();
+    if (text === '') { return null; }
+    var parsed = Number(text);
+    if (!isFinite(parsed) || parsed < min || parsed > max) {
+      return null;
+    }
+    return parsed;
+  }
+
+  function loadStoredLocation() {
+    try {
+      var raw = window.localStorage && window.localStorage.getItem(LOCATION_STORAGE_KEY);
+      if (!raw) { return DEFAULT_LOCATION; }
+      var parsed = JSON.parse(raw);
+      if (typeof parsed.latitude !== 'number' || typeof parsed.longitude !== 'number') {
+        return DEFAULT_LOCATION;
+      }
+      return parsed;
+    } catch (error) {
+      return DEFAULT_LOCATION;
+    }
+  }
+
+  function saveLocation(location) {
+    try {
+      window.localStorage.setItem(LOCATION_STORAGE_KEY, JSON.stringify(location));
+    } catch (error) {
+      // La geolocalización sigue siendo útil aunque el navegador bloquee localStorage.
+    }
+  }
+
+  function clearLocation() {
+    try {
+      window.localStorage.removeItem(LOCATION_STORAGE_KEY);
+    } catch (error) {}
+    applyLocation(DEFAULT_LOCATION, 'Ubicación restablecida: Sevilla.');
+  }
+
+  function formatLocation(location) {
+    var elevation = Number.isFinite(location.elevation) ? ' · ' + Math.round(location.elevation) + ' m' : '';
+    return location.label + ' · ' + location.latitude.toFixed(5) + ', ' + location.longitude.toFixed(5) + elevation;
+  }
+
+  function applyLocation(location, message) {
+    var titleSpan = document.querySelector('.site-header__title span');
+    var observerLabel = document.querySelector('[data-role="observer-label"]');
+    var status = document.querySelector('[data-role="location-status"]');
+    if (titleSpan) { titleSpan.textContent = location.label; }
+    if (observerLabel) { observerLabel.textContent = location.label; }
+    if (status) {
+      status.textContent = message || ('Ubicación actual: ' + formatLocation(location) + '.');
+    }
+  }
+
+  function initLocationControls() {
+    var panel = moduleContainer('location');
+    if (!panel) { return; }
+    var current = loadStoredLocation();
+    applyLocation(current);
+
+    var form = panel.querySelector('[data-role="location-form"]');
+    if (form) {
+      form.latitude.value = current.latitude;
+      form.longitude.value = current.longitude;
+      form.elevation.value = Number.isFinite(current.elevation) ? current.elevation : '';
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var latitude = parseCoordinate(form.latitude.value, -90, 90);
+        var longitude = parseCoordinate(form.longitude.value, -180, 180);
+        var elevation = parseCoordinate(form.elevation.value || '0', -500, 9000);
+        form.latitude.setAttribute('aria-invalid', latitude === null ? 'true' : 'false');
+        form.longitude.setAttribute('aria-invalid', longitude === null ? 'true' : 'false');
+        form.elevation.setAttribute('aria-invalid', elevation === null ? 'true' : 'false');
+        if (latitude === null || longitude === null || elevation === null) {
+          applyLocation(loadStoredLocation(), 'Coordenadas no válidas. Latitud -90 a 90, longitud -180 a 180.');
+          return;
+        }
+        form.latitude.setAttribute('aria-invalid', 'false');
+        form.longitude.setAttribute('aria-invalid', 'false');
+        form.elevation.setAttribute('aria-invalid', 'false');
+        var manual = { label: 'Tu ubicación', latitude: latitude, longitude: longitude, elevation: elevation, source: 'manual' };
+        saveLocation(manual);
+        applyLocation(manual, 'Ubicación guardada en este navegador: ' + formatLocation(manual) + '.');
+      });
+    }
+
+    var gpsButton = panel.querySelector('[data-action="gps"]');
+    if (gpsButton) {
+      gpsButton.addEventListener('click', function () {
+        if (!navigator.geolocation) {
+          applyLocation(loadStoredLocation(), 'Este navegador no permite geolocalización. Usa coordenadas manuales.');
+          return;
+        }
+        gpsButton.disabled = true;
+        applyLocation(loadStoredLocation(), 'Solicitando permiso GPS…');
+        navigator.geolocation.getCurrentPosition(function (position) {
+          var coords = position.coords;
+          var location = {
+            label: 'Tu ubicación',
+            latitude: coords.latitude,
+            longitude: coords.longitude,
+            elevation: Number.isFinite(coords.altitude) ? coords.altitude : 0,
+            accuracy: Number.isFinite(coords.accuracy) ? Math.round(coords.accuracy) : null,
+            source: 'gps'
+          };
+          saveLocation(location);
+          if (form) {
+            form.latitude.value = location.latitude.toFixed(6);
+            form.longitude.value = location.longitude.toFixed(6);
+            form.elevation.value = Math.round(location.elevation);
+          }
+          var accuracy = location.accuracy ? ' Precisión aproximada: ±' + location.accuracy + ' m.' : '';
+          applyLocation(location, 'GPS capturado y guardado localmente: ' + formatLocation(location) + '.' + accuracy);
+          gpsButton.disabled = false;
+        }, function (error) {
+          var reasons = { 1: 'Permiso denegado.', 2: 'Ubicación no disponible.', 3: 'Tiempo de espera agotado.' };
+          applyLocation(loadStoredLocation(), (reasons[error.code] || 'No se pudo capturar el GPS.') + ' Puedes introducir coordenadas manualmente.');
+          gpsButton.disabled = false;
+        }, { enableHighAccuracy: true, timeout: 12000, maximumAge: 300000 });
+      });
+    }
+
+    var clearButton = panel.querySelector('[data-action="clear-location"]');
+    if (clearButton) {
+      clearButton.addEventListener('click', clearLocation);
+    }
   }
 
   function isSafeHttpUrl(url) {
@@ -576,6 +707,7 @@
   }
 
   function init() {
+    initLocationControls();
     var results = MODULES.map(loadModule);
     Promise.all(results).then(updateStatus);
   }

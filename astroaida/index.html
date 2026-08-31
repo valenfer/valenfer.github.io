@@ -20,12 +20,13 @@
 
   <header class="site-header">
     <p class="site-header__kicker">Observatorio AstroAIDA</p>
-    <h1 class="site-header__title">El cielo de <span>Sevilla</span></h1>
+    <h1 class="site-header__title">El cielo de <span data-role="observer-label">Sevilla</span></h1>
     <p class="site-header__subtitle">Bitácora celeste · coordenadas reales · datos en vivo para mirar arriba sin tragarte humo espacial</p>
   </header>
 
   <nav class="site-nav" aria-label="Secciones de la página">
     <ul class="site-nav__list">
+      <li class="site-nav__item"><a class="site-nav__link" href="#location">Ubicación</a></li>
       <li class="site-nav__item"><a class="site-nav__link" href="#launches">Lanzamientos</a></li>
       <li class="site-nav__item"><a class="site-nav__link" href="#apod">Astronomía del día</a></li>
       <li class="site-nav__item"><a class="site-nav__link" href="#sky-today">Cielo hoy</a></li>
@@ -50,6 +51,37 @@
       </div>
     </noscript>
 
+
+
+    <section class="module module--location" id="location" aria-labelledby="location-title">
+      <header class="module__header">
+        <p class="module__eyebrow">Observador</p>
+        <h2 class="module__title" id="location-title">Tu ubicación para futuras predicciones</h2>
+        <p class="module__intro">Puedes capturar tu GPS o introducir coordenadas manualmente. AstroAIDA guarda la ubicación solo en este navegador; de momento no se envía a ningún servidor ni recalcula los datos publicados.</p>
+      </header>
+      <div class="location-panel" data-module="location">
+        <div class="location-panel__actions">
+          <button class="location-panel__button" type="button" data-action="gps">Usar mi GPS</button>
+          <button class="location-panel__button location-panel__button--ghost" type="button" data-action="clear-location">Volver a Sevilla</button>
+        </div>
+        <form class="location-form" data-role="location-form">
+          <label>
+            Latitud
+            <input id="observer-latitude" inputmode="decimal" name="latitude" type="text" placeholder="37.38283" autocomplete="off" required aria-describedby="location-status">
+          </label>
+          <label>
+            Longitud
+            <input id="observer-longitude" inputmode="decimal" name="longitude" type="text" placeholder="-5.97317" autocomplete="off" required aria-describedby="location-status">
+          </label>
+          <label>
+            Altitud opcional
+            <input id="observer-elevation" inputmode="numeric" name="elevation" type="text" placeholder="0" autocomplete="off" aria-describedby="location-status">
+          </label>
+          <button class="location-panel__button location-panel__button--secondary" type="submit">Guardar coordenadas</button>
+        </form>
+        <p class="location-panel__status" id="location-status" data-role="location-status" role="status" aria-live="polite">Ubicación actual: Sevilla, 37.38283, -5.97317.</p>
+      </div>
+    </section>
 
     <section class="module module--launches" id="launches" aria-labelledby="launches-title">
       <header class="module__header">
