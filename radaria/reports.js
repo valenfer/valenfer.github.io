@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-08-31",
+    "title": "RadarIA diario — 2026-08-31",
+    "summary": "7 piezas: Anthropic MHS y ciencia, Google Earth AI, y papers sobre seguridad en robots, fusión de LLMs, geometría desde vídeo y límites del lenguaje.",
+    "url": "./informes/2026-08-31.html"
+  },
+  {
     "date": "2026-08-29",
     "title": "RadarIA diario — 2026-08-29",
     "summary": "7 piezas: Anthropic sobre estándar hardware y ciencia, Google Search en viajes, y papers sobre agentes, test-time optimization, modelos de mundo y UCI.",
