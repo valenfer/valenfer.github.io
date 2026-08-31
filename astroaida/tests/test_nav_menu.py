@@ -5,6 +5,7 @@ import unittest
 SITE_ROOT = os.path.join(os.path.dirname(__file__), '..')
 
 EXPECTED_LINKS = [
+    ('#location', 'Ubicación'),
     ('#launches', 'Lanzamientos'),
     ('#apod', 'Astronomía del día'),
     ('#sky-today', 'Cielo hoy'),
@@ -14,7 +15,7 @@ EXPECTED_LINKS = [
     ('#ephemerides', 'Efemérides'),
 ]
 
-EXPECTED_SECTIONS = ['launches', 'apod', 'sky-today', 'moon', 'star-chart', 'near-earth', 'ephemerides']
+EXPECTED_SECTIONS = ['location', 'launches', 'apod', 'sky-today', 'moon', 'star-chart', 'near-earth', 'ephemerides']
 
 
 def css_block(css, selector):
@@ -118,7 +119,7 @@ class TestNavMenuContract(unittest.TestCase):
         self.assertEqual(self.parser.section_ids, EXPECTED_SECTIONS)
 
     def test_no_hamburger_and_no_js_build(self):
-        self.assertEqual(self.parser.buttons, [])
+        self.assertFalse(any('site-nav' in cls for cls in self.parser.buttons))
         self.assertNotIn('site-nav', self.main_js)
         self.assertNotIn('hamburger', self.main_js.lower())
 

@@ -1077,3 +1077,75 @@ main {
 .launch-card__description { margin: 0.75rem 0 0; color: var(--text-muted); }
 .launch-card__link { display: inline-flex; min-height: 44px; align-items: center; margin-top: 0.8rem; margin-right: 1rem; font-weight: 700; }
 @media (min-width: 760px) { .launch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .launch-card--next { grid-column: 1 / -1; } }
+
+
+/* Location capture */
+.module__intro {
+  max-width: 70ch;
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+}
+.location-panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.2rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 24px;
+  background: rgba(8, 15, 32, 0.72);
+}
+.location-panel__actions,
+.location-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: end;
+}
+.location-form label {
+  display: grid;
+  gap: 0.35rem;
+  min-width: min(100%, 10rem);
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+.location-form input {
+  min-height: 44px;
+  max-width: 100%;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  padding: 0.65rem 0.75rem;
+  background: rgba(2, 4, 11, 0.78);
+  color: var(--text);
+}
+.location-panel__button {
+  min-height: 44px;
+  border: 1px solid rgba(128, 231, 255, 0.5);
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  background: rgba(128, 231, 255, 0.12);
+  color: var(--text);
+  font-weight: 800;
+  cursor: pointer;
+}
+.location-panel__button:hover {
+  border-color: var(--solar);
+}
+.location-panel__button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.location-panel__button--ghost {
+  background: transparent;
+}
+.location-panel__button--secondary {
+  background: rgba(255, 210, 122, 0.12);
+  border-color: rgba(255, 210, 122, 0.5);
+}
+.location-panel__status {
+  margin: 0;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+@media (max-width: 520px) {
+  .location-panel__actions, .location-form { display: grid; }
+  .location-panel__button, .location-form label { width: 100%; }
+}
