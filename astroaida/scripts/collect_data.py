@@ -23,8 +23,9 @@ OBSERVER_TIMEZONE = ZoneInfo("Europe/Madrid")
 NASA_APOD_URL = "https://api.nasa.gov/planetary/apod"
 NASA_NEO_URL = "https://api.nasa.gov/neo/rest/v1/feed"
 ASTRONOMY_API_URL = "https://api.astronomyapi.com/api/v2"
+LAUNCH_LIBRARY_UPCOMING_URL = "https://ll.thespacedevs.com/2.3.0/launches/upcoming/"
 
-DATA_FILE_NAMES = ("apod.json", "sky-today.json", "moon.json", "star-chart.json", "near-earth.json")
+DATA_FILE_NAMES = ("apod.json", "sky-today.json", "moon.json", "star-chart.json", "near-earth.json", "launches.json")
 
 DEFAULT_DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 
@@ -225,6 +226,52 @@ def normalize_star_chart(raw: Dict[str, Any]) -> Dict[str, Any]:
     return normalized
 
 
+
+def normalize_launches(raw: Dict[str, Any], max_items: int = 8) -> Dict[str, Any]:
+    if 'results' not in raw or not isinstance(raw['results'], list):
+        raise ValueError("Launch Library payload missing required results list")
+
+    launches = []
+    for item in raw['results'][:max_items]:
+        if not isinstance(item, dict):
+            continue
+        mission = item.get('mission') or {}
+        rocket = item.get('rocket') or {}
+        configuration = rocket.get('configuration') or {}
+        pad = item.get('pad') or {}
+        location = pad.get('location') or {}
+        status = item.get('status') or {}
+        agency = item.get('launch_service_provider') or {}
+
+        launch = {
+            'id': item.get('id') or '',
+            'name': item.get('name') or '',
+            'net': item.get('net') or '',
+            'window_start': item.get('window_start') or '',
+            'window_end': item.get('window_end') or '',
+            'status': status.get('name') or '',
+            'status_abbrev': status.get('abbrev') or '',
+            'agency': agency.get('name') or '',
+            'rocket': configuration.get('full_name') or configuration.get('name') or '',
+            'mission': mission.get('name') or '',
+            'mission_description': mission.get('description') or '',
+            'pad': pad.get('name') or '',
+            'location': location.get('name') or '',
+            'image_url': item.get('image', {}).get('image_url') if isinstance(item.get('image'), dict) else '',
+            'webcast_url': item.get('webcast_live') or '',
+            'url': item.get('url') or '',
+        }
+        if launch['name'] and launch['net']:
+            launches.append(launch)
+
+    return {
+        'source': 'The Space Devs Launch Library 2',
+        'fetched_at': _now_iso(),
+        'status': 'live',
+        'count': raw.get('count', len(launches)),
+        'launches': launches,
+    }
+
 def _missing_meta(dataset: Dict[str, Any]) -> List[str]:
     return [field for field in ('source', 'fetched_at', 'status')
             if not dataset.get(field)]
@@ -278,12 +325,25 @@ def validate_star_chart(dataset: Dict[str, Any]) -> List[str]:
     return errors
 
 
+def validate_launches(dataset: Dict[str, Any]) -> List[str]:
+    errors = _missing_meta(dataset)
+    launches = dataset.get('launches')
+    if not isinstance(launches, list):
+        return errors + ['launches']
+    for index, launch in enumerate(launches):
+        for field in ('name', 'net'):
+            if not launch.get(field):
+                errors.append('launches[{}].{}'.format(index, field))
+    return errors
+
+
 VALIDATORS: Dict[str, Callable[[Dict[str, Any]], List[str]]] = {
     'apod.json': validate_apod,
     'near-earth.json': validate_neo,
     'sky-today.json': validate_positions,
     'moon.json': validate_moon,
     'star-chart.json': validate_star_chart,
+    'launches.json': validate_launches,
 }
 
 
@@ -370,6 +430,16 @@ def fetch_apod(api_key: str, timeout: int = 10, max_retries: int = 3) -> Optiona
 def fetch_neo(api_key: str, timeout: int = 10, max_retries: int = 3) -> Optional[Dict[str, Any]]:
     return fetch_with_retry(build_neo_url(api_key), timeout=timeout, max_retries=max_retries,
                             label='NASA NeoWs')
+
+
+def build_launches_url(limit: int = 8) -> str:
+    params = {'format': 'json', 'limit': limit, 'mode': 'normal', 'ordering': 'net'}
+    return LAUNCH_LIBRARY_UPCOMING_URL + '?' + urllib.parse.urlencode(params)
+
+
+def fetch_launches(timeout: int = 10, max_retries: int = 3) -> Optional[Dict[str, Any]]:
+    return fetch_with_retry(build_launches_url(), timeout=timeout, max_retries=max_retries,
+                            label='Launch Library 2')
 
 
 def fetch_astronomy_positions(app_id: str, app_secret: str, timeout: int = 10,
@@ -473,6 +543,7 @@ def collect_real(data_dir: str, nasa_key: str, astronomy_id: str, astronomy_secr
     safe_fetch('sky_today', lambda: fetch_astronomy_positions(astronomy_id, astronomy_secret, timeout, max_retries))
     safe_fetch('moon', lambda: fetch_astronomy_moon(astronomy_id, astronomy_secret, timeout, max_retries))
     safe_fetch('star_chart', lambda: fetch_astronomy_star_chart(astronomy_id, astronomy_secret, timeout, max_retries))
+    safe_fetch('launches', lambda: fetch_launches(timeout, max_retries))
 
     positions_raw = fetch_results['sky_today']
     builders = {
@@ -481,6 +552,7 @@ def collect_real(data_dir: str, nasa_key: str, astronomy_id: str, astronomy_secr
         'sky-today.json': (positions_raw, normalize_astronomy_positions),
         'moon.json': (fetch_results['moon'], lambda raw: normalize_astronomy_moon(positions_raw, raw)),
         'star-chart.json': (fetch_results['star_chart'], normalize_star_chart),
+        'launches.json': (fetch_results['launches'], normalize_launches),
     }
 
     failures = 0
@@ -533,7 +605,43 @@ def write_preview_datasets(data_dir: str, fixtures_dir: Optional[str] = None) ->
         'star-chart.json': ('astronomy-star-chart.json', normalize_star_chart),
     }
 
+    preview_launches = {
+        'source': 'The Space Devs Launch Library 2',
+        'fetched_at': _now_iso(),
+        'status': 'preview',
+        'count': 2,
+        'launches': [
+            {
+                'id': 'preview-starlink',
+                'name': 'Falcon 9 Block 5 | Starlink Group de muestra',
+                'net': (datetime.now(timezone.utc) + timedelta(days=2)).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
+                'window_start': '', 'window_end': '', 'status': 'To Be Confirmed', 'status_abbrev': 'TBC',
+                'agency': 'SpaceX', 'rocket': 'Falcon 9 Block 5', 'mission': 'Starlink',
+                'mission_description': 'Lanzamiento de muestra para validar la sección de eventos espaciales.',
+                'pad': 'Complejo de lanzamiento de muestra', 'location': 'Florida, Estados Unidos',
+                'image_url': '', 'webcast_url': '', 'url': 'https://ll.thespacedevs.com/2.3.0/launches/upcoming/'
+            },
+            {
+                'id': 'preview-moon',
+                'name': 'Misión lunar de muestra',
+                'net': (datetime.now(timezone.utc) + timedelta(days=5)).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
+                'window_start': '', 'window_end': '', 'status': 'Go for Launch', 'status_abbrev': 'Go',
+                'agency': 'Agencia espacial', 'rocket': 'Cohete de muestra', 'mission': 'Demostración',
+                'mission_description': 'Evento ficticio usado solo cuando no hay datos en vivo.',
+                'pad': 'Plataforma de muestra', 'location': 'Órbita baja terrestre',
+                'image_url': '', 'webcast_url': '', 'url': 'https://ll.thespacedevs.com/2.3.0/launches/upcoming/'
+            }
+        ]
+    }
     failures = 0
+    if not validate_dataset('launches.json', preview_launches):
+        try:
+            write_json_atomically(os.path.join(data_dir, 'launches.json'), preview_launches)
+            print('[astroaida] wrote preview launches.json')
+        except Exception as exc:
+            print('[astroaida] launches.json: write failed ({})'.format(exc))
+            failures += 1
+
     for filename, (fixture_name, normalizer) in fixture_sources.items():
         path = os.path.join(fixtures_dir, fixture_name)
         try:

@@ -43,6 +43,16 @@ def valid_data(name):
                 'nasa_url': 'https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#obj=1',
             }],
         },
+        'launches.json': {
+            'source': 'The Space Devs Launch Library 2', 'fetched_at': '2026-08-11T12:00:00+00:00', 'status': 'preview',
+            'count': 1,
+            'launches': [{
+                'id': 'preview-1', 'name': 'Falcon 9 Block 5 | Starlink de muestra',
+                'net': '2026-08-13T22:00:00Z', 'agency': 'SpaceX', 'rocket': 'Falcon 9 Block 5',
+                'mission': 'Starlink', 'location': 'Florida, Estados Unidos', 'status': 'To Be Confirmed',
+                'url': 'https://ll.thespacedevs.com/2.3.0/launches/upcoming/'
+            }],
+        },
     }
     return datasets[name]
 
@@ -88,7 +98,7 @@ class TestValidateSite(unittest.TestCase):
         self.write('styles.css', 'body { color: #e8e6df; }')
         self.write('main.js', "'use strict';\nconst DATA = 'data/';\n")
         self.write('assets/favicon.svg', '<svg xmlns="http://www.w3.org/2000/svg"></svg>')
-        for name in ('apod.json', 'sky-today.json', 'moon.json', 'star-chart.json', 'near-earth.json'):
+        for name in ('apod.json', 'sky-today.json', 'moon.json', 'star-chart.json', 'near-earth.json', 'launches.json'):
             self.write_json(os.path.join('data', name), valid_data(name))
 
     def test_missing_required_files(self):

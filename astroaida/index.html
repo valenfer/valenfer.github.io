@@ -21,7 +21,7 @@
   <header class="site-header">
     <p class="site-header__kicker">AstroAIDA</p>
     <h1 class="site-header__title">El cielo de <span>Sevilla</span></h1>
-    <p class="site-header__subtitle">Observación astronómica para <span data-role="observer-label">Sevilla</span> · 37.38283, -5.97317 · 0 m</p>
+    <p class="site-header__subtitle">Observación astronómica para <span data-role="observer-label">Sevilla</span><span class="site-header__coords">37.38283, -5.97317 · 0 m</span></p>
   </header>
 
   <aside class="data-status" id="data-status" role="status" aria-live="polite" aria-atomic="true">
@@ -37,6 +37,17 @@
         Habilítalo para ver el contenido o consulta las fuentes en el pie de página.
       </div>
     </noscript>
+
+
+    <section class="module module--launches" aria-labelledby="launches-title">
+      <header class="module__header">
+        <p class="module__eyebrow">Eventos espaciales</p>
+        <h2 class="module__title" id="launches-title">Próximos lanzamientos</h2>
+      </header>
+      <div class="launches" data-module="launches">
+        <p class="module__notice">Cargando…</p>
+      </div>
+    </section>
 
     <section class="module module--apod" aria-labelledby="apod-title">
       <header class="module__header">
@@ -98,6 +109,7 @@
       <li><a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener noreferrer">NASA APOD</a></li>
       <li><a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA NeoWs</a></li>
       <li><a href="https://astronomyapi.com" target="_blank" rel="noopener noreferrer">AstronomyAPI</a></li>
+      <li><a href="https://ll.thespacedevs.com/docs" target="_blank" rel="noopener noreferrer">The Space Devs / Launch Library 2</a></li>
     </ul>
   </footer>
 

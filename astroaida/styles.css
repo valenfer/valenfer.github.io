@@ -121,6 +121,11 @@ a:hover {
   margin: 1rem 0 0;
   color: var(--text-muted);
   font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+.site-header__coords {
+  display: block;
 }
 
 .data-status {
@@ -162,6 +167,8 @@ a:hover {
 
 .data-status__source {
   font-style: italic;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .data-status__state {
@@ -520,5 +527,78 @@ main {
   *::after {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+
+/* Launches */
+.launch-grid {
+  display: grid;
+  gap: 1rem;
+}
+.launch-card {
+  padding: 1.2rem;
+  border: 1px solid var(--ink-border);
+  background: linear-gradient(145deg, rgba(127, 178, 201, 0.08), rgba(232, 180, 106, 0.05));
+}
+.launch-card--next {
+  border-color: rgba(232, 180, 106, 0.55);
+}
+.launch-card__kicker {
+  margin: 0 0 0.35rem;
+  color: var(--accent-cyan);
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.launch-card__title {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  font-weight: 500;
+}
+.launch-card__date {
+  margin: 0.7rem 0 0;
+  color: var(--accent-solar);
+  font-weight: 650;
+}
+.launch-card__countdown {
+  margin: 0.15rem 0 0.8rem;
+  color: var(--text);
+}
+.launch-card__facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 0.75rem;
+  margin: 0 0 0.8rem;
+}
+.launch-card__description {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+}
+.launch-card__link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 0.8rem;
+  font-weight: 700;
+}
+@media (min-width: 760px) {
+  .launch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .launch-card--next { grid-column: 1 / -1; }
+}
+
+@media (max-width: 520px) {
+  .site-header { padding-inline: 1rem; }
+  .site-header__subtitle { font-size: 0.88rem; }
+  .data-status__item { display: block; }
+  .data-status__name,
+  .data-status__source,
+  .data-status__time {
+    display: block;
+    min-width: 0;
+  }
+  .data-status__state {
+    display: inline-block;
+    margin: 0.2rem 0;
   }
 }

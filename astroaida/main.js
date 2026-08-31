@@ -4,9 +4,10 @@
   var DATA_PREFIX = 'data/';
   var MAX_AGE_HOURS = 48;
 
-  var MODULES = ['apod', 'sky-today', 'moon', 'star-chart', 'near-earth'];
+  var MODULES = ['launches', 'apod', 'sky-today', 'moon', 'star-chart', 'near-earth'];
 
   var LABELS = {
+    launches: 'Lanzamientos',
     apod: 'Astronomía del día',
     'sky-today': 'Cielo hoy',
     moon: 'Luna',
@@ -88,6 +89,67 @@
   function addStat(list, label, value) {
     list.appendChild(el('dt', 'moon__stat-label', label));
     list.appendChild(el('dd', 'moon__stat-value', value === null || value === undefined ? '—' : value));
+  }
+
+  function isSafeHttpUrl(url) {
+    return typeof url === 'string' && /^https:\/\//i.test(url);
+  }
+
+  function formatLaunchDate(iso) {
+    if (!iso) { return 'Fecha pendiente'; }
+    var date = new Date(iso);
+    if (isNaN(date.getTime())) { return 'Fecha pendiente'; }
+    return date.toLocaleString('es-ES', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+  }
+
+  function formatCountdown(iso) {
+    var date = new Date(iso);
+    if (isNaN(date.getTime())) { return 'Cuenta atrás pendiente'; }
+    var diff = date.getTime() - Date.now();
+    if (diff <= 0) { return 'Ventana de lanzamiento abierta'; }
+    var days = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    var minutes = Math.floor((diff % 3600000) / 60000);
+    if (days > 0) { return 'T− ' + days + ' d ' + hours + ' h'; }
+    return 'T− ' + hours + ' h ' + minutes + ' min';
+  }
+
+  function renderLaunches(data) {
+    var container = moduleContainer('launches');
+    container.textContent = '';
+    if (!data.launches || !data.launches.length) {
+      container.appendChild(el('p', 'module__notice', 'No hay lanzamientos próximos disponibles.'));
+      return;
+    }
+    var list = el('div', 'launch-grid');
+    data.launches.slice(0, 6).forEach(function (launch, index) {
+      var card = el('article', 'launch-card' + (index === 0 ? ' launch-card--next' : ''));
+      card.appendChild(el('p', 'launch-card__kicker', index === 0 ? 'Próximo lanzamiento' : (launch.agency || 'Evento espacial')));
+      card.appendChild(el('h3', 'launch-card__title', launch.name || 'Lanzamiento espacial'));
+      card.appendChild(el('p', 'launch-card__date', formatLaunchDate(launch.net)));
+      card.appendChild(el('p', 'launch-card__countdown', formatCountdown(launch.net)));
+      var facts = el('dl', 'launch-card__facts');
+      addStat(facts, 'Agencia', launch.agency || '—');
+      addStat(facts, 'Cohete', launch.rocket || '—');
+      addStat(facts, 'Lugar', launch.location || launch.pad || '—');
+      addStat(facts, 'Estado', launch.status || '—');
+      card.appendChild(facts);
+      if (launch.mission_description) {
+        card.appendChild(el('p', 'launch-card__description', launch.mission_description));
+      }
+      if (isSafeHttpUrl(launch.webcast_url)) {
+        var webcast = el('a', 'launch-card__link', 'Ver webcast');
+        webcast.href = launch.webcast_url; webcast.target = '_blank'; webcast.rel = 'noopener noreferrer';
+        card.appendChild(webcast);
+      }
+      if (isSafeHttpUrl(launch.url)) {
+        var link = el('a', 'launch-card__link', 'Ficha del lanzamiento');
+        link.href = launch.url; link.target = '_blank'; link.rel = 'noopener noreferrer';
+        card.appendChild(link);
+      }
+      list.appendChild(card);
+    });
+    container.appendChild(list);
   }
 
   function renderApod(data) {
@@ -268,6 +330,7 @@
   }
 
   var RENDERERS = {
+    launches: renderLaunches,
     apod: renderApod,
     'sky-today': renderSkyToday,
     moon: renderMoon,

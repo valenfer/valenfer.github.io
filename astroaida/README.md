@@ -5,8 +5,10 @@ publicable bajo `/astroaida/` en GitHub Pages.
 
 - **Frontend:** HTML/CSS/JS plano. Solo lee JSON locales de `astroaida/data/`.
 - **Backend:** recopiladores Python 3.11 (stdlib) que normalizan y validan datos de
-  NASA (APOD, NeoWs) y AstronomyAPI antes de escribirlos de forma atómica.
+  NASA (APOD, NeoWs), AstronomyAPI y The Space Devs / Launch Library 2 antes de escribirlos de forma atómica.
 - **Idioma de la interfaz:** español. El texto de origen de APOD se mantiene en inglés y se etiqueta.
+
+La sección **Próximos lanzamientos** se alimenta de `data/launches.json`, generado desde Launch Library 2 sin exponer claves en el navegador.
 
 Los JSON publicados usan `status: "live"` cuando proceden de las APIs. El frontend también
 admite `status: "preview"` para mostrar de forma honesta un fallback de muestra.
@@ -104,7 +106,8 @@ astroaida/
 │   ├── sky-today.json
 │   ├── moon.json
 │   ├── star-chart.json
-│   └── near-earth.json
+│   ├── near-earth.json
+│   └── launches.json
 ├── scripts/
 │   ├── collect_data.py    # recopilador + normalización + validación
 │   └── validate_site.py   # validador estático del sitio
