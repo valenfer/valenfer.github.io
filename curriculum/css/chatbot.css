@@ -32,6 +32,41 @@
   opacity: 0;
 }
 
+.chatbot-burbuja::before {
+  content: 'Pregúntale a AIDA';
+  position: absolute;
+  right: 72px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: max-content;
+  max-width: 190px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--fg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.chatbot-burbuja::after {
+  content: '';
+  position: absolute;
+  right: 63px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: var(--card);
+}
+
+.chatbot-burbuja.abierta::before,
+.chatbot-burbuja.abierta::after {
+  display: none;
+}
+
 .chatbot-burbuja:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 35px rgba(0, 212, 170, 0.6);
@@ -425,6 +460,11 @@
     right: 15px;
     width: 52px;
     height: 52px;
+  }
+
+  .chatbot-burbuja::before,
+  .chatbot-burbuja::after {
+    display: none;
   }
 
   .chatbot-burbuja svg {
