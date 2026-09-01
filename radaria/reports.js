@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    "date": "2026-09-01",
+    "title": "RadarIA diario — 2026-09-01",
+    "summary": "4 piezas: OpenAI en IA pública y seguridad juvenil, Microsoft Research en patología eficiente y un paper práctico para WhisperX.",
+    "url": "./informes/2026-09-01.html"
+  },
+  {
     "date": "2026-08-31",
     "title": "RadarIA diario — 2026-08-31",
     "summary": "7 piezas: Anthropic MHS y ciencia, Google Earth AI, y papers sobre seguridad en robots, fusión de LLMs, geometría desde vídeo y límites del lenguaje.",

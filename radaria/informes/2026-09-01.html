@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RadarIA diario — 2026-09-01</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell">
+    <header class="hero">
+      <p class="eyebrow">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-09-01</h1>
+      <p class="subtitle">Rango investigado: desde 2026-08-25 hasta 2026-09-01, hora peninsular española. No había histórico fiable previo en <code>radaria/reports.js</code>, así que he ampliado hasta 7 días porque en las últimas 24 horas había pocas piezas realmente destacables.</p>
+      <p class="method">Metodología: revisión de RSS/páginas oficiales de OpenAI, Google DeepMind, Anthropic, Microsoft Research y arXiv; prioricé fuentes primarias y descarté duplicados o anuncios sin sustancia técnica.</p>
+    </header>
+
+    <section class="summary-card">
+      <h2>Resumen ejecutivo</h2>
+      <p>Jornada tranquila en anuncios de frontera, pero con señales útiles: OpenAI empuja IA pública y seguridad juvenil, Microsoft ataca el coste computacional en patología fundacional, y arXiv trae una mejora práctica para transcripción larga con WhisperX. Poca pirotecnia, que tampoco viene mal para desayunar sin atragantarse.</p>
+    </section>
+
+    <section class="news-grid">
+      <article class="news-card">
+        <span class="badge producto">Producto</span>
+        <h2>Polimill usa modelos GPT y Codex para infraestructura pública de IA en Japón</h2>
+        <p class="meta">Fuente: OpenAI · Fecha: 2026-08-31</p>
+        <p><strong>Por qué importa:</strong> es una señal de adopción institucional: OpenAI describe que Polimill utiliza modelos GPT y Codex para ayudar a municipios japoneses a buscar y usar conocimiento administrativo y acelerar desarrollo.[1]</p>
+        <p><strong>Resumen:</strong> el foco no es un nuevo modelo, sino integración en flujos públicos: búsqueda de conocimiento, asistencia al desarrollo y soporte a administraciones locales.[1]</p>
+        <p><strong>Impacto práctico:</strong> si funciona bien, este tipo de implantación puede reducir fricción en servicios municipales y convertir Codex/GPT en capa operativa, no solo en chatbot bonito de escaparate.[1]</p>
+        <a href="https://openai.com/index/polimill">Leer fuente</a>
+      </article>
+
+      <article class="news-card">
+        <span class="badge informe">Informe</span>
+        <h2>OpenAI apoya una ley de California sobre seguridad juvenil en IA</h2>
+        <p class="meta">Fuente: OpenAI · Fecha: 2026-08-31</p>
+        <p><strong>Por qué importa:</strong> OpenAI afirma que apoya la SB 1119 de California para impulsar salvaguardas de IA adecuadas por edad para adolescentes, intentando equilibrar protección y oportunidades de aprendizaje/creación.[2]</p>
+        <p><strong>Resumen:</strong> no es investigación técnica, pero sí relevante para producto: apunta a más controles de edad, experiencia diferenciada para menores y presión regulatoria sobre asistentes generalistas.[2]</p>
+        <p><strong>Impacto práctico:</strong> desarrolladores de apps con IA conversacional deberían anticipar requisitos de seguridad juvenil, trazabilidad de políticas y UX adaptada por edad.[2]</p>
+        <a href="https://openai.com/index/supporting-california-bill-advance-ai-youth-safety">Leer fuente</a>
+      </article>
+
+      <article class="news-card">
+        <span class="badge modelo">Modelo</span>
+        <h2>Microsoft Research presenta GigaPath-Flash y GigaTIME-Flash para patología a escala poblacional</h2>
+        <p class="meta">Fuente: Microsoft Research · Fecha: 2026-08-31</p>
+        <p><strong>Por qué importa:</strong> Microsoft Research presenta la familia Flash como extensión de GigaPath y GigaTIME, con eficiencia mejorada para investigación de patología a gran escala.[3]</p>
+        <p><strong>Resumen:</strong> el artículo destaca un backbone destilado de modelo fundacional de patología que reduce requisitos computacionales sin sacrificar rendimiento, orientado a análisis repetidos sobre cohortes mayores de pacientes.[3]</p>
+        <p><strong>Impacto práctico:</strong> menos coste por experimento puede abrir estudios más grandes en imagen médica, validaciones multicohorte y exploración clínica más iterativa; justo lo contrario de quemar GPU por postureo.[3]</p>
+        <a href="https://www.microsoft.com/en-us/research/blog/gigapath-flash-and-gigatime-flash-toward-population-scale-discovery-with-efficient-pathology-foundation-models/">Leer fuente</a>
+      </article>
+
+      <article class="news-card">
+        <span class="badge paper">Paper</span>
+        <h2>Context-Aware Interleaved Batching for WhisperX</h2>
+        <p class="meta">Fuente: arXiv · Fecha: 2026-08-31</p>
+        <p><strong>Por qué importa:</strong> el paper aborda un problema muy práctico: WhisperX acelera la transcripción con batching intra-audio, pero al aislar segmentos pierde contexto histórico necesario para puntuación coherente y terminología.[4]</p>
+        <p><strong>Resumen:</strong> los autores proponen Context-Aware Interleaved Batching usando límites derivados de VAD para mantener contexto continuo entre segmentos batched, estabilizando el condicionamiento textual de Whisper.[4]</p>
+        <p><strong>Impacto práctico:</strong> promete reducir WER, mejorar nombres propios y mantener alto throughput en audio largo; interesante para pipelines de podcasts, reuniones, entrevistas y subtitulado.[4]</p>
+        <a href="https://arxiv.org/abs/2608.31170v1">Leer fuente</a>
+      </article>
+    </section>
+
+    <section class="watch-card">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>IA pública:</strong> más integraciones de modelos en administraciones, con valor real si conectan conocimiento interno y flujos de desarrollo.</li>
+        <li><strong>Seguridad por edad:</strong> la regulación juvenil puede convertirse en requisito de producto para asistentes y apps educativas.</li>
+        <li><strong>Eficiencia sectorial:</strong> modelos fundacionales médicos más baratos pueden acelerar validaciones a gran escala.</li>
+        <li><strong>Audio largo:</strong> mantener contexto sin perder throughput sigue siendo un punto clave para ASR productivo.</li>
+      </ul>
+    </section>
+
+    <section class="reviewed-card">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>Google DeepMind no mostró novedades dentro de la ventana ampliada: su RSS oficial tenía como última entrada destacada el 2026-08-21, fuera del rango investigado.[5] Anthropic no ofreció un RSS accesible en la ruta comprobada durante la ejecución; no incluí piezas no verificadas.</p>
+    </section>
+
+    <section class="sources-card">
+      <h2>Fuentes</h2>
+      <ol>
+        <li><a href="https://openai.com/index/polimill">OpenAI — Polimill builds Japan's next-generation public AI infrastructure</a></li>
+        <li><a href="https://openai.com/index/supporting-california-bill-advance-ai-youth-safety">OpenAI — OpenAI supports California’s bill to advance youth AI safety</a></li>
+        <li><a href="https://www.microsoft.com/en-us/research/blog/gigapath-flash-and-gigatime-flash-toward-population-scale-discovery-with-efficient-pathology-foundation-models/">Microsoft Research — GigaPath-Flash and GigaTIME-Flash</a></li>
+        <li><a href="https://arxiv.org/abs/2608.31170v1">arXiv — Context-Aware Interleaved Batching for WhisperX</a></li>
+        <li><a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/rss/">Google DeepMind RSS</a></li>
+      </ol>
+    </section>
+
+    <footer class="footer-note">Informe preparado por AIDA. Sobrio, citado y sin venderte humo con latencia baja.</footer>
+  </main>
+</body>
+</html>
