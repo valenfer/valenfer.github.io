@@ -2,6 +2,7 @@ import argparse
 import base64
 import http.client
 import json
+import math
 import os
 import re
 import sys
@@ -66,6 +67,37 @@ def astronomy_time_from_datetime(dt: datetime) -> Any:
     utc = dt.astimezone(timezone.utc)
     return _astronomy.Time.Make(utc.year, utc.month, utc.day,
                                 utc.hour, utc.minute, utc.second)
+
+
+def lunar_phase_name_from_angle(phase_degrees: float) -> str:
+    """Return the conventional English phase name for a Moon phase angle.
+
+    Astronomy Engine uses 0° = new moon, 90° = first quarter,
+    180° = full moon, 270° = last quarter.
+    """
+    phase = float(phase_degrees) % 360.0
+    names = (
+        'New Moon', 'Waxing Crescent', 'First Quarter', 'Waxing Gibbous',
+        'Full Moon', 'Waning Gibbous', 'Last Quarter', 'Waning Crescent'
+    )
+    return names[int(((phase + 22.5) % 360) // 45)]
+
+
+def lunar_phase_from_datetime(aware_dt: datetime) -> Dict[str, Any]:
+    """Calculate trustworthy Moon phase metadata with Astronomy Engine."""
+    if _astronomy is None:
+        raise ImportError(
+            'astronomy-engine is required for lunar phase computation. '
+            'Install it with: pip install astronomy-engine==2.1.19'
+        )
+    time_obj = astronomy_time_from_datetime(aware_dt)
+    phase_degrees = float(_astronomy.MoonPhase(time_obj))
+    illumination = (1.0 - math.cos(math.radians(phase_degrees))) / 2.0
+    return {
+        'phase': lunar_phase_name_from_angle(phase_degrees),
+        'phase_degrees': phase_degrees,
+        'illumination': illumination,
+    }
 
 
 def horizontal_coordinates(body_name: str, aware_dt: datetime,
@@ -423,21 +455,25 @@ def normalize_astronomy_moon(positions_raw: Optional[Dict[str, Any]],
     if moon_position is None:
         raise ValueError("AstronomyAPI positions missing moon row")
 
-    extra_info = moon_position.get('extraInfo', {})
-    phase = extra_info.get('phase', {})
-    if not phase.get('string') or 'fraction' not in phase:
-        raise ValueError("AstronomyAPI moon row missing phase string/fraction")
+    position_date = moon_position.get('date')
+    if position_date:
+        phase_dt = datetime.fromisoformat(str(position_date))
+    else:
+        phase_dt = astronomy_now()
+
+    calculated_phase = lunar_phase_from_datetime(phase_dt)
 
     distance_km = moon_position.get('distance', {}).get('fromEarth', {}).get('km')
     if distance_km is None:
         raise ValueError("AstronomyAPI moon row missing distance.fromEarth.km")
 
     normalized = {
-        'source': 'AstronomyAPI',
+        'source': 'AstronomyAPI + Astronomy Engine',
         'fetched_at': _now_iso(),
         'status': 'live',
-        'phase': phase['string'],
-        'illumination': float(phase['fraction']),
+        'phase': calculated_phase['phase'],
+        'phase_degrees': round(calculated_phase['phase_degrees'], 3),
+        'illumination': round(calculated_phase['illumination'], 6),
         'distance_km': float(distance_km),
         'image_url': moon_phase_raw['data']['imageUrl'],
     }

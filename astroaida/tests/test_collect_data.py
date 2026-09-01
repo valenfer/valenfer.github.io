@@ -20,7 +20,7 @@ from collect_data import (
     normalize_star_chart, validate_dataset, fetch_with_retry, write_json_atomically,
     build_apod_url, build_neo_url, fetch_apod, fetch_neo, fetch_astronomy_positions,
     fetch_astronomy_moon, fetch_astronomy_star_chart, collect_real, write_preview_datasets,
-    fetch_weather_open_meteo, main
+    fetch_weather_open_meteo, lunar_phase_from_datetime, main
 )
 
 FIXED_NOW = datetime.fromisoformat('2026-08-11T21:30:45+02:00')
@@ -226,10 +226,11 @@ class TestAstronomyMoonNormalization(unittest.TestCase):
         phase_raw = self.load_fixture('astronomy-moon.json')
         normalized = normalize_astronomy_moon(positions_raw, phase_raw)
 
-        self.assertEqual(normalized['source'], 'AstronomyAPI')
+        self.assertEqual(normalized['source'], 'AstronomyAPI + Astronomy Engine')
         self.assertIn('fetched_at', normalized)
-        self.assertEqual(normalized['phase'], 'Waxing Gibbous')
-        self.assertEqual(normalized['illumination'], 0.78)
+        self.assertEqual(normalized['phase'], 'New Moon')
+        self.assertAlmostEqual(normalized['illumination'], 0.011346, places=6)
+        self.assertAlmostEqual(normalized['phase_degrees'], 347.771, places=3)
         self.assertAlmostEqual(normalized['distance_km'], 378500.0)
         self.assertEqual(
             normalized['image_url'],
@@ -263,6 +264,12 @@ class TestAstronomyMoonNormalization(unittest.TestCase):
         ]
         with self.assertRaises(ValueError):
             normalize_astronomy_moon(positions_raw, phase_raw)
+
+    def test_lunar_phase_calculation_matches_real_2026_september_phase(self):
+        phase = lunar_phase_from_datetime(datetime.fromisoformat('2026-09-01T01:00:15+00:00'))
+
+        self.assertEqual(phase['phase'], 'Waning Gibbous')
+        self.assertAlmostEqual(phase['illumination'], 0.838702, places=6)
 
 
 class TestFetchWithRetry(unittest.TestCase):
@@ -1135,8 +1142,9 @@ class TestCollectReal(unittest.TestCase):
             moon['image_url'],
             'https://widgets.astronomyapi.com/moon-phase/generated/20260811.png'
         )
-        self.assertEqual(moon['phase'], 'Waxing Gibbous')
-        self.assertEqual(moon['illumination'], 0.78)
+        self.assertEqual(moon['phase'], 'New Moon')
+        self.assertAlmostEqual(moon['illumination'], 0.011346, places=6)
+        self.assertAlmostEqual(moon['phase_degrees'], 347.771, places=3)
 
     def test_collect_real_preserves_existing_on_failure(self):
         existing = {
