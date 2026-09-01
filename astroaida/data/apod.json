@@ -1,14 +1,14 @@
 {
-  "media_type": "image",
-  "url": "https://apod.nasa.gov/apod/image/2608/m74_hst_960.jpg",
-  "title": "M74: A Grand Design Spiral",
-  "explanation": "If not the most grand, then this spiral galaxy is at least one of the most photogenic.  An island universe of about 100 billion stars, 32 million light-years away toward the constellation Pisces, M74 presents a gorgeous face-on view.  Classified as an Sc galaxy, the grand design of M74's graceful spiral arms are traced by bright blue star clusters and dark cosmic dust lanes.  Constructed from archival images, this sharp composite is from the Hubble Space Telescope.  Spanning about 30,000 light-years across the face of M74, it includes exposures recording emission from hydrogen atoms, highlighting the reddish glow of the galaxy's large star-forming regions.   APOD's main NASA site is moving: From apod.nasa.gov to science.nasa.gov/apod",
-  "date": "2026-08-30",
+  "media_type": "video",
+  "url": "https://apod.nasa.gov/apod/image/2608/RomanLaunch_NASA.mp4",
+  "title": "Launch of the Roman Space Telescope",
+  "explanation": "A new telescope has been launched into space to study the universe. The Nancy Grace Roman Space Telescope (RST) has the same size main mirror as the Hubble Space Telescope (HST) but sees 100 times more sky during each snapshot.  This is possible because when compared to HST, RST's main mirror is more curved, its secondary mirror is closer, and its main camera is larger.  The result is that RST can inspect more of the sky more quickly, likely allowing, among other capabilities, the discovery of many more supernovas which tell us more about the expansion rate and composition of our universe, and many more planets orbiting other stars that tell us more about the possibilities for life elsewhere in the universe. RST will orbit the Sun, not the Earth, like the James Webb Space Telescope.  The featured video shows Roman being launched yesterday from Kennedy Space Center, Florida, USA aboard a SpaceX Falcon Heavy rocket.   APOD's main NASA site is moving: From apod.nasa.gov to science.nasa.gov/apod",
+  "date": "2026-08-31",
   "source": "NASA APOD",
-  "fetched_at": "2026-08-31T00:13:15.284392+00:00",
+  "fetched_at": "2026-09-01T01:00:04.214272+00:00",
   "status": "live",
-  "title_es": "M74: Una gran espiral de diseño",
+  "title_es": "Lanzamiento del Telescopio Espacial Romano",
   "title_translation_status": "translated",
-  "explanation_es": "Si no es la más grandiosa, entonces esta galaxia espiral es al menos una de las más fotogénicas. Un universo insular de alrededor de 100 mil millones de estrellas, a 32 millones de años luz de distancia hacia la constelación de Piscis, M74 presenta una magnífica vista de frente. Clasificada como una galaxia Sc, el gran diseño de los elegantes brazos espirales de M74 está trazado por brillantes cúmulos de estrellas azules y oscuros carriles de polvo cósmico. Construido a partir de imágenes de archivo, este compuesto nítido es del Telescopio Espacial Hubble. Abarcando unos 30.000 años luz de la superficie de M74, incluye exposiciones que registran la emisión de átomos de hidrógeno, destacando el resplandor rojizo de las grandes regiones de formación estelar de la galaxia. El sitio principal de APOD en la NASA se está moviendo: de apod.nasa.gov a science.nasa.gov/apod",
+  "explanation_es": "Un nuevo telescopio ha sido lanzado al espacio para estudiar el universo. El Telescopio Espacial Romano Nancy Grace (RST) tiene el mismo tamaño de espejo principal que el Telescopio Espacial Hubble (HST), pero ve 100 veces más cielo durante cada instantánea. Esto es posible porque en comparación con HST, el espejo principal de RST es más curvo, su espejo secundario está más cerca y su cámara principal es más grande. El resultado es que RST puede inspeccionar más del cielo más rápidamente, lo que probablemente permita, entre otras capacidades, el descubrimiento de muchas más supernovas que nos dicen más sobre la tasa de expansión y la composición de nuestro universo, y muchos más planetas que orbitan otras estrellas que nos dicen más sobre las posibilidades de vida en otras partes del universo. RST orbitará el Sol, no la Tierra, como el Telescopio Espacial James Webb. El video presentado muestra a Roman siendo lanzado ayer desde el Centro Espacial Kennedy, Florida, EE. UU. a bordo de un cohete SpaceX Falcon Heavy. El sitio principal de APOD en la NASA se está moviendo: de apod.nasa.gov a science.nasa.gov/apod",
   "explanation_translation_status": "translated"
 }
