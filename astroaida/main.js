@@ -713,7 +713,29 @@
       });
   }
 
+  function initNavigationMenu() {
+    var nav = document.querySelector('.site-nav');
+    var toggle = nav && nav.querySelector('.site-nav__toggle');
+    var list = nav && nav.querySelector('.site-nav__list');
+    if (!nav || !toggle || !list) { return; }
+
+    nav.classList.add('site-nav--enhanced');
+    toggle.addEventListener('click', function () {
+      var open = !nav.classList.contains('site-nav--open');
+      nav.classList.toggle('site-nav--open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    list.addEventListener('click', function (event) {
+      if (event.target && event.target.closest && event.target.closest('.site-nav__link')) {
+        nav.classList.remove('site-nav--open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   function init() {
+    initNavigationMenu();
     initLocationControls();
     var results = MODULES.map(loadModule);
     Promise.all(results).then(updateStatus);

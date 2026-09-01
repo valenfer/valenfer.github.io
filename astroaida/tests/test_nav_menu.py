@@ -118,10 +118,17 @@ class TestNavMenuContract(unittest.TestCase):
     def test_sections_have_stable_ids(self):
         self.assertEqual(self.parser.section_ids, EXPECTED_SECTIONS)
 
-    def test_no_hamburger_and_no_js_build(self):
-        self.assertFalse(any('site-nav' in cls for cls in self.parser.buttons))
-        self.assertNotIn('site-nav', self.main_js)
-        self.assertNotIn('hamburger', self.main_js.lower())
+    def test_mobile_hamburger_button_is_accessible(self):
+        self.assertIn('site-nav__toggle', self.index_html)
+        self.assertIn('aria-expanded="false"', self.index_html)
+        self.assertIn('aria-controls="site-nav-list"', self.index_html)
+        self.assertIn('id="site-nav-list"', self.index_html)
+
+    def test_mobile_hamburger_is_js_enhanced(self):
+        self.assertIn('function initNavigationMenu()', self.main_js)
+        self.assertIn('site-nav--enhanced', self.main_js)
+        self.assertIn('site-nav--open', self.main_js)
+        self.assertIn("toggle.setAttribute('aria-expanded'", self.main_js)
 
     def test_nav_is_sticky_and_contained(self):
         block = css_block(self.styles, '.site-nav {')
@@ -138,6 +145,10 @@ class TestNavMenuContract(unittest.TestCase):
     def test_nav_links_meet_44px_touch_target(self):
         block = css_block(self.styles, '.site-nav__link {')
         self.assertIn('min-height: 44px', block)
+
+    def test_mobile_hamburger_meets_44px_touch_target(self):
+        block = css_block(self.styles, '.site-nav__toggle {')
+        self.assertIn('min-height: 48px', block)
 
     def test_nav_focus_visible(self):
         block = css_block(self.styles, '.site-nav__link:focus-visible {')
