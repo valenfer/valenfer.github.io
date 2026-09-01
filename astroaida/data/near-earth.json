@@ -1,6 +1,6 @@
 {
   "source": "NASA NeoWs",
-  "fetched_at": "2026-09-01T09:16:49.849765+00:00",
+  "fetched_at": "2026-09-01T23:48:47.896325+00:00",
   "status": "live",
   "asteroids": [
     {
@@ -10,8 +10,8 @@
         "min": 0.3315545381,
         "max": 0.7413784854
       },
-      "miss_distance_km": 3584880,
-      "velocity_km_s": 19.0032141299,
+      "miss_distance_km": 3584879,
+      "velocity_km_s": 19.0032139165,
       "hazardous": true,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2221455"
     },
@@ -257,18 +257,6 @@
     },
     {
       "date": "2026-08-31",
-      "name": "(2017 UY4)",
-      "estimated_diameter_km": {
-        "min": 0.0242412481,
-        "max": 0.0542050786
-      },
-      "miss_distance_km": 41870925,
-      "velocity_km_s": 4.4415809076,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3788016"
-    },
-    {
-      "date": "2026-08-31",
       "name": "(2017 RH16)",
       "estimated_diameter_km": {
         "min": 0.0157237082,
@@ -278,6 +266,18 @@
       "velocity_km_s": 12.1356084292,
       "hazardous": false,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3781574"
+    },
+    {
+      "date": "2026-08-31",
+      "name": "(2017 UY4)",
+      "estimated_diameter_km": {
+        "min": 0.0242412481,
+        "max": 0.0542050786
+      },
+      "miss_distance_km": 41870925,
+      "velocity_km_s": 4.4415809076,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3788016"
     },
     {
       "date": "2026-09-01",
@@ -431,7 +431,7 @@
         "max": 0.7379721607
       },
       "miss_distance_km": 7077376,
-      "velocity_km_s": 22.7495849688,
+      "velocity_km_s": 22.7495848603,
       "hazardous": true,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2523609"
     },
