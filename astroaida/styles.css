@@ -796,18 +796,28 @@ main {
   color: var(--ok);
 }
 
+.asteroid__stats {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  align-items: start;
+}
+
+.asteroid__stats .inline-stat {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.55rem;
+  min-width: 0;
+}
+
 .asteroid__stats .moon__stat-label,
 .asteroid__stats .moon__stat-value {
   display: inline;
+  margin: 0;
   font-size: 0.85rem;
 }
 
 .asteroid__stats .moon__stat-label::after {
-  content: ": ";
-}
-
-.asteroid__stats .moon__stat-value {
-  margin-right: 1.25rem;
+  content: ":";
 }
 
 .asteroid__link,

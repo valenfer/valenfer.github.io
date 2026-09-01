@@ -132,6 +132,13 @@
     list.appendChild(el('dd', 'moon__stat-value', value === null || value === undefined ? '—' : value));
   }
 
+  function addInlineStat(list, label, value) {
+    var item = el('div', 'inline-stat');
+    item.appendChild(el('dt', 'moon__stat-label', label));
+    item.appendChild(el('dd', 'moon__stat-value', value === null || value === undefined ? '—' : value));
+    list.appendChild(item);
+  }
+
   function parseCoordinate(value, min, max) {
     var text = String(value === null || value === undefined ? '' : value).replace(',', '.').trim();
     if (text === '') { return null; }
@@ -487,19 +494,19 @@
       item.appendChild(heading);
 
       var stats = el('dl', 'asteroid__stats');
-      addStat(stats, 'Fecha', asteroid.date || '—');
+      addInlineStat(stats, 'Fecha', asteroid.date || '—');
       var diameter = (asteroid.estimated_diameter_km && asteroid.estimated_diameter_km.min !== undefined)
         ? asteroid.estimated_diameter_km.min.toFixed(2) + ' – ' + asteroid.estimated_diameter_km.max.toFixed(2) + ' km'
         : '—';
-      addStat(stats, 'Diámetro estimado', diameter);
+      addInlineStat(stats, 'Diámetro estimado', diameter);
       var miss = (asteroid.miss_distance_km === undefined || asteroid.miss_distance_km === null || isNaN(asteroid.miss_distance_km))
         ? '—'
         : formatNumber(asteroid.miss_distance_km) + ' km';
-      addStat(stats, 'Distancia mínima', miss);
+      addInlineStat(stats, 'Distancia mínima', miss);
       var velocity = (asteroid.velocity_km_s === undefined || asteroid.velocity_km_s === null || isNaN(asteroid.velocity_km_s))
         ? '—'
         : asteroid.velocity_km_s.toFixed(1) + ' km/s';
-      addStat(stats, 'Velocidad', velocity);
+      addInlineStat(stats, 'Velocidad', velocity);
       item.appendChild(stats);
 
       if (asteroid.nasa_url) {
