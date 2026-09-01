@@ -1,10 +1,11 @@
 {
-  "source": "AstronomyAPI",
-  "fetched_at": "2026-09-01T01:00:15.176054+00:00",
+  "source": "AstronomyAPI + Astronomy Engine",
+  "fetched_at": "2026-09-01T09:16:49.850768+00:00",
   "status": "live",
   "phase": "Waning Gibbous",
-  "illumination": 0.011,
-  "distance_km": 372628.87769,
+  "phase_degrees": 231.747,
+  "illumination": 0.809567,
+  "distance_km": 375443.92998,
   "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/fa5e8957219e720a4e6b83a9db68babf481b3c9a2b275d06e57e5b232ed9d5cf.png",
   "observer": {
     "latitude": 37.38283,
