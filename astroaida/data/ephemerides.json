@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-01T23:48:49.793421+00:00",
+  "fetched_at": "2026-09-02T23:53:14.862882+00:00",
   "status": "live",
-  "target_date": "2026-09-02",
+  "target_date": "2026-09-03",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,15 +10,56 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-02T00:00:00+02:00",
-    "end_local": "2026-09-03T12:00:00+02:00"
+    "start_local": "2026-09-03T00:00:00+02:00",
+    "end_local": "2026-09-04T12:00:00+02:00"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "20260903_15_100-in-the-sky-org-31fd6e7c81e4-2026-09-03",
+      "type": "other",
+      "title_es": "Close approach of the Moon and M45",
+      "title_translation_status": "unavailable",
+      "summary_es": "The Moon and M45 pass close to each other",
+      "start_local": "2026-09-03T14:25:06+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 2.9°, Sol a 60.1°.",
+        "altitude_deg": 2.9,
+        "azimuth_deg": 299.5,
+        "sun_altitude_deg": 60.1
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260903_15_100"
+      }
+    },
+    {
+      "id": "20260904_08_100-in-the-sky-org-fa8807bf5f1b-2026-09-03",
+      "type": "lunar_phase",
+      "title_es": "Cuarto menguante",
+      "title_translation_status": "deterministic",
+      "summary_es": "The Moon reaches last quarter phase &ndash; rising in the east at around midnight and appearing high in the sky by sunrise",
+      "start_local": "2026-09-04T09:51:40+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 65.6°, Sol a 21.9°.",
+        "altitude_deg": 65.6,
+        "azimuth_deg": 252.7,
+        "sun_altitude_deg": 21.9
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260904_08_100"
+      }
+    }
+  ],
   "weather": {
-    "cloud_cover": 30.22222222222222,
-    "visibility": 44580.0,
+    "cloud_cover": 30.72222222222222,
+    "visibility": 41240.0,
     "precipitation_probability": 0,
-    "temperature": 25.1
+    "temperature": 27.0
   },
   "sources": [
     {
