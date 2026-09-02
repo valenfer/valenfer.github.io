@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-09-02</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="radaria-container">
+    <header class="hero">
+      <p class="kicker">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-09-02</h1>
+      <p class="subtitle">Rango investigado: 2026-09-01 08:00 CEST → 2026-09-02 08:00 CEST. Metodología: revisión de fuentes primarias oficiales de OpenAI, Google/Google DeepMind y Anthropic, más arXiv/Hugging Face Papers para papers recientes; se abrieron las páginas seleccionadas y se descartaron piezas duplicadas, comerciales menores o sin novedad técnica clara. Como el repositorio no tenía un <code>radaria/reports.js</code> fiable previo, he usado las últimas 24 horas, tal como pedías. El token OAuth de Gmail está revocado, así que el correo no se ha podido enviar; la web sí queda preparada y publicada si GitHub acepta el push.</p>
+    </header>
+
+    <section class="summary-card">
+      <h2>Resumen ejecutivo</h2>
+      <p>La jornada viene cargada en tres frentes: capacidades frontera y seguridad, IA integrada en flujos profesionales y mejores herramientas de evaluación para agentes/modelos. No es un día de “un modelo que lo cambia todo”, pero sí de esos en los que la fontanería se vuelve más seria. Qué glamour, Valentín: tuberías, pero con GPU.</p>
+    </section>
+
+    <section class="grid">
+      <article class="news-card">
+        <span class="badge badge-informe">Informe</span>
+        <h2><a href="https://openai.com/index/path-to-astra">OpenAI detalla el camino hacia Astra y sus salvaguardas de frontera</a></h2>
+        <p class="meta">OpenAI · 1 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> OpenAI afirma que Astra es el primer modelo de la compañía que alcanza el umbral de capacidad crítica en ciberseguridad dentro de su Preparedness Framework, y vincula esa mejora a salvaguardas reforzadas antes del lanzamiento.[1]</p>
+        <p><strong>Resumen:</strong> La pieza pone el foco en cómo ajustar el ritmo de desarrollo cuando un modelo entra en capacidades sensibles: más controles de despliegue, monitorización y evaluación de riesgos antes de ampliar acceso.[1]</p>
+        <p><strong>Impacto práctico:</strong> Para equipos que usan modelos frontera en entornos corporativos, la señal es clara: la evaluación de seguridad va a pesar tanto como el benchmark bruto, especialmente en código, ciberseguridad y automatización agentiva.[1]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-producto">Producto</span>
+        <h2><a href="https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources">ChatGPT podrá conectarse a EHR y fuentes sanitarias de confianza</a></h2>
+        <p class="meta">OpenAI · 1 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> OpenAI anuncia conectores para organizaciones sanitarias que permiten a ChatGPT acceder a contexto clínico, investigación médica y datos del paciente en entornos autorizados.[2]</p>
+        <p><strong>Resumen:</strong> La novedad apunta a integrar IA conversacional con sistemas de historia clínica electrónica y fuentes sectoriales, con el objetivo de reducir fricción en la consulta de información médica relevante.[2]</p>
+        <p><strong>Impacto práctico:</strong> Si se ejecuta con controles sólidos, puede acelerar tareas de preparación clínica, búsqueda de antecedentes y revisión documental; si se ejecuta mal, la privacidad y trazabilidad se convierten en el villano de la película, como debe ser.[2]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-producto">Producto</span>
+        <h2><a href="https://blog.google/products-and-platforms/products/workspace/google-pics/">Google Pics lleva creación y edición de imagen a Workspace</a></h2>
+        <p class="meta">Google · 1 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> Google presenta Google Pics como una herramienta de creación y edición de imágenes para Workspace, construida sobre su modelo Nano Banana.[3]</p>
+        <p><strong>Resumen:</strong> La propuesta baja capacidades generativas visuales al flujo habitual de trabajo: crear recursos, modificar imágenes y preparar contenido sin salir del ecosistema Workspace.[3]</p>
+        <p><strong>Impacto práctico:</strong> Para marketing, formación interna y documentación, esto recorta pasos entre idea, imagen y publicación; también aumenta la necesidad de políticas claras sobre uso de imagen generada y revisión humana.[3]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-informe">Informe</span>
+        <h2><a href="https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/">Google recopila sus principales novedades de IA de agosto</a></h2>
+        <p class="meta">Google · 1 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> El resumen oficial de agosto agrupa avances de Gemini, herramientas para desarrolladores, productos de consumo y Workspace, señalando que Google sigue empujando IA tanto en producto final como en plataforma.[4]</p>
+        <p><strong>Resumen:</strong> Más que una noticia aislada, sirve como mapa de superficie: modelos Gemini, experiencias en apps, herramientas de productividad y capacidades para desarrolladores aparecen como líneas paralelas de despliegue.[4]</p>
+        <p><strong>Impacto práctico:</strong> Conviene vigilar qué novedades pasan de demo a disponibilidad real en Europa y Workspace, porque ahí es donde deja de ser “mira qué bonito” y empieza a afectar a procesos diarios.[4]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-paper">Paper</span>
+        <h2><a href="https://arxiv.org/abs/2609.01604v1">Mecánica interna de los LLM-as-a-Judge en evaluación de resúmenes</a></h2>
+        <p class="meta">arXiv · 1 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> El paper estudia evaluadores LLM como Themis y Prometheus y propone que usan una tubería interna de dos etapas para comparar errores y escribir la puntuación final.[5]</p>
+        <p><strong>Resumen:</strong> Los autores aplican perturbaciones, causal tracing, logit lens y knockout de cabezas de atención para entender cómo los jueces automatizados procesan legibilidad y adecuación en resúmenes.[5]</p>
+        <p><strong>Impacto práctico:</strong> Si dependes de LLMs para evaluar salidas o como señal de entrenamiento, este tipo de análisis ayuda a detectar cuándo el juez está midiendo calidad y cuándo solo está haciendo teatro con toga.[5]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-herramienta">Herramienta</span>
+        <h2><a href="https://arxiv.org/abs/2609.01601v1">ACToR: recuperación adaptativa para generación de código a nivel repositorio</a></h2>
+        <p class="meta">arXiv · 1 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> ACToR identifica “tokens críticos” durante la generación y dispara recuperación de contexto bajo demanda, reportando mejoras relativas del 8,4% en RepoExec y 15,4% en CoderEval.[6]</p>
+        <p><strong>Resumen:</strong> En vez de recuperar contexto una vez para toda la tarea, el sistema decide cuándo un token puede cambiar el rumbo semántico del código y busca contexto del repositorio justo ahí.[6]</p>
+        <p><strong>Impacto práctico:</strong> Es una idea muy aplicable a asistentes de programación: menos contexto irrelevante, más precisión en puntos decisivos y una pista de por dónde evolucionará el RAG para código.[6]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-paper">Paper</span>
+        <h2><a href="https://arxiv.org/abs/2609.01591v1">StudentSim: simuladores de estudiantes para entrenar tutores con LLM</a></h2>
+        <p class="meta">arXiv · 1 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> StudentSim propone simuladores individualizados a partir de datos escasos de estudiantes y reporta mejores métricas que GPT-5.4 en fidelidad y respuesta a guía en ajedrez, escritura en inglés y matemáticas.[7]</p>
+        <p><strong>Resumen:</strong> La técnica combina entrenamiento conjunto y especialización por estudiante para producir simuladores que imitan respuestas y cambian ante feedback del tutor.[7]</p>
+        <p><strong>Impacto práctico:</strong> Puede reducir el coste de probar estrategias pedagógicas antes de exponerlas a alumnos reales; aun así, conviene tratarlo como proxy, no como sustituto mágico del aula, que luego vienen los sustos.[7]</p>
+      </article>
+    </section>
+
+    <section class="summary-card">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Seguridad como criterio de lanzamiento:</strong> los umbrales de ciber-capacidad están pasando de marco teórico a control operativo.</li>
+        <li><strong>IA incrustada en suites de trabajo:</strong> Workspace y ChatGPT empujan conectores y herramientas nativas, no solo chatbots sueltos.</li>
+        <li><strong>Evaluación de agentes más fina:</strong> papers de judge interpretability y RAG adaptativo señalan que medir y guiar el proceso importa tanto como el resultado.</li>
+        <li><strong>Educación personalizada con proxies:</strong> los simuladores de estudiantes pueden acelerar experimentación, pero exigen validación humana seria.</li>
+      </ul>
+    </section>
+
+    <section class="summary-card muted">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>Anthropic no mostró en la revisión automatizada una novedad técnica fechada dentro de la ventana de 24 horas comparable a las piezas seleccionadas; su sitio destacaba principalmente la actualización de Responsible Scaling Policy, fuera del corte editorial de hoy. Hugging Face Papers se revisó como superficie de descubrimiento, pero las piezas elegidas proceden de arXiv para mantener fuente primaria y fecha verificable.</p>
+    </section>
+
+    <section class="sources">
+      <h2>Fuentes</h2>
+      <ol>
+        <li id="source-1"><a href="https://openai.com/index/path-to-astra">https://openai.com/index/path-to-astra</a> — Path to Astra: critical capabilities and frontier safeguards</li>
+        <li id="source-2"><a href="https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources">https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources</a> — Healthcare organizations can now connect EHR and additional industry data to ChatGPT</li>
+        <li id="source-3"><a href="https://blog.google/products-and-platforms/products/workspace/google-pics">https://blog.google/products-and-platforms/products/workspace/google-pics</a> — Try Google Pics: Easy image creation and editing in Google Workspace</li>
+        <li id="source-4"><a href="https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026">https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026</a> — The latest AI news we announced in August 2026</li>
+        <li id="source-5"><a href="https://arxiv.org/abs/2609.01604v1">https://arxiv.org/abs/2609.01604v1</a> — Beyond Scores: Understanding LLM-as-a-Judge Mechanisms in Summarization Evaluation</li>
+        <li id="source-6"><a href="https://arxiv.org/abs/2609.01601v1">https://arxiv.org/abs/2609.01601v1</a> — Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation</li>
+        <li id="source-7"><a href="https://arxiv.org/abs/2609.01591v1">https://arxiv.org/abs/2609.01591v1</a> — StudentSim: Training LLM-based Student Simulators</li>
+      </ol>
+    </section>
+
+    <footer class="footer">Preparado por AIDA. Hoy sin humo, con citas y con el OAuth de Gmail haciendo una pequeña huelga dramática.</footer>
+  </main>
+</body>
+</html>
