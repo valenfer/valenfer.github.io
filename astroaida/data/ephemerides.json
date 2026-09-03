@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-02T23:53:14.862882+00:00",
+  "fetched_at": "2026-09-03T23:48:20.066801+00:00",
   "status": "live",
-  "target_date": "2026-09-03",
+  "target_date": "2026-09-04",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,36 +10,16 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-03T00:00:00+02:00",
-    "end_local": "2026-09-04T12:00:00+02:00"
+    "start_local": "2026-09-04T00:00:00+02:00",
+    "end_local": "2026-09-05T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260903_15_100-in-the-sky-org-31fd6e7c81e4-2026-09-03",
-      "type": "other",
-      "title_es": "Close approach of the Moon and M45",
-      "title_translation_status": "unavailable",
-      "summary_es": "The Moon and M45 pass close to each other",
-      "start_local": "2026-09-03T14:25:06+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Luna no observable: altitud 2.9°, Sol a 60.1°.",
-        "altitude_deg": 2.9,
-        "azimuth_deg": 299.5,
-        "sun_altitude_deg": 60.1
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260903_15_100"
-      }
-    },
-    {
-      "id": "20260904_08_100-in-the-sky-org-fa8807bf5f1b-2026-09-03",
+      "id": "20260904_08_100-in-the-sky-org-fa8807bf5f1b-2026-09-04",
       "type": "lunar_phase",
       "title_es": "Cuarto menguante",
       "title_translation_status": "deterministic",
-      "summary_es": "The Moon reaches last quarter phase &ndash; rising in the east at around midnight and appearing high in the sky by sunrise",
+      "summary_es": "La Luna alcanza la fase del último trimestre: sale por el este alrededor de la medianoche y aparece en lo alto del cielo al amanecer",
       "start_local": "2026-09-04T09:51:40+02:00",
       "visibility": {
         "status": "not_visible",
@@ -53,14 +33,46 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20260904_08_100"
       }
+    },
+    {
+      "id": "20260904_11_100-in-the-sky-org-a227a2f954f4-2026-09-04",
+      "type": "other",
+      "title_es": "Afelio",
+      "title_translation_status": "deterministic",
+      "summary_es": "Venus pasa el punto más alejado a lo largo de su órbita del Sol",
+      "start_local": "2026-09-04T17:06:44+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Venus no observable: altitud 39.0°, Sol a 42.1°.",
+        "altitude_deg": 39.0,
+        "azimuth_deg": 182.3,
+        "sun_altitude_deg": 42.1
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260904_11_100"
+      }
+    },
+    {
+      "id": "20260905_16_100-in-the-sky-org-8eb3b8b08397-2026-09-04",
+      "type": "other",
+      "title_es": "Ocultación lunar de Beta Tauri",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará frente a Beta Tauri (Elnath), creando una ocultación lunar visible desde partes de África",
+      "start_local": "2026-09-05T04:37:01+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260905_16_100"
+      }
     }
   ],
-  "weather": {
-    "cloud_cover": 30.72222222222222,
-    "visibility": 41240.0,
-    "precipitation_probability": 0,
-    "temperature": 27.0
-  },
+  "weather": {},
   "sources": [
     {
       "name": "In-The-Sky",
