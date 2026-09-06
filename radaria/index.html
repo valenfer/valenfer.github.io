@@ -1,20 +1,34 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RadarIA</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA — Informes diarios de inteligencia artificial</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<main class="home">
-  <header class="hero"><p class="kicker">RadarIA</p><h1>Informes diarios de inteligencia artificial</h1><p class="meta">Selección curada por AIDA para Valentín.</p></header>
-  <section id="reports" class="cards"></section>
-</main>
-<script src="reports.js"></script>
-<script>
-const container=document.getElementById('reports');
-(window.RADARIA_REPORTS||[]).forEach(r=>{const a=document.createElement('a');a.className='card report-link';a.href=r.url;a.innerHTML=`<span class="badge informe">Informe</span><h2>${r.title}</h2><p class="source">${r.date}</p><p>${r.summary}</p>`;container.appendChild(a);});
-</script>
+  <main class="home-shell">
+    <header class="hero">
+      <p class="eyebrow">RadarIA</p>
+      <h1>Informes diarios de inteligencia artificial</h1>
+      <p class="subtitle">Selección breve, práctica y citada de novedades relevantes en IA para Valentín.</p>
+    </header>
+    <section class="summary-card">
+      <h2>Últimos informes</h2>
+      <div id="reports" class="report-list"></div>
+    </section>
+  </main>
+  <script src="reports.js"></script>
+  <script>
+    const root = document.getElementById('reports');
+    const reports = window.RADARIA_REPORTS || [];
+    root.innerHTML = reports.map(report => `
+      <article class="report-item">
+        <p class="meta">${report.date}</p>
+        <h2><a href="${report.url}">${report.title}</a></h2>
+        <p>${report.summary}</p>
+      </article>
+    `).join('') || '<p>No hay informes publicados todavía.</p>';
+  </script>
 </body>
 </html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-09-06</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell">
+    <header class="hero">
+      <p class="eyebrow">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-09-06</h1>
+      <p class="subtitle">Rango investigado: del 2026-09-01 al 2026-09-06, ampliado a 7 días porque no existía un historial previo fiable en <code>radaria/reports.js</code> y las novedades de las últimas 24 horas eran escasas.</p>
+      <p class="method">Metodología: revisión de fuentes primarias oficiales de OpenAI, Google/Google DeepMind, Anthropic y feeds de papers; se abrió y leyó el cuerpo de las fuentes seleccionadas, priorizando anuncios técnicos con impacto práctico y evitando rumores. OpenAI y Anthropic devolvieron bloqueo HTTP 403 en la revisión automatizada, así que quedan registrados como revisados sin novedad verificable.</p>
+    </header>
+
+    <section class="summary-card">
+      <h2>Resumen ejecutivo</h2>
+      <p>Hoy el radar viene muy Google-céntrico: DeepMind concentra las novedades verificables de la semana con un modelo meteorológico global, una nueva familia Gemini orientada a razonamiento/código/ciberseguridad y capacidades de vídeo agentivo. Pocas piezas, pero con bastante músculo técnico; nada de confeti de PowerPoint, que luego hay que barrerlo.</p>
+    </section>
+
+    <section class="cards">
+      <article class="news-card">
+        <span class="badge badge-modelo">Modelo</span>
+        <h2><a href="https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/">WeatherNext 3: modelo global de predicción meteorológica de Google DeepMind</a></h2>
+        <p class="meta">Fuente: Google DeepMind · Fecha: 2026-09-03</p>
+        <p><strong>Por qué importa:</strong> Google presenta WeatherNext 3 como su modelo meteorológico global más avanzado, con datos satelitales en tiempo real, refresco horario, mayor resolución, predicción de precipitación y variables de energía limpia, además de integración en Search, Gemini, Maps, Google Maps Platform y Cloud.[1]</p>
+        <p><strong>Resumen:</strong> El enfoque aprende directamente de observaciones en tiempo real y usa datos satelitales brutos para producir previsiones horarias de alta resolución; según Google, evaluaciones independientes en vivo de Brightband lo sitúan como su modelo global más preciso hasta la fecha.[1]</p>
+        <p><strong>Impacto práctico:</strong> Si el despliegue mantiene esa calidad fuera del anuncio, mejora casos de planificación operativa, logística, seguros, energía renovable y alertas locales, especialmente donde la predicción tradicional llega tarde o con poca granularidad.[1]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-modelo">Modelo</span>
+        <h2><a href="https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/">Gemini 3.8 Flash y Gemini 3.8 Flash Cyber</a></h2>
+        <p class="meta">Fuente: Google DeepMind · Fecha: 2026-09-02</p>
+        <p><strong>Por qué importa:</strong> Google DeepMind introduce Gemini 3.8 como su mejor modelo de razonamiento y código hasta la fecha, manteniendo velocidad y precio de 3.7 Flash, con una variante Cyber dirigida a detección de vulnerabilidades y parcheo automatizado.[2]</p>
+        <p><strong>Resumen:</strong> Gemini 3.8 Flash apunta a mejoras en ingeniería de software, tareas agentivas y razonamiento multietapa; el precio introductorio indicado es 0,75 dólares por millón de tokens de entrada y 3,75 dólares por millón de tokens de salida.[2]</p>
+        <p><strong>Impacto práctico:</strong> Para equipos de producto y plataforma, lo relevante no es solo “otro modelo más”, sino la combinación de coste bajo, tareas agentivas y rendimiento en código; la variante Cyber sugiere un empuje claro hacia agentes defensivos especializados.[2]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-herramienta">Herramienta</span>
+        <h2><a href="https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/">Fairwind Program: ciberdefensa agentiva para socios de confianza</a></h2>
+        <p class="meta">Fuente: Google · Fecha: 2026-09-02</p>
+        <p><strong>Por qué importa:</strong> Fairwind es un programa de acceso limitado para gobiernos y socios de confianza que combina Gemini 3.8 Flash Cyber con el arnés CodeMender para encontrar, verificar y corregir vulnerabilidades a escala agentiva.[4]</p>
+        <p><strong>Resumen:</strong> Google plantea el programa como una alternativa a modelos frontier caros o modelos abiertos más limitados, orientada a generar parches verificados en vez de quedarse solo en la detección de debilidades.[4]</p>
+        <p><strong>Impacto práctico:</strong> La señal importante es el giro de “IA que audita” a “IA que propone y valida arreglos”; si madura, puede reducir backlog de seguridad, aunque exigirá controles fuertes para evitar parches incorrectos con mucha seguridad en sí mismos, el clásico becario brillante con martillo neumático.[4]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-producto">Producto</span>
+        <h2><a href="https://deepmind.google/blog/introducing-agentic-video-in-gemini/">Comprensión de vídeo agentiva en Gemini</a></h2>
+        <p class="meta">Fuente: Google DeepMind · Fecha: 2026-09-01</p>
+        <p><strong>Por qué importa:</strong> Google lanza comprensión de vídeo agentiva para Gemini 3.7 Flash, 3.6 Flash y 3.5 Flash-Lite, con escaneo dinámico de segmentos de vídeo para mejorar calidad y reducir consumo.[3]</p>
+        <p><strong>Resumen:</strong> La fuente afirma reducciones de hasta el 88% en tokens, hasta el 66% en costes y una mejora de calidad de hasta el 7%; la función se activa configurando la API como “agentic” en Google AI Studio o Gemini Enterprise Agent Platform.[3]</p>
+        <p><strong>Impacto práctico:</strong> Esto puede abaratar análisis de vídeo largo —soporte, retail, formación, seguridad o media intelligence— al no obligar al modelo a tragarse cada fotograma como si fuera buffet libre.[3]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-producto">Producto</span>
+        <h2><a href="https://blog.google/products-and-platforms/products/workspace/google-pics/">Google Pics: creación y edición de imágenes en Workspace</a></h2>
+        <p class="meta">Fuente: Google · Fecha: 2026-09-01</p>
+        <p><strong>Por qué importa:</strong> Google Pics permite generar, refinar y co-crear imágenes con prompts, y Google anuncia integraciones en Workspace para crear y editar directamente en Slides, Docs y Drive.[5]</p>
+        <p><strong>Resumen:</strong> El anuncio describe funciones como aislar objetos, editar texto o traducir palabras dentro de imágenes, con uso desde <a href="https://pics.new">pics.new</a> y disponibilidad en Docs y Slides.[5]</p>
+        <p><strong>Impacto práctico:</strong> Es menos investigación pura y más productividad: acerca edición visual generativa al flujo diario de documentos y presentaciones, donde realmente vive buena parte del trabajo corporativo, aunque duela admitirlo.[5]</p>
+      </article>
+    </section>
+
+    <section class="watch-card">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Especialización vertical de modelos:</strong> Gemini 3.8 Flash Cyber y WeatherNext 3 refuerzan la tendencia a modelos/variantes adaptadas a dominios concretos, no solo chatbots generalistas.[1][2]</li>
+        <li><strong>Agentes que actúan, no solo resumen:</strong> vídeo agentivo y CodeMender apuntan a sistemas que seleccionan información, ejecutan pasos y validan resultados.[3][4]</li>
+        <li><strong>Coste como ventaja competitiva:</strong> Google repite el mensaje de rendimiento con precios bajos y menos tokens; la eficiencia empieza a ser tan estratégica como el benchmark bonito.[2][3]</li>
+        <li><strong>Integración en herramientas existentes:</strong> WeatherNext en productos Google y Pics en Workspace muestran que la IA útil se está escondiendo dentro del software cotidiano, que es justo donde más engancha.[1][5]</li>
+      </ul>
+    </section>
+
+    <section class="reviewed-card">
+      <h2>Fuentes revisadas sin novedad destacable o con bloqueo</h2>
+      <ul>
+        <li>OpenAI blog/news/research/product updates: revisión automatizada bloqueada por HTTP 403; no se cita ninguna novedad porque no pude leer cuerpo verificable.</li>
+        <li>Anthropic news/research/engineering: revisión automatizada bloqueada por HTTP 403; no se cita ninguna novedad porque no pude leer cuerpo verificable.</li>
+        <li>arXiv cs.AI/cs.CL: feeds consultados, sin elementos recientes recuperables en esta ejecución.</li>
+        <li>NVIDIA AI blog: feed consultado, sin novedades dentro de la ventana del informe.</li>
+      </ul>
+    </section>
+
+    <section class="sources-card">
+      <p>## Sources</p>
+      <h2>Sources</h2>
+      <p>[1] <a href="https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model">https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model</a> — Introducing WeatherNext 3</p>
+      <p>[2] <a href="https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber">https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber</a> — Introducing Gemini 3.8 Flash and 3.8 Flash Cyber</p>
+      <p>[3] <a href="https://deepmind.google/blog/introducing-agentic-video-in-gemini">https://deepmind.google/blog/introducing-agentic-video-in-gemini</a> — Introducing agentic video understanding with Gemini</p>
+      <p>[4] <a href="https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program">https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program</a> — Proactive cyber defense for governments and enterprises</p>
+      <p>[5] <a href="https://blog.google/products-and-platforms/products/workspace/google-pics">https://blog.google/products-and-platforms/products/workspace/google-pics</a> — Try Google Pics</p>
+    </section>
+
+    <footer class="footer-note">Informe preparado por AIDA para Valentín. Pocas balas, bien apuntadas; que el ruido ya lo ponen las redes.</footer>
+  </main>
+<pre class="ledger-sources">
+## Sources
+
+[1] https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model — Introducing WeatherNext 3
+[2] https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber — Introducing Gemini 3.8 Flash and 3.8 Flash Cyber
+[3] https://deepmind.google/blog/introducing-agentic-video-in-gemini — Introducing agentic video understanding with Gemini
+[4] https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program — Proactive cyber defense for governments and enterprises
+[5] https://blog.google/products-and-platforms/products/workspace/google-pics — Try Google Pics
+</pre>
+</body>
+</html>

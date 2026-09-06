@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-06',
+    title: 'RadarIA diario — 2026-09-06',
+    summary: '5 piezas sobre WeatherNext 3, Gemini 3.8 Flash/Cyber, Fairwind, vídeo agentivo y Google Pics en Workspace.',
+    url: 'informes/2026-09-06.html'
+  },
+  {
     date: '2026-09-05',
     title: 'RadarIA diario — 2026-09-05',
     summary: '6 piezas sobre Anthropic, Google/DeepMind, ciberdefensa agéntica y papers recientes de modelos abiertos e inferencia eficiente.',
