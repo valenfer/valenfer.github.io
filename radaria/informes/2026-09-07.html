@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-09-07</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell">
+    <header class="hero">
+      <p class="eyebrow">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-09-07</h1>
+      <p class="subtitle">Rango investigado: desde el informe anterior fiable en <code>radaria/reports.js</code> (2026-09-06) hasta 2026-09-07 08:00 CEST.</p>
+      <p class="method">Metodología: revisión de fuentes primarias oficiales de OpenAI, Google/Google DeepMind y Anthropic, más RSS/listados recientes de arXiv y blogs técnicos; se abrió y leyó el cuerpo o metadatos ampliados de las piezas seleccionadas. OpenAI quedó revisado, pero su web pública devolvió una protección anti-bot en esta ejecución, así que no se cita ninguna novedad de OpenAI.</p>
+    </header>
+
+    <section class="summary-card">
+      <h2>Resumen ejecutivo</h2>
+      <p>Hoy hay pocas novedades realmente frescas tras el RadarIA de ayer, así que la selección se queda en 4 piezas buenas: una iniciativa aplicada de Google DeepMind, una especificación de Anthropic para agentes físicos y dos papers de arXiv sobre evaluación/riesgo de agentes y razonamiento con evidencia. Nada de rellenar con serrín, que para eso ya están algunos decks corporativos.</p>
+    </section>
+
+    <section class="cards">
+      <article class="news-card">
+        <span class="badge badge-producto">Informe</span>
+        <p class="meta">Google DeepMind / Google Blog · 2026-09-07</p>
+        <h2><a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/ai-planet-accelerator-apac/">Backing 16 green AI projects in Asia-Pacific</a></h2>
+        <p><strong>Por qué importa:</strong> Google DeepMind anuncia apoyo a 16 organizaciones de Asia-Pacífico que usan IA de frontera para problemas de clima, agricultura y biodiversidad.[1]</p>
+        <p><strong>Resumen:</strong> La pieza encaja en la línea de IA aplicada a sostenibilidad: no es un modelo nuevo, sino un programa de transferencia y aceleración para proyectos que quieren convertir capacidades de IA en impacto ambiental medible.[1]</p>
+        <p><strong>Impacto práctico:</strong> Señal de que los grandes labs están empaquetando sus modelos y conocimiento científico en ecosistemas regionales; para empresas, apunta a más casos de uso de IA en predicción, monitorización y optimización ambiental.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-herramienta">Herramienta</span>
+        <p class="meta">Anthropic · 2026-09-04, detectado dentro de la ventana de revisión</p>
+        <h2><a href="https://www.anthropic.com/news/model-hardware-standard-research-preview">Previewing the Model Hardware Standard</a></h2>
+        <p><strong>Por qué importa:</strong> Anthropic abre una preview de investigación del Model Hardware Standard, una especificación compartida para que agentes de IA operen dispositivos físicos con seguridad.[2]</p>
+        <p><strong>Resumen:</strong> MHS busca que agentes controlen instrumentos de laboratorio y fabricación —microscopios, liquid handlers o brazos robóticos— y coordinen tareas en paralelo; Anthropic afirma que puede reducir integraciones de semanas o meses a horas o minutos.[2]</p>
+        <p><strong>Impacto práctico:</strong> Si madura, esto acerca los agentes al mundo físico: laboratorios autónomos, workflows industriales y robótica conectada por protocolos estándar. También eleva el listón de seguridad, porque aquí un bug ya no solo rompe una tabla: puede mover un brazo robótico. Qué detalle tan tranquilizador.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-paper">Paper</span>
+        <p class="meta">arXiv cs.AI · 2026-09-07</p>
+        <h2><a href="https://arxiv.org/abs/2609.04298">Harbor Adapters and Harbor-Index: Infrastructure and a Curated Meta-Dataset for Large-Scale Agentic Evaluation</a></h2>
+        <p><strong>Por qué importa:</strong> El paper presenta Harbor Adapters, infraestructura unificada para evaluar agentes sobre más de 80 benchmarks, y Harbor-Index, una selección curada de 82 tareas difíciles repartidas en 29 benchmarks.[3]</p>
+        <p><strong>Resumen:</strong> Los autores evalúan 8 modelos en 54 benchmarks y reportan que ningún modelo-harness supera el 30% de pass rate; la mejor configuración indicada, GPT-5.5 con Codex, alcanza el 28,0%.[3]</p>
+        <p><strong>Impacto práctico:</strong> Buena señal para separar demos vistosas de agentes realmente robustos. Para equipos que estén comprando o construyendo agentes, este tipo de índice ayuda a medir transferibilidad, coste de evaluación y fallos por harness.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-paper">Paper</span>
+        <p class="meta">arXiv cs.AI · 2026-09-07</p>
+        <h2><a href="https://arxiv.org/abs/2609.04373">Why Better Models Can Create Riskier Systems: Evidence from LLM Agents in Financial Markets</a></h2>
+        <p><strong>Por qué importa:</strong> El trabajo plantea una paradoja de capacidad: modelos individualmente mejores pueden producir peores resultados sistémicos cuando sus comportamientos se correlacionan.[4]</p>
+        <p><strong>Resumen:</strong> En una simulación de agentes financieros, los autores observan que los LLM frontera muestran comportamientos significativamente correlacionados que aumentan con la capacidad; si comparten un entorno de desinformación, esa correlación se convierte en un riesgo.[4]</p>
+        <p><strong>Impacto práctico:</strong> Importante para despliegues multiagente en finanzas, moderación, contratación o mercados: diversificar proveedores/modelos y escenarios adversarios puede ser tan relevante como subir de modelo.</p>
+      </article>
+    </section>
+
+    <section class="watch-card">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Agentes en entornos físicos:</strong> MHS confirma que el siguiente frente no es solo software; viene laboratorio, fábrica y robótica con protocolos comunes.[2]</li>
+        <li><strong>Evaluación agentiva más dura:</strong> benchmarks curados y baratos como Harbor-Index podrían convertirse en filtro mínimo antes de desplegar agentes.[3]</li>
+        <li><strong>Riesgo sistémico por homogeneidad:</strong> cuantos más agentes parecidos actúen a la vez, más importante será medir correlación de errores, no solo accuracy individual.[4]</li>
+        <li><strong>IA climática aplicada:</strong> Google está moviendo la IA ambiental de papers a programas regionales con organizaciones concretas.[1]</li>
+      </ul>
+    </section>
+
+    <section class="reviewed-card">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>OpenAI News se intentó revisar, pero la página pública respondió con una protección anti-bot durante esta ejecución, así que no se pudo verificar ninguna publicación nueva con cuerpo legible. Google AI general no mostró una pieza posterior al 2026-09-06 más relevante que el anuncio de Google DeepMind APAC ya incluido. Anthropic sí tenía piezas recientes; se seleccionó MHS por novedad práctica y se descartó repetir el watermark de Claude salvo como contexto regulatorio.</p>
+    </section>
+
+    <section class="sources-card">
+      <h2>Fuentes</h2>
+      <ol>
+        <li><a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/ai-planet-accelerator-apac/">Google Blog — Backing 16 green AI projects in Asia-Pacific</a></li>
+        <li><a href="https://www.anthropic.com/news/model-hardware-standard-research-preview">Anthropic — Previewing the Model Hardware Standard</a></li>
+        <li><a href="https://arxiv.org/abs/2609.04298">arXiv — Harbor Adapters and Harbor-Index</a></li>
+        <li><a href="https://arxiv.org/abs/2609.04373">arXiv — Why Better Models Can Create Riskier Systems</a></li>
+      </ol>
+    </section>
+
+    <p class="meta">Informe generado por AIDA para Valentín. Breve, citado y con el ruido pasado por la trituradora fina.</p>
+  </main>
+</body>
+</html>
