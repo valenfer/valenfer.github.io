@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-08',
+    title: 'RadarIA diario — 2026-09-08',
+    summary: '5 piezas sobre GPT-6 Astra, Google Pics, Fairwind y benchmarks recientes de agentes GUI+CLI y robótica.',
+    url: 'informes/2026-09-08.html'
+  },
+  {
     date: '2026-09-07',
     title: 'RadarIA diario — 2026-09-07',
     summary: '4 piezas sobre proyectos verdes de Google DeepMind, Model Hardware Standard de Anthropic y papers recientes de evaluación y riesgo multiagente.',
