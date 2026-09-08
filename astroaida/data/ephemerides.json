@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-06T23:30:07.238633+00:00",
+  "fetched_at": "2026-09-08T00:02:28.589375+00:00",
   "status": "live",
-  "target_date": "2026-09-07",
+  "target_date": "2026-09-08",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,16 +10,16 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-07T00:00:00+02:00",
-    "end_local": "2026-09-08T12:00:00+02:00"
+    "start_local": "2026-09-08T00:00:00+02:00",
+    "end_local": "2026-09-09T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260908_15_100-in-the-sky-org-45ccc0259410-2026-09-07",
+      "id": "20260908_15_100-in-the-sky-org-45ccc0259410-2026-09-08",
       "type": "other",
-      "title_es": "Aproximación cercana a la Luna y M44",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna y M44 pasan cerca una de la otra",
+      "title_es": "Close approach of the Moon and M44",
+      "title_translation_status": "unavailable",
+      "summary_es": "The Moon and M44 pass close to each other",
       "start_local": "2026-09-08T07:54:28+02:00",
       "visibility": {
         "status": "not_visible",
@@ -33,13 +33,73 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20260908_15_100"
       }
+    },
+    {
+      "id": "20260908_20_100-in-the-sky-org-f265340f301b-2026-09-08",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "The Moon and Jupiter share the same right ascension, at a separation of 50&#39;",
+      "start_local": "2026-09-08T20:11:50+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -9.5°).",
+        "altitude_deg": -9.5,
+        "azimuth_deg": 300.5,
+        "sun_altitude_deg": 5.4
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260908_20_100"
+      }
+    },
+    {
+      "id": "20260908_15_101-in-the-sky-org-403accb8b302-2026-09-08",
+      "type": "other",
+      "title_es": "Close approach of the Moon and Jupiter",
+      "title_translation_status": "unavailable",
+      "summary_es": "The Moon and Jupiter pass close to each other",
+      "start_local": "2026-09-08T20:44:18+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -14.8°).",
+        "altitude_deg": -14.8,
+        "azimuth_deg": 305.9,
+        "sun_altitude_deg": -0.5
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260908_15_101"
+      }
+    },
+    {
+      "id": "20260908_16_100-in-the-sky-org-742107175bd9-2026-09-08",
+      "type": "other",
+      "title_es": "Lunar occultation of Jupiter",
+      "title_translation_status": "unavailable",
+      "summary_es": "The Moon will pass in front of Jupiter, creating a lunar occultation visible from countries and territories including Canada, Greenland, Russia and the Contiguous United States amongst others",
+      "start_local": "2026-09-08T20:44:18+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Júpiter está bajo el horizonte (altitud -14.6°).",
+        "altitude_deg": -14.6,
+        "azimuth_deg": 305.7,
+        "sun_altitude_deg": -0.5
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260908_16_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 16.11111111111111,
-    "visibility": 47560.0,
+    "cloud_cover": 46.22222222222222,
+    "visibility": 46360.0,
     "precipitation_probability": 0,
-    "temperature": 26.3
+    "temperature": 25.5
   },
   "sources": [
     {

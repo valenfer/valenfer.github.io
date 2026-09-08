@@ -1,14 +1,15 @@
 {
   "media_type": "image",
-  "url": "https://apod.nasa.gov/apod/image/2609/PlutoEnhancedHiRes_NewHorizons_960.jpg",
-  "title": "Pluto in Enhanced Color",
-  "explanation": "Pluto is more colorful than we can see. Color data and high-resolution images of our Solar System's most famous dwarf planet, taken by the robotic New Horizons spacecraft during its flyby in 2015 July, have been digitally combined to give an enhanced-color view of this ancient world sporting an unexpectedly young surface. The featured enhanced color image is not only esthetically pretty but scientifically useful, making surface regions of differing chemical composition visually distinct. For example, the light-colored heart-shaped Tombaugh Regio on the lower right is clearly shown here to be divisible into two regions that are geologically different, with the leftmost lobe, Sputnik Planitia, also appearing unusually smooth. After Pluto, New Horizons continued on, shooting  past asteroid Arrokoth in 2019 with enough speed to escape our Solar System completely.",
-  "date": "2026-09-06",
+  "url": "https://apod.nasa.gov/apod/image/2609/Pelican_Killion_960.jpg",
+  "title": "The Pelican Nebula in Gas, Dust, and Stars",
+  "explanation": "The Pelican Nebula is slowly being transformed.  IC 5070 (an official designation) is divided from the larger North America Nebula by a molecular cloud filled with dark dust.  The deep featured picture from Utah, USA incorporates 25 hours of exposure and brings out great details of this filamentary dust. The Pelican Nebula receives much study because it is a particularly active mix of star formation and evolving gas clouds.  The light from young energetic stars is slowly transforming the cold gas to hot gas, with the advancing boundary between the two, known as an ionization front, visible in bright orange on the upper right. Particularly dense tentacles of cold gas remain.  Millions of years from now, the Pelican Nebula, bounded by dark nebula LDN 935, might no longer be known as the Pelican, as the balance and placement of stars and gas will surely leave something that appears completely different.   APOD's main NASA site is moving: From apod.nasa.gov to science.nasa.gov/apod",
+  "date": "2026-09-07",
   "source": "NASA APOD",
-  "fetched_at": "2026-09-06T23:30:00.144060+00:00",
+  "fetched_at": "2026-09-08T00:00:16.523899+00:00",
   "status": "live",
-  "title_es": "Plutón en color mejorado",
-  "title_translation_status": "translated",
-  "explanation_es": "Plutón es más colorido de lo que podemos ver. Los datos en color y las imágenes de alta resolución del planeta enano más famoso de nuestro Sistema Solar, tomadas por la nave espacial robótica New Horizons durante su sobrevuelo en julio de 2015, se han combinado digitalmente para dar una vista en color mejorada de este mundo antiguo con una superficie inesperadamente joven. La imagen en color mejorada presentada no solo es estéticamente bonita sino también científicamente útil, lo que hace que las regiones superficiales de diferente composición química sean visualmente distintas. Por ejemplo, la región de Tombaugh en forma de corazón de color claro en la parte inferior derecha se muestra claramente aquí como divisible en dos regiones que son geológicamente diferentes, con el lóbulo más a la izquierda, Sputnik Planitia, que también parece inusualmente liso. Después de Plutón, New Horizons continuó, disparando  más allá del asteroide Arrokoth en 2019 con la velocidad suficiente para escapar de nuestro Sistema Solar por completo.",
-  "explanation_translation_status": "translated"
+  "copyright": "Mark Killion",
+  "title_es": "The Pelican Nebula in Gas, Dust, and Stars",
+  "title_translation_status": "unavailable",
+  "explanation_es": "The Pelican Nebula is slowly being transformed. IC 5070 (an official designation) is divided from the larger North America Nebula by a molecular cloud filled with dark dust. The deep featured picture from Utah, USA incorporates 25 hours of exposure and brings out great details of this filamentary dust. The Pelican Nebula receives much study because it is a particularly active mix of star formation and evolving gas clouds. The light from young energetic stars is slowly transforming the cold gas to hot gas, with the advancing boundary between the two, known as an ionization front, visible in bright orange on the upper right. Particularly dense tentacles of cold gas remain. Millions of years from now, the Pelican Nebula, bounded by dark nebula LDN 935, might no longer be known as the Pelican, as the balance and placement of stars and gas will surely leave something that appears completely different. APOD's main NASA site is moving: From apod.nasa.gov to science.nasa.gov/apod",
+  "explanation_translation_status": "unavailable"
 }
