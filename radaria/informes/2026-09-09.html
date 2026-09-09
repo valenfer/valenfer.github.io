@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RadarIA diario — 2026-09-09</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<main class="wrap">
+<header class="hero">
+  <p class="kicker">RadarIA diario</p>
+  <h1>RadarIA diario — 2026-09-09</h1>
+  <p><strong>Fecha de ejecución:</strong> 2026-09-09 08:00 CEST.</p>
+  <p><strong>Rango investigado:</strong> desde el último informe fiable de <code>radaria/reports.js</code> (2026-09-08) hasta 2026-09-09; como había pocas novedades estrictamente nuevas en 24 horas, amplié la selección hasta 7 días y lo marco aquí sin maquillaje, que para eso ya está la publicidad.</p>
+  <p><strong>Metodología:</strong> revisión de cuerpos de fuentes oficiales de OpenAI y Anthropic, búsqueda de Google/Google DeepMind sin novedad destacable en la ventana, arXiv reciente y Hugging Face Papers como radar secundario; prioridad para fuentes primarias y papers originales.</p>
+</header>
+
+<article class="card">
+  <span class="badge">Producto</span>
+  <h2>The Work Now Within Reach: OpenAI vende Astra como plataforma económica, no solo como modelo</h2>
+  <p class="meta">OpenAI · 8 sep 2026</p>
+  <p><strong>Por qué importa.</strong> OpenAI presenta GPT-6 Astra como “major step forward” y lo enmarca dentro de una estrategia de producto, usuarios, empresas y cómputo full-stack, no como una demo aislada.[1]</p>
+  <p><strong>Resumen.</strong> El texto afirma que los productos de OpenAI alcanzan más de mil millones de usuarios activos semanales y 2,5 millones de empresas, y usa esos datos para defender que cada avance de modelo tiene una ruta directa a ChatGPT, ChatGPT Work, Codex y la API.[1]</p>
+  <p><strong>Impacto práctico.</strong> Para uso real, la señal interesante no es “otro modelo más”, sino la combinación de agentes, costes de inferencia y despliegue empresarial; habrá que vigilar precios, límites y disponibilidad efectiva antes de emocionarse como becario con portátil nuevo.</p>
+  <p><a href="https://openai.com/index/the-work-now-within-reach/">Leer fuente</a></p>
+</article>
+
+<article class="card">
+  <span class="badge">Informe</span>
+  <h2>Path to Astra: OpenAI reconoce umbral crítico en ciberseguridad</h2>
+  <p class="meta">OpenAI · 1 sep 2026</p>
+  <p><strong>Por qué importa.</strong> OpenAI dice que Astra alcanza el umbral “Critical” de capacidad de ciberseguridad bajo su Preparedness Framework, incluyendo capacidad para encontrar vulnerabilidades desconocidas y desarrollar exploits con herramientas y acceso adecuados.[2]</p>
+  <p><strong>Resumen.</strong> La compañía afirma que retrasó partes del desarrollo y lanzamiento mientras reforzaba salvaguardas, que Astra obtuvo 100% en ExploitBench y que en evaluaciones internas descubrió y usó dos vulnerabilidades zero-day dentro de una cadena de explotación.[2]</p>
+  <p><strong>Impacto práctico.</strong> Es una señal fuerte de que los modelos frontera ya obligan a tratar ciberseguridad, control de agentes y acceso escalonado como diseño de producto, no como apéndice legal para dormir tranquilos.</p>
+  <p><a href="https://openai.com/index/path-to-astra/">Leer fuente</a></p>
+</article>
+
+<article class="card">
+  <span class="badge">Informe</span>
+  <h2>OpenAI mide aceleración interna de investigación con agentes</h2>
+  <p class="meta">OpenAI · 6 sep 2026</p>
+  <p><strong>Por qué importa.</strong> OpenAI afirma que ya alcanzó su objetivo de tener un “research intern” automatizado capaz de realizar tareas de investigación bien definidas bajo dirección humana, y que progresa hacia un investigador automatizado para marzo de 2028.[3]</p>
+  <p><strong>Resumen.</strong> Según sus métricas internas, a mediados de agosto la organización de investigación usaba 3,1 jornadas de agente por cada jornada humana, con investigadores delegando más código, experimentos y tareas de mayor horizonte.[3]</p>
+  <p><strong>Impacto práctico.</strong> La lectura sobria: los agentes ya están cambiando el cuello de botella del laboratorio; la lectura traviesa: cuando el becario de silicio trabaja 24/7, el humano pasa a ser editor, juez y apagafuegos.</p>
+  <p><a href="https://openai.com/index/research-acceleration-view-inside-openai/">Leer fuente</a></p>
+</article>
+
+<article class="card">
+  <span class="badge">Paper</span>
+  <h2>Claude formaliza el Último Teorema de Fermat en Lean</h2>
+  <p class="meta">Anthropic · 4 sep 2026</p>
+  <p><strong>Por qué importa.</strong> Anthropic afirma que Claude produjo en 11 días el primer proof end-to-end computer-checked del Último Teorema de Fermat, escribiendo 13 millones de líneas de Lean y probando 29.500 teoremas intermedios usados en la prueba final.[4]</p>
+  <p><strong>Resumen.</strong> La novedad no es descubrir matemáticas nuevas, sino automatizar la formalización y verificación de una prueba compleja; el flujo usó Prove2Me y un arnés multiagente basado en Claude Code para coordinar trabajo, memoria y compilación.[4]</p>
+  <p><strong>Impacto práctico.</strong> Si se reproduce y madura, apunta a un futuro donde los resultados matemáticos y científicos vengan acompañados de artefactos verificables, reduciendo la dependencia del “confía en mí, soy paper”.</p>
+  <p><a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem">Leer fuente</a></p>
+</article>
+
+<article class="card">
+  <span class="badge">Benchmark</span>
+  <h2>τ^τ-Bench: construir agentes completos sigue siendo difícil</h2>
+  <p class="meta">arXiv · 4 sep 2026</p>
+  <p><strong>Por qué importa.</strong> τ^τ-Bench evalúa si un agente desarrollador puede construir un agente de atención al cliente completo a partir de registros empresariales, requisitos de cliente, API de producción, código heredado y límites de coste.[5]</p>
+  <p><strong>Resumen.</strong> En 53 tareas de cuatro dominios, la mejor configuración reportada —Claude Opus 5 bajo Claude Code— supera solo el 23,9% de simulaciones de evaluación, frente al 82,2% de un techo de referencia escrito por expertos.[5]</p>
+  <p><strong>Impacto práctico.</strong> Buen baño de realidad: los coding agents impresionan, pero aún fallan en comprensión profunda, comunicación con cliente y exploración de arquitectura antes de enviar “lo primero que compila”.</p>
+  <p><a href="https://arxiv.org/abs/2609.04611">Leer fuente</a></p>
+</article>
+
+<article class="card">
+  <span class="badge">Benchmark</span>
+  <h2>ERPBench: los rankings de agentes empresariales dependen del ecosistema competitivo</h2>
+  <p class="meta">arXiv · 4 sep 2026</p>
+  <p><strong>Por qué importa.</strong> ERPBench propone una simulación ERP de seis rondas con precios, producción, compras, inventario, finanzas y competencia compartida para evaluar agentes de decisión empresarial.[6]</p>
+  <p><strong>Resumen.</strong> El paper compara 100 problemas en dos ecologías —Solo y Arena— y reporta que el líder cambia: DeepSeek lidera en Solo, mientras Gemini lidera en Arena; solo 21 de 100 problemas comparten ganador a nivel de tarea.[6]</p>
+  <p><strong>Impacto práctico.</strong> Antes de comprar “el mejor agente para empresa”, conviene preguntar: ¿mejor en qué mercado, contra quién y con qué interacción? Detalle pequeño, casi nada, solo el mundo real entero.</p>
+  <p><a href="https://arxiv.org/abs/2609.04667">Leer fuente</a></p>
+</article>
+
+<article class="card">
+  <span class="badge">Benchmark</span>
+  <h2>ABLE: agentes LLM usando herramientas de diseño de proteínas</h2>
+  <p class="meta">arXiv · 5 sep 2026</p>
+  <p><strong>Por qué importa.</strong> ABLE evalúa la capacidad de agentes LLM para usar modelos biológicos como ProteinMPNN y AlphaFold3 en flujos de diseño de proteínas de doble uso.[7]</p>
+  <p><strong>Resumen.</strong> El estudio evalúa 15 modelos frontera; siete rechazan todas las tareas, mientras Claude Sonnet 4 y Gemini 3 Pro obtienen las mejores puntuaciones en recuperación de información, selección de herramientas y uso de herramientas.[7]</p>
+  <p><strong>Impacto práctico.</strong> Refuerza una idea importante para bioseguridad: los modelos pueden bajar barreras técnicas, pero siguen siendo irregulares en planificación, estrategia e integración de conocimiento biológico.</p>
+  <p><a href="https://arxiv.org/abs/2609.05818">Leer fuente</a></p>
+</article>
+
+<section class="card">
+  <h2>Lo que vigilar</h2>
+  <ul>
+    <li><strong>Acceso escalonado a capacidades cyber.</strong> Astra marca una frontera donde el despliegue por niveles y la monitorización de acciones dejan de ser opcionales.[2]</li>
+    <li><strong>Benchmarks más realistas para agentes.</strong> τ^τ-Bench y ERPBench miden tareas con cliente, coste, APIs y ecologías competitivas, justo donde las demos bonitas suelen sudar tinta.[5][6]</li>
+    <li><strong>Formalización automática como infraestructura científica.</strong> El caso Fermat sugiere que Lean, arneses multiagente y pruebas verificables pueden convertirse en parte normal del flujo científico.[4]</li>
+    <li><strong>Bioseguridad práctica.</strong> ABLE apunta a evaluar no solo si el modelo “sabe biología”, sino si sabe manejar herramientas de diseño con implicaciones duales.[7]</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Fuentes revisadas sin novedad destacable</h2>
+  <p>Google/Google DeepMind: se realizaron búsquedas específicas en blogs oficiales para novedades del 8-9 de septiembre y no apareció una pieza destacable nueva en la ventana; por eso no he forzado una noticia de relleno. Hugging Face Papers sí mostró tendencias recientes, pero lo usé como radar secundario y prioricé arXiv para las piezas citadas.[8]</p>
+</section>
+
+<section class="card sources">
+  <h2>Sources</h2>
+  <ol>
+    <li><a href="https://openai.com/index/the-work-now-within-reach/">https://openai.com/index/the-work-now-within-reach/</a> — The Work Now Within Reach</li>
+    <li><a href="https://openai.com/index/path-to-astra/">https://openai.com/index/path-to-astra/</a> — Path to Astra: critical capabilities and frontier safeguards</li>
+    <li><a href="https://openai.com/index/research-acceleration-view-inside-openai/">https://openai.com/index/research-acceleration-view-inside-openai/</a> — Research acceleration: The view inside OpenAI</li>
+    <li><a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem">https://www.anthropic.com/research/formalizing-fermats-last-theorem</a> — Formalizing Fermat’s Last Theorem</li>
+    <li><a href="https://arxiv.org/abs/2609.04611">https://arxiv.org/abs/2609.04611</a> — τ^τ-Bench</li>
+    <li><a href="https://arxiv.org/abs/2609.04667">https://arxiv.org/abs/2609.04667</a> — ERPBench</li>
+    <li><a href="https://arxiv.org/abs/2609.05818">https://arxiv.org/abs/2609.05818</a> — ABLE</li>
+    <li><a href="https://huggingface.co/papers/trending">https://huggingface.co/papers/trending</a> — Trending Papers - Hugging Face</li>
+  </ol>
+</section>
+
+<footer class="footer"><p>Informe preparado por AIDA para Valentín. Profesional, claro y con el detector de humo encendido, por si algún benchmark viene con purpurina.</p></footer>
+</main>
+</body>
+</html>
