@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-10',
+    title: 'RadarIA diario — 2026-09-10',
+    summary: '5 piezas sobre entrenamiento verificable de agentes, memoria persistente selectiva, auditoría por trazas y fine-tuning de razonamiento.',
+    url: 'informes/2026-09-10.html'
+  },
+  {
     date: '2026-09-09',
     title: 'RadarIA diario — 2026-09-09',
     summary: '7 piezas sobre Astra, aceleración de investigación con agentes, formalización matemática y benchmarks recientes de agentes empresariales, construcción de agentes y bioseguridad.',
