@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-09T23:50:46.481689+00:00",
+  "fetched_at": "2026-09-10T23:44:33.442602+00:00",
   "status": "live",
-  "target_date": "2026-09-10",
+  "target_date": "2026-09-11",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,32 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-10T00:00:00+02:00",
-    "end_local": "2026-09-11T12:00:00+02:00"
+    "start_local": "2026-09-11T00:00:00+02:00",
+    "end_local": "2026-09-12T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260910_12_100-in-the-sky-org-41c477074f9a-2026-09-10",
-      "type": "other",
-      "title_es": "Urano entra en movimiento retrógrado",
-      "title_translation_status": "translated",
-      "summary_es": "Urano invierte su dirección de movimiento a través del cielo",
-      "start_local": "2026-09-10T21:28:44+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Urano está bajo el horizonte (altitud -23.6°).",
-        "altitude_deg": -23.6,
-        "azimuth_deg": 33.0,
-        "sun_altitude_deg": -9.9
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260910_12_100"
-      }
-    },
-    {
-      "id": "20260911_08_100-in-the-sky-org-1fc4ac33a960-2026-09-10",
+      "id": "20260911_08_100-in-the-sky-org-1fc4ac33a960-2026-09-11",
       "type": "lunar_phase",
       "title_es": "Luna nueva",
       "title_translation_status": "deterministic",
@@ -50,13 +30,33 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20260911_08_100"
       }
+    },
+    {
+      "id": "20260912_20_100-in-the-sky-org-a8ff6fe22136-2026-09-11",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna y Mercurio comparten la misma ascensión recta, a una separación de 3°50'",
+      "start_local": "2026-09-12T09:29:21+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 0.7°, Sol a 16.3°.",
+        "altitude_deg": 0.7,
+        "azimuth_deg": 96.5,
+        "sun_altitude_deg": 16.3
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260912_20_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 22.555555555555557,
-    "visibility": 40980.0,
+    "cloud_cover": 3.8333333333333335,
+    "visibility": 42580.0,
     "precipitation_probability": 0,
-    "temperature": 21.6
+    "temperature": 22.4
   },
   "sources": [
     {
