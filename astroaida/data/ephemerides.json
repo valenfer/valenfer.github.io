@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-10T23:44:33.442602+00:00",
+  "fetched_at": "2026-09-11T23:53:18.185750+00:00",
   "status": "live",
-  "target_date": "2026-09-11",
+  "target_date": "2026-09-12",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,29 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-11T00:00:00+02:00",
-    "end_local": "2026-09-12T12:00:00+02:00"
+    "start_local": "2026-09-12T00:00:00+02:00",
+    "end_local": "2026-09-13T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260911_08_100-in-the-sky-org-1fc4ac33a960-2026-09-11",
-      "type": "lunar_phase",
-      "title_es": "Luna nueva",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna desaparece en el resplandor del Sol durante unos días",
-      "start_local": "2026-09-11T05:28:08+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "No observable directamente",
-        "reason": "La Luna nueva no se ve, pero favorece un cielo nocturno más oscuro."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260911_08_100"
-      }
-    },
-    {
-      "id": "20260912_20_100-in-the-sky-org-a8ff6fe22136-2026-09-11",
+      "id": "20260912_20_100-in-the-sky-org-a8ff6fe22136-2026-09-12",
       "type": "conjunction",
       "title_es": "Conjunción",
       "title_translation_status": "deterministic",
@@ -53,10 +36,10 @@
     }
   ],
   "weather": {
-    "cloud_cover": 3.8333333333333335,
-    "visibility": 42580.0,
+    "cloud_cover": 0.0,
+    "visibility": 50320.0,
     "precipitation_probability": 0,
-    "temperature": 22.4
+    "temperature": 23.7
   },
   "sources": [
     {
