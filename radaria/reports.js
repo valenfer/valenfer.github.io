@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-11',
+    title: 'RadarIA diario — 2026-09-11',
+    summary: '6 piezas sobre Agents API, agentes de datos, abuso de IA, seguridad de agentes, RL en terminal y lectura paralela de contexto largo.',
+    url: 'informes/2026-09-11.html'
+  },
+  {
     date: '2026-09-10',
     title: 'RadarIA diario — 2026-09-10',
     summary: '5 piezas sobre entrenamiento verificable de agentes, memoria persistente selectiva, auditoría por trazas y fine-tuning de razonamiento.',

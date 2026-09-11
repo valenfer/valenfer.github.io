@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-09-11</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body{margin:0;background:#eef3fb;color:#172033;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}.mail-wrap{max-width:980px;margin:0 auto;padding:28px 16px 46px}.hero{background:linear-gradient(135deg,#111827,#23406f 58%,#5b7cfa);color:#fff;border-radius:26px;padding:30px;box-shadow:0 18px 45px rgba(24,39,75,.22)}.hero h1{margin:0 0 8px;font-size:34px}.hero p{margin:8px 0;color:#dbe7ff}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.pill{border-radius:999px;padding:7px 12px;background:rgba(255,255,255,.14);font-size:13px}.section{margin-top:24px}.card{background:#fff;border:1px solid #dfe7f5;border-radius:22px;margin:18px 0;padding:22px;box-shadow:0 10px 28px rgba(24,39,75,.08)}.card h2{margin:8px 0 10px;font-size:22px;color:#14213d}.badge{display:inline-block;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}.producto{background:#e0ecff;color:#174ea6}.paper{background:#e8fff3;color:#087443}.informe{background:#fff2d8;color:#935b00}.fuente{color:#53627a;font-size:14px}.why{border-left:4px solid #5b7cfa;padding-left:12px;background:#f5f8ff;border-radius:10px;padding-top:8px;padding-bottom:8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.box{background:#f8fbff;border:1px solid #e3ebf7;border-radius:16px;padding:16px}a{color:#245bd6;text-decoration:none}a:hover{text-decoration:underline}.sources ol{padding-left:24px}.footer{color:#56657c;font-size:14px;margin-top:22px}@media(max-width:760px){.grid{grid-template-columns:1fr}.hero h1{font-size:28px}.mail-wrap{padding:16px 10px}.card{padding:18px}}
+  </style>
+</head>
+<body>
+  <main class="mail-wrap">
+    <header class="hero">
+      <h1>RadarIA diario — 2026-09-11</h1>
+      <p>Informe ejecutado el 2026-09-11 a las 08:00 hora peninsular española.</p>
+      <p>Rango investigado: desde el último informe publicado en <code>radaria/reports.js</code> (2026-09-10) hasta 2026-09-11. Ventana real: últimas 24 horas; no hizo falta ampliar a 7 días.</p>
+      <div class="meta"><span class="pill">6 piezas seleccionadas</span><span class="pill">Fuentes primarias priorizadas</span><span class="pill">OpenAI · Anthropic · Papers</span></div>
+    </header>
+
+    <section class="section card">
+      <h2>Metodología breve</h2>
+      <p>He revisado publicaciones oficiales de OpenAI, Google/Google DeepMind y Anthropic, además de papers recientes destacados en Hugging Face Papers/arXiv. He abierto el cuerpo de las fuentes incluidas y he descartado listados sin novedad fechada en la ventana. El criterio ha sido: impacto práctico, relevancia técnica y señales útiles para seguir la evolución de agentes, seguridad y modelos. Pocas florituras, que para humo ya están algunas notas de prensa.</p>
+    </section>
+
+    <section class="section">
+      <article class="card">
+        <span class="badge producto">Producto</span>
+        <h2>OpenAI lanza Agents API en beta pública</h2>
+        <p class="fuente">Fuente: OpenAI · Fecha: 10 septiembre 2026 · <a href="https://openai.com/index/introducing-the-agents-api">enlace</a></p>
+        <p>OpenAI presentó Agents API como una beta pública para construir y ejecutar agentes en la nube con el harness de Codex gestionado por OpenAI.[1]</p>
+        <p>La propuesta separa el harness —contexto, herramientas, subagentes, trazas y recuperación— del entorno de cómputo, que puede ser sandbox alojado por OpenAI, infraestructura propia o proveedores integrados.[1]</p>
+        <p class="why"><strong>Por qué importa:</strong> convierte patrones que antes había que montar a mano —sesiones largas, subagentes, ficheros, comandos y artefactos— en una API de producción. Para desarrolladores, esto rebaja la fricción de crear agentes que realmente trabajen, no solo charlen bonito.</p>
+        <p><strong>Impacto práctico:</strong> útil para automatizar análisis técnicos, revisión de repositorios, generación de informes y flujos empresariales largos; también aumenta la necesidad de controlar costes, permisos y límites de sandbox.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge producto">Producto</span>
+        <h2>OpenAI introduce Data agent para ChatGPT Work</h2>
+        <p class="fuente">Fuente: OpenAI · Fecha: 10 septiembre 2026 · <a href="https://openai.com/index/put-data-to-work/">enlace</a></p>
+        <p>OpenAI anunció un Data agent en ChatGPT Work que conecta con fuentes aprobadas de datos, investiga cambios y genera dashboards interactivos mediante conversación.[2]</p>
+        <p>El agente puede conectarse a Redshift, BigQuery, ClickHouse, Databricks, MongoDB, Snowflake y documentos de Google Drive o SharePoint, usando semántica empresarial como métricas, definiciones y relaciones de datos.[2]</p>
+        <p class="why"><strong>Por qué importa:</strong> desplaza la analítica empresarial desde “pide un informe y espera” hacia investigación conversacional con contexto gobernado.</p>
+        <p><strong>Impacto práctico:</strong> equipos no técnicos podrán explorar datos y compartir paneles, pero la calidad dependerá de permisos, capas semánticas y definiciones internas; si el diccionario de métricas está hecho un cristo, el agente no hace milagros.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge informe">Informe</span>
+        <h2>Anthropic publica su informe de abuso y amenazas de septiembre</h2>
+        <p class="fuente">Fuente: Anthropic · Fecha: 10 septiembre 2026 · <a href="https://www.anthropic.com/threat-intelligence-report-september-2026">enlace</a></p>
+        <p>Anthropic publicó casos de operaciones maliciosas interrumpidas entre diciembre de 2025 y agosto de 2026, cubriendo ciberoperaciones, influencia, vigilancia, fraude, biología, armas convencionales y destilación.[3]</p>
+        <p>El informe destaca que la IA ha elevado velocidad, escala y profundidad de actores ofensivos, y que en muchos casos el uso pasó de asistente conversacional a orquestador de flujos multiagente con reconocimiento, explotación y exfiltración.[3]</p>
+        <p class="why"><strong>Por qué importa:</strong> es una señal clara de que la seguridad de agentes ya no va solo de jailbreaks simpáticos; hablamos de cadenas operativas, robo de claves y ataques contra proveedores de IA.</p>
+        <p><strong>Impacto práctico:</strong> conviene endurecer entornos de evaluación, limitar credenciales en sandboxes, monitorizar uso anómalo de API keys y tratar los flujos agentivos como superficie crítica.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge paper">Paper</span>
+        <h2>EvoSafeHarness: arneses de seguridad adaptados a modelo y dominio</h2>
+        <p class="fuente">Fuente: Hugging Face Papers / Johns Hopkins University · Publicado: 4 septiembre; enviado a HF el 11 septiembre · <a href="https://huggingface.co/papers/2609.05903">enlace</a></p>
+        <p>EvoSafeHarness propone optimizar arneses de seguridad para agentes combinando políticas en lenguaje natural y lógica ejecutable ajustada a un modelo congelado y un dominio concreto.[4]</p>
+        <p>En los resultados reportados, reduce la tasa media de éxito de ataque en DecodingTrust-Agent del 45,6% al 10,0% con un coste de utilidad de 3,3 puntos, y alcanza 82,8% de utilidad con 0,0% ASR en AgentDojo.[4]</p>
+        <p class="why"><strong>Por qué importa:</strong> apunta a una idea potente: la defensa no debería ser “una política universal y a rezar”, sino un arnés específico para el modelo, dominio y herramientas.</p>
+        <p><strong>Impacto práctico:</strong> relevante para agentes que tocan dinero, ficheros, correo o sistemas reales; puede inspirar capas de validación por herramienta y estado de trayectoria.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge paper">Paper</span>
+        <h2>T1: entrenamiento RL para agentes de terminal de largo horizonte</h2>
+        <p class="fuente">Fuente: Hugging Face Papers · Publicado: 9 septiembre; enviado a HF el 10 septiembre · <a href="https://huggingface.co/papers/2609.11042">enlace</a></p>
+        <p>T1 es un modelo MoE de 122B parámetros totales entrenado con aprendizaje por refuerzo para operar una shell real en sandbox durante tareas de más de 300 llamadas a herramientas.[5]</p>
+        <p>El trabajo reporta una mejora en Terminal-Bench 2.1 desde el 43,8% del modelo base hasta el 64,0% resuelto, usando verificadores de tarea, corpus fuera de distribución y técnicas para estabilizar actor-critic.[5]</p>
+        <p class="why"><strong>Por qué importa:</strong> refuerza la tendencia de entrenar agentes no solo para responder, sino para actuar durante muchas rondas y verificar su propio progreso.</p>
+        <p><strong>Impacto práctico:</strong> interesante para programación, ciencia computacional y mantenimiento de sistemas; también exige trazabilidad, porque 300 turnos de terminal sin control son una receta para sudar frío.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge paper">Paper</span>
+        <h2>PARSER: lectura paralela y razonamiento profundo para contexto largo</h2>
+        <p class="fuente">Fuente: Hugging Face Papers · Publicado: 6 septiembre; enviado a HF el 10 septiembre · <a href="https://huggingface.co/papers/2609.06702">enlace</a></p>
+        <p>PARSER separa la lectura paralela de chunks del razonamiento iterativo usando subagentes ligeros y un agente líder que agrega evidencias en rondas scatter-gather.[6]</p>
+        <p>En QA multi-hop con contextos de 7K a 896K tokens, el paper reporta mejoras medias de 5,7 puntos frente a la mejor línea base secuencial, 12,0 puntos a 896K tokens y hasta 11 veces menos latencia.[6]</p>
+        <p class="why"><strong>Por qué importa:</strong> ofrece una arquitectura práctica para documentos enormes: leer en paralelo y razonar en profundidad, en vez de pasear una memoria secuencial como si fuese un carrito de supermercado.</p>
+        <p><strong>Impacto práctico:</strong> aplicable a revisión legal/técnica, auditoría de repositorios grandes y análisis documental con menor sensibilidad a dónde aparece la evidencia.</p>
+      </article>
+    </section>
+
+    <section class="section grid">
+      <div class="box">
+        <h2>Lo que vigilar</h2>
+        <ul>
+          <li><strong>Agentes como infraestructura:</strong> OpenAI está empaquetando harness, sandboxes y subagentes como producto gestionado.[1]</li>
+          <li><strong>Seguridad por dominio:</strong> EvoSafeHarness y el informe de Anthropic apuntan a controles específicos, no a una única barrera genérica.[3][4]</li>
+          <li><strong>RL con verificadores:</strong> T1 muestra que la ejecución real y los verificadores por tarea ganan peso frente al entrenamiento puramente textual.[5]</li>
+          <li><strong>Contexto largo distribuido:</strong> PARSER sugiere que paralelizar lectura puede ser más eficaz que meter todo en una ventana gigantesca y cruzar los dedos.[6]</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h2>Fuentes revisadas sin novedad destacable</h2>
+        <ul>
+          <li><strong>Google / Google DeepMind:</strong> el índice oficial mostraba entradas de septiembre ya cubiertas en informes previos o sin fecha diaria precisa dentro de esta ventana; no he seleccionado pieza nueva para evitar duplicados.[7]</li>
+          <li><strong>Meta y Microsoft:</strong> búsquedas revisadas sin hallazgos primarios recientes y suficientemente relevantes para la ventana 2026-09-10 → 2026-09-11.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section card sources">
+      <h2>Fuentes</h2>
+      <pre style="white-space:pre-wrap;font-family:inherit;background:#f8fbff;border:1px solid #e3ebf7;border-radius:14px;padding:14px">## Sources
+
+[1] https://openai.com/index/introducing-the-agents-api — Introducing the Agents API | OpenAI
+[2] https://openai.com/index/put-data-to-work — Now everyone can put data to work | OpenAI
+[3] https://www.anthropic.com/threat-intelligence-report-september-2026 — Detecting and countering misuse of AI: September 2026 | Anthropic
+[4] https://huggingface.co/papers/2609.05903 — EvoSafeHarness
+[5] https://huggingface.co/papers/2609.11042 — T1: Terminal Agent Reinforcement Learning for Long-Horizon Tasks
+[6] https://huggingface.co/papers/2609.06702 — PARSER
+[7] https://deepmind.google/blog — Google DeepMind News</pre>
+      <ol>
+        <li><a href="https://openai.com/index/introducing-the-agents-api">https://openai.com/index/introducing-the-agents-api</a> — Introducing the Agents API | OpenAI</li>
+        <li><a href="https://openai.com/index/put-data-to-work">https://openai.com/index/put-data-to-work</a> — Now everyone can put data to work | OpenAI</li>
+        <li><a href="https://www.anthropic.com/threat-intelligence-report-september-2026">https://www.anthropic.com/threat-intelligence-report-september-2026</a> — Detecting and countering misuse of AI: September 2026 | Anthropic</li>
+        <li><a href="https://huggingface.co/papers/2609.05903">https://huggingface.co/papers/2609.05903</a> — EvoSafeHarness</li>
+        <li><a href="https://huggingface.co/papers/2609.11042">https://huggingface.co/papers/2609.11042</a> — T1: Terminal Agent Reinforcement Learning for Long-Horizon Tasks</li>
+        <li><a href="https://huggingface.co/papers/2609.06702">https://huggingface.co/papers/2609.06702</a> — PARSER</li>
+        <li><a href="https://deepmind.google/blog">https://deepmind.google/blog</a> — Google DeepMind News</li>
+      </ol>
+    </section>
+
+    <p class="footer">Cierre AIDA: hoy manda la IA que trabaja con herramientas y la seguridad que intenta que no se le vaya la pinza con ellas. Poca cosa, vamos, justo lo tranquilo para desayunar.</p>
+  </main>
+</body>
+</html>
