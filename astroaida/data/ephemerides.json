@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-11T23:53:18.185750+00:00",
+  "fetched_at": "2026-09-12T23:45:40.702887+00:00",
   "status": "live",
-  "target_date": "2026-09-12",
+  "target_date": "2026-09-13",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,36 +10,36 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-12T00:00:00+02:00",
-    "end_local": "2026-09-13T12:00:00+02:00"
+    "start_local": "2026-09-13T00:00:00+02:00",
+    "end_local": "2026-09-14T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260912_20_100-in-the-sky-org-a8ff6fe22136-2026-09-12",
-      "type": "conjunction",
-      "title_es": "Conjunción",
+      "id": "20260913_08_100-in-the-sky-org-fff5830990eb-2026-09-13",
+      "type": "other",
+      "title_es": "Perihelio",
       "title_translation_status": "deterministic",
-      "summary_es": "La Luna y Mercurio comparten la misma ascensión recta, a una separación de 3°50'",
-      "start_local": "2026-09-12T09:29:21+02:00",
+      "summary_es": "La Luna pasa por su punto más cercano al Sol, una ocurrencia mensual en la época de la luna nueva",
+      "start_local": "2026-09-13T21:06:19+02:00",
       "visibility": {
         "status": "not_visible",
         "label": "No visible",
-        "reason": "Luna no observable: altitud 0.7°, Sol a 16.3°.",
-        "altitude_deg": 0.7,
-        "azimuth_deg": 96.5,
-        "sun_altitude_deg": 16.3
+        "reason": "Luna no observable: altitud 4.3°, Sol a -6.4°.",
+        "altitude_deg": 4.3,
+        "azimuth_deg": 249.2,
+        "sun_altitude_deg": -6.4
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260912_20_100"
+        "url": "https://in-the-sky.org/news.php?id=20260913_08_100"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 0.0,
-    "visibility": 50320.0,
+    "cloud_cover": 3.1666666666666665,
+    "visibility": 43720.0,
     "precipitation_probability": 0,
-    "temperature": 23.7
+    "temperature": 23.3
   },
   "sources": [
     {
