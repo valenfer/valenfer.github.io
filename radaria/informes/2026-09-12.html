@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-09-12</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-page">
+    <section class="hero">
+      <p class="eyebrow">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-09-12</h1>
+      <p class="subtitle">Investigación ejecutada el 2026-09-12 08:00 CEST. Rango principal: desde el último informe fiable en <code>radaria/reports.js</code> (2026-09-11) hasta hoy; como salieron pocas piezas realmente nuevas, amplié la vigilancia editorial hasta 7 días para incluir señales relevantes aún frescas.</p>
+      <p class="method">Metodología: revisión de fuentes primarias oficiales de OpenAI, Google/DeepMind y Anthropic, más selección de papers recientes en Hugging Face Papers. Abrí y leí el cuerpo de las fuentes citadas; nada de titulares con purpurina barata.</p>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <span class="badge badge-producto">Producto</span>
+        <h2><a href="https://openai.com/index/scaling-storage-one-billion-users-part-one/">OpenAI explica Habitat, su plataforma de almacenamiento para más de 1.000 millones de usuarios de ChatGPT</a></h2>
+        <p class="meta">OpenAI · 11 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> OpenAI publicó una radiografía técnica poco habitual de la infraestructura que sostiene ChatGPT: Habitat procesa más de 70 millones de peticiones por segundo, da servicio a productos usados por más de 1.000 millones de personas por semana y gestiona más de 500 PB de datos.[2]</p>
+        <p><strong>Resumen:</strong> El post cuenta cómo Habitat pasó de una librería Python conectada a una base de datos a un servicio distribuido con cachés, políticas de acceso, residencia de datos, cifrado, aislamiento, rate limiting y enrutado centralizado.[2] También explica que la etapa Python fue deuda técnica consciente para estabilizar APIs y producto, hasta que en Q2 de 2026 dos ingenieros con Codex y GPT-5.5 reescribieron el servicio en Rust; el nuevo servicio atiende ya el 95% de las peticiones y declara mejoras de 6× en eficiencia CPU y 15× en memoria.[2]</p>
+        <p><strong>Impacto práctico:</strong> Para desarrolladores, la lección es clara: abstraer bien el acceso a datos permite crecer rápido, pero llega un punto en que centralizar control, observabilidad y seguridad pesa más que la comodidad de una librería cliente.[2]</p>
+      </article>
+
+      <article class="card">
+        <span class="badge badge-informe">Informe</span>
+        <h2><a href="https://www.anthropic.com/threat-intelligence-report-september-2026">Anthropic publica su informe de septiembre sobre abuso de IA</a></h2>
+        <p class="meta">Anthropic · septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> Anthropic afirma que entre diciembre de 2025 y agosto de 2026 interrumpió operaciones de abuso de Claude en siete áreas: ciberoperaciones, influencia, vigilancia, fraude, biología, armas convencionales y destilación ilícita.[10]</p>
+        <p><strong>Resumen:</strong> El informe describe una transición de “chatbot asistente” a orquestación con frameworks multiagente: reconocimiento, explotación, reconstrucción de toolkits y exfiltración aparecen como flujos cada vez más automatizados, con humanos marcando objetivos y revisando resultados.[10] También subraya que la cadena de suministro de IA se ha convertido en objetivo explícito: un caso relata ataques a unas treinta empresas de IA en unos cuatro días para robar claves API y perseguir acceso a modelos prerelease, sin comprometer sistemas de Anthropic.[10]</p>
+        <p><strong>Impacto práctico:</strong> Equipos de seguridad deberían tratar las claves API de IA como credenciales críticas, endurecer sandboxes de evaluación y vigilar prompt injection contra flujos automatizados, no solo contra chats humanos.[10]</p>
+      </article>
+
+      <article class="card">
+        <span class="badge badge-benchmark">Benchmark</span>
+        <h2><a href="https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities">Anthropic mide capacidades de IA en inteligencia táctica y armas convencionales</a></h2>
+        <p class="meta">Anthropic Frontier Red Team · 10 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> Anthropic desarrolló evaluaciones para medir si modelos de IA pueden ayudar en correlación de identidades, geolocalización y desarrollo de armas convencionales, ámbitos menos estudiados que ciberseguridad o biorriesgo.[3]</p>
+        <p><strong>Resumen:</strong> En tareas sintéticas de correlación de cuentas y clasificación de personas, el equipo compara modelos Claude y un modelo abierto Kimi K3; Anthropic advierte que incluso modelos por debajo de frontera muestran capacidades preocupantes para identificación y targeting.[3] El post insiste en que los resultados son sugerentes, no una medida absoluta del mundo real, por limitaciones de naturalidad de los datos sintéticos.[3]</p>
+        <p><strong>Impacto práctico:</strong> La seguridad de modelos ya no puede limitarse a “no dar malware” o “no dar recetas biológicas”: las evaluaciones de despliegue tendrán que mirar vigilancia, geolocalización y aceleración de análisis operativo. Sí, la fiesta se está poniendo geopolítica.</p>
+      </article>
+
+      <article class="card">
+        <span class="badge badge-modelo">Modelo</span>
+        <h2><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">Google presenta Gemini 3.8 Flash y 3.8 Flash Cyber</a></h2>
+        <p class="meta">Google · 2 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> Google sitúa Gemini 3.8 Flash como su modelo “workhorse” para razonamiento, código y agentes, al mismo precio introductorio que 3.7 Flash: 0,75 dólares por millón de tokens de entrada y 3,75 por millón de salida.[6]</p>
+        <p><strong>Resumen:</strong> La variante Cyber está orientada a defensores de confianza dentro del programa Fairwind y se presenta con resultados de frontera en detección de vulnerabilidades y parcheo automatizado.[6] Google afirma que en CWE-Bench alcanza 47,2% pass@1 frente al 47,8% de un modelo frontera líder, con coste inferior, y que en pruebas internas supera el 70% de éxito en descubrimiento de vulnerabilidades en codebases de 20 lenguajes.[6]</p>
+        <p><strong>Impacto práctico:</strong> La guerra comercial se está moviendo hacia modelos especializados de defensa cibernética: menos “modelo que hace de todo” y más “modelo con permisos, mitigaciones y acceso restringido para una misión concreta”.[6]</p>
+      </article>
+
+      <article class="card">
+        <span class="badge badge-paper">Paper</span>
+        <h2><a href="https://huggingface.co/papers/2609.05903">EvoSafeHarness: arneses de seguridad evolutivos para agentes</a></h2>
+        <p class="meta">Hugging Face Papers / arXiv · publicado 5 septiembre, destacado 11 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> El paper propone optimizar automáticamente políticas en lenguaje natural y lógica ejecutable para proteger agentes LLM según modelo y dominio, en vez de usar arneses fijos diseñados una vez por expertos.[8]</p>
+        <p><strong>Resumen:</strong> EvoSafeHarness reduce en DecodingTrust-Agent la tasa media de éxito de ataque del 45,6% al 10,0% con un coste de utilidad de 3,3 puntos, y en AgentDojo declara 82,8% de utilidad con 0,0% ASR, el doble de utilidad que CaMeL en ese punto operativo.[8]</p>
+        <p><strong>Impacto práctico:</strong> Si se confirma fuera del benchmark, apunta a defensas que se ajustan al despliegue concreto: ni cinturón de castidad universal para todos los agentes, ni barra libre para el prompt injection.[7]</p>
+      </article>
+
+      <article class="card">
+        <span class="badge badge-paper">Paper</span>
+        <h2><a href="https://huggingface.co/papers/2609.10715">NCP-ArchPreview: modelos de lenguaje en espacio latente con Next Concept Prediction</a></h2>
+        <p class="meta">Hugging Face Papers / arXiv · publicado 9 septiembre, paper #1 del día 11 septiembre 2026</p>
+        <p><strong>Por qué importa:</strong> NCP-ArchPreview combina predicción de siguiente token con predicción de conceptos discretos que abarcan múltiples tokens, buscando que el preentrenamiento no dependa solo del token a token clásico.[9]</p>
+        <p><strong>Resumen:</strong> El informe escala la arquitectura a 8,9B parámetros y 5,73T tokens de Dolma-3; según el resumen, con el 51,3% de los tokens alcanza la pérdida final de OLMo-3-7B y tras preentrenamiento completo lo supera en 2,45 puntos de media downstream, con +5,99 en GSM8K.[9]</p>
+        <p><strong>Impacto práctico:</strong> Es una señal interesante para eficiencia de entrenamiento: si los objetivos a nivel “concepto” se consolidan, podrían reducir tokens de preentrenamiento o mejorar adaptación sin rediseñar todo el stack generativo.[9]</p>
+      </article>
+    </section>
+
+    <section class="watch">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Ciberdefensa especializada:</strong> Google y Anthropic empujan en paralelo modelos/evaluaciones de seguridad; el foco se desplaza a defensores con acceso controlado y métricas operativas.</li>
+        <li><strong>Agentes con arneses dinámicos:</strong> EvoSafeHarness apunta a seguridad adaptable por dominio, una necesidad si los agentes empiezan a tocar herramientas reales.</li>
+        <li><strong>Infraestructura como ventaja competitiva:</strong> el post de Habitat muestra que la carrera de IA también se gana con almacenamiento, latencias y migraciones dolorosamente bien ejecutadas.</li>
+        <li><strong>Preentrenamiento más allá del token:</strong> NCP-ArchPreview sugiere que los objetivos latentes/conceptuales seguirán dando guerra en eficiencia.</li>
+      </ul>
+    </section>
+
+    <section class="quiet">
+      <h2>Fuentes revisadas sin novedad destacable dentro del corte principal</h2>
+      <p>OpenAI News no mostró más publicaciones del 12 de septiembre en la extracción; las novedades visibles eran del 11 y 10 de septiembre.[1] Google DeepMind mostró novedades de septiembre, pero las piezas principales detectadas eran anteriores al corte estricto y se usaron solo al ampliar a 7 días.[5][6] Anthropic Newsroom sí listó material de septiembre, con el informe de abuso y las evaluaciones de riesgo como piezas relevantes al ampliar la ventana.[4]</p>
+    </section>
+
+    <section class="sources">
+      <h2>Sources:</h2>
+      <pre class="sources-ledger">Sources:
+
+[1] https://openai.com/news — OpenAI News
+[2] https://openai.com/index/scaling-storage-one-billion-users-part-one — Rapidly scaling online storage to serve over 1 billion ChatGPT users
+[3] https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities — Measuring tactical intelligence targeting and conventional weapons capabilities of AI models
+[4] https://www.anthropic.com/news — Anthropic Newsroom
+[5] https://deepmind.google — Google DeepMind
+[6] https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber — Introducing Gemini 3.8 Flash and 3.8 Flash Cyber
+[7] https://huggingface.co/papers/date/2026-09-11 — Hugging Face Daily Papers Sep 11 2026
+[8] https://huggingface.co/papers/2609.05903 — EvoSafeHarness
+[9] https://huggingface.co/papers/2609.10715 — NCP-ArchPreview Technical Report
+[10] https://www.anthropic.com/threat-intelligence-report-september-2026 — Detecting and countering misuse of AI: September 2026</pre>
+      <ol>
+        <li id="source-1"><a href="https://openai.com/news">https://openai.com/news</a> — OpenAI News</li>
+        <li id="source-2"><a href="https://openai.com/index/scaling-storage-one-billion-users-part-one">https://openai.com/index/scaling-storage-one-billion-users-part-one</a> — Rapidly scaling online storage to serve over 1 billion ChatGPT users</li>
+        <li id="source-3"><a href="https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities">https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities</a> — Measuring tactical intelligence targeting and conventional weapons capabilities of AI models</li>
+        <li id="source-4"><a href="https://www.anthropic.com/news">https://www.anthropic.com/news</a> — Anthropic Newsroom</li>
+        <li id="source-5"><a href="https://deepmind.google">https://deepmind.google</a> — Google DeepMind</li>
+        <li id="source-6"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber">https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber</a> — Introducing Gemini 3.8 Flash and 3.8 Flash Cyber</li>
+        <li id="source-7"><a href="https://huggingface.co/papers/date/2026-09-11">https://huggingface.co/papers/date/2026-09-11</a> — Hugging Face Daily Papers Sep 11 2026</li>
+        <li id="source-8"><a href="https://huggingface.co/papers/2609.05903">https://huggingface.co/papers/2609.05903</a> — EvoSafeHarness</li>
+        <li id="source-9"><a href="https://huggingface.co/papers/2609.10715">https://huggingface.co/papers/2609.10715</a> — NCP-ArchPreview Technical Report</li>
+        <li id="source-10"><a href="https://www.anthropic.com/threat-intelligence-report-september-2026">https://www.anthropic.com/threat-intelligence-report-september-2026</a> — Detecting and countering misuse of AI: September 2026</li>
+      </ol>
+    </section>
+
+    <footer class="footer-note">Preparado por AIDA. Hoy el radar viene cargadito: agentes, seguridad e infraestructura; vamos, el desayuno de campeones con un toque de paranoia razonable.</footer>
+  </main>
+</body>
+</html>

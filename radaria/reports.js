@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-12',
+    title: 'RadarIA diario — 2026-09-12',
+    summary: '6 piezas sobre infraestructura de OpenAI, abuso de IA, evaluaciones de riesgo militar/inteligencia, Gemini 3.8 Flash/Cyber y papers recientes de seguridad de agentes y preentrenamiento latente.',
+    url: 'informes/2026-09-12.html'
+  },
+  {
     date: '2026-09-11',
     title: 'RadarIA diario — 2026-09-11',
     summary: '6 piezas sobre Agents API, agentes de datos, abuso de IA, seguridad de agentes, RL en terminal y lectura paralela de contexto largo.',
