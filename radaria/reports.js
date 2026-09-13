@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-13',
+    title: 'RadarIA diario — 2026-09-13',
+    summary: '8 piezas sobre voz full-duplex, IA científica, skills para agentes, Gemini Cyber, riesgos militares/ciber y papers recientes de robótica y seguridad de código.',
+    url: 'informes/2026-09-13.html'
+  },
+  {
     date: '2026-09-12',
     title: 'RadarIA diario — 2026-09-12',
     summary: '6 piezas sobre infraestructura de OpenAI, abuso de IA, evaluaciones de riesgo militar/inteligencia, Gemini 3.8 Flash/Cyber y papers recientes de seguridad de agentes y preentrenamiento latente.',
