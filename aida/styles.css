@@ -255,9 +255,9 @@ a:hover {
 }
 
 .hero-grid--triple {
-  grid-template-columns: minmax(180px, 0.85fr) minmax(320px, 1.25fr) minmax(210px, 0.95fr);
-  gap: clamp(1.4rem, 3.5vw, 3rem);
-  align-items: center;
+  grid-template-columns: minmax(220px, 0.95fr) minmax(330px, 1.28fr) minmax(190px, 0.78fr);
+  gap: clamp(1.6rem, 3.2vw, 3.2rem);
+  align-items: start;
 }
 
 .hero-kicker {
@@ -320,12 +320,14 @@ a:hover {
 
 .hero-retrato-panel--busto {
   aspect-ratio: 1 / 1;
-  align-self: center;
+  align-self: start;
+  margin-top: clamp(0.35rem, 1.1vw, 0.9rem);
 }
 
 .hero-retrato-panel--cuerpo {
   aspect-ratio: 9 / 16;
-  align-self: center;
+  align-self: start;
+  max-height: clamp(26rem, 62vw, 33rem);
 }
 
 .hero-retrato-panel img {
