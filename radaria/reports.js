@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-14',
+    title: 'RadarIA diario — 2026-09-14',
+    summary: '6 piezas sobre Astra en sistemas reales, seguridad/alineamiento, ChatGPT financiero y papers recientes de grafos procedurales y memoria personalizada para agentes.',
+    url: 'informes/2026-09-14.html'
+  },
+  {
     date: '2026-09-13',
     title: 'RadarIA diario — 2026-09-13',
     summary: '8 piezas sobre voz full-duplex, IA científica, skills para agentes, Gemini Cyber, riesgos militares/ciber y papers recientes de robótica y seguridad de código.',
