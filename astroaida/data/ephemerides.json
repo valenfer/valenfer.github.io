@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-13T23:54:07.208218+00:00",
+  "fetched_at": "2026-09-15T00:18:50.140318+00:00",
   "status": "live",
-  "target_date": "2026-09-14",
+  "target_date": "2026-09-16",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,76 +10,15 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-14T00:00:00+02:00",
-    "end_local": "2026-09-15T12:00:00+02:00"
+    "start_local": "2026-09-16T00:00:00+02:00",
+    "end_local": "2026-09-17T12:00:00+02:00"
   },
-  "events": [
-    {
-      "id": "20260914_20_100-in-the-sky-org-b1703d09df4c-2026-09-14",
-      "type": "conjunction",
-      "title_es": "Conjunción",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna y Venus comparten la misma ascensión recta, a una separación de 31'",
-      "start_local": "2026-09-14T13:11:14+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Luna no observable: altitud 15.5°, Sol a 52.5°.",
-        "altitude_deg": 15.5,
-        "azimuth_deg": 126.9,
-        "sun_altitude_deg": 52.5
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260914_20_100"
-      }
-    },
-    {
-      "id": "20260914_15_100-in-the-sky-org-2b1a2afbe825-2026-09-14",
-      "type": "other",
-      "title_es": "Aproximación cercana a la Luna y Venus",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna y Venus pasan cerca el uno del otro",
-      "start_local": "2026-09-14T13:34:55+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Luna no observable: altitud 19.0°, Sol a 54.4°.",
-        "altitude_deg": 19.0,
-        "azimuth_deg": 131.4,
-        "sun_altitude_deg": 54.4
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260914_15_100"
-      }
-    },
-    {
-      "id": "20260914_16_100-in-the-sky-org-31dfb031c1d2-2026-09-14",
-      "type": "other",
-      "title_es": "Ocultación lunar de Venus",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna pasará por delante de Venus, creando una ocultación lunar visible desde partes de África, Asia, Europa, Rusia, Territorio Británico del Océano Índico, Córcega, Menorca, Mallorca, Ibiza, Isla de Alborán, Melilla, Islas Chafarinas y RAF Akr",
-      "start_local": "2026-09-14T13:34:55+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Venus no observable: altitud 19.6°, Sol a 54.4°.",
-        "altitude_deg": 19.6,
-        "azimuth_deg": 131.8,
-        "sun_altitude_deg": 54.4
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260914_16_100"
-      }
-    }
-  ],
+  "events": [],
   "weather": {
-    "cloud_cover": 0.05555555555555555,
-    "visibility": 44740.0,
+    "cloud_cover": 27.526315789473685,
+    "visibility": 38140.0,
     "precipitation_probability": 0,
-    "temperature": 23.6
+    "temperature": 21.2
   },
   "sources": [
     {
