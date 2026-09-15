@@ -1,6 +1,6 @@
 {
   "source": "NASA NeoWs",
-  "fetched_at": "2026-09-15T00:18:48.212241+00:00",
+  "fetched_at": "2026-09-15T23:59:03.143595+00:00",
   "status": "live",
   "asteroids": [
     {
@@ -274,8 +274,8 @@
         "min": 0.191670368,
         "max": 0.428587972
       },
-      "miss_distance_km": 19854160,
-      "velocity_km_s": 6.5219544646,
+      "miss_distance_km": 19854159,
+      "velocity_km_s": 6.5219545992,
       "hazardous": true,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2474158"
     },
@@ -334,8 +334,8 @@
         "min": 0.2914439045,
         "max": 0.6516883822
       },
-      "miss_distance_km": 20160853,
-      "velocity_km_s": 21.0062569187,
+      "miss_distance_km": 20160851,
+      "velocity_km_s": 21.0062563641,
       "hazardous": true,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2429584"
     },
