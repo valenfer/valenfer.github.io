@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-15',
+    title: 'RadarIA diario — 2026-09-15',
+    summary: '3 piezas sobre asistentes ejecutivos contextuales, medición de agentes por tokens y memoria paramétrica contextual para LLMs pequeños.',
+    url: 'informes/2026-09-15.html'
+  },
+  {
     date: '2026-09-14',
     title: 'RadarIA diario — 2026-09-14',
     summary: '6 piezas sobre Astra en sistemas reales, seguridad/alineamiento, ChatGPT financiero y papers recientes de grafos procedurales y memoria personalizada para agentes.',
