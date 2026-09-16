@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-16',
+    title: 'RadarIA diario — 2026-09-16',
+    summary: '4 piezas sobre GPT-6 Astra para trabajo empresarial y papers recientes de seguridad, evaluación de agentes y corrección segura de errores.',
+    url: 'informes/2026-09-16.html'
+  },
+  {
     date: '2026-09-15',
     title: 'RadarIA diario — 2026-09-15',
     summary: '3 piezas sobre asistentes ejecutivos contextuales, medición de agentes por tokens y memoria paramétrica contextual para LLMs pequeños.',
