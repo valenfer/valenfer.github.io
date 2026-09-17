@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-17',
+    title: 'RadarIA diario — 2026-09-17',
+    summary: '6 piezas sobre uso recurrente de IA en el trabajo, analítica de valor, publicidad conversacional, benchmarks de agentes de código, gobernanza de workflows agénticos y agentes científicos de laboratorio.',
+    url: 'informes/2026-09-17.html'
+  },
+  {
     date: '2026-09-16',
     title: 'RadarIA diario — 2026-09-16',
     summary: '4 piezas sobre GPT-6 Astra para trabajo empresarial y papers recientes de seguridad, evaluación de agentes y corrección segura de errores.',
