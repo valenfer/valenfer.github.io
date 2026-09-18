@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-17T00:06:41.929368+00:00",
+  "fetched_at": "2026-09-18T23:53:30.382308+00:00",
   "status": "live",
-  "target_date": "2026-09-18",
+  "target_date": "2026-09-19",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,32 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-18T00:00:00+02:00",
-    "end_local": "2026-09-19T12:00:00+02:00"
+    "start_local": "2026-09-19T00:00:00+02:00",
+    "end_local": "2026-09-20T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260918_08_100-in-the-sky-org-294ef6974282-2026-09-18",
-      "type": "lunar_phase",
-      "title_es": "Cuarto creciente",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna alcanza la fase del primer trimestre: aparece en lo alto del cielo al atardecer y permanece visible hasta alrededor de la medianoche",
-      "start_local": "2026-09-18T22:44:22+02:00",
-      "visibility": {
-        "status": "visible",
-        "label": "Visible",
-        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
-        "altitude_deg": 14.9,
-        "azimuth_deg": 213.9,
-        "sun_altitude_deg": -26.7
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260918_08_100"
-      }
-    },
-    {
-      "id": "20260919_08_100-in-the-sky-org-f5f750312ce9-2026-09-18",
+      "id": "20260919_08_100-in-the-sky-org-f5f750312ce9-2026-09-19",
       "type": "other",
       "title_es": "La Luna en el apogeo",
       "title_translation_status": "translated",
@@ -53,13 +33,30 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20260919_08_100"
       }
+    },
+    {
+      "id": "20260920_16_100-in-the-sky-org-4aa1e1a838c5-2026-09-19",
+      "type": "other",
+      "title_es": "Ocultación lunar de Sigma Sagittarii",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará frente a Sigma Sagittarii (Nunki), creando una ocultación lunar visible desde la Polinesia Francesa, Nueva Zelanda y Pitcairn",
+      "start_local": "2026-09-20T08:45:08+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260920_16_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 42.526315789473685,
-    "visibility": 42040.0,
+    "cloud_cover": 5.2631578947368425,
+    "visibility": 45460.0,
     "precipitation_probability": 0,
-    "temperature": 22.1
+    "temperature": 23.1
   },
   "sources": [
     {
