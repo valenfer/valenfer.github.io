@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-18',
+    title: 'RadarIA diario — 2026-09-18',
+    summary: '6 piezas sobre Gemini 3.8 Live, evaluación y entrenamiento de agentes, ScienceIDE, simulación social con LLMs y riesgo multiagente.',
+    url: 'informes/2026-09-18.html'
+  },
+  {
     date: '2026-09-17',
     title: 'RadarIA diario — 2026-09-17',
     summary: '6 piezas sobre uso recurrente de IA en el trabajo, analítica de valor, publicidad conversacional, benchmarks de agentes de código, gobernanza de workflows agénticos y agentes científicos de laboratorio.',

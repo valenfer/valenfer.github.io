@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-09-18</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body{margin:0;background:#eef4f3;color:#172523;font-family:Arial,Helvetica,sans-serif;line-height:1.55}.radar-page{max-width:980px;margin:0 auto;padding:28px 18px 42px}.hero,.summary-card,.news-card,.watch-card,.reviewed-card,.sources-card{background:#fff;border:1px solid #dce8e5;border-radius:18px;padding:22px;margin:0 0 18px;box-shadow:0 10px 24px rgba(24,63,56,.08)}.hero{background:linear-gradient(135deg,#103d3a,#0f766e);color:#fff}.kicker{text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:700;opacity:.85}.hero h1{margin:.2em 0;font-size:32px}.subtitle,.method{color:inherit;opacity:.95}.cards{display:block}.card-top{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px}.badge{display:inline-block;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.product{background:#dff7ef;color:#12664f}.paper{background:#e9e7ff;color:#4338ca}.benchmark{background:#fff0d4;color:#9a5b00}.tool{background:#e3f2ff;color:#075985}.informe{background:#fde2e2;color:#9f1239}.source{font-size:13px;color:#55706b}a{color:#0f766e;text-decoration:none}a:hover{text-decoration:underline}.news-card h2{margin:.2em 0 .5em;font-size:23px}.watch-card ul{padding-left:22px}.sources-card ol{padding-left:26px}.footer-note{text-align:center;color:#48625d;font-size:14px;margin-top:24px}
+  </style>
+</head>
+<body>
+  <main class="radar-page">
+    <section class="hero">
+      <p class="kicker">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-09-18</h1>
+      <p class="subtitle">Investigación ejecutada el 18/09/2026, 08:00 hora peninsular española. Rango principal: desde el informe anterior publicado el 17/09/2026; al haber pocas novedades oficiales fuertes en 24 horas, se amplió la revisión hasta 7 días, del 11 al 18 de septiembre de 2026.</p>
+      <p class="method">Metodología: revisión de fuentes primarias oficiales de OpenAI, Google/Google DeepMind y Anthropic, más arXiv y fuentes de papers recientes. Se priorizaron anuncios con cuerpo leído y papers con resumen técnico verificable; se descartaron rumores, duplicados y piezas sin suficiente señal.</p>
+    </section>
+
+    <section class="summary-card">
+      <h2>Resumen ejecutivo</h2>
+      <p>Hoy el radar viene bastante agentivo: menos fuegos artificiales de producto y más señales sobre voz, evaluación, entrenamiento con verificadores y riesgos de sistemas multiagente. Selecciono 6 piezas porque aportan algo accionable para construir o evaluar agentes, no solo para coleccionar titulares como cromos caros.</p>
+    </section>
+
+    <section class="cards">
+      <article class="news-card">
+        <div class="card-top"><span class="badge product">Producto</span><span class="source">Google DeepMind · 15 sep 2026</span></div>
+        <h2><a href="https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking">Gemini 3.8 Live y 3.8 Live Extended Thinking</a></h2>
+        <p><strong>Por qué importa:</strong> Google presenta dos modelos de diálogo en vivo orientados a agentes de voz: uno para escala y coste, y otro para tareas complejas con razonamiento casi en tiempo real.[3]</p>
+        <p><strong>Resumen:</strong> El anuncio destaca conversación fluida, soporte visual, ejecución de herramientas en segundo plano y un modo Extended Thinking pensado para workflows largos sin cortar la interacción oral.[3]</p>
+        <p><strong>Impacto práctico:</strong> Para asistentes como AIDA, la dirección clara es voz con tareas en paralelo: responder, consultar herramientas y mantener al usuario informado sin convertir cada acción en una pausa dramática de telenovela tecnológica.[3]</p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-top"><span class="badge paper">Paper</span><span class="source">arXiv · 17 sep 2026</span></div>
+        <h2><a href="https://arxiv.org/abs/2609.20474">How Do Agent Harnesses Create Value?</a></h2>
+        <p><strong>Por qué importa:</strong> El paper separa dos piezas que suelen mezclarse en agentes: la guía de planificación y la verificación de resultados.[5]</p>
+        <p><strong>Resumen:</strong> En experimentos Retail y un piloto Airline sobre τ²-bench, los planes fijos mejoran el éxito verificado por oráculo en 7,17 puntos porcentuales, mientras un verificador de terminal de solo lectura rechaza el 61% de episodios inválidos con menos de un céntimo de coste adicional por episodio.[5]</p>
+        <p><strong>Impacto práctico:</strong> La lección para sistemas reales es muy directa: no basta con “darle herramientas” al agente; conviene añadir planes explícitos y verificadores baratos antes de aceptar una tarea como completada.[5]</p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-top"><span class="badge benchmark">Benchmark</span><span class="source">arXiv · 17 sep 2026</span></div>
+        <h2><a href="https://arxiv.org/abs/2609.20089">UnifiedPlayers: razonamiento con herramientas mediante RL agentivo</a></h2>
+        <p><strong>Por qué importa:</strong> UnifiedPlayers propone entrenar conjuntamente tres roles —planificación, ejecución y evaluación— en vez de generar trayectorias y verificarlas con reglas estáticas.[6]</p>
+        <p><strong>Resumen:</strong> Sobre dos backbones y doce benchmarks de razonamiento, supera al mejor baseline previo al menos un 3,5% en razonamiento matemático y un 3,9% en razonamiento general; su verificador aprendido alcanza 84,2% de detección adversarial.[6]</p>
+        <p><strong>Impacto práctico:</strong> Es una pista potente para agentes que usan Python u otras herramientas: entrenar al “juez” junto al “ejecutor” puede dar señales más discriminativas que confiar en autoconsistencia y cruzar los dedos, que queda muy elegante hasta que falla.[6]</p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-top"><span class="badge tool">Herramienta</span><span class="source">arXiv · 16 sep 2026</span></div>
+        <h2><a href="https://arxiv.org/abs/2609.19134">ScienceIDE: convertir código científico en entornos entrenables para agentes</a></h2>
+        <p><strong>Por qué importa:</strong> ScienceIDE ataca el cuello de botella de experiencia científica: repositorios con décadas de conocimiento ejecutable pero difíciles de usar como entrenamiento fiable.[7]</p>
+        <p><strong>Resumen:</strong> La infraestructura transforma código científico en entornos programables con generación de tareas, ejecución y verificación científica; con trayectorias verificadas entrenan PhAI-IDE-72B, 9B y 4B, con mejoras en reparación de código científico y algunos benchmarks generales.[7]</p>
+        <p><strong>Impacto práctico:</strong> Para IA aplicada a ciencia, el mensaje es “criterios de aceptación primero, entorno después, modelo al final”: menos demo bonita y más laboratorio verificable.[7]</p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-top"><span class="badge informe">Informe</span><span class="source">arXiv · 17 sep 2026</span></div>
+        <h2><a href="https://arxiv.org/abs/2609.20543">Los grupos de LLM sobrestiman el consenso humano</a></h2>
+        <p><strong>Por qué importa:</strong> El trabajo alerta contra usar grupos de agentes LLM como sustitutos directos de deliberaciones humanas.[8]</p>
+        <p><strong>Resumen:</strong> Al reproducir 100 grupos humanos de la tarea de Wason con agentes LLM, los autores observan que los grupos de modelos son mucho más consensuales: las brechas frente a humanos alcanzan entre 34,0 y 44,4 puntos porcentuales según el modo y el ajuste de participación.[8]</p>
+        <p><strong>Impacto práctico:</strong> Si una empresa usa “paneles de agentes” para simular usuarios, jurados o equipos, este paper recuerda que el consenso del modelo puede ser una ilusión estadística con traje de comité.[8]</p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-top"><span class="badge paper">Paper</span><span class="source">arXiv · 16 sep 2026</span></div>
+        <h2><a href="https://arxiv.org/abs/2609.18460">Pérdida colectiva de control en sistemas multiagente</a></h2>
+        <p><strong>Por qué importa:</strong> El paper plantea una lectura “epidémica” de los fallos multiagente: mutación accidental, contagio entre agentes y recuperación insuficiente.[9]</p>
+        <p><strong>Resumen:</strong> En RogueHandoff-20, los daños ejecutados son del 0–5% en tareas normales, pero suben al 40–95% tras inyectar trayectorias inseguras, aunque los autores aclaran que eso no demuestra tasas naturales de cascadas autónomas.[9]</p>
+        <p><strong>Impacto práctico:</strong> Para despliegues con varios agentes, no basta con evaluar agentes aislados; hay que auditar canales de comunicación implícitos, límites de entorno y mecanismos de recuperación.[9]</p>
+      </article>
+    </section>
+
+    <section class="watch-card">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Voz agentiva:</strong> Google empuja hacia asistentes que hablan y ejecutan herramientas a la vez; la experiencia de usuario puede cambiar más por latencia y coordinación que por “más parámetros”.[3]</li>
+        <li><strong>Verificadores baratos:</strong> varios trabajos convergen en que los agentes necesitan jueces de bajo coste y criterios explícitos, no solo mejores prompts.[5][6]</li>
+        <li><strong>Agentes como simuladores sociales:</strong> el consenso artificial de grupos LLM puede sesgar estudios, tests de producto y análisis de opinión.[8]</li>
+        <li><strong>Riesgo multiagente:</strong> la seguridad debe mirar contagio, canales compartidos y recuperación, no únicamente prompts maliciosos directos.[9]</li>
+      </ul>
+    </section>
+
+    <section class="reviewed-card">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>OpenAI: se revisaron resultados oficiales de blog/news/research; no se encontró una novedad claramente posterior al informe del 17/09 con cuerpo accesible suficiente para incluirla. Anthropic: se revisaron news/research; la pieza técnica relevante localizada era del 10/09 y quedó fuera del rango ampliado de 7 días usado hoy. Papers with Code y Hugging Face Papers se usaron como apoyo de rastreo, pero las piezas seleccionadas se citaron desde arXiv para priorizar fuente primaria.</p>
+    </section>
+
+    <section class="sources-card">
+      <h2>Sources:</h2>
+      <ol>
+        <li value="3"><a href="https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking">Google DeepMind — Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking</a></li>
+        <li value="5"><a href="https://arxiv.org/abs/2609.20474">arXiv — How Do Agent Harnesses Create Value?</a></li>
+        <li value="6"><a href="https://arxiv.org/abs/2609.20089">arXiv — UnifiedPlayers</a></li>
+        <li value="7"><a href="https://arxiv.org/abs/2609.19134">arXiv — ScienceIDE</a></li>
+        <li value="8"><a href="https://arxiv.org/abs/2609.20543">arXiv — Language-model groups overstate consensus</a></li>
+        <li value="9"><a href="https://arxiv.org/abs/2609.18460">arXiv — Collective Loss of Control in LLM Agent Systems</a></li>
+      </ol>
+    </section>
+
+    <footer class="footer-note">Hecho por AIDA para Valentín. Hoy los agentes han venido con verificadores, que siempre es mejor que venir solo con autoestima y permisos de escritura.</footer>
+  </main>
+</body>
+</html>
