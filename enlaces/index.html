@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Enlaces interesantes seleccionados por Valentín: herramientas, IA, curiosidades y lugares digitales que merece la pena explorar.">
+  <title>Enlaces interesantes · valenfer.github.io</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="../" aria-label="Volver al portal principal">
+      <span class="brand-orbit"><span></span></span>
+      <span><strong>valenfer</strong><small>archivo de hallazgos</small></span>
+    </a>
+    <a class="back-link" href="../">← Portal principal</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Archivo vivo · actualizado a mano</p>
+        <h1>Enlaces para perderse con <em>criterio</em>.</h1>
+        <p class="intro">Una colección de rincones digitales, herramientas, investigaciones y rarezas que merecen una pestaña propia. Las buenas madrigueras empiezan con un enlace.</p>
+        <div class="hero-meta"><span class="pulse"></span><span id="link-count">Cargando hallazgos…</span><span class="dot">·</span><span>curados por Valentín</span></div>
+      </div>
+      <div class="orb" aria-hidden="true"><span class="orb-ring ring-one"></span><span class="orb-ring ring-two"></span><span class="orb-core">?</span><i class="star star-a"></i><i class="star star-b"></i><i class="star star-c"></i></div>
+    </section>
+
+    <section class="toolbar" aria-label="Buscar y filtrar enlaces">
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar por título, tema o descripción…" autocomplete="off"></label>
+      <div id="filters" class="filters" role="group" aria-label="Filtrar por categoría"></div>
+    </section>
+
+    <section id="link-grid" class="link-grid" aria-live="polite"></section>
+    <p id="empty" class="empty" hidden>No hay hallazgos con esa búsqueda. La madriguera está temporalmente vacía.</p>
+
+    <section class="add-note">
+      <span class="note-mark">+</span>
+      <div><p class="eyebrow">Cómo crece este archivo</p><h2>¿Has encontrado algo interesante?</h2><p>Dime: <strong>«añade este enlace interesante»</strong>, pásame la URL y una breve descripción. Lo colocaré en su categoría con una tarjeta nueva. Sin rituales, sin formulario de 47 campos.</p></div>
+    </section>
+  </main>
+
+  <footer><span>© Valentín Fernández</span><span>Un enlace al día mantiene lejos al algoritmo aburrido.</span></footer>
+  <script>
+    const links = [
+      { title: 'Radio Garden', category: 'Curiosidades', tag: 'mapa sonoro', description: 'Viaja por el planeta escuchando emisoras de radio en directo desde un globo terráqueo interactivo.', url: 'https://radio.garden/', symbol: '◉' },
+      { title: 'The Wayback Machine', category: 'Internet', tag: 'memoria web', description: 'La biblioteca de Alejandría de Internet: consulta cómo eran las páginas web antes de que cambiaran o desaparecieran.', url: 'https://web.archive.org/', symbol: '↺' },
+      { title: 'Our World in Data', category: 'Datos', tag: 'evidencia', description: 'Gráficos y datos abiertos para entender el mundo con algo más sólido que una captura viral.', url: 'https://ourworldindata.org/', symbol: '▦' },
+      { title: 'Future Tools', category: 'Inteligencia artificial', tag: 'herramientas IA', description: 'Directorio visual de herramientas de inteligencia artificial para crear, investigar y trabajar.', url: 'https://www.futuretools.io/', symbol: '✦' },
+      { title: 'The Public Domain Review', category: 'Cultura', tag: 'archivo visual', description: 'Textos, imágenes y obras extrañas de dominio público, seleccionadas con un gusto deliciosamente excéntrico.', url: 'https://publicdomainreview.org/', symbol: '❖' },
+      { title: 'Explorable Explanations', category: 'Aprendizaje', tag: 'ideas interactivas', description: 'Explicaciones que se pueden tocar, mover y explorar: matemáticas, ciencia y pensamiento con menos ladrillo y más curiosidad.', url: 'https://explorabl.es/', symbol: '⌁' }
+    ];
+    const grid = document.querySelector('#link-grid');
+    const search = document.querySelector('#search');
+    const filters = document.querySelector('#filters');
+    const empty = document.querySelector('#empty');
+    const categories = ['Todos', ...new Set(links.map(link => link.category))];
+    let active = 'Todos';
+
+    document.querySelector('#link-count').textContent = `${links.length} hallazgos · y la colección sigue abierta`;
+    categories.forEach(category => {
+      const button = document.createElement('button');
+      button.type = 'button'; button.textContent = category; button.className = category === active ? 'active' : '';
+      button.addEventListener('click', () => { active = category; document.querySelectorAll('.filters button').forEach(item => item.classList.toggle('active', item === button)); render(); });
+      filters.append(button);
+    });
+
+    function render() {
+      const query = search.value.trim().toLowerCase();
+      const visible = links.filter(link => (active === 'Todos' || link.category === active) && [link.title, link.category, link.tag, link.description].join(' ').toLowerCase().includes(query));
+      grid.innerHTML = visible.map((link, index) => `<article class="link-card" style="--delay:${index * 55}ms"><div class="card-top"><span class="symbol">${link.symbol}</span><span class="category">${link.category}</span></div><h2>${link.title}</h2><p>${link.description}</p><div class="card-bottom"><span>#${link.tag}</span><a href="${link.url}" target="_blank" rel="noopener noreferrer">Explorar <span aria-hidden="true">↗</span></a></div></article>`).join('');
+      empty.hidden = visible.length !== 0;
+    }
+    search.addEventListener('input', render); render();
+  </script>
+</body>
+</html>
