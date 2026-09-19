@@ -318,9 +318,24 @@ footer p { margin: .2rem; font-size: .95rem; }
 }
 @media (max-width: 680px) {
   .site-hero, .navbar, main, footer { width: min(100% - 20px, var(--max)); }
-  .site-hero { border-radius: 24px; padding: 1.1rem; }
-  h1 { font-size: clamp(3rem, 18vw, 4.8rem); }
-  h2, h3 { font-size: clamp(2.2rem, 14vw, 3.4rem); overflow-wrap: anywhere; }
+  .site-hero { display: block; border-radius: 24px; padding: 1.1rem; overflow: hidden; }
+  .site-hero *, .section-shell *, .acerca * { max-width: 100%; }
+  .hero-copy, .section-shell, .acerca { min-width: 0; }
+  h1 {
+    max-width: 100%;
+    font-size: clamp(2.45rem, 14vw, 3.45rem);
+    line-height: .92;
+    letter-spacing: -.065em;
+    overflow-wrap: anywhere;
+  }
+  h2, h3 {
+    max-width: 100%;
+    font-size: clamp(2rem, 11vw, 2.85rem);
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+  .hero-copy p:not(.eyebrow), .lead { font-size: 1rem; }
+  .hero-badges span { font-size: .76rem; padding-inline: .68rem; }
   .nav-toggle {
     display: flex;
     width: calc(100% - 1rem);
