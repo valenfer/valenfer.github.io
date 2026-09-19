@@ -1,6 +1,12 @@
 window.RADARIA_REPORTS = [
   {
     date: '2026-09-19',
+    title: 'RadarIA análisis — Convergencia estratégica y riesgos existenciales de IA',
+    summary: 'Artículo editorial a partir del documento recibido: pausa estratégica, riesgo técnico, captura regulatoria y dilema geopolítico China/Occidente.',
+    url: 'informes/2026-09-19-convergencia-riesgos-existenciales-ia.html'
+  },
+  {
+    date: '2026-09-19',
     title: 'RadarIA diario — 2026-09-19',
     summary: '6 piezas sobre infraestructura OpenAI, IA científica con Gemma, verificación SynthID, Private AI Compute y evaluación de benchmarks.',
     url: 'informes/2026-09-19.html'
