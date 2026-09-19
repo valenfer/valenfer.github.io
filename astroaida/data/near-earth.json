@@ -1,8 +1,68 @@
 {
   "source": "NASA NeoWs",
-  "fetched_at": "2026-09-18T23:53:26.692604+00:00",
+  "fetched_at": "2026-09-19T23:54:37.528910+00:00",
   "status": "live",
   "asteroids": [
+    {
+      "date": "2026-09-19",
+      "name": "(2012 EP5)",
+      "estimated_diameter_km": {
+        "min": 0.1220548318,
+        "max": 0.2729229009
+      },
+      "miss_distance_km": 49646713,
+      "velocity_km_s": 12.9474348297,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3601283"
+    },
+    {
+      "date": "2026-09-19",
+      "name": "(2013 TM127)",
+      "estimated_diameter_km": {
+        "min": 0.0127219879,
+        "max": 0.0284472297
+      },
+      "miss_distance_km": 70050328,
+      "velocity_km_s": 25.5954940155,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3650848"
+    },
+    {
+      "date": "2026-09-19",
+      "name": "(2014 FD7)",
+      "estimated_diameter_km": {
+        "min": 0.1344481952,
+        "max": 0.3006353038
+      },
+      "miss_distance_km": 25377525,
+      "velocity_km_s": 8.1941562656,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3666471"
+    },
+    {
+      "date": "2026-09-19",
+      "name": "(2017 US)",
+      "estimated_diameter_km": {
+        "min": 0.0152951935,
+        "max": 0.0342010925
+      },
+      "miss_distance_km": 57185544,
+      "velocity_km_s": 16.9731476518,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3787068"
+    },
+    {
+      "date": "2026-09-19",
+      "name": "(2018 MC5)",
+      "estimated_diameter_km": {
+        "min": 0.0228325794,
+        "max": 0.0510551996
+      },
+      "miss_distance_km": 19518492,
+      "velocity_km_s": 8.3272270651,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3825431"
+    },
     {
       "date": "2026-09-18",
       "name": "260277 (2004 TR12)",
@@ -146,66 +206,6 @@
       "velocity_km_s": 6.3499436225,
       "hazardous": false,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3959226"
-    },
-    {
-      "date": "2026-09-12",
-      "name": "474158 (1999 FA)",
-      "estimated_diameter_km": {
-        "min": 0.191670368,
-        "max": 0.428587972
-      },
-      "miss_distance_km": 19854160,
-      "velocity_km_s": 6.5219543696,
-      "hazardous": true,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2474158"
-    },
-    {
-      "date": "2026-09-12",
-      "name": "(2014 QE365)",
-      "estimated_diameter_km": {
-        "min": 0.1536579294,
-        "max": 0.3435895754
-      },
-      "miss_distance_km": 37731239,
-      "velocity_km_s": 13.2709594576,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3684730"
-    },
-    {
-      "date": "2026-09-12",
-      "name": "(2016 EM157)",
-      "estimated_diameter_km": {
-        "min": 0.0110803882,
-        "max": 0.0247765013
-      },
-      "miss_distance_km": 57129664,
-      "velocity_km_s": 13.7723521054,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3747315"
-    },
-    {
-      "date": "2026-09-12",
-      "name": "(2016 TA11)",
-      "estimated_diameter_km": {
-        "min": 0.0101054342,
-        "max": 0.0225964377
-      },
-      "miss_distance_km": 64776421,
-      "velocity_km_s": 20.5584781888,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3760491"
-    },
-    {
-      "date": "2026-09-12",
-      "name": "(2019 SB6)",
-      "estimated_diameter_km": {
-        "min": 0.0117099483,
-        "max": 0.0261842403
-      },
-      "miss_distance_km": 29775637,
-      "velocity_km_s": 5.7839026953,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3869331"
     },
     {
       "date": "2026-09-15",
