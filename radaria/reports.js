@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-20',
+    title: 'RadarIA diario — 2026-09-20',
+    summary: '3 piezas sobre ToolGrad para uso de herramientas, evolución de benchmarks de LLMs y evaluación de resiliencia en agentes.',
+    url: 'informes/2026-09-20.html'
+  },
+  {
     date: '2026-09-19',
     title: 'RadarIA análisis — Convergencia estratégica y riesgos existenciales de IA',
     summary: 'Artículo editorial a partir del documento recibido: pausa estratégica, riesgo técnico, captura regulatoria y dilema geopolítico China/Occidente.',

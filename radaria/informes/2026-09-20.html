@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-09-20</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body{margin:0;background:#eef3f8;color:#172033;font-family:Arial,Helvetica,sans-serif;line-height:1.55}.wrap{max-width:960px;margin:0 auto;padding:28px 16px}.hero{background:linear-gradient(135deg,#172033,#38598a);color:#fff;border-radius:24px;padding:30px;box-shadow:0 12px 36px rgba(23,32,51,.18)}.hero h1{margin:0 0 8px;font-size:32px}.hero p{margin:6px 0;color:#dce8f8}.method{background:#fff;border-left:5px solid #567ebb;border-radius:16px;padding:18px;margin:22px 0}.card{background:#fff;border-radius:20px;padding:22px;margin:18px 0;box-shadow:0 8px 24px rgba(23,32,51,.08);border:1px solid #dbe5f2}.card h2{margin:10px 0 8px;font-size:22px;color:#172033}.meta{color:#5b677c;font-size:14px}.badge{display:inline-block;border-radius:999px;padding:5px 10px;font-weight:700;font-size:12px;color:#fff;background:#38598a}.badge.paper{background:#6d4bb2}.badge.herramienta{background:#1f7a68}.badge.benchmark{background:#a05a18}.why{background:#f6f9fd;border-radius:14px;padding:12px;margin:12px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.section{background:#fff;border-radius:20px;padding:20px;margin:18px 0;box-shadow:0 8px 24px rgba(23,32,51,.06)}a{color:#245ca8}.sources ol{padding-left:22px}.footer{color:#5b677c;text-align:center;margin:24px 0 8px}@media(max-width:700px){.grid{grid-template-columns:1fr}.hero h1{font-size:26px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>RadarIA diario — 2026-09-20</h1>
+      <p><strong>Rango investigado:</strong> desde el último RadarIA diario fiable en <code>reports.js</code> (2026-09-19) hasta 2026-09-20; al encontrar pocas novedades realmente relevantes en 24 horas, he ampliado la lectura hasta 7 días y lo marco sin disimular, que para eso están las hemerotecas y no la magia negra.</p>
+      <p><strong>Metodología:</strong> revisión de fuentes primarias oficiales de OpenAI, Google/Google DeepMind y Anthropic, más arXiv y Hugging Face Papers; he priorizado piezas con cuerpo técnico leído, fecha identificable y utilidad práctica.</p>
+    </header>
+
+    <section class="method">
+      <strong>Resumen ejecutivo:</strong> no hay grandes lanzamientos oficiales nuevos de OpenAI, Google DeepMind o Anthropic dentro de las últimas 24 horas. La selección útil de hoy se concentra en investigación reciente sobre uso de herramientas, evaluación de benchmarks y robustez de agentes, publicada dentro de la ventana ampliada de 7 días.
+    </section>
+
+    <article class="card">
+      <span class="badge herramienta">Herramienta / modelo</span>
+      <h2>ToolGrad: datos sintéticos para que los LLM aprendan a usar herramientas mejor</h2>
+      <p class="meta">Fuente: Google Research · Fecha: 10 septiembre 2026 · <a href="https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/">enlace</a></p>
+      <p>Google Research presenta ToolGrad como un marco de generación de datos que invierte el flujo habitual: primero genera cadenas de respuestas con uso de herramientas y después deriva consultas de usuario, apoyándose en “gradientes” textuales para mejorar iterativamente los ejemplos.[1]</p>
+      <p>El blog indica que el trabajo fue presentado en ACL 2026 y que, con solo 500 ejemplos generados sobre bases de APIs de ToolBench, ajustaron modelos Gemma-3 de 1B, 4B y 12B para uso de herramientas.[1]</p>
+      <div class="why"><strong>Por qué importa:</strong> si se confirma la eficiencia, reduce la dependencia de anotación humana cara para entrenar agentes que llaman APIs, leen archivos o ejecutan scripts. Vamos, menos “becario etiquetando botones” y más tubería automática con criterio.</div>
+      <p><strong>Impacto práctico:</strong> interesante para equipos que quieran fine-tuning de agentes pequeños y desplegables, especialmente si necesitan tool-use fiable sin pagar siempre modelos propietarios grandes.</p>
+    </article>
+
+    <article class="card">
+      <span class="badge benchmark">Benchmark</span>
+      <h2>Un mapa de 14.767 papers muestra cómo están cambiando los benchmarks de LLMs</h2>
+      <p class="meta">Fuente: arXiv · Fecha: 15 septiembre 2026 · <a href="https://arxiv.org/abs/2609.19182v1">enlace</a></p>
+      <p>El paper “What Do We Expect from LLMs?” analiza 14.767 trabajos de arXiv que introducen o actualizan recursos de evaluación entre enero de 2022 y agosto de 2026.[2]</p>
+      <p>Su tesis es que los rankings por sí solos no explican cómo cambian las expectativas sobre los LLM: también hay que mirar dominios, condiciones de evaluación, materiales y mecanismos de puntuación.[2]</p>
+      <div class="why"><strong>Por qué importa:</strong> ayuda a detectar si la fiebre de benchmarks mide capacidades nuevas o si está reciclando sesgos, preferencias de modelos y pruebas cada vez más contaminadas por IA.</div>
+      <p><strong>Impacto práctico:</strong> útil para leer claims de “SOTA” con más mala leche metodológica: no basta con mirar el número, hay que preguntar qué se está evaluando y quién diseña el examen.</p>
+    </article>
+
+    <article class="card">
+      <span class="badge paper">Paper</span>
+      <h2>Evaluar agentes no debería quedarse en “acabó la tarea”</h2>
+      <p class="meta">Fuente: arXiv · Fecha: 9 septiembre 2026 · <a href="https://arxiv.org/abs/2609.10724">enlace</a></p>
+      <p>“Finishing the Task Is Not Enough” propone evaluar agentes generativos en despliegues sostenidos con dos dimensiones adicionales: resiliencia operativa y participación considerada ante bloqueos, dependencias humanas y cambios acumulados.[3]</p>
+      <p>La idea central es que un agente puede completar tareas aisladas y aun así ser poco fiable en flujos reales si no conserva progreso, comunica límites o se recupera bien de interrupciones.[3]</p>
+      <div class="why"><strong>Por qué importa:</strong> encaja con el salto de demos bonitas a agentes que viven en procesos de trabajo compartidos, donde fallar con elegancia vale casi tanto como acertar.</div>
+      <p><strong>Impacto práctico:</strong> buen marco para probar asistentes de empresa, agentes de programación o automatizaciones internas antes de soltarlos en producción como cabras con portátil.</p>
+    </article>
+
+    <section class="section">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Tool-use eficiente en modelos pequeños:</strong> ToolGrad apunta a que la calidad de datos puede compensar tamaño de modelo en agentes especializados.[1]</li>
+        <li><strong>Benchmarks bajo sospecha metodológica:</strong> el volumen de evaluaciones exige mapas y auditorías, no solo tablas con trofeos.[2]</li>
+        <li><strong>Agentes en procesos largos:</strong> crece la atención a recuperación, coordinación humana y robustez acumulada, no solo éxito puntual.[3]</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>OpenAI News no mostró publicaciones nuevas posteriores al bloque del 10 de septiembre en el contenido revisado hoy.[4]</p>
+      <p>Anthropic Newsroom, en anuncios, mantenía como pieza más reciente destacada “Introducing Claude Fable 5.1 and Claude Mythos 5.1” del 1 de septiembre, seguida de entradas de finales de agosto.[5]</p>
+      <p>También se revisaron búsquedas abiertas para Meta, Mistral y Hugging Face Papers; no he incluido piezas adicionales porque eran anteriores, duplicadas o menos relevantes que las tres seleccionadas.</p>
+    </section>
+
+    <section class="section sources">
+      <h2>Sources:</h2>
+      <ol>
+        <li><a href="https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/">ToolGrad: Efficient tool-use dataset generation with textual “gradients”</a> — https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/</li>
+        <li><a href="https://arxiv.org/abs/2609.19182v1">What Do We Expect from LLMs? Mapping the Design of LLM Benchmarks</a> — https://arxiv.org/abs/2609.19182v1</li>
+        <li><a href="https://arxiv.org/abs/2609.10724">Finishing the Task Is Not Enough</a> — https://arxiv.org/abs/2609.10724</li>
+        <li><a href="https://openai.com/news">OpenAI News</a> — https://openai.com/news</li>
+        <li><a href="https://www.anthropic.com/news?subjects=announcements">Anthropic Newsroom</a> — https://www.anthropic.com/news?subjects=announcements</li>
+      </ol>
+    </section>
+
+    <p class="footer">Informe preparado por AIDA. Pocas piezas, pero con chicha: hoy no había que inflar el soufflé de la IA.</p>
+  </main>
+</body>
+</html>
