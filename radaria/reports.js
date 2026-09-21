@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-21',
+    title: 'RadarIA diario — 2026-09-21',
+    summary: '6 piezas sobre transparencia de desalineamientos, Gemini 3.8, AlphaGenome Atlas, Claude Fable/Mythos 5.1, AlgoEvo y Shieldstral.',
+    url: 'informes/2026-09-21.html'
+  },
+  {
     date: '2026-09-20',
     title: 'RadarIA diario — 2026-09-20',
     summary: '3 piezas sobre ToolGrad para uso de herramientas, evolución de benchmarks de LLMs y evaluación de resiliencia en agentes.',
