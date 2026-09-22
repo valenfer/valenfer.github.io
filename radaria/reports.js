@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-22',
+    title: 'RadarIA diario — 2026-09-22',
+    summary: '5 piezas sobre estándares para IA avanzada, C2S-Scale 27B en biología, evaluación embebida, métricas internas de I+D y RBS-Attention para contexto largo.',
+    url: 'informes/2026-09-22.html'
+  },
+  {
     date: '2026-09-21',
     title: 'RadarIA diario — 2026-09-21',
     summary: '6 piezas sobre transparencia de desalineamientos, Gemini 3.8, AlphaGenome Atlas, Claude Fable/Mythos 5.1, AlgoEvo y Shieldstral.',
