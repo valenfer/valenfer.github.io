@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-20T23:51:47.061200+00:00",
+  "fetched_at": "2026-09-22T00:37:41.738903+00:00",
   "status": "live",
-  "target_date": "2026-09-21",
+  "target_date": "2026-09-23",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,13 +10,51 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-21T00:00:00+02:00",
-    "end_local": "2026-09-22T12:00:00+02:00"
+    "start_local": "2026-09-23T00:00:00+02:00",
+    "end_local": "2026-09-24T12:00:00+02:00"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "20260923_07_100-in-the-sky-org-6f9b20985d0e-2026-09-23",
+      "type": "other",
+      "title_es": "Equinoccio",
+      "title_translation_status": "deterministic",
+      "summary_es": "Day and night have equal length: the beginning of astronomical autumn in the northern hemisphere",
+      "start_local": "2026-09-23T02:08:43+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260923_07_100"
+      }
+    },
+    {
+      "id": "20260923_08_100-in-the-sky-org-3aa1109e78eb-2026-09-23",
+      "type": "other",
+      "title_es": "Afelio",
+      "title_translation_status": "deterministic",
+      "summary_es": "The Moon passes its furthest point from the Sun, a monthly occurrence around the time of full moon",
+      "start_local": "2026-09-23T20:53:14+02:00",
+      "visibility": {
+        "status": "visible",
+        "label": "Visible",
+        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
+        "altitude_deg": 21.4,
+        "azimuth_deg": 128.7,
+        "sun_altitude_deg": -6.9
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260923_08_100"
+      }
+    }
+  ],
   "weather": {
-    "cloud_cover": 0.0,
-    "visibility": 47980.0,
+    "cloud_cover": 1.368421052631579,
+    "visibility": 46280.0,
     "precipitation_probability": 0,
     "temperature": 23.4
   },
