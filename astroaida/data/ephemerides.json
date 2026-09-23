@@ -1,6 +1,6 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-22T00:37:41.738903+00:00",
+  "fetched_at": "2026-09-23T00:00:23.375687+00:00",
   "status": "live",
   "target_date": "2026-09-23",
   "timezone": "Europe/Madrid",
@@ -19,7 +19,7 @@
       "type": "other",
       "title_es": "Equinoccio",
       "title_translation_status": "deterministic",
-      "summary_es": "Day and night have equal length: the beginning of astronomical autumn in the northern hemisphere",
+      "summary_es": "El día y la noche tienen la misma duración: el comienzo del otoño astronómico en el hemisferio norte",
       "start_local": "2026-09-23T02:08:43+02:00",
       "visibility": {
         "status": "contextual",
@@ -36,7 +36,7 @@
       "type": "other",
       "title_es": "Afelio",
       "title_translation_status": "deterministic",
-      "summary_es": "The Moon passes its furthest point from the Sun, a monthly occurrence around the time of full moon",
+      "summary_es": "La Luna pasa por su punto más alejado del Sol, una ocurrencia mensual en la época de la luna llena",
       "start_local": "2026-09-23T20:53:14+02:00",
       "visibility": {
         "status": "visible",
@@ -53,8 +53,8 @@
     }
   ],
   "weather": {
-    "cloud_cover": 1.368421052631579,
-    "visibility": 46280.0,
+    "cloud_cover": 9.631578947368421,
+    "visibility": 47100.0,
     "precipitation_probability": 0,
     "temperature": 23.4
   },
