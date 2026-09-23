@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ciencia Hoy – Noticias científicas</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0f111a;
+      color: #00ffe0;
+      padding: 2em;
+      text-align: center;
+    }
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      padding: 2em;
+    }
+    .tarjeta {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .tarjeta:hover {
+      transform: scale(1.02);
+    }
+    .tarjeta img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .tarjeta .contenido {
+      padding: 1em;
+    }
+    .tarjeta h3 {
+      margin-top: 0;
+      color: #0f111a;
+    }
+    .tarjeta p {
+      font-size: 0.9em;
+      color: #555;
+    }
+    .tarjeta a {
+      display: inline-block;
+      margin-top: 1em;
+      color: #00c0b0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 2em;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ciencia Hoy</h1>
+    <p>Noticias científicas actualizadas con enlaces a estudios reales</p>
+  </header>
+
+  <div class="contenedor">
+    <?php
+      include("php/conexion.php");
+      $result = $conn->query("SELECT * FROM noticias ORDER BY fecha DESC LIMIT 12");
+      while($row = $result->fetch_assoc()) {
+        echo "<div class='tarjeta'>
+                <img src='{$row['imagen']}' alt='Imagen noticia'>
+                <div class='contenido'>
+                  <h3>{$row['titulo']}</h3>
+                  <p>{$row['subtitulo']}</p>
+                  <p><strong>Categoría:</strong> {$row['categoria']}</p>
+                  <p><strong>Fecha:</strong> {$row['fecha']}</p>
+                  <a href='noticia.php?id={$row['id']}'>Leer más</a>
+                </div>
+              </div>";
+      }
+    ?>
+  </div>
+
+  <footer>
+    © 2025 Ciencia Hoy · Proyecto de divulgación científica
+  </footer>
+</body>
+</html>

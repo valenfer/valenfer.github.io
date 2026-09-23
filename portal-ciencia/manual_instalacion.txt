@@ -1,0 +1,126 @@
+===============================
+MANUAL DE INSTALACIÓN – CIENCIA HOY
+===============================
+
+Versión: 1.0
+Última actualización: Octubre 2025
+
+Este manual describe cómo instalar, configurar y poner en marcha el sitio web "Ciencia Hoy", un portal de noticias científicas con panel de administración, importación desde DOI y diseño adaptable.
+
+-------------------------------
+1. REQUISITOS DEL SERVIDOR
+-------------------------------
+
+- Servidor web Apache (recomendado) o compatible con PHP
+- PHP 7.4 o superior
+- MySQL o MariaDB
+- Acceso a phpMyAdmin o consola MySQL
+- Carpeta pública (htdocs, public_html, www, etc.)
+
+-------------------------------
+2. ESTRUCTURA DEL PROYECTO
+-------------------------------
+
+ciencia-hoy/
+├── index.html              → Página principal con noticias
+├── categoria.php           → Filtro por categoría
+├── noticia.php             → Vista detallada de cada noticia
+├── buscar.php              → Buscador por palabra clave o DOI
+├── landing.html            → Página promocional del proyecto
+│
+├── admin/                  → Panel de administración
+│   ├── login.php
+│   ├── dashboard.php
+│   ├── nuevo.php
+│   ├── editar.php
+│   ├── eliminar.php
+│   ├── logout.php
+│   └── auth.php
+│
+├── php/
+│   └── conexion.php        → Conexión a la base de datos
+│
+├── css/
+│   └── estilo.css
+│
+├── js/
+│   └── script.js
+│
+├── imagenes/
+│   └── descarga.jpg        → Imagen por defecto
+│
+├── sql/
+│   └── estructura.sql      → Script para crear la base de datos
+
+-------------------------------
+3. INSTALACIÓN PASO A PASO
+-------------------------------
+
+1. Descomprime el archivo ZIP del proyecto.
+2. Sube la carpeta completa "ciencia-hoy" a tu servidor web.
+3. Crea una base de datos en MySQL llamada `ciencia_hoy`.
+4. Importa el archivo `sql/estructura.sql` desde phpMyAdmin o consola.
+5. Abre `php/conexion.php` y configura tus credenciales de base de datos:
+
+   Ejemplo:
+   $host = "localhost";
+   $user = "TU_USUARIO";
+   $pass = "TU_CONTRASEÑA";
+   $db   = "ciencia_hoy";
+
+6. Accede al panel de administración:
+   https://tusitio.com/admin/login.php
+
+   Usuario: admin
+   Contraseña: admin123
+
+7. Cambia la contraseña desde el panel tras el primer inicio de sesión.
+
+-------------------------------
+4. FUNCIONALIDADES DESTACADAS
+-------------------------------
+
+- Crear, editar y eliminar noticias con imagen destacada
+- Importar automáticamente desde DOI usando Europe PMC o Semantic Scholar
+- Filtrar por categoría
+- Buscar por palabra clave o DOI
+- Mostrar enlace al paper original si está disponible
+- Landing page promocional
+- Diseño adaptable y modular
+
+-------------------------------
+5. SEGURIDAD BÁSICA
+-------------------------------
+
+- Cambia la contraseña del usuario admin tras la instalación
+- Protege la carpeta /admin/ con .htaccess si usas Apache
+- Valida extensiones de imagen si habilitas subida pública
+- No compartas tu archivo conexion.php
+
+-------------------------------
+6. PERSONALIZACIÓN OPCIONAL
+-------------------------------
+
+- Puedes editar `landing.html` para adaptarla a tu estilo
+- Añadir nuevas categorías desde el panel
+- Traducir el sitio a otros idiomas
+- Integrar Google Analytics o Matomo para estadísticas
+
+-------------------------------
+7. SOPORTE Y MANTENIMIENTO
+-------------------------------
+
+- Realiza copias de seguridad periódicas de la base de datos y archivos
+- Mantén actualizado PHP y tus extensiones
+- Puedes subir el proyecto a GitHub para control de versiones
+
+-------------------------------
+8. CRÉDITOS
+-------------------------------
+
+Desarrollado por Valentín (2025)
+Diseño, estructura y lógica optimizada para divulgación científica
+
+===============================
+FIN DEL MANUAL
+===============================
