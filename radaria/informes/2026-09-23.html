@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-09-23</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell">
+    <header class="hero report-hero">
+      <p class="eyebrow">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-09-23</h1>
+      <p class="subtitle">Novedades relevantes de inteligencia artificial para Valentín. Rango investigado: desde el informe del 2026-09-22 hasta el 2026-09-23 08:00 CEST; al haber pocas novedades oficiales estrictamente posteriores, se amplió la revisión hasta 7 días para rescatar piezas técnicas útiles sin meter morralla con bigote.</p>
+      <p class="meta">Metodología: revisión de fuentes primarias y páginas oficiales de OpenAI, Google/DeepMind, Anthropic, Meta, Mistral y arXiv; selección editorial de 5 piezas con lectura del cuerpo de las fuentes, priorizando impacto práctico, papers y anuncios técnicos verificables.</p>
+    </header>
+
+    <section class="summary-card">
+      <h2>Resumen ejecutivo</h2>
+      <p>El día viene menos de “gran lanzamiento mundial” y más de maduración de agentes: memoria institucional, modelos multimodales con uso de ordenador, modelos abiertos que unifican razonamiento/código/visión y auditorías que pinchan benchmarks demasiado bonitos para ser verdad.[3][4][5]</p>
+    </section>
+
+    <section class="report-grid">
+      <article class="news-card">
+        <span class="badge badge-producto">Producto</span>
+        <h2><a href="https://openai.com/index/v7/">OpenAI/V7: memoria institucional para agentes empresariales</a></h2>
+        <p class="meta">Fuente: OpenAI · Fecha visible: septiembre de 2026, pieza relacionada del 21 de septiembre</p>
+        <p><strong>Por qué importa:</strong> OpenAI describe cómo V7 convierte documentos, data rooms, hojas, correos y herramientas internas en un Context Graph consultable por agentes, una pieza clave para que los agentes empresariales no vivan con memoria de pez dorado con traje.[5]</p>
+        <p><strong>Resumen:</strong> V7 Go usa GPT-5.6 Luna para extraer información de millones de archivos y organizar entidades, relaciones y evidencias citadas; también usa GPT-5.6 Terra/Sol para workflows largos y empieza a probar GPT-6 Astra en consultas complejas sobre miles de documentos.[5]</p>
+        <p><strong>Impacto práctico:</strong> La arquitectura apunta a agentes auditables que recuperan contexto propio de la empresa, reducen errores de tool-calling y evitan depender solo de ventanas de contexto gigantes para tareas de 50 a 100 pasos.[5]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-modelo">Modelo</span>
+        <h2><a href="https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/">Meta Muse Spark 1.1: modelo multimodal para tareas agénticas</a></h2>
+        <p class="meta">Fuente: Meta AI · Fecha visible: no indicada en la extracción</p>
+        <p><strong>Por qué importa:</strong> Meta presenta Muse Spark 1.1 como un modelo multimodal de razonamiento para tareas agénticas, con mejoras en uso de herramientas, uso de ordenador, código y comprensión multimodal.[4]</p>
+        <p><strong>Resumen:</strong> El modelo se ofrece en vista previa pública mediante la Meta Model API, generaliza a nuevas herramientas, MCP servers y skills, gestiona contexto de 1 millón de tokens y puede delegar trabajo en subagentes paralelos.[4]</p>
+        <p><strong>Impacto práctico:</strong> Para equipos que construyen agentes, la pieza interesante no es solo “otro modelo más”, sino la combinación de contexto largo, multimodalidad, ordenador, scripting, tool calling y compatibilidad estilo OpenAI; justo el tipo de paquete que empieza a convertir un chat en operador real.[4]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-modelo">Modelo abierto</span>
+        <h2><a href="https://mistral.ai/news/mistral-small-4">Mistral Small 4: MoE abierto con razonamiento, multimodalidad y agentes</a></h2>
+        <p class="meta">Fuente: Mistral AI · Fecha visible: no indicada en la extracción</p>
+        <p><strong>Por qué importa:</strong> Mistral Small 4 intenta unificar en un solo modelo capacidades antes separadas: razonamiento tipo Magistral, multimodalidad tipo Pixtral y codificación agéntica tipo Devstral.[3]</p>
+        <p><strong>Resumen:</strong> El modelo usa Mixture of Experts con 128 expertos, 4 activos por token, 119B parámetros totales, 6B activos por token, ventana de 256k tokens, entrada texto+imagen y licencia Apache 2.0.[3]</p>
+        <p><strong>Impacto práctico:</strong> Si las cifras se sostienen en uso real, es una pieza atractiva para empresas que quieren modelos abiertos con razonamiento configurable, análisis documental largo y despliegue en stacks como vLLM, llama.cpp, SGLang o Transformers.[3]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-paper">Paper</span>
+        <h2><a href="https://arxiv.org/abs/2609.25006">Auditoría de shortcut learning en un corpus popular de fake news</a></h2>
+        <p class="meta">Fuente: arXiv · Envío v1: 26 de julio de 2026; listado en novedades de cs.CL revisado hoy</p>
+        <p><strong>Por qué importa:</strong> El paper muestra que modelos con F1 superior a 0,98 en ISOT/Kaggle “Fake and Real News” pueden estar midiendo separabilidad de fuentes, temas y metadatos, no veracidad periodística real.[1]</p>
+        <p><strong>Resumen:</strong> La auditoría encuentra que usar solo el campo de metadata “subject” alcanza F1=1,000, que hay 6.251 duplicados contaminando el 19,4% de un split ingenuo, y que al transferir a LIAR los modelos caen casi a ranking aleatorio con ROC-AUC 0,54–0,57.[1]</p>
+        <p><strong>Impacto práctico:</strong> Es un recordatorio sano: un benchmark que da 99% puede estar vendiendo humo estadístico de primera calidad. Para evaluar detectores de desinformación conviene exigir baselines metadata-only, splits por tema y pruebas fuera de distribución.[1]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-paper">Paper</span>
+        <h2><a href="https://arxiv.org/abs/2609.25008">Entrenar un LM end-to-end en Rust: informe de experiencia</a></h2>
+        <p class="meta">Fuente: arXiv · Envío v1: 27 de julio de 2026; listado en novedades de cs.CL revisado hoy</p>
+        <p><strong>Por qué importa:</strong> El autor preentrenó un modelo de lenguaje de extremo a extremo en Rust, sin PyTorch ni Python en la ruta de entrenamiento, por 164 dólares en GPU alquilada; lo presenta como logro, pero no como recomendación.[2]</p>
+        <p><strong>Resumen:</strong> La contribución útil es una taxonomía de fallos de Candle y Burn como backends de entrenamiento en 2026, incluyendo kernels fusionados sin gradiente en Candle y bajo rendimiento de backward pass en Burn.[2]</p>
+        <p><strong>Impacto práctico:</strong> Para el ecosistema Rust ML, esto es una señal honesta: Rust puede ser atractivo para despliegue e infraestructura, pero entrenar LMs desde cero aún exige mucha fontanería, paciencia y una tolerancia heroica al sufrimiento técnico.[2]</p>
+      </article>
+    </section>
+
+    <section class="summary-card">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Memoria externa para agentes:</strong> graphs, MCP y recuperación con evidencia empiezan a ser el pegamento entre LLMs y procesos empresariales largos.[5]</li>
+        <li><strong>Modelos “todo en uno”:</strong> Meta y Mistral empujan hacia modelos que combinan razonamiento, código, multimodalidad, herramientas y uso de ordenador en un único runtime.[3][4]</li>
+        <li><strong>Benchmarks bajo lupa:</strong> los papers recientes insisten en que puntuaciones altísimas pueden esconder fugas, duplicados o atajos de dataset.[1]</li>
+        <li><strong>Infraestructura alternativa:</strong> Rust para entrenamiento sigue verde, pero informes reproducibles como este ayudan a separar entusiasmo de realidad operacional.[2]</li>
+      </ul>
+    </section>
+
+    <section class="summary-card">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>OpenAI, Google/Google DeepMind y Anthropic se revisaron explícitamente. OpenAI aportó una pieza técnica/comercial útil sobre agentes y memoria; Google/DeepMind no mostró una novedad destacable estrictamente posterior al informe anterior en las páginas extraídas; Anthropic mostró como recientes piezas ya cubiertas o fuera de la ventana ampliada, sin una nueva pieza prioritaria para incluir hoy.[5]</p>
+    </section>
+
+    <section class="summary-card sources">
+Sources:
+[1] https://arxiv.org/abs/2609.25006 — What Does 99% Accuracy Measure?
+[2] https://arxiv.org/abs/2609.25008 — Training a Language Model End-to-End in Rust
+[3] https://mistral.ai/news/mistral-small-4 — Introducing Mistral Small 4
+[4] https://ai.meta.com/blog/introducing-muse-spark-meta-model-api — Introducing Muse Spark 1.1
+[5] https://openai.com/index/v7 — How V7 gives AI agents institutional memory
+    </section>
+
+    <footer class="report-footer">
+      <p>Informe preparado por AIDA. Pocas novedades gordas hoy, Valentín; así que he preferido precisión quirúrgica antes que rellenar con confeti corporativo.</p>
+      <p><a href="../index.html">Volver a RadarIA</a></p>
+    </footer>
+  </main>
+</body>
+</html>
