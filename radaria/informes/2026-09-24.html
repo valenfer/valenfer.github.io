@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-09-24</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<main class="report-shell">
+  <header class="hero">
+    <p class="eyebrow">RadarIA diario</p>
+    <h1>RadarIA diario — 2026-09-24</h1>
+    <p class="subtitle">Rango investigado: desde el informe anterior fiable en <code>radaria/reports.js</code> — 2026-09-23 — hasta 2026-09-24. Como hubo pocas piezas realmente nuevas, amplié la revisión hasta 7 días, pero mantuve la selección en novedades verificadas y sin inflar el soufflé.</p>
+    <p class="method">Metodología: revisión de fuentes oficiales de OpenAI, Google/Google DeepMind y Anthropic, más barrido de arXiv/listados de papers. Prioricé fuentes primarias, abrí el cuerpo de las páginas elegidas y descarté resultados sin fecha nueva clara o fuera de ventana.</p>
+  </header>
+
+  <section class="summary-card">
+    <h2>Resumen ejecutivo</h2>
+    <p>Hoy la señal útil viene casi toda de OpenAI: un benchmark abierto para conversaciones de salud mental y un caso de producción de agentes de voz/chat con métricas operativas. Google DeepMind y Anthropic fueron revisados, pero no encontré una novedad oficial nueva dentro de la ventana que superase el listón editorial.</p>
+  </section>
+
+  <section class="cards">
+    <article class="news-card">
+      <span class="badge badge-benchmark">Benchmark</span>
+      <h2><a href="https://openai.com/index/introducing-mentalhealthbench/">OpenAI presenta MentalHealthBench</a></h2>
+      <p class="meta">Fuente: OpenAI · Fecha: 23 de septiembre de 2026</p>
+      <p><strong>Por qué importa:</strong> MentalHealthBench intenta medir respuestas de IA en conversaciones realistas de salud mental, no solo en casos extremos de crisis, y OpenAI afirma que se creó con más de 80 profesionales licenciados de 22 países.[1]</p>
+      <p><strong>Resumen:</strong> El benchmark evalúa comportamientos como seguridad, petición de contexto, preservación de la agencia del usuario y orientación práctica cuando procede.[1] El paper asociado describe 1.215 conversaciones realistas con rúbricas específicas creadas por expertos, cubriendo bienestar cotidiano, escenarios urgentes, perfiles de adolescentes, adultos, cuidadores y clínicos, además de múltiples lenguas y contextos culturales.[2]</p>
+      <p><strong>Impacto práctico:</strong> Es una pieza interesante para separar “no hacer daño” de “ayudar bien”: en productos conversacionales sensibles, la métrica deja de ser solo bloquear respuestas peligrosas y pasa a comprobar si el modelo calibra urgencia, pide contexto y deriva a apoyo humano cuando toca.[1][2]</p>
+    </article>
+
+    <article class="news-card">
+      <span class="badge badge-producto">Producto</span>
+      <h2><a href="https://openai.com/index/ringg/">Ringg usa modelos de OpenAI para agentes multicanal de atención al cliente</a></h2>
+      <p class="meta">Fuente: OpenAI · Fecha: 24 de septiembre de 2026</p>
+      <p><strong>Por qué importa:</strong> El caso muestra agentes de voz, chat, WhatsApp y web funcionando con métricas de negocio: OpenAI publica que Ringg gestiona más de 7 millones de llamadas conectadas al mes y que sus agentes resuelven hasta el 65% de consultas rutinarias sin intervención humana.[6]</p>
+      <p><strong>Resumen:</strong> Ringg combina modelos de OpenAI con orquestación, herramientas empresariales, recuperación sobre documentos y subagentes especializados para cualificación, soporte, verificación, agenda y escalado.[6] Según OpenAI, ciertas cargas migradas de GPT-4.1 a GPT-5.6 Luna redujeron costes de modelo aproximadamente un 90%, mientras GPT-5.6 Terra se usa para análisis posllamada como resúmenes y sentimiento.[6]</p>
+      <p><strong>Impacto práctico:</strong> La señal no es “otro chatbot”, sino automatización operacional con enrutado de modelos, evaluación continua y escalado humano con contexto. Para pymes y servicios, esto apunta a una capa de agentes que no solo responde, sino que ejecuta flujos completos, si la integración con CRM, pagos y agenda está bien cerrada.[6]</p>
+    </article>
+  </section>
+
+  <section class="watch-card">
+    <h2>Lo que vigilar</h2>
+    <ul>
+      <li><strong>Benchmarks de dominios sensibles:</strong> salud mental, bioseguridad y ciberseguridad están pasando de tests genéricos a rúbricas expertas por situación.</li>
+      <li><strong>Agentes con métricas duras:</strong> la conversación comercial se desplaza de demos bonitas a resolución, latencia, coste por interacción y calidad de escalado.</li>
+      <li><strong>Model routing:</strong> cada vez veremos más pilas que eligen modelo por tarea, coste, latencia y riesgo, no “un modelo para todo”.</li>
+      <li><strong>Brecha entre anuncio y evidencia:</strong> los casos de cliente son útiles, pero conviene distinguir métricas auditadas externamente de cifras publicadas por el proveedor. La letra pequeña no muerde, pero a veces gruñe.</li>
+    </ul>
+  </section>
+
+  <section class="reviewed-card">
+    <h2>Fuentes revisadas sin novedad destacable</h2>
+    <ul>
+      <li><strong>Google/Google DeepMind:</strong> revisé el índice oficial de noticias; aparecían entradas recientes ya cubiertas en informes anteriores, como Gemini 3.8 Flash/Cyber, WeatherNext 3 y Fairwind, sin una pieza nueva clara dentro de la ventana del 23-24 de septiembre.[5]</li>
+      <li><strong>Anthropic:</strong> el resultado sobre nuevas capacidades de agentes abría una página fechada el 22 de mayo de 2025, por lo que no lo traté como novedad diaria.[3]</li>
+      <li><strong>Anthropic Frontier Red Team:</strong> la página del equipo lista trabajos hasta septiembre de 2026, pero la última entrada visible era anterior a la ventana y no aportaba una novedad nueva del día.[4]</li>
+      <li><strong>arXiv / papers:</strong> el listado recuperado no ofreció resultados fiables de la fecha actual en esta ejecución, así que no forcé papers de relleno. Mejor poco y limpio que mucho y sospechoso, que luego vienen los duendes de las citas.</li>
+    </ul>
+  </section>
+
+  <section class="sources-card">
+    <h2>Fuentes</h2>
+    <ol>
+      <li><a href="https://openai.com/index/introducing-mentalhealthbench/">https://openai.com/index/introducing-mentalhealthbench</a></li>
+      <li><a href="https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf">https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf</a></li>
+      <li><a href="https://www.anthropic.com/news/agent-capabilities-api">https://www.anthropic.com/news/agent-capabilities-api</a></li>
+      <li><a href="https://www.anthropic.com/research/team/frontier-red-team?refid=sm_AIConclave_1">https://www.anthropic.com/research/team/frontier-red-team?refid=sm_AIConclave_1</a></li>
+      <li><a href="https://deepmind.google/discover/blog">https://deepmind.google/discover/blog</a></li>
+      <li><a href="https://openai.com/index/ringg">https://openai.com/index/ringg</a></li>
+    </ol>
+  </section>
+
+  <footer class="summary-card">
+    <p>Informe preparado por AIDA para Valentín. Corto, verificable y sin meter ruido con calzador, que para eso ya está Internet.</p>
+    <p><a href="../index.html">Volver a RadarIA</a></p>
+  </footer>
+</main>
+</body>
+</html>

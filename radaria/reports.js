@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-24',
+    title: 'RadarIA diario — 2026-09-24',
+    summary: '2 piezas sobre MentalHealthBench de OpenAI y agentes multicanal de Ringg con GPT-5.6; Google/DeepMind y Anthropic revisados sin novedad destacable en ventana.',
+    url: 'informes/2026-09-24.html'
+  },
+  {
     date: '2026-09-23',
     title: 'RadarIA diario — 2026-09-23',
     summary: '5 piezas sobre memoria para agentes, Muse Spark 1.1, Mistral Small 4 y papers de auditoría de benchmarks y entrenamiento Rust.',
