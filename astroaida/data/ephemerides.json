@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-24T00:15:06.846809+00:00",
+  "fetched_at": "2026-09-25T00:17:26.074585+00:00",
   "status": "live",
-  "target_date": "2026-09-25",
+  "target_date": "2026-09-26",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,12 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-25T00:00:00+02:00",
-    "end_local": "2026-09-26T12:00:00+02:00"
+    "start_local": "2026-09-26T00:00:00+02:00",
+    "end_local": "2026-09-27T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260925_17_100-in-the-sky-org-fd68949f4080-2026-09-25",
+      "id": "20260925_17_100-in-the-sky-org-fd68949f4080-2026-09-26",
       "type": "other",
       "title_es": "NGC 55 está bien colocado",
       "title_translation_status": "translated",
@@ -32,7 +32,7 @@
       }
     },
     {
-      "id": "20260926_12_100-in-the-sky-org-a1368765899a-2026-09-25",
+      "id": "20260926_12_100-in-the-sky-org-a1368765899a-2026-09-26",
       "type": "opposition",
       "title_es": "Oposición",
       "title_translation_status": "deterministic",
@@ -50,13 +50,73 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20260926_12_100"
       }
+    },
+    {
+      "id": "20260926_08_100-in-the-sky-org-aa196041a8b8-2026-09-26",
+      "type": "lunar_phase",
+      "title_es": "Luna llena",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna alcanza la fase completa y es visible durante gran parte de la noche",
+      "start_local": "2026-09-26T18:48:54+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -13.8°).",
+        "altitude_deg": -13.8,
+        "azimuth_deg": 74.0,
+        "sun_altitude_deg": 16.1
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260926_08_100"
+      }
+    },
+    {
+      "id": "20260927_15_100-in-the-sky-org-ed3fb1b2c937-2026-09-26",
+      "type": "other",
+      "title_es": "Aproximación cercana a la Luna y Saturno",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna y Saturno pasan cerca uno del otro",
+      "start_local": "2026-09-27T08:35:57+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 4.0°, Sol a 3.4°.",
+        "altitude_deg": 4.0,
+        "azimuth_deg": 276.1,
+        "sun_altitude_deg": 3.4
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260927_15_100"
+      }
+    },
+    {
+      "id": "20260927_11_100-in-the-sky-org-3b5983c13542-2026-09-26",
+      "type": "other",
+      "title_es": "Afelio",
+      "title_translation_status": "deterministic",
+      "summary_es": "Mercurio pasa el punto más alejado a lo largo de su órbita del Sol",
+      "start_local": "2026-09-27T10:57:54+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Mercurio no observable: altitud 9.6°, Sol a 30.1°.",
+        "altitude_deg": 9.6,
+        "azimuth_deg": 112.0,
+        "sun_altitude_deg": 30.1
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260927_11_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 20.526315789473685,
-    "visibility": 46080.0,
+    "cloud_cover": 59.526315789473685,
+    "visibility": 49540.0,
     "precipitation_probability": 0,
-    "temperature": 23.5
+    "temperature": 24.0
   },
   "sources": [
     {
