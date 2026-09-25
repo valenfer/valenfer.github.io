@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-09-25</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<main class="report-shell">
+  <header class="hero">
+    <p class="eyebrow">RadarIA diario</p>
+    <h1>RadarIA diario — 2026-09-25</h1>
+    <p class="subtitle">Rango investigado: desde el último informe fiable listado en <code>radaria/reports.js</code> — 2026-09-24 — hasta 2026-09-25 08:00 CEST. Como la señal oficial nueva fue limitada, amplié la revisión hasta 7 días y lo indico donde corresponde.</p>
+    <p class="method">Metodología: revisión de fuentes oficiales de OpenAI, Google/Google DeepMind y Anthropic, más barrido de papers recientes en arXiv/Hugging Face Papers y una fuente universitaria secundaria cuando enlazaba un paper primario. Abrí el cuerpo de las páginas elegidas, descarté duplicados y no usé rumores ni snippets como prueba.</p>
+  </header>
+
+  <section class="summary-card">
+    <h2>Resumen ejecutivo</h2>
+    <p>Hoy no hay una avalancha de anuncios de frontera; la señal útil está en adopción y fiabilidad: OpenAI empuja formación práctica y prototipos con voz full-duplex, la investigación reciente separa mejor “confianza” de “corrección”, y los papers apuntan a memoria persistente para vídeo y bancos verificables de habilidades para agentes.</p>
+  </section>
+
+  <section class="cards">
+    <article class="news-card">
+      <span class="badge badge-producto">Producto</span>
+      <h2><a href="https://openai.com/index/two-years-of-openai-academy/">OpenAI Academy cumple dos años y prepara un programa de formadores</a></h2>
+      <p class="meta">Fuente: OpenAI · Fecha: 23 de septiembre de 2026</p>
+      <p><strong>Por qué importa:</strong> OpenAI presenta la Academy como una vía de alfabetización práctica en IA y afirma que, desde septiembre de 2024, ha organizado más de 250 eventos y más de 4 millones de personas han interactuado con su contenido.[1]</p>
+      <p><strong>Resumen:</strong> La novedad es la expansión mediante un programa de formadores para que personas y organizaciones enseñen material de Academy en sus comunidades, con rutas para trabajadores del conocimiento, desarrolladores, líderes, educadores y estudiantes.[1]</p>
+      <p><strong>Impacto práctico:</strong> La carrera ya no va solo de modelos más potentes: también va de convertirlos en hábitos de trabajo supervisables. Para Valentín, esto confirma que las habilidades con IA empiezan a empaquetarse como formación laboral estándar, con insignias, rutas y práctica guiada.</p>
+    </article>
+
+    <article class="news-card">
+      <span class="badge badge-herramienta">Herramienta</span>
+      <h2><a href="https://developers.openai.com/blog/bringing-my-led-display-to-life">OpenAI muestra un prototipo físico con GPT-Live-1, Codex y Raspberry Pi</a></h2>
+      <p class="meta">Fuente: OpenAI Developers · Fecha: 23 de septiembre de 2026</p>
+      <p><strong>Por qué importa:</strong> El artículo documenta un caso práctico donde Codex ayuda a entender y programar un panel LED HUB75, mientras una conversación full-duplex corre sobre GPT-Live-1.[2]</p>
+      <p><strong>Resumen:</strong> El autor describe cómo usó Codex para identificar conexiones, configurar WLED-MM y construir un renderizador; después convirtió el panel en un asistente capaz de mostrar tiempo, calendario, transporte, mensajes o escenas personalizadas.[2]</p>
+      <p><strong>Impacto práctico:</strong> Es una señal pequeña pero jugosa: los agentes empiezan a salir de la pantalla hacia objetos físicos baratos. No es “la revolución del LED de cumpleaños”, tranquilo, pero sí un patrón replicable para domótica, señalización y asistentes locales.</p>
+    </article>
+
+    <article class="news-card">
+      <span class="badge badge-benchmark">Benchmark</span>
+      <h2><a href="https://techxplore.com/news/2026-09-ai-trustworthy-red-flag.html">Confianza y corrección no parecen vivir en la misma “neurona” interna</a></h2>
+      <p class="meta">Fuente: UC Riverside vía TechXplore · Fecha: 24 de septiembre de 2026</p>
+      <p><strong>Por qué importa:</strong> Investigadores de UC Riverside estudiaron Llama-3.1-8B y Gemma-2-9B y reportan que la confianza y la corrección pueden estar asociadas a rasgos internos distintos en los LLM.[5]</p>
+      <p><strong>Resumen:</strong> Según el artículo, el equipo usó sparse autoencoders para separar respuestas correctas/incorrectas y confiadas/inseguras, y observó que alterar algunas características podía modificar la conducta sin reentrenar todo el modelo.[5]</p>
+      <p><strong>Impacto práctico:</strong> Si se confirma, esto ayuda a construir modelos que sepan decir “no lo sé” de forma más honesta. Es especialmente relevante para asistentes que asesoran, buscan o toman decisiones, porque una voz segura diciendo una burrada sigue siendo una burrada con traje.</p>
+    </article>
+
+    <article class="news-card">
+      <span class="badge badge-paper">Paper</span>
+      <h2><a href="https://huggingface.co/papers/2609.28466">Memoria para generación de vídeo autorregresiva</a></h2>
+      <p class="meta">Fuente: Hugging Face Papers · Publicado en HF: 23 de septiembre; enviado el 24 de septiembre de 2026</p>
+      <p><strong>Por qué importa:</strong> El paper plantea que los generadores de vídeo autorregresivos pierden información histórica importante cuando el contexto activo queda limitado por ventana, almacenamiento y cómputo.[6]</p>
+      <p><strong>Resumen:</strong> La revisión organiza mecanismos de memoria en cinco perspectivas: formas de representación, funciones a preservar, operaciones de escritura/lectura/actualización, aprendizaje durante rollouts cerrados y evaluación de memoria real.[6]</p>
+      <p><strong>Impacto práctico:</strong> Para vídeo largo, mundos interactivos y simuladores, no basta con que cada fotograma sea bonito: hay que recordar identidades, estados y cambios causales. Aquí está una de las fronteras serias para vídeo generativo útil, no solo espectacular.</p>
+    </article>
+
+    <article class="news-card">
+      <span class="badge badge-paper">Paper</span>
+      <h2><a href="https://huggingface.co/papers/2609.05571">Code2Skill: extraer habilidades verificables desde repositorios de código</a></h2>
+      <p class="meta">Fuente: Hugging Face Papers · Septiembre de 2026</p>
+      <p><strong>Por qué importa:</strong> Code2Skill propone extraer habilidades procedimentales desde código fuente, sin esperar a que un agente acumule experiencia interactuando con entornos concretos.[7]</p>
+      <p><strong>Resumen:</strong> El trabajo afirma haber procesado 19.769 repositorios populares y mantenidos para producir CodeSkillBank, con 1.006.822 registros aceptados, verificación por reconstrucción y comparación contra fuente.[7]</p>
+      <p><strong>Impacto práctico:</strong> Esto encaja con agentes de programación más competentes: en vez de improvisar cada flujo, podrían recuperar procedimientos verificados derivados de software real. Si funciona bien fuera del paper, sería una biblioteca de “oficios” para agentes.</p>
+    </article>
+  </section>
+
+  <section class="watch-card">
+    <h2>Lo que vigilar</h2>
+    <ul>
+      <li><strong>Formación como producto:</strong> OpenAI está empaquetando el aprendizaje de IA como rutas, badges y entrenadores; otras grandes probablemente harán lo mismo.</li>
+      <li><strong>Agentes pegados al mundo físico:</strong> GPT-Live-1 + Codex + hardware barato apunta a interfaces domésticas y laborales más ambientales.</li>
+      <li><strong>Calibración de confianza:</strong> separar seguridad verbal de acierto real puede convertirse en métrica básica para asistentes serios.</li>
+      <li><strong>Memoria persistente:</strong> tanto vídeo como agentes necesitan recordar de forma controlada sin arrastrar todo el historial como una maleta llena de ladrillos.</li>
+    </ul>
+  </section>
+
+  <section class="reviewed-card">
+    <h2>Fuentes revisadas sin novedad destacable</h2>
+    <ul>
+      <li><strong>Google/Google DeepMind:</strong> revisé el índice oficial de noticias y la página de model cards; aparecían entradas de septiembre como Gemini 3.8 Flash, WeatherNext 3 y Fairwind, pero no identifiqué una pieza oficial nueva posterior al informe del 24 que justificase tarjeta propia.[3][4]</li>
+      <li><strong>Anthropic:</strong> la búsqueda y el blog visible no mostraron una novedad oficial clara dentro de la ventana del 24-25 de septiembre; los resultados destacados eran de agosto o principios de septiembre, así que no los inflé.[8]</li>
+      <li><strong>Papers recientes:</strong> revisé Hugging Face Papers y prioricé piezas con abstracciones técnicas útiles y fecha reciente; descarté listados genéricos o duplicados sin cuerpo suficiente.</li>
+    </ul>
+  </section>
+
+  <section class="sources-card">
+    <h2>Fuentes</h2>
+    <p>Bloque generado desde el ledger de citas.</p>
+    <pre class="ledger-sources">## Sources
+
+[1] https://openai.com/index/two-years-of-openai-academy — Two years of OpenAI Academy | OpenAI
+[2] https://developers.openai.com/blog/bringing-my-led-display-to-life — Bringing my LED display to life with GPT-Live-1 and Codex
+[3] https://deepmind.google/blog — News — Google DeepMind
+[4] https://deepmind.google/models/model-cards — Model cards — Google DeepMind
+[5] https://techxplore.com/news/2026-09-ai-trustworthy-red-flag.html — Making AI more trustworthy by making it red-flag its own doubtful answers
+[6] https://huggingface.co/papers/2609.28466 — The Past Frames the Future: Memory for Autoregressive Video Generation
+[7] https://huggingface.co/papers/2609.05571 — Grounded Skill Synthesis from Code at Scale for Agentic Intelligence
+[8] https://claude.com/blog?b7eea976_page=9&amp;fcdaa149_page=11&amp;query=Salesforce — Blog | Claude by Anthropic</pre>
+  </section>
+
+  <footer class="summary-card">
+    <p>Informe preparado por AIDA para Valentín. Señal antes que ruido; que los titulares hinchados ya hacen bastante ejercicio ellos solos.</p>
+    <p><a href="../index.html">Volver a RadarIA</a></p>
+  </footer>
+</main>
+</body>
+</html>
+
+## Sources
+
+[1] https://openai.com/index/two-years-of-openai-academy — Two years of OpenAI Academy | OpenAI
+[2] https://developers.openai.com/blog/bringing-my-led-display-to-life — Bringing my LED display to life with GPT-Live-1 and Codex
+[3] https://deepmind.google/blog — News — Google DeepMind
+[4] https://deepmind.google/models/model-cards — Model cards — Google DeepMind
+[5] https://techxplore.com/news/2026-09-ai-trustworthy-red-flag.html — Making AI more trustworthy by making it red-flag its own doubtful answers
+[6] https://huggingface.co/papers/2609.28466 — The Past Frames the Future: Memory for Autoregressive Video Generation
+[7] https://huggingface.co/papers/2609.05571 — Grounded Skill Synthesis from Code at Scale for Agentic Intelligence
+[8] https://claude.com/blog?b7eea976_page=9&fcdaa149_page=11&query=Salesforce — Blog | Claude by Anthropic

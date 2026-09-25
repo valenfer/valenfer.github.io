@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-25',
+    title: 'RadarIA diario — 2026-09-25',
+    summary: '5 piezas sobre OpenAI Academy, prototipos físicos con GPT-Live-1/Codex, calibración de confianza en LLM, memoria para vídeo generativo y Code2Skill para agentes.',
+    url: 'informes/2026-09-25.html'
+  },
+  {
     date: '2026-09-24',
     title: 'RadarIA diario — 2026-09-24',
     summary: '2 piezas sobre MentalHealthBench de OpenAI y agentes multicanal de Ringg con GPT-5.6; Google/DeepMind y Anthropic revisados sin novedad destacable en ventana.',
