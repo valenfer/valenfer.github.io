@@ -1,6 +1,12 @@
 window.RADARIA_REPORTS = [
   {
     date: '2026-09-26',
+    title: 'RadarIA análisis — El horizonte de la abundancia',
+    summary: 'Adaptación editorial y prospectiva sobre sentido, dificultad e identidad cuando la automatización hace innecesario el trabajo; no presenta como hechos los datos futuros del documento base.',
+    url: 'informes/horizonte-abundancia-condicion-humana.html'
+  },
+  {
+    date: '2026-09-26',
     title: 'RadarIA diario — 2026-09-26',
     summary: '5 piezas sobre GPT-6 Sol/Luna, Claude Opus 5.5, AEWM para agentes, τ^τ-Bench y foco Gemini 3.8/privacidad.',
     url: 'informes/2026-09-26.html'
