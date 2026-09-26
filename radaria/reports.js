@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-26',
+    title: 'RadarIA diario — 2026-09-26',
+    summary: '5 piezas sobre GPT-6 Sol/Luna, Claude Opus 5.5, AEWM para agentes, τ^τ-Bench y foco Gemini 3.8/privacidad.',
+    url: 'informes/2026-09-26.html'
+  },
+  {
     date: '2026-09-25',
     title: 'RadarIA diario — 2026-09-25',
     summary: '5 piezas sobre OpenAI Academy, prototipos físicos con GPT-Live-1/Codex, calibración de confianza en LLM, memoria para vídeo generativo y Code2Skill para agentes.',
