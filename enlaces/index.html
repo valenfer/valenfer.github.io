@@ -123,7 +123,7 @@
     function render() {
       const query = search.value.trim().toLowerCase();
       const visible = links.filter(link => (active === 'Todos' || link.category === active) && [link.title, link.category, link.tag, link.description].join(' ').toLowerCase().includes(query));
-      grid.innerHTML = visible.map((link, index) => `<article class="link-card" style="--delay:${index * 55}ms"><div class="card-top"><span class="symbol">${link.symbol}</span><span class="category">${link.category}</span></div><h2>${link.title}</h2><p>${link.description}</p><div class="card-bottom"><span>#${link.tag}</span><span><a href="${link.url}" target="_blank" rel="noopener noreferrer">Explorar <span aria-hidden="true">↗</span></a>${link.secondaryUrl ? ` <a href="${link.secondaryUrl}" target="_blank" rel="noopener noreferrer">Vídeo <span aria-hidden="true">↗</span></a>` : ''}</span></div></article>`).join('');
+      grid.innerHTML = visible.map((link, index) => `<article class="link-card" style="--delay:${index * 55}ms"><div class="card-top"><span class="symbol">${link.symbol}</span><span class="category">${link.tag}</span></div><h2>${link.title}</h2><p>${link.description}</p><div class="card-bottom"><span>#${link.category}</span><span><a href="${link.url}" target="_blank" rel="noopener noreferrer">Explorar <span aria-hidden="true">↗</span></a>${link.secondaryUrl ? ` <a href="${link.secondaryUrl}" target="_blank" rel="noopener noreferrer">Vídeo <span aria-hidden="true">↗</span></a>` : ''}</span></div></article>`).join('');
       empty.hidden = visible.length !== 0;
     }
     search.addEventListener('input', render); render();
