@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-25T00:17:26.074585+00:00",
+  "fetched_at": "2026-09-26T00:22:48.227402+00:00",
   "status": "live",
-  "target_date": "2026-09-26",
+  "target_date": "2026-09-27",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,69 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-26T00:00:00+02:00",
-    "end_local": "2026-09-27T12:00:00+02:00"
+    "start_local": "2026-09-27T00:00:00+02:00",
+    "end_local": "2026-09-28T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260925_17_100-in-the-sky-org-fd68949f4080-2026-09-26",
-      "type": "other",
-      "title_es": "NGC 55 está bien colocado",
-      "title_translation_status": "translated",
-      "summary_es": "NGC 55 (mag 8.2), una galaxia irregular barrada en Sculptor culmina alrededor de la medianoche hora local",
-      "start_local": "2026-09-26T01:56:55+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260925_17_100"
-      }
-    },
-    {
-      "id": "20260926_12_100-in-the-sky-org-a1368765899a-2026-09-26",
-      "type": "opposition",
-      "title_es": "Oposición",
-      "title_translation_status": "deterministic",
-      "summary_es": "Neptuno está en una posición óptima para observar",
-      "start_local": "2026-09-26T03:28:02+02:00",
-      "visibility": {
-        "status": "visible",
-        "label": "Visible",
-        "reason": "Neptuno observable sobre el horizonte en cielo nocturno.",
-        "altitude_deg": 49.2,
-        "azimuth_deg": 207.5,
-        "sun_altitude_deg": -49.8
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260926_12_100"
-      }
-    },
-    {
-      "id": "20260926_08_100-in-the-sky-org-aa196041a8b8-2026-09-26",
-      "type": "lunar_phase",
-      "title_es": "Luna llena",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna alcanza la fase completa y es visible durante gran parte de la noche",
-      "start_local": "2026-09-26T18:48:54+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -13.8°).",
-        "altitude_deg": -13.8,
-        "azimuth_deg": 74.0,
-        "sun_altitude_deg": 16.1
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260926_08_100"
-      }
-    },
-    {
-      "id": "20260927_15_100-in-the-sky-org-ed3fb1b2c937-2026-09-26",
+      "id": "20260927_15_100-in-the-sky-org-ed3fb1b2c937-2026-09-27",
       "type": "other",
       "title_es": "Aproximación cercana a la Luna y Saturno",
       "title_translation_status": "translated",
@@ -92,7 +35,7 @@
       }
     },
     {
-      "id": "20260927_11_100-in-the-sky-org-3b5983c13542-2026-09-26",
+      "id": "20260927_11_100-in-the-sky-org-3b5983c13542-2026-09-27",
       "type": "other",
       "title_es": "Afelio",
       "title_translation_status": "deterministic",
@@ -110,13 +53,67 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20260927_11_100"
       }
+    },
+    {
+      "id": "20260927_20_100-in-the-sky-org-fa008af76ccb-2026-09-27",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna y Saturno comparten la misma ascensión recta, a una separación de 6°55'",
+      "start_local": "2026-09-27T14:00:32+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -42.6°).",
+        "altitude_deg": -42.6,
+        "azimuth_deg": 344.6,
+        "sun_altitude_deg": 50.7
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260927_20_100"
+      }
+    },
+    {
+      "id": "20260927_10_100-in-the-sky-org-146158d0882a-2026-09-27",
+      "type": "meteor_shower",
+      "title_es": "Lluvia de meteoros",
+      "title_translation_status": "deterministic",
+      "summary_es": "La lluvia diurna de meteoros sextántidas alcanza su punto máximo",
+      "start_local": "2026-09-27T20:41:23+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260927_10_100"
+      }
+    },
+    {
+      "id": "20260927_17_100-in-the-sky-org-3bff1642ac24-2026-09-27",
+      "type": "other",
+      "title_es": "47 Tuc está bien colocado",
+      "title_translation_status": "translated",
+      "summary_es": "El segundo cúmulo globular más brillante del cielo, 47 Tuc (NGC 104; mag 4.0), en Tucana culmina alrededor de la medianoche hora local",
+      "start_local": "2026-09-28T01:58:11+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20260927_17_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 59.526315789473685,
-    "visibility": 49540.0,
-    "precipitation_probability": 0,
-    "temperature": 24.0
+    "cloud_cover": 94.6842105263158,
+    "visibility": 41940.0,
+    "precipitation_probability": 5,
+    "temperature": 23.2
   },
   "sources": [
     {
