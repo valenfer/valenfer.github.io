@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-27',
+    title: 'RadarIA diario — 2026-09-27',
+    summary: '4 piezas sobre Gemini 3.8 Live Avatar, gobernanza matemática en OpenAI y seguridad de agentes: evasión de monitores y manipulación de trazas.',
+    url: 'informes/2026-09-27.html'
+  },
+  {
     date: '2026-09-26',
     title: 'RadarIA análisis — El horizonte de la abundancia',
     summary: 'Adaptación editorial y prospectiva sobre sentido, dificultad e identidad cuando la automatización hace innecesario el trabajo; no presenta como hechos los datos futuros del documento base.',
