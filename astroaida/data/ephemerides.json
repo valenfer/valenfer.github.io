@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-26T00:22:48.227402+00:00",
+  "fetched_at": "2026-09-27T00:15:51.372031+00:00",
   "status": "live",
-  "target_date": "2026-09-27",
+  "target_date": "2026-09-28",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,89 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-27T00:00:00+02:00",
-    "end_local": "2026-09-28T12:00:00+02:00"
+    "start_local": "2026-09-28T00:00:00+02:00",
+    "end_local": "2026-09-29T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20260927_15_100-in-the-sky-org-ed3fb1b2c937-2026-09-27",
-      "type": "other",
-      "title_es": "Aproximación cercana a la Luna y Saturno",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna y Saturno pasan cerca uno del otro",
-      "start_local": "2026-09-27T08:35:57+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Luna no observable: altitud 4.0°, Sol a 3.4°.",
-        "altitude_deg": 4.0,
-        "azimuth_deg": 276.1,
-        "sun_altitude_deg": 3.4
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260927_15_100"
-      }
-    },
-    {
-      "id": "20260927_11_100-in-the-sky-org-3b5983c13542-2026-09-27",
-      "type": "other",
-      "title_es": "Afelio",
-      "title_translation_status": "deterministic",
-      "summary_es": "Mercurio pasa el punto más alejado a lo largo de su órbita del Sol",
-      "start_local": "2026-09-27T10:57:54+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Mercurio no observable: altitud 9.6°, Sol a 30.1°.",
-        "altitude_deg": 9.6,
-        "azimuth_deg": 112.0,
-        "sun_altitude_deg": 30.1
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260927_11_100"
-      }
-    },
-    {
-      "id": "20260927_20_100-in-the-sky-org-fa008af76ccb-2026-09-27",
-      "type": "conjunction",
-      "title_es": "Conjunción",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna y Saturno comparten la misma ascensión recta, a una separación de 6°55'",
-      "start_local": "2026-09-27T14:00:32+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -42.6°).",
-        "altitude_deg": -42.6,
-        "azimuth_deg": 344.6,
-        "sun_altitude_deg": 50.7
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260927_20_100"
-      }
-    },
-    {
-      "id": "20260927_10_100-in-the-sky-org-146158d0882a-2026-09-27",
-      "type": "meteor_shower",
-      "title_es": "Lluvia de meteoros",
-      "title_translation_status": "deterministic",
-      "summary_es": "La lluvia diurna de meteoros sextántidas alcanza su punto máximo",
-      "start_local": "2026-09-27T20:41:23+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260927_10_100"
-      }
-    },
-    {
-      "id": "20260927_17_100-in-the-sky-org-3bff1642ac24-2026-09-27",
+      "id": "20260927_17_100-in-the-sky-org-3bff1642ac24-2026-09-28",
       "type": "other",
       "title_es": "47 Tuc está bien colocado",
       "title_translation_status": "translated",
@@ -110,10 +33,10 @@
     }
   ],
   "weather": {
-    "cloud_cover": 94.6842105263158,
-    "visibility": 41940.0,
-    "precipitation_probability": 5,
-    "temperature": 23.2
+    "cloud_cover": 82.63157894736842,
+    "visibility": 36180.0,
+    "precipitation_probability": 13,
+    "temperature": 20.8
   },
   "sources": [
     {
