@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-27T00:15:51.372031+00:00",
+  "fetched_at": "2026-09-28T00:19:12.286500+00:00",
   "status": "live",
-  "target_date": "2026-09-28",
+  "target_date": "2026-09-29",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,33 +10,15 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-28T00:00:00+02:00",
-    "end_local": "2026-09-29T12:00:00+02:00"
+    "start_local": "2026-09-29T00:00:00+02:00",
+    "end_local": "2026-09-30T12:00:00+02:00"
   },
-  "events": [
-    {
-      "id": "20260927_17_100-in-the-sky-org-3bff1642ac24-2026-09-28",
-      "type": "other",
-      "title_es": "47 Tuc está bien colocado",
-      "title_translation_status": "translated",
-      "summary_es": "El segundo cúmulo globular más brillante del cielo, 47 Tuc (NGC 104; mag 4.0), en Tucana culmina alrededor de la medianoche hora local",
-      "start_local": "2026-09-28T01:58:11+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260927_17_100"
-      }
-    }
-  ],
+  "events": [],
   "weather": {
-    "cloud_cover": 82.63157894736842,
-    "visibility": 36180.0,
-    "precipitation_probability": 13,
-    "temperature": 20.8
+    "cloud_cover": 61.526315789473685,
+    "visibility": 40660.0,
+    "precipitation_probability": 5,
+    "temperature": 21.4
   },
   "sources": [
     {
