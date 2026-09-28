@@ -1,11 +1,11 @@
 {
   "source": "AstronomyAPI + Astronomy Engine",
-  "fetched_at": "2026-09-28T00:19:09.930400+00:00",
+  "fetched_at": "2026-09-28T09:45:50.567431+00:00",
   "status": "live",
   "phase": "Full Moon",
-  "phase_degrees": 196.73,
-  "illumination": 0.978837,
-  "distance_km": 369222.75338,
+  "phase_degrees": 201.839,
+  "illumination": 0.964118,
+  "distance_km": 375576.18042,
   "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/f14815e13e90377484e4a7163232d3a7f69f1393168744881bb9e044e6cdf732.png",
   "observer": {
     "latitude": 37.38283,
