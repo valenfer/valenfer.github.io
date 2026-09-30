@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-09-30',
+    title: 'RadarIA diario — 2026-09-30',
+    summary: '3 piezas sobre GPT-6.1 Sol, safety cases para entrenamiento frontera y abstracción semántica en LLMs; pocas novedades sólidas desde el último informe.',
+    url: 'informes/2026-09-30.html'
+  },
+  {
     date: '2026-09-28',
     title: 'RadarIA diario — 2026-09-28',
     summary: '5 piezas sobre gobernanza matemática en OpenAI, Agents API/GPT-Live 1, Claude Opus 5.5, BabelArena y papers recientes de Hugging Face.',

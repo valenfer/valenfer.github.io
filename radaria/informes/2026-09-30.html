@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-09-30</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell">
+    <header class="hero">
+      <p class="eyebrow">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-09-30</h1>
+      <p class="subtitle">Rango investigado: desde el último informe fiable en <code>radaria/reports.js</code> (2026-09-28) hasta 2026-09-30, con ampliación editorial máxima a 7 días solo para comprobar si había piezas primarias destacables. Ejecución: 2026-09-30.</p>
+      <p class="method">Metodología: revisión de fuentes primarias y páginas oficiales de OpenAI, Google DeepMind y Anthropic, más arXiv/Hugging Face Papers. He priorizado cuerpo leído frente a snippets; cuando una página solo mostró índice o no tuvo novedad nueva, queda indicado. Citas numeradas generadas con el ledger de grounded-citations.</p>
+    </header>
+
+    <section class="summary-card">
+      <h2>Resumen ejecutivo</h2>
+      <p>Hoy hay pocas novedades realmente sólidas desde el último RadarIA, así que el informe se concentra en 3 piezas: el lanzamiento de GPT-6.1 Sol, la propuesta de OpenAI de “safety cases” para entrenamiento frontera y un paper reciente de arXiv sobre abstracción semántica en LLMs.[1][2][5] Mejor poco y afilado que mucho relleno con purpurina barata.</p>
+    </section>
+
+    <section class="cards">
+      <article class="news-card">
+        <span class="badge badge-modelo">Modelo</span>
+        <p class="meta">OpenAI · 29 septiembre 2026</p>
+        <h2><a href="https://openai.com/index/introducing-gpt-6-1-sol/">GPT-6.1 Sol: capacidad cercana a Astra a una quinta parte del precio</a></h2>
+        <p><strong>Por qué importa:</strong> OpenAI posiciona GPT-6.1 Sol como el modelo práctico para agentes de código, uso de ordenador y trabajo profesional cuando Astra es demasiado caro: declara precios API de 2 dólares por millón de tokens de entrada, 0,10 dólares en entrada cacheada y 10 dólares de salida, y afirma que se acerca a Astra en varias evaluaciones clave.[1]</p>
+        <p><strong>Resumen:</strong> La pieza destaca mejoras frente a GPT-6 Sol en DeepSWE v1.1, GDP.pdf, AutomationBench, OSWorld 2.0 y Terminal-Bench Science 0.1; en factualidad, OpenAI dice que en prompts difíciles reduce errores del 11,4% al 7,7% a bajo esfuerzo de razonamiento.[1]</p>
+        <p><strong>Impacto práctico:</strong> Si las cifras se sostienen fuera del entorno de evaluación de OpenAI, el foco se desplaza de “modelo más inteligente” a “modelo suficientemente cerca del tope pero mucho más barato”, justo lo que necesitan flujos con contexto reutilizado, agentes persistentes y tareas repetibles.[1]</p>
+        <p><strong>Nota de seguridad:</strong> el addendum de seguridad trata a GPT-6.1 Sol como capacidad “Critical” en ciberseguridad y “High” en biológico/químico bajo el Preparedness Framework, usando la misma pila de salvaguardas que GPT-6 Astra.[3]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-informe">Informe</span>
+        <p class="meta">OpenAI · 28 septiembre 2026</p>
+        <h2><a href="https://openai.com/index/towards-safety-cases-for-frontier-ai-training/">Safety cases para entrenamiento frontera: OpenAI quiere documentación estructurada antes de ciertos runs</a></h2>
+        <p><strong>Por qué importa:</strong> OpenAI propone que antes de continuar entrenamientos frontera de reinforcement learning exista documentación estructurada y basada en evidencia —“safety cases”— inspirada en industrias críticas como aviación o nuclear, aunque reconoce que en IA la complejidad emergente hace más difícil alcanzar ese rigor.[2]</p>
+        <p><strong>Resumen:</strong> La propuesta organiza el caso de seguridad en tres capas técnicas: alineamiento del modelo, contención y monitorización; incluye recomendaciones como revisar datasets y graders, evitar que los graders vean chain-of-thought en RL, endurecer sandboxes, guardar transcripciones inmutables y usar alertas capaces de pausar runs.[2]</p>
+        <p><strong>Impacto práctico:</strong> Para equipos que entrenan agentes avanzados, el mensaje es claro: no basta con evaluar al final; hay que convertir monitorización, pausas, auditoría y responsabilidades internas en controles operativos antes y durante el entrenamiento.[2]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-paper">Paper</span>
+        <p class="meta">arXiv · listado el 29 septiembre 2026</p>
+        <h2><a href="https://arxiv.org/html/2609.34187">LLMs are not stochastic parrots: abstracción mediada por significado en tareas tipo conlang</a></h2>
+        <p><strong>Por qué importa:</strong> El paper ataca una versión fuerte del argumento del “loro estocástico”: prueba tareas de lenguas construidas donde seguir la instrucción semántica entra en conflicto con patrones superficiales frecuentes, sin dar ejemplos de salida.[5]</p>
+        <p><strong>Resumen:</strong> Los autores informan que, en tres familias de tareas, los modelos se mueven sistemáticamente en la dirección predicha por el significado; sostienen que eso es evidencia de abstracción mediada por significado, aunque no de comprensión humana equivalente.[5]</p>
+        <p><strong>Impacto práctico:</strong> La lectura útil no es “los LLMs piensan como humanos”, sino algo más fino: algunos comportamientos no se explican bien solo como coocurrencias superficiales, pero la generación sigue muy condicionada por plausibilidad superficial y el rendimiento cae cuando las reasignaciones se vuelven más extrañas.[5]</p>
+      </article>
+    </section>
+
+    <section class="watch-card">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Economía de agentes:</strong> GPT-6.1 Sol empuja la competencia hacia coste por tarea y entrada cacheada, no solo hacia puntos de benchmark.[1]</li>
+        <li><strong>Seguridad previa al entrenamiento:</strong> los “safety cases” podrían convertirse en formato común de gobernanza interna para runs frontera, con veto, auditoría y pausas automáticas.[2]</li>
+        <li><strong>Evaluaciones con más construct validity:</strong> el paper de conlangs recuerda que pasar benchmarks no basta; importa diseñar pruebas que separen mecanismo superficial, significado e instrucción.[5]</li>
+      </ul>
+    </section>
+
+    <section class="reviewed-card">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <ul>
+        <li><strong>Google DeepMind:</strong> la página de noticias revisada muestra como últimos destacados Gemini 3.8 Flash, Gemini 3.8 Live, Private AI Compute y otros anuncios ya cubiertos o sin fecha nueva visible en la ventana desde 2026-09-28.[4]</li>
+        <li><strong>Anthropic:</strong> la búsqueda en newsroom no devolvió publicaciones nuevas posteriores al último RadarIA fiable; los resultados visibles más recientes eran de fechas anteriores, así que no se fuerza pieza.[unverified] Sensato, aunque menos teatrero.</li>
+        <li><strong>OpenAI News:</strong> además de GPT-6.1 Sol y safety cases, la portada lista DevDay 2026 Recap, el addendum de seguridad y “Introducing dots” con fecha 29 de septiembre; los extractores no devolvieron cuerpo legible para DevDay/dots, así que no se resumen como piezas leídas.[9]</li>
+      </ul>
+    </section>
+
+    <section class="sources-card">
+      <h2>Fuentes</h2>
+
+## Sources
+
+[1] https://openai.com/index/introducing-gpt-6-1-sol
+[2] https://openai.com/index/towards-safety-cases-for-frontier-ai-training
+[3] https://deploymentsafety.openai.com/gpt-6-1-sol/performance-in-cases-flagged-by-users
+[4] https://deepmind.google/blog
+[5] https://arxiv.org/html/2609.34187
+[9] https://openai.com/news
+    </section>
+
+    <footer class="summary-card">
+      <p>Hecho por AIDA para Valentín: corto, con fuentes y sin vender humo, que para humo ya están algunas demos con musiquita épica.[unverified]</p>
+    </footer>
+  </main>
+</body>
+</html>
