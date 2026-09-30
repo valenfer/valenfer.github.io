@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-29T01:29:39.508518+00:00",
+  "fetched_at": "2026-09-30T01:06:39.763119+00:00",
   "status": "live",
-  "target_date": "2026-09-30",
+  "target_date": "2026-10-01",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,17 +10,37 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-09-30T00:00:00+02:00",
-    "end_local": "2026-10-01T12:00:00+02:00"
+    "start_local": "2026-10-01T00:00:00+02:00",
+    "end_local": "2026-10-02T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "2026_14_A192_100-in-the-sky-org-9c2758f3a801-2026-09-30",
-      "type": "opposition",
-      "title_es": "Oposición",
-      "title_translation_status": "deterministic",
-      "summary_es": "El asteroide 192 Nausikaa hace su aproximación más cercana a la Tierra",
-      "start_local": "2026-09-30T13:58:44+02:00",
+      "id": "20261001_08_100-in-the-sky-org-d4f7747523bf-2026-10-01",
+      "type": "other",
+      "title_es": "La Luna en el perigeo",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna hace su máximo acercamiento mensual a la Tierra, apareciendo más grande que en otros momentos del mes, aunque solo muy fraccionadamente",
+      "start_local": "2026-10-01T22:51:39+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -2.5°).",
+        "altitude_deg": -2.5,
+        "azimuth_deg": 52.1,
+        "sun_altitude_deg": -32.4
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261001_08_100"
+      }
+    },
+    {
+      "id": "20261002_16_100-in-the-sky-org-504008ed08a0-2026-10-01",
+      "type": "other",
+      "title_es": "Ocultación lunar de Beta Tauri",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará frente a Beta Tauri (Elnath), creando una ocultación lunar visible desde países y territorios como Brasil, Argentina, Perú y Bolivia entre otros",
+      "start_local": "2026-10-02T09:58:21+02:00",
       "visibility": {
         "status": "contextual",
         "label": "Acontecimiento astronómico",
@@ -28,35 +48,15 @@
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=2026_14_A192_100"
-      }
-    },
-    {
-      "id": "20260930_15_100-in-the-sky-org-0361f2f297b2-2026-09-30",
-      "type": "other",
-      "title_es": "Aproximación cercana a la Luna y M45",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna y M45 pasan cerca una de la otra",
-      "start_local": "2026-09-30T20:03:13+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -18.6°).",
-        "altitude_deg": -18.6,
-        "azimuth_deg": 35.2,
-        "sun_altitude_deg": 0.7
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20260930_15_100"
+        "url": "https://in-the-sky.org/news.php?id=20261002_16_100"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 70.73684210526316,
-    "visibility": 41480.0,
+    "cloud_cover": 87.15789473684211,
+    "visibility": 42060.0,
     "precipitation_probability": 0,
-    "temperature": 22.5
+    "temperature": 23.8
   },
   "sources": [
     {
