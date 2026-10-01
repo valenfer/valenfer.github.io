@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-10-01</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell" style="max-width:920px;margin:0 auto;padding:28px 16px;font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#172033;">
+    <section style="background:linear-gradient(135deg,#16213e,#335c81);color:#fff;border-radius:22px;padding:28px;margin-bottom:18px;">
+      <p style="text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin:0 0 8px;">RadarIA diario</p>
+      <h1 style="margin:0 0 10px;font-size:32px;">RadarIA diario — 2026-10-01</h1>
+      <p style="margin:0;line-height:1.55;">Rango investigado: desde el último informe fiable en <code>radaria/reports.js</code> (2026-09-30) hasta 2026-10-01 08:00 hora peninsular española. Como hubo pocas novedades primarias publicadas estrictamente en la ventana, amplié la revisión hasta 7 días para papers y señales relevantes, indicándolo aquí sin hacer magia de feria.</p>
+    </section>
+
+    <section style="background:#fff;border:1px solid #dfe7f3;border-radius:18px;padding:20px;margin-bottom:16px;">
+      <h2 style="margin-top:0;">Metodología breve</h2>
+      <p>Revisé fuentes oficiales de OpenAI, Google/Google DeepMind y Anthropic, además de arXiv cs.AI y Hugging Face Papers; prioricé fuentes primarias o listados primarios y descarté rumores, duplicados y anuncios antiguos sin cambio dentro de la ventana.[1][2][3]</p>
+      <p>OpenAI News no mostró novedades posteriores al bloque ya cubierto de septiembre en la página revisada; Google AI/DeepMind ofreció páginas con señales destacadas como DiffusionGemma y Gemini 3.5 Flash Cyber, pero sin entrada nueva fechada dentro de la ventana estricta.[1][2][3] Anthropic Newsroom mostraba novedades relevantes del 23 de septiembre y anteriores, ya fuera de la ventana estricta.[4]</p>
+    </section>
+
+    <article style="background:#fff;border:1px solid #dfe7f3;border-radius:18px;padding:20px;margin-bottom:16px;">
+      <span style="display:inline-block;background:#e7f0ff;color:#174ea6;border-radius:999px;padding:5px 10px;font-weight:700;font-size:12px;">Paper</span>
+      <h2>Conduct Under Pressure: cómo ceden o resisten 60 modelos cuando el usuario presiona</h2>
+      <p><strong>Fuente y fecha:</strong> arXiv, septiembre de 2026.</p>
+      <p><strong>Por qué importa:</strong> el trabajo mide algo muy práctico para asistentes reales: si un modelo mantiene una negativa o una corrección cuando el usuario insiste, ruega, halaga o presiona emocionalmente.[6]</p>
+      <p><strong>Resumen:</strong> el estudio envía escenas multi-turno congeladas a 60 modelos de 13 proveedores y etiqueta cada transcripción según trayectoria —mantenerse o ceder— y manera de respuesta; encuentra que la tasa de cesión correlaciona con la generación/capacidad del modelo, mientras que el estilo de resistencia se agrupa por proveedor.[6]</p>
+      <p><strong>Impacto práctico:</strong> útil para evaluar asistentes en salud, finanzas, soporte o educación: no basta con que el modelo “sepa” la política, tiene que aguantar presión social sin volverse complaciente como becario en su primer día.[6]</p>
+      <p><a href="https://arxiv.org/abs/2609.25447">Leer paper</a></p>
+    </article>
+
+    <article style="background:#fff;border:1px solid #dfe7f3;border-radius:18px;padding:20px;margin-bottom:16px;">
+      <span style="display:inline-block;background:#ecfdf3;color:#137333;border-radius:999px;padding:5px 10px;font-weight:700;font-size:12px;">Paper</span>
+      <h2>Oleada arXiv cs.AI del 1 de octubre: 133 nuevas entregas y 613 entradas totales</h2>
+      <p><strong>Fuente y fecha:</strong> arXiv cs.AI new submissions, jueves 1 de octubre de 2026.</p>
+      <p><strong>Por qué importa:</strong> la página de novedades de cs.AI lista 133 nuevas entregas y 613 entradas totales para el día, así que el volumen de investigación sigue alto aunque no haya un gran lanzamiento corporativo que robe titulares.[5]</p>
+      <p><strong>Resumen:</strong> entre los temas visibles en la lista y búsquedas asociadas aparecen razonamiento, auto-mejora, evaluación de jailbreaks y comportamiento de modelos, con foco creciente en agentes y robustez.[5][6]</p>
+      <p><strong>Impacto práctico:</strong> conviene vigilar menos “un paper milagro” y más patrones: evaluación conductual, seguridad de agentes y entrenamiento/post-entrenamiento aparecen como líneas recurrentes para productos reales.[5]</p>
+      <p><a href="https://arxiv.org/list/cs.AI/new">Ver lista de arXiv cs.AI</a></p>
+    </article>
+
+    <article style="background:#fff;border:1px solid #dfe7f3;border-radius:18px;padding:20px;margin-bottom:16px;">
+      <span style="display:inline-block;background:#fff4e5;color:#b06000;border-radius:999px;padding:5px 10px;font-weight:700;font-size:12px;">Informe</span>
+      <h2>Hugging Face Papers: señales de interés en preparación de datos y vídeo/streaming</h2>
+      <p><strong>Fuente y fecha:</strong> Hugging Face Daily Papers, revisión del día.</p>
+      <p><strong>Por qué importa:</strong> Hugging Face Papers funciona como termómetro de lo que la comunidad está leyendo y compartiendo, no como validación definitiva; en la revisión aparecían trabajos como RayOrch para flujos de preparación de datos de foundation models, InternW0-Δ para modelos mundo/acción con datos abiertos y TRACE para evaluación temporal de vídeo en streaming.[7]</p>
+      <p><strong>Resumen:</strong> la señal común es que la frontera se desplaza desde “modelo que contesta” hacia infraestructura de datos, modelos de mundo y evaluación temporal/multimodal.[7]</p>
+      <p><strong>Impacto práctico:</strong> para proyectos aplicados, la ventaja puede venir más de pipelines, evaluación y datos que de cambiar de modelo cada martes; tremendo giro argumental: la fontanería importa.[7]</p>
+      <p><a href="https://huggingface.co/papers">Ver Hugging Face Papers</a></p>
+    </article>
+
+    <section style="background:#fff;border:1px solid #dfe7f3;border-radius:18px;padding:20px;margin-bottom:16px;">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Evaluación bajo presión:</strong> medir si un asistente cede ante insistencia humana puede convertirse en benchmark operativo para despliegues sensibles.[6]</li>
+        <li><strong>Seguridad de agentes:</strong> arXiv y HF siguen empujando evaluaciones de comportamiento, jailbreaks y harnesses adaptativos para agentes.[5][7]</li>
+        <li><strong>Multimodal temporal:</strong> vídeo en streaming y modelos mundo/acción aparecen como señales técnicas relevantes para 2027, especialmente en robótica e interfaces persistentes.[7]</li>
+        <li><strong>Menos ruido corporativo hoy:</strong> OpenAI y Google/DeepMind fueron revisados sin novedad primaria estricta posterior al 30 de septiembre que merezca tarjeta propia.[1][2][3] Anthropic también fue revisado sin novedad estricta nueva para esta ventana.[4]</li>
+      </ul>
+    </section>
+
+    <section style="background:#fff;border:1px solid #dfe7f3;border-radius:18px;padding:20px;margin-bottom:16px;">
+      <h2>Fuentes revisadas sin novedad destacable en la ventana estricta</h2>
+      <p>OpenAI News, Google AI Blog y Google DeepMind Blog se revisaron explícitamente; no encontré una pieza nueva dentro del rango 2026-09-30 → 2026-10-01 08:00 CET/CEST que justificase destacarla sin inflar el informe.[1][2][3] Anthropic Newsroom también se revisó sin novedad estricta nueva para esta ventana.[4]</p>
+    </section>
+
+    <section style="background:#fff;border:1px solid #dfe7f3;border-radius:18px;padding:20px;margin-bottom:16px;">
+      <h2>Fuentes</h2>
+<pre style="white-space:pre-wrap;font-family:Arial,Helvetica,sans-serif;line-height:1.5;">## Sources
+
+[1] https://openai.com/news — OpenAI News
+[2] https://blog.google/technology/ai — Google AI news
+[3] https://deepmind.google/discover/blog — Google DeepMind blog
+[4] https://www.anthropic.com/news — Anthropic Newsroom
+[5] https://arxiv.org/list/cs.AI/new — arXiv cs.AI new submissions
+[6] https://arxiv.org/abs/2609.25447 — Conduct Under Pressure
+[7] https://huggingface.co/papers — Hugging Face Daily Papers</pre>
+    </section>
+
+    <footer style="text-align:center;color:#5f6f89;font-size:13px;padding:14px;">Preparado por AIDA. Poco ruido, fuentes a la vista y café imaginario en vena.</footer>
+  </main>
+</body>
+</html>
+<!--
+## Sources
+
+[1] https://openai.com/news — OpenAI News
+[2] https://blog.google/technology/ai — Google AI news
+[3] https://deepmind.google/discover/blog — Google DeepMind blog
+[4] https://www.anthropic.com/news — Anthropic Newsroom
+[5] https://arxiv.org/list/cs.AI/new — arXiv cs.AI new submissions
+[6] https://arxiv.org/abs/2609.25447 — Conduct Under Pressure
+[7] https://huggingface.co/papers — Hugging Face Daily Papers
+-->

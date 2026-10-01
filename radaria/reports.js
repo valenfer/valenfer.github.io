@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-01',
+    title: 'RadarIA diario — 2026-10-01',
+    summary: '3 piezas sobre evaluación de conducta bajo presión, volumen arXiv cs.AI y señales de Hugging Face Papers; fuentes corporativas revisadas sin novedad estricta destacable.',
+    url: 'informes/2026-10-01.html'
+  },
+  {
     date: '2026-09-30',
     title: 'RadarIA diario — 2026-09-30',
     summary: '3 piezas sobre GPT-6.1 Sol, safety cases para entrenamiento frontera y abstracción semántica en LLMs; pocas novedades sólidas desde el último informe.',
