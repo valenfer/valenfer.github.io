@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-09-30T01:06:39.763119+00:00",
+  "fetched_at": "2026-10-01T01:04:52.246597+00:00",
   "status": "live",
-  "target_date": "2026-10-01",
+  "target_date": "2026-10-02",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,32 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-01T00:00:00+02:00",
-    "end_local": "2026-10-02T12:00:00+02:00"
+    "start_local": "2026-10-02T00:00:00+02:00",
+    "end_local": "2026-10-03T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20261001_08_100-in-the-sky-org-d4f7747523bf-2026-10-01",
-      "type": "other",
-      "title_es": "La Luna en el perigeo",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna hace su máximo acercamiento mensual a la Tierra, apareciendo más grande que en otros momentos del mes, aunque solo muy fraccionadamente",
-      "start_local": "2026-10-01T22:51:39+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -2.5°).",
-        "altitude_deg": -2.5,
-        "azimuth_deg": 52.1,
-        "sun_altitude_deg": -32.4
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261001_08_100"
-      }
-    },
-    {
-      "id": "20261002_16_100-in-the-sky-org-504008ed08a0-2026-10-01",
+      "id": "20261002_16_100-in-the-sky-org-504008ed08a0-2026-10-02",
       "type": "other",
       "title_es": "Ocultación lunar de Beta Tauri",
       "title_translation_status": "translated",
@@ -50,13 +30,30 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261002_16_100"
       }
+    },
+    {
+      "id": "20261002_17_100-in-the-sky-org-f7894a964f17-2026-10-02",
+      "type": "other",
+      "title_es": "La galaxia de Andrómeda está bien situada",
+      "title_translation_status": "translated",
+      "summary_es": "El Andromeda Galaxy M31 (mag 3.4) culmina alrededor de la medianoche hora local",
+      "start_local": "2026-10-03T01:57:08+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261002_17_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 87.15789473684211,
-    "visibility": 42060.0,
-    "precipitation_probability": 0,
-    "temperature": 23.8
+    "cloud_cover": 62.68421052631579,
+    "visibility": 40840.0,
+    "precipitation_probability": 13,
+    "temperature": 23.1
   },
   "sources": [
     {
