@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-01T01:04:52.246597+00:00",
+  "fetched_at": "2026-10-02T01:18:52.190698+00:00",
   "status": "live",
-  "target_date": "2026-10-02",
+  "target_date": "2026-10-03",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,29 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-02T00:00:00+02:00",
-    "end_local": "2026-10-03T12:00:00+02:00"
+    "start_local": "2026-10-03T00:00:00+02:00",
+    "end_local": "2026-10-04T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20261002_16_100-in-the-sky-org-504008ed08a0-2026-10-02",
-      "type": "other",
-      "title_es": "Ocultación lunar de Beta Tauri",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna pasará frente a Beta Tauri (Elnath), creando una ocultación lunar visible desde países y territorios como Brasil, Argentina, Perú y Bolivia entre otros",
-      "start_local": "2026-10-02T09:58:21+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261002_16_100"
-      }
-    },
-    {
-      "id": "20261002_17_100-in-the-sky-org-f7894a964f17-2026-10-02",
+      "id": "20261002_17_100-in-the-sky-org-f7894a964f17-2026-10-03",
       "type": "other",
       "title_es": "La galaxia de Andrómeda está bien situada",
       "title_translation_status": "translated",
@@ -47,13 +30,50 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261002_17_100"
       }
+    },
+    {
+      "id": "20261003_08_100-in-the-sky-org-f474db33eadd-2026-10-03",
+      "type": "lunar_phase",
+      "title_es": "Cuarto menguante",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna alcanza la fase del último trimestre: sale por el este alrededor de la medianoche y aparece en lo alto del cielo al amanecer",
+      "start_local": "2026-10-03T15:25:31+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 3.7°, Sol a 45.2°.",
+        "altitude_deg": 3.7,
+        "azimuth_deg": 300.7,
+        "sun_altitude_deg": 45.2
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261003_08_100"
+      }
+    },
+    {
+      "id": "20261003_17_100-in-the-sky-org-99655fc9e911-2026-10-03",
+      "type": "other",
+      "title_es": "NGC 253 está bien colocado",
+      "title_translation_status": "translated",
+      "summary_es": "La Galaxia del Escultor NGC 253 (mag 7.1) culmina alrededor de la medianoche hora local",
+      "start_local": "2026-10-04T01:58:01+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261003_17_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 62.68421052631579,
-    "visibility": 40840.0,
-    "precipitation_probability": 13,
-    "temperature": 23.1
+    "cloud_cover": 98.36842105263158,
+    "visibility": 40860.0,
+    "precipitation_probability": 35,
+    "temperature": 23.6
   },
   "sources": [
     {
