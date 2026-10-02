@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-02',
+    title: 'RadarIA diario — 2026-10-02',
+    summary: '4 piezas sobre despliegue empresarial de Claude, harnesses adaptativos, auditoría 3D multimodal y agentes para descubrimiento de pruebas; OpenAI/Google revisados sin novedad estricta en ventana.',
+    url: 'informes/2026-10-02.html'
+  },
+  {
     date: '2026-10-01',
     title: 'RadarIA diario — 2026-10-01',
     summary: '3 piezas sobre evaluación de conducta bajo presión, volumen arXiv cs.AI y señales de Hugging Face Papers; fuentes corporativas revisadas sin novedad estricta destacable.',

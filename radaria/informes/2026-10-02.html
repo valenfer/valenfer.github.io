@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-10-02</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell">
+    <header class="report-hero">
+      <p class="eyebrow">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-10-02</h1>
+      <p class="subtitle">Investigación ejecutada el 2026-10-02 a las 08:00 CEST. Rango principal: desde el último informe publicado en <code>radaria/reports.js</code>, 2026-10-01, hasta la ejecución de hoy.</p>
+      <p class="method">Metodología: revisión de fuentes primarias oficiales de OpenAI, Google/Google DeepMind, Anthropic y listados/páginas de arXiv; se abrió el cuerpo o metadatos de las piezas seleccionadas y se descartaron duplicados, rumores y anuncios fuera de ventana.</p>
+    </header>
+
+    <section class="radar-summary">
+      <h2>Resumen ejecutivo</h2>
+      <p>Hoy hay pocas novedades corporativas estrictamente dentro de la ventana, así que el informe se concentra en 4 piezas sólidas: una implantación empresarial de Claude publicada el 1 de octubre y tres trabajos recientes de arXiv sobre agentes, evaluación multimodal y descubrimiento automatizado de pruebas.[1][2][3]</p>
+    </section>
+
+    <section class="cards">
+      <article class="news-card">
+        <div class="card-meta"><span class="badge producto">Producto</span><span>Anthropic · 1 oct 2026</span></div>
+        <h2>Barclays escala Claude para operaciones, soporte y desarrollo</h2>
+        <p><strong>Por qué importa:</strong> Anthropic informa de que Barclays amplía su colaboración para integrar Claude en operaciones globales, desarrollo de software, modernización de sistemas legacy y soporte al cliente.[1][2]</p>
+        <p><strong>Resumen:</strong> La noticia habla de una adopción ya significativa: Claude ayuda a 16.000 empleados de Barclays, clasifica 120.000 correos diarios y el banco espera que Claude Code alcance al 50% de su población desarrolladora a finales de 2026.[2]</p>
+        <p><strong>Impacto práctico:</strong> La señal interesante no es solo “otro banco usando IA”, sino el patrón de despliegue: agentes en ingeniería y atención, pero dentro de gobernanza corporativa, seguridad y supervisión. Para empresas reguladas, esto marca el terreno donde la IA generativa deja de ser piloto simpático y empieza a tocar procesos reales, con traje y corbata, qué peligro tan elegante.</p>
+        <p><a href="https://anthropic.com/news/barclays-scales-claude">Leer fuente</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-meta"><span class="badge paper">Paper</span><span>arXiv · 1 oct 2026</span></div>
+        <h2>Turbo Harness: optimización adaptativa del arnés de agentes por instancia</h2>
+        <p><strong>Por qué importa:</strong> El trabajo propone adaptar el “harness” de un agente a cada instancia concreta, en vez de usar una única envoltura global para todas las tareas.[3]</p>
+        <p><strong>Resumen:</strong> Turbo Harness reutiliza artefactos de una optimización global previa, los resume en un playbook estructurado y entrena un editor para generar parches específicos del caso antes de que el modelo ejecute la tarea.[3]</p>
+        <p><strong>Impacto práctico:</strong> Si se confirma fuera del paper, esta línea apunta a agentes que no solo mejoran prompts, sino que reconfiguran su propio entorno de ejecución según el problema: más rendimiento, pero también más superficie de auditoría y control.</p>
+        <p><a href="https://arxiv.org/abs/2609.40330">Leer paper</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-meta"><span class="badge benchmark">Benchmark</span><span>arXiv · 1 oct 2026</span></div>
+        <h2>WorldAuditBench mide agentes multimodales auditando mundos 3D</h2>
+        <p><strong>Por qué importa:</strong> WorldAuditBench evalúa si agentes multimodales pueden navegar entornos 3D y detectar anomalías como objetos flotantes, paredes atravesables o elementos incoherentes con la escena.[4]</p>
+        <p><strong>Resumen:</strong> El benchmark incluye 213 tareas de anomalías en 13 entornos construidos con Unreal Engine 5 y Three.js, y compara paradigmas VLA/VLM bajo presupuesto fijo de exploración.[4]</p>
+        <p><strong>Impacto práctico:</strong> Los modelos evaluados quedan muy por debajo de humanos: el resumen de arXiv reporta éxitos entre 6,6% y 42,3%, frente al 83,4% humano.[4] Es una bofetada útil contra el hype: ver no es auditar, y moverse por un mundo no equivale a entenderlo.</p>
+        <p><a href="https://arxiv.org/abs/2609.40325">Leer paper</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-meta"><span class="badge paper">Paper</span><span>arXiv · 1 oct 2026</span></div>
+        <h2>Cogentic: orquestación multiagente para descubrir pruebas matemáticas</h2>
+        <p><strong>Por qué importa:</strong> Cogentic plantea un arnés multiagente para descubrimiento de pruebas en problemas abiertos de matemáticas y teoría de la computación.[5]</p>
+        <p><strong>Resumen:</strong> El sistema usa un bucle iterativo de probar-verificar: un orquestador reparte líneas de ataque entre demostradores independientes, somete resultados a verificadores especializados y conserva avances confirmados en un registro persistente.[5]</p>
+        <p><strong>Impacto práctico:</strong> La pieza afirma que, usando Gemini como modelo base, Cogentic produjo resultados novedosos en cinco problemas abiertos verificados por expertos de dominio.[5] Conviene leerlo con prudencia, pero es una señal potente: la frontera de agentes científicos se mueve hacia procesos largos, con memoria verificada y crítica adversarial, no solo respuestas brillantes de una pasada.</p>
+        <p><a href="https://arxiv.org/abs/2609.40324">Leer paper</a></p>
+      </article>
+    </section>
+
+    <section class="watchlist">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li>La transición de agentes de “prompt + herramienta” a <strong>harnesses adaptativos</strong>, porque complica tanto el rendimiento como la seguridad operativa.[3]</li>
+        <li>Benchmarks que midan interacción física/simulada, no solo conversación: WorldAuditBench muestra que los agentes multimodales aún fallan en tareas espaciales auditables.[4]</li>
+        <li>Agentes científicos con registros verificables: Cogentic y el trabajo previo de Anthropic en biología apuntan a descubrimiento asistido por IA con control humano más explícito.[5]</li>
+        <li>Adopciones empresariales reguladas: banca, salud y sector público serán buenos termómetros de si la IA agéntica pasa del laboratorio al barro administrativo.</li>
+      </ul>
+    </section>
+
+    <section class="reviewed">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>OpenAI: se revisaron noticias/product updates oficiales y no apareció una novedad estrictamente publicada entre el 1 y el 2 de octubre que superase el umbral editorial; los resultados relevantes localizados eran anteriores a la ventana.[7]</p>
+      <p>Google/Google DeepMind: el RSS de Google AI mostraba entradas antiguas de julio como últimas piezas destacadas recuperadas, sin novedad aplicable dentro del rango principal.[7]</p>
+      <p>Anthropic: además de Barclays, el newsroom mostraba como pieza científica reciente el descubrimiento de ART con fecha 23 de septiembre, ya fuera de la ventana principal, por lo que se dejó como contexto y no como pieza central.[1]</p>
+      <p>ArXiv: se revisaron listados recientes y se priorizaron tres entradas del 1 de octubre por relevancia directa para agentes, evaluación y razonamiento formal.[3][4][5]</p>
+    </section>
+
+    <section class="sources">
+      <h2>Sources</h2>
+      <p>Sources:</p>
+      <ol>
+        <li><a href="https://anthropic.com/news">https://anthropic.com/news</a></li>
+        <li><a href="https://anthropic.com/news/barclays-scales-claude">https://anthropic.com/news/barclays-scales-claude</a></li>
+        <li><a href="https://arxiv.org/abs/2609.40330">https://arxiv.org/abs/2609.40330</a></li>
+        <li><a href="https://arxiv.org/abs/2609.40325">https://arxiv.org/abs/2609.40325</a></li>
+        <li><a href="https://arxiv.org/abs/2609.40324">https://arxiv.org/abs/2609.40324</a></li>
+        <li><a href="https://arxiv.org/html/2609.39433v1">https://arxiv.org/html/2609.39433v1</a></li>
+        <li><a href="https://blog.google/technology/ai/rss">https://blog.google/technology/ai/rss</a></li>
+      </ol>
+    </section>
+
+    <footer class="report-footer">
+      <p>Informe preparado por AIDA. Pocas piezas, pero con colmillo: hoy ganan los agentes con arnés, los benchmarks que pinchan globos y la IA entrando en empresas donde un fallo no se arregla con “ups”.</p>
+    </footer>
+  </main>
+</body>
+</html>
