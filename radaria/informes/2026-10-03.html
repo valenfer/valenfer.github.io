@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-10-03</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell">
+    <header class="report-hero">
+      <p class="eyebrow">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-10-03</h1>
+      <p class="subtitle">Investigación ejecutada el 2026-10-03 a las 08:00 hora peninsular española. Rango principal: desde el último informe en <code>radaria/reports.js</code>, 2026-10-02, hasta esta ejecución; como hubo pocas novedades corporativas estrictas, se amplió selectivamente hasta 7 días para papers y señales relevantes.</p>
+      <p class="method">Metodología: revisión de fuentes primarias y páginas abiertas — OpenAI, Google/Google DeepMind, Anthropic, arXiv y Hugging Face Papers—; se leyó el cuerpo o resumen de cada fuente elegida, se priorizaron piezas con fecha o actualización reciente y se descartaron rumores, duplicados y anuncios sin contenido técnico suficiente.</p>
+    </header>
+
+    <section class="radar-summary">
+      <h2>Resumen ejecutivo</h2>
+      <p>Hoy no hay una lluvia de lanzamientos oficiales nuevos —la IA también pestañea, aunque lo disimule—, así que RadarIA recoge 5 piezas con sustancia: novedades de producto en ChatGPT, despliegue financiero con OpenAI y papers/benchmarks recientes sobre agentes de código, agentes de datos empresariales y optimización de workflows multiagente.[2][5][6]</p>
+    </section>
+
+    <section class="cards">
+      <article class="news-card">
+        <div class="card-meta"><span class="badge producto">Producto</span><span>OpenAI · actualizado hace 19 horas</span></div>
+        <h2>ChatGPT suma prueba virtual de ropa, escaneo a PDF, Codex Cloud y plan Pro 500</h2>
+        <p><strong>Por qué importa:</strong> Las notas de versión de ChatGPT describen funciones de compra visual, digitalización de documentos, entornos persistentes para Codex Cloud y un plan Pro 500 con acceso a Astra Ultrafast.[2]</p>
+        <p><strong>Resumen:</strong> OpenAI indica que el botón “Try on” permite probar ropa y accesorios con una selfie, que la cámara de ChatGPT puede escanear varias páginas en un PDF en iOS, y que Codex Cloud permite continuar tareas de programación desde escritorio, web o móvil en workspaces aislados y reutilizables.[2]</p>
+        <p><strong>Impacto práctico:</strong> La señal es clara: ChatGPT se está convirtiendo en una capa de trabajo y consumo más integrada, no solo en un chat listo para contestar preguntas. Para Valentín: ojo a Codex Cloud, porque apunta a flujos de desarrollo persistentes donde el agente trabaja aunque el PC duerma; cómodo, sí, pero conviene vigilar permisos de repositorios y entornos.</p>
+        <p><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">Leer fuente</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-meta"><span class="badge producto">Producto</span><span>OpenAI · caso empresarial reciente</span></div>
+        <h2>Chatham Financial usa Codex y GPT-5.6 para flujos financieros auditables</h2>
+        <p><strong>Por qué importa:</strong> OpenAI presenta a Chatham Financial como caso de uso en mercados de capitales, un entorno donde la exactitud, la trazabilidad y la auditabilidad pesan más que el brillo de la demo.[1]</p>
+        <p><strong>Resumen:</strong> La firma usa Codex para construir herramientas internas y de cliente, y GPT-5.6 para funciones de IA; OpenAI afirma que Process Zero aceleró la validación de operaciones de 30 minutos a menos de 4.[1]</p>
+        <p><strong>Impacto práctico:</strong> Más allá del marketing, el patrón interesante es “IA + evidencia + supervisión profesional”: herramientas generadas con ayuda de agentes, pero incrustadas en procesos gobernados. Es justo el tipo de adopción que separa productividad real de fuegos artificiales con PowerPoint.</p>
+        <p><a href="https://openai.com/index/chatham-financial/">Leer fuente</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-meta"><span class="badge benchmark">Benchmark</span><span>Meta / arXiv · 29 sep 2026</span></div>
+        <h2>E2E-SWE mide agentes que construyen repositorios completos desde cero</h2>
+        <p><strong>Por qué importa:</strong> E2E-SWE evalúa una capacidad más exigente que arreglar un bug aislado: generar un proyecto completo, instalable y funcional a partir de una especificación en lenguaje natural.[5]</p>
+        <p><strong>Resumen:</strong> El benchmark contiene 186 tareas de generación de repositorios en 11 lenguajes; los autores evaluaron 13 modelos frontera y observaron un rango de pass@1 entre 11,7% y 67,7%.[5]</p>
+        <p><strong>Impacto práctico:</strong> Esto sube el listón para comparar agentes de programación: ya no basta con “tocó tres archivos y pasó un test”, sino con diseñar un sistema entero que sobreviva a pruebas ocultas. Buena noticia para medir progreso; mala noticia para quien venda humo en lata premium.</p>
+        <p><a href="https://arxiv.org/pdf/2609.38335">Leer paper</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-meta"><span class="badge benchmark">Benchmark</span><span>Hugging Face Papers · enviado 2 oct 2026</span></div>
+        <h2>Argo-Bench evalúa agentes de datos en workflows empresariales a escala</h2>
+        <p><strong>Por qué importa:</strong> Argo-Bench se aleja del text-to-SQL clásico y evalúa agentes que deben razonar sobre almacenes empresariales grandes, reconstruir hechos y ejecutar acciones con consecuencias.[6]</p>
+        <p><strong>Resumen:</strong> La página de Hugging Face describe 210 tareas en una simulación de reparto de comida con 81 millones de pedidos de 2024, 235 tablas y 7.500 millones de filas; el mejor de 14 modelos solo alcanza 95 puntos o más en el 34,8% de las tareas.[6]</p>
+        <p><strong>Impacto práctico:</strong> Es una señal fuerte para empresas: el cuello de botella no es escribir una consulta bonita, sino navegar datos sucios, estructuras enormes y decisiones operativas. Vamos, el Excel corporativo se ha puesto armadura de jefe final.</p>
+        <p><a href="https://huggingface.co/papers/2610.02122">Leer paper</a></p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-meta"><span class="badge paper">Paper</span><span>Hugging Face Papers · enviado 2 oct 2026</span></div>
+        <h2>FloWright propone coevolucionar roles dentro de workflows multiagente</h2>
+        <p><strong>Por qué importa:</strong> El paper parte de una limitación habitual: muchas técnicas optimizan el generador del workflow, pero dejan fijos los agentes que construyen o ejecutan cada paso.[7]</p>
+        <p><strong>Resumen:</strong> FloWright usa el workflow como arnés de optimización, con recompensas jerárquicas y estructurales, para autoevolucionar un rol o coevolucionar varios sin modelos, etiquetas ni ejecuciones adicionales; reporta mejoras de hasta +7,41% con modelos pequeños abiertos.[7]</p>
+        <p><strong>Impacto práctico:</strong> Si esta línea madura, los sistemas multiagente dejarán de ser organigramas escritos a mano y empezarán a ajustar sus roles internos. Prometedor, pero también pide trazabilidad: cuando un equipo de agentes “se reorganiza”, alguien tiene que saber quién rompió el jarrón.</p>
+        <p><a href="https://huggingface.co/papers/2610.01026">Leer paper</a></p>
+      </article>
+    </section>
+
+    <section class="watchlist">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li>Codex Cloud y entornos persistentes: más autonomía para agentes de código, pero también más necesidad de límites claros de permisos y datos.[2]</li>
+        <li>Benchmarks de “trabajo completo” frente a tareas pequeñas: E2E-SWE y Argo-Bench empujan la evaluación hacia sistemas reales y consecuencias medibles.[5][6]</li>
+        <li>Workflows multiagente que se optimizan a sí mismos: prometen eficiencia, pero elevan la importancia de auditoría, logs y rollback.[7]</li>
+        <li>Adopción regulada en finanzas: Chatham y Barclays muestran que banca/mercados siguen siendo termómetros tempranos de IA empresarial con controles.[1][3]</li>
+      </ul>
+    </section>
+
+    <section class="reviewed">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>Google/Google DeepMind: se revisó el blog de noticias; la página mostraba como destacados “Gemini 4 Argon” y “Our approach to bioresilience”, pero no se obtuvo una pieza nueva con fecha verificable dentro de la ventana principal en la extracción disponible.[8]</p>
+      <p>Anthropic: el newsroom localizó Barclays del 1 de octubre y otras piezas de finales de septiembre; Barclays se trató como contexto de adopción regulada, pero no se repitió como tarjeta principal para evitar duplicar el foco del informe anterior.[3]</p>
+      <p>arXiv cs.AI: se revisó el listado de nuevas entradas del 2 de octubre, con abundancia de trabajos sobre agentes, memoria y verificación; para no inflar ruido, se priorizaron papers con conexión práctica clara desde Hugging Face Papers y arXiv.[4][6][7]</p>
+    </section>
+
+    <section class="sources">
+      <h2>Sources</h2>
+      <p>Sources:</p>
+      <p>[1] <a href="https://openai.com/index/chatham-financial/">https://openai.com/index/chatham-financial/</a> — Chatham scales its capital markets expertise with OpenAI</p>
+      <p>[2] <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">https://help.openai.com/en/articles/6825453-chatgpt-release-notes</a> — ChatGPT Release Notes</p>
+      <p>[3] <a href="https://www.anthropic.com/news/barclays-scales-claude">https://www.anthropic.com/news/barclays-scales-claude</a> — Barclays scales Claude to upgrade operations and improve client experience</p>
+      <p>[4] <a href="https://arxiv.org/list/cs.AI/new?show=2000&amp;v=20261002">https://arxiv.org/list/cs.AI/new?show=2000&amp;v=20261002</a> — arXiv cs.AI new submissions 2026-10-02</p>
+      <p>[5] <a href="https://arxiv.org/pdf/2609.38335">https://arxiv.org/pdf/2609.38335</a> — E2E-SWE: Benchmarking LLMs on Building Working Codebases from Scratch</p>
+      <p>[6] <a href="https://huggingface.co/papers/2610.02122">https://huggingface.co/papers/2610.02122</a> — Argo-Bench: Evaluating Data Agents on Enterprise-Scale Workflows</p>
+      <p>[7] <a href="https://huggingface.co/papers/2610.01026">https://huggingface.co/papers/2610.01026</a> — It Takes Workflows to Evolve Better Workflows</p>
+      <p>[8] <a href="https://deepmind.google/blog">https://deepmind.google/blog</a> — Google DeepMind News</p>
+    </section>
+
+    <footer class="report-footer">
+      <p>Informe preparado por AIDA. Hoy pocas balas, pero bastante pólvora: agentes más persistentes, benchmarks más duros y workflows que empiezan a mirarse al espejo.</p>
+    </footer>
+  </main>
+</body>
+</html>

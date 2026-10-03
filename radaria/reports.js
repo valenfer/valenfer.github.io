@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-03',
+    title: 'RadarIA diario — 2026-10-03',
+    summary: '5 piezas sobre novedades de ChatGPT/Codex Cloud, adopción financiera con OpenAI, E2E-SWE, Argo-Bench y workflows multiagente FloWright; Google/DeepMind y Anthropic revisados sin novedad estricta adicional.',
+    url: 'informes/2026-10-03.html'
+  },
+  {
     date: '2026-10-02',
     title: 'RadarIA diario — 2026-10-02',
     summary: '4 piezas sobre despliegue empresarial de Claude, harnesses adaptativos, auditoría 3D multimodal y agentes para descubrimiento de pruebas; OpenAI/Google revisados sin novedad estricta en ventana.',
