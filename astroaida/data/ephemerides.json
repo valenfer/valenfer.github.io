@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-02T01:18:52.190698+00:00",
+  "fetched_at": "2026-10-03T00:57:39.100048+00:00",
   "status": "live",
-  "target_date": "2026-10-03",
+  "target_date": "2026-10-04",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,49 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-03T00:00:00+02:00",
-    "end_local": "2026-10-04T12:00:00+02:00"
+    "start_local": "2026-10-04T00:00:00+02:00",
+    "end_local": "2026-10-05T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20261002_17_100-in-the-sky-org-f7894a964f17-2026-10-03",
-      "type": "other",
-      "title_es": "La galaxia de Andrómeda está bien situada",
-      "title_translation_status": "translated",
-      "summary_es": "El Andromeda Galaxy M31 (mag 3.4) culmina alrededor de la medianoche hora local",
-      "start_local": "2026-10-03T01:57:08+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261002_17_100"
-      }
-    },
-    {
-      "id": "20261003_08_100-in-the-sky-org-f474db33eadd-2026-10-03",
-      "type": "lunar_phase",
-      "title_es": "Cuarto menguante",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna alcanza la fase del último trimestre: sale por el este alrededor de la medianoche y aparece en lo alto del cielo al amanecer",
-      "start_local": "2026-10-03T15:25:31+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Luna no observable: altitud 3.7°, Sol a 45.2°.",
-        "altitude_deg": 3.7,
-        "azimuth_deg": 300.7,
-        "sun_altitude_deg": 45.2
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261003_08_100"
-      }
-    },
-    {
-      "id": "20261003_17_100-in-the-sky-org-99655fc9e911-2026-10-03",
+      "id": "20261003_17_100-in-the-sky-org-99655fc9e911-2026-10-04",
       "type": "other",
       "title_es": "NGC 253 está bien colocado",
       "title_translation_status": "translated",
@@ -67,13 +30,127 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261003_17_100"
       }
+    },
+    {
+      "id": "20261004_12_100-in-the-sky-org-0ab78884ae15-2026-10-04",
+      "type": "opposition",
+      "title_es": "Oposición",
+      "title_translation_status": "deterministic",
+      "summary_es": "Saturno está en una posición óptima para observar, apareciendo en su punto más cercano, más brillante y más grande",
+      "start_local": "2026-10-04T14:21:11+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Saturno está bajo el horizonte (altitud -50.3°).",
+        "altitude_deg": -50.3,
+        "azimuth_deg": 1.7,
+        "sun_altitude_deg": 48.1
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261004_12_100"
+      }
+    },
+    {
+      "id": "2026_14_A2_100-in-the-sky-org-971d46af71c0-2026-10-04",
+      "type": "opposition",
+      "title_es": "Oposición",
+      "title_translation_status": "deterministic",
+      "summary_es": "El asteroide 2 Pallas hace su aproximación más cercana a la Tierra",
+      "start_local": "2026-10-04T16:22:44+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=2026_14_A2_100"
+      }
+    },
+    {
+      "id": "20261004_17_100-in-the-sky-org-64471ef45387-2026-10-04",
+      "type": "other",
+      "title_es": "La Pequeña Nube de Magallanes está bien situada",
+      "title_translation_status": "translated",
+      "summary_es": "La compañera enana de la Vía Láctea, la Pequeña Nube de Magallanes (SMC; mag 2.7), en Tucana culmina alrededor de la medianoche hora local",
+      "start_local": "2026-10-05T01:59:07+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261004_17_100"
+      }
+    },
+    {
+      "id": "20261005_20_100-in-the-sky-org-7cfcd2f7add7-2026-10-04",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna y Marte comparten la misma ascensión recta, a una separación de 1°08'",
+      "start_local": "2026-10-05T07:32:22+02:00",
+      "visibility": {
+        "status": "visible",
+        "label": "Visible",
+        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
+        "altitude_deg": 54.8,
+        "azimuth_deg": 107.2,
+        "sun_altitude_deg": -10.2
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261005_20_100"
+      }
+    },
+    {
+      "id": "20261005_15_100-in-the-sky-org-439d7aef72d2-2026-10-04",
+      "type": "other",
+      "title_es": "Aproximación cercana a la Luna y Marte",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna y Marte pasan cerca el uno del otro",
+      "start_local": "2026-10-05T08:11:42+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 61.8°, Sol a -2.4°.",
+        "altitude_deg": 61.8,
+        "azimuth_deg": 118.0,
+        "sun_altitude_deg": -2.4
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261005_15_100"
+      }
+    },
+    {
+      "id": "20261005_16_100-in-the-sky-org-408c2efbc8d6-2026-10-04",
+      "type": "other",
+      "title_es": "Ocultación lunar de Marte",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará por delante de Marte, creando una ocultación lunar visible desde Canadá",
+      "start_local": "2026-10-05T08:11:42+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Marte no observable: altitud 61.8°, Sol a -2.4°.",
+        "altitude_deg": 61.8,
+        "azimuth_deg": 120.1,
+        "sun_altitude_deg": -2.4
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261005_16_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 98.36842105263158,
-    "visibility": 40860.0,
-    "precipitation_probability": 35,
-    "temperature": 23.6
+    "cloud_cover": 98.84210526315789,
+    "visibility": 37280.0,
+    "precipitation_probability": 13,
+    "temperature": 22.3
   },
   "sources": [
     {
