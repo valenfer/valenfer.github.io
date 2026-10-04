@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-10-04</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell">
+    <header class="hero report-hero">
+      <p class="eyebrow">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-10-04</h1>
+      <p class="subtitle">Rango investigado: desde el último informe fiable en <code>radaria/reports.js</code> (2026-10-03) hasta 2026-10-04, con ampliación editorial a 7 días porque hubo pocas novedades estrictamente nuevas en las últimas 24 horas.</p>
+      <p class="meta">Metodología: revisión de fuentes primarias de OpenAI, Anthropic, Google/DeepMind, arXiv y Hugging Face Papers; lectura del cuerpo de las piezas seleccionadas; exclusión de rumores y duplicados. Fecha de ejecución: 2026-10-04.</p>
+    </header>
+
+    <section class="summary-card">
+      <h2>Resumen ejecutivo</h2>
+      <p>Hoy el foco real no está en “otro chatbot más”, sino en tres frentes: agentes que pasan a infraestructura de trabajo, formación empresarial para desplegarlos con garantías y medición más sobria de qué puede automatizarse de verdad. Poca purpurina, bastante fontanería; justo lo que suele acabar importando.</p>
+    </section>
+
+    <section class="report-grid">
+      <article class="news-card">
+        <span class="badge producto">Producto</span>
+        <h2><a href="https://openai.com/index/devday-2026-recap/">OpenAI DevDay 2026: agentes persistentes, GPT-6.1 Sol, Codex Cloud y nuevas APIs</a></h2>
+        <p class="meta">Fuente: OpenAI · Fecha: 2026-09-29</p>
+        <h3>Por qué importa</h3>
+        <p>OpenAI presenta más de 20 anuncios y concentra el mensaje en agentes “always-on”, Codex en la nube, revisión de código, seguridad y APIs para decisiones y uso de ordenador.[1]</p>
+        <h3>Resumen</h3>
+        <p>La pieza introduce Dots como agentes capaces de asumir responsabilidades continuas, GPT-6.1 Sol como actualización orientada a coding agéntico y trabajo profesional, y Ultrafast como capa premium de velocidad con hasta 300 tokens por segundo en Codex.[1]</p>
+        <p>Para desarrolladores, el paquete relevante es Codex Cloud, CLI renovado, code review, Codex Security Cloud, Decisions API y Agents API con computer use, lo que desplaza la IA desde “respuesta en chat” hacia flujos completos de ejecución y supervisión.[1]</p>
+        <h3>Impacto práctico</h3>
+        <p>Para equipos pequeños, la señal es clara: conviene diseñar permisos, entornos reproducibles y revisión humana antes de delegar trabajo real a agentes, porque el producto ya empuja hacia ejecución remota y multiagente.[1]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge informe">Informe</span>
+        <h2><a href="https://www.anthropic.com/news/claude-frontier-academy">Anthropic lanza Claude Frontier Academy para formar 10.000 ingenieros de despliegue</a></h2>
+        <p class="meta">Fuente: Anthropic · Fecha: 2026-10-02</p>
+        <h3>Por qué importa</h3>
+        <p>Anthropic compromete 100 millones de dólares para formar 10.000 Frontier Deployed Engineers antes de finales de 2027, con primeras cohortes de consultoras, banca y farma.[2]</p>
+        <h3>Resumen</h3>
+        <p>La academia no vende una certificación ligera: plantea una residencia con casos simulados, revisión de seguridad, despliegue real de un proyecto Claude en la organización y evaluación práctica al final del proceso.[2]</p>
+        <p>El enfoque confirma que el cuello de botella empresarial ya no es solo acceder a modelos potentes, sino tener gente capaz de convertirlos en sistemas productivos gobernados y mantenibles.[2]</p>
+        <h3>Impacto práctico</h3>
+        <p>Es una pista útil para cualquier empresa: el rol que gana valor combina ingeniería, criterio de producto, seguridad, medición y adopción interna. Vamos, el “ponme IA” pero con casco y planos, no con incienso.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge informe">Informe</span>
+        <h2><a href="https://www.anthropic.com/research/what-work-can-robots-do/">Anthropic mide qué trabajo físico pueden hacer los robots actuales</a></h2>
+        <p class="meta">Fuente: Anthropic Research · Fecha: 2026-09-30</p>
+        <h3>Por qué importa</h3>
+        <p>El estudio propone un índice de exposición robótica y concluye que los robots pueden realizar el 74% de las tareas físicas de EE. UU., equivalentes al 34% de las horas trabajadas, aunque casi siempre en entornos limitados.[3]</p>
+        <h3>Resumen</h3>
+        <p>El informe combina tareas de O*NET con evaluaciones de Claude para clasificar si robots actuales pueden ejecutar tareas en entornos construidos, estructurados o no estructurados.[3]</p>
+        <p>La parte fría del dato es económica: según el análisis, los robots solo son competitivos en coste para el 0,3% de las tareas laborales y, si los precios siguen tendencias pasadas, tardarían unos 40 años en llegar al 10%.[3]</p>
+        <h3>Impacto práctico</h3>
+        <p>La automatización física seguirá llegando antes a almacenes, conducción y fábricas que a cuidados, reparación general o trabajo interpersonal; para estrategia laboral, esto vale más que una demo de humanoide bailando.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge paper">Paper</span>
+        <h2><a href="https://arxiv.org/list/cs.AI/new">arXiv cs.AI: memoria, causalidad y gobernanza en agentes de lenguaje</a></h2>
+        <p class="meta">Fuente: arXiv cs.AI new · Fecha: listado de 2026-10-02</p>
+        <h3>Por qué importa</h3>
+        <p>El listado nuevo de cs.AI reúne 149 nuevas entradas y muestra una concentración llamativa de trabajos sobre agentes: memoria de largo horizonte, modelos causales modulares y ejecución gobernada con verificación de efectos.[4]</p>
+        <h3>Resumen</h3>
+        <p><em>Heavy-Tailed Memory Traces in Long-Horizon Language Agents</em> propone auditar cómo se concentra la memoria de agentes y usa un controlador Core–Tail World Model para reducir tokens manteniendo cobertura de estados.[4]</p>
+        <p><em>When Do Causal World Models Help Modular LLM Agents</em> estudia cuándo una estructura causal ayuda a agentes que actúan sobre módulos como pagos, inventario o envíos, y subraya que la causalidad debe ser identificable y utilizable durante la acción.[4]</p>
+        <p><em>Praxa</em> separa propuesta, autorización, ejecución, verificación de efecto externo y promoción, una arquitectura especialmente relevante para agentes que tocan sistemas reales.[4]</p>
+        <h3>Impacto práctico</h3>
+        <p>La investigación está girando desde “el agente resolvió el benchmark” hacia “puedo demostrar qué memoria usó, qué efecto tuvo y bajo qué autoridad actuó”, que es justo donde se juega la confianza operativa.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge paper">Paper</span>
+        <h2><a href="https://huggingface.co/papers?date=2026-10-02">Hugging Face Papers: ruteo de LLMs, herramientas nativas y reglas ejecutables para agentes científicos</a></h2>
+        <p class="meta">Fuente: Hugging Face Daily Papers · Fecha: 2026-10-02</p>
+        <h3>Por qué importa</h3>
+        <p>La selección diaria destaca trabajos como <em>Pretrain Once, Route Anywhere</em>, <em>OmniSeek</em> y <em>Rules to Tools</em>, todos conectados con una misma preocupación: hacer que los sistemas agénticos elijan, usen y verifiquen mejor sus herramientas.[5]</p>
+        <h3>Resumen</h3>
+        <p>El ruteo de modelos apunta a elegir el LLM adecuado por tarea; la integración nativa de herramientas multimodales busca razonamiento audio-visual multi-turno; y las reglas convertidas en comprobaciones ejecutables atacan un problema muy práctico en computación científica: que el agente no solo explique, sino que valide.[5]</p>
+        <h3>Impacto práctico</h3>
+        <p>Para construir agentes útiles, el valor no estará solo en un modelo enorme, sino en orquestación, rechazo, ruteo y validadores ejecutables. Menos “magia”, más ingeniería aburrida; la ingeniería aburrida gana, qué escándalo.</p>
+      </article>
+    </section>
+
+    <section class="summary-card">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Agentes con permisos reales:</strong> crece la necesidad de separar intención, autorización, ejecución y verificación antes de tocar sistemas externos.</li>
+        <li><strong>Talento de despliegue:</strong> OpenAI y Anthropic empujan hacia roles híbridos de ingeniería, seguridad y adopción, no solo “prompting”.</li>
+        <li><strong>Coste frente a capacidad:</strong> tanto en robots como en modelos, el límite práctico suele ser coste, entorno y fiabilidad, no la demo más vistosa.</li>
+        <li><strong>Validadores ejecutables:</strong> los agentes científicos y de código empiezan a necesitar reglas comprobables, no solo respuestas convincentes.</li>
+      </ul>
+    </section>
+
+    <section class="summary-card">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>Google/Google DeepMind fue revisado en búsqueda web y blog oficial; no apareció una novedad primaria clara dentro de la ventana ampliada que superase el umbral editorial de relevancia para incluir tarjeta propia.[8]</p>
+      <p>OpenAI News y Anthropic Newsroom se revisaron como índices de control para evitar duplicados y confirmar el contexto de las piezas seleccionadas.[6][7]</p>
+    </section>
+
+    <section class="summary-card sources">
+      <h2>Sources</h2>
+      <p>[1] <a href="https://openai.com/index/devday-2026-recap/">https://openai.com/index/devday-2026-recap</a> — DevDay 2026 Recap | OpenAI</p>
+      <p>[2] <a href="https://www.anthropic.com/news/claude-frontier-academy">https://www.anthropic.com/news/claude-frontier-academy</a> — Claude Frontier Academy</p>
+      <p>[3] <a href="https://www.anthropic.com/research/what-work-can-robots-do">https://www.anthropic.com/research/what-work-can-robots-do</a> — What work can robots do?</p>
+      <p>[4] <a href="https://arxiv.org/list/cs.AI/new">https://arxiv.org/list/cs.AI/new</a> — arXiv cs.AI new submissions</p>
+      <p>[5] <a href="https://huggingface.co/papers?date=2026-10-02">https://huggingface.co/papers?date=2026-10-02</a> — Hugging Face Daily Papers 2026-10-02</p>
+      <p>[6] <a href="https://openai.com/news">https://openai.com/news</a> — OpenAI News</p>
+      <p>[7] <a href="https://www.anthropic.com/news">https://www.anthropic.com/news</a> — Anthropic Newsroom</p>
+      <p>[8] <a href="https://deepmind.google/discover/blog">https://deepmind.google/discover/blog</a> — Google DeepMind Blog</p>
+    </section>
+
+    <footer class="report-footer">
+      <p>Cierre AIDA: informe compacto, sin humo y con enlaces para tirar del hilo. Si una noticia viene con fanfarria pero sin sustancia, la dejamos fuera; hoy no alimentamos al gremlin del hype.</p>
+      <p><a href="../index.html">Volver a RadarIA</a></p>
+    </footer>
+  </main>
+</body>
+</html>

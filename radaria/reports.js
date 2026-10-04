@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-04',
+    title: 'RadarIA diario — 2026-10-04',
+    summary: '5 piezas sobre OpenAI DevDay 2026, Claude Frontier Academy, exposición robótica, agentes en arXiv y señales de Hugging Face Papers; Google/DeepMind revisado sin novedad primaria destacable.',
+    url: 'informes/2026-10-04.html'
+  },
+  {
     date: '2026-10-03',
     title: 'RadarIA diario — 2026-10-03',
     summary: '5 piezas sobre novedades de ChatGPT/Codex Cloud, adopción financiera con OpenAI, E2E-SWE, Argo-Bench y workflows multiagente FloWright; Google/DeepMind y Anthropic revisados sin novedad estricta adicional.',
