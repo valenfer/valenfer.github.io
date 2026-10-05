@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-04T00:22:34.997140+00:00",
+  "fetched_at": "2026-10-05T00:27:12.011310+00:00",
   "status": "live",
-  "target_date": "2026-10-05",
+  "target_date": "2026-10-06",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,146 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-05T00:00:00+02:00",
-    "end_local": "2026-10-06T12:00:00+02:00"
+    "start_local": "2026-10-06T00:00:00+02:00",
+    "end_local": "2026-10-07T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20261004_17_100-in-the-sky-org-64471ef45387-2026-10-05",
-      "type": "other",
-      "title_es": "La Pequeña Nube de Magallanes está bien situada",
-      "title_translation_status": "translated",
-      "summary_es": "La compañera enana de la Vía Láctea, la Pequeña Nube de Magallanes (SMC; mag 2.7), en Tucana culmina alrededor de la medianoche hora local",
-      "start_local": "2026-10-05T01:59:07+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261004_17_100"
-      }
-    },
-    {
-      "id": "20261005_20_100-in-the-sky-org-7cfcd2f7add7-2026-10-05",
-      "type": "conjunction",
-      "title_es": "Conjunción",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna y Marte comparten la misma ascensión recta, a una separación de 1°08'",
-      "start_local": "2026-10-05T07:32:22+02:00",
-      "visibility": {
-        "status": "visible",
-        "label": "Visible",
-        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
-        "altitude_deg": 54.8,
-        "azimuth_deg": 107.2,
-        "sun_altitude_deg": -10.2
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261005_20_100"
-      }
-    },
-    {
-      "id": "20261005_15_100-in-the-sky-org-439d7aef72d2-2026-10-05",
-      "type": "other",
-      "title_es": "Aproximación cercana a la Luna y Marte",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna y Marte pasan cerca el uno del otro",
-      "start_local": "2026-10-05T08:11:42+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Luna no observable: altitud 61.8°, Sol a -2.4°.",
-        "altitude_deg": 61.8,
-        "azimuth_deg": 118.0,
-        "sun_altitude_deg": -2.4
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261005_15_100"
-      }
-    },
-    {
-      "id": "20261005_16_100-in-the-sky-org-408c2efbc8d6-2026-10-05",
-      "type": "other",
-      "title_es": "Ocultación lunar de Marte",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna pasará por delante de Marte, creando una ocultación lunar visible desde Canadá",
-      "start_local": "2026-10-05T08:11:42+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Marte no observable: altitud 61.8°, Sol a -2.4°.",
-        "altitude_deg": 61.8,
-        "azimuth_deg": 120.1,
-        "sun_altitude_deg": -2.4
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261005_16_100"
-      }
-    },
-    {
-      "id": "20261005_13_100-in-the-sky-org-fc377963c7c4-2026-10-05",
-      "type": "conjunction",
-      "title_es": "Conjunción",
-      "title_translation_status": "deterministic",
-      "summary_es": "136472 Makemake es inobservable cuando pasa alrededor del otro lado del Sol, marcando el final de una aparición y el comienzo de la siguiente",
-      "start_local": "2026-10-05T12:53:52+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261005_13_100"
-      }
-    },
-    {
-      "id": "20261005_15_101-in-the-sky-org-e4d406d2f54f-2026-10-05",
-      "type": "other",
-      "title_es": "Aproximación cercana a la Luna y M44",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna y M44 pasan cerca una de la otra",
-      "start_local": "2026-10-05T14:15:36+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Luna no observable: altitud 33.7°, Sol a 47.8°.",
-        "altitude_deg": 33.7,
-        "azimuth_deg": 270.1,
-        "sun_altitude_deg": 47.8
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261005_15_101"
-      }
-    },
-    {
-      "id": "20261005_20_101-in-the-sky-org-0518f68fef64-2026-10-05",
-      "type": "conjunction",
-      "title_es": "Conjunción",
-      "title_translation_status": "deterministic",
-      "summary_es": "Venus y Mercurio comparten la misma ascensión recta, a una separación de 5°26'",
-      "start_local": "2026-10-05T16:50:47+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Mercurio no observable: altitud 34.3°, Sol a 33.9°.",
-        "altitude_deg": 34.3,
-        "azimuth_deg": 200.6,
-        "sun_altitude_deg": 33.9
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261005_20_101"
-      }
-    },
-    {
-      "id": "20261005_17_100-in-the-sky-org-164bfed675c1-2026-10-05",
+      "id": "20261005_17_100-in-the-sky-org-164bfed675c1-2026-10-06",
       "type": "other",
       "title_es": "NGC 300 está bien colocado",
       "title_translation_status": "translated",
@@ -166,7 +32,7 @@
       }
     },
     {
-      "id": "20261006_10_100-in-the-sky-org-c8a933de5114-2026-10-05",
+      "id": "20261006_10_100-in-the-sky-org-c8a933de5114-2026-10-06",
       "type": "meteor_shower",
       "title_es": "Lluvia de meteoros",
       "title_translation_status": "deterministic",
@@ -181,13 +47,90 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261006_10_100"
       }
+    },
+    {
+      "id": "20261006_20_100-in-the-sky-org-b9d9fca11a6e-2026-10-06",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna y Júpiter comparten la misma ascensión recta, a una separación de 10'",
+      "start_local": "2026-10-06T12:16:36+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 61.2°, Sol a 39.7°.",
+        "altitude_deg": 61.2,
+        "azimuth_deg": 224.4,
+        "sun_altitude_deg": 39.7
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261006_20_100"
+      }
+    },
+    {
+      "id": "20261006_15_100-in-the-sky-org-d58f56c3290c-2026-10-06",
+      "type": "other",
+      "title_es": "Aproximación cercana a la Luna y Júpiter",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna y Júpiter pasan cerca uno del otro",
+      "start_local": "2026-10-06T12:23:51+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 60.2°, Sol a 40.5°.",
+        "altitude_deg": 60.2,
+        "azimuth_deg": 227.2,
+        "sun_altitude_deg": 40.5
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261006_15_100"
+      }
+    },
+    {
+      "id": "20261006_16_100-in-the-sky-org-0a64a017c2b0-2026-10-06",
+      "type": "other",
+      "title_es": "Ocultación lunar de Júpiter",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará por delante de Júpiter, creando una ocultación lunar visible desde partes de África, América, las Azores portuguesas, Madeira, las Islas Salvajes y las Islas Canarias",
+      "start_local": "2026-10-06T12:23:51+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Júpiter no observable: altitud 60.5°, Sol a 40.5°.",
+        "altitude_deg": 60.5,
+        "azimuth_deg": 227.1,
+        "sun_altitude_deg": 40.5
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261006_16_100"
+      }
+    },
+    {
+      "id": "20261007_16_100-in-the-sky-org-0d188328374b-2026-10-06",
+      "type": "other",
+      "title_es": "Ocultación lunar de Regulus",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará por delante de Regulus (Alpha Leonis), creando una ocultación lunar visible desde partes de África",
+      "start_local": "2026-10-07T05:09:14+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261007_16_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 91.52631578947368,
-    "visibility": 40940.0,
-    "precipitation_probability": 21,
-    "temperature": 22.5
+    "cloud_cover": 95.36842105263158,
+    "visibility": 40040.0,
+    "precipitation_probability": 65,
+    "temperature": 20.4
   },
   "sources": [
     {
