@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-10-05</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell">
+    <header class="hero report-hero">
+      <p class="eyebrow">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-10-05</h1>
+      <p class="subtitle">Rango investigado: desde el último informe fiable en <code>radaria/reports.js</code> (2026-10-04) hasta 2026-10-05; se amplía editorialmente hasta 7 días porque las novedades estrictamente nuevas en las últimas 24 horas son escasas.</p>
+      <p class="meta">Metodología: revisión de fuentes primarias de OpenAI, Google/DeepMind, Anthropic y arXiv; lectura del cuerpo de las piezas seleccionadas; exclusión de rumores, duplicados y notas sin sustancia técnica. Fecha de ejecución: 2026-10-05.</p>
+    </header>
+
+    <section class="summary-card">
+      <h2>Resumen ejecutivo</h2>
+      <p>El radar de hoy huele menos a fuegos artificiales y más a infraestructura: almacenamiento a escala brutal, IA científica con herramientas específicas, agentes de investigación de largo horizonte y despliegues empresariales ya medibles. La parte sexy, Valentín, es la fontanería; sí, la vida es así de cruel.</p>
+    </section>
+
+    <section class="report-grid">
+      <article class="news-card">
+        <span class="badge informe">Informe</span>
+        <h2><a href="https://openai.com/index/scaling-storage-one-billion-users-part-one/">OpenAI explica Habitat, su plataforma de almacenamiento para más de 1.000 millones de usuarios semanales</a></h2>
+        <p class="meta">Fuente: OpenAI · Fecha: 2026-09-11</p>
+        <h3>Por qué importa</h3>
+        <p>OpenAI afirma que Habitat gestiona más de 70 millones de peticiones por segundo, sirve a productos usados por más de 1.000 millones de personas por semana, opera en casi 40 regiones y maneja más de 500 PB de datos.[6]</p>
+        <h3>Resumen</h3>
+        <p>La pieza describe cómo una librería Python conectada a una base de datos para DevDay 2023 se convirtió en una plataforma distribuida con cachés, autorización, residencia de datos, cifrado, aislamiento multi-tenant, rate limiting, enrutado y captura de cambios.[6]</p>
+        <p>El punto técnico más relevante no es solo la cifra, sino la tesis: OpenAI dice haber crecido más de 10 veces interanual durante tres años, lo que obliga a decisiones tácticas constantes mientras se construyen cimientos maduros.[6]</p>
+        <h3>Impacto práctico</h3>
+        <p>Para quien construye productos con IA, la lección es clara: el modelo llama la atención, pero la experiencia depende de latencia, datos, permisos y resiliencia; sin eso, el “agente inteligente” se queda en becario con WiFi malo.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge herramienta">Herramienta</span>
+        <h2><a href="https://www.anthropic.com/research/claude-shaped-science">Claude-shaped science: BootLoops como arnés para ciencia cuantitativa asistida por LLMs</a></h2>
+        <p class="meta">Fuente: Anthropic Research · Fecha: 2026-10-01</p>
+        <h3>Por qué importa</h3>
+        <p>El artículo propone buscar problemas “con forma de Claude”: tareas donde el modelo aporta amplitud, programación, lectura rápida de papers y cálculo verificable, pero con científicos humanos validando la relevancia.[3]</p>
+        <h3>Resumen</h3>
+        <p>Matthew Schwartz describe BootLoops como un conjunto de herramientas y protocolos para cálculos exactos en ciencia cuantitativa, abierto y usable con distintos modelos, nacido de adaptar métodos de física matemática a dominios como ecología, genética, economía y lingüística.[3]</p>
+        <p>La pieza insiste en que el valor aparece cuando el LLM encuentra transferencias técnicas entre campos, pero los expertos corrigen si el resultado es científicamente interesante o solo matemáticamente correcto.[3]</p>
+        <h3>Impacto práctico</h3>
+        <p>Es una señal importante para investigación aplicada: no basta con “preguntarle al modelo”; conviene envolverlo en herramientas verificables, protocolos reproducibles y revisión experta. Menos oráculo, más laboratorio con bata limpia.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge producto">Producto</span>
+        <h2><a href="https://www.anthropic.com/news/barclays-scales-claude">Barclays escala Claude para soporte, ingeniería y operaciones de mercado</a></h2>
+        <p class="meta">Fuente: Anthropic · Fecha: 2026-10-01</p>
+        <h3>Por qué importa</h3>
+        <p>Barclays espera que Claude Code llegue al 50% de su población desarrolladora a finales de 2026 y a la mayoría de sus ingenieros de software en 2027.[2]</p>
+        <h3>Resumen</h3>
+        <p>Anthropic afirma que el asistente interno de conocimiento de Barclays, activo desde 2025 y basado en RAG con Claude, ya ha sido adoptado por más de 16.000 empleados y ha gestionado más de un millón de búsquedas.[2]</p>
+        <p>En Global Markets, Barclays usa modelos Claude para clasificar, enriquecer y enrutar consultas de clientes por email, procesando aproximadamente 120.000 correos al día con gobernanza, controles de seguridad y supervisión humana.[2]</p>
+        <h3>Impacto práctico</h3>
+        <p>La noticia muestra una adopción menos vistosa pero más real: IA metida en flujos regulados, con métricas de uso y procesos de control, justo donde se separan las demos de PowerPoint de los sistemas que pagan facturas.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge paper">Paper</span>
+        <h2><a href="https://arxiv.org/abs/2610.02525">MIRA: meta-razonamiento para agentes de investigación de largo horizonte</a></h2>
+        <p class="meta">Fuente: arXiv · Fecha: 2026-10-01</p>
+        <h3>Por qué importa</h3>
+        <p>El paper plantea que los agentes de investigación no solo deben ejecutar tareas, sino decidir qué investigar después a medida que acumulan evidencia en trazas largas.[9]</p>
+        <h3>Resumen</h3>
+        <p>MIRA separa un meta-razonador externo, que mantiene un registro persistente y escribe órdenes de trabajo, de un ejecutor interno fresco que realiza cada investigación; sin entrenamiento de política, mejora inferencia de largo horizonte en demostración de teoremas e investigación abierta de arquitecturas neuronales.[9]</p>
+        <p>El trabajo introduce además MIRA-AC, un actor-crítico generativo entrenado para prever retorno restante y escoger la próxima investigación, concentrando el aprendizaje por refuerzo en decisiones de alto nivel.[9]</p>
+        <h3>Impacto práctico</h3>
+        <p>Es relevante para asistentes autónomos: sugiere que la frontera no está solo en mejores respuestas, sino en mejores puntos de decisión, memoria persistente y abandono inteligente de caminos flojos.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge paper">Paper</span>
+        <h2><a href="https://arxiv.org/abs/2610.02508">ProWAM: modelos de acción mundial con planificación visual progresiva para robótica</a></h2>
+        <p class="meta">Fuente: arXiv · Fecha: 2026-10-01</p>
+        <h3>Por qué importa</h3>
+        <p>ProWAM propone predecir acciones junto a una secuencia ordenada de subobjetivos visuales dispersos, evitando generar rollouts densos de vídeo para tareas robóticas largas.[8]</p>
+        <h3>Resumen</h3>
+        <p>El modelo logra nuevos resultados de estado del arte en LIBERO-Plus con 85,8% y RoboTwin aleatorizado con 75,7%, y en pruebas reales zero-shot alcanza 70,0% de éxito frente al 55,0% del mejor baseline citado.[8]</p>
+        <p>La idea práctica es cachear características de subobjetivos visuales con una sola pasada del backbone de vídeo y usar denoising ligero de acciones durante la replanificación.[8]</p>
+        <h3>Impacto práctico</h3>
+        <p>Si se confirma fuera del paper, apunta a robots menos torpes en tareas largas: no necesitan imaginar cada fotograma del futuro, sino hitos visuales suficientes para no perderse por el pasillo.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge paper">Paper</span>
+        <h2><a href="https://arxiv.org/list/cs.AI/new">arXiv cs.AI vuelve cargado: 124 nuevas entradas el 5 de octubre</a></h2>
+        <p class="meta">Fuente: arXiv cs.AI new · Fecha: listado de 2026-10-05</p>
+        <h3>Por qué importa</h3>
+        <p>El listado de arXiv cs.AI muestra 124 nuevas entradas para el 5 de octubre de 2026 dentro de un total de 402 entradas visibles en la página de nuevas publicaciones.[4]</p>
+        <h3>Resumen</h3>
+        <p>Entre las señales destacables aparecen aplicaciones multimodales con LLMs para acuicultura de precisión, agentes de investigación, robótica con modelos de mundo y benchmarks interactivos para aclaración de requisitos de código.[4]</p>
+        <h3>Impacto práctico</h3>
+        <p>El volumen refuerza una tendencia: la IA aplicada está bajando a dominios específicos donde los tokens se combinan con sensores, reglas expertas, acciones físicas y evaluación más pegada al mundo real.</p>
+      </article>
+    </section>
+
+    <section class="summary-card">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li><strong>Infraestructura como ventaja competitiva:</strong> la escala de datos, permisos y latencia empieza a diferenciar tanto como el modelo base.[6]</li>
+        <li><strong>Agentes con memoria y decisiones de alto nivel:</strong> trabajos como MIRA apuntan a asistentes que planifican investigaciones, no solo ejecutan subtareas.[9]</li>
+        <li><strong>Ciencia asistida verificable:</strong> BootLoops sugiere que los mejores resultados vendrán de arneses, reproducibilidad y expertos humanos, no de prompts sueltos.[3]</li>
+        <li><strong>Robótica con planificación visual ligera:</strong> ProWAM encaja con la búsqueda de control robusto sin rollouts de vídeo carísimos.[8]</li>
+      </ul>
+    </section>
+
+    <section class="summary-card">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>Google/DeepMind fue revisado en su índice oficial de noticias; no se seleccionó pieza nueva estricta desde el último RadarIA porque las entradas destacadas visibles corresponden a septiembre o ya habían sido cubiertas en informes anteriores.[5]</p>
+      <p>OpenAI también fue revisado en su índice oficial: las piezas nuevas visibles eran sobre almacenamiento, ciencia aplicada y producto; se seleccionaron las dos con mayor valor técnico para este informe y se descartaron duplicados o anuncios ya cubiertos.[1][6][7]</p>
+    </section>
+
+    <section class="summary-card sources">
+      <h2>Sources:</h2>
+      <ol>
+        <li value="1"><a href="https://openai.com/es-419/news">https://openai.com/es-419/news</a></li>
+        <li value="2"><a href="https://www.anthropic.com/news/barclays-scales-claude">https://www.anthropic.com/news/barclays-scales-claude</a></li>
+        <li value="3"><a href="https://www.anthropic.com/research/claude-shaped-science">https://www.anthropic.com/research/claude-shaped-science</a></li>
+        <li value="4"><a href="https://arxiv.org/list/cs.AI/new">https://arxiv.org/list/cs.AI/new</a></li>
+        <li value="5"><a href="https://deepmind.google/blog">https://deepmind.google/blog</a></li>
+        <li value="6"><a href="https://openai.com/index/scaling-storage-one-billion-users-part-one">https://openai.com/index/scaling-storage-one-billion-users-part-one</a></li>
+        <li value="7"><a href="https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials">https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials</a></li>
+        <li value="8"><a href="https://arxiv.org/abs/2610.02508">https://arxiv.org/abs/2610.02508</a></li>
+        <li value="9"><a href="https://arxiv.org/abs/2610.02525">https://arxiv.org/abs/2610.02525</a></li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
