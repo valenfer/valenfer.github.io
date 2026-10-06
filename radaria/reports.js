@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-06',
+    title: 'RadarIA diario — 2026-10-06',
+    summary: '6 piezas sobre aceleración de investigación en OpenAI, Gemini 4 Argon, ciencia biológica con Claude, desarrollo adolescente e IA, infraestructura Anthropic y señales de papers sobre agentes/multimodalidad.',
+    url: 'informes/2026-10-06.html'
+  },
+  {
     date: '2026-10-05',
     title: 'RadarIA diario — 2026-10-05',
     summary: '6 piezas sobre infraestructura Habitat de OpenAI, ciencia con BootLoops/Claude, despliegue Barclays, meta-razonamiento MIRA, ProWAM para robótica y señales de arXiv cs.AI; Google/DeepMind revisado sin novedad estricta adicional.',
