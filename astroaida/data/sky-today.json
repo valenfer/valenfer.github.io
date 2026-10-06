@@ -1,89 +1,89 @@
 {
   "source": "AstronomyAPI",
-  "fetched_at": "2026-10-05T00:27:02.734290+00:00",
+  "fetched_at": "2026-10-06T02:04:21.188928+00:00",
   "status": "live",
   "bodies": [
     {
       "name": "Sun",
-      "altitude": -56.88,
-      "azimuth": 6.51,
+      "altitude": -48.54,
+      "azimuth": 45.18,
       "constellation": "Virgo",
-      "distance_km": 149634266.89355,
-      "magnitude": -26.74168
+      "distance_km": 149588949.42583,
+      "magnitude": -26.74233
     },
     {
       "name": "Moon",
-      "altitude": -1.04,
-      "azimuth": 60.81,
+      "altitude": 2.92,
+      "azimuth": 71.02,
       "constellation": "Cancer",
-      "distance_km": 372090.8343,
-      "magnitude": -9.3965,
+      "distance_km": 373519.14303,
+      "magnitude": -8.68197,
       "phase": "Waning Crescent",
-      "illumination": 0.044
+      "illumination": 0.051
     },
     {
       "name": "Mercury",
-      "altitude": -62.58,
-      "azimuth": 318.42,
+      "altitude": -67.94,
+      "azimuth": 15.03,
       "constellation": "Virgo",
-      "distance_km": 167638570.05908,
-      "magnitude": -0.0885
+      "distance_km": 165287258.73492,
+      "magnitude": -0.08786
     },
     {
       "name": "Venus",
-      "altitude": -66.74,
-      "azimuth": 308.88,
+      "altitude": -72.88,
+      "azimuth": 20.69,
       "constellation": "Virgo",
-      "distance_km": 48862466.13564,
-      "magnitude": -4.66287
+      "distance_km": 48092766.45373,
+      "magnitude": -4.63921
     },
     {
       "name": "Mars",
-      "altitude": -3.46,
-      "azimuth": 60.51,
+      "altitude": 14.08,
+      "azimuth": 75.13,
       "constellation": "Cancer",
-      "distance_km": 245000023.7864,
-      "magnitude": 1.10236
+      "distance_km": 243870949.85251,
+      "magnitude": 1.09548
     },
     {
       "name": "Jupiter",
-      "altitude": -17.97,
-      "azimuth": 52.73,
+      "altitude": -0.33,
+      "azimuth": 69.89,
       "constellation": "Leo",
-      "distance_km": 878656232.81807,
-      "magnitude": -1.8885
+      "distance_km": 876690780.71879,
+      "magnitude": -1.89272
     },
     {
       "name": "Saturn",
-      "altitude": 54.48,
-      "azimuth": 185.12,
+      "altitude": 45.97,
+      "azimuth": 223.19,
       "constellation": "Cetus",
-      "distance_km": 1261741370.71169,
-      "magnitude": 0.19998
+      "distance_km": 1261786918.07965,
+      "magnitude": 0.20344
     },
     {
       "name": "Uranus",
-      "altitude": 44.68,
-      "azimuth": 96.85,
+      "altitude": 63.74,
+      "azimuth": 121.77,
       "constellation": "Taurus",
-      "distance_km": 2817274209.98078,
-      "magnitude": 5.63381
+      "distance_km": 2815095825.52773,
+      "magnitude": 5.63203
     },
     {
       "name": "Neptune",
-      "altitude": 51.0,
-      "azimuth": 198.13,
+      "altitude": 39.42,
+      "azimuth": 230.67,
       "constellation": "Pisces",
-      "distance_km": 4321902528.44035,
-      "magnitude": 7.81058
+      "distance_km": 4322390405.16374,
+      "magnitude": 7.81083
     },
     {
       "name": "Pluto",
-      "altitude": 2.03,
-      "azimuth": 238.13,
+      "altitude": -16.05,
+      "azimuth": 252.6,
       "constellation": "Capricornus",
-      "distance_km": 5271237396.36163,
-      "magnitude": 14.55325
+      "distance_km": 5273912152.34217,
+      "magnitude": 14.55479
     }
   ],
   "observer": {
