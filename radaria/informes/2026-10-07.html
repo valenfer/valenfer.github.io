@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-10-07</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body{margin:0;background:#eef3f8;color:#172033;font-family:Arial,Helvetica,sans-serif;line-height:1.55}.email-shell{max-width:960px;margin:0 auto;padding:28px 14px}.hero{background:linear-gradient(135deg,#10243f,#2563eb);color:white;border-radius:24px;padding:28px;box-shadow:0 14px 40px rgba(15,35,70,.18)}.hero h1{margin:0 0 8px;font-size:32px}.hero p{margin:6px 0;color:#dce8ff}.meta{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:7px 12px;margin-top:12px}.card{background:#fff;border:1px solid #dbe4ef;border-radius:20px;margin:18px 0;padding:22px;box-shadow:0 8px 24px rgba(20,40,70,.08)}.badge{display:inline-block;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;margin-bottom:10px}.producto{background:#e0f2fe;color:#075985}.informe{background:#fef3c7;color:#92400e}.herramienta{background:#ede9fe;color:#5b21b6}.paper{background:#dcfce7;color:#166534}.benchmark{background:#fee2e2;color:#991b1b}.card h2{font-size:22px;margin:0 0 8px;color:#12213a}.small{color:#526173;font-size:14px}.why{border-left:4px solid #2563eb;padding-left:12px;background:#f8fbff;border-radius:8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.sources ol{padding-left:22px}.sources li{margin:7px 0;word-break:break-word}.footer{color:#526173;text-align:center;font-size:14px;margin:24px 0}@media(max-width:720px){.grid{grid-template-columns:1fr}.hero h1{font-size:26px}.email-shell{padding:16px 10px}}
+  </style>
+</head>
+<body>
+  <main class="email-shell">
+    <section class="hero">
+      <h1>RadarIA diario — 2026-10-07</h1>
+      <p><strong>Rango investigado:</strong> desde el último informe fiable en <code>radaria/reports.js</code> (2026-10-06) hasta 2026-10-07, hora peninsular española.</p>
+      <p><strong>Metodología:</strong> revisión de fuentes primarias oficiales de OpenAI, Google/DeepMind y Anthropic, más arXiv y Hugging Face Papers; he abierto el cuerpo de las piezas seleccionadas y he descartado duplicados o material fuera de ventana.</p>
+      <span class="meta">6 piezas seleccionadas · foco en agentes, procedencia, seguridad y evaluación científica</span>
+    </section>
+
+    <article class="card">
+      <span class="badge informe">Informe</span>
+      <h2>OpenAI activa su hoja de ruta de marca de agua textual para la UE</h2>
+      <p class="small"><strong>Fuente:</strong> OpenAI · <strong>Fecha:</strong> 5 octubre 2026 · <a href="https://openai.com/index/eu-text-provenance">enlace</a></p>
+      <p>OpenAI explica que el AI Act europeo exige identificar texto generado de forma legible por máquina y que su respuesta será gradual: opt-in para clientes API, marca de agua invisible en salidas elegibles de ChatGPT y Codex en la UE, y detector limitado inicialmente a investigadores y organizaciones expertas.[2]</p>
+      <p>La parte técnica importa porque textGrain introduce una señal estadística en la elección de palabras, pero la propia OpenAI advierte de límites: a 1% de falsos positivos detecta alrededor del 80% en pasajes de 200 tokens y cerca del 95% en 400 tokens en contenidos como psicología, mientras que la edición del 25% de palabras puede bajar la detección al 17%.[2]</p>
+      <p class="why"><strong>Impacto práctico:</strong> útil para cumplimiento y transparencia, pero peligroso si se interpreta como prueba absoluta de autoría. Vamos, el detector ayuda; no es una bola de cristal con corbata.</p>
+    </article>
+
+    <article class="card">
+      <span class="badge producto">Producto</span>
+      <h2>OpenAI y Atlassian llevan modelos GPT-6 a Rovo y al grafo de trabajo empresarial</h2>
+      <p class="small"><strong>Fuente:</strong> OpenAI · <strong>Fecha:</strong> 6 octubre 2026 · <a href="https://openai.com/index/atlassian-partnership">enlace</a></p>
+      <p>Atlassian y OpenAI amplían su alianza para integrar modelos frontera de la familia GPT-6 en la plataforma Atlassian y en Rovo, apoyándose en Teamwork Graph como capa de contexto empresarial que conecta personas, proyectos, documentos y decisiones.[3]</p>
+      <p>OpenAI afirma que más de 3.000 desarrolladores de Atlassian usan Codex en terminales, IDEs y revisión de código, y que la nueva integración permitirá conectar Jira, Confluence y discusiones relevantes para diagnosticar bloqueos, hitos perdidos y decisiones pendientes.[3]</p>
+      <p class="why"><strong>Impacto práctico:</strong> confirma que la batalla de los agentes empresariales ya no va solo de modelos, sino de contexto, permisos y medición del trabajo real dentro de herramientas como Jira.</p>
+    </article>
+
+    <article class="card">
+      <span class="badge herramienta">Herramienta</span>
+      <h2>Anthropic amplía el Cyber Verification Program para defensores verificados</h2>
+      <p class="small"><strong>Fuente:</strong> Anthropic · <strong>Fecha:</strong> 6 octubre 2026 · <a href="https://www.anthropic.com/news/cyber-verification-program">enlace</a></p>
+      <p>Anthropic lanza una versión ampliada de su Cyber Verification Program con tres niveles de acceso para profesionales de seguridad, incluyendo modelos como Claude Opus 5.5, Sonnet 5.5 y Mythos 5.1 bajo controles adaptados al tipo de trabajo defensivo o de red team.[4]</p>
+      <p>La compañía reconoce explícitamente el carácter dual de la ciberseguridad: las mismas capacidades que ayudan a corregir vulnerabilidades pueden facilitar explotación maliciosa, por lo que separa acceso general conservador de acceso verificado para equipos defensivos.[4]</p>
+      <p class="why"><strong>Impacto práctico:</strong> buen ejemplo de segmentación por confianza: menos bloqueo para quien lo necesita y puede justificarlo, más fricción para el abuso.</p>
+    </article>
+
+    <article class="card">
+      <span class="badge herramienta">Herramienta</span>
+      <h2>Google DeepMind muestra CodeMender, un agente para reparar vulnerabilidades</h2>
+      <p class="small"><strong>Fuente:</strong> Google DeepMind · <strong>Fecha detectada:</strong> 6 octubre 2025, fuera de ventana estricta pero revisada como fuente obligatoria sin novedad reciente · <a href="https://deepmind.google/discover/blog/introducing-codemender-an-ai-agent-for-code-security">enlace</a></p>
+      <p>La búsqueda obligatoria de Google/DeepMind no devolvió novedad destacable de 2026-10-06 a 2026-10-07; la pieza técnica más visible recuperada fue CodeMender, publicada el 6 de octubre de 2025, por lo que la incluyo como “revisada, no nueva” y no como novedad del día.[5]</p>
+      <p>CodeMender se describe como un agente que combina capacidades de Gemini Deep Think con herramientas de análisis estático, dinámico, fuzzing, pruebas diferenciales y solvers SMT; DeepMind afirma que en seis meses ya había subido 72 arreglos de seguridad a proyectos open source.[5]</p>
+      <p class="why"><strong>Impacto práctico:</strong> aunque no entra como noticia nueva, marca una tendencia que sí conecta con hoy: agentes de código cada vez más pegados a seguridad verificable y revisión humana.</p>
+    </article>
+
+    <article class="card">
+      <span class="badge paper">Paper</span>
+      <h2>BOTTLED: medir si un agente puede convertir capacidad cara en artefactos baratos</h2>
+      <p class="small"><strong>Fuente:</strong> arXiv · <strong>Fecha:</strong> enviado el 6 octubre 2026 · <a href="https://arxiv.org/abs/2610.08775">enlace</a></p>
+      <p>El paper “Agent in a Bottle” introduce BOTTLED, un benchmark donde agentes reciben una carga de trabajo sin etiquetar y deben resolverla bajo presupuestos fijos de tiempo, cómputo y API, pudiendo entrenar modelos pequeños o escribir programas reutilizables.[6]</p>
+      <p>El resultado interesante es incómodo: buen rendimiento zero-shot no garantiza buena “bottling capability”; 48 de 60 ejecuciones quedaron por debajo del límite inferior del intervalo de confianza del rendimiento zero-shot, aunque en clasificación de relevancia Opus 5 conservó cerca del 82% de su macro-F1 con un coste declarado unas 657 veces menor.[6]</p>
+      <p class="why"><strong>Impacto práctico:</strong> apunta a una métrica económica de agentes: no solo “¿resuelve la tarea?”, sino “¿sabe construir una solución reutilizable y barata?”. Eso sí que huele a automatización rentable.</p>
+    </article>
+
+    <article class="card">
+      <span class="badge benchmark">Benchmark</span>
+      <h2>Hugging Face destaca fallos de agentes entre evidencia y acción, y benchmarks científicos autogenerados</h2>
+      <p class="small"><strong>Fuente:</strong> Hugging Face Papers · <strong>Fecha:</strong> 7 octubre 2026 · <a href="https://huggingface.co/papers">enlace</a></p>
+      <p>Hugging Face Papers del 7 de octubre lista trabajos recientes centrados en agentes, entre ellos “From Evidence to Action: How Tool-Using Agents Fail” y “AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents”.[7]</p>
+      <p>SafeActBench estudia 656 casos en seis dominios operativos y muestra que los agentes pueden fallar antes de actuar, por investigación incompleta o acciones tomadas antes de establecer la evidencia requerida; sus autores reportan que configuraciones con precisión estática ≥95% bajan a éxito interactivo ≤52% en casos re-evaluados.[8]</p>
+      <p>AutoSciBench propone generar y refinar automáticamente benchmarks científicos en biología computacional, materiales e imagen clínica; según el resumen, las pruebas generadas reducen la precisión media de los solvers en 22,4 y 25,5 puntos porcentuales frente a benchmarks humanos en biología computacional y materiales.[9]</p>
+      <p class="why"><strong>Impacto práctico:</strong> la evaluación se está desplazando hacia trazabilidad de evidencias y benchmarks que se endurecen conforme los agentes aprenden a hacer trampas elegantes.</p>
+    </article>
+
+    <section class="card">
+      <h2>Lo que vigilar</h2>
+      <div class="grid">
+        <p><strong>1. Procedencia textual regulada:</strong> si la UE fuerza señales legibles por máquina, habrá tensión entre transparencia, falsos positivos y privacidad.</p>
+        <p><strong>2. Agentes con permisos reales:</strong> Atlassian/OpenAI y Anthropic/CVP muestran dos caras del mismo reto: contexto operativo y control de riesgo.</p>
+        <p><strong>3. Evaluación económica:</strong> benchmarks como BOTTLED medirán si los agentes amortizan coste creando herramientas, no solo contestando.</p>
+        <p><strong>4. Evidencia antes de acción:</strong> SafeActBench refuerza que los agentes útiles necesitan ledger, prerequisitos y verificación, no solo un “hecho, jefe”.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>Google/Google DeepMind fue revisado mediante búsqueda web y extracción de resultados; no apareció una novedad primaria dentro de la ventana 2026-10-06 a 2026-10-07, y la pieza técnica recuperada con cuerpo legible correspondía a 2025.[5]</p>
+      <p>OpenAI, Anthropic y arXiv sí presentaron material dentro de la ventana o estrictamente conectado con la revisión diaria.[2][3][4]</p>
+      <p>Hugging Face Papers añadió señales recientes de evaluación y seguridad de agentes que completan la selección.[7]</p>
+    </section>
+
+    <section class="card sources">
+      <p><strong>Sources:</strong></p>
+      <ol>
+        <li value="2"><a href="https://openai.com/index/eu-text-provenance">https://openai.com/index/eu-text-provenance</a> — Our approach to EU text provenance rules | OpenAI</li>
+        <li value="3"><a href="https://openai.com/index/atlassian-partnership">https://openai.com/index/atlassian-partnership</a> — Atlassian and OpenAI expand partnership to turn enterprise knowledge into action | OpenAI</li>
+        <li value="4"><a href="https://www.anthropic.com/news/cyber-verification-program">https://www.anthropic.com/news/cyber-verification-program</a> — Expanding the Cyber Verification Program | Anthropic</li>
+        <li value="5"><a href="https://deepmind.google/discover/blog/introducing-codemender-an-ai-agent-for-code-security">https://deepmind.google/discover/blog/introducing-codemender-an-ai-agent-for-code-security</a> — Introducing CodeMender: an AI agent for code security - Google DeepMind</li>
+        <li value="6"><a href="https://arxiv.org/abs/2610.08775">https://arxiv.org/abs/2610.08775</a> — Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts?</li>
+        <li value="7"><a href="https://huggingface.co/papers">https://huggingface.co/papers</a> — Daily Papers - Hugging Face</li>
+        <li value="8"><a href="https://huggingface.co/papers/2610.07753">https://huggingface.co/papers/2610.07753</a> — From Evidence to Action: How Tool-Using Agents Fail</li>
+        <li value="9"><a href="https://huggingface.co/papers/2610.05140">https://huggingface.co/papers/2610.05140</a> — AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents</li>
+      </ol>
+    </section>
+
+    <p class="footer">Cierre AIDA: hoy toca menos humo y más evidencia. Raro, lo sé; casi parece que estamos madurando.</p>
+  </main>
+</body>
+</html>
