@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-06T02:04:26.615652+00:00",
+  "fetched_at": "2026-10-07T01:13:31.803134+00:00",
   "status": "live",
-  "target_date": "2026-10-07",
+  "target_date": "2026-10-08",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,29 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-07T00:00:00+02:00",
-    "end_local": "2026-10-08T12:00:00+02:00"
+    "start_local": "2026-10-08T00:00:00+02:00",
+    "end_local": "2026-10-09T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20261007_16_100-in-the-sky-org-0d188328374b-2026-10-07",
-      "type": "other",
-      "title_es": "Ocultación lunar de Regulus",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna pasará por delante de Regulus (Alpha Leonis), creando una ocultación lunar visible desde partes de África",
-      "start_local": "2026-10-07T05:09:14+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261007_16_100"
-      }
-    },
-    {
-      "id": "20261007_17_100-in-the-sky-org-70b53f4148db-2026-10-07",
+      "id": "20261007_17_100-in-the-sky-org-70b53f4148db-2026-10-08",
       "type": "other",
       "title_es": "NGC 362 está bien colocado",
       "title_translation_status": "translated",
@@ -47,13 +30,50 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261007_17_100"
       }
+    },
+    {
+      "id": "20261012_11_100-in-the-sky-org-c76c9ef317ae-2026-10-08",
+      "type": "other",
+      "title_es": "Mercurio a mayor altitud en el cielo nocturno",
+      "title_translation_status": "translated",
+      "summary_es": "Mercurio es brillante y está bien situado en el cielo nocturno",
+      "start_local": "2026-10-08T07:50:15+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Mercurio está bajo el horizonte (altitud -31.9°).",
+        "altitude_deg": -31.9,
+        "azimuth_deg": 87.4,
+        "sun_altitude_deg": -7.2
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261012_11_100"
+      }
+    },
+    {
+      "id": "20261009_10_100-in-the-sky-org-7d2f24b5fed8-2026-10-08",
+      "type": "meteor_shower",
+      "title_es": "Lluvia de meteoros",
+      "title_translation_status": "deterministic",
+      "summary_es": "La lluvia de meteoros Dracónidas alcanza su punto máximo",
+      "start_local": "2026-10-09T03:22:26+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261009_10_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 38.63157894736842,
-    "visibility": 40860.0,
-    "precipitation_probability": 13,
-    "temperature": 19.3
+    "cloud_cover": 21.05263157894737,
+    "visibility": 46880.0,
+    "precipitation_probability": 3,
+    "temperature": 19.6
   },
   "sources": [
     {
