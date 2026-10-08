@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-08',
+    title: 'RadarIA diario — 2026-10-08',
+    summary: '6 piezas sobre GPT-6 Astra, prueba formalizada de Navier-Stokes, EmbeddingGemma 2, Claude Haiku 5.5, Mistral Large 4 y benchmarks recientes de agentes científicos/seguros.',
+    url: 'informes/2026-10-08.html'
+  },
+  {
     date: '2026-10-07',
     title: 'RadarIA diario — 2026-10-07',
     summary: '6 piezas sobre procedencia textual de OpenAI, agentes empresariales Atlassian/OpenAI, acceso ciber verificado de Anthropic, CodeMender revisado como fuente Google/DeepMind sin novedad estricta, BOTTLED y benchmarks de agentes en Hugging Face.',
