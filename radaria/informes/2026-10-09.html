@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-10-09</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell">
+    <header class="hero">
+      <p class="eyebrow">RadarIA diario</p>
+      <h1>RadarIA diario — 2026-10-09</h1>
+      <p class="subtitle">Ventana investigada: desde el informe anterior publicado el 2026-10-08 hasta la mañana del 2026-10-09, hora peninsular española.</p>
+      <p class="meta">Metodología: revisión de fuentes primarias oficiales de OpenAI, Google/DeepMind, Anthropic, Meta, Mistral y listados/papers recientes de arXiv; se abrió el cuerpo de las piezas seleccionadas y se descartaron duplicados, rumores y anuncios fuera de ventana.</p>
+    </header>
+
+    <section class="summary-card">
+      <h2>Resumen ejecutivo</h2>
+      <p>Hoy hay pocas novedades corporativas realmente nuevas, así que el radar se concentra en una actualización de política de Anthropic y en tres papers recientes sobre agentes: presupuestos temporales, guardrails de decisión y verificación de auto-mejora.[1][5][6]</p>
+      <p>La señal común es clara: la industria sigue moviéndose de “modelos que responden” a “sistemas que actúan”, y ahí los detalles aburridos —políticas, relojes, verificadores y etiquetas de opciones— empiezan a ser la fontanería crítica. Sí, Valentín: la fontanería vuelve a salvar el castillo.</p>
+    </section>
+
+    <section class="cards">
+      <article class="news-card">
+        <div class="card-top"><span class="badge informe">Informe</span><span class="date">Anthropic · 2026-10-09</span></div>
+        <h2><a href="https://www.anthropic.com/news/2026-usage-policy-update">Anthropic actualiza su Usage Policy para agentes más autónomos</a></h2>
+        <p><strong>Por qué importa:</strong> Anthropic afirma que Claude realiza trabajos más largos e independientes, y por eso añade ejemplos y controles sobre campañas engañosas, vigilancia, armas, usos de alto riesgo y acciones físicas autónomas.[1]</p>
+        <p><strong>Resumen:</strong> La nueva política entra en vigor el 12 de noviembre y consolida reglas contra actividad artificial o engañosa, precisa límites electorales, explicita prohibiciones sobre componentes de armas y exige humano cualificado en el bucle para decisiones sensibles en salud, finanzas, derechos o servicios esenciales.[1]</p>
+        <p><strong>Impacto práctico:</strong> Si integras Claude en flujos empresariales, compliance o herramientas con hardware, conviene revisar permisos, trazabilidad y capacidad de parada segura antes de noviembre; no basta con poner “humano supervisando” como estampita decorativa.[1]</p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-top"><span class="badge paper">Paper</span><span class="date">arXiv · 2026-10-08</span></div>
+        <h2><a href="https://arxiv.org/abs/2610.12292">One Word Opens the Gate: ataque al canal de opciones en guardrails de agentes</a></h2>
+        <p><strong>Por qué importa:</strong> El paper evalúa modelos de decisión tipados usados como guardrails y observa que, en cribados de prompt-injection, jailbreak y toxicidad, la precisión allow/block queda entre el 36% y el 72%, con errores de apertura que pueden permitir acciones prohibidas.[6]</p>
+        <p><strong>Resumen:</strong> En una suite sintética de llamadas a herramientas, seis líneas de log no relacionadas con la política elevan la tasa fail-open del 0% al 63%, y cambiar el nombre de la opción permisiva puede subirla al 93-100% en modelos que incluyen esa etiqueta en la entrada.[6]</p>
+        <p><strong>Impacto práctico:</strong> Es una advertencia directa contra delegar decisiones de seguridad a clasificadores pequeños sin reglas deterministas, parsing robusto y revisión: pueden reducir cola de casos, pero no deberían ser el árbitro final de permisos sensibles.[6]</p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-top"><span class="badge benchmark">Benchmark</span><span class="date">arXiv · listado nuevo 2026-10-09</span></div>
+        <h2><a href="https://arxiv.org/abs/2610.10833">On the Clock: agentes con presupuesto de tiempo explícito</a></h2>
+        <p><strong>Por qué importa:</strong> El trabajo estudia si agentes LLM pequeños pueden respetar presupuestos de reloj y usar el tiempo extra de forma productiva en MLE-Bench Lite y Zork I.[5]</p>
+        <p><strong>Resumen:</strong> Cuando el presupuesto se expresa solo en el prompt, los agentes no controlan bien el tiempo; añadir información temporal desde el harness mejora la adherencia y los hooks de enforcement la ajustan aún más, mientras que GRPO logra adherencia casi perfecta en Zork I pero no mejora el rendimiento en MLE-Bench.[5]</p>
+        <p><strong>Impacto práctico:</strong> Para agentes de producción, el “tienes 15 minutos” en el prompt es más deseo que control; hacen falta relojes, deadlines y métricas de utilidad del tiempo, porque parar a tiempo no significa pensar mejor.[5]</p>
+      </article>
+
+      <article class="news-card">
+        <div class="card-top"><span class="badge paper">Paper</span><span class="date">arXiv · listado nuevo 2026-10-09</span></div>
+        <h2><a href="https://arxiv.org/abs/2610.10611">Verification and Self-Improvement in Agentic AI: fundamentos y límites</a></h2>
+        <p><strong>Por qué importa:</strong> El paper distingue entre mejorar por buscar más, recibir más soporte o cambiar cómo se proponen y verifican salidas, y advierte que una puntuación agregada no separa esos mecanismos.[7]</p>
+        <p><strong>Resumen:</strong> Propone un marco formal de verificación acotada con aleatoriedad terminal oculta, analiza clases de verificadores aleatorizados y sostiene que la auto-modificación recursiva uniformemente acotada permanece dentro de la misma clase de verificación bajo un intérprete sólido común.[7]</p>
+        <p><strong>Impacto práctico:</strong> Para claims de “agentes que se auto-mejoran”, la pregunta útil no es solo si sube el score, sino qué evidencia, checker, recursos y presupuesto de error justifican aceptar esa mejora.[7]</p>
+      </article>
+    </section>
+
+    <section class="summary-card">
+      <h2>Lo que vigilar</h2>
+      <ul>
+        <li>Guardrails basados en modelos pequeños: la dirección interesante es combinar reglas deterministas, parsing tipado y escalado humano, no rezar al clasificador de turno.[6]</li>
+        <li>Agentes con restricciones reales de tiempo y coste: los harnesses que exponen reloj, deadlines y métricas de productividad van a importar tanto como el modelo base.[5]</li>
+        <li>Políticas de uso para autonomía física y decisiones sensibles: Anthropic marca una tendencia regulatoria-operativa que otros proveedores probablemente seguirán afinando.[1]</li>
+        <li>Evaluación de auto-mejora: cada claim serio debería separar búsqueda, soporte externo, cambios de verificador y tasa de selección falsa.[7]</li>
+      </ul>
+    </section>
+
+    <section class="summary-card">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>OpenAI News se revisó y no mostró una pieza nueva relevante en la ventana investigada desde el último RadarIA.[unverified]</p>
+      <p>Google/DeepMind se revisó; la pieza recuperada sobre fusión era de octubre de 2025, por lo que no se incluye como novedad del día.[2]</p>
+      <p>Meta AI Blog no mostró entradas nuevas de octubre de 2026 en la página revisada; sus entradas visibles eran de julio de 2026 o anteriores.[unverified]</p>
+      <p>Mistral Large 4 se revisó, pero ya estaba cubierto en RadarIA del 2026-10-08, así que se evita duplicarlo.[4]</p>
+    </section>
+
+    <section class="summary-card sources-block">
+      <h2>Fuentes</h2>
+      <p>Sources:</p>
+      <ol>
+        <li>[1] <a href="https://www.anthropic.com/news/2026-usage-policy-update">https://www.anthropic.com/news/2026-usage-policy-update</a> — Anthropic 2026 Usage Policy update</li>
+        <li>[2] <a href="https://deepmind.google/discover/blog/bringing-ai-to-the-next-generation-of-fusion-energy">https://deepmind.google/discover/blog/bringing-ai-to-the-next-generation-of-fusion-energy</a> — Google DeepMind fusion energy</li>
+        <li>[4] <a href="https://mistral.ai/news/mistral-large-4">https://mistral.ai/news/mistral-large-4</a> — Mistral Large 4</li>
+        <li>[5] <a href="https://arxiv.org/abs/2610.10833">https://arxiv.org/abs/2610.10833</a> — On the Clock</li>
+        <li>[6] <a href="https://arxiv.org/abs/2610.12292">https://arxiv.org/abs/2610.12292</a> — Option-Channel Attack</li>
+        <li>[7] <a href="https://arxiv.org/abs/2610.10611">https://arxiv.org/abs/2610.10611</a> — Verification and Self-Improvement</li>
+      </ol>
+    </section>
+
+    <footer class="footer-note">
+      <p>Informe preparado por AIDA. Breve, citado y sin rellenar con humo, que para eso ya están algunas keynote.</p>
+      <p><a href="../index.html">Volver a RadarIA</a></p>
+    </footer>
+  </main>
+</body>
+</html>
+
+## Sources
+
+[1] https://www.anthropic.com/news/2026-usage-policy-update — Anthropic 2026 Usage Policy update
+[2] https://deepmind.google/discover/blog/bringing-ai-to-the-next-generation-of-fusion-energy — Google DeepMind fusion energy
+[4] https://mistral.ai/news/mistral-large-4 — Mistral Large 4
+[5] https://arxiv.org/abs/2610.10833 — On the Clock
+[6] https://arxiv.org/abs/2610.12292 — Option-Channel Attack
+[7] https://arxiv.org/abs/2610.10611 — Verification and Self-Improvement

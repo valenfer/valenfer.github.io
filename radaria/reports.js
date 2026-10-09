@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-09',
+    title: 'RadarIA diario — 2026-10-09',
+    summary: '4 piezas sobre actualización de política de Anthropic, ataques a guardrails de decisión, agentes con presupuesto temporal y verificación formal de auto-mejora; OpenAI/Google/Meta revisados sin novedad estricta en ventana.',
+    url: 'informes/2026-10-09.html'
+  },
+  {
     date: '2026-10-08',
     title: 'RadarIA diario — 2026-10-08',
     summary: '6 piezas sobre GPT-6 Astra, prueba formalizada de Navier-Stokes, EmbeddingGemma 2, Claude Haiku 5.5, Mistral Large 4 y benchmarks recientes de agentes científicos/seguros.',
