@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-08T01:34:34.118970+00:00",
+  "fetched_at": "2026-10-09T01:45:44.482356+00:00",
   "status": "live",
-  "target_date": "2026-10-09",
+  "target_date": "2026-10-10",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,17 +10,34 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-09T00:00:00+02:00",
-    "end_local": "2026-10-10T12:00:00+02:00"
+    "start_local": "2026-10-10T00:00:00+02:00",
+    "end_local": "2026-10-11T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20261009_10_100-in-the-sky-org-7d2f24b5fed8-2026-10-09",
+      "id": "20261010_08_100-in-the-sky-org-ac7d4cc81410-2026-10-10",
+      "type": "lunar_phase",
+      "title_es": "Luna nueva",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna desaparece en el resplandor del Sol durante unos días",
+      "start_local": "2026-10-10T17:51:17+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "No observable directamente",
+        "reason": "La Luna nueva no se ve, pero favorece un cielo nocturno más oscuro."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261010_08_100"
+      }
+    },
+    {
+      "id": "20261010_10_100-in-the-sky-org-23fb79b8239d-2026-10-10",
       "type": "meteor_shower",
       "title_es": "Lluvia de meteoros",
       "title_translation_status": "deterministic",
-      "summary_es": "La lluvia de meteoros Dracónidas alcanza su punto máximo",
-      "start_local": "2026-10-09T03:22:26+02:00",
+      "summary_es": "La lluvia de meteoros de las Táuridas del Sur alcanza su punto máximo",
+      "start_local": "2026-10-10T18:13:57+02:00",
       "visibility": {
         "status": "contextual",
         "label": "Acontecimiento astronómico",
@@ -28,15 +45,15 @@
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261009_10_100"
+        "url": "https://in-the-sky.org/news.php?id=20261010_10_100"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 16.263157894736842,
-    "visibility": 44160.0,
-    "precipitation_probability": 0,
-    "temperature": 20.0
+    "cloud_cover": 22.105263157894736,
+    "visibility": 49380.0,
+    "precipitation_probability": 7,
+    "temperature": 17.3
   },
   "sources": [
     {
