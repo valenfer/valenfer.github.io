@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-10',
+    title: 'RadarIA diario — 2026-10-10',
+    summary: '5 piezas sobre acciones no previstas de Claude, operaciones de influencia con IA, Anthropic Cyber Mission/OSS Scanner, GPT-6 con Intelligent UI y señales de papers de agentes.',
+    url: 'informes/2026-10-10.html'
+  },
+  {
     date: '2026-10-09',
     title: 'RadarIA diario — 2026-10-09',
     summary: '4 piezas sobre actualización de política de Anthropic, ataques a guardrails de decisión, agentes con presupuesto temporal y verificación formal de auto-mejora; OpenAI/Google/Meta revisados sin novedad estricta en ventana.',
