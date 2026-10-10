@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-09T01:45:44.482356+00:00",
+  "fetched_at": "2026-10-10T01:31:57.919500+00:00",
   "status": "live",
-  "target_date": "2026-10-10",
+  "target_date": "2026-10-11",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,34 +10,37 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-10T00:00:00+02:00",
-    "end_local": "2026-10-11T12:00:00+02:00"
+    "start_local": "2026-10-11T00:00:00+02:00",
+    "end_local": "2026-10-12T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20261010_08_100-in-the-sky-org-ac7d4cc81410-2026-10-10",
-      "type": "lunar_phase",
-      "title_es": "Luna nueva",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna desaparece en el resplandor del Sol durante unos días",
-      "start_local": "2026-10-10T17:51:17+02:00",
+      "id": "20261011_15_100-in-the-sky-org-0855cec4df09-2026-10-11",
+      "type": "other",
+      "title_es": "Aproximación cercana a Marte y M44",
+      "title_translation_status": "translated",
+      "summary_es": "Marte y M44 pasan cerca uno del otro",
+      "start_local": "2026-10-11T15:17:00+02:00",
       "visibility": {
-        "status": "contextual",
-        "label": "No observable directamente",
-        "reason": "La Luna nueva no se ve, pero favorece un cielo nocturno más oscuro."
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Marte no observable: altitud 17.2°, Sol a 42.9°.",
+        "altitude_deg": 17.2,
+        "azimuth_deg": 281.8,
+        "sun_altitude_deg": 42.9
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261010_08_100"
+        "url": "https://in-the-sky.org/news.php?id=20261011_15_100"
       }
     },
     {
-      "id": "20261010_10_100-in-the-sky-org-23fb79b8239d-2026-10-10",
+      "id": "20261011_10_100-in-the-sky-org-87fa5649bd22-2026-10-11",
       "type": "meteor_shower",
       "title_es": "Lluvia de meteoros",
       "title_translation_status": "deterministic",
-      "summary_es": "La lluvia de meteoros de las Táuridas del Sur alcanza su punto máximo",
-      "start_local": "2026-10-10T18:13:57+02:00",
+      "summary_es": "La lluvia de meteoros δ-Aurigid alcanza su punto máximo",
+      "start_local": "2026-10-11T18:30:02+02:00",
       "visibility": {
         "status": "contextual",
         "label": "Acontecimiento astronómico",
@@ -45,15 +48,55 @@
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261010_10_100"
+        "url": "https://in-the-sky.org/news.php?id=20261011_10_100"
+      }
+    },
+    {
+      "id": "20261012_20_100-in-the-sky-org-c5bd3bb5ce79-2026-10-11",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna y Venus comparten la misma ascensión recta, a una separación de 3°03'",
+      "start_local": "2026-10-12T04:31:34+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -63.7°).",
+        "altitude_deg": -63.7,
+        "azimuth_deg": 48.6,
+        "sun_altitude_deg": -45.8
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261012_20_100"
+      }
+    },
+    {
+      "id": "20261012_11_101-in-the-sky-org-c02f517fc254-2026-10-11",
+      "type": "other",
+      "title_es": "Mercurio en su mayor elongación al este",
+      "title_translation_status": "translated",
+      "summary_es": "Mercurio es brillante y está bien situado en el cielo nocturno",
+      "start_local": "2026-10-12T07:50:15+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Mercurio está bajo el horizonte (altitud -33.0°).",
+        "altitude_deg": -33.0,
+        "azimuth_deg": 88.9,
+        "sun_altitude_deg": -7.9
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261012_11_101"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 22.105263157894736,
-    "visibility": 49380.0,
-    "precipitation_probability": 7,
-    "temperature": 17.3
+    "cloud_cover": 20.789473684210527,
+    "visibility": 43120.0,
+    "precipitation_probability": 0,
+    "temperature": 18.1
   },
   "sources": [
     {
