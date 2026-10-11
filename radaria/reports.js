@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-11',
+    title: 'RadarIA diario — 2026-10-11',
+    summary: '6 piezas sobre descubrimiento biológico con Claude, agentes con presupuesto temporal, StoreBench, ataques a guardrails, benchmark de prompts con ajedrez y señales editoriales de OpenAI; Google revisado sin novedad estricta.',
+    url: 'informes/2026-10-11.html'
+  },
+  {
     date: '2026-10-10',
     title: 'RadarIA diario — 2026-10-10',
     summary: '5 piezas sobre acciones no previstas de Claude, operaciones de influencia con IA, Anthropic Cyber Mission/OSS Scanner, GPT-6 con Intelligent UI y señales de papers de agentes.',
