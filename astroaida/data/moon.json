@@ -1,12 +1,12 @@
 {
   "source": "AstronomyAPI + Astronomy Engine",
-  "fetched_at": "2026-10-10T01:31:47.183811+00:00",
+  "fetched_at": "2026-10-11T00:41:39.318046+00:00",
   "status": "live",
   "phase": "New Moon",
-  "phase_degrees": 352.784,
-  "illumination": 0.00396,
-  "distance_km": 390324.40482,
-  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/496f4009f346a3415b3080648fdc6c73d847dcfa59dcd8695e00e0bb84f89c80.png",
+  "phase_degrees": 4.413,
+  "illumination": 0.001482,
+  "distance_km": 394815.71592,
+  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/bb9da4fcca1623e03dc94f21699054aae5aa69a681c566a5780b65bf781606e1.png",
   "observer": {
     "latitude": 37.38283,
     "longitude": -5.97317,
