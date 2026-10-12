@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-12',
+    title: 'RadarIA diario — 2026-10-12',
+    summary: '5 piezas sobre operaciones false-front con IA, tarjeta de seguridad GPT-6, Gemini 3.8 Flash para agentes, compromiso científico de Anthropic y ProgramGym; pocas novedades estrictas desde ayer, ventana ampliada a 7 días.',
+    url: 'informes/2026-10-12.html'
+  },
+  {
     date: '2026-10-11',
     title: 'RadarIA diario — 2026-10-11',
     summary: '6 piezas sobre descubrimiento biológico con Claude, agentes con presupuesto temporal, StoreBench, ataques a guardrails, benchmark de prompts con ajedrez y señales editoriales de OpenAI; Google revisado sin novedad estricta.',
