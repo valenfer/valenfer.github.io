@@ -1,6 +1,6 @@
 {
   "source": "NASA NeoWs",
-  "fetched_at": "2026-10-11T00:41:39.316195+00:00",
+  "fetched_at": "2026-10-12T01:00:36.926079+00:00",
   "status": "live",
   "asteroids": [
     {
@@ -244,42 +244,6 @@
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3831212"
     },
     {
-      "date": "2026-10-05",
-      "name": "(2001 SH276)",
-      "estimated_diameter_km": {
-        "min": 0.3065878759,
-        "max": 0.6855513317
-      },
-      "miss_distance_km": 20913691,
-      "velocity_km_s": 10.7550911884,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3092342"
-    },
-    {
-      "date": "2026-10-05",
-      "name": "(2007 UW1)",
-      "estimated_diameter_km": {
-        "min": 0.0766575574,
-        "max": 0.1714115092
-      },
-      "miss_distance_km": 12677806,
-      "velocity_km_s": 4.7105287245,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3389195"
-    },
-    {
-      "date": "2026-10-05",
-      "name": "(2015 XX169)",
-      "estimated_diameter_km": {
-        "min": 0.0088014652,
-        "max": 0.0196806745
-      },
-      "miss_distance_km": 34312498,
-      "velocity_km_s": 5.2534724855,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3736412"
-    },
-    {
       "date": "2026-10-09",
       "name": "(2001 UP)",
       "estimated_diameter_km": {
@@ -518,6 +482,30 @@
       "velocity_km_s": 16.3137593834,
       "hazardous": false,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3994621"
+    },
+    {
+      "date": "2026-10-12",
+      "name": "164207 Cardea (2004 GU9)",
+      "estimated_diameter_km": {
+        "min": 0.1536579294,
+        "max": 0.3435895754
+      },
+      "miss_distance_km": 29671918,
+      "velocity_km_s": 7.3264677379,
+      "hazardous": true,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2164207"
+    },
+    {
+      "date": "2026-10-12",
+      "name": "(2015 XK55)",
+      "estimated_diameter_km": {
+        "min": 0.0334622374,
+        "max": 0.0748238376
+      },
+      "miss_distance_km": 51746936,
+      "velocity_km_s": 15.3944958742,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3735996"
     }
   ]
 }
