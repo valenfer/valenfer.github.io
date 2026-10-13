@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-12T01:00:40.495434+00:00",
+  "fetched_at": "2026-10-13T02:51:15.984742+00:00",
   "status": "live",
-  "target_date": "2026-10-13",
+  "target_date": "2026-10-14",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,17 +10,17 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-13T00:00:00+02:00",
-    "end_local": "2026-10-14T12:00:00+02:00"
+    "start_local": "2026-10-14T00:00:00+02:00",
+    "end_local": "2026-10-15T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "2026_14_A4_100-in-the-sky-org-a74b480d8a48-2026-10-13",
-      "type": "opposition",
-      "title_es": "Oposición",
-      "title_translation_status": "deterministic",
-      "summary_es": "El asteroide 4 Vesta hace su aproximación más cercana a la Tierra",
-      "start_local": "2026-10-13T09:10:44+02:00",
+      "id": "20261014_16_100-in-the-sky-org-9d3746b86df4-2026-10-14",
+      "type": "other",
+      "title_es": "Ocultación lunar de Antares",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará por delante de Antares (Alpha Scorpii), creando una ocultación lunar visible desde Uruguay, Brasil, Georgia del Sur y las Islas Sandwich del Sur y Santa Elena",
+      "start_local": "2026-10-14T23:03:37+02:00",
       "visibility": {
         "status": "contextual",
         "label": "Acontecimiento astronómico",
@@ -28,35 +28,15 @@
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=2026_14_A4_100"
-      }
-    },
-    {
-      "id": "20261013_08_100-in-the-sky-org-783cc0e8a354-2026-10-13",
-      "type": "other",
-      "title_es": "Perihelio",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna pasa por su punto más cercano al Sol, una ocurrencia mensual en la época de la luna nueva",
-      "start_local": "2026-10-13T18:59:06+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Luna no observable: altitud 17.6°, Sol a 9.1°.",
-        "altitude_deg": 17.6,
-        "azimuth_deg": 217.1,
-        "sun_altitude_deg": 9.1
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261013_08_100"
+        "url": "https://in-the-sky.org/news.php?id=20261014_16_100"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 5.190476190476191,
-    "visibility": 41860.0,
+    "cloud_cover": 65.57142857142857,
+    "visibility": 43700.0,
     "precipitation_probability": 0,
-    "temperature": 20.4
+    "temperature": 21.4
   },
   "sources": [
     {
