@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-13',
+    title: 'RadarIA diario — 2026-10-13',
+    summary: '4 piezas sobre defensas anti-destilación de Anthropic, subagentes jerárquicos para MLE, evaluaciones de agentes en series temporales y ciencia agente; OpenAI y Google DeepMind revisados sin novedad estricta.',
+    url: 'informes/2026-10-13.html'
+  },
+  {
     date: '2026-10-12',
     title: 'RadarIA diario — 2026-10-12',
     summary: '5 piezas sobre operaciones false-front con IA, tarjeta de seguridad GPT-6, Gemini 3.8 Flash para agentes, compromiso científico de Anthropic y ProgramGym; pocas novedades estrictas desde ayer, ventana ampliada a 7 días.',

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-10-13</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body{margin:0;background:#eef3f8;color:#172033;font-family:Arial,Helvetica,sans-serif}.wrap{max-width:920px;margin:0 auto;padding:28px 16px}.hero{background:linear-gradient(135deg,#14213d,#2f5d8c);color:white;border-radius:22px;padding:28px;box-shadow:0 14px 34px rgba(20,33,61,.18)}.hero h1{margin:0 0 8px;font-size:32px}.meta{opacity:.92}.card{background:#fff;border:1px solid #dce5ef;border-radius:18px;margin:18px 0;padding:22px;box-shadow:0 8px 24px rgba(23,32,51,.07)}.badge{display:inline-block;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;background:#eaf1ff;color:#254a85;margin-bottom:10px}.badge.paper{background:#e9f7ef;color:#17643a}.badge.informe{background:#fff2df;color:#805116}.badge.producto{background:#f0e9ff;color:#55328f}.muted{color:#5f6f86}.card h2{margin:4px 0 8px;font-size:22px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.box{background:#f7faff;border-radius:14px;padding:14px}.sources{font-size:14px;background:#fbfcff}.sources li{margin:7px 0}.footer{color:#5f6f86;text-align:center;margin:24px 0 8px}@media(max-width:720px){.grid{grid-template-columns:1fr}.hero h1{font-size:26px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>RadarIA diario — 2026-10-13</h1>
+      <p class="meta"><strong>Rango investigado:</strong> desde el último informe publicado, 2026-10-12, hasta 2026-10-13 08:00 CEST. Como hubo pocas novedades estrictas en las fuentes principales, se amplió la mirada editorial hasta 7 días para contexto y señales, indicándolo en cada caso.</p>
+      <p class="meta"><strong>Metodología:</strong> revisión de fuentes primarias y páginas oficiales de OpenAI, Google DeepMind, Anthropic, Hugging Face Papers y arXiv; se priorizan anuncios leídos en origen, papers originales y ausencia de duplicados.</p>
+    </section>
+
+    <article class="card">
+      <span class="badge informe">Informe / Seguridad</span>
+      <h2>Anthropic refuerza defensas contra ataques de destilación</h2>
+      <p class="muted">Fuente: Anthropic · Fecha: 12 de octubre de 2026</p>
+      <p><strong>Por qué importa:</strong> Anthropic afirma que sus nuevas defensas han reducido entre 10 y 100 veces, aproximadamente un 90–99%, la extracción de tokens de razonamiento de Claude por parte de destiladores, una señal importante para la protección de capacidades frontera.[1]</p>
+      <p><strong>Resumen:</strong> la compañía describe ataques industriales para copiar capacidades de modelos frontera mediante cuentas fraudulentas, proxies y extracción del razonamiento interno; sus contramedidas combinan “preserved thinking”, control de acceso al razonamiento, clasificadores de dos etapas, límites más estrictos y bloqueo/cobro de solicitudes de extracción con una tasa de falsos positivos inferior al 0,1%.[1]</p>
+      <p><strong>Impacto práctico:</strong> para desarrolladores, esto anticipa integraciones API más rígidas cuando se use razonamiento protegido; para el sector, marca una tendencia clara: la seguridad de modelos ya no es solo jailbreaks, sino defensa económica y operacional contra copia de capacidades. Vamos, el gato y el ratón, pero con factura de cloud.</p>
+      <p><a href="https://www.anthropic.com/research/distillation-defenses">Leer fuente original</a></p>
+    </article>
+
+    <article class="card">
+      <span class="badge paper">Paper / Agentes</span>
+      <h2>Matryoshka Agent: subagentes jerárquicos para ingeniería ML de largo horizonte</h2>
+      <p class="muted">Fuente: arXiv / Hugging Face Papers · arXiv: 27 de julio de 2026; revisado como señal en la ventana ampliada</p>
+      <p><strong>Por qué importa:</strong> el paper propone separar un orquestador estratégico de subagentes ejecutores para tareas largas de machine learning engineering, reduciendo la presión de contexto y permitiendo exploración iterativa más controlada.[4][5]</p>
+      <p><strong>Resumen:</strong> el enfoque descompone la resolución en una jerarquía: el orquestador mantiene estados compactos y decide la estrategia, mientras los subagentes prueban soluciones concretas mediante herramientas; los autores reportan que Qwen3-4B-Instruct alcanza rendimiento de orquestador comparable a o4-mini y que Qwen3-30B-Coder mejora hasta un 36,7% relativo en sus pruebas.[5]</p>
+      <p><strong>Impacto práctico:</strong> es relevante para automatizar pipelines de experimentación, depuración y optimización donde un agente monolítico se ahoga en contexto; también sugiere una arquitectura útil para AIDA y flujos locales: cerebro que coordina, manos pequeñas que ejecutan.</p>
+      <p><a href="https://arxiv.org/abs/2607.25090">Leer paper</a></p>
+    </article>
+
+    <article class="card">
+      <span class="badge paper">Benchmark / Herramienta</span>
+      <h2>AgentFuel: evaluaciones personalizadas para agentes de análisis de series temporales</h2>
+      <p class="muted">Fuente: arXiv / Hugging Face Papers · arXiv: 12 de marzo de 2026; revisado como señal en la ventana ampliada</p>
+      <p><strong>Por qué importa:</strong> los autores evalúan seis agentes de análisis de datos, abiertos y propietarios, y encuentran fallos en consultas con estado e incidentes específicos sobre series temporales.[6]</p>
+      <p><strong>Resumen:</strong> AgentFuel permite a expertos de dominio generar evaluaciones funcionales end-to-end más expresivas para agentes conversacionales de datos, cubriendo datasets personalizados y tipos de consulta que los benchmarks genéricos no capturan.[6]</p>
+      <p><strong>Impacto práctico:</strong> buena señal para empresas con observabilidad, IoT, ciberseguridad o analítica de producto: antes de vender “habla con tus datos”, conviene probar si el agente entiende eventos, ventanas temporales y contexto acumulado. Spoiler: muchas veces no.</p>
+      <p><a href="https://arxiv.org/abs/2603.12483">Leer paper</a></p>
+    </article>
+
+    <article class="card">
+      <span class="badge paper">Paper / Ciencia agente</span>
+      <h2>De AI for Science a Agentic Science: mapa de la investigación autónoma</h2>
+      <p class="muted">Fuente: arXiv / Hugging Face Papers · arXiv: 18 de agosto de 2025; recuperado como contexto relevante en la ventana ampliada</p>
+      <p><strong>Por qué importa:</strong> el survey define la “ciencia agente” como una etapa en la que sistemas de IA pasan de asistir tareas parciales a formular hipótesis, diseñar experimentos, ejecutarlos, analizarlos y refinar resultados.[7][8]</p>
+      <p><strong>Resumen:</strong> organiza el campo por capacidades, procesos y dominios —vida, química, materiales y física—, y propone un marco para estudiar sistemas científicos autónomos con distintos niveles de agencia.[8]</p>
+      <p><strong>Impacto práctico:</strong> sirve como brújula para separar demos vistosas de plataformas realmente útiles de descubrimiento científico: no basta con generar ideas, hay que cerrar el ciclo experimental con evaluación y trazabilidad.</p>
+      <p><a href="https://arxiv.org/abs/2508.14111">Leer paper</a></p>
+    </article>
+
+    <section class="card">
+      <h2>Lo que vigilar</h2>
+      <div class="grid">
+        <div class="box"><strong>Defensa anti-destilación:</strong> más proveedores podrían empezar a cobrar o limitar solicitudes bloqueadas si detectan extracción de razonamiento.</div>
+        <div class="box"><strong>Arquitecturas jerárquicas:</strong> los agentes largos tienden a dividirse entre planificación compacta y ejecución delegada, no a crecer como monstruos de contexto infinito.</div>
+        <div class="box"><strong>Benchmarks de dominio:</strong> las evaluaciones genéricas se quedan cortas; veremos más suites hechas a medida para datos, seguridad, ciencia y operaciones.</div>
+        <div class="box"><strong>Ciencia autónoma:</strong> el foco se mueve de “IA que ayuda” a sistemas que formulan, prueban y corrigen hipótesis con supervisión humana.</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>OpenAI no mostraba publicaciones nuevas posteriores al último RadarIA dentro de la ventana estricta; su página seguía destacando piezas del 8 y 7 de octubre ya cubiertas previamente.[2]</p>
+      <p>Google DeepMind tampoco mostraba novedades estrictas desde el último informe; seguía destacando Gemini 4 Argon, EmbeddingGemma 2 y otras entradas de septiembre/octubre ya vigiladas en informes anteriores.[3]</p>
+    </section>
+
+    <section class="card sources">
+      <h2>Fuentes</h2>
+      <ol>
+        <li id="s1"><a href="https://www.anthropic.com/research/distillation-defenses">Anthropic — Strengthening our defenses against distillation attacks</a></li>
+        <li id="s2"><a href="https://openai.com/news/?topics=announcements">OpenAI News</a></li>
+        <li id="s3"><a href="https://deepmind.google/blog">Google DeepMind News</a></li>
+        <li id="s4"><a href="https://huggingface.co/papers?q=Sub-agents">Hugging Face Papers — Sub-agents</a></li>
+        <li id="s5"><a href="https://arxiv.org/abs/2607.25090">arXiv — Matryoshka Agent</a></li>
+        <li id="s6"><a href="https://arxiv.org/abs/2603.12483">arXiv — AgentFuel</a></li>
+        <li id="s7"><a href="https://huggingface.co/papers?q=scientific+agency">Hugging Face Papers — scientific agency</a></li>
+        <li id="s8"><a href="https://arxiv.org/abs/2508.14111">arXiv — From AI for Science to Agentic Science</a></li>
+      </ol>
+    </section>
+
+    <p class="footer">RadarIA preparado por AIDA. Pocas balas nuevas hoy, pero las que hay vienen con punta técnica.</p>
+  </main>
+</body>
+</html>
