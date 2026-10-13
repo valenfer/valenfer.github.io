@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Colección de recreaciones interactivas creadas con Anatomy.">
+  <title>Recreaciones interactivas · Anatomy</title>
+  <style>
+    :root{color-scheme:dark;--bg:#09111f;--panel:#111d31;--panel2:#172943;--ink:#edf5ff;--muted:#9db0c8;--line:#2c4567;--cyan:#69ddff;--amber:#ffc16b;--shadow:0 22px 60px #0008}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% -10%,#29466d 0,#09111f 55%);color:var(--ink);font:16px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+    main{max-width:1120px;margin:auto;padding:32px 20px 56px}.hero{padding:42px 0 30px;max-width:790px}.eyebrow{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-size:clamp(38px,7vw,76px);line-height:.98;letter-spacing:-.045em;margin:12px 0 20px}.hero p{color:var(--muted);font-size:clamp(17px,2.4vw,21px);max-width:690px;margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.card{display:flex;flex-direction:column;min-height:360px;background:linear-gradient(145deg,#172b48,#0e1a2c);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}.card:hover{transform:translateY(-5px);border-color:var(--cyan);box-shadow:0 28px 70px #000a}.visual{height:190px;display:grid;place-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#112741,#0b1628)}.visual:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#69ddff12,#fff0 45%,#ffc16b12);pointer-events:none}.visual svg{width:82%;height:82%;position:relative;z-index:1}.drone .visual{background:radial-gradient(circle at 50% 45%,#26496c,#0b1628 70%)}.engine .visual{background:radial-gradient(circle at 50% 50%,#4b3150,#0b1628 72%)}.content{padding:22px 24px 24px;display:flex;flex:1;flex-direction:column}.index{color:var(--amber);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.content h2{font-size:25px;line-height:1.1;margin:8px 0 10px}.content p{color:var(--muted);margin:0 0 22px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-top:auto;padding:10px 17px;border-radius:12px;background:var(--cyan);color:#071421;font-weight:800;text-decoration:none;transition:filter .2s ease,transform .2s ease}.button:hover{filter:brightness(1.1);transform:translateX(3px)}.button:focus-visible{outline:3px solid #fff;outline-offset:3px}.footer{border-top:1px solid #ffffff18;color:var(--muted);margin-top:42px;padding-top:18px;font-size:14px}.footer a{color:var(--cyan)}@media(max-width:700px){main{padding:18px 15px 40px}.hero{padding:32px 0 24px}.grid{grid-template-columns:1fr;gap:16px}.card{min-height:0}.visual{height:165px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div class="eyebrow">Anatomy · Recreaciones interactivas</div>
+      <h1>Entender cómo funcionan las cosas.</h1>
+      <p>Una pequeña colección de modelos visuales para explorar mecanismos, fuerzas y ciclos sin abrir una caja de tornillos. De momento.</p>
+    </header>
+    <section class="grid" aria-label="Recreaciones disponibles">
+      <article class="card drone">
+        <div class="visual" aria-hidden="true">
+          <svg viewBox="0 0 420 180">
+            <g fill="none" stroke="#69ddff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M118 72 210 40l92 32-92 36z" fill="#183e5d"/><path d="m145 88 65 28 65-28" stroke="#8be9ff"/>
+              <path d="m150 82-74-38M270 82l74-38M150 94l-74 38M270 94l74 38"/><circle cx="68" cy="40" r="25"/><circle cx="352" cy="40" r="25"/><circle cx="68" cy="140" r="25"/><circle cx="352" cy="140" r="25"/>
+              <path d="M45 40h46M329 40h46M45 140h46M329 140h46" stroke="#ffc16b" opacity=".8"/>
+            </g><circle cx="210" cy="82" r="8" fill="#ffc16b"/><path d="M210 107v45" stroke="#70e0a0" stroke-width="4" stroke-dasharray="7 7"/>
+          </svg>
+        </div>
+        <div class="content"><div class="index">Recreación 01</div><h2>Dron cuadricóptero</h2><p>Ajusta las RPM de cada motor y observa el empuje, la inclinación y el consumo eléctrico.</p><a class="button" href="dron/">Abrir recreación <span aria-hidden="true">&nbsp;→</span></a></div>
+      </article>
+      <article class="card engine">
+        <div class="visual" aria-hidden="true">
+          <svg viewBox="0 0 420 180">
+            <path d="M127 20h166l17 25v105H110V45z" fill="#3d526e" stroke="#b7c8df" stroke-width="4"/><rect x="153" y="39" width="114" height="91" rx="8" fill="#16243a" stroke="#7590b2" stroke-width="4"/><path d="M210 18v35M196 18h28" stroke="#ffc16b" stroke-width="7"/><rect x="159" y="74" width="102" height="30" rx="6" fill="#6d809b" stroke="#d9e6f7" stroke-width="3"/><path d="M210 104v28M210 132l-35 23M210 132l35 23" stroke="#e2ecfa" stroke-width="7"/><circle cx="210" cy="156" r="22" fill="#283d5b" stroke="#ffc16b" stroke-width="5"/><path d="M210 156v-17" stroke="#ffc16b" stroke-width="6"/><path d="M92 63h50M278 63h50" stroke="#69ddff" stroke-width="7" stroke-dasharray="10 8"/>
+          </svg>
+        </div>
+        <div class="content"><div class="index">Recreación 02</div><h2>Motor de cuatro tiempos</h2><p>Mueve el pistón y recorre las cuatro fases que convierten la combustión en movimiento.</p><a class="button" href="motor-cuatro-tiempos/">Abrir recreación <span aria-hidden="true">&nbsp;→</span></a></div>
+      </article>
+    </section>
+    <footer class="footer">Modelos educativos creados con <a href="https://valenfer.github.io/" rel="noopener">Anatomy</a>. La colección irá creciendo.</footer>
+  </main>
+</body>
+</html>
