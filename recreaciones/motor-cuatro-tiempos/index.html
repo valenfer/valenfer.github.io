@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anatomía de un motor de cuatro tiempos</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2d;--panel2:#18233b;--ink:#e8eefc;--muted:#91a0bd;--line:#334568;--cyan:#63d8ff;--amber:#ffba68;--red:#ff6f61;--green:#70e0a0;--violet:#b79cff;--shadow:0 18px 50px #0006}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#20345c 0,#0b1020 48%);color:var(--ink);font:15px/1.45 Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}main{max-width:1240px;margin:auto;padding:28px 18px 44px}.eyebrow{color:var(--cyan);text-transform:uppercase;letter-spacing:.16em;font-weight:800;font-size:11px}h1{font-size:clamp(28px,5vw,56px);line-height:1.02;margin:8px 0 12px;max-width:850px}h2{font-size:18px;margin:0 0 12px}p{margin:0;color:var(--muted)}.intro{display:flex;justify-content:space-between;gap:28px;align-items:end;margin-bottom:22px}.intro p{max-width:620px}.badge{border:1px solid #3b527f;border-radius:999px;padding:8px 13px;color:#bfd1f4;white-space:nowrap}.layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.8fr);gap:18px}.card{background:linear-gradient(145deg,#141e34,#0f1729);border:1px solid #2b3b61;border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.figure-card{padding:14px}.figure-head,.readout-head{display:flex;justify-content:space-between;align-items:center;padding:4px 5px 12px}.figure-head span{color:var(--muted);font-size:12px}.phase-pill{padding:6px 10px;border-radius:99px;background:#253555;color:#d9e6ff;font-weight:800;font-size:12px}.engine-wrap{position:relative;background:linear-gradient(180deg,#0c1426,#101d35);border:1px solid #263b62;border-radius:16px;overflow:hidden}.engine-wrap:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,#fff0 0 45%,#ffffff08 46% 47%,#fff0 48%);pointer-events:none}.engine{display:block;width:100%;height:auto;min-height:420px}.part{stroke:#8ea4c9;stroke-width:2}.metal{fill:#556783}.darkmetal{fill:#293850}.steel{fill:#8da0bc}.copper{fill:#a76c4c}.rubber{fill:#1b253a}.glass{fill:#3b7390aa;stroke:#7ce4ff}.accent{fill:var(--amber);stroke:#ffe0a5}.piston{fill:#d6e0ef;stroke:#f7fbff;stroke-width:3}.gas{fill:#63d8ff;opacity:.26}.hot{fill:#ff6f61;opacity:.85}.spark{stroke:#ffe6a2;stroke-width:4;stroke-linecap:round}.valve{fill:#94a8c5;stroke:#d5e1f5;stroke-width:2}.valve.open{fill:var(--green)}.flow{stroke:var(--cyan);stroke-width:4;stroke-linecap:round;stroke-dasharray:9 10;animation:dash 1s linear infinite}@keyframes dash{to{stroke-dashoffset:-38}}.flow.exhaust{stroke:var(--red)}.hidden{display:none}.svg-label{fill:#c8d7f2;font-size:13px;font-weight:700;letter-spacing:.03em}.svg-small{fill:#7f91b0;font-size:11px}.control-card{padding:18px}.control-block{padding:14px 0;border-bottom:1px solid #273754}.control-block:last-child{border:0}.label-row{display:flex;justify-content:space-between;gap:12px;margin-bottom:7px}.label-row b{font-variant-numeric:tabular-nums;color:#fff}input[type=range]{width:100%;accent-color:var(--cyan);height:28px}.buttons{display:flex;gap:8px;flex-wrap:wrap}.buttons button,.phase-btn{min-height:44px;border:1px solid #3b527d;background:#1b2944;color:#e8eefc;border-radius:10px;padding:9px 13px;font:inherit;font-weight:750;cursor:pointer}.buttons button:hover,.phase-btn:hover,.phase-btn.active{background:#29446f;border-color:var(--cyan)}button:focus-visible,input:focus-visible{outline:3px solid #fff;outline-offset:2px}.phase-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.phase-btn{font-size:13px;text-align:left}.phase-btn[data-phase=admission]{border-left:4px solid var(--cyan)}.phase-btn[data-phase=compresion]{border-left:4px solid var(--violet)}.phase-btn[data-phase=explosion]{border-left:4px solid var(--red)}.phase-btn[data-phase=escape]{border-left:4px solid var(--green)}.meters{display:grid;grid-template-columns:1fr 1fr;gap:10px}.meter{background:#0b1323;border:1px solid #2b3d60;border-radius:13px;padding:12px}.meter-name{color:var(--muted);font-size:12px}.meter-value{font-size:24px;font-weight:850;margin-top:3px;font-variant-numeric:tabular-nums}.meter-bar{height:6px;border-radius:10px;background:#263652;margin-top:8px;overflow:hidden}.meter-bar i{display:block;height:100%;width:0;background:var(--cyan);border-radius:inherit;transition:width .18s,background .18s}.explain{margin-top:18px;background:#17253e;border:1px solid #2c4771;border-radius:14px;padding:14px}.explain strong{display:block;color:#fff;margin-bottom:4px}.note{font-size:12px;color:#8596b5;margin-top:13px}.legend{display:flex;gap:14px;flex-wrap:wrap;color:#aebed9;font-size:12px;margin-top:12px}.dot{width:9px;height:9px;display:inline-block;border-radius:50%;margin-right:5px}.key{margin-top:14px;color:#7183a2;font-size:12px}.footer{margin-top:18px;color:#6d7e9d;font-size:12px;text-align:center}@media(max-width:850px){.intro{display:block}.badge{display:inline-block;margin-top:14px}.layout{grid-template-columns:1fr}.engine{min-height:0}.control-card{padding:15px}}@media(max-width:480px){main{padding:20px 11px 34px}.card{border-radius:16px}.figure-card{padding:9px}.meters{grid-template-columns:1fr 1fr}.meter-value{font-size:20px}.phase-grid{grid-template-columns:1fr 1fr}.svg-label{font-size:10px}.svg-small{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.flow{animation:none}.meter-bar i{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <header class="intro"><div><div class="eyebrow">Anatomy · Mecánica visible</div><h1>Motor de cuatro tiempos</h1><p>Mueve el pistón, cambia las RPM y observa cómo el cigüeñal convierte cuatro carreras en un ciclo completo de combustión.</p></div><div class="badge">Lecturas educativas aproximadas</div></header>
+  <section class="layout">
+    <article class="card figure-card" aria-label="Figura interactiva del motor">
+      <div class="figure-head"><span>Fig. 01 · Corte lateral del cilindro</span><span class="phase-pill" id="phasePill">Admisión</span></div>
+      <div class="engine-wrap">
+        <svg class="engine" viewBox="0 0 760 520" role="img" aria-labelledby="engineTitle engineDesc">
+          <title id="engineTitle">Corte animado de un motor de cuatro tiempos</title><desc id="engineDesc">Un pistón se mueve dentro de un cilindro y acciona una biela y un cigüeñal.</desc>
+          <defs><linearGradient id="cyl" x1="0" x2="1"><stop stop-color="#263954"/><stop offset=".5" stop-color="#657995"/><stop offset="1" stop-color="#263954"/></linearGradient><radialGradient id="chamber"><stop stop-color="#344f70"/><stop offset="1" stop-color="#111c31"/></radialGradient></defs>
+          <rect x="0" y="0" width="760" height="520" fill="#0e182b"/>
+          <path d="M70 448h620l-25 33H95z" fill="#111a2b" stroke="#3a4d6d" stroke-width="3"/><path d="M95 481h570" stroke="#6d80a3" stroke-width="3"/>
+          <rect x="168" y="55" width="310" height="390" rx="25" fill="url(#cyl)" stroke="#9caeca" stroke-width="4"/><rect x="207" y="88" width="232" height="310" rx="12" fill="#101b2e" stroke="#233c5d" stroke-width="5"/>
+          <path d="M157 58h331l20 31H137z" fill="#7185a4" stroke="#c0cee4" stroke-width="3"/><path d="M185 88h278v45H185z" fill="url(#chamber)" stroke="#6680a6" stroke-width="3"/>
+          <g id="intakeValve"><path d="M250 72v73" stroke="#9db2d1" stroke-width="8"/><ellipse class="valve" cx="250" cy="148" rx="31" ry="8"/></g><g id="exhaustValve"><path d="M398 72v73" stroke="#9db2d1" stroke-width="8"/><ellipse class="valve" cx="398" cy="148" rx="31" ry="8"/></g>
+          <path d="M321 65v66" stroke="#dc8b56" stroke-width="7"/><path d="M306 64h30l-6-17h-18z" fill="#e7aa72" stroke="#ffe0a5" stroke-width="2"/>
+          <rect id="gasZone" x="216" y="151" width="214" height="48" rx="8" class="gas"/><g id="sparkGroup" class="hidden"><path class="spark" d="M320 143l-9 18 12-3-7 18 17-22-12 3z"/></g>
+          <g id="pistonGroup"><rect class="piston" x="215" y="208" width="216" height="72" rx="13"/><path d="M225 225h196M225 263h196" stroke="#8196b4" stroke-width="4"/><circle cx="323" cy="244" r="16" fill="#536984" stroke="#d8e3f4" stroke-width="3"/></g>
+          <path d="M323 280L323 356" stroke="#d1dced" stroke-width="13"/><path d="M323 356L323 384" stroke="#aebed6" stroke-width="8"/><circle id="crankPin" cx="323" cy="384" r="13" fill="#ffbf70" stroke="#fff0c9" stroke-width="3"/>
+          <circle cx="323" cy="405" r="64" fill="#253650" stroke="#8da0bd" stroke-width="5"/><circle cx="323" cy="405" r="13" fill="#d0dced" stroke="#fff" stroke-width="3"/><path id="crankArm" d="M323 405L323 384" stroke="#ffbf70" stroke-width="10" stroke-linecap="round"/>
+          <path id="intakeFlow" class="flow hidden" d="M96 125h105"/><path id="exhaustFlow" class="flow exhaust hidden" d="M440 125h120"/>
+          <path d="M70 125h67l15-18h35v36h-35l-15-18H70z" fill="#29415e" stroke="#7e9abb" stroke-width="3"/><path d="M478 107h35l15 18h67" fill="none" stroke="#7e9abb" stroke-width="20"/><path d="M478 125h40" stroke="#ff7d68" stroke-width="5" opacity=".7"/>
+          <text class="svg-label" x="78" y="92">ADMISIÓN</text><text class="svg-label" x="524" y="92">ESCAPE</text><text class="svg-label" x="513" y="310">Biela</text><path d="M500 300h-80" stroke="#8ba1c4"/><text class="svg-label" x="43" y="410">Cigüeñal</text><path d="M120 400h175" stroke="#8ba1c4"/><text class="svg-small" x="202" y="185">cámara de combustión</text><text class="svg-small" x="245" y="330">pistón</text>
+          <g fill="#dbe6f7"><circle cx="160" cy="75" r="4"/><circle cx="472" cy="75" r="4"/><circle cx="145" cy="432" r="4"/><circle cx="500" cy="432" r="4"/></g>
+        </svg>
+      </div>
+      <div class="legend"><span><i class="dot" style="background:var(--cyan)"></i>Mezcla fresca</span><span><i class="dot" style="background:var(--red)"></i>Gases calientes</span><span><i class="dot" style="background:var(--green)"></i>Válvula abierta</span></div>
+    </article>
+    <aside class="card control-card" aria-label="Controles y lecturas">
+      <h2>Controles</h2>
+      <div class="control-block"><div class="label-row"><span>Posición del pistón</span><b id="angleValue">0°</b></div><input id="pistonRange" type="range" min="0" max="719" value="0" aria-label="Posición del pistón en grados"/><div class="key">Un ciclo completo del motor ocupa 720° del cigüeñal.</div></div>
+      <div class="control-block"><div class="label-row"><span>Velocidad</span><b><span id="rpmValue">900</span> RPM</b></div><input id="rpmRange" type="range" min="400" max="6000" step="100" value="900" aria-label="Revoluciones por minuto"/></div>
+      <div class="control-block buttons"><button id="playButton" type="button">Reproducir</button><button id="resetButton" type="button">Reiniciar</button></div>
+      <div class="control-block"><div class="label-row"><span>Ir a una fase</span><span class="svg-small">clic para saltar</span></div><div class="phase-grid"><button class="phase-btn active" data-phase="admission" type="button">01 · Admisión</button><button class="phase-btn" data-phase="compresion" type="button">02 · Compresión</button><button class="phase-btn" data-phase="explosion" type="button">03 · Explosión</button><button class="phase-btn" data-phase="escape" type="button">04 · Escape</button></div></div>
+      <div class="control-block"><h2>Lecturas en vivo</h2><div class="meters"><div class="meter"><div class="meter-name">Presión</div><div class="meter-value"><span id="pressureValue">1.0</span> bar</div><div class="meter-bar"><i id="pressureBar"></i></div></div><div class="meter"><div class="meter-name">Temperatura</div><div class="meter-value"><span id="tempValue">120</span> °C</div><div class="meter-bar"><i id="tempBar"></i></div></div></div></div>
+      <div class="explain"><strong id="explainTitle">Admisión · entra la mezcla</strong><span id="explainText">La válvula de admisión se abre y el pistón desciende, aspirando aire y combustible hacia la cámara.</span></div>
+      <p class="note">Las presiones y temperaturas representan una aproximación visual para entender la relación entre movimiento, fase y energía. No son valores de calibración de un motor real.</p>
+    </aside>
+  </section>
+  <div class="footer">Arrastra el deslizador o usa las flechas del teclado. La mecánica también tiene sus coreografías.</div>
+</main>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const phases = {admission:{label:'Admisión',start:0,title:'Admisión · entra la mezcla',text:'La válvula de admisión se abre y el pistón desciende, aspirando aire y combustible hacia la cámara.',pressure:1.0,temp:120},compresion:{label:'Compresión',start:180,title:'Compresión · se prepara la carga',text:'Las dos válvulas permanecen cerradas. El pistón sube y comprime la mezcla para concentrar su energía.',pressure:10.5,temp:240},explosion:{label:'Explosión',start:360,title:'Explosión · expansión útil',text:'La bujía enciende la mezcla. La expansión de los gases empuja el pistón hacia abajo y produce trabajo.',pressure:34,temp:1850},escape:{label:'Escape',start:540,title:'Escape · fuera los gases',text:'La válvula de escape se abre y el pistón asciende expulsando los gases quemados.',pressure:1.3,temp:620}};
+  let state={angle:0,rpm:900,running:false,last:performance.now()};
+  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+  const norm=n=>((n%720)+720)%720;
+  function phaseKey(a){return a<180?'admission':a<360?'compresion':a<540?'explosion':'escape'}
+  function engineStateFromAngle(angle,rpm){
+    const a=norm(angle), key=phaseKey(a), p=phases[key], local=(a-p.start)/180;
+    const piston=(1-Math.cos(local*Math.PI))/2;
+    let pressure=p.pressure,temp=p.temp;
+    if(key==='admission'){pressure=1-0.18*Math.sin(local*Math.PI);temp=105+35*piston}
+    if(key==='compresion'){pressure=1+10.5*Math.pow(piston,1.8);temp=150+180*piston}
+    if(key==='explosion'){pressure=34*Math.exp(-4.3*local)+7;temp=1850*Math.exp(-2.7*local)+480}
+    if(key==='escape'){pressure=1.3+1.8*(1-piston);temp=620-300*piston}
+    return {angle:a,cycleAngle:a,phase:key,phaseLabel:p.label,piston,pressure,temperature:temp,intakeOpen:key==='admission',exhaustOpen:key==='escape',ignition:key==='explosion'&&local<.18}
+  }
+  function render(s){
+    const model=engineStateFromAngle(s.angle,s.rpm), y=208+model.piston*175, crank=384+model.piston*21;
+    $('pistonGroup').setAttribute('transform',`translate(0 ${model.piston*120})`); $('crankPin').setAttribute('cy',crank); $('crankArm').setAttribute('d',`M323 405L323 ${crank}`);
+    $('intakeValve').querySelector('.valve').classList.toggle('open',model.intakeOpen); $('exhaustValve').querySelector('.valve').classList.toggle('open',model.exhaustOpen);
+    $('intakeFlow').classList.toggle('hidden',!model.intakeOpen); $('exhaustFlow').classList.toggle('hidden',!model.exhaustOpen); $('sparkGroup').classList.toggle('hidden',!model.ignition); $('gasZone').classList.toggle('hot',model.phase==='explosion');
+    $('phasePill').textContent=model.phaseLabel; $('angleValue').textContent=`${Math.round(model.angle)}°`; $('rpmValue').textContent=Math.round(s.rpm); $('pressureValue').textContent=model.pressure.toFixed(1); $('tempValue').textContent=Math.round(model.temperature); $('pressureBar').style.width=`${clamp(model.pressure/35*100,2,100)}%`; $('tempBar').style.width=`${clamp(model.temperature/1900*100,3,100)}%`; $('tempBar').style.background=model.phase==='explosion'?'var(--red)':'var(--amber)'; $('explainTitle').textContent=phases[model.phase].title; $('explainText').textContent=phases[model.phase].text;
+    document.querySelectorAll('.phase-btn').forEach(b=>b.classList.toggle('active',b.dataset.phase===model.phase)); $('pistonRange').value=Math.round(model.angle);
+  }
+  function tick(now){const dt=Math.min(80,now-state.last);state.last=now;if(state.running){state.angle+=state.rpm/60*6*dt/1000;render(state);requestAnimationFrame(tick)} }
+  $('pistonRange').addEventListener('input',e=>{state.angle=Number(e.target.value);render(state)}); $('rpmRange').addEventListener('input',e=>{state.rpm=Number(e.target.value);render(state)});
+  $('playButton').addEventListener('click',()=>{state.running=!state.running;$('playButton').textContent=state.running?'Pausar':'Reproducir';state.last=performance.now();if(state.running)requestAnimationFrame(tick)});
+  $('resetButton').addEventListener('click',()=>{state.running=false;state.angle=0;state.rpm=900;$('playButton').textContent='Reproducir';$('rpmRange').value=900;render(state)});
+  document.querySelectorAll('.phase-btn').forEach(b=>b.addEventListener('click',()=>{state.running=false;$('playButton').textContent='Reproducir';state.angle=phases[b.dataset.phase].start;render(state)}));
+  document.addEventListener('keydown',e=>{if(e.target.matches('input'))return;if(e.key==='ArrowRight'){state.angle=norm(state.angle+5);render(state)}if(e.key==='ArrowLeft'){state.angle=norm(state.angle-5);render(state)}if(e.code==='Space'){e.preventDefault();$('playButton').click()}});
+  render(state);
+})();
+</script>
+</body>
+</html>
