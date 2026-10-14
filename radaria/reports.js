@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-14',
+    title: 'RadarIA diario — 2026-10-14',
+    summary: '4 piezas sobre Gemini 4 Argon, su informe de seguridad, robótica con Argon y AgenticBBO-Bench; OpenAI y Anthropic revisados sin novedad estricta nueva desde el informe anterior.',
+    url: 'informes/2026-10-14.html'
+  },
+  {
     date: '2026-10-13',
     title: 'RadarIA diario — 2026-10-13',
     summary: '4 piezas sobre defensas anti-destilación de Anthropic, subagentes jerárquicos para MLE, evaluaciones de agentes en series temporales y ciencia agente; OpenAI y Google DeepMind revisados sin novedad estricta.',
