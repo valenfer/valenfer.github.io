@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-15',
+    title: 'RadarIA diario — 2026-10-15',
+    summary: '4 piezas sobre adopción agéntica en Europa, salvaguardas para los comicios de EE. UU., defensas contra destilación y Agent-Reflex para recuperación ante fallos; OpenAI y Google/DeepMind revisados.',
+    url: 'informes/2026-10-15.html'
+  },
+  {
     date: '2026-10-14',
     title: 'RadarIA diario — 2026-10-14',
     summary: '4 piezas sobre Gemini 4 Argon, su informe de seguridad, robótica con Argon y AgenticBBO-Bench; OpenAI y Anthropic revisados sin novedad estricta nueva desde el informe anterior.',
