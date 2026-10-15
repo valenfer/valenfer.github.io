@@ -1,6 +1,6 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-15T00:19:06.209645+00:00",
+  "fetched_at": "2026-10-15T08:44:05.671427+00:00",
   "status": "live",
   "target_date": "2026-10-16",
   "timezone": "Europe/Madrid",
@@ -53,10 +53,10 @@
     }
   ],
   "weather": {
-    "cloud_cover": 49.523809523809526,
-    "visibility": 41600.0,
+    "cloud_cover": 50.285714285714285,
+    "visibility": 42080.0,
     "precipitation_probability": 3,
-    "temperature": 21.9
+    "temperature": 22.0
   },
   "sources": [
     {
