@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-15T08:44:05.671427+00:00",
+  "fetched_at": "2026-10-16T00:06:41.113217+00:00",
   "status": "live",
-  "target_date": "2026-10-16",
+  "target_date": "2026-10-17",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,29 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-16T00:00:00+02:00",
-    "end_local": "2026-10-17T12:00:00+02:00"
+    "start_local": "2026-10-17T00:00:00+02:00",
+    "end_local": "2026-10-18T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20261015_17_100-in-the-sky-org-84610dc5ac18-2026-10-16",
-      "type": "other",
-      "title_es": "La Galaxia del Triángulo está bien situada",
-      "title_translation_status": "translated",
-      "summary_es": "La Galaxia del Triángulo M33 (mag 5.8) culmina alrededor de la medianoche hora local",
-      "start_local": "2026-10-16T01:57:00+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261015_17_100"
-      }
-    },
-    {
-      "id": "20261016_08_100-in-the-sky-org-38f4983981ff-2026-10-16",
+      "id": "20261016_08_100-in-the-sky-org-38f4983981ff-2026-10-17",
       "type": "other",
       "title_es": "La Luna en el apogeo",
       "title_translation_status": "translated",
@@ -50,13 +33,50 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261016_08_100"
       }
+    },
+    {
+      "id": "20261017_16_100-in-the-sky-org-6a62431d7c7e-2026-10-17",
+      "type": "other",
+      "title_es": "Ocultación lunar de Sigma Sagittarii",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará frente a Sigma Sagittarii (Nunki), creando una ocultación lunar visible desde países y territorios como Madagascar, Sri Lanka, Mauricio y Reunión, entre otros",
+      "start_local": "2026-10-17T16:51:05+02:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261017_16_100"
+      }
+    },
+    {
+      "id": "20261017_11_100-in-the-sky-org-a846c297fd0d-2026-10-17",
+      "type": "other",
+      "title_es": "Mercurio en la dicotomía",
+      "title_translation_status": "translated",
+      "summary_es": "Mercurio alcanza la mitad de la fase en el cielo nocturno",
+      "start_local": "2026-10-17T18:55:56+02:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Mercurio no observable: altitud 16.1°, Sol a 8.5°.",
+        "altitude_deg": 16.1,
+        "azimuth_deg": 227.5,
+        "sun_altitude_deg": 8.5
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261017_11_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 50.285714285714285,
-    "visibility": 42080.0,
-    "precipitation_probability": 3,
-    "temperature": 22.0
+    "cloud_cover": 81.57142857142857,
+    "visibility": 40080.0,
+    "precipitation_probability": 60,
+    "temperature": 20.8
   },
   "sources": [
     {
