@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-16',
+    title: 'RadarIA diario — 2026-10-16',
+    summary: '5 piezas sobre GPT‑Rosalind académico, voz integrada en ChatGPT, fuentes visuales en Google Search, revisión contractual experta y evaluadores independientes de Anthropic.',
+    url: 'informes/2026-10-16.html'
+  },
+  {
     date: '2026-10-15',
     title: 'RadarIA diario — 2026-10-15',
     summary: '4 piezas sobre adopción agéntica en Europa, salvaguardas para los comicios de EE. UU., defensas contra destilación y Agent-Reflex para recuperación ante fallos; OpenAI y Google/DeepMind revisados.',
