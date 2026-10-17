@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-16T00:06:41.113217+00:00",
+  "fetched_at": "2026-10-17T00:10:30.533774+00:00",
   "status": "live",
-  "target_date": "2026-10-17",
+  "target_date": "2026-10-18",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,37 +10,37 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-17T00:00:00+02:00",
-    "end_local": "2026-10-18T12:00:00+02:00"
+    "start_local": "2026-10-18T00:00:00+02:00",
+    "end_local": "2026-10-19T12:00:00+02:00"
   },
   "events": [
     {
-      "id": "20261016_08_100-in-the-sky-org-38f4983981ff-2026-10-17",
-      "type": "other",
-      "title_es": "La Luna en el apogeo",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna retrocede al punto más alejado de su órbita de la Tierra, lo que hace que parezca un poco más pequeña que en otros momentos del mes",
-      "start_local": "2026-10-17T00:55:48+02:00",
+      "id": "20261018_08_100-in-the-sky-org-c7095ada1e11-2026-10-18",
+      "type": "lunar_phase",
+      "title_es": "Cuarto creciente",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna alcanza la fase del primer trimestre: aparece en lo alto del cielo al atardecer y permanece visible hasta alrededor de la medianoche",
+      "start_local": "2026-10-18T18:13:18+02:00",
       "visibility": {
         "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -15.0°).",
-        "altitude_deg": -15.0,
-        "azimuth_deg": 246.5,
-        "sun_altitude_deg": -57.0
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 20.5°, Sol a 16.1°.",
+        "altitude_deg": 20.5,
+        "azimuth_deg": 147.4,
+        "sun_altitude_deg": 16.1
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261016_08_100"
+        "url": "https://in-the-sky.org/news.php?id=20261018_08_100"
       }
     },
     {
-      "id": "20261017_16_100-in-the-sky-org-6a62431d7c7e-2026-10-17",
-      "type": "other",
-      "title_es": "Ocultación lunar de Sigma Sagittarii",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna pasará frente a Sigma Sagittarii (Nunki), creando una ocultación lunar visible desde países y territorios como Madagascar, Sri Lanka, Mauricio y Reunión, entre otros",
-      "start_local": "2026-10-17T16:51:05+02:00",
+      "id": "20261018_10_100-in-the-sky-org-d80ea4a73c0b-2026-10-18",
+      "type": "meteor_shower",
+      "title_es": "Lluvia de meteoros",
+      "title_translation_status": "deterministic",
+      "summary_es": "La lluvia de meteoros ε-Geminid alcanza su punto máximo",
+      "start_local": "2026-10-18T20:00:58+02:00",
       "visibility": {
         "status": "contextual",
         "label": "Acontecimiento astronómico",
@@ -48,35 +48,32 @@
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261017_16_100"
+        "url": "https://in-the-sky.org/news.php?id=20261018_10_100"
       }
     },
     {
-      "id": "20261017_11_100-in-the-sky-org-a846c297fd0d-2026-10-17",
-      "type": "other",
-      "title_es": "Mercurio en la dicotomía",
-      "title_translation_status": "translated",
-      "summary_es": "Mercurio alcanza la mitad de la fase en el cielo nocturno",
-      "start_local": "2026-10-17T18:55:56+02:00",
+      "id": "20261018_13_100-in-the-sky-org-0b12f08eaf4d-2026-10-18",
+      "type": "opposition",
+      "title_es": "Oposición",
+      "title_translation_status": "deterministic",
+      "summary_es": "136199 Eris está en una posición óptima para observar",
+      "start_local": "2026-10-18T20:32:29+02:00",
       "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Mercurio no observable: altitud 16.1°, Sol a 8.5°.",
-        "altitude_deg": 16.1,
-        "azimuth_deg": 227.5,
-        "sun_altitude_deg": 8.5
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261017_11_100"
+        "url": "https://in-the-sky.org/news.php?id=20261018_13_100"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 81.57142857142857,
-    "visibility": 40080.0,
-    "precipitation_probability": 60,
-    "temperature": 20.8
+    "cloud_cover": 88.14285714285714,
+    "visibility": 35060.0,
+    "precipitation_probability": 43,
+    "temperature": 18.6
   },
   "sources": [
     {
