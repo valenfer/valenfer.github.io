@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-17',
+    title: 'RadarIA diario — 2026-10-17',
+    summary: '6 piezas sobre Stack Overflow en ChatGPT, adopción laboral de IA, circuitos cuánticos, procedencia criptográfica y adaptación automática de agentes.',
+    url: 'informes/2026-10-17.html'
+  },
+  {
     date: '2026-10-16',
     title: 'RadarIA diario — 2026-10-16',
     summary: '5 piezas sobre GPT‑Rosalind académico, voz integrada en ChatGPT, fuentes visuales en Google Search, revisión contractual experta y evaluadores independientes de Anthropic.',
