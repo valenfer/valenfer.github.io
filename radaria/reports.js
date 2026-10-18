@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-18',
+    title: 'RadarIA diario — 2026-10-18',
+    summary: '3 piezas sobre contexto efectivo en Codex/ChatGPT Work, GPT-Live-1.1 y cultivo de estados mágicos para computación cuántica; ventana ampliada a 7 días por escasez de novedades estrictas.',
+    url: 'informes/2026-10-18.html'
+  },
+  {
     date: '2026-10-17',
     title: 'RadarIA diario — 2026-10-17',
     summary: '6 piezas sobre Stack Overflow en ChatGPT, adopción laboral de IA, circuitos cuánticos, procedencia criptográfica y adaptación automática de agentes.',
