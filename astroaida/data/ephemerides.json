@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-17T23:45:23.801296+00:00",
+  "fetched_at": "2026-10-18T23:55:49.477205+00:00",
   "status": "live",
-  "target_date": "2026-10-18",
+  "target_date": "2026-10-19",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,70 +10,15 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-18T00:00:00+02:00",
-    "end_local": "2026-10-19T12:00:00+02:00"
+    "start_local": "2026-10-19T00:00:00+02:00",
+    "end_local": "2026-10-20T12:00:00+02:00"
   },
-  "events": [
-    {
-      "id": "20261018_08_100-in-the-sky-org-c7095ada1e11-2026-10-18",
-      "type": "lunar_phase",
-      "title_es": "Cuarto creciente",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna alcanza la fase del primer trimestre: aparece en lo alto del cielo al atardecer y permanece visible hasta alrededor de la medianoche",
-      "start_local": "2026-10-18T18:13:18+02:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Luna no observable: altitud 20.5°, Sol a 16.1°.",
-        "altitude_deg": 20.5,
-        "azimuth_deg": 147.4,
-        "sun_altitude_deg": 16.1
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261018_08_100"
-      }
-    },
-    {
-      "id": "20261018_10_100-in-the-sky-org-d80ea4a73c0b-2026-10-18",
-      "type": "meteor_shower",
-      "title_es": "Lluvia de meteoros",
-      "title_translation_status": "deterministic",
-      "summary_es": "La lluvia de meteoros ε-Geminid alcanza su punto máximo",
-      "start_local": "2026-10-18T20:00:58+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261018_10_100"
-      }
-    },
-    {
-      "id": "20261018_13_100-in-the-sky-org-0b12f08eaf4d-2026-10-18",
-      "type": "opposition",
-      "title_es": "Oposición",
-      "title_translation_status": "deterministic",
-      "summary_es": "136199 Eris está en una posición óptima para observar",
-      "start_local": "2026-10-18T20:32:29+02:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261018_13_100"
-      }
-    }
-  ],
+  "events": [],
   "weather": {
-    "cloud_cover": 96.42857142857143,
-    "visibility": 37620.0,
-    "precipitation_probability": 45,
-    "temperature": 18.8
+    "cloud_cover": 76.95238095238095,
+    "visibility": 31580.0,
+    "precipitation_probability": 18,
+    "temperature": 17.6
   },
   "sources": [
     {
