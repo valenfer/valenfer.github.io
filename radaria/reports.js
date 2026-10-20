@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-20',
+    title: 'RadarIA diario — 2026-10-20',
+    summary: '5 piezas sobre programación en lenguajes con pocos datos, fondo de beneficio público de Anthropic, capacidades de investigación de Google, evolución de AI Mode y salvaguardas electorales; ventana ampliada a 7 días.',
+    url: 'informes/2026-10-20.html'
+  },
+  {
     date: '2026-10-19',
     title: 'RadarIA diario — 2026-10-19',
     summary: '5 piezas sobre fondo de beneficio público de Anthropic, resultados matemáticos de OpenAI, capacidades de investigación de Google, salvaguardas electorales y acciones no previstas de agentes; ventana ampliada a 7 días por escasez de novedades estrictas.',
