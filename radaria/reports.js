@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-22',
+    title: 'RadarIA diario — 2026-10-22',
+    summary: '5 piezas sobre agentes para ciencia biológica, modelos de OpenAI en Google Cloud, acciones no previstas, defensas frente a destilación y seguridad de Gemini 4; ventana ampliada a 7 días.',
+    url: 'informes/2026-10-22.html'
+  },
+  {
     date: '2026-10-20',
     title: 'RadarIA diario — 2026-10-20',
     summary: '5 piezas sobre programación en lenguajes con pocos datos, fondo de beneficio público de Anthropic, capacidades de investigación de Google, evolución de AI Mode y salvaguardas electorales; ventana ampliada a 7 días.',
