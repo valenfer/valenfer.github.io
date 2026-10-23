@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-23',
+    title: 'RadarIA diario — 2026-10-23',
+    summary: '4 piezas sobre interfaces adaptativas, ingeniería desplegada, agentes científicos para péptidos antimicrobianos y detección local de estafas; ventana ampliada a 7 días por escasez de novedades estrictas.',
+    url: 'informes/2026-10-23.html'
+  },
+  {
     date: '2026-10-22',
     title: 'RadarIA diario — 2026-10-22',
     summary: '5 piezas sobre agentes para ciencia biológica, modelos de OpenAI en Google Cloud, acciones no previstas, defensas frente a destilación y seguridad de Gemini 4; ventana ampliada a 7 días.',
