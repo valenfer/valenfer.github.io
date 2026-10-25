@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-25',
+    title: 'RadarIA diario — 2026-10-25',
+    summary: '4 piezas sobre seguridad de entornos de entrenamiento, agentes para biología, programación en lenguajes con pocos datos y coordinación de desarrollo farmacéutico; ventana ampliada a 7 días por escasez de novedades estrictas.',
+    url: 'informes/2026-10-25.html'
+  },
+  {
     date: '2026-10-24',
     title: 'RadarIA diario — 2026-10-24',
     summary: '5 piezas sobre Decisions API, ingeniería desplegada, agentes para biología, evaluación independiente y defensas anti-destilación; ventana ampliada a 7 días por escasez de novedades estrictas.',
