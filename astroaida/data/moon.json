@@ -1,12 +1,12 @@
 {
   "source": "AstronomyAPI + Astronomy Engine",
-  "fetched_at": "2026-10-24T00:16:30.277252+00:00",
+  "fetched_at": "2026-10-25T00:44:50.710064+00:00",
   "status": "live",
-  "phase": "Waxing Gibbous",
-  "phase_degrees": 151.856,
-  "illumination": 0.940883,
-  "distance_km": 373948.62597,
-  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/d7f499f0f6487705c9d0af2bb8ca0747cfd3b3fe0059bb40124409badf02c6de.png",
+  "phase": "Full Moon",
+  "phase_degrees": 164.895,
+  "illumination": 0.982725,
+  "distance_km": 368310.87503,
+  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/ef4e0f093899e5e4c0e67d7b5836cac0f256f52ad09519ea01723c12745af346.png",
   "observer": {
     "latitude": 37.38283,
     "longitude": -5.97317,
