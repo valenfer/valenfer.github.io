@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-25T00:44:56.179516+00:00",
+  "fetched_at": "2026-10-26T00:57:15.583571+00:00",
   "status": "live",
-  "target_date": "2026-10-26",
+  "target_date": "2026-10-27",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,32 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-26T00:00:00+01:00",
-    "end_local": "2026-10-27T12:00:00+01:00"
+    "start_local": "2026-10-27T00:00:00+01:00",
+    "end_local": "2026-10-28T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261026_08_100-in-the-sky-org-c5177af32d9e-2026-10-26",
-      "type": "lunar_phase",
-      "title_es": "Luna llena",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna alcanza la fase completa y es visible durante gran parte de la noche",
-      "start_local": "2026-10-26T05:11:38+01:00",
-      "visibility": {
-        "status": "visible",
-        "label": "Visible",
-        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
-        "altitude_deg": 30.9,
-        "azimuth_deg": 267.4,
-        "sun_altitude_deg": -30.1
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261026_08_100"
-      }
-    },
-    {
-      "id": "20261026_17_100-in-the-sky-org-693f8a0b62b9-2026-10-26",
+      "id": "20261026_17_100-in-the-sky-org-693f8a0b62b9-2026-10-27",
       "type": "other",
       "title_es": "El Perseus Double Cluster está bien colocado",
       "title_translation_status": "translated",
@@ -52,7 +32,7 @@
       }
     },
     {
-      "id": "20261027_13_100-in-the-sky-org-ccfb2b2048fe-2026-10-26",
+      "id": "20261027_13_100-in-the-sky-org-ccfb2b2048fe-2026-10-27",
       "type": "conjunction",
       "title_es": "Conjunción",
       "title_translation_status": "deterministic",
@@ -67,13 +47,33 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261027_13_100"
       }
+    },
+    {
+      "id": "20261028_15_100-in-the-sky-org-02322dff8254-2026-10-27",
+      "type": "other",
+      "title_es": "Aproximación cercana a la Luna y M45",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna y M45 pasan cerca una de la otra",
+      "start_local": "2026-10-28T02:38:11+01:00",
+      "visibility": {
+        "status": "visible",
+        "label": "Visible",
+        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
+        "altitude_deg": 77.4,
+        "azimuth_deg": 171.3,
+        "sun_altitude_deg": -58.2
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261028_15_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 23.5,
-    "visibility": 43560.0,
+    "cloud_cover": 36.35,
+    "visibility": 40580.0,
     "precipitation_probability": 0,
-    "temperature": 15.6
+    "temperature": 15.5
   },
   "sources": [
     {
