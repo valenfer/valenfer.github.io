@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-26',
+    title: 'RadarIA diario — 2026-10-26',
+    summary: '3 piezas/señales sobre seguridad de infraestructura, revisión de Google DeepMind y acciones no previstas; ventana ampliada a 7 días por escasez de novedades estrictas.',
+    url: 'informes/2026-10-26.html'
+  },
+  {
     date: '2026-10-25',
     title: 'RadarIA diario — 2026-10-25',
     summary: '4 piezas sobre seguridad de entornos de entrenamiento, agentes para biología, programación en lenguajes con pocos datos y coordinación de desarrollo farmacéutico; ventana ampliada a 7 días por escasez de novedades estrictas.',
