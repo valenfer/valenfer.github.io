@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-26T00:57:15.583571+00:00",
+  "fetched_at": "2026-10-27T01:47:43.803410+00:00",
   "status": "live",
-  "target_date": "2026-10-27",
+  "target_date": "2026-10-28",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,46 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-27T00:00:00+01:00",
-    "end_local": "2026-10-28T12:00:00+01:00"
+    "start_local": "2026-10-28T00:00:00+01:00",
+    "end_local": "2026-10-29T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261026_17_100-in-the-sky-org-693f8a0b62b9-2026-10-27",
-      "type": "other",
-      "title_es": "El Perseus Double Cluster está bien colocado",
-      "title_translation_status": "translated",
-      "summary_es": "El doble cúmulo de Perseo (NGC 869 y NGC 884; magnitud combinada 4.3) culmina alrededor de la medianoche hora local",
-      "start_local": "2026-10-27T00:59:46+01:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261026_17_100"
-      }
-    },
-    {
-      "id": "20261027_13_100-in-the-sky-org-ccfb2b2048fe-2026-10-27",
-      "type": "conjunction",
-      "title_es": "Conjunción",
-      "title_translation_status": "deterministic",
-      "summary_es": "136108 Haumea es inobservable cuando pasa alrededor del otro lado del Sol, marcando el final de una aparición y el comienzo de la siguiente",
-      "start_local": "2026-10-27T05:07:51+01:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261027_13_100"
-      }
-    },
-    {
-      "id": "20261028_15_100-in-the-sky-org-02322dff8254-2026-10-27",
+      "id": "20261028_15_100-in-the-sky-org-02322dff8254-2026-10-28",
       "type": "other",
       "title_es": "Aproximación cercana a la Luna y M45",
       "title_translation_status": "translated",
@@ -67,13 +33,33 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261028_15_100"
       }
+    },
+    {
+      "id": "20261028_08_100-in-the-sky-org-5a55b59d1479-2026-10-28",
+      "type": "other",
+      "title_es": "La Luna en el perigeo",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna hace su máximo acercamiento mensual a la Tierra, apareciendo más grande que en otros momentos del mes, aunque solo muy fraccionadamente",
+      "start_local": "2026-10-28T19:05:38+01:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -8.3°).",
+        "altitude_deg": -8.3,
+        "azimuth_deg": 47.1,
+        "sun_altitude_deg": -7.0
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261028_08_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 36.35,
-    "visibility": 40580.0,
+    "cloud_cover": 8.65,
+    "visibility": 43420.0,
     "precipitation_probability": 0,
-    "temperature": 15.5
+    "temperature": 14.7
   },
   "sources": [
     {
