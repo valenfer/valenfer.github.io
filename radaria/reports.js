@@ -2,7 +2,7 @@ window.RADARIA_REPORTS = [
   {
     date: '2026-10-27',
     title: 'RadarIA diario — 2026-10-27',
-    summary: '3 piezas sobre seguridad de infraestructura, colaboración científica y acciones no previstas; ventana ampliada a 7 días por escasez de novedades estrictas.',
+    summary: '3 piezas sobre computer use, simulación mundial y la posible salida a bolsa de Anthropic; ventana estricta de 26–27 de octubre.',
     url: 'informes/2026-10-27.html'
   },
   {
