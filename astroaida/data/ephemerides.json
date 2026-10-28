@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-27T01:47:43.803410+00:00",
+  "fetched_at": "2026-10-28T01:59:29.934414+00:00",
   "status": "live",
-  "target_date": "2026-10-28",
+  "target_date": "2026-10-29",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,56 +10,33 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-28T00:00:00+01:00",
-    "end_local": "2026-10-29T12:00:00+01:00"
+    "start_local": "2026-10-29T00:00:00+01:00",
+    "end_local": "2026-10-30T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261028_15_100-in-the-sky-org-02322dff8254-2026-10-28",
+      "id": "20261029_16_100-in-the-sky-org-3b4dae8771d7-2026-10-29",
       "type": "other",
-      "title_es": "Aproximación cercana a la Luna y M45",
+      "title_es": "Ocultación lunar de Beta Tauri",
       "title_translation_status": "translated",
-      "summary_es": "La Luna y M45 pasan cerca una de la otra",
-      "start_local": "2026-10-28T02:38:11+01:00",
+      "summary_es": "La Luna pasará frente a Beta Tauri (Elnath), creando una ocultación lunar visible desde países y territorios como Australia, Nueva Zelanda, Fiji y Nueva Caledonia, entre otros",
+      "start_local": "2026-10-29T15:26:52+01:00",
       "visibility": {
-        "status": "visible",
-        "label": "Visible",
-        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
-        "altitude_deg": 77.4,
-        "azimuth_deg": 171.3,
-        "sun_altitude_deg": -58.2
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261028_15_100"
-      }
-    },
-    {
-      "id": "20261028_08_100-in-the-sky-org-5a55b59d1479-2026-10-28",
-      "type": "other",
-      "title_es": "La Luna en el perigeo",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna hace su máximo acercamiento mensual a la Tierra, apareciendo más grande que en otros momentos del mes, aunque solo muy fraccionadamente",
-      "start_local": "2026-10-28T19:05:38+01:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -8.3°).",
-        "altitude_deg": -8.3,
-        "azimuth_deg": 47.1,
-        "sun_altitude_deg": -7.0
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261028_08_100"
+        "url": "https://in-the-sky.org/news.php?id=20261029_16_100"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 8.65,
-    "visibility": 43420.0,
+    "cloud_cover": 5.714285714285714,
+    "visibility": 42760.0,
     "precipitation_probability": 0,
-    "temperature": 14.7
+    "temperature": 16.2
   },
   "sources": [
     {
