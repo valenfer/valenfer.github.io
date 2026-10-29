@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-28T01:59:29.934414+00:00",
+  "fetched_at": "2026-10-29T02:03:20.873345+00:00",
   "status": "live",
-  "target_date": "2026-10-29",
+  "target_date": "2026-10-30",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,33 +10,15 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-29T00:00:00+01:00",
-    "end_local": "2026-10-30T12:00:00+01:00"
+    "start_local": "2026-10-30T00:00:00+01:00",
+    "end_local": "2026-10-31T12:00:00+01:00"
   },
-  "events": [
-    {
-      "id": "20261029_16_100-in-the-sky-org-3b4dae8771d7-2026-10-29",
-      "type": "other",
-      "title_es": "Ocultación lunar de Beta Tauri",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna pasará frente a Beta Tauri (Elnath), creando una ocultación lunar visible desde países y territorios como Australia, Nueva Zelanda, Fiji y Nueva Caledonia, entre otros",
-      "start_local": "2026-10-29T15:26:52+01:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261029_16_100"
-      }
-    }
-  ],
+  "events": [],
   "weather": {
-    "cloud_cover": 5.714285714285714,
-    "visibility": 42760.0,
+    "cloud_cover": 57.904761904761905,
+    "visibility": 41900.0,
     "precipitation_probability": 0,
-    "temperature": 16.2
+    "temperature": 16.3
   },
   "sources": [
     {
