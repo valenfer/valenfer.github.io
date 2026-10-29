@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-29',
+    title: 'RadarIA diario — 2026-10-29',
+    summary: '3 piezas sobre aplicaciones empresariales en ChatGPT, modelos de frontera e IA soberana para salud; ventana estricta de 28–29 de octubre.',
+    url: 'informes/2026-10-29.html'
+  },
+  {
     date: '2026-10-27',
     title: 'RadarIA diario — 2026-10-27',
     summary: '3 piezas sobre computer use, simulación mundial y la posible salida a bolsa de Anthropic; ventana estricta de 26–27 de octubre.',
