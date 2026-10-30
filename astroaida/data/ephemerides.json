@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-29T02:03:20.873345+00:00",
+  "fetched_at": "2026-10-30T02:21:22.302152+00:00",
   "status": "live",
-  "target_date": "2026-10-30",
+  "target_date": "2026-10-31",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,15 +10,15 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-30T00:00:00+01:00",
-    "end_local": "2026-10-31T12:00:00+01:00"
+    "start_local": "2026-10-31T00:00:00+01:00",
+    "end_local": "2026-11-01T12:00:00+01:00"
   },
   "events": [],
   "weather": {
-    "cloud_cover": 57.904761904761905,
-    "visibility": 41900.0,
+    "cloud_cover": 19.857142857142858,
+    "visibility": 42380.0,
     "precipitation_probability": 0,
-    "temperature": 16.3
+    "temperature": 16.6
   },
   "sources": [
     {
