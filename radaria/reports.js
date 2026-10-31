@@ -1,5 +1,11 @@
 window.RADARIA_REPORTS = [
   {
+    date: '2026-10-31',
+    title: 'RadarIA diario — 2026-10-31',
+    summary: '4 piezas sobre agentes empresariales, simulación interactiva, IA sanitaria soberana y preferencias de entrenamiento; ventana ampliada a 7 días por escasez de novedades estrictas.',
+    url: 'informes/2026-10-31.html'
+  },
+  {
     date: '2026-10-29',
     title: 'RadarIA diario — 2026-10-29',
     summary: '3 piezas sobre aplicaciones empresariales en ChatGPT, modelos de frontera e IA soberana para salud; ventana estricta de 28–29 de octubre.',
