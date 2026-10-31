@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-30T02:21:22.302152+00:00",
+  "fetched_at": "2026-10-31T01:58:10.913027+00:00",
   "status": "live",
-  "target_date": "2026-10-31",
+  "target_date": "2026-11-01",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,15 +10,56 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-10-31T00:00:00+01:00",
-    "end_local": "2026-11-01T12:00:00+01:00"
+    "start_local": "2026-11-01T00:00:00+01:00",
+    "end_local": "2026-11-02T12:00:00+01:00"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "20261101_15_100-in-the-sky-org-a504e1c8c3b8-2026-11-01",
+      "type": "other",
+      "title_es": "Aproximación cercana a la Luna y M44",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna y M44 pasan cerca una de la otra",
+      "start_local": "2026-11-01T18:34:44+01:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -32.0°).",
+        "altitude_deg": -32.0,
+        "azimuth_deg": 346.9,
+        "sun_altitude_deg": -1.9
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261101_15_100"
+      }
+    },
+    {
+      "id": "20261101_08_100-in-the-sky-org-527c3ca433fe-2026-11-01",
+      "type": "lunar_phase",
+      "title_es": "Cuarto menguante",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna alcanza la fase del último trimestre: sale por el este alrededor de la medianoche y aparece en lo alto del cielo al amanecer",
+      "start_local": "2026-11-01T21:28:56+01:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -27.0°).",
+        "altitude_deg": -27.0,
+        "azimuth_deg": 31.9,
+        "sun_altitude_deg": -36.4
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261101_08_100"
+      }
+    }
+  ],
   "weather": {
-    "cloud_cover": 19.857142857142858,
+    "cloud_cover": 1.9523809523809523,
     "visibility": 42380.0,
     "precipitation_probability": 0,
-    "temperature": 16.6
+    "temperature": 15.9
   },
   "sources": [
     {
