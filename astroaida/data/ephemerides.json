@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-10-31T01:58:10.913027+00:00",
+  "fetched_at": "2026-11-01T01:47:49.598319+00:00",
   "status": "live",
-  "target_date": "2026-11-01",
+  "target_date": "2026-11-02",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,56 +10,153 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-01T00:00:00+01:00",
-    "end_local": "2026-11-02T12:00:00+01:00"
+    "start_local": "2026-11-02T00:00:00+01:00",
+    "end_local": "2026-11-03T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261101_15_100-in-the-sky-org-a504e1c8c3b8-2026-11-01",
+      "id": "20261102_15_100-in-the-sky-org-eee530965c27-2026-11-02",
       "type": "other",
-      "title_es": "Aproximación cercana a la Luna y M44",
+      "title_es": "Aproximación cercana a la Luna y Marte",
       "title_translation_status": "translated",
-      "summary_es": "La Luna y M44 pasan cerca una de la otra",
-      "start_local": "2026-11-01T18:34:44+01:00",
+      "summary_es": "La Luna y Marte pasan cerca el uno del otro",
+      "start_local": "2026-11-02T14:39:06+01:00",
       "visibility": {
         "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -32.0°).",
-        "altitude_deg": -32.0,
-        "azimuth_deg": 346.9,
-        "sun_altitude_deg": -1.9
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 2.1°, Sol a 33.5°.",
+        "altitude_deg": 2.1,
+        "azimuth_deg": 287.7,
+        "sun_altitude_deg": 33.5
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261101_15_100"
+        "url": "https://in-the-sky.org/news.php?id=20261102_15_100"
       }
     },
     {
-      "id": "20261101_08_100-in-the-sky-org-527c3ca433fe-2026-11-01",
-      "type": "lunar_phase",
-      "title_es": "Cuarto menguante",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna alcanza la fase del último trimestre: sale por el este alrededor de la medianoche y aparece en lo alto del cielo al amanecer",
-      "start_local": "2026-11-01T21:28:56+01:00",
+      "id": "20261102_16_100-in-the-sky-org-07db86ca5ecd-2026-11-02",
+      "type": "other",
+      "title_es": "Ocultación lunar de Marte",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará por delante de Marte, creando una ocultación lunar visible desde la Polinesia Francesa, las Islas Cook y Pitcairn",
+      "start_local": "2026-11-02T14:39:06+01:00",
       "visibility": {
         "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -27.0°).",
-        "altitude_deg": -27.0,
-        "azimuth_deg": 31.9,
-        "sun_altitude_deg": -36.4
+        "label": "No visible",
+        "reason": "Marte no observable: altitud 3.8°, Sol a 33.5°.",
+        "altitude_deg": 3.8,
+        "azimuth_deg": 288.1,
+        "sun_altitude_deg": 33.5
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261101_08_100"
+        "url": "https://in-the-sky.org/news.php?id=20261102_16_100"
+      }
+    },
+    {
+      "id": "20261102_20_100-in-the-sky-org-49c8bb4ac727-2026-11-02",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna y Marte comparten la misma ascensión recta, a una separación de 1°03'",
+      "start_local": "2026-11-02T15:24:46+01:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -5.9°).",
+        "altitude_deg": -5.9,
+        "azimuth_deg": 294.3,
+        "sun_altitude_deg": 28.6
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261102_20_100"
+      }
+    },
+    {
+      "id": "20261102_15_101-in-the-sky-org-e01a60ab73ab-2026-11-02",
+      "type": "other",
+      "title_es": "Aproximación cercana a la Luna y Júpiter",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna y Júpiter pasan cerca uno del otro",
+      "start_local": "2026-11-02T23:45:58+01:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -20.6°).",
+        "altitude_deg": -20.6,
+        "azimuth_deg": 53.5,
+        "sun_altitude_deg": -61.0
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261102_15_101"
+      }
+    },
+    {
+      "id": "20261102_16_101-in-the-sky-org-9ddf92e3c54c-2026-11-02",
+      "type": "other",
+      "title_es": "Ocultación lunar de Júpiter",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará frente a Júpiter, creando una ocultación lunar visible desde países y territorios como Australia, Indonesia, India y Malasia, entre otros",
+      "start_local": "2026-11-02T23:45:58+01:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Júpiter está bajo el horizonte (altitud -19.5°).",
+        "altitude_deg": -19.5,
+        "azimuth_deg": 53.0,
+        "sun_altitude_deg": -61.0
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261102_16_101"
+      }
+    },
+    {
+      "id": "20261102_20_101-in-the-sky-org-582bcaa4b596-2026-11-02",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna y Júpiter comparten la misma ascensión recta, a una separación de 31'",
+      "start_local": "2026-11-03T00:09:26+01:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -16.9°).",
+        "altitude_deg": -16.9,
+        "azimuth_deg": 57.8,
+        "sun_altitude_deg": -64.0
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261102_20_101"
+      }
+    },
+    {
+      "id": "20261103_16_100-in-the-sky-org-02094fec32c3-2026-11-02",
+      "type": "other",
+      "title_es": "Ocultación lunar de Regulus",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará por delante de Regulus (Alpha Leonis), creando una ocultación lunar visible desde países y territorios como Brasil, Argentina, Perú y Bolivia, entre otros",
+      "start_local": "2026-11-03T09:42:47+01:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261103_16_100"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 1.9523809523809523,
-    "visibility": 42380.0,
+    "cloud_cover": 37.904761904761905,
+    "visibility": 46480.0,
     "precipitation_probability": 0,
-    "temperature": 15.9
+    "temperature": 16.3
   },
   "sources": [
     {
