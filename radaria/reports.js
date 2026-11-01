@@ -1,4 +1,6 @@
 window.RADARIA_REPORTS = [
+  { date: '2026-11-01', title: 'RadarIA diario — 2026-11-01', summary: 'Recuperación manual sobre agentes empresariales, simulación interactiva y preferencias de entrenamiento.', url: 'informes/2026-11-01.html' },
+
   {
     date: '2026-10-31',
     title: 'RadarIA diario — 2026-10-31',
