@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-03T03:48:37.552973+00:00",
+  "fetched_at": "2026-11-04T02:51:53.870860+00:00",
   "status": "live",
-  "target_date": "2026-11-04",
+  "target_date": "2026-11-05",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,36 +10,15 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-04T00:00:00+01:00",
-    "end_local": "2026-11-05T12:00:00+01:00"
+    "start_local": "2026-11-05T00:00:00+01:00",
+    "end_local": "2026-11-06T12:00:00+01:00"
   },
-  "events": [
-    {
-      "id": "20261104_11_100-in-the-sky-org-2d727c0f3043-2026-11-04",
-      "type": "conjunction",
-      "title_es": "Conjunción",
-      "title_translation_status": "deterministic",
-      "summary_es": "Mercurio pasa alrededor del lado cercano del Sol",
-      "start_local": "2026-11-04T15:20:38+01:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Mercurio no observable: altitud 28.2°, Sol a 28.6°.",
-        "altitude_deg": 28.2,
-        "azimuth_deg": 216.9,
-        "sun_altitude_deg": 28.6
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261104_11_100"
-      }
-    }
-  ],
+  "events": [],
   "weather": {
-    "cloud_cover": 44.333333333333336,
-    "visibility": 43240.0,
+    "cloud_cover": 53.80952380952381,
+    "visibility": 41380.0,
     "precipitation_probability": 3,
-    "temperature": 15.0
+    "temperature": 14.4
   },
   "sources": [
     {
