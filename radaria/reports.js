@@ -1,4 +1,5 @@
 window.RADARIA_REPORTS = [
+  { date: '2026-11-04', title: 'RadarIA diario — 2026-11-04', summary: '4 piezas sobre evaluación de agentes en tareas reales, seguridad continua y señales de IA educativa; Anthropic revisado sin novedad estricta.', url: 'informes/2026-11-04.html' },
   { date: '2026-11-03', title: 'RadarIA diario — 2026-11-03', summary: '4 piezas sobre modelos de mundo, química agéntica, preferencias de entrenamiento y evaluación doble ciego; ventana ampliada a 7 días por escasez de novedades estrictas.', url: 'informes/2026-11-03.html' },
   { date: '2026-11-02', title: 'RadarIA diario — 2026-11-02', summary: '4 piezas sobre simulación de mundos, evaluación doble ciego, cómputo privado y políticas institucionales; ventana ampliada a 7 días por escasez de novedades estrictas.', url: 'informes/2026-11-02.html' },
   { date: '2026-11-01', title: 'RadarIA diario — 2026-11-01', summary: 'Recuperación manual sobre agentes empresariales, simulación interactiva y preferencias de entrenamiento.', url: 'informes/2026-11-01.html' },
