@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-05T03:02:44.847787+00:00",
+  "fetched_at": "2026-11-06T03:03:39.584005+00:00",
   "status": "live",
-  "target_date": "2026-11-06",
+  "target_date": "2026-11-07",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,12 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-06T00:00:00+01:00",
-    "end_local": "2026-11-07T12:00:00+01:00"
+    "start_local": "2026-11-07T00:00:00+01:00",
+    "end_local": "2026-11-08T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261107_16_100-in-the-sky-org-fe40751ddfba-2026-11-06",
+      "id": "20261107_16_100-in-the-sky-org-fe40751ddfba-2026-11-07",
       "type": "other",
       "title_es": "Ocultación lunar de Venus",
       "title_translation_status": "translated",
@@ -33,13 +33,33 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261107_16_100"
       }
+    },
+    {
+      "id": "20261107_20_100-in-the-sky-org-c18e34bca22d-2026-11-07",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna y Venus comparten la misma ascensión recta, a una separación de 1°03'",
+      "start_local": "2026-11-07T12:34:02+01:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "No visible",
+        "reason": "Luna no observable: altitud 37.0°, Sol a 35.7°.",
+        "altitude_deg": 37.0,
+        "azimuth_deg": 196.7,
+        "sun_altitude_deg": 35.7
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261107_20_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 84.85714285714286,
-    "visibility": 44160.0,
-    "precipitation_probability": 0,
-    "temperature": 14.1
+    "cloud_cover": 83.57142857142857,
+    "visibility": 41920.0,
+    "precipitation_probability": 5,
+    "temperature": 17.3
   },
   "sources": [
     {
