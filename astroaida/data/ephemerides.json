@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-06T03:03:39.584005+00:00",
+  "fetched_at": "2026-11-07T02:31:07.010697+00:00",
   "status": "live",
-  "target_date": "2026-11-07",
+  "target_date": "2026-11-08",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,56 +10,33 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-07T00:00:00+01:00",
-    "end_local": "2026-11-08T12:00:00+01:00"
+    "start_local": "2026-11-08T00:00:00+01:00",
+    "end_local": "2026-11-09T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261107_16_100-in-the-sky-org-fe40751ddfba-2026-11-07",
-      "type": "other",
-      "title_es": "Ocultación lunar de Venus",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna pasará por delante de Venus, creando una ocultación lunar visible desde la Antártida, Argentina, Chile e Islas Malvinas",
-      "start_local": "2026-11-07T11:43:19+01:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Venus no observable: altitud 40.4°, Sol a 32.8°.",
-        "altitude_deg": 40.4,
-        "azimuth_deg": 181.0,
-        "sun_altitude_deg": 32.8
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261107_16_100"
-      }
-    },
-    {
-      "id": "20261107_20_100-in-the-sky-org-c18e34bca22d-2026-11-07",
-      "type": "conjunction",
-      "title_es": "Conjunción",
+      "id": "20261109_08_100-in-the-sky-org-22c3d4452889-2026-11-08",
+      "type": "lunar_phase",
+      "title_es": "Luna nueva",
       "title_translation_status": "deterministic",
-      "summary_es": "La Luna y Venus comparten la misma ascensión recta, a una separación de 1°03'",
-      "start_local": "2026-11-07T12:34:02+01:00",
+      "summary_es": "La Luna desaparece en el resplandor del Sol durante unos días",
+      "start_local": "2026-11-09T08:03:25+01:00",
       "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Luna no observable: altitud 37.0°, Sol a 35.7°.",
-        "altitude_deg": 37.0,
-        "azimuth_deg": 196.7,
-        "sun_altitude_deg": 35.7
+        "status": "contextual",
+        "label": "No observable directamente",
+        "reason": "La Luna nueva no se ve, pero favorece un cielo nocturno más oscuro."
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261107_20_100"
+        "url": "https://in-the-sky.org/news.php?id=20261109_08_100"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 83.57142857142857,
-    "visibility": 41920.0,
-    "precipitation_probability": 5,
-    "temperature": 17.3
+    "cloud_cover": 97.33333333333333,
+    "visibility": 36660.0,
+    "precipitation_probability": 100,
+    "temperature": 18.0
   },
   "sources": [
     {
