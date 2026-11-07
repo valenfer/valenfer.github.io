@@ -1,4 +1,5 @@
 window.RADARIA_REPORTS = [
+  { date: '2026-11-07', title: 'RadarIA diario — 2026-11-07', summary: '4 piezas sobre ciberseguridad agéntica, pipelines autónomos de vulnerabilidades, evaluación de agentes científicos y vídeo generativo; Anthropic revisado sin novedad estricta dentro de la ventana.', url: 'informes/2026-11-07.html' },
   { date: '2026-11-06', title: 'RadarIA diario — 2026-11-06', summary: '5 piezas sobre agentes de ciberseguridad, vídeo multimodal, quimioinformática agéntica, agentes colaboradores e ingeniería física; Anthropic revisado sin novedad estricta destacable.', url: 'informes/2026-11-06.html' },
   { date: '2026-11-05', title: 'RadarIA diario — 2026-11-05', summary: '5 piezas sobre seguridad continua, generación visual, ingeniería física y quimioinformática agéntica; Anthropic revisado sin novedad estricta.', url: 'informes/2026-11-05.html' },
   { date: '2026-11-04', title: 'RadarIA diario — 2026-11-04', summary: '4 piezas sobre evaluación de agentes en tareas reales, seguridad continua y señales de IA educativa; Anthropic revisado sin novedad estricta.', url: 'informes/2026-11-04.html' },
