@@ -1,8 +1,68 @@
 {
   "source": "NASA NeoWs",
-  "fetched_at": "2026-11-07T02:31:04.199311+00:00",
+  "fetched_at": "2026-11-08T01:59:44.152453+00:00",
   "status": "live",
   "asteroids": [
+    {
+      "date": "2026-11-08",
+      "name": "138175 (2000 EE104)",
+      "estimated_diameter_km": {
+        "min": 0.2121069879,
+        "max": 0.4742856434
+      },
+      "miss_distance_km": 13672704,
+      "velocity_km_s": 7.2750298887,
+      "hazardous": true,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2138175"
+    },
+    {
+      "date": "2026-11-08",
+      "name": "462238 (2008 CN1)",
+      "estimated_diameter_km": {
+        "min": 0.1961349444,
+        "max": 0.4385710684
+      },
+      "miss_distance_km": 60587240,
+      "velocity_km_s": 11.0357659604,
+      "hazardous": true,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2462238"
+    },
+    {
+      "date": "2026-11-08",
+      "name": "(2012 KT12)",
+      "estimated_diameter_km": {
+        "min": 0.0116025908,
+        "max": 0.0259441818
+      },
+      "miss_distance_km": 65984706,
+      "velocity_km_s": 7.3051851277,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3604617"
+    },
+    {
+      "date": "2026-11-08",
+      "name": "(2016 JN5)",
+      "estimated_diameter_km": {
+        "min": 0.0464039528,
+        "max": 0.1037623929
+      },
+      "miss_distance_km": 51746409,
+      "velocity_km_s": 22.0034102256,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3752769"
+    },
+    {
+      "date": "2026-11-08",
+      "name": "(2016 LC11)",
+      "estimated_diameter_km": {
+        "min": 0.3300311834,
+        "max": 0.7379721607
+      },
+      "miss_distance_km": 69147004,
+      "velocity_km_s": 28.7776274166,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3753874"
+    },
     {
       "date": "2026-11-07",
       "name": "(2007 VV83)",
@@ -170,54 +230,6 @@
       "velocity_km_s": 15.144841242,
       "hazardous": false,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3836286"
-    },
-    {
-      "date": "2026-11-01",
-      "name": "307493 (2002 XP90)",
-      "estimated_diameter_km": {
-        "min": 0.5135171787,
-        "max": 1.1482593191
-      },
-      "miss_distance_km": 45865643,
-      "velocity_km_s": 16.0941424487,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2307493"
-    },
-    {
-      "date": "2026-11-01",
-      "name": "(2004 TP1)",
-      "estimated_diameter_km": {
-        "min": 0.1925550782,
-        "max": 0.4305662442
-      },
-      "miss_distance_km": 9300135,
-      "velocity_km_s": 12.6714610504,
-      "hazardous": true,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3255980"
-    },
-    {
-      "date": "2026-11-01",
-      "name": "(2015 LJ)",
-      "estimated_diameter_km": {
-        "min": 0.0305179233,
-        "max": 0.0682401509
-      },
-      "miss_distance_km": 45673390,
-      "velocity_km_s": 4.6212629351,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3720918"
-    },
-    {
-      "date": "2026-11-01",
-      "name": "612856 (2004 TP1)",
-      "estimated_diameter_km": {
-        "min": 0.1881719895,
-        "max": 0.42076536
-      },
-      "miss_distance_km": 9300213,
-      "velocity_km_s": 12.6714745592,
-      "hazardous": true,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2612856"
     },
     {
       "date": "2026-11-05",
@@ -466,8 +478,8 @@
         "min": 0.2072788434,
         "max": 0.4634895841
       },
-      "miss_distance_km": 6018477,
-      "velocity_km_s": 8.7173138551,
+      "miss_distance_km": 6018478,
+      "velocity_km_s": 8.7173139085,
       "hazardous": true,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2524522"
     },

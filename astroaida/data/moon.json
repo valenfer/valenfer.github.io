@@ -1,12 +1,12 @@
 {
   "source": "AstronomyAPI + Astronomy Engine",
-  "fetched_at": "2026-11-07T02:31:04.201145+00:00",
+  "fetched_at": "2026-11-08T01:59:44.154303+00:00",
   "status": "live",
-  "phase": "Waning Crescent",
-  "phase_degrees": 334.621,
-  "illumination": 0.048253,
-  "distance_km": 393958.25428,
-  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/e7ab0307cc741c59880ae7f62d49652fc7d3a94c8a7f20569136bc36bdf55ecd.png",
+  "phase": "New Moon",
+  "phase_degrees": 346.068,
+  "illumination": 0.014709,
+  "distance_km": 398679.64555,
+  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/aa011e8f9a21348f45548cd208e857a2170d6792462296f2f8d958abb59fc035.png",
   "observer": {
     "latitude": 37.38283,
     "longitude": -5.97317,
