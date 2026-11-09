@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-08T01:59:47.443636+00:00",
+  "fetched_at": "2026-11-09T02:19:22.379992+00:00",
   "status": "live",
-  "target_date": "2026-11-09",
+  "target_date": "2026-11-10",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,29 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-09T00:00:00+01:00",
-    "end_local": "2026-11-10T12:00:00+01:00"
+    "start_local": "2026-11-10T00:00:00+01:00",
+    "end_local": "2026-11-11T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261109_08_100-in-the-sky-org-22c3d4452889-2026-11-09",
-      "type": "lunar_phase",
-      "title_es": "Luna nueva",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna desaparece en el resplandor del Sol durante unos días",
-      "start_local": "2026-11-09T08:03:25+01:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "No observable directamente",
-        "reason": "La Luna nueva no se ve, pero favorece un cielo nocturno más oscuro."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261109_08_100"
-      }
-    },
-    {
-      "id": "20261110_11_100-in-the-sky-org-d9ebbb1857bd-2026-11-09",
+      "id": "20261110_11_100-in-the-sky-org-d9ebbb1857bd-2026-11-10",
       "type": "other",
       "title_es": "Perihelio",
       "title_translation_status": "deterministic",
@@ -50,13 +33,30 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261110_11_100"
       }
+    },
+    {
+      "id": "20261111_16_100-in-the-sky-org-69895a1e53c0-2026-11-10",
+      "type": "other",
+      "title_es": "Ocultación lunar de Antares",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna pasará frente a Antares (Alpha Scorpii), creando una ocultación lunar visible desde países y territorios como Samoa, Tonga, Samoa Americana y Fiji, entre otros",
+      "start_local": "2026-11-11T05:38:48+01:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261111_16_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 87.0952380952381,
-    "visibility": 38420.0,
-    "precipitation_probability": 88,
-    "temperature": 19.1
+    "cloud_cover": 95.23809523809524,
+    "visibility": 20480.0,
+    "precipitation_probability": 98,
+    "temperature": 18.9
   },
   "sources": [
     {
