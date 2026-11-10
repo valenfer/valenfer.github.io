@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-09T02:19:22.379992+00:00",
+  "fetched_at": "2026-11-10T04:28:19.098408+00:00",
   "status": "live",
-  "target_date": "2026-11-10",
+  "target_date": "2026-11-11",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,32 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-10T00:00:00+01:00",
-    "end_local": "2026-11-11T12:00:00+01:00"
+    "start_local": "2026-11-11T00:00:00+01:00",
+    "end_local": "2026-11-12T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261110_11_100-in-the-sky-org-d9ebbb1857bd-2026-11-10",
-      "type": "other",
-      "title_es": "Perihelio",
-      "title_translation_status": "deterministic",
-      "summary_es": "Mercurio pasa su punto más cercano al Sol",
-      "start_local": "2026-11-10T09:17:25+01:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "No visible",
-        "reason": "Mercurio no observable: altitud 24.1°, Sol a 13.2°.",
-        "altitude_deg": 24.1,
-        "azimuth_deg": 129.2,
-        "sun_altitude_deg": 13.2
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261110_11_100"
-      }
-    },
-    {
-      "id": "20261111_16_100-in-the-sky-org-69895a1e53c0-2026-11-10",
+      "id": "20261111_16_100-in-the-sky-org-69895a1e53c0-2026-11-11",
       "type": "other",
       "title_es": "Ocultación lunar de Antares",
       "title_translation_status": "translated",
@@ -50,13 +30,33 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261111_16_100"
       }
+    },
+    {
+      "id": "20261111_08_100-in-the-sky-org-ea5d385f16d3-2026-11-11",
+      "type": "other",
+      "title_es": "Perihelio",
+      "title_translation_status": "deterministic",
+      "summary_es": "La Luna pasa por su punto más cercano al Sol, una ocurrencia mensual en la época de la luna nueva",
+      "start_local": "2026-11-11T21:06:10+01:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Luna está bajo el horizonte (altitud -16.7°).",
+        "altitude_deg": -16.7,
+        "azimuth_deg": 247.6,
+        "sun_altitude_deg": -33.4
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261111_08_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 95.23809523809524,
-    "visibility": 20480.0,
-    "precipitation_probability": 98,
-    "temperature": 18.9
+    "cloud_cover": 85.85714285714286,
+    "visibility": 31960.0,
+    "precipitation_probability": 100,
+    "temperature": 19.1
   },
   "sources": [
     {
