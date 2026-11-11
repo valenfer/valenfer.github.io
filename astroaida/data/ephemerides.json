@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-10T04:28:19.098408+00:00",
+  "fetched_at": "2026-11-11T02:29:59.492685+00:00",
   "status": "live",
-  "target_date": "2026-11-11",
+  "target_date": "2026-11-12",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,17 +10,17 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-11T00:00:00+01:00",
-    "end_local": "2026-11-12T12:00:00+01:00"
+    "start_local": "2026-11-12T00:00:00+01:00",
+    "end_local": "2026-11-13T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261111_16_100-in-the-sky-org-69895a1e53c0-2026-11-11",
+      "id": "2026_19_0069P_100-in-the-sky-org-b50b71ac2a57-2026-11-12",
       "type": "other",
-      "title_es": "Ocultación lunar de Antares",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna pasará frente a Antares (Alpha Scorpii), creando una ocultación lunar visible desde países y territorios como Samoa, Tonga, Samoa Americana y Fiji, entre otros",
-      "start_local": "2026-11-11T05:38:48+01:00",
+      "title_es": "Perihelio",
+      "title_translation_status": "deterministic",
+      "summary_es": "El cometa 69P/Taylor hace su aproximación más cercana al Sol",
+      "start_local": "2026-11-12T13:00:00+01:00",
       "visibility": {
         "status": "contextual",
         "label": "Acontecimiento astronómico",
@@ -28,35 +28,32 @@
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261111_16_100"
+        "url": "https://in-the-sky.org/news.php?id=2026_19_0069P_100"
       }
     },
     {
-      "id": "20261111_08_100-in-the-sky-org-ea5d385f16d3-2026-11-11",
-      "type": "other",
-      "title_es": "Perihelio",
+      "id": "20261112_10_100-in-the-sky-org-3122800c01ab-2026-11-12",
+      "type": "meteor_shower",
+      "title_es": "Lluvia de meteoros",
       "title_translation_status": "deterministic",
-      "summary_es": "La Luna pasa por su punto más cercano al Sol, una ocurrencia mensual en la época de la luna nueva",
-      "start_local": "2026-11-11T21:06:10+01:00",
+      "summary_es": "La lluvia de meteoros de las Táuridas del Norte alcanza su punto máximo",
+      "start_local": "2026-11-12T19:18:22+01:00",
       "visibility": {
-        "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -16.7°).",
-        "altitude_deg": -16.7,
-        "azimuth_deg": 247.6,
-        "sun_altitude_deg": -33.4
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261111_08_100"
+        "url": "https://in-the-sky.org/news.php?id=20261112_10_100"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 85.85714285714286,
-    "visibility": 31960.0,
-    "precipitation_probability": 100,
-    "temperature": 19.1
+    "cloud_cover": 63.95238095238095,
+    "visibility": 33120.0,
+    "precipitation_probability": 10,
+    "temperature": 17.4
   },
   "sources": [
     {
