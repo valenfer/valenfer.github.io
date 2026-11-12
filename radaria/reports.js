@@ -1,4 +1,5 @@
 window.RADARIA_REPORTS = [
+  { date: '2026-11-12', title: 'RadarIA diario — 2026-11-12', summary: '3 piezas sobre AlphaGenome 2, verificación formal de Signal y la entrada en vigor de la política de uso de Anthropic; ventana principal de 11–12 de noviembre y ampliación a 7 días.', url: 'informes/2026-11-12.html' },
   { date: '2026-11-11', title: 'RadarIA diario — 2026-11-11', summary: '4 piezas sobre verificación formal, educación, agentes de voz y accesibilidad; ventana principal de 10–11 de noviembre y ampliación a 7 días para señales relevantes.', url: 'informes/2026-11-11.html' },
   { date: '2026-11-10', title: 'RadarIA diario — 2026-11-10', summary: '4 piezas sobre verificación formal de código, educación, agentes de voz y accesibilidad; ventana estricta de 9–10 de noviembre.', url: 'informes/2026-11-10.html' },
   { date: '2026-11-09', title: 'RadarIA diario — 2026-11-09', summary: '3 piezas sobre benchmarks de ciencia de laboratorio, ingeniería física y quimioinformática agéntica; ventana principal de 8–9 de noviembre y ampliación a 7 días para señales relevantes del 3–6 de noviembre.', url: 'informes/2026-11-09.html' },
