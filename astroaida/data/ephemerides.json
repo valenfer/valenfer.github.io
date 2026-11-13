@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-12T03:33:38.712148+00:00",
+  "fetched_at": "2026-11-13T03:05:54.381628+00:00",
   "status": "live",
-  "target_date": "2026-11-13",
+  "target_date": "2026-11-14",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,53 +10,36 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-13T00:00:00+01:00",
-    "end_local": "2026-11-14T12:00:00+01:00"
+    "start_local": "2026-11-14T00:00:00+01:00",
+    "end_local": "2026-11-15T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261113_08_100-in-the-sky-org-eafb9c00554a-2026-11-13",
-      "type": "other",
-      "title_es": "La Luna en el apogeo",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna se aleja hasta el punto de su órbita más alejado de la Tierra, por lo que parece ligeramente más pequeña que en otros momentos del mes.",
-      "start_local": "2026-11-13T18:50:20+01:00",
+      "id": "20261115_20_100-in-the-sky-org-3d8cefbdcf41-2026-11-14",
+      "type": "conjunction",
+      "title_es": "Conjunción",
+      "title_translation_status": "deterministic",
+      "summary_es": "Júpiter y Marte comparten la misma ascensión recta, con una separación de 1°14'",
+      "start_local": "2026-11-15T03:42:23+01:00",
       "visibility": {
         "status": "visible",
         "label": "Visible",
-        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
-        "altitude_deg": 18.3,
-        "azimuth_deg": 210.7,
-        "sun_altitude_deg": -6.9
+        "reason": "Marte observable sobre el horizonte en cielo nocturno.",
+        "altitude_deg": 33.1,
+        "azimuth_deg": 96.5,
+        "sun_altitude_deg": -51.2
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261113_08_100"
-      }
-    },
-    {
-      "id": "20261113_16_100-in-the-sky-org-2b724ecd3e46-2026-11-13",
-      "type": "other",
-      "title_es": "Ocultación lunar de Sigma Sagittarii",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna pasará por delante de Sigma Sagittarii (Nunki), creando una ocultación lunar visible desde países y territorios como Brasil, Perú, Colombia y Venezuela, entre otros.",
-      "start_local": "2026-11-13T23:20:47+01:00",
-      "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261113_16_100"
+        "url": "https://in-the-sky.org/news.php?id=20261115_20_100"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 69.33333333333333,
-    "visibility": 32280.0,
-    "precipitation_probability": 85,
-    "temperature": 16.8
+    "cloud_cover": 66.57142857142857,
+    "visibility": 34760.0,
+    "precipitation_probability": 25,
+    "temperature": 15.9
   },
   "sources": [
     {
