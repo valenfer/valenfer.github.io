@@ -1,12 +1,12 @@
 {
   "source": "AstronomyAPI + Astronomy Engine",
-  "fetched_at": "2026-11-13T03:05:51.925479+00:00",
+  "fetched_at": "2026-11-14T02:52:47.115237+00:00",
   "status": "live",
   "phase": "Waxing Crescent",
-  "phase_degrees": 42.527,
-  "illumination": 0.131522,
-  "distance_km": 411692.53651,
-  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/ba2ecb552d66772ba6bc5a031e817465d9cfd83cd3daad7a7b3bdf8cb8b9694b.png",
+  "phase_degrees": 53.236,
+  "illumination": 0.20074,
+  "distance_km": 411596.82876,
+  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/8529232ed2cd16741d78c0be682757b9ec609e778e3baa838722a7b30aec57d7.png",
   "observer": {
     "latitude": 37.38283,
     "longitude": -5.97317,
