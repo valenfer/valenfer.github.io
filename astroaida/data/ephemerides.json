@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-14T02:53:24.968760+00:00",
+  "fetched_at": "2026-11-15T02:20:10.460983+00:00",
   "status": "live",
-  "target_date": "2026-11-15",
+  "target_date": "2026-11-16",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,32 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-15T00:00:00+01:00",
-    "end_local": "2026-11-16T12:00:00+01:00"
+    "start_local": "2026-11-16T00:00:00+01:00",
+    "end_local": "2026-11-17T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261115_20_100-in-the-sky-org-3d8cefbdcf41-2026-11-15",
-      "type": "conjunction",
-      "title_es": "Conjunción",
-      "title_translation_status": "deterministic",
-      "summary_es": "Júpiter y Marte comparten la misma ascensión recta, con una separación de 1°14'",
-      "start_local": "2026-11-15T03:42:23+01:00",
-      "visibility": {
-        "status": "visible",
-        "label": "Visible",
-        "reason": "Marte observable sobre el horizonte en cielo nocturno.",
-        "altitude_deg": 33.1,
-        "azimuth_deg": 96.5,
-        "sun_altitude_deg": -51.2
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261115_20_100"
-      }
-    },
-    {
-      "id": "20261116_15_100-in-the-sky-org-e988a96e9ce5-2026-11-15",
+      "id": "20261116_15_100-in-the-sky-org-e988a96e9ce5-2026-11-16",
       "type": "other",
       "title_es": "Acercamiento de Júpiter y Marte",
       "title_translation_status": "translated",
@@ -55,7 +35,12 @@
       }
     }
   ],
-  "weather": {},
+  "weather": {
+    "cloud_cover": 62.285714285714285,
+    "visibility": 39220.0,
+    "precipitation_probability": 3,
+    "temperature": 13.7
+  },
   "sources": [
     {
       "name": "In-The-Sky",
