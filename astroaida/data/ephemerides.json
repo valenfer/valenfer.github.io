@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-16T02:31:50.522058+00:00",
+  "fetched_at": "2026-11-17T04:56:01.971163+00:00",
   "status": "live",
-  "target_date": "2026-11-17",
+  "target_date": "2026-11-18",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,36 +10,16 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-17T00:00:00+01:00",
-    "end_local": "2026-11-18T12:00:00+01:00"
+    "start_local": "2026-11-18T00:00:00+01:00",
+    "end_local": "2026-11-19T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261117_08_100-in-the-sky-org-c7b937bd86a1-2026-11-17",
-      "type": "lunar_phase",
-      "title_es": "Cuarto creciente",
-      "title_translation_status": "deterministic",
-      "summary_es": "La Luna alcanza la fase de cuarto creciente: aparece alta en el cielo al atardecer y permanece visible hasta aproximadamente la medianoche.",
-      "start_local": "2026-11-17T12:48:24+01:00",
-      "visibility": {
-        "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Luna está bajo el horizonte (altitud -15.9°).",
-        "altitude_deg": -15.9,
-        "azimuth_deg": 94.8,
-        "sun_altitude_deg": 33.4
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261117_08_100"
-      }
-    },
-    {
-      "id": "20261118_10_100-in-the-sky-org-26719ab8a3c3-2026-11-17",
+      "id": "20261118_10_100-in-the-sky-org-26719ab8a3c3-2026-11-18",
       "type": "meteor_shower",
       "title_es": "Lluvia de meteoros",
       "title_translation_status": "deterministic",
-      "summary_es": "La lluvia de meteoros Leónidas alcanza su punto álgido",
+      "summary_es": "La lluvia de estrellas de las Leónidas alcanza su punto álgido",
       "start_local": "2026-11-18T01:35:46+01:00",
       "visibility": {
         "status": "contextual",
@@ -52,7 +32,7 @@
       }
     },
     {
-      "id": "20261118_11_100-in-the-sky-org-62759b6b3223-2026-11-17",
+      "id": "20261118_11_100-in-the-sky-org-62759b6b3223-2026-11-18",
       "type": "other",
       "title_es": "Mercurio en dicotomía",
       "title_translation_status": "translated",
@@ -70,13 +50,50 @@
         "name": "In-The-Sky",
         "url": "https://in-the-sky.org/news.php?id=20261118_11_100"
       }
+    },
+    {
+      "id": "20261118_17_100-in-the-sky-org-dbd0cad70c07-2026-11-18",
+      "type": "other",
+      "title_es": "El cúmulo de las Pléyades está bien situado",
+      "title_translation_status": "translated",
+      "summary_es": "El cúmulo estelar abierto de las Pléyades (M45; magnitud 1,3) en Tauro culmina alrededor de la medianoche, hora local.",
+      "start_local": "2026-11-19T00:56:36+01:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261118_17_100"
+      }
+    },
+    {
+      "id": "20261121_11_100-in-the-sky-org-56d43e84ca53-2026-11-18",
+      "type": "other",
+      "title_es": "Mercurio en su máxima altitud en el cielo matutino",
+      "title_translation_status": "translated",
+      "summary_es": "Mercurio brilla y está bien situado en el cielo del amanecer",
+      "start_local": "2026-11-19T01:33:40+01:00",
+      "visibility": {
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Mercurio está bajo el horizonte (altitud -55.9°).",
+        "altitude_deg": -55.9,
+        "azimuth_deg": 47.2,
+        "sun_altitude_deg": -71.1
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261121_11_100"
+      }
     }
   ],
   "weather": {
-    "cloud_cover": 97.0952380952381,
-    "visibility": 23000.0,
-    "precipitation_probability": 35,
-    "temperature": 18.1
+    "cloud_cover": 92.0952380952381,
+    "visibility": 35220.0,
+    "precipitation_probability": 37,
+    "temperature": 20.0
   },
   "sources": [
     {
