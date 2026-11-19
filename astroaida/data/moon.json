@@ -1,12 +1,12 @@
 {
   "source": "AstronomyAPI + Astronomy Engine",
-  "fetched_at": "2026-11-18T03:59:54.261571+00:00",
+  "fetched_at": "2026-11-19T03:57:09.062499+00:00",
   "status": "live",
   "phase": "First Quarter",
-  "phase_degrees": 97.601,
-  "illumination": 0.566133,
-  "distance_km": 398611.78211,
-  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/93d7e9aa4ed0ef7bd82d3326de1f41d5916b187daeaeaae0697bddabb4442616.png",
+  "phase_degrees": 109.134,
+  "illumination": 0.663888,
+  "distance_km": 392132.29566,
+  "image_url": "https://widgets.astronomyapi.com/moon-phase/generated/136e5f17cf2d0c3dc8554eaa026ba80e954c064529df500db2e1f81daf106074.png",
   "observer": {
     "latitude": 37.38283,
     "longitude": -5.97317,
