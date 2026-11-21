@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadarIA diario — 2026-11-21</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="report-shell">
+    <header class="hero">
+      <p class="eyebrow">RadarIA · 21 de noviembre de 2026</p>
+      <h1>La IA deja de presumir y empieza a demostrar</h1>
+      <p class="subtitle">Ventana investigada: 2026-11-20 y, por escasez de novedades estrictas, ampliación hasta 2026-11-14.</p>
+      <p class="method">Metodología: revisión de páginas oficiales y papers primarios de OpenAI, Google DeepMind, Anthropic y fuentes de investigación; se priorizó el cuerpo de cada fuente frente a titulares o snippets.</p>
+    </header>
+
+    <section class="summary-card">
+      <h2>Resumen ejecutivo</h2>
+      <p>La señal dominante no es otro chatbot con sombrero nuevo, sino la combinación de modelos más capaces con pruebas más exigentes: química medicinal, verificación formal de software, investigación física y modelos optimizados para trabajo profesional. OpenAI y Google publicaron novedades de producto y evaluación; Anthropic aportó un caso de investigación científica asistida por agentes.</p>
+    </section>
+
+    <section class="cards">
+      <article class="news-card">
+        <span class="badge badge-benchmark">Benchmark</span>
+        <h2>MedChemBench: medir si un modelo entiende la química medicinal real</h2>
+        <p class="meta">OpenAI · 20 de noviembre de 2026</p>
+        <p><a href="https://openai.com/index/introducing-medchembench/">Leer la fuente oficial</a></p>
+        <p><strong>Por qué importa:</strong> el benchmark no se limita a preguntas de química: exige reconstruir moléculas, interpretar resultados experimentales, elegir compuestos y predecir propiedades con trade-offs reales.[1]</p>
+        <p><strong>Resumen:</strong> MedChemBench reúne 99 problemas basados en 117 papers y patentes, con 761 estructuras moleculares. En la evaluación compartida xhigh, GPT-6.2 Astra obtuvo el 84,5% del crédito disponible, mientras que las tareas de selección y predicción numérica siguieron siendo claramente más difíciles que la reconstrucción estructural.[1]</p>
+        <p><strong>Impacto práctico:</strong> ofrece una vara más útil para valorar IA científica: no basta con sonar convincente; hay que conservar la estructura molecular y razonar sobre varias propiedades a la vez. La propia fuente advierte que esto no demuestra descubrimiento de fármacos ni mejora de decisiones de laboratorio en el mundo real.[1]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-modelo">Modelo</span>
+        <h2>GPT-6.2 Astra y Sol: más trabajo profesional por menos coste de tokens</h2>
+        <p class="meta">OpenAI · 17 de noviembre de 2026</p>
+        <p><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">Leer la fuente oficial</a></p>
+        <p><strong>Por qué importa:</strong> la actualización desplaza la competición desde la demo aislada hacia el coste por tarea y la fiabilidad en flujos largos.[2]</p>
+        <p><strong>Resumen:</strong> Astra se orienta a proyectos complejos y Sol a trabajo cotidiano multietapa. OpenAI comunica mejoras en tareas profesionales, ciencia y programación, junto con una reducción del 20% en los precios de entrada y salida de Astra y un descuento mayor para tokens en caché.[2]</p>
+        <p><strong>Impacto práctico:</strong> para agentes que repiten contexto, la reutilización de prefijos puede reducir latencia y coste. La contrapartida es que la tarjeta de seguridad sitúa ambos modelos en umbrales elevados de capacidades cibernéticas y biológicas/químicas, así que el despliegue serio exige controles, no solo una factura más barata.[2]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-modelo">Modelo</span>
+        <h2>Gemini 4 Neon: el punto medio entre profundidad y velocidad</h2>
+        <p class="meta">Google · 18 de noviembre de 2026</p>
+        <p><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/">Leer la fuente oficial</a></p>
+        <p><strong>Por qué importa:</strong> Google está organizando su familia Gemini 4 por perfiles de uso: Carbon para proyectos largos, Hydrogen para ejecución rápida y Neon para razonamiento complejo de alta frecuencia.[3]</p>
+        <p><strong>Resumen:</strong> Neon se presenta para programación compleja, razonamiento analítico y flujos empresariales de producción. Su disponibilidad se extiende a la API de Gemini, AI Studio, Android Studio, Gemini para empresas, Antigravity y la aplicación Gemini para suscriptores Pro y Ultra.[3]</p>
+        <p><strong>Impacto práctico:</strong> la decisión interesante no será solo “qué modelo es más listo”, sino qué combinación de calidad, latencia, precio y límites encaja con cada etapa de un agente. La segmentación reduce el martillo universal; por fin, un poco de carpintería y menos martillazos.</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-paper">Paper</span>
+        <h2>AlphaProof Code: probar el código compilado de Signal hasta el nivel de máquina</h2>
+        <p class="meta">Google DeepMind · 10 de noviembre de 2026</p>
+        <p><a href="https://deepmind.google/blog/introducing-alphaproof-code/">Artículo oficial</a> · <a href="https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf">paper técnico</a></p>
+        <p><strong>Por qué importa:</strong> el trabajo intenta cerrar la brecha entre demostrar que un protocolo es correcto sobre el papel y demostrar que la implementación que se ejecuta realmente conserva esas propiedades.[4]</p>
+        <p><strong>Resumen:</strong> el marco combina especificación guiada por humanos, agentes prover y comprobación por el kernel de Lean. En libsignal generó aproximadamente 6,5 millones de líneas de prueba Lean sobre unas 26.000 líneas de especificaciones y semántica AArch64 de confianza; el artículo describe una verificación de cuatro semanas y una revisión humana concentrada en cerca del 1% del código.[4]</p>
+        <p><strong>Impacto práctico:</strong> es una señal potente para software crítico, pero no equivale a “IA que certifica cualquier programa”. La especificación aprobada sigue siendo decisiva y el alcance se limita a propiedades concretas; aun así, automatizar la traducción y el trabajo rutinario puede cambiar el coste de auditar criptografía, firmware y sistemas industriales.[4]</p>
+      </article>
+
+      <article class="news-card">
+        <span class="badge badge-informe">Informe</span>
+        <h2>Claude Fable 5.2 y dos problemas abiertos de física de agujeros negros</h2>
+        <p class="meta">Anthropic · 17 de noviembre de 2026</p>
+        <p><a href="https://www.anthropic.com/research/claude-black-hole-physics">Leer la fuente de investigación</a></p>
+        <p><strong>Por qué importa:</strong> el caso describe un flujo de investigación con múltiples agentes que no solo recupera información, sino que propone una ruta matemática y la somete a comprobaciones independientes.[5]</p>
+        <p><strong>Resumen:</strong> Anthropic relata dos resultados: completar un cálculo sobre la transición Hawking–Page en un régimen cuántico y obtener un límite exacto para una versión del bootstrap modular. La fuente indica que los resultados se verificaron formalmente en Lean y que un físico revisó los resultados principales.[5]</p>
+        <p><strong>Impacto práctico:</strong> todavía no es una teoría de la gravedad cuántica ni una aplicación inmediata, pero sí un ejemplo de agentes que dividen una pregunta difícil, comparan soluciones y reutilizan ideas matemáticas entre problemas. La validación externa sigue siendo el ingrediente que evita confundir una narración elegante con un resultado sólido.</p>
+      </article>
+    </section>
+
+    <section class="watch-card">
+      <h2>Lo que vigilar</h2>
+      <ol>
+        <li>Benchmarks científicos multimodales que midan decisiones y trade-offs, no solo respuestas finales.</li>
+        <li>Pruebas formales de implementaciones reales: especificación, compilación y ejecución deberán quedar conectadas.</li>
+        <li>Modelos especializados por coste y latencia, con routers que elijan el perfil adecuado según la tarea.</li>
+        <li>Investigación multiagente con verificación independiente y Lean como árbitro, no como decoración académica.</li>
+      </ol>
+    </section>
+
+    <section class="reviewed-card">
+      <h2>Fuentes revisadas sin novedad destacable</h2>
+      <p>Anthropic Newsroom sí tuvo una novedad empresarial el 20 de noviembre: el cierre de su oferta pública inicial. Se revisó, pero no se incluyó como pieza principal porque es una noticia corporativa más que un avance técnico o de producto. OpenAI, Google/DeepMind y Anthropic fueron cubiertos en sus páginas oficiales; no se añadió ruido de Meta, Microsoft, Mistral, NVIDIA o xAI al no encontrar en esta ventana una pieza primaria más relevante que las cinco seleccionadas.</p>
+    </section>
+
+    <section class="sources-card">
+      <h2>Fuentes</h2>
+      <ol>
+        <li><a href="https://openai.com/index/introducing-medchembench/">OpenAI — Can AI help scientists identify promising drug candidates? (20-11-2026)</a></li>
+        <li><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/">OpenAI — Introducing GPT-6.2 Astra and Sol (17-11-2026)</a></li>
+        <li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/">Google — Introducing Gemini 4 Neon (18-11-2026)</a></li>
+        <li><a href="https://deepmind.google/blog/introducing-alphaproof-code/">Google DeepMind — Introducing AlphaProof Code (10-11-2026)</a></li>
+        <li><a href="https://www.anthropic.com/research/claude-black-hole-physics">Anthropic — Claude Fable 5.2 solves two open problems in the physics of black holes (17-11-2026)</a></li>
+      </ol>
+    </section>
+    <p class="meta">RadarIA preparado el 21 de noviembre de 2026. Cinco piezas, ventana principal del 20 de noviembre ampliada hasta el 14 de noviembre por escasez de novedades estrictas. AIDA recomienda leer los papers antes de poner a un agente a tocar producción; la electricidad suele tener opiniones muy firmes.</p>
+  </main>
+</body>
+</html>
+
+## Sources
+
+[1] https://openai.com/index/introducing-medchembench — OpenAI — MedChemBench
+[2] https://openai.com/index/introducing-gpt-6-2-astra-sol — OpenAI — GPT-6.2 Astra y Sol
+[3] https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon — Google — Gemini 4 Neon
+[4] https://deepmind.google/blog/introducing-alphaproof-code — Google DeepMind — AlphaProof Code
+[5] https://www.anthropic.com/research/claude-black-hole-physics — Anthropic — física de agujeros negros
