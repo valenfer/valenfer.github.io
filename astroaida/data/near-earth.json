@@ -1,6 +1,6 @@
 {
   "source": "NASA NeoWs",
-  "fetched_at": "2026-11-21T03:43:29.891876+00:00",
+  "fetched_at": "2026-11-22T02:47:05.303085+00:00",
   "status": "live",
   "asteroids": [
     {
@@ -268,6 +268,30 @@
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3994619"
     },
     {
+      "date": "2026-11-22",
+      "name": "(2008 GS3)",
+      "estimated_diameter_km": {
+        "min": 0.0934447651,
+        "max": 0.2089488469
+      },
+      "miss_distance_km": 73976805,
+      "velocity_km_s": 22.9654328762,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3408586"
+    },
+    {
+      "date": "2026-11-22",
+      "name": "(2010 HG20)",
+      "estimated_diameter_km": {
+        "min": 0.1394938229,
+        "max": 0.3119176705
+      },
+      "miss_distance_km": 16326166,
+      "velocity_km_s": 10.4751441403,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3518084"
+    },
+    {
       "date": "2026-11-21",
       "name": "(2009 DC1)",
       "estimated_diameter_km": {
@@ -374,18 +398,6 @@
       "velocity_km_s": 22.0686478148,
       "hazardous": false,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3841677"
-    },
-    {
-      "date": "2026-11-15",
-      "name": "(2019 HW3)",
-      "estimated_diameter_km": {
-        "min": 0.02658,
-        "max": 0.0594346868
-      },
-      "miss_distance_km": 18114578,
-      "velocity_km_s": 8.8631491928,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3841634"
     }
   ]
 }
