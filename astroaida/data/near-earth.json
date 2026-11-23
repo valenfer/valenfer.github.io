@@ -1,6 +1,6 @@
 {
   "source": "NASA NeoWs",
-  "fetched_at": "2026-11-22T02:47:05.303085+00:00",
+  "fetched_at": "2026-11-23T03:27:23.326220+00:00",
   "status": "live",
   "asteroids": [
     {
@@ -268,6 +268,18 @@
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3994619"
     },
     {
+      "date": "2026-11-23",
+      "name": "(2019 SB6)",
+      "estimated_diameter_km": {
+        "min": 0.0117099483,
+        "max": 0.0261842403
+      },
+      "miss_distance_km": 31460548,
+      "velocity_km_s": 5.9375861424,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3869331"
+    },
+    {
       "date": "2026-11-22",
       "name": "(2008 GS3)",
       "estimated_diameter_km": {
@@ -374,30 +386,6 @@
       "velocity_km_s": 15.2536689983,
       "hazardous": false,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3893233"
-    },
-    {
-      "date": "2026-11-16",
-      "name": "(2005 WD)",
-      "estimated_diameter_km": {
-        "min": 0.1092835959,
-        "max": 0.2443655492
-      },
-      "miss_distance_km": 19492290,
-      "velocity_km_s": 18.174626749,
-      "hazardous": true,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3303213"
-    },
-    {
-      "date": "2026-11-16",
-      "name": "(2019 HK4)",
-      "estimated_diameter_km": {
-        "min": 0.1460679643,
-        "max": 0.3266178974
-      },
-      "miss_distance_km": 21212581,
-      "velocity_km_s": 22.0686478148,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3841677"
     }
   ]
 }
