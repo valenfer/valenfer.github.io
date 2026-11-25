@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-24T06:41:45.496570+00:00",
+  "fetched_at": "2026-11-25T05:12:33.209045+00:00",
   "status": "live",
-  "target_date": "2026-11-25",
+  "target_date": "2026-11-26",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,52 +10,12 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-25T00:00:00+01:00",
-    "end_local": "2026-11-26T12:00:00+01:00"
+    "start_local": "2026-11-26T00:00:00+01:00",
+    "end_local": "2026-11-27T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261125_08_100-in-the-sky-org-9aafbeb98786-2026-11-25",
-      "type": "other",
-      "title_es": "La Luna en perigeo",
-      "title_translation_status": "translated",
-      "summary_es": "La Luna se acerca mensualmente a su punto más cercano a la Tierra, por lo que parece más grande que en otros momentos del mes, aunque solo muy ligeramente.",
-      "start_local": "2026-11-25T22:01:14+01:00",
-      "visibility": {
-        "status": "visible",
-        "label": "Visible",
-        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
-        "altitude_deg": 33.7,
-        "azimuth_deg": 79.5,
-        "sun_altitude_deg": -45.6
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261125_08_100"
-      }
-    },
-    {
-      "id": "20261125_12_100-in-the-sky-org-f18d9245c0c7-2026-11-25",
-      "type": "opposition",
-      "title_es": "Oposición",
-      "title_translation_status": "deterministic",
-      "summary_es": "Urano está en una posición óptima para su observación",
-      "start_local": "2026-11-25T23:33:18+01:00",
-      "visibility": {
-        "status": "visible",
-        "label": "Visible",
-        "reason": "Urano observable sobre el horizonte en cielo nocturno.",
-        "altitude_deg": 63.1,
-        "azimuth_deg": 121.3,
-        "sun_altitude_deg": -63.0
-      },
-      "source": {
-        "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261125_12_100"
-      }
-    },
-    {
-      "id": "20261125_16_100-in-the-sky-org-678a287c804b-2026-11-25",
+      "id": "20261125_16_100-in-the-sky-org-678a287c804b-2026-11-26",
       "type": "other",
       "title_es": "Ocultación lunar de Beta Tauri",
       "title_translation_status": "translated",
@@ -72,12 +32,7 @@
       }
     }
   ],
-  "weather": {
-    "cloud_cover": 17.80952380952381,
-    "visibility": 37600.0,
-    "precipitation_probability": 0,
-    "temperature": 9.8
-  },
+  "weather": {},
   "sources": [
     {
       "name": "In-The-Sky",
