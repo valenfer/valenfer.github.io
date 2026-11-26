@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-25T05:12:33.209045+00:00",
+  "fetched_at": "2026-11-26T04:39:34.063216+00:00",
   "status": "live",
-  "target_date": "2026-11-26",
+  "target_date": "2026-11-27",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,29 +10,37 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-26T00:00:00+01:00",
-    "end_local": "2026-11-27T12:00:00+01:00"
+    "start_local": "2026-11-27T00:00:00+01:00",
+    "end_local": "2026-11-28T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261125_16_100-in-the-sky-org-678a287c804b-2026-11-26",
+      "id": "20261127_11_100-in-the-sky-org-f5b5fedabcc3-2026-11-27",
       "type": "other",
-      "title_es": "Ocultación lunar de Beta Tauri",
+      "title_es": "Venus en su máximo brillo",
       "title_translation_status": "translated",
-      "summary_es": "La Luna pasará por delante de Beta Tauri (Elnath), creando una ocultación lunar visible desde países y territorios como Sudáfrica, Namibia, Botsuana y Zimbabue, entre otros.",
-      "start_local": "2026-11-26T00:34:26+01:00",
+      "summary_es": "Venus alcanza su máximo brillo en el cielo del amanecer",
+      "start_local": "2026-11-27T19:37:56+01:00",
       "visibility": {
-        "status": "contextual",
-        "label": "Acontecimiento astronómico",
-        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+        "status": "not_visible",
+        "label": "Bajo el horizonte",
+        "reason": "Venus está bajo el horizonte (altitud -40.6°).",
+        "altitude_deg": -40.6,
+        "azimuth_deg": 293.4,
+        "sun_altitude_deg": -17.2
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261125_16_100"
+        "url": "https://in-the-sky.org/news.php?id=20261127_11_100"
       }
     }
   ],
-  "weather": {},
+  "weather": {
+    "cloud_cover": 11.952380952380953,
+    "visibility": 40960.0,
+    "precipitation_probability": 0,
+    "temperature": 8.9
+  },
   "sources": [
     {
       "name": "In-The-Sky",
