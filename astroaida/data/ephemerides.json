@@ -1,8 +1,8 @@
 {
   "source": "In-The-Sky / Open-Meteo",
-  "fetched_at": "2026-11-26T04:39:34.063216+00:00",
+  "fetched_at": "2026-11-27T04:43:34.549906+00:00",
   "status": "live",
-  "target_date": "2026-11-27",
+  "target_date": "2026-11-28",
   "timezone": "Europe/Madrid",
   "observer": {
     "latitude": 37.38283,
@@ -10,36 +10,70 @@
     "label": "Sevilla"
   },
   "observation_window": {
-    "start_local": "2026-11-27T00:00:00+01:00",
-    "end_local": "2026-11-28T12:00:00+01:00"
+    "start_local": "2026-11-28T00:00:00+01:00",
+    "end_local": "2026-11-29T12:00:00+01:00"
   },
   "events": [
     {
-      "id": "20261127_11_100-in-the-sky-org-f5b5fedabcc3-2026-11-27",
-      "type": "other",
-      "title_es": "Venus en su máximo brillo",
-      "title_translation_status": "translated",
-      "summary_es": "Venus alcanza su máximo brillo en el cielo del amanecer",
-      "start_local": "2026-11-27T19:37:56+01:00",
+      "id": "20261128_10_100-in-the-sky-org-fd7fbd703b54-2026-11-28",
+      "type": "meteor_shower",
+      "title_es": "Lluvia de meteoros",
+      "title_translation_status": "deterministic",
+      "summary_es": "La lluvia de estrellas Oriónidas de noviembre alcanza su punto álgido",
+      "start_local": "2026-11-28T15:49:40+01:00",
       "visibility": {
-        "status": "not_visible",
-        "label": "Bajo el horizonte",
-        "reason": "Venus está bajo el horizonte (altitud -40.6°).",
-        "altitude_deg": -40.6,
-        "azimuth_deg": 293.4,
-        "sun_altitude_deg": -17.2
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
       },
       "source": {
         "name": "In-The-Sky",
-        "url": "https://in-the-sky.org/news.php?id=20261127_11_100"
+        "url": "https://in-the-sky.org/news.php?id=20261128_10_100"
+      }
+    },
+    {
+      "id": "20261128_17_100-in-the-sky-org-bfa3b47e0c87-2026-11-28",
+      "type": "other",
+      "title_es": "El cúmulo de las Híades está bien situado",
+      "title_translation_status": "translated",
+      "summary_es": "El cúmulo estelar abierto de las Híades (Collinder 50; magnitud 1,0) en Tauro culmina alrededor de la medianoche, hora local.",
+      "start_local": "2026-11-29T00:56:42+01:00",
+      "visibility": {
+        "status": "contextual",
+        "label": "Acontecimiento astronómico",
+        "reason": "El catálogo no aporta un objeto único cuya altura pueda verificarse."
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261128_17_100"
+      }
+    },
+    {
+      "id": "20261129_15_100-in-the-sky-org-b7b45718ace4-2026-11-28",
+      "type": "other",
+      "title_es": "Acercamiento de la Luna y M44",
+      "title_translation_status": "translated",
+      "summary_es": "La Luna y M44 pasan cerca una de la otra",
+      "start_local": "2026-11-29T01:10:36+01:00",
+      "visibility": {
+        "status": "visible",
+        "label": "Visible",
+        "reason": "Luna observable sobre el horizonte en cielo nocturno.",
+        "altitude_deg": 29.8,
+        "azimuth_deg": 87.7,
+        "sun_altitude_deg": -73.9
+      },
+      "source": {
+        "name": "In-The-Sky",
+        "url": "https://in-the-sky.org/news.php?id=20261129_15_100"
       }
     }
   ],
   "weather": {
-    "cloud_cover": 11.952380952380953,
-    "visibility": 40960.0,
+    "cloud_cover": 62.19047619047619,
+    "visibility": 41860.0,
     "precipitation_probability": 0,
-    "temperature": 8.9
+    "temperature": 9.6
   },
   "sources": [
     {
