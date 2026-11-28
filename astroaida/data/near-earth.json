@@ -1,8 +1,80 @@
 {
   "source": "NASA NeoWs",
-  "fetched_at": "2026-11-27T04:43:28.196854+00:00",
+  "fetched_at": "2026-11-28T04:28:50.755891+00:00",
   "status": "live",
   "asteroids": [
+    {
+      "date": "2026-11-28",
+      "name": "217628 Lugh (1990 HA)",
+      "estimated_diameter_km": {
+        "min": 1.2261821132,
+        "max": 2.7418265579
+      },
+      "miss_distance_km": 10586567,
+      "velocity_km_s": 17.7093100425,
+      "hazardous": true,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2217628"
+    },
+    {
+      "date": "2026-11-28",
+      "name": "(2005 JQ81)",
+      "estimated_diameter_km": {
+        "min": 0.2526707542,
+        "max": 0.5649889822
+      },
+      "miss_distance_km": 33956055,
+      "velocity_km_s": 21.9979171365,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3278080"
+    },
+    {
+      "date": "2026-11-28",
+      "name": "(2008 WK60)",
+      "estimated_diameter_km": {
+        "min": 0.0880146521,
+        "max": 0.1968067451
+      },
+      "miss_distance_km": 72250447,
+      "velocity_km_s": 23.3608793203,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3440319"
+    },
+    {
+      "date": "2026-11-28",
+      "name": "(2011 UE305)",
+      "estimated_diameter_km": {
+        "min": 0.1508533561,
+        "max": 0.3373183589
+      },
+      "miss_distance_km": 22973338,
+      "velocity_km_s": 19.9435877679,
+      "hazardous": true,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3585470"
+    },
+    {
+      "date": "2026-11-28",
+      "name": "(2015 FU284)",
+      "estimated_diameter_km": {
+        "min": 0.0058150704,
+        "max": 0.0130028927
+      },
+      "miss_distance_km": 47173473,
+      "velocity_km_s": 26.4052334815,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3714590"
+    },
+    {
+      "date": "2026-11-28",
+      "name": "(2016 CN248)",
+      "estimated_diameter_km": {
+        "min": 0.0092162655,
+        "max": 0.0206081961
+      },
+      "miss_distance_km": 66246802,
+      "velocity_km_s": 11.1171544948,
+      "hazardous": false,
+      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3744561"
+    },
     {
       "date": "2026-11-23",
       "name": "(2019 SB6)",
@@ -38,42 +110,6 @@
       "velocity_km_s": 10.4751441403,
       "hazardous": false,
       "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3518084"
-    },
-    {
-      "date": "2026-11-21",
-      "name": "(2009 DC1)",
-      "estimated_diameter_km": {
-        "min": 0.0421264611,
-        "max": 0.0941976306
-      },
-      "miss_distance_km": 48533918,
-      "velocity_km_s": 8.6164417987,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3447917"
-    },
-    {
-      "date": "2026-11-21",
-      "name": "(2017 WR28)",
-      "estimated_diameter_km": {
-        "min": 0.0921626549,
-        "max": 0.2060819612
-      },
-      "miss_distance_km": 20892345,
-      "velocity_km_s": 23.0215522079,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3790063"
-    },
-    {
-      "date": "2026-11-21",
-      "name": "(2018 VZ5)",
-      "estimated_diameter_km": {
-        "min": 0.0291443905,
-        "max": 0.0651688382
-      },
-      "miss_distance_km": 32221107,
-      "velocity_km_s": 12.1154573439,
-      "hazardous": false,
-      "nasa_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=3836138"
     },
     {
       "date": "2026-11-27",
